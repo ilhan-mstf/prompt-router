@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Default / English (canonical) -->
+  <url>
+    <loc>https://prompt-router.pages.dev/</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://prompt-router.pages.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://prompt-router.pages.dev/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://prompt-router.pages.dev/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://prompt-router.pages.dev/?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://prompt-router.pages.dev/?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://prompt-router.pages.dev/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://prompt-router.pages.dev/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://prompt-router.pages.dev/?lang=tr"/>
+  </url>
+
+  <!-- Spanish -->
+  <url>
+    <loc>https://prompt-router.pages.dev/?lang=es</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://prompt-router.pages.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://prompt-router.pages.dev/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://prompt-router.pages.dev/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://prompt-router.pages.dev/?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://prompt-router.pages.dev/?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://prompt-router.pages.dev/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://prompt-router.pages.dev/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://prompt-router.pages.dev/?lang=tr"/>
+  </url>
+
+  <!-- Italian -->
+  <url>
+    <loc>https://prompt-router.pages.dev/?lang=it</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://prompt-router.pages.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://prompt-router.pages.dev/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://prompt-router.pages.dev/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://prompt-router.pages.dev/?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://prompt-router.pages.dev/?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://prompt-router.pages.dev/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://prompt-router.pages.dev/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://prompt-router.pages.dev/?lang=tr"/>
+  </url>
+
+  <!-- Portuguese -->
+  <url>
+    <loc>https://prompt-router.pages.dev/?lang=pt</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://prompt-router.pages.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://prompt-router.pages.dev/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://prompt-router.pages.dev/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://prompt-router.pages.dev/?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://prompt-router.pages.dev/?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://prompt-router.pages.dev/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://prompt-router.pages.dev/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://prompt-router.pages.dev/?lang=tr"/>
+  </url>
+
+  <!-- French -->
+  <url>
+    <loc>https://prompt-router.pages.dev/?lang=fr</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://prompt-router.pages.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://prompt-router.pages.dev/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://prompt-router.pages.dev/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://prompt-router.pages.dev/?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://prompt-router.pages.dev/?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://prompt-router.pages.dev/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://prompt-router.pages.dev/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://prompt-router.pages.dev/?lang=tr"/>
+  </url>
+
+  <!-- German -->
+  <url>
+    <loc>https://prompt-router.pages.dev/?lang=de</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://prompt-router.pages.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://prompt-router.pages.dev/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://prompt-router.pages.dev/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://prompt-router.pages.dev/?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://prompt-router.pages.dev/?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://prompt-router.pages.dev/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://prompt-router.pages.dev/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://prompt-router.pages.dev/?lang=tr"/>
+  </url>
+
+  <!-- Turkish -->
+  <url>
+    <loc>https://prompt-router.pages.dev/?lang=tr</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://prompt-router.pages.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://prompt-router.pages.dev/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://prompt-router.pages.dev/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://prompt-router.pages.dev/?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://prompt-router.pages.dev/?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://prompt-router.pages.dev/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://prompt-router.pages.dev/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://prompt-router.pages.dev/?lang=tr"/>
+  </url>
+
+</urlset>
