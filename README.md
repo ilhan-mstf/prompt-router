@@ -29,7 +29,6 @@ _worker.js                 Cloudflare Pages Worker for server-side SEO meta inje
 site.webmanifest           PWA manifest
 robots.txt                 Crawler instructions
 sitemap.xml                Multilingual sitemap (all 7 language URLs)
-prompt-router.html         Standalone minimal version (no library features)
 blog-post.md               Blog post copy
 googlee5dbd159d1306862.html  Google Search Console verification
 ```
