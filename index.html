@@ -34,7 +34,6 @@
 <meta property="og:locale" content="en_US">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@promptrouter">
 <meta name="twitter:title" content="Prompt Router — Send One Prompt to Every AI at Once">
 <meta name="twitter:description" content="Write your prompt once, open it instantly in every major AI tool.">
 <meta name="twitter:image" content="https://prompt-router.pages.dev/og-image.png">
@@ -422,7 +421,7 @@ footer {
 </head>
 <body>
 
-<noscript><div class="noscript" role="alert">JavaScript is required to use Prompt Router.</div></noscript>
+<noscript><div class="noscript" role="alert">JavaScript is required to use Prompt Router. · Se requiere JavaScript para usar Prompt Router. · JavaScript è necessario per usare Prompt Router. · JavaScript é necessário para usar o Prompt Router. · JavaScript est requis pour utiliser Prompt Router. · JavaScript ist erforderlich, um Prompt Router zu verwenden. · Prompt Router'ı kullanmak için JavaScript gereklidir.</div></noscript>
 <a href="#prompt" class="skip">Skip to prompt</a>
 
 <!-- ── Header ── -->
@@ -462,9 +461,7 @@ footer {
       ></textarea>
       <div class="prompt-meta" aria-hidden="true">
         <span class="char-count" id="charCount"></span>
-        <span class="shortcut">
-          <kbd>⌘S</kbd> save &nbsp;&nbsp; <kbd>⌘C</kbd> copy &nbsp;&nbsp; <kbd>Esc</kbd> clear
-        </span>
+        <span class="shortcut" id="shortcut-hint"></span>
       </div>
     </div>
   </section>
@@ -493,19 +490,7 @@ footer {
 <!-- ── Footer ── -->
 <footer>
   <div class="footer-inner">
-    <p class="footer-desc">
-      <strong>Prompt Router</strong> is a free tool for prompt engineers, developers, and AI power users.
-      Write your prompt once and send it instantly to
-      <a href="https://chatgpt.com" rel="noopener noreferrer" target="_blank">ChatGPT</a>,
-      <a href="https://claude.ai" rel="noopener noreferrer" target="_blank">Claude</a>,
-      <a href="https://gemini.google.com" rel="noopener noreferrer" target="_blank">Gemini</a>,
-      <a href="https://copilot.microsoft.com" rel="noopener noreferrer" target="_blank">Copilot</a>,
-      <a href="https://www.perplexity.ai" rel="noopener noreferrer" target="_blank">Perplexity</a>,
-      <a href="https://chat.deepseek.com" rel="noopener noreferrer" target="_blank">DeepSeek</a>,
-      <a href="https://x.com/i/grok" rel="noopener noreferrer" target="_blank">Grok</a>, and
-      <a href="https://chat.mistral.ai" rel="noopener noreferrer" target="_blank">Le Chat</a>.
-      No account needed. No data stored.
-    </p>
+    <p class="footer-desc" id="footer-desc"></p>
     <p class="footer-copy" id="footer-copy"></p>
   </div>
 </footer>
@@ -534,6 +519,9 @@ const LOCALES = {
     pinTitle: 'Pin to top', unpinTitle: 'Unpin', deleteTitle: 'Delete',
     ariaPinTpl: 'Pin {label} to top', ariaUnpinTpl: 'Unpin {label}',
     footerCopy: '\u00a9 {year} Prompt Router \u2014 Free to use.',
+    shortcutCopy: 'copy',
+    footerDescIntro: 'is a free tool for prompt engineers, developers, and AI power users. Write your prompt once and send it instantly to',
+    footerDescOutro: 'No account needed. No data stored.',
     templates: [
       { label: 'Summarize',    text: "Summarize the following in 3\u20135 clear bullet points. Focus on the most important takeaways:\n\n[paste content here]" },
       { label: 'Explain it',   text: "Explain [concept or topic] in simple terms. Assume I have no prior knowledge. Use plain language and a short example." },
@@ -564,6 +552,9 @@ const LOCALES = {
     pinTitle: 'Fijar arriba', unpinTitle: 'Desfijar', deleteTitle: 'Eliminar',
     ariaPinTpl: 'Fijar {label} arriba', ariaUnpinTpl: 'Desfijar {label}',
     footerCopy: '\u00a9 {year} Prompt Router \u2014 Gratis.',
+    shortcutCopy: 'copiar',
+    footerDescIntro: 'es una herramienta gratuita para ingenieros de prompt, desarrolladores y usuarios avanzados de IA. Escribe tu prompt una vez y envíalo instantáneamente a',
+    footerDescOutro: 'Sin cuenta. Sin datos almacenados.',
     templates: [
       { label: 'Resumir',        text: "Resume lo siguiente en 3\u20135 puntos clave. Conc\u00e9ntrate en los puntos m\u00e1s importantes:\n\n[pega el contenido aqu\u00ed]" },
       { label: 'Explicar',       text: "Explica [concepto o tema] en t\u00e9rminos simples. Asume que no tengo conocimiento previo. Usa lenguaje claro y un ejemplo breve." },
@@ -594,6 +585,9 @@ const LOCALES = {
     pinTitle: 'Fissa in cima', unpinTitle: 'Sblocca', deleteTitle: 'Elimina',
     ariaPinTpl: 'Fissa {label} in cima', ariaUnpinTpl: 'Sblocca {label}',
     footerCopy: '\u00a9 {year} Prompt Router \u2014 Gratuito.',
+    shortcutCopy: 'copia',
+    footerDescIntro: 'è uno strumento gratuito per prompt engineer, sviluppatori e utenti avanzati di IA. Scrivi il tuo prompt una volta e invialo istantaneamente a',
+    footerDescOutro: 'Nessun account richiesto. Nessun dato memorizzato.',
     templates: [
       { label: 'Riassumi',       text: "Riassumi il seguente testo in 3\u20135 punti chiari. Concentrati sui punti pi\u00f9 importanti:\n\n[incolla il contenuto qui]" },
       { label: 'Spiega',         text: "Spiega [concetto o argomento] in termini semplici. Assume che non abbia conoscenze precedenti. Usa linguaggio chiaro e un breve esempio." },
@@ -624,6 +618,9 @@ const LOCALES = {
     pinTitle: 'Fixar no topo', unpinTitle: 'Desafixar', deleteTitle: 'Excluir',
     ariaPinTpl: 'Fixar {label} no topo', ariaUnpinTpl: 'Desafixar {label}',
     footerCopy: '\u00a9 {year} Prompt Router \u2014 Gratuito.',
+    shortcutCopy: 'copiar',
+    footerDescIntro: 'é uma ferramenta gratuita para engenheiros de prompt, desenvolvedores e usuários avançados de IA. Escreva seu prompt uma vez e envie instantaneamente para',
+    footerDescOutro: 'Sem conta. Sem dados armazenados.',
     templates: [
       { label: 'Resumir',         text: "Resuma o seguinte em 3\u20135 pontos claros. Foque nos pontos mais importantes:\n\n[cole o conte\u00fado aqui]" },
       { label: 'Explicar',        text: "Explique [conceito ou t\u00f3pico] em termos simples. Assuma que n\u00e3o tenho conhecimento pr\u00e9vio. Use linguagem clara e um exemplo breve." },
@@ -654,6 +651,9 @@ const LOCALES = {
     pinTitle: '\u00c9pingler en haut', unpinTitle: 'D\u00e9s\u00e9pingler', deleteTitle: 'Supprimer',
     ariaPinTpl: '\u00c9pingler {label} en haut', ariaUnpinTpl: 'D\u00e9s\u00e9pingler {label}',
     footerCopy: '\u00a9 {year} Prompt Router \u2014 Gratuit.',
+    shortcutCopy: 'copier',
+    footerDescIntro: "est un outil gratuit pour les ingénieurs de prompt, les développeurs et les utilisateurs avancés de l'IA. Rédigez votre prompt une fois et envoyez-le instantanément dans",
+    footerDescOutro: 'Aucun compte requis. Aucune donnée stockée.',
     templates: [
       { label: 'R\u00e9sumer',         text: "R\u00e9sumez ce qui suit en 3 \u00e0 5 points clairs. Concentrez-vous sur les points les plus importants\u00a0:\n\n[collez le contenu ici]" },
       { label: 'Expliquer',          text: "Expliquez [concept ou sujet] en termes simples. Supposez que je n'ai aucune connaissance pr\u00e9alable. Utilisez un langage clair et un exemple court." },
@@ -684,6 +684,9 @@ const LOCALES = {
     pinTitle: 'Oben anheften', unpinTitle: 'L\u00f6sen', deleteTitle: 'L\u00f6schen',
     ariaPinTpl: '{label} oben anheften', ariaUnpinTpl: '{label} l\u00f6sen',
     footerCopy: '\u00a9 {year} Prompt Router \u2014 Kostenlos.',
+    shortcutCopy: 'kopieren',
+    footerDescIntro: 'ist ein kostenloses Tool für Prompt-Engineers, Entwickler und fortgeschrittene KI-Nutzer. Schreibe deinen Prompt einmal und sende ihn sofort an',
+    footerDescOutro: 'Kein Konto erforderlich. Keine Daten gespeichert.',
     templates: [
       { label: 'Zusammenfassen',    text: "Fasse das Folgende in 3\u20135 klaren Stichpunkten zusammen. Konzentriere dich auf die wichtigsten Erkenntnisse:\n\n[Inhalt hier einf\u00fcgen]" },
       { label: 'Erkl\u00e4ren',     text: "Erkl\u00e4re [Konzept oder Thema] in einfachen Worten. Gehe davon aus, dass ich kein Vorwissen habe. Verwende klare Sprache und ein kurzes Beispiel." },
@@ -714,6 +717,9 @@ const LOCALES = {
     pinTitle: 'En \u00fcste sabitle', unpinTitle: 'Sabitlemeden \u00e7\u0131kar', deleteTitle: 'Sil',
     ariaPinTpl: '{label}\u2019i en \u00fcste sabitle', ariaUnpinTpl: '{label}\u2019i sabitlemeden \u00e7\u0131kar',
     footerCopy: '\u00a9 {year} Prompt Router \u2014 \u00dccretsiz.',
+    shortcutCopy: 'kopyala',
+    footerDescIntro: "prompt mühendisleri, geliştiriciler ve ileri düzey yapay zeka kullanıcıları için ücretsiz bir araçtır. Prompt'unuzu bir kez yazın ve anında şuraya gönderin:",
+    footerDescOutro: 'Hesap gerekmez. Veri saklanmaz.',
     templates: [
       { label: '\u00d6zetle',          text: "A\u015fa\u011f\u0131dakini 3\u20135 net madde halinde \u00f6zetle. En \u00f6nemli \u00e7\u0131kar\u0131mlara odaklan:\n\n[i\u00e7eri\u011fi buraya yap\u0131\u015ft\u0131r]" },
       { label: 'A\u00e7\u0131kla',      text: "[Kavram veya konuyu] basit terimlerle a\u00e7\u0131kla. \u00d6nceki bilgim olmad\u0131\u011f\u0131n\u0131 varsay. Sade bir dil ve k\u0131sa bir \u00f6rnek kullan." },
@@ -734,6 +740,8 @@ const lang   = window.__LANG__ || 'en';
 const locale = LOCALES[lang] || LOCALES.en;
 const templates = locale.templates;
 
+const enc = s => encodeURIComponent(s);
+
 const providers = [
   { id: 'chatgpt',    label: 'ChatGPT',    cls: 'pc-chatgpt',    url: q => `https://chatgpt.com/?q=${enc(q)}` },
   { id: 'claude',     label: 'Claude',     cls: 'pc-claude',     url: q => `https://claude.ai/new?q=${enc(q)}` },
@@ -744,8 +752,6 @@ const providers = [
   { id: 'grok',       label: 'Grok',       cls: 'pc-grok',       url: q => `https://x.com/i/grok?text=${enc(q)}` },
   { id: 'deepseek',   label: 'DeepSeek',   cls: 'pc-deepseek',   url: q => `https://chat.deepseek.com/?q=${enc(q)}` },
 ];
-
-const enc = s => encodeURIComponent(s);
 
 /* ── DOM refs ────────────────────────────────────────────────── */
 const promptEl    = document.getElementById('prompt');
@@ -782,14 +788,30 @@ function applyLocale() {
   clearBtnEl.textContent = locale.clearBtn;
   clearBtnEl.setAttribute('aria-label', locale.clearBtn);
   document.getElementById('footer-copy').textContent = locale.footerCopy.replace('{year}', new Date().getFullYear());
+  // Shortcut hint (aria-hidden, decorative)
+  document.getElementById('shortcut-hint').innerHTML =
+    `<kbd>⌘S</kbd> ${locale.saveBtn.toLowerCase()}\u00a0\u00a0 <kbd>⌘C</kbd> ${locale.shortcutCopy}\u00a0\u00a0 <kbd>Esc</kbd> ${locale.clearBtn.toLowerCase()}`;
+  // Footer body paragraph
+  document.getElementById('footer-desc').innerHTML =
+    `<strong>Prompt Router</strong> ${locale.footerDescIntro} ${FOOTER_LINKS}. ${locale.footerDescOutro}`;
 }
+
+const FOOTER_LINKS =
+  `<a href="https://chatgpt.com" rel="noopener noreferrer" target="_blank">ChatGPT</a>, ` +
+  `<a href="https://claude.ai" rel="noopener noreferrer" target="_blank">Claude</a>, ` +
+  `<a href="https://gemini.google.com" rel="noopener noreferrer" target="_blank">Gemini</a>, ` +
+  `<a href="https://copilot.microsoft.com" rel="noopener noreferrer" target="_blank">Copilot</a>, ` +
+  `<a href="https://www.perplexity.ai" rel="noopener noreferrer" target="_blank">Perplexity</a>, ` +
+  `<a href="https://chat.deepseek.com" rel="noopener noreferrer" target="_blank">DeepSeek</a>, ` +
+  `<a href="https://x.com/i/grok" rel="noopener noreferrer" target="_blank">Grok</a>, and ` +
+  `<a href="https://chat.mistral.ai" rel="noopener noreferrer" target="_blank">Le Chat</a>`;
 applyLocale();
 
 /* ── State ───────────────────────────────────────────────────── */
 const TPL_PIN_KEY   = 'pr_pinned_tpls';
 const CHIPS_VISIBLE = 3;
 const LIB_VISIBLE   = 3;
-const TITLE_MAX     = 10;
+const TITLE_MAX     = 30;
 let activeTplLabel  = null;
 let tplExpanded     = false;
 let libExpanded     = false;
@@ -864,7 +886,7 @@ providers.forEach(p => {
   const li = document.createElement('li');
   const btn = document.createElement('button');
   btn.type = 'button'; btn.className = `p-btn ${p.cls}`;
-  btn.setAttribute('aria-label', `Open in ${p.label}`);
+  btn.setAttribute('aria-label', `${locale.lblProviders} ${p.label}`);
   btn.innerHTML = `<span class="p-dot" aria-hidden="true"></span><span class="p-name">${p.label}</span><span class="p-arrow" aria-hidden="true">↗</span>`;
   btn.addEventListener('click', () => openProvider(p));
   li.appendChild(btn); providersEl.appendChild(li);
