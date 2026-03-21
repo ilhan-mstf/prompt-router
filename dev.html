@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<title>Dev Prompts — Battle-Tested Prompts for Developers | Prompt Router</title>
+<meta name="description" content="30+ curated prompts for debugging, code review, refactoring, testing, architecture, DevOps, and more. Send any prompt to ChatGPT, Claude, Gemini and 5 other AIs instantly.">
+<meta name="keywords" content="developer prompts, coding prompts, AI prompts for developers, code review prompt, debugging prompt, refactoring prompt, ChatGPT coding">
+<meta name="author" content="Prompt Router">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://prompt-router.pages.dev/dev">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Prompt Router">
+<meta property="og:title" content="Dev Prompts — Battle-Tested Prompts for Developers">
+<meta property="og:description" content="30+ curated prompts for debugging, code review, refactoring, testing, architecture, DevOps and more. Send to any AI instantly.">
+<meta property="og:url" content="https://prompt-router.pages.dev/dev">
+<meta property="og:image" content="https://prompt-router.pages.dev/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dev Prompts — Battle-Tested Prompts for Developers">
+<meta name="twitter:description" content="30+ curated prompts for debugging, code review, refactoring, testing and more. Send to any AI instantly.">
+<meta name="twitter:image" content="https://prompt-router.pages.dev/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Dev Prompts — Battle-Tested Prompts for Developers",
+  "description": "30+ curated prompts for debugging, code review, refactoring, testing, architecture, DevOps, and more.",
+  "url": "https://prompt-router.pages.dev/dev",
+  "isPartOf": {
+    "@type": "WebApplication",
+    "name": "Prompt Router",
+    "url": "https://prompt-router.pages.dev/"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://prompt-router.pages.dev/" },
+      { "@type": "ListItem", "position": 2, "name": "Dev Prompts", "item": "https://prompt-router.pages.dev/dev" }
+    ]
+  }
+}
+</script>
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230f0f10'/><text y='24' x='4' font-size='22' font-family='serif' fill='%23d4a847'>P</text></svg>">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f0f10" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f4f0e8" media="(prefers-color-scheme: light)">
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,200&display=swap" rel="stylesheet">
+
+<style>
+/* ── Tokens ──────────────────────────────────────────────────── */
+:root {
+  --bg:        #0f0f10;
+  --surface:   #1a1a1c;
+  --surface-2: #222225;
+  --border:    #2c2c30;
+  --border-2:  #404046;
+  --text:      #f0ece4;
+  --text-2:    #9e9a96;
+  --text-3:    #5a5856;
+  --gold:      #d4a847;
+  --gold-dim:  #9a7830;
+  --gold-glow: rgba(212,168,71,.1);
+  --focus:     #d4a847;
+
+  --chatgpt:    #10a37f;
+  --claude:     #c8845a;
+  --gemini:     #4285f4;
+  --copilot:    #7b6fcc;
+  --perplexity: #17b0a7;
+  --lechat:     #f06830;
+  --grok:       #aaaaaa;
+  --deepseek:   #4d6bfe;
+
+  --xs:   0.8125rem;
+  --sm:   0.9375rem;
+  --base: 1.0625rem;
+  --lg:   1.125rem;
+  --2xl:  2.375rem;
+
+  --r:    8px;
+  --r-lg: 12px;
+  --max:  700px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg:        #f4f0e8;
+    --surface:   #fdfaf5;
+    --surface-2: #f0ece2;
+    --border:    #e0dbd0;
+    --border-2:  #c8c2b4;
+    --text:      #1a1714;
+    --text-2:    #5a554e;
+    --text-3:    #9c968e;
+    --gold:      #7a5518;
+    --gold-dim:  #9a6c28;
+    --gold-glow: rgba(122,85,24,.07);
+    --focus:     #7a5518;
+  }
+}
+
+/* ── Reset ───────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: var(--base);
+  line-height: 1.65;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Skip link ───────────────────────────────────────────────── */
+.skip {
+  position: absolute; top: -100%; left: 16px;
+  background: var(--gold); color: var(--bg);
+  font-size: var(--sm); padding: 8px 16px;
+  border-radius: 0 0 var(--r) var(--r);
+  text-decoration: none; z-index: 999; transition: top .15s;
+}
+.skip:focus { top: 0; outline: none; }
+
+/* ── Focus ───────────────────────────────────────────────────── */
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: var(--r); }
+:focus:not(:focus-visible) { outline: none; }
+
+/* ── Page shell ──────────────────────────────────────────────── */
+.page { width: 100%; max-width: var(--max); padding: 0 28px; }
+
+/* ── Header ──────────────────────────────────────────────────── */
+header.page { padding-top: 60px; padding-bottom: 52px; }
+
+h1.logo {
+  display: flex; align-items: baseline; gap: 8px;
+  font-size: inherit; font-weight: inherit; margin-bottom: 12px;
+}
+.logo-a {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto; font-weight: 600;
+  font-size: var(--2xl); letter-spacing: -0.03em;
+  line-height: 1; color: var(--text);
+}
+.logo-b {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto; font-weight: 200; font-style: italic;
+  font-size: var(--2xl); letter-spacing: -0.02em;
+  line-height: 1; color: var(--gold);
+}
+.logo a { text-decoration: none; color: inherit; }
+.tagline {
+  font-size: var(--sm); color: var(--text-3);
+  letter-spacing: 0.01em; line-height: 1;
+}
+
+/* ── Nav ─────────────────────────────────────────────────────── */
+.nav-links {
+  display: flex; gap: 16px; margin-top: 16px;
+}
+.nav-links a {
+  font-size: var(--xs); color: var(--text-3);
+  text-decoration: none; letter-spacing: 0.04em;
+  transition: color .12s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-links a.active { color: var(--gold); }
+
+/* ── Main ────────────────────────────────────────────────────── */
+main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40px; }
+
+/* ── Section labels ──────────────────────────────────────────── */
+.lbl {
+  display: block;
+  font-size: var(--xs); letter-spacing: 0.09em;
+  text-transform: uppercase; color: var(--text-3);
+  font-weight: 500; margin-bottom: 12px;
+}
+
+/* ── Category chips ──────────────────────────────────────────── */
+.cats { display: flex; flex-wrap: wrap; gap: 7px; }
+.cat {
+  padding: 7px 14px; background: none;
+  border: 1px solid var(--border); border-radius: 100px;
+  color: var(--text-2); font-family: 'DM Mono', monospace;
+  font-size: var(--xs); letter-spacing: 0.03em; line-height: 1;
+  cursor: pointer; user-select: none;
+  transition: color .12s, border-color .12s, background .12s;
+}
+.cat:hover { color: var(--gold); border-color: var(--gold-dim); background: var(--gold-glow); }
+.cat.active { color: var(--gold); border-color: var(--gold); background: var(--gold-glow); }
+
+/* ── Prompt cards ────────────────────────────────────────────── */
+.prompt-cards { display: flex; flex-direction: column; gap: 10px; }
+
+.prompt-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 16px 18px;
+  cursor: pointer;
+  transition: border-color .12s, background .12s;
+}
+.prompt-card:hover { border-color: var(--border-2); background: var(--surface-2); }
+.prompt-card.selected { border-color: var(--gold); background: var(--gold-glow); }
+
+.prompt-card-title {
+  font-size: var(--sm); font-weight: 500; color: var(--text);
+  margin-bottom: 6px; line-height: 1.3;
+}
+.prompt-card-preview {
+  font-size: var(--xs); color: var(--text-3);
+  line-height: 1.5; white-space: pre-line;
+  display: -webkit-box; -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; overflow: hidden;
+}
+.prompt-card.selected .prompt-card-preview {
+  -webkit-line-clamp: unset;
+  color: var(--text-2);
+}
+
+/* ── Textarea ────────────────────────────────────────────────── */
+.prompt-wrap { position: relative; }
+textarea {
+  display: block; width: 100%; min-height: 210px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); color: var(--text);
+  font-family: 'DM Mono', monospace; font-size: var(--base);
+  line-height: 1.75; padding: 20px 20px 50px;
+  resize: vertical; outline: none; caret-color: var(--gold);
+  transition: border-color .18s, box-shadow .18s;
+}
+textarea::placeholder { color: var(--text-3); font-style: italic; }
+textarea:hover { border-color: var(--border-2); }
+textarea:focus { border-color: var(--gold-dim); box-shadow: 0 0 0 3px var(--gold-glow); }
+
+.prompt-meta {
+  position: absolute; bottom: 15px; left: 20px; right: 20px;
+  display: flex; justify-content: space-between; align-items: center;
+  pointer-events: none;
+}
+.char-count {
+  font-size: var(--xs); color: var(--text-3);
+  font-variant-numeric: tabular-nums; transition: color .2s;
+}
+.char-count.warn { color: #c97a40; }
+
+/* ── Provider cards ──────────────────────────────────────────── */
+.providers {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.p-btn {
+  width: 100%; display: flex; flex-direction: column;
+  align-items: flex-start; gap: 10px; padding: 14px 14px 12px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); color: var(--text);
+  font-family: 'DM Mono', monospace; cursor: pointer;
+  transition: border-color .12s, background .12s, transform .12s, box-shadow .12s;
+  text-align: left; position: relative; overflow: hidden;
+}
+.p-btn:hover {
+  background: var(--surface-2); border-color: var(--border-2);
+  transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.18);
+}
+.p-btn:active { transform: translateY(0); box-shadow: none; }
+.p-dot {
+  width: 28px; height: 4px; border-radius: 2px;
+  background: var(--pc, var(--border)); opacity: .65;
+  transition: opacity .12s, width .12s;
+}
+.p-btn:hover .p-dot { opacity: 1; width: 36px; }
+.p-name { font-size: var(--sm); letter-spacing: 0.02em; line-height: 1; }
+.p-arrow {
+  position: absolute; top: 12px; right: 12px;
+  font-size: 11px; color: var(--text-3); line-height: 1;
+  transition: transform .12s, color .12s;
+}
+.p-btn:hover .p-arrow { transform: translate(2px,-2px); color: var(--text-2); }
+
+.pc-chatgpt    { --pc: var(--chatgpt); }
+.pc-claude     { --pc: var(--claude); }
+.pc-gemini     { --pc: var(--gemini); }
+.pc-copilot    { --pc: var(--copilot); }
+.pc-perplexity { --pc: var(--perplexity); }
+.pc-lechat     { --pc: var(--lechat); }
+.pc-grok       { --pc: var(--grok); }
+.pc-deepseek   { --pc: var(--deepseek); }
+
+/* ── Actions row ─────────────────────────────────────────────── */
+.actions { display: flex; gap: 8px; }
+
+.btn {
+  padding: 14px 20px; background: none;
+  border: 1px solid var(--border); border-radius: var(--r);
+  color: var(--text-2); font-family: 'DM Mono', monospace;
+  font-size: var(--sm); letter-spacing: 0.04em;
+  cursor: pointer; line-height: 1; white-space: nowrap;
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  transition: border-color .12s, color .12s;
+}
+.btn:hover { border-color: var(--border-2); color: var(--text); }
+.btn.flex-1 { flex: 1; }
+.btn.copied { border-color: var(--gold-dim); color: var(--gold); }
+
+/* ── Toast ───────────────────────────────────────────────────── */
+.toast {
+  position: fixed; bottom: 28px; left: 50%;
+  transform: translateX(-50%) translateY(64px);
+  background: var(--surface-2); border: 1px solid var(--border-2);
+  border-radius: var(--r); padding: 11px 20px;
+  font-size: var(--sm); letter-spacing: 0.02em; color: var(--text);
+  box-shadow: 0 8px 32px rgba(0,0,0,.3);
+  transition: transform .26s cubic-bezier(.34,1.56,.64,1);
+  z-index: 200; white-space: nowrap; pointer-events: none;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ── Footer ──────────────────────────────────────────────────── */
+footer {
+  width: 100%; border-top: 1px solid var(--border);
+  display: flex; justify-content: center; margin-top: 8px;
+}
+.footer-inner {
+  width: 100%; max-width: var(--max);
+  padding: 32px 28px 48px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.footer-links {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  font-size: var(--xs); margin-bottom: 4px;
+}
+.footer-links a {
+  color: var(--text-2); text-decoration: none;
+  letter-spacing: 0.02em; transition: color .12s;
+}
+.footer-links a:hover { color: var(--gold); }
+.footer-copy { font-size: var(--xs); color: var(--text-3); }
+.footer-doodle {
+  display: block; margin: 16px auto 0; width: 180px; height: auto;
+  opacity: .18; transition: opacity .3s;
+}
+.footer-doodle:hover { opacity: .35; }
+
+/* ── Reduced motion ──────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; }
+  .toast { transition: none !important; }
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 580px) {
+  .providers { grid-template-columns: repeat(2, 1fr); }
+  .logo-a, .logo-b { font-size: 2rem; }
+  header.page { padding-top: 44px; padding-bottom: 36px; }
+  main.page { gap: 36px; }
+  .actions { flex-wrap: wrap; }
+  .actions .btn.flex-1 { flex: 0 0 100%; }
+}
+@media (max-width: 360px) {
+  .page, .footer-inner { padding-left: 16px; padding-right: 16px; }
+}
+</style>
+</head>
+<body>
+
+<a href="#prompt" class="skip">Skip to prompt</a>
+
+<!-- ── Header ── -->
+<header class="page">
+  <h1 class="logo">
+    <a href="/"><span class="logo-a">Prompt</span><span class="logo-b">Router</span></a>
+  </h1>
+  <p class="tagline">Battle-tested prompts for developers</p>
+  <nav class="nav-links">
+    <a href="/">Home</a>
+    <a href="/dev" class="active">Dev Prompts</a>
+    <a href="/blog">Blog</a>
+  </nav>
+</header>
+
+<!-- ── Main ── -->
+<main class="page" id="main-content">
+
+  <!-- 1. Categories -->
+  <section aria-labelledby="lbl-cats">
+    <span class="lbl" id="lbl-cats">Categories</span>
+    <div class="cats" id="cats" role="group" aria-labelledby="lbl-cats"></div>
+  </section>
+
+  <!-- 2. Prompt cards -->
+  <section aria-labelledby="lbl-prompts">
+    <span class="lbl" id="lbl-prompts">Prompts</span>
+    <div class="prompt-cards" id="prompt-cards"></div>
+  </section>
+
+  <!-- 3. Prompt textarea -->
+  <section aria-labelledby="lbl-prompt">
+    <label class="lbl" id="lbl-prompt" for="prompt">Your prompt</label>
+    <div class="prompt-wrap">
+      <textarea
+        id="prompt"
+        name="prompt"
+        placeholder="Click a prompt above or write your own..."
+        spellcheck="false"
+        autocomplete="off"
+        aria-describedby="charCount"
+      ></textarea>
+      <div class="prompt-meta" aria-hidden="true">
+        <span class="char-count" id="charCount"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Providers -->
+  <section aria-labelledby="lbl-providers">
+    <span class="lbl" id="lbl-providers">Open in</span>
+    <ul class="providers" id="providers" aria-labelledby="lbl-providers"></ul>
+  </section>
+
+  <!-- 5. Actions -->
+  <div class="actions">
+    <button class="btn flex-1" id="copyBtn" type="button" aria-label="Copy prompt to clipboard">
+      Copy to clipboard
+    </button>
+    <button class="btn" id="clearBtn" type="button" aria-label="Clear the prompt">
+      Clear
+    </button>
+  </div>
+
+</main>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/dev">Dev Prompts</a>
+      <a href="/blog">Blog</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Prompt Router &mdash; Free.</p>
+    <img src="/clumsy.svg" alt="" class="footer-doodle" aria-hidden="true" loading="lazy" width="180" height="135">
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+<script>
+'use strict';
+
+/* ── Dev prompt library ─────────────────────────────────────── */
+const DEV_PROMPTS = [
+  {
+    cat: 'Debugging',
+    prompts: [
+      { title: 'Find the bug', text: "Here is my code. It's not working as expected.\n\n[paste code here]\n\nThe error or problem: [describe it]\n\nFind the bug, explain why it happens, and show the fix." },
+      { title: 'Explain this error', text: "I'm getting this error:\n\n[paste error message]\n\nHere's the relevant code:\n\n[paste code here]\n\nExplain what's causing this error and how to fix it." },
+      { title: 'Debug performance issue', text: "This code is running slower than expected:\n\n[paste code here]\n\nProfile the logic, identify bottlenecks, and suggest specific optimizations with before/after examples." },
+      { title: 'Fix failing test', text: "This test is failing:\n\n[paste test code]\n\nThe error output:\n\n[paste error]\n\nHere's the implementation it tests:\n\n[paste code]\n\nExplain why the test fails and how to fix it." },
+    ]
+  },
+  {
+    cat: 'Code Review',
+    prompts: [
+      { title: 'Review for bugs & quality', text: "Review this code for bugs, edge cases, and code quality issues. Be specific about what's wrong and suggest fixes:\n\n[paste code here]" },
+      { title: 'Security review', text: "Review this code for security vulnerabilities (injection, auth issues, data exposure, OWASP top 10). Rate severity and suggest fixes:\n\n[paste code here]" },
+      { title: 'Review PR diff', text: "Here's a PR diff. Review it for correctness, style, performance, and potential issues. Be concise and actionable:\n\n[paste diff here]" },
+      { title: 'Suggest improvements', text: "Review this code and suggest improvements for readability, maintainability, and idiomatic style. Keep the same functionality:\n\n[paste code here]" },
+    ]
+  },
+  {
+    cat: 'Refactoring',
+    prompts: [
+      { title: 'Refactor for readability', text: "Refactor this code to be more readable and maintainable. Keep the same behavior. Explain each change you make:\n\n[paste code here]" },
+      { title: 'Extract reusable logic', text: "This code has duplicated or tightly-coupled logic. Extract reusable functions/modules while keeping the same behavior:\n\n[paste code here]" },
+      { title: 'Convert to async/await', text: "Convert this callback-based or promise-chain code to use async/await. Handle errors properly:\n\n[paste code here]" },
+      { title: 'Simplify complex function', text: "This function is too complex. Break it down into smaller, well-named functions. Keep the same inputs/outputs:\n\n[paste code here]" },
+    ]
+  },
+  {
+    cat: 'Testing',
+    prompts: [
+      { title: 'Write unit tests', text: "Write comprehensive unit tests for this function. Cover happy paths, edge cases, and error scenarios. Use [testing framework]:\n\n[paste code here]" },
+      { title: 'Write integration test', text: "Write an integration test for this feature. It should test the full flow from [start] to [end]:\n\n[paste code/API here]\n\nUse [testing framework]." },
+      { title: 'Generate test cases', text: "List all the test cases I should write for this function. Group them by: happy path, edge cases, error handling, and boundary conditions:\n\n[paste code here]" },
+      { title: 'Add test coverage', text: "This code has no tests. Analyze it, identify the most critical paths, and write tests in priority order. Use [testing framework]:\n\n[paste code here]" },
+    ]
+  },
+  {
+    cat: 'Architecture',
+    prompts: [
+      { title: 'Design a database schema', text: "Design a database schema for [describe your app/feature]. Include tables, columns, types, relationships, and indexes. Explain your design decisions." },
+      { title: 'Design an API', text: "Design a REST API for [feature/resource]. Include endpoints, methods, request/response schemas, status codes, and authentication. Follow best practices." },
+      { title: 'Compare approaches', text: "I need to decide between these approaches for [problem]:\n\nOption A: [describe]\nOption B: [describe]\n\nCompare them on: performance, maintainability, complexity, and scalability. Recommend one with reasoning." },
+      { title: 'System design', text: "Design a system for [describe use case]. Cover: high-level architecture, data flow, storage, caching strategy, and how it scales. Identify potential bottlenecks." },
+    ]
+  },
+  {
+    cat: 'DevOps',
+    prompts: [
+      { title: 'Write a Dockerfile', text: "Write a production-ready Dockerfile for this project:\n\nLanguage/framework: [e.g. Node.js, Python Flask]\nNeeds: [e.g. multi-stage build, non-root user]\n\nInclude best practices for security and image size." },
+      { title: 'CI/CD pipeline', text: "Write a GitHub Actions workflow that:\n\n1. [list steps, e.g. lint, test, build, deploy]\n\nLanguage/framework: [specify]\nDeploy target: [e.g. AWS, Vercel, Docker Hub]\n\nInclude caching and sensible triggers." },
+      { title: 'Debug CI failure', text: "My CI pipeline is failing. Here's the log output:\n\n[paste CI log]\n\nThe pipeline config:\n\n[paste config]\n\nIdentify the issue and suggest a fix." },
+      { title: 'Infrastructure as code', text: "Write [Terraform/CloudFormation/Pulumi] config for:\n\n[describe infrastructure, e.g. an S3 bucket with CloudFront, a VPC with subnets]\n\nFollow security best practices and add comments explaining each resource." },
+    ]
+  },
+  {
+    cat: 'Git & Docs',
+    prompts: [
+      { title: 'Write commit message', text: "Write a clear, conventional commit message for this diff. Use the format: type(scope): description. Be concise but descriptive:\n\n[paste diff here]" },
+      { title: 'Write README', text: "Generate a README.md for this project. Include: what it does, how to install, how to use, configuration options, and how to contribute:\n\n[paste project structure or main file here]" },
+      { title: 'Document this code', text: "Add clear, concise documentation to this code. Include function/method docstrings, parameter descriptions, return values, and usage examples:\n\n[paste code here]" },
+      { title: 'Write changelog entry', text: "Write a changelog entry for these changes. Group by: Added, Changed, Fixed, Removed. Use clear, user-facing language:\n\n[paste diff or list of changes]" },
+    ]
+  },
+];
+
+/* ── State ───────────────────────────────────────────────────── */
+let activeCat = 'All';
+let selectedCard = null;
+
+/* ── DOM refs ────────────────────────────────────────────────── */
+const catsEl       = document.getElementById('cats');
+const cardsEl      = document.getElementById('prompt-cards');
+const promptEl     = document.getElementById('prompt');
+const providersEl  = document.getElementById('providers');
+const charCountEl  = document.getElementById('charCount');
+const copyBtn      = document.getElementById('copyBtn');
+const clearBtnEl   = document.getElementById('clearBtn');
+const toastEl      = document.getElementById('toast');
+
+/* ── Render categories ──────────────────────────────────────── */
+function renderCats() {
+  const cats = ['All', ...DEV_PROMPTS.map(c => c.cat)];
+  catsEl.innerHTML = '';
+  cats.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'cat' + (activeCat === cat ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', () => {
+      activeCat = cat;
+      selectedCard = null;
+      renderCats();
+      renderCards();
+    });
+    catsEl.appendChild(btn);
+  });
+}
+
+/* ── Render prompt cards ────────────────────────────────────── */
+function renderCards() {
+  cardsEl.innerHTML = '';
+  const groups = activeCat === 'All' ? DEV_PROMPTS : DEV_PROMPTS.filter(c => c.cat === activeCat);
+
+  groups.forEach(group => {
+    if (activeCat === 'All') {
+      const catLabel = document.createElement('span');
+      catLabel.className = 'lbl';
+      catLabel.textContent = group.cat;
+      catLabel.style.marginTop = cardsEl.children.length ? '20px' : '0';
+      cardsEl.appendChild(catLabel);
+    }
+
+    group.prompts.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'prompt-card';
+      card.innerHTML = `<div class="prompt-card-title">${p.title}</div><div class="prompt-card-preview">${escHtml(p.text)}</div>`;
+      card.addEventListener('click', () => {
+        const wasSelected = selectedCard === p;
+        document.querySelectorAll('.prompt-card').forEach(c => c.classList.remove('selected'));
+
+        if (wasSelected) {
+          selectedCard = null;
+          promptEl.value = '';
+        } else {
+          selectedCard = p;
+          card.classList.add('selected');
+          promptEl.value = p.text;
+          promptEl.focus();
+        }
+        updateCount();
+      });
+      cardsEl.appendChild(card);
+    });
+  });
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+/* ── Providers ──────────────────────────────────────────────── */
+const enc = s => encodeURIComponent(s);
+const providers = [
+  { id: 'chatgpt',    label: 'ChatGPT',    cls: 'pc-chatgpt',    url: q => `https://chatgpt.com/?q=${enc(q)}` },
+  { id: 'claude',     label: 'Claude',     cls: 'pc-claude',     url: q => `https://claude.ai/new?q=${enc(q)}` },
+  { id: 'gemini',     label: 'Gemini',     cls: 'pc-gemini',     url: q => `https://gemini.google.com/app?q=${enc(q)}` },
+  { id: 'copilot',    label: 'Copilot',    cls: 'pc-copilot',    url: q => `https://copilot.microsoft.com/?q=${enc(q)}` },
+  { id: 'perplexity', label: 'Perplexity', cls: 'pc-perplexity', url: q => `https://www.perplexity.ai/search?q=${enc(q)}` },
+  { id: 'lechat',     label: 'Le Chat',    cls: 'pc-lechat',     url: q => `https://chat.mistral.ai/chat?q=${enc(q)}` },
+  { id: 'grok',       label: 'Grok',       cls: 'pc-grok',       url: q => `https://x.com/i/grok?text=${enc(q)}` },
+  { id: 'deepseek',   label: 'DeepSeek',   cls: 'pc-deepseek',   url: q => `https://chat.deepseek.com/?q=${enc(q)}` },
+];
+
+providers.forEach(p => {
+  const li = document.createElement('li');
+  const btn = document.createElement('button');
+  btn.type = 'button'; btn.className = `p-btn ${p.cls}`;
+  btn.setAttribute('aria-label', `Open in ${p.label}`);
+  btn.innerHTML = `<span class="p-dot" aria-hidden="true"></span><span class="p-name">${p.label}</span><span class="p-arrow" aria-hidden="true">&nearr;</span>`;
+  btn.addEventListener('click', () => openProvider(p));
+  li.appendChild(btn); providersEl.appendChild(li);
+});
+
+/* ── Core actions ────────────────────────────────────────────── */
+function getPrompt() { return promptEl.value.trim(); }
+
+function openProvider(p) {
+  const q = getPrompt();
+  if (!q) { showToast('Write a prompt first'); return; }
+  const w = window.open(p.url(q), '_blank', 'noopener,noreferrer');
+  if (!w) showToast('Popup blocked — copy & paste instead');
+}
+
+function updateCount() {
+  const n = promptEl.value.length;
+  charCountEl.textContent = n > 0 ? n.toLocaleString() : '';
+  charCountEl.classList.toggle('warn', n > 3000);
+}
+
+promptEl.addEventListener('input', () => {
+  updateCount();
+  if (!promptEl.value) {
+    selectedCard = null;
+    document.querySelectorAll('.prompt-card').forEach(c => c.classList.remove('selected'));
+  }
+});
+
+copyBtn.addEventListener('click', async () => {
+  const q = getPrompt();
+  if (!q) { showToast('Nothing to copy yet'); return; }
+  try {
+    await navigator.clipboard.writeText(q);
+    copyBtn.textContent = '\u2713 Copied!';
+    copyBtn.classList.add('copied');
+    setTimeout(() => {
+      copyBtn.textContent = 'Copy to clipboard';
+      copyBtn.classList.remove('copied');
+    }, 2200);
+  } catch { showToast('Copy failed — try manually'); }
+});
+
+clearBtnEl.addEventListener('click', () => {
+  promptEl.value = ''; updateCount();
+  selectedCard = null;
+  document.querySelectorAll('.prompt-card').forEach(c => c.classList.remove('selected'));
+  promptEl.focus();
+});
+
+/* ── Keyboard shortcuts ──────────────────────────────────────── */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && document.activeElement === promptEl) {
+    clearBtnEl.click(); return;
+  }
+  if ((e.metaKey || e.ctrlKey) && e.key === 'c' && document.activeElement === promptEl && !window.getSelection()?.toString()) {
+    e.preventDefault(); copyBtn.click();
+  }
+});
+
+/* ── Toast ───────────────────────────────────────────────────── */
+let toastTimer;
+function showToast(msg) {
+  toastEl.textContent = msg; toastEl.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toastEl.classList.remove('show'), 3000);
+}
+
+/* ── Init ────────────────────────────────────────────────────── */
+renderCats();
+renderCards();
+
+/* ── Service Worker ──────────────────────────────────────────── */
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').catch(() => {});
+}
+</script>
+</body>
+</html>

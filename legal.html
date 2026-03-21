@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<title>Legal Prompts — AI Prompts for Legal &amp; Compliance | Prompt Router</title>
+<meta name="description" content="24+ curated AI prompts for legal and compliance work — contracts, GDPR, privacy policies, IP, plain language, and more. Send any prompt to ChatGPT, Claude, Gemini and 5 other AIs instantly.">
+<meta name="keywords" content="legal prompts, compliance prompts, AI prompts for lawyers, contract review prompt, GDPR prompt, privacy policy prompt, legal AI tools">
+<meta name="author" content="Prompt Router">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://prompt-router.pages.dev/legal">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Prompt Router">
+<meta property="og:title" content="Legal Prompts — AI Prompts for Legal &amp; Compliance">
+<meta property="og:description" content="24+ curated prompts for contracts, compliance, policies, IP, and plain language. Send to any AI instantly.">
+<meta property="og:url" content="https://prompt-router.pages.dev/legal">
+<meta property="og:image" content="https://prompt-router.pages.dev/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Legal Prompts — AI Prompts for Legal &amp; Compliance">
+<meta name="twitter:description" content="24+ curated prompts for contracts, compliance, policies, IP and more. Send to any AI instantly.">
+<meta name="twitter:image" content="https://prompt-router.pages.dev/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Legal Prompts — AI Prompts for Legal & Compliance",
+  "description": "24+ curated AI prompts for legal and compliance work — contracts, GDPR, privacy policies, IP, plain language, and more.",
+  "url": "https://prompt-router.pages.dev/legal",
+  "isPartOf": {
+    "@type": "WebApplication",
+    "name": "Prompt Router",
+    "url": "https://prompt-router.pages.dev/"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://prompt-router.pages.dev/" },
+      { "@type": "ListItem", "position": 2, "name": "Legal Prompts", "item": "https://prompt-router.pages.dev/legal" }
+    ]
+  }
+}
+</script>
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230f0f10'/><text y='24' x='4' font-size='22' font-family='serif' fill='%23d4a847'>P</text></svg>">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f0f10" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f4f0e8" media="(prefers-color-scheme: light)">
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,200&display=swap" rel="stylesheet">
+
+<style>
+/* ── Tokens ──────────────────────────────────────────────────── */
+:root {
+  --bg:        #0f0f10;
+  --surface:   #1a1a1c;
+  --surface-2: #222225;
+  --border:    #2c2c30;
+  --border-2:  #404046;
+  --text:      #f0ece4;
+  --text-2:    #9e9a96;
+  --text-3:    #5a5856;
+  --gold:      #d4a847;
+  --gold-dim:  #9a7830;
+  --gold-glow: rgba(212,168,71,.1);
+  --focus:     #d4a847;
+
+  --chatgpt:    #10a37f;
+  --claude:     #c8845a;
+  --gemini:     #4285f4;
+  --copilot:    #7b6fcc;
+  --perplexity: #17b0a7;
+  --lechat:     #f06830;
+  --grok:       #aaaaaa;
+  --deepseek:   #4d6bfe;
+
+  --xs:   0.8125rem;
+  --sm:   0.9375rem;
+  --base: 1.0625rem;
+  --lg:   1.125rem;
+  --2xl:  2.375rem;
+
+  --r:    8px;
+  --r-lg: 12px;
+  --max:  700px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg:        #f4f0e8;
+    --surface:   #fdfaf5;
+    --surface-2: #f0ece2;
+    --border:    #e0dbd0;
+    --border-2:  #c8c2b4;
+    --text:      #1a1714;
+    --text-2:    #5a554e;
+    --text-3:    #9c968e;
+    --gold:      #7a5518;
+    --gold-dim:  #9a6c28;
+    --gold-glow: rgba(122,85,24,.07);
+    --focus:     #7a5518;
+  }
+}
+
+/* ── Reset ───────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: var(--base);
+  line-height: 1.65;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Skip link ───────────────────────────────────────────────── */
+.skip {
+  position: absolute; top: -100%; left: 16px;
+  background: var(--gold); color: var(--bg);
+  font-size: var(--sm); padding: 8px 16px;
+  border-radius: 0 0 var(--r) var(--r);
+  text-decoration: none; z-index: 999; transition: top .15s;
+}
+.skip:focus { top: 0; outline: none; }
+
+/* ── Focus ───────────────────────────────────────────────────── */
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: var(--r); }
+:focus:not(:focus-visible) { outline: none; }
+
+/* ── Page shell ──────────────────────────────────────────────── */
+.page { width: 100%; max-width: var(--max); padding: 0 28px; }
+
+/* ── Header ──────────────────────────────────────────────────── */
+header.page { padding-top: 60px; padding-bottom: 52px; }
+
+h1.logo {
+  display: flex; align-items: baseline; gap: 8px;
+  font-size: inherit; font-weight: inherit; margin-bottom: 12px;
+}
+.logo-a {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto; font-weight: 600;
+  font-size: var(--2xl); letter-spacing: -0.03em;
+  line-height: 1; color: var(--text);
+}
+.logo-b {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto; font-weight: 200; font-style: italic;
+  font-size: var(--2xl); letter-spacing: -0.02em;
+  line-height: 1; color: var(--gold);
+}
+.logo a { text-decoration: none; color: inherit; }
+.tagline {
+  font-size: var(--sm); color: var(--text-3);
+  letter-spacing: 0.01em; line-height: 1;
+}
+.tagline-disclaimer {
+  display: block;
+  font-size: var(--xs); color: var(--text-3);
+  letter-spacing: 0.01em; line-height: 1;
+  margin-top: 6px; font-style: italic;
+}
+
+/* ── Nav ─────────────────────────────────────────────────────── */
+.nav-links {
+  display: flex; gap: 16px; margin-top: 16px;
+}
+.nav-links a {
+  font-size: var(--xs); color: var(--text-3);
+  text-decoration: none; letter-spacing: 0.04em;
+  transition: color .12s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-links a.active { color: var(--gold); }
+
+/* ── Main ────────────────────────────────────────────────────── */
+main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40px; }
+
+/* ── Section labels ──────────────────────────────────────────── */
+.lbl {
+  display: block;
+  font-size: var(--xs); letter-spacing: 0.09em;
+  text-transform: uppercase; color: var(--text-3);
+  font-weight: 500; margin-bottom: 12px;
+}
+
+/* ── Category chips ──────────────────────────────────────────── */
+.cats { display: flex; flex-wrap: wrap; gap: 7px; }
+.cat {
+  padding: 7px 14px; background: none;
+  border: 1px solid var(--border); border-radius: 100px;
+  color: var(--text-2); font-family: 'DM Mono', monospace;
+  font-size: var(--xs); letter-spacing: 0.03em; line-height: 1;
+  cursor: pointer; user-select: none;
+  transition: color .12s, border-color .12s, background .12s;
+}
+.cat:hover { color: var(--gold); border-color: var(--gold-dim); background: var(--gold-glow); }
+.cat.active { color: var(--gold); border-color: var(--gold); background: var(--gold-glow); }
+
+/* ── Prompt cards ────────────────────────────────────────────── */
+.prompt-cards { display: flex; flex-direction: column; gap: 10px; }
+
+.prompt-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 16px 18px;
+  cursor: pointer;
+  transition: border-color .12s, background .12s;
+}
+.prompt-card:hover { border-color: var(--border-2); background: var(--surface-2); }
+.prompt-card.selected { border-color: var(--gold); background: var(--gold-glow); }
+
+.prompt-card-title {
+  font-size: var(--sm); font-weight: 500; color: var(--text);
+  margin-bottom: 6px; line-height: 1.3;
+}
+.prompt-card-preview {
+  font-size: var(--xs); color: var(--text-3);
+  line-height: 1.5; white-space: pre-line;
+  display: -webkit-box; -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; overflow: hidden;
+}
+.prompt-card.selected .prompt-card-preview {
+  -webkit-line-clamp: unset;
+  color: var(--text-2);
+}
+
+/* ── Textarea ────────────────────────────────────────────────── */
+.prompt-wrap { position: relative; }
+textarea {
+  display: block; width: 100%; min-height: 210px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); color: var(--text);
+  font-family: 'DM Mono', monospace; font-size: var(--base);
+  line-height: 1.75; padding: 20px 20px 50px;
+  resize: vertical; outline: none; caret-color: var(--gold);
+  transition: border-color .18s, box-shadow .18s;
+}
+textarea::placeholder { color: var(--text-3); font-style: italic; }
+textarea:hover { border-color: var(--border-2); }
+textarea:focus { border-color: var(--gold-dim); box-shadow: 0 0 0 3px var(--gold-glow); }
+
+.prompt-meta {
+  position: absolute; bottom: 15px; left: 20px; right: 20px;
+  display: flex; justify-content: space-between; align-items: center;
+  pointer-events: none;
+}
+.char-count {
+  font-size: var(--xs); color: var(--text-3);
+  font-variant-numeric: tabular-nums; transition: color .2s;
+}
+.char-count.warn { color: #c97a40; }
+
+/* ── Provider cards ──────────────────────────────────────────── */
+.providers {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.p-btn {
+  width: 100%; display: flex; flex-direction: column;
+  align-items: flex-start; gap: 10px; padding: 14px 14px 12px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); color: var(--text);
+  font-family: 'DM Mono', monospace; cursor: pointer;
+  transition: border-color .12s, background .12s, transform .12s, box-shadow .12s;
+  text-align: left; position: relative; overflow: hidden;
+}
+.p-btn:hover {
+  background: var(--surface-2); border-color: var(--border-2);
+  transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.18);
+}
+.p-btn:active { transform: translateY(0); box-shadow: none; }
+.p-dot {
+  width: 28px; height: 4px; border-radius: 2px;
+  background: var(--pc, var(--border)); opacity: .65;
+  transition: opacity .12s, width .12s;
+}
+.p-btn:hover .p-dot { opacity: 1; width: 36px; }
+.p-name { font-size: var(--sm); letter-spacing: 0.02em; line-height: 1; }
+.p-arrow {
+  position: absolute; top: 12px; right: 12px;
+  font-size: 11px; color: var(--text-3); line-height: 1;
+  transition: transform .12s, color .12s;
+}
+.p-btn:hover .p-arrow { transform: translate(2px,-2px); color: var(--text-2); }
+
+.pc-chatgpt    { --pc: var(--chatgpt); }
+.pc-claude     { --pc: var(--claude); }
+.pc-gemini     { --pc: var(--gemini); }
+.pc-copilot    { --pc: var(--copilot); }
+.pc-perplexity { --pc: var(--perplexity); }
+.pc-lechat     { --pc: var(--lechat); }
+.pc-grok       { --pc: var(--grok); }
+.pc-deepseek   { --pc: var(--deepseek); }
+
+/* ── Actions row ─────────────────────────────────────────────── */
+.actions { display: flex; gap: 8px; }
+
+.btn {
+  padding: 14px 20px; background: none;
+  border: 1px solid var(--border); border-radius: var(--r);
+  color: var(--text-2); font-family: 'DM Mono', monospace;
+  font-size: var(--sm); letter-spacing: 0.04em;
+  cursor: pointer; line-height: 1; white-space: nowrap;
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  transition: border-color .12s, color .12s;
+}
+.btn:hover { border-color: var(--border-2); color: var(--text); }
+.btn.flex-1 { flex: 1; }
+.btn.copied { border-color: var(--gold-dim); color: var(--gold); }
+
+/* ── Toast ───────────────────────────────────────────────────── */
+.toast {
+  position: fixed; bottom: 28px; left: 50%;
+  transform: translateX(-50%) translateY(64px);
+  background: var(--surface-2); border: 1px solid var(--border-2);
+  border-radius: var(--r); padding: 11px 20px;
+  font-size: var(--sm); letter-spacing: 0.02em; color: var(--text);
+  box-shadow: 0 8px 32px rgba(0,0,0,.3);
+  transition: transform .26s cubic-bezier(.34,1.56,.64,1);
+  z-index: 200; white-space: nowrap; pointer-events: none;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ── Footer ──────────────────────────────────────────────────── */
+footer {
+  width: 100%; border-top: 1px solid var(--border);
+  display: flex; justify-content: center; margin-top: 8px;
+}
+.footer-inner {
+  width: 100%; max-width: var(--max);
+  padding: 32px 28px 48px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.footer-links {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  font-size: var(--xs); margin-bottom: 4px;
+}
+.footer-links a {
+  color: var(--text-2); text-decoration: none;
+  letter-spacing: 0.02em; transition: color .12s;
+}
+.footer-links a:hover { color: var(--gold); }
+.footer-copy { font-size: var(--xs); color: var(--text-3); }
+.footer-doodle {
+  display: block; margin: 16px auto 0; width: 180px; height: auto;
+  opacity: .18; transition: opacity .3s;
+}
+.footer-doodle:hover { opacity: .35; }
+
+/* ── Reduced motion ──────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; }
+  .toast { transition: none !important; }
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 580px) {
+  .providers { grid-template-columns: repeat(2, 1fr); }
+  .logo-a, .logo-b { font-size: 2rem; }
+  header.page { padding-top: 44px; padding-bottom: 36px; }
+  main.page { gap: 36px; }
+  .actions { flex-wrap: wrap; }
+  .actions .btn.flex-1 { flex: 0 0 100%; }
+}
+@media (max-width: 360px) {
+  .page, .footer-inner { padding-left: 16px; padding-right: 16px; }
+}
+</style>
+</head>
+<body>
+
+<a href="#prompt" class="skip">Skip to prompt</a>
+
+<!-- ── Header ── -->
+<header class="page">
+  <h1 class="logo">
+    <a href="/"><span class="logo-a">Prompt</span><span class="logo-b">Router</span></a>
+  </h1>
+  <p class="tagline">AI prompts for legal and compliance work</p>
+  <span class="tagline-disclaimer">For informational purposes only &mdash; not legal advice.</span>
+  <nav class="nav-links">
+    <a href="/">Home</a>
+    <a href="/dev">Dev Prompts</a>
+    <a href="/legal" class="active">Legal Prompts</a>
+    <a href="/blog">Blog</a>
+  </nav>
+</header>
+
+<!-- ── Main ── -->
+<main class="page" id="main-content">
+
+  <!-- 1. Categories -->
+  <section aria-labelledby="lbl-cats">
+    <span class="lbl" id="lbl-cats">Categories</span>
+    <div class="cats" id="cats" role="group" aria-labelledby="lbl-cats"></div>
+  </section>
+
+  <!-- 2. Prompt cards -->
+  <section aria-labelledby="lbl-prompts">
+    <span class="lbl" id="lbl-prompts">Prompts</span>
+    <div class="prompt-cards" id="prompt-cards"></div>
+  </section>
+
+  <!-- 3. Prompt textarea -->
+  <section aria-labelledby="lbl-prompt">
+    <label class="lbl" id="lbl-prompt" for="prompt">Your prompt</label>
+    <div class="prompt-wrap">
+      <textarea
+        id="prompt"
+        name="prompt"
+        placeholder="Click a prompt above or write your own..."
+        spellcheck="false"
+        autocomplete="off"
+        aria-describedby="charCount"
+      ></textarea>
+      <div class="prompt-meta" aria-hidden="true">
+        <span class="char-count" id="charCount"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Providers -->
+  <section aria-labelledby="lbl-providers">
+    <span class="lbl" id="lbl-providers">Open in</span>
+    <ul class="providers" id="providers" aria-labelledby="lbl-providers"></ul>
+  </section>
+
+  <!-- 5. Actions -->
+  <div class="actions">
+    <button class="btn flex-1" id="copyBtn" type="button" aria-label="Copy prompt to clipboard">
+      Copy to clipboard
+    </button>
+    <button class="btn" id="clearBtn" type="button" aria-label="Clear the prompt">
+      Clear
+    </button>
+  </div>
+
+</main>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/dev">Dev Prompts</a>
+      <a href="/legal">Legal Prompts</a>
+      <a href="/blog">Blog</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Prompt Router &mdash; Free.</p>
+    <img src="/clumsy.svg" alt="" class="footer-doodle" aria-hidden="true" loading="lazy" width="180" height="135">
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+<script>
+'use strict';
+
+/* ── Legal prompt library ───────────────────────────────────── */
+const DEV_PROMPTS = [
+  {
+    cat: 'Contracts',
+    prompts: [
+      { title: 'Review contract for red flags', text: "Review this contract and identify any red flags, unusual clauses, or terms that are heavily one-sided. Flag anything that could create significant risk or liability:\n\n[paste contract text here]\n\nFor each issue found, explain the risk and suggest how it could be improved." },
+      { title: 'Summarize contract key terms', text: "Summarize the key terms of this contract in plain language. Cover: parties involved, duration, payment terms, obligations of each party, termination conditions, and any notable restrictions:\n\n[paste contract text here]" },
+      { title: 'Draft NDA outline', text: "Draft an outline for a non-disclosure agreement between:\n\nDisclosing party: [name/type, e.g. a SaaS startup]\nReceiving party: [name/type, e.g. a potential enterprise customer]\nPurpose: [e.g. evaluating a software integration]\nDuration: [e.g. 2 years]\n\nInclude standard NDA sections: definition of confidential information, obligations, exclusions, term, and remedies." },
+      { title: 'Compare two contract versions', text: "Compare these two versions of a contract and summarize the key differences. Highlight any changes that meaningfully affect rights, obligations, liability, or payment:\n\nVersion 1:\n[paste here]\n\nVersion 2:\n[paste here]" },
+    ]
+  },
+  {
+    cat: 'Compliance',
+    prompts: [
+      { title: 'GDPR compliance checklist', text: "Create a GDPR compliance checklist for a [type of organization, e.g. B2B SaaS company] that collects [types of data, e.g. email addresses and usage analytics] from users in the EU.\n\nCover: lawful basis for processing, consent, data subject rights, data retention, breach notification, and DPA requirements." },
+      { title: 'Data processing assessment', text: "Help me conduct a data processing assessment for the following activity:\n\nActivity: [describe, e.g. sending marketing emails to EU residents]\nData collected: [list types]\nThird-party processors involved: [list, e.g. Mailchimp, Stripe]\n\nIdentify compliance obligations, risks, and recommended safeguards." },
+      { title: 'Regulatory change impact analysis', text: "Analyze the impact of this regulatory change on our organization:\n\nRegulation: [name and jurisdiction, e.g. EU AI Act, California SB 1047]\nOur business: [brief description]\nExisting practices: [describe relevant current practices]\n\nWhat do we need to change? Prioritize by urgency." },
+      { title: 'Audit preparation guide', text: "Help us prepare for an upcoming [type of audit, e.g. SOC 2 Type II, ISO 27001, GDPR audit].\n\nOur organization: [brief description]\nAudit scope: [describe]\nTimeline: [e.g. audit is in 3 months]\n\nProvide a prioritized checklist of what to prepare, common findings to address proactively, and documentation we should have ready." },
+    ]
+  },
+  {
+    cat: 'Policies',
+    prompts: [
+      { title: 'Draft privacy policy outline', text: "Draft an outline for a privacy policy for:\n\nProduct/service: [describe]\nData collected: [list types, e.g. name, email, payment info, usage data]\nThird-party services used: [e.g. Stripe, Google Analytics, AWS]\nUser locations: [e.g. US and EU]\n\nInclude all sections required by GDPR and CCPA. Write in plain, user-friendly language." },
+      { title: 'Write acceptable use policy', text: "Write an acceptable use policy (AUP) for [product/platform name], a [describe the product, e.g. cloud-based collaboration tool for businesses].\n\nInclude: permitted uses, prohibited activities, enforcement and consequences, and how to report violations.\n\nTone should be clear and professional, not overly legalistic." },
+      { title: 'Employee handbook section', text: "Write a section for our employee handbook on [topic, e.g. remote work policy / data security / social media use].\n\nCompany type: [describe]\nKey rules to cover: [list]\nTone: [e.g. friendly but clear]\n\nMake it easy to understand and include what is expected, what is not allowed, and consequences for non-compliance." },
+      { title: 'Code of conduct draft', text: "Draft a code of conduct for [organization type, e.g. an open source project / a tech startup].\n\nKey values to reflect: [list, e.g. inclusivity, respect, transparency]\nScope: [e.g. applies to contributors, employees, events]\n\nInclude: expected behaviors, unacceptable behaviors, reporting process, and enforcement." },
+    ]
+  },
+  {
+    cat: 'Intellectual Property',
+    prompts: [
+      { title: 'Trademark search preparation', text: "Help me prepare for a trademark search for the following:\n\nProposed mark: [name or phrase]\nGoods/services: [describe what you sell or do]\nJurisdictions: [e.g. US, EU, UK]\n\nExplain what to look for in a search, what makes a mark registrable, and what conflicts to watch out for." },
+      { title: 'Patent prior art summary', text: "Help me summarize prior art relevant to this invention concept for a patent application:\n\nInvention description: [describe in plain language]\nTechnology field: [e.g. machine learning, biotech, software]\n\nDescribe what prior art means, what categories to search, and help me articulate what may be novel about this invention." },
+      { title: 'Open source license comparison', text: "Compare these open source licenses for our use case:\n\nLicenses to compare: [e.g. MIT, Apache 2.0, GPL v3, AGPL]\nOur use case: [e.g. we are building a commercial SaaS product that includes open source libraries]\n\nFor each license, explain: what we can do, what we must do, and what we cannot do. Recommend the most suitable license for our project." },
+      { title: 'IP assignment checklist', text: "Create an IP assignment checklist for when we hire [freelancers / employees / contractors] to build [describe work, e.g. software features].\n\nWhat clauses should be in the contract? What do we need to verify? What common mistakes should we avoid to ensure IP ownership is properly transferred to our company?" },
+    ]
+  },
+  {
+    cat: 'Business',
+    prompts: [
+      { title: 'Terms of service outline', text: "Draft an outline for terms of service for:\n\nProduct: [describe]\nBusiness model: [e.g. subscription SaaS, marketplace, e-commerce]\nUser base: [e.g. consumers, businesses]\n\nInclude: account terms, payment and refunds, prohibited uses, limitation of liability, dispute resolution, and governing law. Flag any sections that require a lawyer's review." },
+      { title: 'Liability risk assessment', text: "Help me assess the liability risks for this business activity:\n\nActivity: [describe, e.g. offering AI-generated financial summaries to retail investors]\nBusiness type: [describe]\nJurisdictions: [where you operate]\n\nIdentify the main categories of liability risk, their likelihood and potential impact, and suggest mitigation strategies." },
+      { title: 'Partnership agreement key terms', text: "Outline the key terms that should be covered in a partnership agreement between:\n\nParty A: [describe]\nParty B: [describe]\nNature of partnership: [e.g. revenue share on a co-developed product]\n\nCover: roles and responsibilities, revenue/profit split, IP ownership, decision-making, exit provisions, and dispute resolution." },
+      { title: 'Vendor contract review checklist', text: "Create a checklist for reviewing vendor contracts before signing. Our company is a [describe, e.g. Series A startup in fintech].\n\nWe particularly care about: [list concerns, e.g. data handling, SLAs, liability caps, termination rights]\n\nWhat should we always check, what are common unfavorable terms vendors include, and what should we push back on?" },
+    ]
+  },
+  {
+    cat: 'Plain Language',
+    prompts: [
+      { title: 'Simplify legal language', text: "Rewrite this legal text in plain, clear language that a non-lawyer can understand. Keep all the meaning intact but remove jargon, passive constructions, and unnecessary complexity:\n\n[paste legal text here]\n\nTarget audience: [e.g. general consumers / small business owners]" },
+      { title: 'Write user-facing legal notice', text: "Write a user-facing notice for the following legal requirement:\n\nRequirement: [e.g. GDPR consent for marketing emails / cookie notice / data retention policy update]\nContext: [where this notice will appear, e.g. on sign-up form / in app banner]\nTone: [e.g. friendly, concise, trustworthy]\n\nMake it clear, honest, and as short as possible while covering the essentials." },
+      { title: 'FAQ from legal document', text: "Turn this legal document into a plain-language FAQ that users will actually read and understand. Extract the most important points and the questions users are most likely to have:\n\n[paste document here]\n\nFormat as Q&A. Aim for 8-12 questions. Keep each answer to 2-3 sentences." },
+      { title: 'Translate policy to employee guide', text: "Take this formal policy and rewrite it as a friendly, practical guide for employees. The goal is for staff to actually understand and follow it — not just sign off on it.\n\nPolicy:\n[paste here]\n\nInclude: what it means day-to-day, concrete examples of dos and don'ts, and what to do if unsure." },
+    ]
+  },
+];
+
+/* ── State ───────────────────────────────────────────────────── */
+let activeCat = 'All';
+let selectedCard = null;
+
+/* ── DOM refs ────────────────────────────────────────────────── */
+const catsEl       = document.getElementById('cats');
+const cardsEl      = document.getElementById('prompt-cards');
+const promptEl     = document.getElementById('prompt');
+const providersEl  = document.getElementById('providers');
+const charCountEl  = document.getElementById('charCount');
+const copyBtn      = document.getElementById('copyBtn');
+const clearBtnEl   = document.getElementById('clearBtn');
+const toastEl      = document.getElementById('toast');
+
+/* ── Render categories ──────────────────────────────────────── */
+function renderCats() {
+  const cats = ['All', ...DEV_PROMPTS.map(c => c.cat)];
+  catsEl.innerHTML = '';
+  cats.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'cat' + (activeCat === cat ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', () => {
+      activeCat = cat;
+      selectedCard = null;
+      renderCats();
+      renderCards();
+    });
+    catsEl.appendChild(btn);
+  });
+}
+
+/* ── Render prompt cards ────────────────────────────────────── */
+function renderCards() {
+  cardsEl.innerHTML = '';
+  const groups = activeCat === 'All' ? DEV_PROMPTS : DEV_PROMPTS.filter(c => c.cat === activeCat);
+
+  groups.forEach(group => {
+    if (activeCat === 'All') {
+      const catLabel = document.createElement('span');
+      catLabel.className = 'lbl';
+      catLabel.textContent = group.cat;
+      catLabel.style.marginTop = cardsEl.children.length ? '20px' : '0';
+      cardsEl.appendChild(catLabel);
+    }
+
+    group.prompts.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'prompt-card';
+      card.innerHTML = `<div class="prompt-card-title">${p.title}</div><div class="prompt-card-preview">${escHtml(p.text)}</div>`;
+      card.addEventListener('click', () => {
+        const wasSelected = selectedCard === p;
+        document.querySelectorAll('.prompt-card').forEach(c => c.classList.remove('selected'));
+
+        if (wasSelected) {
+          selectedCard = null;
+          promptEl.value = '';
+        } else {
+          selectedCard = p;
+          card.classList.add('selected');
+          promptEl.value = p.text;
+          promptEl.focus();
+        }
+        updateCount();
+      });
+      cardsEl.appendChild(card);
+    });
+  });
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+/* ── Providers ──────────────────────────────────────────────── */
+const enc = s => encodeURIComponent(s);
+const providers = [
+  { id: 'chatgpt',    label: 'ChatGPT',    cls: 'pc-chatgpt',    url: q => `https://chatgpt.com/?q=${enc(q)}` },
+  { id: 'claude',     label: 'Claude',     cls: 'pc-claude',     url: q => `https://claude.ai/new?q=${enc(q)}` },
+  { id: 'gemini',     label: 'Gemini',     cls: 'pc-gemini',     url: q => `https://gemini.google.com/app?q=${enc(q)}` },
+  { id: 'copilot',    label: 'Copilot',    cls: 'pc-copilot',    url: q => `https://copilot.microsoft.com/?q=${enc(q)}` },
+  { id: 'perplexity', label: 'Perplexity', cls: 'pc-perplexity', url: q => `https://www.perplexity.ai/search?q=${enc(q)}` },
+  { id: 'lechat',     label: 'Le Chat',    cls: 'pc-lechat',     url: q => `https://chat.mistral.ai/chat?q=${enc(q)}` },
+  { id: 'grok',       label: 'Grok',       cls: 'pc-grok',       url: q => `https://x.com/i/grok?text=${enc(q)}` },
+  { id: 'deepseek',   label: 'DeepSeek',   cls: 'pc-deepseek',   url: q => `https://chat.deepseek.com/?q=${enc(q)}` },
+];
+
+providers.forEach(p => {
+  const li = document.createElement('li');
+  const btn = document.createElement('button');
+  btn.type = 'button'; btn.className = `p-btn ${p.cls}`;
+  btn.setAttribute('aria-label', `Open in ${p.label}`);
+  btn.innerHTML = `<span class="p-dot" aria-hidden="true"></span><span class="p-name">${p.label}</span><span class="p-arrow" aria-hidden="true">&nearr;</span>`;
+  btn.addEventListener('click', () => openProvider(p));
+  li.appendChild(btn); providersEl.appendChild(li);
+});
+
+/* ── Core actions ────────────────────────────────────────────── */
+function getPrompt() { return promptEl.value.trim(); }
+
+function openProvider(p) {
+  const q = getPrompt();
+  if (!q) { showToast('Write a prompt first'); return; }
+  const w = window.open(p.url(q), '_blank', 'noopener,noreferrer');
+  if (!w) showToast('Popup blocked — copy & paste instead');
+}
+
+function updateCount() {
+  const n = promptEl.value.length;
+  charCountEl.textContent = n > 0 ? n.toLocaleString() : '';
+  charCountEl.classList.toggle('warn', n > 3000);
+}
+
+promptEl.addEventListener('input', () => {
+  updateCount();
+  if (!promptEl.value) {
+    selectedCard = null;
+    document.querySelectorAll('.prompt-card').forEach(c => c.classList.remove('selected'));
+  }
+});
+
+copyBtn.addEventListener('click', async () => {
+  const q = getPrompt();
+  if (!q) { showToast('Nothing to copy yet'); return; }
+  try {
+    await navigator.clipboard.writeText(q);
+    copyBtn.textContent = '\u2713 Copied!';
+    copyBtn.classList.add('copied');
+    setTimeout(() => {
+      copyBtn.textContent = 'Copy to clipboard';
+      copyBtn.classList.remove('copied');
+    }, 2200);
+  } catch { showToast('Copy failed — try manually'); }
+});
+
+clearBtnEl.addEventListener('click', () => {
+  promptEl.value = ''; updateCount();
+  selectedCard = null;
+  document.querySelectorAll('.prompt-card').forEach(c => c.classList.remove('selected'));
+  promptEl.focus();
+});
+
+/* ── Keyboard shortcuts ──────────────────────────────────────── */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && document.activeElement === promptEl) {
+    clearBtnEl.click(); return;
+  }
+  if ((e.metaKey || e.ctrlKey) && e.key === 'c' && document.activeElement === promptEl && !window.getSelection()?.toString()) {
+    e.preventDefault(); copyBtn.click();
+  }
+});
+
+/* ── Toast ───────────────────────────────────────────────────── */
+let toastTimer;
+function showToast(msg) {
+  toastEl.textContent = msg; toastEl.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toastEl.classList.remove('show'), 3000);
+}
+
+/* ── Init ────────────────────────────────────────────────────── */
+renderCats();
+renderCards();
+
+/* ── Service Worker ──────────────────────────────────────────── */
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').catch(() => {});
+}
+</script>
+</body>
+</html>

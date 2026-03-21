@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<title>Startup Prompts — AI Prompts for Founders &amp; Entrepreneurs | Prompt Router</title>
+<meta name="description" content="24+ curated AI prompts for startup founders and entrepreneurs. Ideation, pitching, fundraising, product, growth, operations, legal and finance. Send any prompt to ChatGPT, Claude, Gemini and 5 other AIs instantly.">
+<meta name="keywords" content="startup prompts, founder prompts, AI prompts for entrepreneurs, pitch deck prompt, fundraising prompt, go-to-market prompt, startup AI tools">
+<meta name="author" content="Prompt Router">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://prompt-router.pages.dev/startup">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Prompt Router">
+<meta property="og:title" content="Startup Prompts — AI Prompts for Founders &amp; Entrepreneurs">
+<meta property="og:description" content="24+ curated prompts for ideation, pitching, fundraising, product, growth, operations, and more. Send to any AI instantly.">
+<meta property="og:url" content="https://prompt-router.pages.dev/startup">
+<meta property="og:image" content="https://prompt-router.pages.dev/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Startup Prompts — AI Prompts for Founders &amp; Entrepreneurs">
+<meta name="twitter:description" content="24+ curated prompts for pitching, fundraising, growth, product and more. Send to any AI instantly.">
+<meta name="twitter:image" content="https://prompt-router.pages.dev/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Startup Prompts — AI Prompts for Founders & Entrepreneurs",
+  "description": "24+ curated AI prompts for startup founders and entrepreneurs covering ideation, pitching, fundraising, product, growth, operations, legal and finance.",
+  "url": "https://prompt-router.pages.dev/startup",
+  "isPartOf": {
+    "@type": "WebApplication",
+    "name": "Prompt Router",
+    "url": "https://prompt-router.pages.dev/"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://prompt-router.pages.dev/" },
+      { "@type": "ListItem", "position": 2, "name": "Startup Prompts", "item": "https://prompt-router.pages.dev/startup" }
+    ]
+  }
+}
+</script>
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230f0f10'/><text y='24' x='4' font-size='22' font-family='serif' fill='%23d4a847'>P</text></svg>">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f0f10" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f4f0e8" media="(prefers-color-scheme: light)">
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,200&display=swap" rel="stylesheet">
+
+<style>
+/* ── Tokens ──────────────────────────────────────────────────── */
+:root {
+  --bg:        #0f0f10;
+  --surface:   #1a1a1c;
+  --surface-2: #222225;
+  --border:    #2c2c30;
+  --border-2:  #404046;
+  --text:      #f0ece4;
+  --text-2:    #9e9a96;
+  --text-3:    #5a5856;
+  --gold:      #d4a847;
+  --gold-dim:  #9a7830;
+  --gold-glow: rgba(212,168,71,.1);
+  --focus:     #d4a847;
+
+  --chatgpt:    #10a37f;
+  --claude:     #c8845a;
+  --gemini:     #4285f4;
+  --copilot:    #7b6fcc;
+  --perplexity: #17b0a7;
+  --lechat:     #f06830;
+  --grok:       #aaaaaa;
+  --deepseek:   #4d6bfe;
+
+  --xs:   0.8125rem;
+  --sm:   0.9375rem;
+  --base: 1.0625rem;
+  --lg:   1.125rem;
+  --2xl:  2.375rem;
+
+  --r:    8px;
+  --r-lg: 12px;
+  --max:  700px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg:        #f4f0e8;
+    --surface:   #fdfaf5;
+    --surface-2: #f0ece2;
+    --border:    #e0dbd0;
+    --border-2:  #c8c2b4;
+    --text:      #1a1714;
+    --text-2:    #5a554e;
+    --text-3:    #9c968e;
+    --gold:      #7a5518;
+    --gold-dim:  #9a6c28;
+    --gold-glow: rgba(122,85,24,.07);
+    --focus:     #7a5518;
+  }
+}
+
+/* ── Reset ───────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: var(--base);
+  line-height: 1.65;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Skip link ───────────────────────────────────────────────── */
+.skip {
+  position: absolute; top: -100%; left: 16px;
+  background: var(--gold); color: var(--bg);
+  font-size: var(--sm); padding: 8px 16px;
+  border-radius: 0 0 var(--r) var(--r);
+  text-decoration: none; z-index: 999; transition: top .15s;
+}
+.skip:focus { top: 0; outline: none; }
+
+/* ── Focus ───────────────────────────────────────────────────── */
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: var(--r); }
+:focus:not(:focus-visible) { outline: none; }
+
+/* ── Page shell ──────────────────────────────────────────────── */
+.page { width: 100%; max-width: var(--max); padding: 0 28px; }
+
+/* ── Header ──────────────────────────────────────────────────── */
+header.page { padding-top: 60px; padding-bottom: 52px; }
+
+h1.logo {
+  display: flex; align-items: baseline; gap: 8px;
+  font-size: inherit; font-weight: inherit; margin-bottom: 12px;
+}
+.logo-a {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto; font-weight: 600;
+  font-size: var(--2xl); letter-spacing: -0.03em;
+  line-height: 1; color: var(--text);
+}
+.logo-b {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto; font-weight: 200; font-style: italic;
+  font-size: var(--2xl); letter-spacing: -0.02em;
+  line-height: 1; color: var(--gold);
+}
+.logo a { text-decoration: none; color: inherit; }
+.tagline {
+  font-size: var(--sm); color: var(--text-3);
+  letter-spacing: 0.01em; line-height: 1;
+}
+
+/* ── Nav ─────────────────────────────────────────────────────── */
+.nav-links {
+  display: flex; gap: 16px; margin-top: 16px;
+}
+.nav-links a {
+  font-size: var(--xs); color: var(--text-3);
+  text-decoration: none; letter-spacing: 0.04em;
+  transition: color .12s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-links a.active { color: var(--gold); }
+
+/* ── Main ────────────────────────────────────────────────────── */
+main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40px; }
+
+/* ── Section labels ──────────────────────────────────────────── */
+.lbl {
+  display: block;
+  font-size: var(--xs); letter-spacing: 0.09em;
+  text-transform: uppercase; color: var(--text-3);
+  font-weight: 500; margin-bottom: 12px;
+}
+
+/* ── Category chips ──────────────────────────────────────────── */
+.cats { display: flex; flex-wrap: wrap; gap: 7px; }
+.cat {
+  padding: 7px 14px; background: none;
+  border: 1px solid var(--border); border-radius: 100px;
+  color: var(--text-2); font-family: 'DM Mono', monospace;
+  font-size: var(--xs); letter-spacing: 0.03em; line-height: 1;
+  cursor: pointer; user-select: none;
+  transition: color .12s, border-color .12s, background .12s;
+}
+.cat:hover { color: var(--gold); border-color: var(--gold-dim); background: var(--gold-glow); }
+.cat.active { color: var(--gold); border-color: var(--gold); background: var(--gold-glow); }
+
+/* ── Prompt cards ────────────────────────────────────────────── */
+.prompt-cards { display: flex; flex-direction: column; gap: 10px; }
+
+.prompt-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 16px 18px;
+  cursor: pointer;
+  transition: border-color .12s, background .12s;
+}
+.prompt-card:hover { border-color: var(--border-2); background: var(--surface-2); }
+.prompt-card.selected { border-color: var(--gold); background: var(--gold-glow); }
+
+.prompt-card-title {
+  font-size: var(--sm); font-weight: 500; color: var(--text);
+  margin-bottom: 6px; line-height: 1.3;
+}
+.prompt-card-preview {
+  font-size: var(--xs); color: var(--text-3);
+  line-height: 1.5; white-space: pre-line;
+  display: -webkit-box; -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; overflow: hidden;
+}
+.prompt-card.selected .prompt-card-preview {
+  -webkit-line-clamp: unset;
+  color: var(--text-2);
+}
+
+/* ── Textarea ────────────────────────────────────────────────── */
+.prompt-wrap { position: relative; }
+textarea {
+  display: block; width: 100%; min-height: 210px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); color: var(--text);
+  font-family: 'DM Mono', monospace; font-size: var(--base);
+  line-height: 1.75; padding: 20px 20px 50px;
+  resize: vertical; outline: none; caret-color: var(--gold);
+  transition: border-color .18s, box-shadow .18s;
+}
+textarea::placeholder { color: var(--text-3); font-style: italic; }
+textarea:hover { border-color: var(--border-2); }
+textarea:focus { border-color: var(--gold-dim); box-shadow: 0 0 0 3px var(--gold-glow); }
+
+.prompt-meta {
+  position: absolute; bottom: 15px; left: 20px; right: 20px;
+  display: flex; justify-content: space-between; align-items: center;
+  pointer-events: none;
+}
+.char-count {
+  font-size: var(--xs); color: var(--text-3);
+  font-variant-numeric: tabular-nums; transition: color .2s;
+}
+.char-count.warn { color: #c97a40; }
+
+/* ── Provider cards ──────────────────────────────────────────── */
+.providers {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.p-btn {
+  width: 100%; display: flex; flex-direction: column;
+  align-items: flex-start; gap: 10px; padding: 14px 14px 12px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); color: var(--text);
+  font-family: 'DM Mono', monospace; cursor: pointer;
+  transition: border-color .12s, background .12s, transform .12s, box-shadow .12s;
+  text-align: left; position: relative; overflow: hidden;
+}
+.p-btn:hover {
+  background: var(--surface-2); border-color: var(--border-2);
+  transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.18);
+}
+.p-btn:active { transform: translateY(0); box-shadow: none; }
+.p-dot {
+  width: 28px; height: 4px; border-radius: 2px;
+  background: var(--pc, var(--border)); opacity: .65;
+  transition: opacity .12s, width .12s;
+}
+.p-btn:hover .p-dot { opacity: 1; width: 36px; }
+.p-name { font-size: var(--sm); letter-spacing: 0.02em; line-height: 1; }
+.p-arrow {
+  position: absolute; top: 12px; right: 12px;
+  font-size: 11px; color: var(--text-3); line-height: 1;
+  transition: transform .12s, color .12s;
+}
+.p-btn:hover .p-arrow { transform: translate(2px,-2px); color: var(--text-2); }
+
+.pc-chatgpt    { --pc: var(--chatgpt); }
+.pc-claude     { --pc: var(--claude); }
+.pc-gemini     { --pc: var(--gemini); }
+.pc-copilot    { --pc: var(--copilot); }
+.pc-perplexity { --pc: var(--perplexity); }
+.pc-lechat     { --pc: var(--lechat); }
+.pc-grok       { --pc: var(--grok); }
+.pc-deepseek   { --pc: var(--deepseek); }
+
+/* ── Actions row ─────────────────────────────────────────────── */
+.actions { display: flex; gap: 8px; }
+
+.btn {
+  padding: 14px 20px; background: none;
+  border: 1px solid var(--border); border-radius: var(--r);
+  color: var(--text-2); font-family: 'DM Mono', monospace;
+  font-size: var(--sm); letter-spacing: 0.04em;
+  cursor: pointer; line-height: 1; white-space: nowrap;
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  transition: border-color .12s, color .12s;
+}
+.btn:hover { border-color: var(--border-2); color: var(--text); }
+.btn.flex-1 { flex: 1; }
+.btn.copied { border-color: var(--gold-dim); color: var(--gold); }
+
+/* ── Toast ───────────────────────────────────────────────────── */
+.toast {
+  position: fixed; bottom: 28px; left: 50%;
+  transform: translateX(-50%) translateY(64px);
+  background: var(--surface-2); border: 1px solid var(--border-2);
+  border-radius: var(--r); padding: 11px 20px;
+  font-size: var(--sm); letter-spacing: 0.02em; color: var(--text);
+  box-shadow: 0 8px 32px rgba(0,0,0,.3);
+  transition: transform .26s cubic-bezier(.34,1.56,.64,1);
+  z-index: 200; white-space: nowrap; pointer-events: none;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ── Footer ──────────────────────────────────────────────────── */
+footer {
+  width: 100%; border-top: 1px solid var(--border);
+  display: flex; justify-content: center; margin-top: 8px;
+}
+.footer-inner {
+  width: 100%; max-width: var(--max);
+  padding: 32px 28px 48px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.footer-links {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  font-size: var(--xs); margin-bottom: 4px;
+}
+.footer-links a {
+  color: var(--text-2); text-decoration: none;
+  letter-spacing: 0.02em; transition: color .12s;
+}
+.footer-links a:hover { color: var(--gold); }
+.footer-copy { font-size: var(--xs); color: var(--text-3); }
+.footer-doodle {
+  display: block; margin: 16px auto 0; width: 180px; height: auto;
+  opacity: .18; transition: opacity .3s;
+}
+.footer-doodle:hover { opacity: .35; }
+
+/* ── Reduced motion ──────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; }
+  .toast { transition: none !important; }
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 580px) {
+  .providers { grid-template-columns: repeat(2, 1fr); }
+  .logo-a, .logo-b { font-size: 2rem; }
+  header.page { padding-top: 44px; padding-bottom: 36px; }
+  main.page { gap: 36px; }
+  .actions { flex-wrap: wrap; }
+  .actions .btn.flex-1 { flex: 0 0 100%; }
+}
+@media (max-width: 360px) {
+  .page, .footer-inner { padding-left: 16px; padding-right: 16px; }
+}
+</style>
+</head>
+<body>
+
+<a href="#prompt" class="skip">Skip to prompt</a>
+
+<!-- ── Header ── -->
+<header class="page">
+  <h1 class="logo">
+    <a href="/"><span class="logo-a">Prompt</span><span class="logo-b">Router</span></a>
+  </h1>
+  <p class="tagline">AI prompts for founders and entrepreneurs</p>
+  <nav class="nav-links">
+    <a href="/">Home</a>
+    <a href="/startup" class="active">Startup Prompts</a>
+    <a href="/blog">Blog</a>
+  </nav>
+</header>
+
+<!-- ── Main ── -->
+<main class="page" id="main-content">
+
+  <!-- 1. Categories -->
+  <section aria-labelledby="lbl-cats">
+    <span class="lbl" id="lbl-cats">Categories</span>
+    <div class="cats" id="cats" role="group" aria-labelledby="lbl-cats"></div>
+  </section>
+
+  <!-- 2. Prompt cards -->
+  <section aria-labelledby="lbl-prompts">
+    <span class="lbl" id="lbl-prompts">Prompts</span>
+    <div class="prompt-cards" id="prompt-cards"></div>
+  </section>
+
+  <!-- 3. Prompt textarea -->
+  <section aria-labelledby="lbl-prompt">
+    <label class="lbl" id="lbl-prompt" for="prompt">Your prompt</label>
+    <div class="prompt-wrap">
+      <textarea
+        id="prompt"
+        name="prompt"
+        placeholder="Click a prompt above or write your own..."
+        spellcheck="false"
+        autocomplete="off"
+        aria-describedby="charCount"
+      ></textarea>
+      <div class="prompt-meta" aria-hidden="true">
+        <span class="char-count" id="charCount"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Providers -->
+  <section aria-labelledby="lbl-providers">
+    <span class="lbl" id="lbl-providers">Open in</span>
+    <ul class="providers" id="providers" aria-labelledby="lbl-providers"></ul>
+  </section>
+
+  <!-- 5. Actions -->
+  <div class="actions">
+    <button class="btn flex-1" id="copyBtn" type="button" aria-label="Copy prompt to clipboard">
+      Copy to clipboard
+    </button>
+    <button class="btn" id="clearBtn" type="button" aria-label="Clear the prompt">
+      Clear
+    </button>
+  </div>
+
+</main>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/startup">Startup Prompts</a>
+      <a href="/blog">Blog</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Prompt Router &mdash; Free.</p>
+    <img src="/clumsy.svg" alt="" class="footer-doodle" aria-hidden="true" loading="lazy" width="180" height="135">
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+<script>
+'use strict';
+
+/* ── Startup prompt library ─────────────────────────────────── */
+const DEV_PROMPTS = [
+  {
+    cat: 'Ideation',
+    prompts: [
+      { title: 'Validate business idea', text: "I have a business idea: [describe your idea in 2-3 sentences].\n\nHelp me validate it by covering:\n1. Problem clarity — is there a real, painful problem here?\n2. Target customer — who would pay for this?\n3. Market size — rough estimate of TAM/SAM/SOM\n4. Key risks and assumptions I need to test\n5. 3 fast, cheap ways to validate before building anything." },
+      { title: 'Find target market', text: "My product is: [describe product or service].\n\nHelp me identify and prioritize my target market:\n1. List 5 potential customer segments who might need this\n2. For each segment, describe their pain level, willingness to pay, and ease of reach\n3. Recommend which segment to target first and why\n4. Describe the ideal customer profile (ICP) for that segment in detail." },
+      { title: 'Competitive landscape analysis', text: "I'm building [describe your product/service] in the [industry/space] space.\n\nAnalyze the competitive landscape:\n1. Who are the main direct and indirect competitors?\n2. What are their strengths and weaknesses?\n3. What gaps or underserved needs exist in the market?\n4. Where could a new entrant realistically differentiate?\n5. What would make customers switch from existing solutions?" },
+      { title: 'MVP feature prioritization', text: "I'm building an MVP for [describe product]. My target user is [describe user] and the core problem I'm solving is [describe problem].\n\nHelp me prioritize features:\n1. List the absolute must-have features for a working MVP\n2. List features that are nice-to-have but not essential at launch\n3. List features to defer to a later version\n4. Suggest the smallest possible version I could ship in [timeframe] to get real user feedback.\n\nUse the MoSCoW method where helpful." },
+    ]
+  },
+  {
+    cat: 'Pitch & Fundraising',
+    prompts: [
+      { title: 'Write elevator pitch', text: "Help me write a sharp 30-second elevator pitch for my startup.\n\nDetails:\n- What we do: [describe the product/service]\n- Problem we solve: [describe the problem]\n- Target customer: [who is it for]\n- How we make money: [business model]\n- Traction so far: [any metrics, users, revenue]\n\nWrite 3 versions: one for an investor, one for a potential customer, and one for a general networking event. Keep each under 60 words." },
+      { title: 'Pitch deck narrative', text: "Help me write the narrative arc for my investor pitch deck.\n\nStartup details:\n- Company name: [name]\n- What we do: [description]\n- Problem: [problem]\n- Solution: [solution]\n- Market: [market size]\n- Business model: [how we make money]\n- Traction: [metrics]\n- Team: [key team members]\n- Ask: [how much, for what]\n\nFor each slide (Problem, Solution, Market, Product, Traction, Team, Ask), write the key message and 3 supporting bullet points. Keep it investor-focused and story-driven." },
+      { title: 'Investor email intro', text: "Write a cold email to introduce my startup to a venture capital investor.\n\nContext:\n- Investor focus: [e.g. B2B SaaS, early stage, fintech]\n- My startup: [name and one-line description]\n- Why this investor specifically: [reason]\n- Traction/proof points: [key metrics or milestones]\n- Ask: [e.g. 20-minute intro call]\n\nWrite a subject line and email under 150 words. Make it direct, specific, and compelling. Avoid generic language and buzzwords." },
+      { title: 'Financial projections assumptions', text: "Help me build the key assumptions behind my 3-year financial projections.\n\nBusiness model: [describe how you charge, e.g. SaaS subscription, marketplace, one-time sale]\nTarget customer: [describe customer segment]\nCurrent state: [revenue, users, or pre-revenue]\n\nFor each year (Y1, Y2, Y3), help me define realistic assumptions for:\n1. Customer acquisition (channels, CAC, growth rate)\n2. Revenue per customer (ACV or ARPU, churn)\n3. Headcount and key hires\n4. Key cost drivers\n5. Path to breakeven\n\nFlag which assumptions are most likely to be challenged by investors." },
+    ]
+  },
+  {
+    cat: 'Product',
+    prompts: [
+      { title: 'Write PRD (product requirements doc)', text: "Write a product requirements document (PRD) for the following feature.\n\nFeature name: [feature name]\nProduct: [product description]\nUser problem: [what problem does this solve and for whom]\nBusiness goal: [why are we building this]\n\nThe PRD should include:\n1. Overview and goals\n2. User stories (as a [user], I want to [action] so that [outcome])\n3. Functional requirements\n4. Out of scope\n5. Success metrics\n6. Open questions\n\nKeep it concise and actionable for an engineering team." },
+      { title: 'User story mapping', text: "Help me create a user story map for [product or feature].\n\nTarget user: [describe the user]\nCore user journey: [describe the main flow from start to finish]\n\n1. Break the journey into 5-7 high-level activities (the top row of the story map)\n2. Under each activity, list the user tasks (stories) needed to complete it\n3. Identify which stories belong in the MVP release vs. later releases\n4. Flag any dependencies between stories\n\nFormat as a structured list grouped by activity." },
+      { title: 'Pricing strategy analysis', text: "Help me define the right pricing strategy for my product.\n\nProduct: [describe what it does]\nTarget customer: [who buys it, company size, industry]\nValue delivered: [what outcome does it create for the customer]\nCompetitor pricing: [what do alternatives charge]\nCurrent thinking: [any pricing ideas I already have]\n\nAnalyze:\n1. Best pricing model (subscription, usage-based, one-time, freemium, etc.) with pros/cons\n2. Recommended price point and rationale\n3. Packaging tiers if applicable\n4. How to test and validate pricing before committing\n5. Common pricing mistakes to avoid in this market." },
+      { title: 'Feature prioritization framework', text: "I have a backlog of feature requests and need to prioritize them. Help me apply a structured prioritization framework.\n\nProduct: [describe product]\nCurrent stage: [e.g. pre-launch, early traction, scaling]\nTop business goal right now: [e.g. retain users, acquire first 100 customers, reduce churn]\n\nFeature backlog:\n[list your features here]\n\nFor each feature, score it on:\n1. Impact on the top business goal (1-5)\n2. Effort to build (1-5, where 5 = high effort)\n3. User demand signal (how many users asked for it)\n4. Strategic fit\n\nRank them and recommend what to build first, second, and what to park." },
+    ]
+  },
+  {
+    cat: 'Growth',
+    prompts: [
+      { title: 'Go-to-market strategy', text: "Help me build a go-to-market (GTM) strategy for my startup.\n\nProduct: [describe product]\nTarget customer: [ICP — industry, company size, role, pain point]\nUnique value proposition: [what makes you different]\nPrice point: [pricing]\nLaunch timeline: [when do you plan to launch]\n\nCover:\n1. GTM motion (product-led, sales-led, or marketing-led) and why\n2. First 3 acquisition channels to focus on and rationale\n3. Launch plan for the first 90 days with key milestones\n4. Key risks and how to mitigate them\n5. What success looks like at 30, 60, and 90 days post-launch." },
+      { title: 'Customer acquisition channels', text: "I need to identify the best customer acquisition channels for my startup.\n\nProduct: [describe product]\nTarget customer: [who they are, where they spend time online and offline]\nBudget for acquisition: [monthly budget range]\nTeam size: [number of people available for growth]\nCurrent traction: [existing customers or zero]\n\nFor each recommended channel:\n1. Why it fits my customer and product\n2. Estimated CAC range\n3. How to test it cheaply in 2 weeks\n4. What a scaled version looks like\n\nRank channels by highest ROI potential for my stage." },
+      { title: 'Retention strategy', text: "Help me design a retention strategy for my product.\n\nProduct: [describe product]\nUser type: [B2B or B2C, describe the user]\nCurrent retention: [e.g. 30-day retention rate or churn rate if known]\nKey usage pattern: [how often should users ideally use the product]\nTop reasons users churn (if known): [list them]\n\nProvide:\n1. The most important retention lever to focus on first and why\n2. An onboarding flow that drives users to the 'aha moment' faster\n3. 3 lifecycle email/notification campaigns to improve retention\n4. In-product features or changes that reduce churn\n5. How to identify at-risk users before they churn." },
+      { title: 'Metrics dashboard design', text: "Help me design the core metrics dashboard for my startup.\n\nBusiness type: [e.g. B2B SaaS, marketplace, consumer app, e-commerce]\nStage: [pre-revenue / early traction / scaling]\nTop goal right now: [e.g. grow MRR, improve retention, increase activation]\n\nDefine:\n1. The single most important metric (north star metric) I should optimize for\n2. The 5-7 key metrics that drive the north star (inputs)\n3. Health metrics to monitor (to catch problems early)\n4. Metrics to ignore at my current stage\n5. How to set up a simple weekly review cadence around these metrics." },
+    ]
+  },
+  {
+    cat: 'Operations',
+    prompts: [
+      { title: 'Hiring plan', text: "Help me create a hiring plan for my startup.\n\nCurrent team: [list current roles/headcount]\nFunding status: [bootstrapped / pre-seed / seed / Series A]\nRunway: [months of runway]\nTop priorities for the next 12 months: [list 2-3 key goals]\n\nProvide:\n1. The first 3 hires I should make and why (in priority order)\n2. For each role: title, key responsibilities, must-have skills, and whether to hire full-time, part-time, or contract\n3. How to attract top candidates without a big recruiting budget\n4. Red flags to watch for when hiring at an early stage\n5. A simple hiring process that moves fast without sacrificing quality." },
+      { title: 'Company culture document', text: "Help me write a foundational company culture document for my startup.\n\nCompany: [name and what you do]\nStage: [team size, stage]\nFounder values: [list 3-5 values that are personally important to you]\nType of work: [remote / in-person / hybrid]\nKind of team you want to build: [describe in a sentence]\n\nWrite:\n1. A brief culture statement (2-3 sentences)\n2. 4-6 core values with a plain-English explanation of what each means in practice\n3. 3 examples of what these values look like in everyday decisions\n4. What behaviors are NOT acceptable (anti-values)\n5. How to keep culture strong as the team grows." },
+      { title: 'OKR setting', text: "Help me set OKRs (Objectives and Key Results) for my startup.\n\nCompany stage: [e.g. seed, Series A]\nTime period: [Q1 2026 or annual]\nTop company priorities: [list 2-3 strategic priorities]\nCurrent metrics baseline: [key numbers if available]\n\nFor each priority, write:\n- 1 Objective (inspiring, qualitative, directional)\n- 3 Key Results (measurable, specific, time-bound)\n\nAlso provide:\n1. How to cascade OKRs to team level\n2. A cadence for checking in and grading OKRs\n3. Common OKR mistakes to avoid at an early-stage startup." },
+      { title: 'Vendor/tool evaluation', text: "Help me evaluate and choose between tools or vendors for [specific need, e.g. CRM, data warehouse, customer support platform].\n\nUse case: [describe exactly what I need it to do]\nTeam size: [how many people will use it]\nBudget: [monthly budget range]\nMust-have requirements: [list non-negotiables]\nNice-to-have requirements: [list secondary needs]\n\nOptions I'm considering:\n1. [Option A]\n2. [Option B]\n3. [Option C]\n\nCompare them on: features, pricing, ease of setup, scalability, integrations, and support. Recommend one with clear reasoning and flag any hidden costs or lock-in risks." },
+    ]
+  },
+  {
+    cat: 'Legal & Finance',
+    prompts: [
+      { title: 'Terms of service outline', text: "Help me create an outline for the Terms of Service for my product.\n\nProduct type: [e.g. SaaS app, marketplace, consumer app]\nUsers: [B2B customers / consumers / both]\nKey features: [describe what users can do on the platform]\nAny specific concerns: [e.g. user-generated content, payments, data handling]\n\nProvide:\n1. A recommended structure with all key sections a ToS should include\n2. A plain-English summary of what each section covers and why it matters\n3. Clauses that are especially important for my product type\n4. Common mistakes founders make with ToS at an early stage\n\nNote: this is for planning purposes only — I will have a lawyer review the final document." },
+      { title: 'Privacy policy considerations', text: "Help me understand what my privacy policy needs to cover.\n\nProduct: [describe product]\nData collected: [list types of data you collect, e.g. email, payment info, usage data]\nUsers located in: [e.g. US, EU, global]\nThird-party tools used: [e.g. Stripe, Google Analytics, Intercom]\n\nCover:\n1. Key sections every privacy policy must include\n2. Specific requirements based on my user geography (GDPR, CCPA, etc.)\n3. Data I'm collecting that may require explicit consent\n4. Third-party data sharing disclosures I need to make\n5. How to keep the policy up to date as the product evolves\n\nNote: this is for planning only — I will have a lawyer review the final document." },
+      { title: 'Cap table scenario', text: "Help me model a cap table scenario for my startup.\n\nCurrent cap table:\n- Founder 1: [name, % ownership]\n- Founder 2: [name, % ownership]\n- Employee option pool: [%]\n- Other: [angels, SAFEs, etc.]\n\nProposed funding round:\n- Round type: [e.g. Seed, Series A]\n- Amount raising: [$X]\n- Pre-money valuation: [$Y] (or 'help me think through this')\n- New investor(s): [name or 'TBD']\n\nShow:\n1. Post-money ownership percentages for all parties\n2. How the option pool top-up (if any) affects founder dilution\n3. What the cap table looks like after this round\n4. Key terms to negotiate beyond valuation (pro-rata, board seats, etc.)" },
+      { title: 'Unit economics analysis', text: "Help me analyze the unit economics of my business.\n\nBusiness model: [describe how you make money]\nPricing: [how much customers pay and how often]\nKey costs to acquire a customer: [list main CAC components]\nKey costs to serve a customer: [list main COGS/service costs per customer]\nChurn rate (if known): [monthly or annual]\n\nCalculate and explain:\n1. Customer Acquisition Cost (CAC)\n2. Average Revenue Per User (ARPU) or Annual Contract Value (ACV)\n3. Gross margin per customer\n4. Customer Lifetime Value (LTV)\n5. LTV:CAC ratio and what it means for my business health\n6. Payback period\n7. What I need to improve to reach healthy unit economics." },
+    ]
+  },
+];
+
+/* ── State ───────────────────────────────────────────────────── */
+let activeCat = 'All';
+let selectedCard = null;
+
+/* ── DOM refs ────────────────────────────────────────────────── */
+const catsEl       = document.getElementById('cats');
+const cardsEl      = document.getElementById('prompt-cards');
+const promptEl     = document.getElementById('prompt');
+const providersEl  = document.getElementById('providers');
+const charCountEl  = document.getElementById('charCount');
+const copyBtn      = document.getElementById('copyBtn');
+const clearBtnEl   = document.getElementById('clearBtn');
+const toastEl      = document.getElementById('toast');
+
+/* ── Render categories ──────────────────────────────────────── */
+function renderCats() {
+  const cats = ['All', ...DEV_PROMPTS.map(c => c.cat)];
+  catsEl.innerHTML = '';
+  cats.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'cat' + (activeCat === cat ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', () => {
+      activeCat = cat;
+      selectedCard = null;
+      renderCats();
+      renderCards();
+    });
+    catsEl.appendChild(btn);
+  });
+}
+
+/* ── Render prompt cards ────────────────────────────────────── */
+function renderCards() {
+  cardsEl.innerHTML = '';
+  const groups = activeCat === 'All' ? DEV_PROMPTS : DEV_PROMPTS.filter(c => c.cat === activeCat);
+
+  groups.forEach(group => {
+    if (activeCat === 'All') {
+      const catLabel = document.createElement('span');
+      catLabel.className = 'lbl';
+      catLabel.textContent = group.cat;
+      catLabel.style.marginTop = cardsEl.children.length ? '20px' : '0';
+      cardsEl.appendChild(catLabel);
+    }
+
+    group.prompts.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'prompt-card';
+      card.innerHTML = `<div class="prompt-card-title">${p.title}</div><div class="prompt-card-preview">${escHtml(p.text)}</div>`;
+      card.addEventListener('click', () => {
+        const wasSelected = selectedCard === p;
+        document.querySelectorAll('.prompt-card').forEach(c => c.classList.remove('selected'));
+
+        if (wasSelected) {
+          selectedCard = null;
+          promptEl.value = '';
+        } else {
+          selectedCard = p;
+          card.classList.add('selected');
+          promptEl.value = p.text;
+          promptEl.focus();
+        }
+        updateCount();
+      });
+      cardsEl.appendChild(card);
+    });
+  });
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+/* ── Providers ──────────────────────────────────────────────── */
+const enc = s => encodeURIComponent(s);
+const providers = [
+  { id: 'chatgpt',    label: 'ChatGPT',    cls: 'pc-chatgpt',    url: q => `https://chatgpt.com/?q=${enc(q)}` },
+  { id: 'claude',     label: 'Claude',     cls: 'pc-claude',     url: q => `https://claude.ai/new?q=${enc(q)}` },
+  { id: 'gemini',     label: 'Gemini',     cls: 'pc-gemini',     url: q => `https://gemini.google.com/app?q=${enc(q)}` },
+  { id: 'copilot',    label: 'Copilot',    cls: 'pc-copilot',    url: q => `https://copilot.microsoft.com/?q=${enc(q)}` },
+  { id: 'perplexity', label: 'Perplexity', cls: 'pc-perplexity', url: q => `https://www.perplexity.ai/search?q=${enc(q)}` },
+  { id: 'lechat',     label: 'Le Chat',    cls: 'pc-lechat',     url: q => `https://chat.mistral.ai/chat?q=${enc(q)}` },
+  { id: 'grok',       label: 'Grok',       cls: 'pc-grok',       url: q => `https://x.com/i/grok?text=${enc(q)}` },
+  { id: 'deepseek',   label: 'DeepSeek',   cls: 'pc-deepseek',   url: q => `https://chat.deepseek.com/?q=${enc(q)}` },
+];
+
+providers.forEach(p => {
+  const li = document.createElement('li');
+  const btn = document.createElement('button');
+  btn.type = 'button'; btn.className = `p-btn ${p.cls}`;
+  btn.setAttribute('aria-label', `Open in ${p.label}`);
+  btn.innerHTML = `<span class="p-dot" aria-hidden="true"></span><span class="p-name">${p.label}</span><span class="p-arrow" aria-hidden="true">&nearr;</span>`;
+  btn.addEventListener('click', () => openProvider(p));
+  li.appendChild(btn); providersEl.appendChild(li);
+});
+
+/* ── Core actions ────────────────────────────────────────────── */
+function getPrompt() { return promptEl.value.trim(); }
+
+function openProvider(p) {
+  const q = getPrompt();
+  if (!q) { showToast('Write a prompt first'); return; }
+  const w = window.open(p.url(q), '_blank', 'noopener,noreferrer');
+  if (!w) showToast('Popup blocked — copy & paste instead');
+}
+
+function updateCount() {
+  const n = promptEl.value.length;
+  charCountEl.textContent = n > 0 ? n.toLocaleString() : '';
+  charCountEl.classList.toggle('warn', n > 3000);
+}
+
+promptEl.addEventListener('input', () => {
+  updateCount();
+  if (!promptEl.value) {
+    selectedCard = null;
+    document.querySelectorAll('.prompt-card').forEach(c => c.classList.remove('selected'));
+  }
+});
+
+copyBtn.addEventListener('click', async () => {
+  const q = getPrompt();
+  if (!q) { showToast('Nothing to copy yet'); return; }
+  try {
+    await navigator.clipboard.writeText(q);
+    copyBtn.textContent = '\u2713 Copied!';
+    copyBtn.classList.add('copied');
+    setTimeout(() => {
+      copyBtn.textContent = 'Copy to clipboard';
+      copyBtn.classList.remove('copied');
+    }, 2200);
+  } catch { showToast('Copy failed — try manually'); }
+});
+
+clearBtnEl.addEventListener('click', () => {
+  promptEl.value = ''; updateCount();
+  selectedCard = null;
+  document.querySelectorAll('.prompt-card').forEach(c => c.classList.remove('selected'));
+  promptEl.focus();
+});
+
+/* ── Keyboard shortcuts ──────────────────────────────────────── */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && document.activeElement === promptEl) {
+    clearBtnEl.click(); return;
+  }
+  if ((e.metaKey || e.ctrlKey) && e.key === 'c' && document.activeElement === promptEl && !window.getSelection()?.toString()) {
+    e.preventDefault(); copyBtn.click();
+  }
+});
+
+/* ── Toast ───────────────────────────────────────────────────── */
+let toastTimer;
+function showToast(msg) {
+  toastEl.textContent = msg; toastEl.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toastEl.classList.remove('show'), 3000);
+}
+
+/* ── Init ────────────────────────────────────────────────────── */
+renderCats();
+renderCards();
+
+/* ── Service Worker ──────────────────────────────────────────── */
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').catch(() => {});
+}
+</script>
+</body>
+</html>

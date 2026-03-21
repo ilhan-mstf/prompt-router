@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<title>Land Your Next Job with These AI Prompts | Prompt Router Blog</title>
+<meta name="description" content="Job searching is exhausting. Here are the AI prompts that handle the tedious parts — resume tailoring, cover letters, interview prep, LinkedIn, and more.">
+<meta name="keywords" content="job search prompts, AI prompts for job hunting, cover letter AI, resume prompts, interview prep AI, ChatGPT job search, LinkedIn prompts">
+<meta name="author" content="Prompt Router">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://prompt-router.pages.dev/blog-job-prompts">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Prompt Router">
+<meta property="og:title" content="Land Your Next Job with These AI Prompts">
+<meta property="og:description" content="Job searching is exhausting. Here are the AI prompts that handle the tedious parts — resume tailoring, cover letters, interview prep, and more.">
+<meta property="og:url" content="https://prompt-router.pages.dev/blog-job-prompts">
+<meta property="og:image" content="https://prompt-router.pages.dev/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-03-21">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Land Your Next Job with These AI Prompts">
+<meta name="twitter:description" content="Job searching is exhausting. Here are the AI prompts that handle the tedious parts — resume tailoring, cover letters, interview prep, and more.">
+<meta name="twitter:image" content="https://prompt-router.pages.dev/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Land Your Next Job with These AI Prompts",
+  "description": "Job searching is exhausting. Here are the AI prompts that handle the tedious parts — resume tailoring, cover letters, interview prep, LinkedIn, and more.",
+  "datePublished": "2026-03-21",
+  "author": { "@type": "Person", "name": "Prompt Router" },
+  "publisher": { "@type": "Organization", "name": "Prompt Router", "url": "https://prompt-router.pages.dev/" },
+  "mainEntityOfPage": "https://prompt-router.pages.dev/blog-job-prompts",
+  "image": "https://prompt-router.pages.dev/og-image.png"
+}
+</script>
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230f0f10'/><text y='24' x='4' font-size='22' font-family='serif' fill='%23d4a847'>P</text></svg>">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f0f10" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f4f0e8" media="(prefers-color-scheme: light)">
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,200&display=swap" rel="stylesheet">
+
+<style>
+/* ── Tokens ──────────────────────────────────────────────────── */
+:root {
+  --bg:        #0f0f10;
+  --surface:   #1a1a1c;
+  --surface-2: #222225;
+  --border:    #2c2c30;
+  --border-2:  #404046;
+  --text:      #f0ece4;
+  --text-2:    #9e9a96;
+  --text-3:    #5a5856;
+  --gold:      #d4a847;
+  --gold-dim:  #9a7830;
+  --gold-glow: rgba(212,168,71,.1);
+  --focus:     #d4a847;
+
+  --xs:   0.8125rem;
+  --sm:   0.9375rem;
+  --base: 1.0625rem;
+  --lg:   1.125rem;
+  --2xl:  2.375rem;
+
+  --r:    8px;
+  --r-lg: 12px;
+  --max:  700px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg:        #f4f0e8;
+    --surface:   #fdfaf5;
+    --surface-2: #f0ece2;
+    --border:    #e0dbd0;
+    --border-2:  #c8c2b4;
+    --text:      #1a1714;
+    --text-2:    #5a554e;
+    --text-3:    #9c968e;
+    --gold:      #7a5518;
+    --gold-dim:  #9a6c28;
+    --gold-glow: rgba(122,85,24,.07);
+    --focus:     #7a5518;
+  }
+}
+
+/* ── Reset ───────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: var(--base);
+  line-height: 1.65;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Focus ───────────────────────────────────────────────────── */
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: var(--r); }
+:focus:not(:focus-visible) { outline: none; }
+
+/* ── Page shell ──────────────────────────────────────────────── */
+.page { width: 100%; max-width: var(--max); padding: 0 28px; }
+
+/* ── Header ──────────────────────────────────────────────────── */
+header.page { padding-top: 60px; padding-bottom: 52px; }
+
+h1.logo {
+  display: flex; align-items: baseline; gap: 8px;
+  font-size: inherit; font-weight: inherit; margin-bottom: 12px;
+}
+.logo-a {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto; font-weight: 600;
+  font-size: var(--2xl); letter-spacing: -0.03em;
+  line-height: 1; color: var(--text);
+}
+.logo-b {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto; font-weight: 200; font-style: italic;
+  font-size: var(--2xl); letter-spacing: -0.02em;
+  line-height: 1; color: var(--gold);
+}
+.logo a { text-decoration: none; color: inherit; }
+
+/* ── Nav ─────────────────────────────────────────────────────── */
+.nav-links {
+  display: flex; gap: 16px; margin-top: 16px;
+}
+.nav-links a {
+  font-size: var(--xs); color: var(--text-3);
+  text-decoration: none; letter-spacing: 0.04em;
+  transition: color .12s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-links a.active { color: var(--gold); }
+
+/* ── Article ─────────────────────────────────────────────────── */
+article.page { padding-bottom: 86px; }
+
+.article-date {
+  font-size: var(--xs); color: var(--text-3);
+  letter-spacing: 0.04em; margin-bottom: 8px;
+}
+
+.article-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600; font-size: 1.75rem;
+  letter-spacing: -0.02em; line-height: 1.3;
+  color: var(--text); margin-bottom: 32px;
+}
+
+article h2 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600; font-size: 1.25rem;
+  letter-spacing: -0.01em; line-height: 1.3;
+  color: var(--text); margin: 40px 0 16px;
+}
+
+article p {
+  color: var(--text-2); margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+article a {
+  color: var(--gold); text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--gold-dim);
+  transition: color .12s;
+}
+article a:hover { color: var(--text); }
+
+article ul {
+  color: var(--text-2); margin: 0 0 20px 20px;
+  line-height: 2;
+}
+
+article blockquote {
+  border-left: 3px solid var(--gold-dim);
+  padding: 12px 20px; margin: 24px 0;
+  background: var(--gold-glow);
+  border-radius: 0 var(--r) var(--r) 0;
+  color: var(--text-2); font-style: italic;
+}
+
+article code {
+  background: var(--surface-2); padding: 2px 6px;
+  border-radius: 4px; font-size: var(--sm);
+  color: var(--gold);
+}
+
+.cta-box {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 24px;
+  margin: 32px 0; text-align: center;
+}
+.cta-box p { color: var(--text); margin-bottom: 16px; }
+.cta-link {
+  display: inline-block; padding: 12px 28px;
+  border: 1px solid var(--gold); border-radius: var(--r);
+  color: var(--gold); text-decoration: none;
+  font-family: 'DM Mono', monospace; font-size: var(--sm);
+  letter-spacing: 0.04em; transition: background .12s, color .12s;
+}
+.cta-link:hover { background: var(--gold); color: var(--bg); }
+
+/* ── Footer ──────────────────────────────────────────────────── */
+footer {
+  width: 100%; border-top: 1px solid var(--border);
+  display: flex; justify-content: center; margin-top: 8px;
+}
+.footer-inner {
+  width: 100%; max-width: var(--max);
+  padding: 32px 28px 48px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.footer-links {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  font-size: var(--xs); margin-bottom: 4px;
+}
+.footer-links a {
+  color: var(--text-2); text-decoration: none;
+  letter-spacing: 0.02em; transition: color .12s;
+}
+.footer-links a:hover { color: var(--gold); }
+.footer-copy { font-size: var(--xs); color: var(--text-3); }
+.footer-doodle {
+  display: block; margin: 16px auto 0; width: 180px; height: auto;
+  opacity: .18; transition: opacity .3s;
+}
+.footer-doodle:hover { opacity: .35; }
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 580px) {
+  .logo-a, .logo-b { font-size: 2rem; }
+  header.page { padding-top: 44px; padding-bottom: 36px; }
+  .article-title { font-size: 1.4rem; }
+}
+@media (max-width: 360px) {
+  .page, .footer-inner { padding-left: 16px; padding-right: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<header class="page">
+  <h1 class="logo">
+    <a href="/"><span class="logo-a">Prompt</span><span class="logo-b">Router</span></a>
+  </h1>
+  <nav class="nav-links">
+    <a href="/">Home</a>
+    <a href="/job">Job Prompts</a>
+    <a href="/blog" class="active">Blog</a>
+  </nav>
+</header>
+
+<!-- ── Article ── -->
+<article class="page">
+  <p class="article-date">March 21, 2026</p>
+  <h1 class="article-title">Land Your Next Job with These AI Prompts</h1>
+
+  <p>Job searching is exhausting. Not the interesting kind of exhausting where you learn something &mdash; the soul-crushing kind. Tailoring your resume for every listing. Rewriting cover letters that all end up sounding the same. Rehearsing answers to questions you've answered a hundred times. It's a part-time job on top of whatever else you're dealing with.</p>
+
+  <p>Here's the thing: AI is genuinely good at the tedious parts. Not because it replaces your judgment, but because it handles the mechanical work so you can focus on strategy &mdash; figuring out which roles to pursue, who to reach out to, and how to position yourself. Let the AI draft. You decide.</p>
+
+  <p>These are the prompts I'd use. Organized by what you're actually trying to do.</p>
+
+  <h2>Resume</h2>
+
+  <p>The single most important rule: always paste in the job description. Without it, you get generic advice. With it, you get something actually targeted.</p>
+
+  <blockquote>
+    "Here's my resume and a job description I'm applying for. Rewrite my bullet points to better match the language and priorities in this job description. Keep everything factually accurate &mdash; don't invent achievements. Just reframe what's there.<br><br>[paste resume]<br>[paste job description]"
+  </blockquote>
+
+  <p>Or if you want a gap analysis before rewriting:</p>
+
+  <blockquote>
+    "Compare my resume to this job description. Tell me: what keywords or skills am I missing? What should I add, cut, or reframe to be a stronger match?<br><br>[paste resume]<br>[paste job description]"
+  </blockquote>
+
+  <h2>Cover Letter</h2>
+
+  <p>Cover letters are where people either give up entirely or produce something so generic it hurts. AI can get you to a solid first draft fast &mdash; but you have to edit it. A cover letter that sounds like it was written by a robot gets filtered immediately.</p>
+
+  <blockquote>
+    "Write a cover letter for this role. Tone should be direct and human &mdash; no corporate filler, no 'I am excited to apply.' Use my background below to highlight why I'm a strong fit. Keep it under 300 words.<br><br>[paste job description]<br>[paste relevant experience or resume]"
+  </blockquote>
+
+  <p>After you get the draft, run it through once more: "Make this sound more like me and less like a template." Then actually read it out loud. If you'd never say it, cut it.</p>
+
+  <h2>Interview Prep</h2>
+
+  <p>This is where AI earns its keep. You can simulate a real interview, get question predictions specific to the role, and stress-test your answers before you're in the actual room.</p>
+
+  <blockquote>
+    "Based on this job description, give me the 10 most likely interview questions for this role. For each one, include what the interviewer is really trying to assess.<br><br>[paste job description]"
+  </blockquote>
+
+  <p>Then use it to sharpen your answers:</p>
+
+  <blockquote>
+    "Here's my answer to the question 'Tell me about a time you had to influence without authority.' What's weak about it? What would make it stronger? I'm interviewing for a [senior product manager] role.<br><br>[paste your answer]"
+  </blockquote>
+
+  <p>The second prompt is the one most people skip. Getting feedback on your own answers is more valuable than just generating questions.</p>
+
+  <h2>LinkedIn</h2>
+
+  <p>Your LinkedIn summary is often the first thing a recruiter reads, and most people have either nothing there or something they wrote in 2019 and forgot about. Fix that.</p>
+
+  <blockquote>
+    "Rewrite my LinkedIn summary to better reflect where I am now and what I'm looking for. Tone: confident but not braggy. First person, conversational. Should make a recruiter want to reach out.<br><br>[paste current summary or quick description of your background and goals]"
+  </blockquote>
+
+  <p>Also useful: generating connection request notes that don't feel like spam, and drafting posts about your job search without making it awkward.</p>
+
+  <h2>Networking</h2>
+
+  <p>Cold outreach is uncomfortable, so people either don't do it or send messages so generic they get ignored. AI helps you get specific without spending 20 minutes per message.</p>
+
+  <blockquote>
+    "Write a short LinkedIn message to someone who works at [Company] as a [Role]. I'm exploring opportunities there and want to ask for a 20-minute chat. I have [X years] of experience in [field]. Make it feel genuine, not like a template. Under 100 words.<br><br>[optionally: add something specific about their background you noticed]"
+  </blockquote>
+
+  <p>The key is specificity. If you reference something real about the person or their work, the response rate goes way up. Use AI to draft the structure, then add the personal detail yourself.</p>
+
+  <h2>Career Growth</h2>
+
+  <p>Job searching isn't just about getting the next thing &mdash; it's about getting the <em>right</em> next thing. AI can help you think through the bigger picture when you're too close to it.</p>
+
+  <blockquote>
+    "I'm a [current role] with [X years] of experience in [industry]. I'm thinking about moving into [target role/industry]. What skills am I likely missing? What's a realistic timeline? What should I do in the next 3 months to make myself a stronger candidate?"
+  </blockquote>
+
+  <p>Or use it to evaluate an offer you're unsure about:</p>
+
+  <blockquote>
+    "I have a job offer. Here are the details. What questions should I be asking before I decide? What are the red flags, if any? What's missing from this offer that I should negotiate for?<br><br>[paste offer details]"
+  </blockquote>
+
+  <h2>A few things that actually matter</h2>
+
+  <p>Two tips that make all of these prompts work better:</p>
+
+  <ul>
+    <li><strong>Always include the job description.</strong> Context is everything. A prompt without it gives you generic output you could've Googled.</li>
+    <li><strong>Be specific about your experience level.</strong> "I'm a senior engineer applying to staff roles" gives very different results than "I'm a recent grad." Say it upfront.</li>
+  </ul>
+
+  <p>And one caution: don't let AI write everything from scratch without touching it. A resume full of AI-generated bullet points sounds like one. A cover letter that's 100% generated doesn't sound like you &mdash; and experienced hiring managers notice. Use it to draft, cut, restructure, and improve. Then make it yours.</p>
+
+  <p>The goal isn't to automate your job search. It's to spend less time on the parts that drain you so you have more energy for the parts that actually move the needle.</p>
+
+  <div class="cta-box">
+    <p>Ready to put these prompts to work? Browse the full job search prompt library or open Prompt Router to send to any AI.</p>
+    <a href="/job" class="cta-link">Job Prompts</a>
+    &nbsp;&nbsp;
+    <a href="/" class="cta-link">Open Prompt Router</a>
+  </div>
+</article>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/job">Job Prompts</a>
+      <a href="/blog">Blog</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Prompt Router &mdash; Free.</p>
+    <img src="/clumsy.svg" alt="" class="footer-doodle" aria-hidden="true" loading="lazy" width="180" height="135">
+  </div>
+</footer>
+
+</body>
+</html>

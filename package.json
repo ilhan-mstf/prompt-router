@@ -1,0 +1,28 @@
+{
+  "name": "promptrouter",
+  "version": "1.0.0",
+  "description": "**Write one prompt. Open every AI.**",
+  "type": "module",
+  "main": "_worker.js",
+  "scripts": {
+    "lint": "npm run lint:html && npm run lint:js",
+    "lint:html": "htmlhint --ignore google*.html *.html",
+    "lint:js": "eslint _worker.js eslint.config.js",
+    "test": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilhan-mstf/prompt-router.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ilhan-mstf/prompt-router/issues"
+  },
+  "homepage": "https://github.com/ilhan-mstf/prompt-router#readme",
+  "devDependencies": {
+    "eslint": "^10.1.0",
+    "htmlhint": "^1.9.2"
+  }
+}

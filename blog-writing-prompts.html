@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<title>AI Writing Prompts That Don't Sound Like AI | Prompt Router Blog</title>
+<meta name="description" content="How to write AI prompts that produce actual human-sounding content — with example prompts for blogs, social, email, copywriting, editing, and creative writing.">
+<meta name="keywords" content="AI writing prompts, writing prompts, ChatGPT writing, Claude writing, prompt engineering, AI content, blog prompts, copywriting prompts">
+<meta name="author" content="Prompt Router">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://prompt-router.pages.dev/blog-writing-prompts">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Prompt Router">
+<meta property="og:title" content="AI Writing Prompts That Don't Sound Like AI">
+<meta property="og:description" content="How to write AI prompts that produce actual human-sounding content — with example prompts for blogs, social, email, copywriting, editing, and creative writing.">
+<meta property="og:url" content="https://prompt-router.pages.dev/blog-writing-prompts">
+<meta property="og:image" content="https://prompt-router.pages.dev/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-03-21">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Writing Prompts That Don't Sound Like AI">
+<meta name="twitter:description" content="How to write AI prompts that produce actual human-sounding content — with example prompts for every category.">
+<meta name="twitter:image" content="https://prompt-router.pages.dev/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AI Writing Prompts That Don't Sound Like AI",
+  "description": "How to write AI prompts that produce actual human-sounding content — with example prompts for blogs, social, email, copywriting, editing, and creative writing.",
+  "datePublished": "2026-03-21",
+  "author": { "@type": "Person", "name": "Prompt Router" },
+  "publisher": { "@type": "Organization", "name": "Prompt Router", "url": "https://prompt-router.pages.dev/" },
+  "mainEntityOfPage": "https://prompt-router.pages.dev/blog-writing-prompts",
+  "image": "https://prompt-router.pages.dev/og-image.png"
+}
+</script>
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230f0f10'/><text y='24' x='4' font-size='22' font-family='serif' fill='%23d4a847'>P</text></svg>">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f0f10" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f4f0e8" media="(prefers-color-scheme: light)">
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,200&display=swap" rel="stylesheet">
+
+<style>
+/* ── Tokens ──────────────────────────────────────────────────── */
+:root {
+  --bg:        #0f0f10;
+  --surface:   #1a1a1c;
+  --surface-2: #222225;
+  --border:    #2c2c30;
+  --border-2:  #404046;
+  --text:      #f0ece4;
+  --text-2:    #9e9a96;
+  --text-3:    #5a5856;
+  --gold:      #d4a847;
+  --gold-dim:  #9a7830;
+  --gold-glow: rgba(212,168,71,.1);
+  --focus:     #d4a847;
+
+  --xs:   0.8125rem;
+  --sm:   0.9375rem;
+  --base: 1.0625rem;
+  --lg:   1.125rem;
+  --2xl:  2.375rem;
+
+  --r:    8px;
+  --r-lg: 12px;
+  --max:  700px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg:        #f4f0e8;
+    --surface:   #fdfaf5;
+    --surface-2: #f0ece2;
+    --border:    #e0dbd0;
+    --border-2:  #c8c2b4;
+    --text:      #1a1714;
+    --text-2:    #5a554e;
+    --text-3:    #9c968e;
+    --gold:      #7a5518;
+    --gold-dim:  #9a6c28;
+    --gold-glow: rgba(122,85,24,.07);
+    --focus:     #7a5518;
+  }
+}
+
+/* ── Reset ───────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: var(--base);
+  line-height: 1.65;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Focus ───────────────────────────────────────────────────── */
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: var(--r); }
+:focus:not(:focus-visible) { outline: none; }
+
+/* ── Page shell ──────────────────────────────────────────────── */
+.page { width: 100%; max-width: var(--max); padding: 0 28px; }
+
+/* ── Header ──────────────────────────────────────────────────── */
+header.page { padding-top: 60px; padding-bottom: 52px; }
+
+h1.logo {
+  display: flex; align-items: baseline; gap: 8px;
+  font-size: inherit; font-weight: inherit; margin-bottom: 12px;
+}
+.logo-a {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto; font-weight: 600;
+  font-size: var(--2xl); letter-spacing: -0.03em;
+  line-height: 1; color: var(--text);
+}
+.logo-b {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto; font-weight: 200; font-style: italic;
+  font-size: var(--2xl); letter-spacing: -0.02em;
+  line-height: 1; color: var(--gold);
+}
+.logo a { text-decoration: none; color: inherit; }
+
+/* ── Nav ─────────────────────────────────────────────────────── */
+.nav-links {
+  display: flex; gap: 16px; margin-top: 16px;
+}
+.nav-links a {
+  font-size: var(--xs); color: var(--text-3);
+  text-decoration: none; letter-spacing: 0.04em;
+  transition: color .12s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-links a.active { color: var(--gold); }
+
+/* ── Article ─────────────────────────────────────────────────── */
+article.page { padding-bottom: 86px; }
+
+.article-date {
+  font-size: var(--xs); color: var(--text-3);
+  letter-spacing: 0.04em; margin-bottom: 8px;
+}
+
+.article-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600; font-size: 1.75rem;
+  letter-spacing: -0.02em; line-height: 1.3;
+  color: var(--text); margin-bottom: 32px;
+}
+
+article h2 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600; font-size: 1.25rem;
+  letter-spacing: -0.01em; line-height: 1.3;
+  color: var(--text); margin: 40px 0 16px;
+}
+
+article p {
+  color: var(--text-2); margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+article a {
+  color: var(--gold); text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--gold-dim);
+  transition: color .12s;
+}
+article a:hover { color: var(--text); }
+
+article ul {
+  color: var(--text-2); margin: 0 0 20px 20px;
+  line-height: 2;
+}
+
+article blockquote {
+  border-left: 3px solid var(--gold-dim);
+  padding: 12px 20px; margin: 24px 0;
+  background: var(--gold-glow);
+  border-radius: 0 var(--r) var(--r) 0;
+  color: var(--text-2); font-style: italic;
+}
+
+article code {
+  background: var(--surface-2); padding: 2px 6px;
+  border-radius: 4px; font-size: var(--sm);
+  color: var(--gold);
+}
+
+.cta-box {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 24px;
+  margin: 32px 0; text-align: center;
+}
+.cta-box p { color: var(--text); margin-bottom: 16px; }
+.cta-link {
+  display: inline-block; padding: 12px 28px;
+  border: 1px solid var(--gold); border-radius: var(--r);
+  color: var(--gold); text-decoration: none;
+  font-family: 'DM Mono', monospace; font-size: var(--sm);
+  letter-spacing: 0.04em; transition: background .12s, color .12s;
+}
+.cta-link:hover { background: var(--gold); color: var(--bg); }
+
+/* ── Footer ──────────────────────────────────────────────────── */
+footer {
+  width: 100%; border-top: 1px solid var(--border);
+  display: flex; justify-content: center; margin-top: 8px;
+}
+.footer-inner {
+  width: 100%; max-width: var(--max);
+  padding: 32px 28px 48px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.footer-links {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  font-size: var(--xs); margin-bottom: 4px;
+}
+.footer-links a {
+  color: var(--text-2); text-decoration: none;
+  letter-spacing: 0.02em; transition: color .12s;
+}
+.footer-links a:hover { color: var(--gold); }
+.footer-copy { font-size: var(--xs); color: var(--text-3); }
+.footer-doodle {
+  display: block; margin: 16px auto 0; width: 180px; height: auto;
+  opacity: .18; transition: opacity .3s;
+}
+.footer-doodle:hover { opacity: .35; }
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 580px) {
+  .logo-a, .logo-b { font-size: 2rem; }
+  header.page { padding-top: 44px; padding-bottom: 36px; }
+  .article-title { font-size: 1.4rem; }
+}
+@media (max-width: 360px) {
+  .page, .footer-inner { padding-left: 16px; padding-right: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<header class="page">
+  <h1 class="logo">
+    <a href="/"><span class="logo-a">Prompt</span><span class="logo-b">Router</span></a>
+  </h1>
+  <nav class="nav-links">
+    <a href="/">Home</a>
+    <a href="/writing">Writing Prompts</a>
+    <a href="/blog" class="active">Blog</a>
+  </nav>
+</header>
+
+<!-- ── Article ── -->
+<article class="page">
+  <p class="article-date">March 21, 2026</p>
+  <h1 class="article-title">AI Writing Prompts That Don't Sound Like AI</h1>
+
+  <p>You know the output I'm talking about. "In today's fast-paced world, effective communication has never been more important." Nobody says that. Nobody thinks that. But ask an AI to write you a blog post with a vague prompt and you'll get some version of it, every time.</p>
+
+  <p>The problem isn't the AI. The problem is the prompt. A lazy prompt gets lazy writing &mdash; generic, hedged, structured like a high school essay. A good prompt gets something that actually sounds like a person wrote it. The difference is almost entirely in how specific you are.</p>
+
+  <h2>What makes a writing prompt actually work</h2>
+
+  <p>Four things separate prompts that produce real writing from ones that produce filler:</p>
+
+  <ul>
+    <li><strong>Specificity</strong> &mdash; the more context you give, the less the AI has to guess</li>
+    <li><strong>Tone</strong> &mdash; say exactly how it should sound, not just "professional" or "friendly"</li>
+    <li><strong>Audience</strong> &mdash; who is reading this, and what do they already know?</li>
+    <li><strong>Constraints</strong> &mdash; word count, what to avoid, what format to use</li>
+  </ul>
+
+  <p>Without those four things, the AI fills in the blanks with defaults. And the defaults are always the same: formal tone, generic structure, no strong opinions, no personality. With them, you actually get something usable.</p>
+
+  <h2>Blog posts and articles</h2>
+
+  <p>The most common mistake with blog prompts is being too broad. "Write a blog post about productivity" is not a prompt. It's a category.</p>
+
+  <blockquote>Write a 600-word blog post for software developers about why morning routines are overrated. Skeptical, slightly irreverent tone. No bullet-point lists. End with a practical alternative that takes under 5 minutes. First person.</blockquote>
+
+  <p>That prompt tells the AI the length, the audience, the angle, the tone, a structural constraint, and the ending. You'll get a draft that actually needs editing rather than a complete rewrite.</p>
+
+  <blockquote>Write a how-to article explaining [topic] for someone who has never heard of it. Assume they're smart but completely new. Use one analogy in the opening paragraph. Under 500 words. Conversational, not textbook.</blockquote>
+
+  <h2>Social media</h2>
+
+  <p>Social posts live or die on voice. The problem is that "write a LinkedIn post" produces the worst kind of LinkedIn post &mdash; the inspirational-lesson-from-a-mundane-moment format that everyone dunks on.</p>
+
+  <blockquote>Write a LinkedIn post announcing that [company/product] just launched [feature]. No "I'm excited to share" opener. No asking people to "drop a comment." Straightforward, confident, a bit dry. Under 150 words. End with what problem it solves, not a question.</blockquote>
+
+  <p>For Twitter/X, constraints are your friend. Give it a character limit, tell it whether you want a thread or a single post, and specify if you want it punchy or detailed.</p>
+
+  <h2>Email</h2>
+
+  <p>Email prompts need context about the relationship between sender and recipient &mdash; otherwise you get something weirdly formal from someone who's emailed this person fifty times before.</p>
+
+  <blockquote>Write a follow-up email to a client I've worked with for two years. We had a call last Thursday where they mentioned budget concerns. I want to check in without being pushy, and offer to hop on a short call to explore options. Warm but professional. Under 120 words. No "I hope this email finds you well."</blockquote>
+
+  <p>Telling it what <em>not</em> to say is just as useful as telling it what to say. Ban the clichés explicitly.</p>
+
+  <h2>Copywriting</h2>
+
+  <p>Copy prompts need a clear job to do: what action do you want the reader to take, and what's stopping them from taking it right now?</p>
+
+  <blockquote>Write a landing page headline and three-sentence subheadline for [product]. The target customer is [describe them]. Their main hesitation is [concern]. The headline should address the benefit, not the feature. No exclamation marks. Punchy.</blockquote>
+
+  <p>For ads, give it the platform and the format. A Google search ad has 30-character headlines and 90-character descriptions. A Meta ad needs a hook in the first line before the "See more" cut. These constraints matter.</p>
+
+  <h2>Editing and rewriting</h2>
+
+  <p>Some of the best writing prompts aren't about generating from scratch &mdash; they're about fixing what you already have.</p>
+
+  <blockquote>Edit the following paragraph for clarity and concision. Cut any filler phrases. Keep the meaning exactly the same. Don't change the tone or make it sound more formal. Return only the edited version, no explanation: [paste text]</blockquote>
+
+  <blockquote>Rewrite this paragraph so it sounds less like AI wrote it. Make it more direct, cut any hedging language, and add one specific detail that makes it feel grounded. Keep it under [X] words: [paste text]</blockquote>
+
+  <p>That second one is genuinely useful. If you've already got a draft that reads a little flat, feeding it back through with that prompt usually fixes it.</p>
+
+  <h2>Creative writing</h2>
+
+  <p>Creative prompts work best when you give the AI constraints that feel like they'd restrict creativity but actually focus it. Open-ended prompts produce meandering, safe output. Specific constraints produce interesting work.</p>
+
+  <blockquote>Write a short story (under 400 words) where the main tension is never spoken aloud by any character. The setting is a grocery store. Third person, past tense. No internal monologue. Let the reader infer what's happening from dialogue and action only.</blockquote>
+
+  <h2>Three quick tips that improve every writing prompt</h2>
+
+  <ul>
+    <li><strong>Always specify tone with examples</strong> &mdash; instead of "casual," say "like a Slack message to a colleague you get along with"</li>
+    <li><strong>Give it a sample of your own writing</strong> &mdash; paste a paragraph you've written and say "match this voice"</li>
+    <li><strong>Set a word limit</strong> &mdash; it forces the AI to prioritize instead of covering everything loosely</li>
+  </ul>
+
+  <h2>Why it's worth comparing across AIs</h2>
+
+  <p>Here's something most people don't think about: Claude and ChatGPT write differently. Not better or worse &mdash; differently. Claude tends toward longer, more nuanced prose. ChatGPT often punches harder in short-form copy. Gemini can surprise you with structure.</p>
+
+  <p>For writing tasks especially, the "best" output depends on your specific use case. A landing page headline might land better from ChatGPT. A thoughtful blog post draft might come out cleaner from Claude. The only way to know is to try both with the same prompt.</p>
+
+  <p>That's exactly the workflow <a href="/">Prompt Router</a> is built for: write the prompt once, send it to whichever AIs you want to compare, and pick the output that actually works. No copy-pasting across tabs.</p>
+
+  <div class="cta-box">
+    <p>Try these prompts across multiple AIs at once &mdash; see which one writes the way you actually want.</p>
+    <a href="/writing" class="cta-link">Browse Writing Prompts</a>
+    &nbsp;&nbsp;
+    <a href="/" class="cta-link">Open Prompt Router</a>
+  </div>
+</article>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/writing">Writing Prompts</a>
+      <a href="/blog">Blog</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Prompt Router &mdash; Free.</p>
+    <img src="/clumsy.svg" alt="" class="footer-doodle" aria-hidden="true" loading="lazy" width="180" height="135">
+  </div>
+</footer>
+
+</body>
+</html>

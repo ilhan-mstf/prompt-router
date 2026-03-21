@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<title>Sales Prompts — AI Prompts for Sales Teams | Prompt Router</title>
+<meta name="description" content="24+ curated AI prompts for sales professionals. Covering prospecting, discovery, pitching, objection handling, follow-up, and reporting. Send any prompt to ChatGPT, Claude, Gemini and 5 other AIs instantly.">
+<meta name="keywords" content="sales prompts, AI prompts for sales, cold outreach prompt, objection handling prompt, sales discovery prompt, ChatGPT sales, sales follow-up prompt">
+<meta name="author" content="Prompt Router">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://prompt-router.pages.dev/sales">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Prompt Router">
+<meta property="og:title" content="Sales Prompts — AI Prompts for Sales Teams">
+<meta property="og:description" content="24+ curated prompts for prospecting, discovery, pitching, objection handling, follow-up, and reporting. Send to any AI instantly.">
+<meta property="og:url" content="https://prompt-router.pages.dev/sales">
+<meta property="og:image" content="https://prompt-router.pages.dev/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sales Prompts — AI Prompts for Sales Teams">
+<meta name="twitter:description" content="24+ curated prompts for prospecting, discovery, pitching, objection handling and more. Send to any AI instantly.">
+<meta name="twitter:image" content="https://prompt-router.pages.dev/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Sales Prompts — AI Prompts for Sales Teams",
+  "description": "24+ curated AI prompts for sales professionals covering prospecting, discovery, pitching, objection handling, follow-up, and reporting.",
+  "url": "https://prompt-router.pages.dev/sales",
+  "isPartOf": {
+    "@type": "WebApplication",
+    "name": "Prompt Router",
+    "url": "https://prompt-router.pages.dev/"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://prompt-router.pages.dev/" },
+      { "@type": "ListItem", "position": 2, "name": "Sales Prompts", "item": "https://prompt-router.pages.dev/sales" }
+    ]
+  }
+}
+</script>
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230f0f10'/><text y='24' x='4' font-size='22' font-family='serif' fill='%23d4a847'>P</text></svg>">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f0f10" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f4f0e8" media="(prefers-color-scheme: light)">
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,200&display=swap" rel="stylesheet">
+
+<style>
+/* ── Tokens ──────────────────────────────────────────────────── */
+:root {
+  --bg:        #0f0f10;
+  --surface:   #1a1a1c;
+  --surface-2: #222225;
+  --border:    #2c2c30;
+  --border-2:  #404046;
+  --text:      #f0ece4;
+  --text-2:    #9e9a96;
+  --text-3:    #5a5856;
+  --gold:      #d4a847;
+  --gold-dim:  #9a7830;
+  --gold-glow: rgba(212,168,71,.1);
+  --focus:     #d4a847;
+
+  --chatgpt:    #10a37f;
+  --claude:     #c8845a;
+  --gemini:     #4285f4;
+  --copilot:    #7b6fcc;
+  --perplexity: #17b0a7;
+  --lechat:     #f06830;
+  --grok:       #aaaaaa;
+  --deepseek:   #4d6bfe;
+
+  --xs:   0.8125rem;
+  --sm:   0.9375rem;
+  --base: 1.0625rem;
+  --lg:   1.125rem;
+  --2xl:  2.375rem;
+
+  --r:    8px;
+  --r-lg: 12px;
+  --max:  700px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg:        #f4f0e8;
+    --surface:   #fdfaf5;
+    --surface-2: #f0ece2;
+    --border:    #e0dbd0;
+    --border-2:  #c8c2b4;
+    --text:      #1a1714;
+    --text-2:    #5a554e;
+    --text-3:    #9c968e;
+    --gold:      #7a5518;
+    --gold-dim:  #9a6c28;
+    --gold-glow: rgba(122,85,24,.07);
+    --focus:     #7a5518;
+  }
+}
+
+/* ── Reset ───────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: var(--base);
+  line-height: 1.65;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Skip link ───────────────────────────────────────────────── */
+.skip {
+  position: absolute; top: -100%; left: 16px;
+  background: var(--gold); color: var(--bg);
+  font-size: var(--sm); padding: 8px 16px;
+  border-radius: 0 0 var(--r) var(--r);
+  text-decoration: none; z-index: 999; transition: top .15s;
+}
+.skip:focus { top: 0; outline: none; }
+
+/* ── Focus ───────────────────────────────────────────────────── */
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: var(--r); }
+:focus:not(:focus-visible) { outline: none; }
+
+/* ── Page shell ──────────────────────────────────────────────── */
+.page { width: 100%; max-width: var(--max); padding: 0 28px; }
+
+/* ── Header ──────────────────────────────────────────────────── */
+header.page { padding-top: 60px; padding-bottom: 52px; }
+
+h1.logo {
+  display: flex; align-items: baseline; gap: 8px;
+  font-size: inherit; font-weight: inherit; margin-bottom: 12px;
+}
+.logo-a {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto; font-weight: 600;
+  font-size: var(--2xl); letter-spacing: -0.03em;
+  line-height: 1; color: var(--text);
+}
+.logo-b {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto; font-weight: 200; font-style: italic;
+  font-size: var(--2xl); letter-spacing: -0.02em;
+  line-height: 1; color: var(--gold);
+}
+.logo a { text-decoration: none; color: inherit; }
+.tagline {
+  font-size: var(--sm); color: var(--text-3);
+  letter-spacing: 0.01em; line-height: 1;
+}
+
+/* ── Nav ─────────────────────────────────────────────────────── */
+.nav-links {
+  display: flex; gap: 16px; margin-top: 16px;
+}
+.nav-links a {
+  font-size: var(--xs); color: var(--text-3);
+  text-decoration: none; letter-spacing: 0.04em;
+  transition: color .12s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-links a.active { color: var(--gold); }
+
+/* ── Main ────────────────────────────────────────────────────── */
+main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40px; }
+
+/* ── Section labels ──────────────────────────────────────────── */
+.lbl {
+  display: block;
+  font-size: var(--xs); letter-spacing: 0.09em;
+  text-transform: uppercase; color: var(--text-3);
+  font-weight: 500; margin-bottom: 12px;
+}
+
+/* ── Category chips ──────────────────────────────────────────── */
+.cats { display: flex; flex-wrap: wrap; gap: 7px; }
+.cat {
+  padding: 7px 14px; background: none;
+  border: 1px solid var(--border); border-radius: 100px;
+  color: var(--text-2); font-family: 'DM Mono', monospace;
+  font-size: var(--xs); letter-spacing: 0.03em; line-height: 1;
+  cursor: pointer; user-select: none;
+  transition: color .12s, border-color .12s, background .12s;
+}
+.cat:hover { color: var(--gold); border-color: var(--gold-dim); background: var(--gold-glow); }
+.cat.active { color: var(--gold); border-color: var(--gold); background: var(--gold-glow); }
+
+/* ── Prompt cards ────────────────────────────────────────────── */
+.prompt-cards { display: flex; flex-direction: column; gap: 10px; }
+
+.prompt-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 16px 18px;
+  cursor: pointer;
+  transition: border-color .12s, background .12s;
+}
+.prompt-card:hover { border-color: var(--border-2); background: var(--surface-2); }
+.prompt-card.selected { border-color: var(--gold); background: var(--gold-glow); }
+
+.prompt-card-title {
+  font-size: var(--sm); font-weight: 500; color: var(--text);
+  margin-bottom: 6px; line-height: 1.3;
+}
+.prompt-card-preview {
+  font-size: var(--xs); color: var(--text-3);
+  line-height: 1.5; white-space: pre-line;
+  display: -webkit-box; -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; overflow: hidden;
+}
+.prompt-card.selected .prompt-card-preview {
+  -webkit-line-clamp: unset;
+  color: var(--text-2);
+}
+
+/* ── Textarea ────────────────────────────────────────────────── */
+.prompt-wrap { position: relative; }
+textarea {
+  display: block; width: 100%; min-height: 210px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); color: var(--text);
+  font-family: 'DM Mono', monospace; font-size: var(--base);
+  line-height: 1.75; padding: 20px 20px 50px;
+  resize: vertical; outline: none; caret-color: var(--gold);
+  transition: border-color .18s, box-shadow .18s;
+}
+textarea::placeholder { color: var(--text-3); font-style: italic; }
+textarea:hover { border-color: var(--border-2); }
+textarea:focus { border-color: var(--gold-dim); box-shadow: 0 0 0 3px var(--gold-glow); }
+
+.prompt-meta {
+  position: absolute; bottom: 15px; left: 20px; right: 20px;
+  display: flex; justify-content: space-between; align-items: center;
+  pointer-events: none;
+}
+.char-count {
+  font-size: var(--xs); color: var(--text-3);
+  font-variant-numeric: tabular-nums; transition: color .2s;
+}
+.char-count.warn { color: #c97a40; }
+
+/* ── Provider cards ──────────────────────────────────────────── */
+.providers {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.p-btn {
+  width: 100%; display: flex; flex-direction: column;
+  align-items: flex-start; gap: 10px; padding: 14px 14px 12px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); color: var(--text);
+  font-family: 'DM Mono', monospace; cursor: pointer;
+  transition: border-color .12s, background .12s, transform .12s, box-shadow .12s;
+  text-align: left; position: relative; overflow: hidden;
+}
+.p-btn:hover {
+  background: var(--surface-2); border-color: var(--border-2);
+  transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.18);
+}
+.p-btn:active { transform: translateY(0); box-shadow: none; }
+.p-dot {
+  width: 28px; height: 4px; border-radius: 2px;
+  background: var(--pc, var(--border)); opacity: .65;
+  transition: opacity .12s, width .12s;
+}
+.p-btn:hover .p-dot { opacity: 1; width: 36px; }
+.p-name { font-size: var(--sm); letter-spacing: 0.02em; line-height: 1; }
+.p-arrow {
+  position: absolute; top: 12px; right: 12px;
+  font-size: 11px; color: var(--text-3); line-height: 1;
+  transition: transform .12s, color .12s;
+}
+.p-btn:hover .p-arrow { transform: translate(2px,-2px); color: var(--text-2); }
+
+.pc-chatgpt    { --pc: var(--chatgpt); }
+.pc-claude     { --pc: var(--claude); }
+.pc-gemini     { --pc: var(--gemini); }
+.pc-copilot    { --pc: var(--copilot); }
+.pc-perplexity { --pc: var(--perplexity); }
+.pc-lechat     { --pc: var(--lechat); }
+.pc-grok       { --pc: var(--grok); }
+.pc-deepseek   { --pc: var(--deepseek); }
+
+/* ── Actions row ─────────────────────────────────────────────── */
+.actions { display: flex; gap: 8px; }
+
+.btn {
+  padding: 14px 20px; background: none;
+  border: 1px solid var(--border); border-radius: var(--r);
+  color: var(--text-2); font-family: 'DM Mono', monospace;
+  font-size: var(--sm); letter-spacing: 0.04em;
+  cursor: pointer; line-height: 1; white-space: nowrap;
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  transition: border-color .12s, color .12s;
+}
+.btn:hover { border-color: var(--border-2); color: var(--text); }
+.btn.flex-1 { flex: 1; }
+.btn.copied { border-color: var(--gold-dim); color: var(--gold); }
+
+/* ── Toast ───────────────────────────────────────────────────── */
+.toast {
+  position: fixed; bottom: 28px; left: 50%;
+  transform: translateX(-50%) translateY(64px);
+  background: var(--surface-2); border: 1px solid var(--border-2);
+  border-radius: var(--r); padding: 11px 20px;
+  font-size: var(--sm); letter-spacing: 0.02em; color: var(--text);
+  box-shadow: 0 8px 32px rgba(0,0,0,.3);
+  transition: transform .26s cubic-bezier(.34,1.56,.64,1);
+  z-index: 200; white-space: nowrap; pointer-events: none;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ── Footer ──────────────────────────────────────────────────── */
+footer {
+  width: 100%; border-top: 1px solid var(--border);
+  display: flex; justify-content: center; margin-top: 8px;
+}
+.footer-inner {
+  width: 100%; max-width: var(--max);
+  padding: 32px 28px 48px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.footer-links {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  font-size: var(--xs); margin-bottom: 4px;
+}
+.footer-links a {
+  color: var(--text-2); text-decoration: none;
+  letter-spacing: 0.02em; transition: color .12s;
+}
+.footer-links a:hover { color: var(--gold); }
+.footer-copy { font-size: var(--xs); color: var(--text-3); }
+.footer-doodle {
+  display: block; margin: 16px auto 0; width: 180px; height: auto;
+  opacity: .18; transition: opacity .3s;
+}
+.footer-doodle:hover { opacity: .35; }
+
+/* ── Reduced motion ──────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; }
+  .toast { transition: none !important; }
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 580px) {
+  .providers { grid-template-columns: repeat(2, 1fr); }
+  .logo-a, .logo-b { font-size: 2rem; }
+  header.page { padding-top: 44px; padding-bottom: 36px; }
+  main.page { gap: 36px; }
+  .actions { flex-wrap: wrap; }
+  .actions .btn.flex-1 { flex: 0 0 100%; }
+}
+@media (max-width: 360px) {
+  .page, .footer-inner { padding-left: 16px; padding-right: 16px; }
+}
+</style>
+</head>
+<body>
+
+<a href="#prompt" class="skip">Skip to prompt</a>
+
+<!-- ── Header ── -->
+<header class="page">
+  <h1 class="logo">
+    <a href="/"><span class="logo-a">Prompt</span><span class="logo-b">Router</span></a>
+  </h1>
+  <p class="tagline">AI prompts for sales professionals</p>
+  <nav class="nav-links">
+    <a href="/">Home</a>
+    <a href="/dev">Dev Prompts</a>
+    <a href="/sales" class="active">Sales Prompts</a>
+    <a href="/blog">Blog</a>
+  </nav>
+</header>
+
+<!-- ── Main ── -->
+<main class="page" id="main-content">
+
+  <!-- 1. Categories -->
+  <section aria-labelledby="lbl-cats">
+    <span class="lbl" id="lbl-cats">Categories</span>
+    <div class="cats" id="cats" role="group" aria-labelledby="lbl-cats"></div>
+  </section>
+
+  <!-- 2. Prompt cards -->
+  <section aria-labelledby="lbl-prompts">
+    <span class="lbl" id="lbl-prompts">Prompts</span>
+    <div class="prompt-cards" id="prompt-cards"></div>
+  </section>
+
+  <!-- 3. Prompt textarea -->
+  <section aria-labelledby="lbl-prompt">
+    <label class="lbl" id="lbl-prompt" for="prompt">Your prompt</label>
+    <div class="prompt-wrap">
+      <textarea
+        id="prompt"
+        name="prompt"
+        placeholder="Click a prompt above or write your own..."
+        spellcheck="false"
+        autocomplete="off"
+        aria-describedby="charCount"
+      ></textarea>
+      <div class="prompt-meta" aria-hidden="true">
+        <span class="char-count" id="charCount"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Providers -->
+  <section aria-labelledby="lbl-providers">
+    <span class="lbl" id="lbl-providers">Open in</span>
+    <ul class="providers" id="providers" aria-labelledby="lbl-providers"></ul>
+  </section>
+
+  <!-- 5. Actions -->
+  <div class="actions">
+    <button class="btn flex-1" id="copyBtn" type="button" aria-label="Copy prompt to clipboard">
+      Copy to clipboard
+    </button>
+    <button class="btn" id="clearBtn" type="button" aria-label="Clear the prompt">
+      Clear
+    </button>
+  </div>
+
+</main>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/dev">Dev Prompts</a>
+      <a href="/sales">Sales Prompts</a>
+      <a href="/blog">Blog</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Prompt Router &mdash; Free.</p>
+    <img src="/clumsy.svg" alt="" class="footer-doodle" aria-hidden="true" loading="lazy" width="180" height="135">
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+<script>
+'use strict';
+
+/* ── Sales prompt library ───────────────────────────────────── */
+const DEV_PROMPTS = [
+  {
+    cat: 'Prospecting',
+    prompts: [
+      {
+        title: 'Write cold outreach email',
+        text: "Write a cold outreach email to a prospective customer.\n\nCompany name: [prospect company]\nProspect role: [e.g. VP of Sales, Head of Operations]\nOur product/service: [brief description]\nKey value proposition: [what problem we solve]\nDesired outcome: [e.g. book a 20-minute call]\n\nKeep it under 150 words. Lead with their pain, not our product. End with a single low-friction CTA."
+      },
+      {
+        title: 'LinkedIn connection + message sequence',
+        text: "Write a 3-step LinkedIn outreach sequence for a cold prospect.\n\nProspect profile: [role, company, industry]\nOur offer: [product/service and key benefit]\n\nStep 1: Connection request note (under 300 characters)\nStep 2: First message after connecting (value-focused, no pitch, under 100 words)\nStep 3: Follow-up message if no reply after 5 days (gentle nudge, under 80 words)\n\nTone: professional but human. No generic openers like 'I came across your profile'."
+      },
+      {
+        title: 'Research prospect before call',
+        text: "Help me research this prospect before a sales call.\n\nProspect name: [name]\nRole: [title]\nCompany: [company name]\nIndustry: [industry]\nCall objective: [e.g. discovery, demo, close]\n\nProvide:\n1. 5 smart questions to ask based on their likely priorities\n2. 3 potential pain points for someone in their role\n3. 2 recent industry trends I can reference to show credibility\n4. One icebreaker based on their role or company"
+      },
+      {
+        title: 'Ideal customer profile definition',
+        text: "Help me define an Ideal Customer Profile (ICP) for our product.\n\nProduct/service: [describe what you sell]\nBest customers we already have: [describe 2-3 examples if available]\nProblem we solve: [describe the core pain point]\nOur price point: [approximate]\n\nOutput:\n1. Firmographic profile (company size, industry, geography, revenue)\n2. Technographic signals (tools/tech they likely use)\n3. Behavioral triggers (what prompts them to buy)\n4. Anti-ICP: who we should NOT target and why"
+      },
+    ]
+  },
+  {
+    cat: 'Discovery',
+    prompts: [
+      {
+        title: 'Discovery call question framework',
+        text: "Create a discovery call question framework for a sales call.\n\nProduct/service: [what we sell]\nTarget persona: [role and industry]\nCall duration: [e.g. 30 minutes]\n\nStructure the questions in this order:\n1. Situation (2-3 questions to understand their current state)\n2. Problem (2-3 questions to surface pain)\n3. Implication (2 questions to explore the cost of the problem)\n4. Need-payoff (2 questions to get them to articulate the value of solving it)\n\nInclude one open-ended closing question to gauge next steps."
+      },
+      {
+        title: 'Pain point identification',
+        text: "Based on the following discovery call notes, identify the prospect's core pain points and rank them by urgency.\n\nCall notes:\n[paste your call notes here]\n\nFor each pain point:\n1. Name and describe it clearly\n2. Quote or paraphrase what the prospect said\n3. Rate urgency: High / Medium / Low\n4. Suggest which product feature or outcome maps to it\n\nAlso flag any unstated pain points implied by what they said."
+      },
+      {
+        title: 'Needs analysis template',
+        text: "Help me complete a needs analysis based on this prospect conversation.\n\nProspect: [name, role, company]\nWhat they said their goal is: [quote or paraphrase]\nCurrent process/tool: [what they use today]\nFrustrations mentioned: [list them]\nTimeline they indicated: [if any]\nBudget signals: [if any]\n\nOutput a structured needs analysis including:\n- Primary need\n- Secondary needs\n- Success criteria (what does 'solved' look like to them?)\n- Recommended next step in the sales process"
+      },
+      {
+        title: 'Qualification checklist (BANT/MEDDIC)',
+        text: "Evaluate this prospect against a qualification framework.\n\nProspect: [name, role, company]\nDiscovery notes: [paste notes]\n\nScore them against both frameworks:\n\nBANT:\n- Budget: [known / unknown / confirmed]\n- Authority: [decision maker / influencer / unknown]\n- Need: [strong / moderate / weak / unclear]\n- Timeline: [urgent / within 6 months / no timeline]\n\nMEDDIC:\n- Metrics: [quantified impact identified?]\n- Economic Buyer: [identified?]\n- Decision Criteria: [known?]\n- Decision Process: [mapped?]\n- Identify Pain: [confirmed?]\n- Champion: [do we have one?]\n\nRecommend: Qualify / Nurture / Disqualify — with reasoning."
+      },
+    ]
+  },
+  {
+    cat: 'Pitch & Demo',
+    prompts: [
+      {
+        title: 'Tailor pitch to persona',
+        text: "Tailor our sales pitch for a specific persona.\n\nOur product/service: [describe it]\nCore value proposition: [1-2 sentences]\nProspect persona: [role, company type, industry]\nTheir likely top priorities: [e.g. cost reduction, team efficiency, compliance]\nPain points uncovered: [from discovery]\n\nRewrite the pitch so it:\n1. Leads with what matters most to this persona\n2. Uses language they would use (not our internal jargon)\n3. Connects our features directly to their stated pain\n4. Ends with a compelling reason to move forward now"
+      },
+      {
+        title: 'Demo script outline',
+        text: "Write a demo script outline for a product demo call.\n\nProduct: [name and brief description]\nProspect: [role, company, industry]\nPain points confirmed in discovery: [list them]\nDemo duration: [e.g. 30 minutes]\nKey features to highlight: [list 3-4]\n\nStructure:\n1. Opening (re-confirm agenda and goals, 2 min)\n2. Context-setting (tie demo to their pain, 3 min)\n3. Core demo flow (feature-by-feature with 'so what' for each, 18 min)\n4. Objection checkpoint (pause for questions, 4 min)\n5. Close (next steps and call to action, 3 min)\n\nInclude a transition line between each section."
+      },
+      {
+        title: 'ROI calculation narrative',
+        text: "Help me build an ROI narrative to present to a prospect.\n\nOur product/service: [description]\nProspect company size: [employees / revenue if known]\nPain they are experiencing: [describe]\nOur solution outcome: [what we improve]\n\nBuild a narrative that includes:\n1. Current cost of the problem (time, money, or risk)\n2. Conservative estimate of improvement with our solution\n3. Annual ROI calculation with clear assumptions\n4. Payback period\n5. One-sentence summary suitable for an executive\n\nUse round numbers and flag assumptions clearly so the prospect can adjust them."
+      },
+      {
+        title: 'Case study summary for prospect',
+        text: "Summarize a customer case study to share with a prospect.\n\nCustomer: [company name or 'a [industry] company']\nTheir problem before us: [describe]\nHow they used our product: [describe]\nResults achieved: [metrics if available]\nTimeframe: [how long to see results]\n\nWrite a 150-word summary formatted as:\n- Situation\n- Challenge\n- Solution\n- Results\n\nThen write a 1-sentence version I can drop into an email.\nThen write 2 follow-up questions I can ask the prospect to connect this story to their situation."
+      },
+    ]
+  },
+  {
+    cat: 'Objection Handling',
+    prompts: [
+      {
+        title: 'Respond to price objection',
+        text: "Help me respond to a price objection.\n\nWhat the prospect said: \"[exact quote or paraphrase]\"\nOur price: [approximate]\nValue we deliver: [key outcomes]\nCompetitor or alternative they may be comparing to: [if known]\n\nWrite a response that:\n1. Acknowledges the concern without being defensive\n2. Reframes price as investment with ROI language\n3. Breaks the cost down to a per-unit or per-day figure if helpful\n4. Offers a next step (not a discount) to move forward\n\nAlso suggest one clarifying question to ask before responding, to understand if it's a true budget issue or a value issue."
+      },
+      {
+        title: 'Address competitor comparison',
+        text: "Help me handle a competitor comparison objection.\n\nWhat the prospect said: \"[quote or paraphrase]\"\nCompetitor mentioned: [competitor name]\nWhat they likely value about the competitor: [price / features / brand / existing relationship]\nOur key differentiators: [list 2-3]\n\nWrite a response that:\n1. Validates that they're doing their due diligence\n2. Acknowledges the competitor fairly (no trash-talking)\n3. Pivots to our unique strengths relevant to their pain\n4. Suggests a side-by-side evaluation criteria they should use\n\nEnd with a question that keeps the conversation moving forward."
+      },
+      {
+        title: 'Handle "not the right time"',
+        text: "Help me respond to a timing objection.\n\nWhat the prospect said: \"[quote or paraphrase, e.g. 'We're too busy right now' or 'Let's revisit in Q3']\"\nWhat I know about their situation: [any context from discovery]\nOur typical implementation timeline: [e.g. 2 weeks, 1 day]\n\nWrite a response that:\n1. Empathizes with their bandwidth\n2. Gently challenges whether waiting makes the problem better or worse\n3. Offers a low-commitment next step (not a full sale)\n4. Gives them a concrete reason why now is better than later\n\nKeep it under 120 words. Avoid pressure tactics."
+      },
+      {
+        title: 'Overcome "need to think about it"',
+        text: "Help me respond to a 'need to think about it' or 'let me get back to you' objection.\n\nContext: [where we are in the deal — demo done, proposal sent, etc.]\nWhat the prospect said: \"[exact quote]\"\nWhat I think the real hesitation might be: [price / internal approval / risk / unsure of value]\n\nWrite a response that:\n1. Respects their process without letting the deal go cold\n2. Surfaces the real objection with a direct but non-pushy question\n3. Offers to help with whatever is causing the pause (e.g. internal business case)\n4. Locks in a specific follow-up time before ending the call"
+      },
+    ]
+  },
+  {
+    cat: 'Follow-up',
+    prompts: [
+      {
+        title: 'Post-demo follow-up email',
+        text: "Write a follow-up email to send within 24 hours of a product demo.\n\nProspect name: [name]\nCompany: [company]\nDemo date: [date]\nKey pain points discussed: [list 1-3]\nFeatures they responded to most: [list]\nAgreed next step: [e.g. send proposal, intro call with their team, trial]\nAny open questions they had: [list if any]\n\nEmail should:\n1. Thank them and reference something specific from the call\n2. Recap the 2-3 key value points relevant to their pain\n3. Answer any open questions\n4. Confirm the agreed next step with a clear action item\n\nTone: warm and professional. Under 200 words."
+      },
+      {
+        title: 'Re-engage cold lead',
+        text: "Write an email to re-engage a prospect who went cold.\n\nProspect name: [name]\nCompany: [company]\nLast interaction: [date and what happened — e.g. demo, proposal sent]\nTime since last contact: [e.g. 6 weeks]\nReason they may have gone quiet: [if known]\nNew angle or trigger to reference: [e.g. their company news, new feature we launched, industry change]\n\nWrite an email that:\n1. Does not guilt-trip or over-apologize\n2. Leads with something new or relevant (not 'just checking in')\n3. Re-establishes value in one sentence\n4. Has a single, easy-to-act-on CTA\n\nUnder 100 words."
+      },
+      {
+        title: 'Proposal summary email',
+        text: "Write an email to accompany a proposal being sent to a prospect.\n\nProspect name: [name]\nCompany: [company]\nProposal summary: [brief overview of what's included]\nTotal value/investment: [price or range]\nKey outcomes they'll get: [2-3 bullet points]\nExpiry or decision deadline: [if applicable]\nNext step: [e.g. review call scheduled, awaiting signature]\n\nEmail should:\n1. Frame the proposal as a solution to their specific pain (reference discovery)\n2. Highlight the 2-3 most important outcomes\n3. Make it easy to find the key sections of the proposal\n4. State the next step clearly\n\nTone: confident and helpful. Under 180 words."
+      },
+      {
+        title: 'Deal stuck — next steps email',
+        text: "Write an email to unstick a deal that has stalled.\n\nProspect name: [name]\nCompany: [company]\nDeal stage: [e.g. proposal sent, verbal yes but no signature, waiting on legal]\nHow long it has been stalled: [timeframe]\nLast communication: [brief summary]\nWhat I think the blocker is: [your best guess]\n\nWrite an email that:\n1. Does not feel like pressure or nagging\n2. Offers something genuinely helpful (e.g. a template, data, a call to work through blockers)\n3. Creates mild urgency without being artificial\n4. Proposes a specific next action with a date\n\nAlso suggest one alternative approach if the email gets no response."
+      },
+    ]
+  },
+  {
+    cat: 'Reporting',
+    prompts: [
+      {
+        title: 'Weekly pipeline summary',
+        text: "Write a weekly pipeline summary for my sales manager or team.\n\nThis week's activity:\n- New opportunities opened: [number and brief description]\n- Demos or calls completed: [number]\n- Proposals sent: [number]\n- Deals closed (won): [number and value]\n- Deals closed (lost): [number and reason if known]\n\nPipeline snapshot:\n- Total open pipeline: [value]\n- Deals at each stage: [list]\n- Deals at risk: [any stalled or at-risk deals]\n\nNext week priorities: [list 3-4 actions]\n\nFormat as a clear, skimmable summary. Use plain language, not jargon."
+      },
+      {
+        title: 'Lost deal analysis',
+        text: "Help me write a lost deal analysis.\n\nDeal details:\n- Prospect: [company name]\n- Deal size: [value]\n- Sales cycle length: [duration]\n- Stage lost at: [e.g. after demo, after proposal]\n- Stated reason for loss: [what they told us]\n- Actual reason (your read): [your honest assessment]\n- Competitor chosen (if known): [name]\n\nAnalyze:\n1. What signals did we miss or ignore?\n2. Where did the sales process break down?\n3. Was this a winnable deal? Why or why not?\n4. What would we do differently?\n5. Is there a path to re-engage in the future?\n\nBe honest and actionable, not defensive."
+      },
+      {
+        title: 'Win/loss patterns',
+        text: "Analyze these win/loss results to identify patterns.\n\nRecent wins:\n[list deals won — include size, industry, persona, deal length, key reason won]\n\nRecent losses:\n[list deals lost — include size, industry, persona, deal length, key reason lost]\n\nIdentify:\n1. Common characteristics of deals we win (ICP fit, use case, persona, deal size)\n2. Common characteristics of deals we lose\n3. Patterns in why we win (price, relationships, features, speed)\n4. Patterns in why we lose (same)\n5. Recommendations: where to focus, what to fix in the process, and which segment to double down on"
+      },
+      {
+        title: 'Forecast narrative for leadership',
+        text: "Write a sales forecast narrative for a leadership or board update.\n\nForecast period: [e.g. Q2 2026]\nQuota: [total target]\nCurrent pipeline: [total value]\nCommitted forecast: [what I'm confident will close]\nBest case: [if everything goes right]\nWorthy risks: [deals that could slip]\n\nKey deals to highlight:\n[list 3-5 with name/placeholder, stage, value, expected close date]\n\nWrite a 200-word narrative that:\n1. States the headline number clearly\n2. Explains what's driving confidence\n3. Names the key risks and what's being done to mitigate them\n4. Ends with one clear ask or action needed from leadership (if any)\n\nTone: confident and data-grounded, not defensive."
+      },
+    ]
+  },
+];
+
+/* ── State ───────────────────────────────────────────────────── */
+let activeCat = 'All';
+let selectedCard = null;
+
+/* ── DOM refs ────────────────────────────────────────────────── */
+const catsEl       = document.getElementById('cats');
+const cardsEl      = document.getElementById('prompt-cards');
+const promptEl     = document.getElementById('prompt');
+const providersEl  = document.getElementById('providers');
+const charCountEl  = document.getElementById('charCount');
+const copyBtn      = document.getElementById('copyBtn');
+const clearBtnEl   = document.getElementById('clearBtn');
+const toastEl      = document.getElementById('toast');
+
+/* ── Render categories ──────────────────────────────────────── */
+function renderCats() {
+  const cats = ['All', ...DEV_PROMPTS.map(c => c.cat)];
+  catsEl.innerHTML = '';
+  cats.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'cat' + (activeCat === cat ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', () => {
+      activeCat = cat;
+      selectedCard = null;
+      renderCats();
+      renderCards();
+    });
+    catsEl.appendChild(btn);
+  });
+}
+
+/* ── Render prompt cards ────────────────────────────────────── */
+function renderCards() {
+  cardsEl.innerHTML = '';
+  const groups = activeCat === 'All' ? DEV_PROMPTS : DEV_PROMPTS.filter(c => c.cat === activeCat);
+
+  groups.forEach(group => {
+    if (activeCat === 'All') {
+      const catLabel = document.createElement('span');
+      catLabel.className = 'lbl';
+      catLabel.textContent = group.cat;
+      catLabel.style.marginTop = cardsEl.children.length ? '20px' : '0';
+      cardsEl.appendChild(catLabel);
+    }
+
+    group.prompts.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'prompt-card';
+      card.innerHTML = `<div class="prompt-card-title">${p.title}</div><div class="prompt-card-preview">${escHtml(p.text)}</div>`;
+      card.addEventListener('click', () => {
+        const wasSelected = selectedCard === p;
+        document.querySelectorAll('.prompt-card').forEach(c => c.classList.remove('selected'));
+
+        if (wasSelected) {
+          selectedCard = null;
+          promptEl.value = '';
+        } else {
+          selectedCard = p;
+          card.classList.add('selected');
+          promptEl.value = p.text;
+          promptEl.focus();
+        }
+        updateCount();
+      });
+      cardsEl.appendChild(card);
+    });
+  });
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+/* ── Providers ──────────────────────────────────────────────── */
+const enc = s => encodeURIComponent(s);
+const providers = [
+  { id: 'chatgpt',    label: 'ChatGPT',    cls: 'pc-chatgpt',    url: q => `https://chatgpt.com/?q=${enc(q)}` },
+  { id: 'claude',     label: 'Claude',     cls: 'pc-claude',     url: q => `https://claude.ai/new?q=${enc(q)}` },
+  { id: 'gemini',     label: 'Gemini',     cls: 'pc-gemini',     url: q => `https://gemini.google.com/app?q=${enc(q)}` },
+  { id: 'copilot',    label: 'Copilot',    cls: 'pc-copilot',    url: q => `https://copilot.microsoft.com/?q=${enc(q)}` },
+  { id: 'perplexity', label: 'Perplexity', cls: 'pc-perplexity', url: q => `https://www.perplexity.ai/search?q=${enc(q)}` },
+  { id: 'lechat',     label: 'Le Chat',    cls: 'pc-lechat',     url: q => `https://chat.mistral.ai/chat?q=${enc(q)}` },
+  { id: 'grok',       label: 'Grok',       cls: 'pc-grok',       url: q => `https://x.com/i/grok?text=${enc(q)}` },
+  { id: 'deepseek',   label: 'DeepSeek',   cls: 'pc-deepseek',   url: q => `https://chat.deepseek.com/?q=${enc(q)}` },
+];
+
+providers.forEach(p => {
+  const li = document.createElement('li');
+  const btn = document.createElement('button');
+  btn.type = 'button'; btn.className = `p-btn ${p.cls}`;
+  btn.setAttribute('aria-label', `Open in ${p.label}`);
+  btn.innerHTML = `<span class="p-dot" aria-hidden="true"></span><span class="p-name">${p.label}</span><span class="p-arrow" aria-hidden="true">&nearr;</span>`;
+  btn.addEventListener('click', () => openProvider(p));
+  li.appendChild(btn); providersEl.appendChild(li);
+});
+
+/* ── Core actions ────────────────────────────────────────────── */
+function getPrompt() { return promptEl.value.trim(); }
+
+function openProvider(p) {
+  const q = getPrompt();
+  if (!q) { showToast('Write a prompt first'); return; }
+  const w = window.open(p.url(q), '_blank', 'noopener,noreferrer');
+  if (!w) showToast('Popup blocked — copy & paste instead');
+}
+
+function updateCount() {
+  const n = promptEl.value.length;
+  charCountEl.textContent = n > 0 ? n.toLocaleString() : '';
+  charCountEl.classList.toggle('warn', n > 3000);
+}
+
+promptEl.addEventListener('input', () => {
+  updateCount();
+  if (!promptEl.value) {
+    selectedCard = null;
+    document.querySelectorAll('.prompt-card').forEach(c => c.classList.remove('selected'));
+  }
+});
+
+copyBtn.addEventListener('click', async () => {
+  const q = getPrompt();
+  if (!q) { showToast('Nothing to copy yet'); return; }
+  try {
+    await navigator.clipboard.writeText(q);
+    copyBtn.textContent = '\u2713 Copied!';
+    copyBtn.classList.add('copied');
+    setTimeout(() => {
+      copyBtn.textContent = 'Copy to clipboard';
+      copyBtn.classList.remove('copied');
+    }, 2200);
+  } catch { showToast('Copy failed — try manually'); }
+});
+
+clearBtnEl.addEventListener('click', () => {
+  promptEl.value = ''; updateCount();
+  selectedCard = null;
+  document.querySelectorAll('.prompt-card').forEach(c => c.classList.remove('selected'));
+  promptEl.focus();
+});
+
+/* ── Keyboard shortcuts ──────────────────────────────────────── */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && document.activeElement === promptEl) {
+    clearBtnEl.click(); return;
+  }
+  if ((e.metaKey || e.ctrlKey) && e.key === 'c' && document.activeElement === promptEl && !window.getSelection()?.toString()) {
+    e.preventDefault(); copyBtn.click();
+  }
+});
+
+/* ── Toast ───────────────────────────────────────────────────── */
+let toastTimer;
+function showToast(msg) {
+  toastEl.textContent = msg; toastEl.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toastEl.classList.remove('show'), 3000);
+}
+
+/* ── Init ────────────────────────────────────────────────────── */
+renderCats();
+renderCards();
+
+/* ── Service Worker ──────────────────────────────────────────── */
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').catch(() => {});
+}
+</script>
+</body>
+</html>

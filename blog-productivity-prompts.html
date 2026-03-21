@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<title>Productivity Prompts for People Who Actually Work | Prompt Router Blog</title>
+<meta name="description" content="The best productivity prompt is the one that saves you from a blank page. A practical guide to AI prompts for planning, meetings, email, decisions, and more.">
+<meta name="keywords" content="productivity prompts, AI prompts, ChatGPT productivity, prompt engineering, work prompts, meeting prompts, email prompts">
+<meta name="author" content="Prompt Router">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://prompt-router.pages.dev/blog-productivity-prompts">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Prompt Router">
+<meta property="og:title" content="Productivity Prompts for People Who Actually Work">
+<meta property="og:description" content="The best productivity prompt is the one that saves you from a blank page. Prompts for planning, meetings, email, decisions, and more.">
+<meta property="og:url" content="https://prompt-router.pages.dev/blog-productivity-prompts">
+<meta property="og:image" content="https://prompt-router.pages.dev/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-03-21">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Productivity Prompts for People Who Actually Work">
+<meta name="twitter:description" content="The best productivity prompt is the one that saves you from a blank page. Prompts for planning, meetings, email, decisions, and more.">
+<meta name="twitter:image" content="https://prompt-router.pages.dev/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Productivity Prompts for People Who Actually Work",
+  "description": "The best productivity prompt is the one that saves you from a blank page. A practical guide to AI prompts for planning, meetings, email, decisions, and more.",
+  "datePublished": "2026-03-21",
+  "author": { "@type": "Person", "name": "Prompt Router" },
+  "publisher": { "@type": "Organization", "name": "Prompt Router", "url": "https://prompt-router.pages.dev/" },
+  "mainEntityOfPage": "https://prompt-router.pages.dev/blog-productivity-prompts",
+  "image": "https://prompt-router.pages.dev/og-image.png"
+}
+</script>
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230f0f10'/><text y='24' x='4' font-size='22' font-family='serif' fill='%23d4a847'>P</text></svg>">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f0f10" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f4f0e8" media="(prefers-color-scheme: light)">
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,200&display=swap" rel="stylesheet">
+
+<style>
+/* ── Tokens ──────────────────────────────────────────────────── */
+:root {
+  --bg:        #0f0f10;
+  --surface:   #1a1a1c;
+  --surface-2: #222225;
+  --border:    #2c2c30;
+  --border-2:  #404046;
+  --text:      #f0ece4;
+  --text-2:    #9e9a96;
+  --text-3:    #5a5856;
+  --gold:      #d4a847;
+  --gold-dim:  #9a7830;
+  --gold-glow: rgba(212,168,71,.1);
+  --focus:     #d4a847;
+
+  --xs:   0.8125rem;
+  --sm:   0.9375rem;
+  --base: 1.0625rem;
+  --lg:   1.125rem;
+  --2xl:  2.375rem;
+
+  --r:    8px;
+  --r-lg: 12px;
+  --max:  700px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg:        #f4f0e8;
+    --surface:   #fdfaf5;
+    --surface-2: #f0ece2;
+    --border:    #e0dbd0;
+    --border-2:  #c8c2b4;
+    --text:      #1a1714;
+    --text-2:    #5a554e;
+    --text-3:    #9c968e;
+    --gold:      #7a5518;
+    --gold-dim:  #9a6c28;
+    --gold-glow: rgba(122,85,24,.07);
+    --focus:     #7a5518;
+  }
+}
+
+/* ── Reset ───────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: var(--base);
+  line-height: 1.65;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Focus ───────────────────────────────────────────────────── */
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: var(--r); }
+:focus:not(:focus-visible) { outline: none; }
+
+/* ── Page shell ──────────────────────────────────────────────── */
+.page { width: 100%; max-width: var(--max); padding: 0 28px; }
+
+/* ── Header ──────────────────────────────────────────────────── */
+header.page { padding-top: 60px; padding-bottom: 52px; }
+
+h1.logo {
+  display: flex; align-items: baseline; gap: 8px;
+  font-size: inherit; font-weight: inherit; margin-bottom: 12px;
+}
+.logo-a {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto; font-weight: 600;
+  font-size: var(--2xl); letter-spacing: -0.03em;
+  line-height: 1; color: var(--text);
+}
+.logo-b {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto; font-weight: 200; font-style: italic;
+  font-size: var(--2xl); letter-spacing: -0.02em;
+  line-height: 1; color: var(--gold);
+}
+.logo a { text-decoration: none; color: inherit; }
+
+/* ── Nav ─────────────────────────────────────────────────────── */
+.nav-links {
+  display: flex; gap: 16px; margin-top: 16px;
+}
+.nav-links a {
+  font-size: var(--xs); color: var(--text-3);
+  text-decoration: none; letter-spacing: 0.04em;
+  transition: color .12s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-links a.active { color: var(--gold); }
+
+/* ── Article ─────────────────────────────────────────────────── */
+article.page { padding-bottom: 86px; }
+
+.article-date {
+  font-size: var(--xs); color: var(--text-3);
+  letter-spacing: 0.04em; margin-bottom: 8px;
+}
+
+.article-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600; font-size: 1.75rem;
+  letter-spacing: -0.02em; line-height: 1.3;
+  color: var(--text); margin-bottom: 32px;
+}
+
+article h2 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600; font-size: 1.25rem;
+  letter-spacing: -0.01em; line-height: 1.3;
+  color: var(--text); margin: 40px 0 16px;
+}
+
+article p {
+  color: var(--text-2); margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+article a {
+  color: var(--gold); text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--gold-dim);
+  transition: color .12s;
+}
+article a:hover { color: var(--text); }
+
+article ul {
+  color: var(--text-2); margin: 0 0 20px 20px;
+  line-height: 2;
+}
+
+article blockquote {
+  border-left: 3px solid var(--gold-dim);
+  padding: 12px 20px; margin: 24px 0;
+  background: var(--gold-glow);
+  border-radius: 0 var(--r) var(--r) 0;
+  color: var(--text-2); font-style: italic;
+}
+
+article code {
+  background: var(--surface-2); padding: 2px 6px;
+  border-radius: 4px; font-size: var(--sm);
+  color: var(--gold);
+}
+
+.cta-box {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 24px;
+  margin: 32px 0; text-align: center;
+}
+.cta-box p { color: var(--text); margin-bottom: 16px; }
+.cta-link {
+  display: inline-block; padding: 12px 28px;
+  border: 1px solid var(--gold); border-radius: var(--r);
+  color: var(--gold); text-decoration: none;
+  font-family: 'DM Mono', monospace; font-size: var(--sm);
+  letter-spacing: 0.04em; transition: background .12s, color .12s;
+}
+.cta-link:hover { background: var(--gold); color: var(--bg); }
+
+/* ── Footer ──────────────────────────────────────────────────── */
+footer {
+  width: 100%; border-top: 1px solid var(--border);
+  display: flex; justify-content: center; margin-top: 8px;
+}
+.footer-inner {
+  width: 100%; max-width: var(--max);
+  padding: 32px 28px 48px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.footer-links {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  font-size: var(--xs); margin-bottom: 4px;
+}
+.footer-links a {
+  color: var(--text-2); text-decoration: none;
+  letter-spacing: 0.02em; transition: color .12s;
+}
+.footer-links a:hover { color: var(--gold); }
+.footer-copy { font-size: var(--xs); color: var(--text-3); }
+.footer-doodle {
+  display: block; margin: 16px auto 0; width: 180px; height: auto;
+  opacity: .18; transition: opacity .3s;
+}
+.footer-doodle:hover { opacity: .35; }
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 580px) {
+  .logo-a, .logo-b { font-size: 2rem; }
+  header.page { padding-top: 44px; padding-bottom: 36px; }
+  .article-title { font-size: 1.4rem; }
+}
+@media (max-width: 360px) {
+  .page, .footer-inner { padding-left: 16px; padding-right: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<header class="page">
+  <h1 class="logo">
+    <a href="/"><span class="logo-a">Prompt</span><span class="logo-b">Router</span></a>
+  </h1>
+  <nav class="nav-links">
+    <a href="/">Home</a>
+    <a href="/productivity">Productivity Prompts</a>
+    <a href="/blog" class="active">Blog</a>
+  </nav>
+</header>
+
+<!-- ── Article ── -->
+<article class="page">
+  <p class="article-date">March 21, 2026</p>
+  <h1 class="article-title">Productivity Prompts for People Who Actually Work</h1>
+
+  <p>Productivity advice usually falls into two camps: either it's obvious stuff dressed up as a system, or it's so abstract you can't do anything with it. "Work in blocks." "Eat the frog." Cool. What do I do when I'm staring at a calendar full of meetings and a to-do list that keeps growing?</p>
+
+  <p>Here's the frame I've settled on: productivity isn't about doing more. It's about spending less time on the <em>overhead</em> &mdash; the blank-page moments, the back-and-forth emails, the decisions that shouldn't take 45 minutes. AI is genuinely good at eating that overhead. But only if you know what to ask.</p>
+
+  <p>These are the prompts I actually use, organized by the part of work they help with most.</p>
+
+  <h2>Planning</h2>
+
+  <p>The hardest part of planning isn't figuring out what to do &mdash; it's breaking big fuzzy goals into things you can actually put on a list. This is where AI earns its keep.</p>
+
+  <blockquote>"I need to [goal] by [date]. I have roughly [X hours/week] to work on it. Give me a week-by-week plan with specific milestones, and flag any risks I should think about upfront."</blockquote>
+
+  <p>I also use a shorter one when a task keeps sitting on my list because I'm not sure where to start:</p>
+
+  <blockquote>"I keep procrastinating on [task]. What's the smallest possible first step I could take in under 10 minutes?"</blockquote>
+
+  <p>That second one sounds almost too simple. It isn't. Naming the smallest step is often all you need to get unstuck.</p>
+
+  <h2>Meetings</h2>
+
+  <p>Meetings are where time goes to disappear. The two prompts that save me the most time here are a pre-meeting prep one and a post-meeting summary one.</p>
+
+  <blockquote>"I have a meeting about [topic] with [audience] in [X minutes]. Give me three smart questions to ask and the two or three points I should make sure we cover."</blockquote>
+
+  <p>After the meeting, I paste my rough notes and use:</p>
+
+  <blockquote>"Here are my notes from a meeting: [paste notes]. Summarize into: key decisions made, action items with owners, and open questions to follow up on."</blockquote>
+
+  <p>The output isn't always perfect, but it's 80% of the way there in 10 seconds. Editing a draft is much faster than writing from scratch.</p>
+
+  <h2>Email</h2>
+
+  <p>I have a complicated relationship with email. I want to be responsive without spending my whole day in my inbox. The prompts that help most are the ones that handle the awkward emails &mdash; the ones where you know roughly what you want to say but the tone is tricky.</p>
+
+  <blockquote>"Write a professional but warm reply to this email: [paste email]. I want to [outcome]. Keep it under 100 words."</blockquote>
+
+  <p>The word limit is important. Without it, AI will give you a four-paragraph email when you needed two sentences. Always set a length constraint. And if you're dealing with something sensitive &mdash; a complaint, a pushback, a decline &mdash; add a line like "tone should be empathetic but firm" and it usually nails it.</p>
+
+  <h2>Decisions</h2>
+
+  <p>I use AI as a thinking partner for decisions more than anything else. Not to make the decision for me, but to make sure I'm not missing something obvious.</p>
+
+  <blockquote>"I'm deciding between [option A] and [option B]. Here's the context: [paste context]. What are the strongest arguments for each? What am I probably not considering?"</blockquote>
+
+  <p>The "what am I probably not considering" part is the key phrase. It shifts the AI from summarizing what you already told it to actually adding something new. I've caught real blind spots this way &mdash; second-order effects, stakeholder concerns I'd glossed over, implementation risks hiding in assumptions.</p>
+
+  <h2>Communication</h2>
+
+  <p>A lot of work communication isn't emails or meetings &mdash; it's the Slack messages, the doc comments, the quick status updates that collectively eat hours. These are almost always faster with a prompt.</p>
+
+  <blockquote>"Summarize this project status for a non-technical audience in 3 bullet points: [paste update]. Use plain language, no jargon."</blockquote>
+
+  <p>I also keep one around for when I need to explain something complex without being condescending:</p>
+
+  <blockquote>"Explain [concept] to someone who understands [related concept] but hasn't encountered [concept] before. Use an analogy if it helps."</blockquote>
+
+  <p>Good communication is mostly about knowing your audience. These prompts make it easier to adjust quickly without starting over.</p>
+
+  <h2>Personal</h2>
+
+  <p>Work bleeds into life, so I'll include these even if they're slightly off-topic. The prompts I use for my own thinking &mdash; not work output &mdash; are often the most valuable.</p>
+
+  <blockquote>"I feel stuck on [situation]. I'm not looking for advice. Just ask me five questions that might help me think it through better."</blockquote>
+
+  <p>That one is genuinely useful when you don't want an answer, you want clarity. Also:</p>
+
+  <blockquote>"Give me a weekly review template I can actually stick to. I have about 20 minutes on Fridays and I tend to skip anything that feels like journaling."</blockquote>
+
+  <p>Constraints like "20 minutes" and "I tend to skip X" give the AI enough to work with that the output is actually tailored, not generic.</p>
+
+  <h2>The meta-tip</h2>
+
+  <p>The best productivity prompt is the one that saves you from a blank page. That's it. You don't need a perfectly engineered prompt to get value &mdash; you need something good enough to give you a starting point. Draft first, refine second.</p>
+
+  <p>The other thing worth saying: these prompts work better when you try them across different AI models. Claude tends to be sharper on nuance and tone. ChatGPT is fast and good for brainstorming. Gemini handles context-heavy tasks well. The "right" one depends on your specific prompt, and the only way to know is to send it to a few and compare. That's exactly what <a href="/">Prompt Router</a> makes easy &mdash; one prompt, every AI, no tab-switching.</p>
+
+  <div class="cta-box">
+    <p>Ready to try these? Load them into any AI without the copy-paste grind.</p>
+    <a href="/productivity" class="cta-link">Browse Productivity Prompts</a>
+    &nbsp;&nbsp;
+    <a href="/" class="cta-link">Open Prompt Router</a>
+  </div>
+</article>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/productivity">Productivity Prompts</a>
+      <a href="/blog">Blog</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Prompt Router &mdash; Free.</p>
+    <img src="/clumsy.svg" alt="" class="footer-doodle" aria-hidden="true" loading="lazy" width="180" height="135">
+  </div>
+</footer>
+
+</body>
+</html>

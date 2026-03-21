@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<title>Job Search Prompts — AI Prompts for Your Career | Prompt Router</title>
+<meta name="description" content="24+ curated AI prompts for job seekers: resume writing, cover letters, interview prep, LinkedIn optimization, networking, and career growth. Send any prompt to ChatGPT, Claude, Gemini and 5 other AIs instantly.">
+<meta name="keywords" content="job search prompts, career prompts, resume prompts, cover letter AI, interview prep prompts, LinkedIn prompts, networking prompts, ChatGPT career">
+<meta name="author" content="Prompt Router">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://prompt-router.pages.dev/job">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Prompt Router">
+<meta property="og:title" content="Job Search Prompts — AI Prompts for Your Career">
+<meta property="og:description" content="24+ curated prompts for resumes, cover letters, interview prep, LinkedIn, networking, and career growth. Send to any AI instantly.">
+<meta property="og:url" content="https://prompt-router.pages.dev/job">
+<meta property="og:image" content="https://prompt-router.pages.dev/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Job Search Prompts — AI Prompts for Your Career">
+<meta name="twitter:description" content="24+ curated prompts for resumes, cover letters, interview prep and more. Send to any AI instantly.">
+<meta name="twitter:image" content="https://prompt-router.pages.dev/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Job Search Prompts — AI Prompts for Your Career",
+  "description": "24+ curated AI prompts for job seekers: resume writing, cover letters, interview prep, LinkedIn optimization, networking, and career growth.",
+  "url": "https://prompt-router.pages.dev/job",
+  "isPartOf": {
+    "@type": "WebApplication",
+    "name": "Prompt Router",
+    "url": "https://prompt-router.pages.dev/"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://prompt-router.pages.dev/" },
+      { "@type": "ListItem", "position": 2, "name": "Job Search Prompts", "item": "https://prompt-router.pages.dev/job" }
+    ]
+  }
+}
+</script>
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230f0f10'/><text y='24' x='4' font-size='22' font-family='serif' fill='%23d4a847'>P</text></svg>">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f0f10" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f4f0e8" media="(prefers-color-scheme: light)">
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,200&display=swap" rel="stylesheet">
+
+<style>
+/* ── Tokens ──────────────────────────────────────────────────── */
+:root {
+  --bg:        #0f0f10;
+  --surface:   #1a1a1c;
+  --surface-2: #222225;
+  --border:    #2c2c30;
+  --border-2:  #404046;
+  --text:      #f0ece4;
+  --text-2:    #9e9a96;
+  --text-3:    #5a5856;
+  --gold:      #d4a847;
+  --gold-dim:  #9a7830;
+  --gold-glow: rgba(212,168,71,.1);
+  --focus:     #d4a847;
+
+  --chatgpt:    #10a37f;
+  --claude:     #c8845a;
+  --gemini:     #4285f4;
+  --copilot:    #7b6fcc;
+  --perplexity: #17b0a7;
+  --lechat:     #f06830;
+  --grok:       #aaaaaa;
+  --deepseek:   #4d6bfe;
+
+  --xs:   0.8125rem;
+  --sm:   0.9375rem;
+  --base: 1.0625rem;
+  --lg:   1.125rem;
+  --2xl:  2.375rem;
+
+  --r:    8px;
+  --r-lg: 12px;
+  --max:  700px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg:        #f4f0e8;
+    --surface:   #fdfaf5;
+    --surface-2: #f0ece2;
+    --border:    #e0dbd0;
+    --border-2:  #c8c2b4;
+    --text:      #1a1714;
+    --text-2:    #5a554e;
+    --text-3:    #9c968e;
+    --gold:      #7a5518;
+    --gold-dim:  #9a6c28;
+    --gold-glow: rgba(122,85,24,.07);
+    --focus:     #7a5518;
+  }
+}
+
+/* ── Reset ───────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: var(--base);
+  line-height: 1.65;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Skip link ───────────────────────────────────────────────── */
+.skip {
+  position: absolute; top: -100%; left: 16px;
+  background: var(--gold); color: var(--bg);
+  font-size: var(--sm); padding: 8px 16px;
+  border-radius: 0 0 var(--r) var(--r);
+  text-decoration: none; z-index: 999; transition: top .15s;
+}
+.skip:focus { top: 0; outline: none; }
+
+/* ── Focus ───────────────────────────────────────────────────── */
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: var(--r); }
+:focus:not(:focus-visible) { outline: none; }
+
+/* ── Page shell ──────────────────────────────────────────────── */
+.page { width: 100%; max-width: var(--max); padding: 0 28px; }
+
+/* ── Header ──────────────────────────────────────────────────── */
+header.page { padding-top: 60px; padding-bottom: 52px; }
+
+h1.logo {
+  display: flex; align-items: baseline; gap: 8px;
+  font-size: inherit; font-weight: inherit; margin-bottom: 12px;
+}
+.logo-a {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto; font-weight: 600;
+  font-size: var(--2xl); letter-spacing: -0.03em;
+  line-height: 1; color: var(--text);
+}
+.logo-b {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto; font-weight: 200; font-style: italic;
+  font-size: var(--2xl); letter-spacing: -0.02em;
+  line-height: 1; color: var(--gold);
+}
+.logo a { text-decoration: none; color: inherit; }
+.tagline {
+  font-size: var(--sm); color: var(--text-3);
+  letter-spacing: 0.01em; line-height: 1;
+}
+
+/* ── Nav ─────────────────────────────────────────────────────── */
+.nav-links {
+  display: flex; gap: 16px; margin-top: 16px;
+}
+.nav-links a {
+  font-size: var(--xs); color: var(--text-3);
+  text-decoration: none; letter-spacing: 0.04em;
+  transition: color .12s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-links a.active { color: var(--gold); }
+
+/* ── Main ────────────────────────────────────────────────────── */
+main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40px; }
+
+/* ── Section labels ──────────────────────────────────────────── */
+.lbl {
+  display: block;
+  font-size: var(--xs); letter-spacing: 0.09em;
+  text-transform: uppercase; color: var(--text-3);
+  font-weight: 500; margin-bottom: 12px;
+}
+
+/* ── Category chips ──────────────────────────────────────────── */
+.cats { display: flex; flex-wrap: wrap; gap: 7px; }
+.cat {
+  padding: 7px 14px; background: none;
+  border: 1px solid var(--border); border-radius: 100px;
+  color: var(--text-2); font-family: 'DM Mono', monospace;
+  font-size: var(--xs); letter-spacing: 0.03em; line-height: 1;
+  cursor: pointer; user-select: none;
+  transition: color .12s, border-color .12s, background .12s;
+}
+.cat:hover { color: var(--gold); border-color: var(--gold-dim); background: var(--gold-glow); }
+.cat.active { color: var(--gold); border-color: var(--gold); background: var(--gold-glow); }
+
+/* ── Prompt cards ────────────────────────────────────────────── */
+.prompt-cards { display: flex; flex-direction: column; gap: 10px; }
+
+.prompt-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 16px 18px;
+  cursor: pointer;
+  transition: border-color .12s, background .12s;
+}
+.prompt-card:hover { border-color: var(--border-2); background: var(--surface-2); }
+.prompt-card.selected { border-color: var(--gold); background: var(--gold-glow); }
+
+.prompt-card-title {
+  font-size: var(--sm); font-weight: 500; color: var(--text);
+  margin-bottom: 6px; line-height: 1.3;
+}
+.prompt-card-preview {
+  font-size: var(--xs); color: var(--text-3);
+  line-height: 1.5; white-space: pre-line;
+  display: -webkit-box; -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; overflow: hidden;
+}
+.prompt-card.selected .prompt-card-preview {
+  -webkit-line-clamp: unset;
+  color: var(--text-2);
+}
+
+/* ── Textarea ────────────────────────────────────────────────── */
+.prompt-wrap { position: relative; }
+textarea {
+  display: block; width: 100%; min-height: 210px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); color: var(--text);
+  font-family: 'DM Mono', monospace; font-size: var(--base);
+  line-height: 1.75; padding: 20px 20px 50px;
+  resize: vertical; outline: none; caret-color: var(--gold);
+  transition: border-color .18s, box-shadow .18s;
+}
+textarea::placeholder { color: var(--text-3); font-style: italic; }
+textarea:hover { border-color: var(--border-2); }
+textarea:focus { border-color: var(--gold-dim); box-shadow: 0 0 0 3px var(--gold-glow); }
+
+.prompt-meta {
+  position: absolute; bottom: 15px; left: 20px; right: 20px;
+  display: flex; justify-content: space-between; align-items: center;
+  pointer-events: none;
+}
+.char-count {
+  font-size: var(--xs); color: var(--text-3);
+  font-variant-numeric: tabular-nums; transition: color .2s;
+}
+.char-count.warn { color: #c97a40; }
+
+/* ── Provider cards ──────────────────────────────────────────── */
+.providers {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.p-btn {
+  width: 100%; display: flex; flex-direction: column;
+  align-items: flex-start; gap: 10px; padding: 14px 14px 12px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); color: var(--text);
+  font-family: 'DM Mono', monospace; cursor: pointer;
+  transition: border-color .12s, background .12s, transform .12s, box-shadow .12s;
+  text-align: left; position: relative; overflow: hidden;
+}
+.p-btn:hover {
+  background: var(--surface-2); border-color: var(--border-2);
+  transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.18);
+}
+.p-btn:active { transform: translateY(0); box-shadow: none; }
+.p-dot {
+  width: 28px; height: 4px; border-radius: 2px;
+  background: var(--pc, var(--border)); opacity: .65;
+  transition: opacity .12s, width .12s;
+}
+.p-btn:hover .p-dot { opacity: 1; width: 36px; }
+.p-name { font-size: var(--sm); letter-spacing: 0.02em; line-height: 1; }
+.p-arrow {
+  position: absolute; top: 12px; right: 12px;
+  font-size: 11px; color: var(--text-3); line-height: 1;
+  transition: transform .12s, color .12s;
+}
+.p-btn:hover .p-arrow { transform: translate(2px,-2px); color: var(--text-2); }
+
+.pc-chatgpt    { --pc: var(--chatgpt); }
+.pc-claude     { --pc: var(--claude); }
+.pc-gemini     { --pc: var(--gemini); }
+.pc-copilot    { --pc: var(--copilot); }
+.pc-perplexity { --pc: var(--perplexity); }
+.pc-lechat     { --pc: var(--lechat); }
+.pc-grok       { --pc: var(--grok); }
+.pc-deepseek   { --pc: var(--deepseek); }
+
+/* ── Actions row ─────────────────────────────────────────────── */
+.actions { display: flex; gap: 8px; }
+
+.btn {
+  padding: 14px 20px; background: none;
+  border: 1px solid var(--border); border-radius: var(--r);
+  color: var(--text-2); font-family: 'DM Mono', monospace;
+  font-size: var(--sm); letter-spacing: 0.04em;
+  cursor: pointer; line-height: 1; white-space: nowrap;
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  transition: border-color .12s, color .12s;
+}
+.btn:hover { border-color: var(--border-2); color: var(--text); }
+.btn.flex-1 { flex: 1; }
+.btn.copied { border-color: var(--gold-dim); color: var(--gold); }
+
+/* ── Toast ───────────────────────────────────────────────────── */
+.toast {
+  position: fixed; bottom: 28px; left: 50%;
+  transform: translateX(-50%) translateY(64px);
+  background: var(--surface-2); border: 1px solid var(--border-2);
+  border-radius: var(--r); padding: 11px 20px;
+  font-size: var(--sm); letter-spacing: 0.02em; color: var(--text);
+  box-shadow: 0 8px 32px rgba(0,0,0,.3);
+  transition: transform .26s cubic-bezier(.34,1.56,.64,1);
+  z-index: 200; white-space: nowrap; pointer-events: none;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ── Footer ──────────────────────────────────────────────────── */
+footer {
+  width: 100%; border-top: 1px solid var(--border);
+  display: flex; justify-content: center; margin-top: 8px;
+}
+.footer-inner {
+  width: 100%; max-width: var(--max);
+  padding: 32px 28px 48px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.footer-links {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  font-size: var(--xs); margin-bottom: 4px;
+}
+.footer-links a {
+  color: var(--text-2); text-decoration: none;
+  letter-spacing: 0.02em; transition: color .12s;
+}
+.footer-links a:hover { color: var(--gold); }
+.footer-copy { font-size: var(--xs); color: var(--text-3); }
+.footer-doodle {
+  display: block; margin: 16px auto 0; width: 180px; height: auto;
+  opacity: .18; transition: opacity .3s;
+}
+.footer-doodle:hover { opacity: .35; }
+
+/* ── Reduced motion ──────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; }
+  .toast { transition: none !important; }
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 580px) {
+  .providers { grid-template-columns: repeat(2, 1fr); }
+  .logo-a, .logo-b { font-size: 2rem; }
+  header.page { padding-top: 44px; padding-bottom: 36px; }
+  main.page { gap: 36px; }
+  .actions { flex-wrap: wrap; }
+  .actions .btn.flex-1 { flex: 0 0 100%; }
+}
+@media (max-width: 360px) {
+  .page, .footer-inner { padding-left: 16px; padding-right: 16px; }
+}
+</style>
+</head>
+<body>
+
+<a href="#prompt" class="skip">Skip to prompt</a>
+
+<!-- ── Header ── -->
+<header class="page">
+  <h1 class="logo">
+    <a href="/"><span class="logo-a">Prompt</span><span class="logo-b">Router</span></a>
+  </h1>
+  <p class="tagline">AI prompts for job seekers and career growth</p>
+  <nav class="nav-links">
+    <a href="/">Home</a>
+    <a href="/dev">Dev Prompts</a>
+    <a href="/job" class="active">Job Prompts</a>
+    <a href="/blog">Blog</a>
+  </nav>
+</header>
+
+<!-- ── Main ── -->
+<main class="page" id="main-content">
+
+  <!-- 1. Categories -->
+  <section aria-labelledby="lbl-cats">
+    <span class="lbl" id="lbl-cats">Categories</span>
+    <div class="cats" id="cats" role="group" aria-labelledby="lbl-cats"></div>
+  </section>
+
+  <!-- 2. Prompt cards -->
+  <section aria-labelledby="lbl-prompts">
+    <span class="lbl" id="lbl-prompts">Prompts</span>
+    <div class="prompt-cards" id="prompt-cards"></div>
+  </section>
+
+  <!-- 3. Prompt textarea -->
+  <section aria-labelledby="lbl-prompt">
+    <label class="lbl" id="lbl-prompt" for="prompt">Your prompt</label>
+    <div class="prompt-wrap">
+      <textarea
+        id="prompt"
+        name="prompt"
+        placeholder="Click a prompt above or write your own..."
+        spellcheck="false"
+        autocomplete="off"
+        aria-describedby="charCount"
+      ></textarea>
+      <div class="prompt-meta" aria-hidden="true">
+        <span class="char-count" id="charCount"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Providers -->
+  <section aria-labelledby="lbl-providers">
+    <span class="lbl" id="lbl-providers">Open in</span>
+    <ul class="providers" id="providers" aria-labelledby="lbl-providers"></ul>
+  </section>
+
+  <!-- 5. Actions -->
+  <div class="actions">
+    <button class="btn flex-1" id="copyBtn" type="button" aria-label="Copy prompt to clipboard">
+      Copy to clipboard
+    </button>
+    <button class="btn" id="clearBtn" type="button" aria-label="Clear the prompt">
+      Clear
+    </button>
+  </div>
+
+</main>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/dev">Dev Prompts</a>
+      <a href="/job">Job Prompts</a>
+      <a href="/blog">Blog</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Prompt Router &mdash; Free.</p>
+    <img src="/clumsy.svg" alt="" class="footer-doodle" aria-hidden="true" loading="lazy" width="180" height="135">
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+<script>
+'use strict';
+
+/* ── Job prompt library ─────────────────────────────────────── */
+const DEV_PROMPTS = [
+  {
+    cat: 'Resume',
+    prompts: [
+      { title: 'Rewrite resume bullet points', text: "Rewrite these resume bullet points to be stronger, more impactful, and results-oriented. Use active verbs and quantify outcomes where possible:\n\n[paste your bullet points here]\n\nRole I'm applying for: [job title]\nIndustry: [industry]" },
+      { title: 'Tailor resume to job description', text: "Here is my current resume and a job description I want to apply for. Identify the gaps, suggest which skills and keywords to add or emphasize, and rewrite the most relevant sections to match the role.\n\nMy resume:\n[paste resume here]\n\nJob description:\n[paste job description here]" },
+      { title: 'Write resume summary', text: "Write a compelling professional summary for my resume. It should be 3-4 sentences, highlight my key strengths and experience, and be tailored to the role I'm targeting.\n\nMy background: [years of experience, key skills, notable achievements]\nRole I'm targeting: [job title and industry]" },
+      { title: 'Quantify achievements', text: "Help me quantify and strengthen these resume achievements. If I haven't provided numbers, suggest what metrics I could research or estimate to make each bullet more impactful:\n\n[paste achievements here]\n\nMy role: [job title]\nCompany size / industry: [details]" },
+    ]
+  },
+  {
+    cat: 'Cover Letter',
+    prompts: [
+      { title: 'Write a cover letter', text: "Write a compelling cover letter for this job application. Keep it to 3 paragraphs: why I'm excited about the company, what I bring to the role, and a clear call to action.\n\nMy background: [brief summary]\nJob title: [title]\nCompany: [company name]\nKey job requirements: [paste 3-5 requirements from the listing]\nOne specific reason I want this company: [your reason]" },
+      { title: 'Career change cover letter', text: "Write a cover letter for a career change application. Acknowledge the shift, connect my transferable skills to the new role, and show genuine motivation for the change.\n\nMy current background: [current field and experience]\nRole I'm moving into: [new job title and field]\nTransferable skills I have: [list them]\nWhy I'm making this change: [your reason]" },
+      { title: 'Internal transfer letter', text: "Write a letter requesting an internal transfer to a different team or role within my company. Emphasize my institutional knowledge, my contributions so far, and why this move benefits both me and the company.\n\nMy current role: [title and team]\nRole I want to transfer to: [title and team]\nTime at company: [duration]\nKey contributions so far: [list 2-3]\nReason for transfer: [your reason]" },
+      { title: 'Follow-up after application', text: "Write a brief, professional follow-up email to send after submitting a job application. It should express continued interest, be polite and concise, and not be pushy.\n\nJob title: [title]\nCompany: [company name]\nDate applied: [date]\nHiring manager name (if known): [name or 'Hiring Manager']" },
+    ]
+  },
+  {
+    cat: 'Interview Prep',
+    prompts: [
+      { title: 'Practice behavioral questions (STAR)', text: "Help me prepare STAR-format answers for behavioral interview questions for this role. For each question, prompt me with a structure: Situation, Task, Action, Result.\n\nRole I'm interviewing for: [job title]\nIndustry: [industry]\nMy background: [brief summary]\n\nStart with these common questions:\n1. Tell me about a time you handled a conflict at work.\n2. Describe a project you led from start to finish.\n3. Tell me about a time you failed and what you learned." },
+      { title: 'Technical interview prep', text: "I have a technical interview for this role. Create a focused study plan and list the most likely topics and question types I should prepare for. Include sample questions and explain what strong answers look like.\n\nRole: [job title]\nCompany type: [startup / enterprise / FAANG-style]\nKey skills listed in the job description: [paste them]\nMy current skill level: [beginner / intermediate / strong]\nTime until interview: [days/weeks]" },
+      { title: 'Questions to ask the interviewer', text: "Generate a list of thoughtful, strategic questions I can ask at the end of my interview. Include questions about the role, team culture, growth opportunities, and success metrics. Avoid generic questions.\n\nRole: [job title]\nCompany: [company name]\nStage of interview: [first round / final round / hiring manager / panel]\nWhat I already know about the company: [brief notes]" },
+      { title: 'Salary negotiation script', text: "Write a salary negotiation script I can use after receiving a job offer. It should be confident but collaborative, justify my ask with market data and my experience, and keep the conversation positive.\n\nOffer received: [salary amount]\nMy target salary: [target amount]\nMy experience: [years and key qualifications]\nRole: [job title]\nLocation / remote: [location]" },
+    ]
+  },
+  {
+    cat: 'LinkedIn',
+    prompts: [
+      { title: 'Optimize LinkedIn headline', text: "Write 5 variations of a LinkedIn headline for my profile. Each should be keyword-rich for recruiter searches, communicate my value proposition clearly, and be under 220 characters.\n\nMy current role: [title]\nIndustry: [industry]\nKey skills: [list 3-5]\nWhat I want to be known for: [brief description]\nOpen to new roles: [yes / no]" },
+      { title: 'Write LinkedIn summary (About)', text: "Write a LinkedIn About section for my profile. Use first-person voice, lead with a strong hook, highlight my experience and key skills, and end with what I'm looking for or how people can contact me. Aim for 250-350 words.\n\nMy background: [summary of experience]\nKey skills and expertise: [list them]\nNotable achievements: [1-3 highlights]\nWhat I'm looking for: [roles, opportunities, or collaborations]" },
+      { title: 'Connection request message', text: "Write a short, personalized LinkedIn connection request message (under 300 characters). It should be warm, specific about why I'm reaching out, and not immediately ask for anything.\n\nWho I'm reaching out to: [their name and title]\nWhy I want to connect: [shared interest, mutual connection, admire their work, etc.]\nMy background: [one-line description of who I am]" },
+      { title: 'LinkedIn post about career insight', text: "Write a LinkedIn post sharing a career insight or lesson I've learned. Use a strong first line to stop the scroll, tell a brief story or observation, and end with a question to drive engagement. Avoid buzzwords and keep it authentic.\n\nTopic or lesson: [what I want to share]\nContext or story behind it: [brief details]\nTarget audience: [who I write for]\nTone: [reflective / motivational / practical]" },
+    ]
+  },
+  {
+    cat: 'Networking',
+    prompts: [
+      { title: 'Write informational interview request', text: "Write an email requesting a 20-minute informational interview with someone in a role or company I'm interested in. Keep it concise, show genuine interest in their experience, and make it easy to say yes.\n\nTheir name: [name]\nTheir role and company: [details]\nHow I found them: [LinkedIn, mutual connection, article, etc.]\nWhat I want to learn: [specific topics or questions]\nMy background: [one sentence about who I am]" },
+      { title: 'Thank you email after networking meeting', text: "Write a follow-up thank you email to send within 24 hours of an informational interview or networking meeting. Reference something specific from our conversation, express genuine appreciation, and suggest a natural next step.\n\nTheir name: [name]\nDate of meeting: [date]\nSomething specific we discussed: [topic or insight]\nNext step I want to propose: [e.g., stay in touch, share a resource, follow up in 3 months]" },
+      { title: 'Elevator pitch', text: "Write a 30-second elevator pitch I can use at networking events or when someone asks 'what do you do?'. It should be clear, memorable, and naturally lead to a conversation. Write 3 versions: formal, casual, and career-changer.\n\nMy background: [current or recent role and industry]\nKey skills or expertise: [list them]\nWhat I'm working toward: [goals or the type of opportunity I'm seeking]" },
+      { title: 'Conference follow-up email', text: "Write a follow-up email to someone I met briefly at a conference or industry event. Reference how we met, recap the conversation, and propose a way to stay connected or continue the discussion.\n\nTheir name: [name]\nEvent name: [conference or event]\nHow we met / what we talked about: [brief details]\nNext step I want to suggest: [call, coffee chat, sharing a resource, etc.]" },
+    ]
+  },
+  {
+    cat: 'Career Growth',
+    prompts: [
+      { title: 'Create a career development plan', text: "Help me build a 12-month career development plan. Include specific goals, skills to develop, milestones to hit, and actions to take each quarter. Make it realistic and tied to my target role.\n\nMy current role: [title and level]\nTarget role in 12 months: [title and level]\nKey gaps to close: [skills, experience, or credentials I'm missing]\nResources available to me: [courses, mentors, budget, etc.]" },
+      { title: 'Ask for a promotion', text: "Write a script for asking my manager for a promotion. Structure it as a conversation opener, a summary of my contributions and impact, a clear ask, and an invitation to discuss a path forward. Keep it confident and collaborative.\n\nMy current title: [title]\nTitle I'm asking for: [target title]\nTime in current role: [duration]\nKey accomplishments: [list 3-5 with impact]\nWhy now: [timing or trigger]" },
+      { title: 'Write a self-review', text: "Help me write a strong self-review for my annual performance review. For each area, highlight specific accomplishments with measurable impact, acknowledge areas for growth honestly, and connect my work to team and company goals.\n\nMy role: [title]\nKey projects or responsibilities this period: [list them]\nNotable achievements: [with metrics where possible]\nAreas I want to grow in: [be specific]\nGoals for next period: [list 2-3]" },
+      { title: 'Skill gap analysis', text: "Analyze the gap between my current skills and the requirements for my target role. Prioritize the gaps by importance, suggest specific ways to close each one, and estimate a realistic timeline.\n\nMy current skills: [list technical and soft skills]\nTarget role: [job title]\nJob description or requirements: [paste or describe key requirements]\nTimeline I'm working with: [months or years]" },
+    ]
+  },
+];
+
+/* ── State ───────────────────────────────────────────────────── */
+let activeCat = 'All';
+let selectedCard = null;
+
+/* ── DOM refs ────────────────────────────────────────────────── */
+const catsEl       = document.getElementById('cats');
+const cardsEl      = document.getElementById('prompt-cards');
+const promptEl     = document.getElementById('prompt');
+const providersEl  = document.getElementById('providers');
+const charCountEl  = document.getElementById('charCount');
+const copyBtn      = document.getElementById('copyBtn');
+const clearBtnEl   = document.getElementById('clearBtn');
+const toastEl      = document.getElementById('toast');
+
+/* ── Render categories ──────────────────────────────────────── */
+function renderCats() {
+  const cats = ['All', ...DEV_PROMPTS.map(c => c.cat)];
+  catsEl.innerHTML = '';
+  cats.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'cat' + (activeCat === cat ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', () => {
+      activeCat = cat;
+      selectedCard = null;
+      renderCats();
+      renderCards();
+    });
+    catsEl.appendChild(btn);
+  });
+}
+
+/* ── Render prompt cards ────────────────────────────────────── */
+function renderCards() {
+  cardsEl.innerHTML = '';
+  const groups = activeCat === 'All' ? DEV_PROMPTS : DEV_PROMPTS.filter(c => c.cat === activeCat);
+
+  groups.forEach(group => {
+    if (activeCat === 'All') {
+      const catLabel = document.createElement('span');
+      catLabel.className = 'lbl';
+      catLabel.textContent = group.cat;
+      catLabel.style.marginTop = cardsEl.children.length ? '20px' : '0';
+      cardsEl.appendChild(catLabel);
+    }
+
+    group.prompts.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'prompt-card';
+      card.innerHTML = `<div class="prompt-card-title">${p.title}</div><div class="prompt-card-preview">${escHtml(p.text)}</div>`;
+      card.addEventListener('click', () => {
+        const wasSelected = selectedCard === p;
+        document.querySelectorAll('.prompt-card').forEach(c => c.classList.remove('selected'));
+
+        if (wasSelected) {
+          selectedCard = null;
+          promptEl.value = '';
+        } else {
+          selectedCard = p;
+          card.classList.add('selected');
+          promptEl.value = p.text;
+          promptEl.focus();
+        }
+        updateCount();
+      });
+      cardsEl.appendChild(card);
+    });
+  });
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+/* ── Providers ──────────────────────────────────────────────── */
+const enc = s => encodeURIComponent(s);
+const providers = [
+  { id: 'chatgpt',    label: 'ChatGPT',    cls: 'pc-chatgpt',    url: q => `https://chatgpt.com/?q=${enc(q)}` },
+  { id: 'claude',     label: 'Claude',     cls: 'pc-claude',     url: q => `https://claude.ai/new?q=${enc(q)}` },
+  { id: 'gemini',     label: 'Gemini',     cls: 'pc-gemini',     url: q => `https://gemini.google.com/app?q=${enc(q)}` },
+  { id: 'copilot',    label: 'Copilot',    cls: 'pc-copilot',    url: q => `https://copilot.microsoft.com/?q=${enc(q)}` },
+  { id: 'perplexity', label: 'Perplexity', cls: 'pc-perplexity', url: q => `https://www.perplexity.ai/search?q=${enc(q)}` },
+  { id: 'lechat',     label: 'Le Chat',    cls: 'pc-lechat',     url: q => `https://chat.mistral.ai/chat?q=${enc(q)}` },
+  { id: 'grok',       label: 'Grok',       cls: 'pc-grok',       url: q => `https://x.com/i/grok?text=${enc(q)}` },
+  { id: 'deepseek',   label: 'DeepSeek',   cls: 'pc-deepseek',   url: q => `https://chat.deepseek.com/?q=${enc(q)}` },
+];
+
+providers.forEach(p => {
+  const li = document.createElement('li');
+  const btn = document.createElement('button');
+  btn.type = 'button'; btn.className = `p-btn ${p.cls}`;
+  btn.setAttribute('aria-label', `Open in ${p.label}`);
+  btn.innerHTML = `<span class="p-dot" aria-hidden="true"></span><span class="p-name">${p.label}</span><span class="p-arrow" aria-hidden="true">&nearr;</span>`;
+  btn.addEventListener('click', () => openProvider(p));
+  li.appendChild(btn); providersEl.appendChild(li);
+});
+
+/* ── Core actions ────────────────────────────────────────────── */
+function getPrompt() { return promptEl.value.trim(); }
+
+function openProvider(p) {
+  const q = getPrompt();
+  if (!q) { showToast('Write a prompt first'); return; }
+  const w = window.open(p.url(q), '_blank', 'noopener,noreferrer');
+  if (!w) showToast('Popup blocked — copy & paste instead');
+}
+
+function updateCount() {
+  const n = promptEl.value.length;
+  charCountEl.textContent = n > 0 ? n.toLocaleString() : '';
+  charCountEl.classList.toggle('warn', n > 3000);
+}
+
+promptEl.addEventListener('input', () => {
+  updateCount();
+  if (!promptEl.value) {
+    selectedCard = null;
+    document.querySelectorAll('.prompt-card').forEach(c => c.classList.remove('selected'));
+  }
+});
+
+copyBtn.addEventListener('click', async () => {
+  const q = getPrompt();
+  if (!q) { showToast('Nothing to copy yet'); return; }
+  try {
+    await navigator.clipboard.writeText(q);
+    copyBtn.textContent = '\u2713 Copied!';
+    copyBtn.classList.add('copied');
+    setTimeout(() => {
+      copyBtn.textContent = 'Copy to clipboard';
+      copyBtn.classList.remove('copied');
+    }, 2200);
+  } catch { showToast('Copy failed — try manually'); }
+});
+
+clearBtnEl.addEventListener('click', () => {
+  promptEl.value = ''; updateCount();
+  selectedCard = null;
+  document.querySelectorAll('.prompt-card').forEach(c => c.classList.remove('selected'));
+  promptEl.focus();
+});
+
+/* ── Keyboard shortcuts ──────────────────────────────────────── */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && document.activeElement === promptEl) {
+    clearBtnEl.click(); return;
+  }
+  if ((e.metaKey || e.ctrlKey) && e.key === 'c' && document.activeElement === promptEl && !window.getSelection()?.toString()) {
+    e.preventDefault(); copyBtn.click();
+  }
+});
+
+/* ── Toast ───────────────────────────────────────────────────── */
+let toastTimer;
+function showToast(msg) {
+  toastEl.textContent = msg; toastEl.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toastEl.classList.remove('show'), 3000);
+}
+
+/* ── Init ────────────────────────────────────────────────────── */
+renderCats();
+renderCards();
+
+/* ── Service Worker ──────────────────────────────────────────── */
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').catch(() => {});
+}
+</script>
+</body>
+</html>

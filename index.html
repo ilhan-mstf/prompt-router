@@ -187,6 +187,37 @@ h1.logo {
   letter-spacing: 0.01em; line-height: 1;
 }
 
+/* ── Nav ─────────────────────────────────────────────────────── */
+.nav-links {
+  display: flex; gap: 16px; margin-top: 16px;
+}
+.nav-links a {
+  font-size: var(--xs); color: var(--text-3);
+  text-decoration: none; letter-spacing: 0.04em;
+  transition: color .12s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-links a.active { color: var(--gold); }
+
+/* ── Dev link ────────────────────────────────────────────────── */
+.dev-link {
+  font-size: var(--xs); color: var(--text-3);
+  text-decoration: none; letter-spacing: 0.02em;
+  transition: color .12s;
+}
+.dev-link:hover { color: var(--gold); }
+
+/* ── Footer links ────────────────────────────────────────────── */
+.footer-nav {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  font-size: var(--xs); margin-bottom: 8px;
+}
+.footer-nav a {
+  color: var(--text-2); text-decoration: none;
+  letter-spacing: 0.02em; transition: color .12s;
+}
+.footer-nav a:hover { color: var(--gold); }
+
 /* ── Main ────────────────────────────────────────────────────── */
 main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40px; }
 
@@ -393,6 +424,11 @@ footer {
 }
 .footer-desc a:hover { color: var(--gold); }
 .footer-copy { font-size: var(--xs); color: var(--text-3); }
+.footer-doodle {
+  display: block; margin: 16px auto 0; width: 180px; height: auto;
+  opacity: .18; transition: opacity .3s;
+}
+.footer-doodle:hover { opacity: .35; }
 
 /* ── Noscript ────────────────────────────────────────────────── */
 .noscript {
@@ -433,6 +469,11 @@ footer {
     <span class="logo-a">Prompt</span><span class="logo-b">Router</span>
   </h1>
   <p class="tagline" id="tagline">Write once &mdash; send to every AI</p>
+  <nav class="nav-links" id="nav-links">
+    <a href="/" class="active">Home</a>
+    <a href="/dev">Dev Prompts</a>
+    <a href="/blog">Blog</a>
+  </nav>
 </header>
 
 <!-- ── Main ── -->
@@ -440,7 +481,10 @@ footer {
 
   <!-- 1. Templates -->
   <section aria-labelledby="lbl-templates">
-    <span class="lbl" id="lbl-templates">Quick templates</span>
+    <div style="display:flex;justify-content:space-between;align-items:baseline;">
+      <span class="lbl" id="lbl-templates">Quick templates</span>
+      <a href="/dev" class="dev-link" id="dev-link">See dev prompts &rarr;</a>
+    </div>
     <div class="chips" id="chips" role="group" aria-labelledby="lbl-templates"></div>
   </section>
 
@@ -493,8 +537,23 @@ footer {
 <!-- ── Footer ── -->
 <footer>
   <div class="footer-inner">
+    <nav class="footer-nav">
+      <a href="/dev">Dev</a>
+      <a href="/writing">Writing</a>
+      <a href="/marketing">Marketing</a>
+      <a href="/job">Job Search</a>
+      <a href="/startup">Startup</a>
+      <a href="/data">Data</a>
+      <a href="/design">Design</a>
+      <a href="/student">Student</a>
+      <a href="/productivity">Productivity</a>
+      <a href="/legal">Legal</a>
+      <a href="/sales">Sales</a>
+      <a href="/blog">Blog</a>
+    </nav>
     <p class="footer-desc" id="footer-desc"></p>
     <p class="footer-copy" id="footer-copy"></p>
+    <img src="/clumsy.svg" alt="" class="footer-doodle" aria-hidden="true" loading="lazy" width="180" height="135">
   </div>
 </footer>
 
@@ -1071,6 +1130,11 @@ function savePrompt() {
 
 /* ── Init ────────────────────────────────────────────────────── */
 renderLib();
+
+/* ── Service Worker ──────────────────────────────────────────── */
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').catch(() => {});
+}
 </script>
 </body>
 </html>

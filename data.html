@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<title>Data Prompts — AI Prompts for Data Analysis &amp; SQL | Prompt Router</title>
+<meta name="description" content="24+ curated prompts for SQL, data analysis, visualization, cleaning, Python &amp; R, and reporting. Send any prompt to ChatGPT, Claude, Gemini and 5 other AIs instantly.">
+<meta name="keywords" content="data analysis prompts, SQL prompts, AI prompts for data analysts, data science prompts, pandas prompt, data visualization prompt, ChatGPT data analysis">
+<meta name="author" content="Prompt Router">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://prompt-router.pages.dev/data">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Prompt Router">
+<meta property="og:title" content="Data Prompts — AI Prompts for Data Analysis &amp; SQL">
+<meta property="og:description" content="24+ curated prompts for SQL, data analysis, visualization, cleaning, Python &amp; R, and reporting. Send to any AI instantly.">
+<meta property="og:url" content="https://prompt-router.pages.dev/data">
+<meta property="og:image" content="https://prompt-router.pages.dev/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Data Prompts — AI Prompts for Data Analysis &amp; SQL">
+<meta name="twitter:description" content="24+ curated prompts for SQL, analysis, visualization, cleaning and more. Send to any AI instantly.">
+<meta name="twitter:image" content="https://prompt-router.pages.dev/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Data Prompts — AI Prompts for Data Analysis & SQL",
+  "description": "24+ curated prompts for SQL, data analysis, visualization, cleaning, Python & R, and reporting.",
+  "url": "https://prompt-router.pages.dev/data",
+  "isPartOf": {
+    "@type": "WebApplication",
+    "name": "Prompt Router",
+    "url": "https://prompt-router.pages.dev/"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://prompt-router.pages.dev/" },
+      { "@type": "ListItem", "position": 2, "name": "Data Prompts", "item": "https://prompt-router.pages.dev/data" }
+    ]
+  }
+}
+</script>
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230f0f10'/><text y='24' x='4' font-size='22' font-family='serif' fill='%23d4a847'>P</text></svg>">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f0f10" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f4f0e8" media="(prefers-color-scheme: light)">
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,200&display=swap" rel="stylesheet">
+
+<style>
+/* ── Tokens ──────────────────────────────────────────────────── */
+:root {
+  --bg:        #0f0f10;
+  --surface:   #1a1a1c;
+  --surface-2: #222225;
+  --border:    #2c2c30;
+  --border-2:  #404046;
+  --text:      #f0ece4;
+  --text-2:    #9e9a96;
+  --text-3:    #5a5856;
+  --gold:      #d4a847;
+  --gold-dim:  #9a7830;
+  --gold-glow: rgba(212,168,71,.1);
+  --focus:     #d4a847;
+
+  --chatgpt:    #10a37f;
+  --claude:     #c8845a;
+  --gemini:     #4285f4;
+  --copilot:    #7b6fcc;
+  --perplexity: #17b0a7;
+  --lechat:     #f06830;
+  --grok:       #aaaaaa;
+  --deepseek:   #4d6bfe;
+
+  --xs:   0.8125rem;
+  --sm:   0.9375rem;
+  --base: 1.0625rem;
+  --lg:   1.125rem;
+  --2xl:  2.375rem;
+
+  --r:    8px;
+  --r-lg: 12px;
+  --max:  700px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg:        #f4f0e8;
+    --surface:   #fdfaf5;
+    --surface-2: #f0ece2;
+    --border:    #e0dbd0;
+    --border-2:  #c8c2b4;
+    --text:      #1a1714;
+    --text-2:    #5a554e;
+    --text-3:    #9c968e;
+    --gold:      #7a5518;
+    --gold-dim:  #9a6c28;
+    --gold-glow: rgba(122,85,24,.07);
+    --focus:     #7a5518;
+  }
+}
+
+/* ── Reset ───────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: var(--base);
+  line-height: 1.65;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Skip link ───────────────────────────────────────────────── */
+.skip {
+  position: absolute; top: -100%; left: 16px;
+  background: var(--gold); color: var(--bg);
+  font-size: var(--sm); padding: 8px 16px;
+  border-radius: 0 0 var(--r) var(--r);
+  text-decoration: none; z-index: 999; transition: top .15s;
+}
+.skip:focus { top: 0; outline: none; }
+
+/* ── Focus ───────────────────────────────────────────────────── */
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: var(--r); }
+:focus:not(:focus-visible) { outline: none; }
+
+/* ── Page shell ──────────────────────────────────────────────── */
+.page { width: 100%; max-width: var(--max); padding: 0 28px; }
+
+/* ── Header ──────────────────────────────────────────────────── */
+header.page { padding-top: 60px; padding-bottom: 52px; }
+
+h1.logo {
+  display: flex; align-items: baseline; gap: 8px;
+  font-size: inherit; font-weight: inherit; margin-bottom: 12px;
+}
+.logo-a {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto; font-weight: 600;
+  font-size: var(--2xl); letter-spacing: -0.03em;
+  line-height: 1; color: var(--text);
+}
+.logo-b {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto; font-weight: 200; font-style: italic;
+  font-size: var(--2xl); letter-spacing: -0.02em;
+  line-height: 1; color: var(--gold);
+}
+.logo a { text-decoration: none; color: inherit; }
+.tagline {
+  font-size: var(--sm); color: var(--text-3);
+  letter-spacing: 0.01em; line-height: 1;
+}
+
+/* ── Nav ─────────────────────────────────────────────────────── */
+.nav-links {
+  display: flex; gap: 16px; margin-top: 16px;
+}
+.nav-links a {
+  font-size: var(--xs); color: var(--text-3);
+  text-decoration: none; letter-spacing: 0.04em;
+  transition: color .12s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-links a.active { color: var(--gold); }
+
+/* ── Main ────────────────────────────────────────────────────── */
+main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40px; }
+
+/* ── Section labels ──────────────────────────────────────────── */
+.lbl {
+  display: block;
+  font-size: var(--xs); letter-spacing: 0.09em;
+  text-transform: uppercase; color: var(--text-3);
+  font-weight: 500; margin-bottom: 12px;
+}
+
+/* ── Category chips ──────────────────────────────────────────── */
+.cats { display: flex; flex-wrap: wrap; gap: 7px; }
+.cat {
+  padding: 7px 14px; background: none;
+  border: 1px solid var(--border); border-radius: 100px;
+  color: var(--text-2); font-family: 'DM Mono', monospace;
+  font-size: var(--xs); letter-spacing: 0.03em; line-height: 1;
+  cursor: pointer; user-select: none;
+  transition: color .12s, border-color .12s, background .12s;
+}
+.cat:hover { color: var(--gold); border-color: var(--gold-dim); background: var(--gold-glow); }
+.cat.active { color: var(--gold); border-color: var(--gold); background: var(--gold-glow); }
+
+/* ── Prompt cards ────────────────────────────────────────────── */
+.prompt-cards { display: flex; flex-direction: column; gap: 10px; }
+
+.prompt-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 16px 18px;
+  cursor: pointer;
+  transition: border-color .12s, background .12s;
+}
+.prompt-card:hover { border-color: var(--border-2); background: var(--surface-2); }
+.prompt-card.selected { border-color: var(--gold); background: var(--gold-glow); }
+
+.prompt-card-title {
+  font-size: var(--sm); font-weight: 500; color: var(--text);
+  margin-bottom: 6px; line-height: 1.3;
+}
+.prompt-card-preview {
+  font-size: var(--xs); color: var(--text-3);
+  line-height: 1.5; white-space: pre-line;
+  display: -webkit-box; -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; overflow: hidden;
+}
+.prompt-card.selected .prompt-card-preview {
+  -webkit-line-clamp: unset;
+  color: var(--text-2);
+}
+
+/* ── Textarea ────────────────────────────────────────────────── */
+.prompt-wrap { position: relative; }
+textarea {
+  display: block; width: 100%; min-height: 210px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); color: var(--text);
+  font-family: 'DM Mono', monospace; font-size: var(--base);
+  line-height: 1.75; padding: 20px 20px 50px;
+  resize: vertical; outline: none; caret-color: var(--gold);
+  transition: border-color .18s, box-shadow .18s;
+}
+textarea::placeholder { color: var(--text-3); font-style: italic; }
+textarea:hover { border-color: var(--border-2); }
+textarea:focus { border-color: var(--gold-dim); box-shadow: 0 0 0 3px var(--gold-glow); }
+
+.prompt-meta {
+  position: absolute; bottom: 15px; left: 20px; right: 20px;
+  display: flex; justify-content: space-between; align-items: center;
+  pointer-events: none;
+}
+.char-count {
+  font-size: var(--xs); color: var(--text-3);
+  font-variant-numeric: tabular-nums; transition: color .2s;
+}
+.char-count.warn { color: #c97a40; }
+
+/* ── Provider cards ──────────────────────────────────────────── */
+.providers {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.p-btn {
+  width: 100%; display: flex; flex-direction: column;
+  align-items: flex-start; gap: 10px; padding: 14px 14px 12px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); color: var(--text);
+  font-family: 'DM Mono', monospace; cursor: pointer;
+  transition: border-color .12s, background .12s, transform .12s, box-shadow .12s;
+  text-align: left; position: relative; overflow: hidden;
+}
+.p-btn:hover {
+  background: var(--surface-2); border-color: var(--border-2);
+  transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.18);
+}
+.p-btn:active { transform: translateY(0); box-shadow: none; }
+.p-dot {
+  width: 28px; height: 4px; border-radius: 2px;
+  background: var(--pc, var(--border)); opacity: .65;
+  transition: opacity .12s, width .12s;
+}
+.p-btn:hover .p-dot { opacity: 1; width: 36px; }
+.p-name { font-size: var(--sm); letter-spacing: 0.02em; line-height: 1; }
+.p-arrow {
+  position: absolute; top: 12px; right: 12px;
+  font-size: 11px; color: var(--text-3); line-height: 1;
+  transition: transform .12s, color .12s;
+}
+.p-btn:hover .p-arrow { transform: translate(2px,-2px); color: var(--text-2); }
+
+.pc-chatgpt    { --pc: var(--chatgpt); }
+.pc-claude     { --pc: var(--claude); }
+.pc-gemini     { --pc: var(--gemini); }
+.pc-copilot    { --pc: var(--copilot); }
+.pc-perplexity { --pc: var(--perplexity); }
+.pc-lechat     { --pc: var(--lechat); }
+.pc-grok       { --pc: var(--grok); }
+.pc-deepseek   { --pc: var(--deepseek); }
+
+/* ── Actions row ─────────────────────────────────────────────── */
+.actions { display: flex; gap: 8px; }
+
+.btn {
+  padding: 14px 20px; background: none;
+  border: 1px solid var(--border); border-radius: var(--r);
+  color: var(--text-2); font-family: 'DM Mono', monospace;
+  font-size: var(--sm); letter-spacing: 0.04em;
+  cursor: pointer; line-height: 1; white-space: nowrap;
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  transition: border-color .12s, color .12s;
+}
+.btn:hover { border-color: var(--border-2); color: var(--text); }
+.btn.flex-1 { flex: 1; }
+.btn.copied { border-color: var(--gold-dim); color: var(--gold); }
+
+/* ── Toast ───────────────────────────────────────────────────── */
+.toast {
+  position: fixed; bottom: 28px; left: 50%;
+  transform: translateX(-50%) translateY(64px);
+  background: var(--surface-2); border: 1px solid var(--border-2);
+  border-radius: var(--r); padding: 11px 20px;
+  font-size: var(--sm); letter-spacing: 0.02em; color: var(--text);
+  box-shadow: 0 8px 32px rgba(0,0,0,.3);
+  transition: transform .26s cubic-bezier(.34,1.56,.64,1);
+  z-index: 200; white-space: nowrap; pointer-events: none;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ── Footer ──────────────────────────────────────────────────── */
+footer {
+  width: 100%; border-top: 1px solid var(--border);
+  display: flex; justify-content: center; margin-top: 8px;
+}
+.footer-inner {
+  width: 100%; max-width: var(--max);
+  padding: 32px 28px 48px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.footer-links {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  font-size: var(--xs); margin-bottom: 4px;
+}
+.footer-links a {
+  color: var(--text-2); text-decoration: none;
+  letter-spacing: 0.02em; transition: color .12s;
+}
+.footer-links a:hover { color: var(--gold); }
+.footer-copy { font-size: var(--xs); color: var(--text-3); }
+.footer-doodle {
+  display: block; margin: 16px auto 0; width: 180px; height: auto;
+  opacity: .18; transition: opacity .3s;
+}
+.footer-doodle:hover { opacity: .35; }
+
+/* ── Reduced motion ──────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; }
+  .toast { transition: none !important; }
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 580px) {
+  .providers { grid-template-columns: repeat(2, 1fr); }
+  .logo-a, .logo-b { font-size: 2rem; }
+  header.page { padding-top: 44px; padding-bottom: 36px; }
+  main.page { gap: 36px; }
+  .actions { flex-wrap: wrap; }
+  .actions .btn.flex-1 { flex: 0 0 100%; }
+}
+@media (max-width: 360px) {
+  .page, .footer-inner { padding-left: 16px; padding-right: 16px; }
+}
+</style>
+</head>
+<body>
+
+<a href="#prompt" class="skip">Skip to prompt</a>
+
+<!-- ── Header ── -->
+<header class="page">
+  <h1 class="logo">
+    <a href="/"><span class="logo-a">Prompt</span><span class="logo-b">Router</span></a>
+  </h1>
+  <p class="tagline">AI prompts for data analysts and scientists</p>
+  <nav class="nav-links">
+    <a href="/">Home</a>
+    <a href="/dev">Dev Prompts</a>
+    <a href="/data" class="active">Data Prompts</a>
+    <a href="/blog">Blog</a>
+  </nav>
+</header>
+
+<!-- ── Main ── -->
+<main class="page" id="main-content">
+
+  <!-- 1. Categories -->
+  <section aria-labelledby="lbl-cats">
+    <span class="lbl" id="lbl-cats">Categories</span>
+    <div class="cats" id="cats" role="group" aria-labelledby="lbl-cats"></div>
+  </section>
+
+  <!-- 2. Prompt cards -->
+  <section aria-labelledby="lbl-prompts">
+    <span class="lbl" id="lbl-prompts">Prompts</span>
+    <div class="prompt-cards" id="prompt-cards"></div>
+  </section>
+
+  <!-- 3. Prompt textarea -->
+  <section aria-labelledby="lbl-prompt">
+    <label class="lbl" id="lbl-prompt" for="prompt">Your prompt</label>
+    <div class="prompt-wrap">
+      <textarea
+        id="prompt"
+        name="prompt"
+        placeholder="Click a prompt above or write your own..."
+        spellcheck="false"
+        autocomplete="off"
+        aria-describedby="charCount"
+      ></textarea>
+      <div class="prompt-meta" aria-hidden="true">
+        <span class="char-count" id="charCount"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Providers -->
+  <section aria-labelledby="lbl-providers">
+    <span class="lbl" id="lbl-providers">Open in</span>
+    <ul class="providers" id="providers" aria-labelledby="lbl-providers"></ul>
+  </section>
+
+  <!-- 5. Actions -->
+  <div class="actions">
+    <button class="btn flex-1" id="copyBtn" type="button" aria-label="Copy prompt to clipboard">
+      Copy to clipboard
+    </button>
+    <button class="btn" id="clearBtn" type="button" aria-label="Clear the prompt">
+      Clear
+    </button>
+  </div>
+
+</main>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/dev">Dev Prompts</a>
+      <a href="/data">Data Prompts</a>
+      <a href="/blog">Blog</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Prompt Router &mdash; Free.</p>
+    <img src="/clumsy.svg" alt="" class="footer-doodle" aria-hidden="true" loading="lazy" width="180" height="135">
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+<script>
+'use strict';
+
+/* ── Data prompt library ─────────────────────────────────────── */
+const DEV_PROMPTS = [
+  {
+    cat: 'SQL',
+    prompts: [
+      { title: 'Write SQL query', text: "Write a SQL query for the following task:\n\nTask: [describe what you need, e.g. find all users who signed up in the last 30 days and made at least one purchase]\n\nRelevant tables and columns:\n\n[describe your schema or paste CREATE TABLE statements]\n\nDatabase: [e.g. PostgreSQL, MySQL, BigQuery]\n\nReturn the query with comments explaining each key step." },
+      { title: 'Optimize slow query', text: "This SQL query is running slowly. Help me optimize it.\n\nQuery:\n\n[paste query here]\n\nDatabase: [e.g. PostgreSQL, MySQL]\nTable sizes: [e.g. orders has 50M rows, users has 2M rows]\nExisting indexes: [list them or paste EXPLAIN output]\n\nIdentify the bottlenecks, suggest index changes, and rewrite the query if needed. Explain each optimization." },
+      { title: 'Explain complex query', text: "Explain this SQL query in plain English. Walk through it step by step — what each clause does, what data it produces, and what the final result represents:\n\n[paste query here]" },
+      { title: 'Database schema design', text: "Design a database schema for the following use case:\n\nUse case: [describe your application or feature, e.g. a multi-tenant SaaS with projects, tasks, and user roles]\n\nDatabase: [e.g. PostgreSQL]\n\nInclude: table names, columns with types and constraints, primary/foreign keys, indexes, and an explanation of your design decisions and any trade-offs." },
+    ]
+  },
+  {
+    cat: 'Analysis',
+    prompts: [
+      { title: 'Exploratory data analysis plan', text: "I have a dataset and want to perform exploratory data analysis. Create a step-by-step EDA plan.\n\nDataset description: [describe columns, data types, approximate size, and domain, e.g. e-commerce orders with customer ID, product, price, date]\n\nBusiness question I am trying to answer: [describe it]\n\nInclude: data quality checks, univariate analysis, relationships to explore, visualizations to create, and potential red flags to watch for." },
+      { title: 'Statistical significance test', text: "Help me choose and interpret the right statistical test for my analysis.\n\nWhat I am comparing: [e.g. conversion rates between two user groups]\nData type: [e.g. binary outcomes, continuous measurements]\nSample sizes: [e.g. Group A: 1,200, Group B: 1,400]\nCurrent results: [e.g. Group A: 4.2%, Group B: 5.1%]\n\nRecommend the appropriate test, state the assumptions, show the calculation or code, and explain how to interpret the p-value and confidence interval in plain language." },
+      { title: 'Cohort analysis', text: "Help me design and interpret a cohort analysis.\n\nGoal: [e.g. measure 30/60/90-day retention by signup month]\nAvailable data: [describe tables and columns, e.g. users table with signup_date, events table with user_id and event_date]\nDatabase / tool: [e.g. BigQuery, pandas]\n\nWrite the query or code to build the cohort table, explain how to read the output, and flag any interpretation pitfalls." },
+      { title: 'Trend interpretation', text: "I am seeing a trend in my data and need help interpreting it.\n\nMetric: [e.g. weekly active users]\nWhat I observe: [e.g. 15% decline over the past 6 weeks after steady growth]\nContext: [any known events, product changes, seasonality, or external factors]\n\nHelp me: identify likely causes, rule out data artifacts, suggest additional analyses to confirm the root cause, and recommend next steps." },
+    ]
+  },
+  {
+    cat: 'Visualization',
+    prompts: [
+      { title: 'Chart type recommendation', text: "Recommend the best chart type for my use case and explain why.\n\nWhat I want to show: [e.g. how revenue breaks down by product category and changes month over month]\nAudience: [e.g. executive team in a quarterly business review]\nData shape: [e.g. 12 months x 6 categories, values range from $10K to $2M]\nTool: [e.g. Tableau, matplotlib, Looker Studio]\n\nSuggest 2-3 options, rank them, and explain the trade-offs." },
+      { title: 'Dashboard layout design', text: "Help me design an effective dashboard layout.\n\nPurpose: [e.g. daily operations monitoring for a support team]\nKey metrics to show: [list them, e.g. open tickets, resolution time, CSAT score, ticket volume by channel]\nAudience and how they use it: [e.g. team leads check it at the start of each shift]\nTool: [e.g. Metabase, Tableau, Grafana]\n\nPropose a layout with sections, chart types for each metric, and UX best practices for at-a-glance readability." },
+      { title: 'Data storytelling narrative', text: "Help me turn this data into a clear narrative for a presentation.\n\nKey findings: [list 3-5 main insights from your analysis]\nAudience: [e.g. non-technical stakeholders, C-suite]\nGoal of the presentation: [e.g. get approval to invest in retention improvements]\n\nWrite a narrative arc that leads with the most important insight, supports it with data points, and ends with a clear recommendation. Keep it concise and free of jargon." },
+      { title: 'Annotate a chart', text: "Help me write annotations for this chart to make it self-explanatory.\n\nChart type: [e.g. line chart]\nWhat it shows: [e.g. monthly revenue for the past 2 years]\nKey moments to call out: [e.g. product launch in March, pricing change in August, a dip in December]\nAudience: [e.g. investors in a pitch deck]\n\nWrite 3-5 short, punchy annotation labels and a one-sentence chart title and subtitle." },
+    ]
+  },
+  {
+    cat: 'Cleaning',
+    prompts: [
+      { title: 'Data cleaning checklist', text: "Generate a comprehensive data cleaning checklist for my dataset.\n\nDataset description: [describe columns, data types, source, and domain]\nKnown issues: [list any problems you already see, e.g. duplicate rows, inconsistent date formats, missing values in key columns]\nDownstream use: [e.g. feeding a machine learning model, building a dashboard]\n\nOrganize the checklist by priority and include the specific checks to run and how to fix each issue." },
+      { title: 'Handle missing values strategy', text: "Help me decide how to handle missing values in my dataset.\n\nColumn with missing values: [column name and what it represents]\nPercentage missing: [e.g. 18%]\nData type: [e.g. numeric, categorical, datetime]\nHow the column is used downstream: [e.g. it is a feature in a regression model]\n\nCompare the options (drop rows, impute with mean/median/mode, model-based imputation, flag as a separate category) and recommend the best approach with reasoning." },
+      { title: 'Detect outliers', text: "Help me detect and handle outliers in my dataset.\n\nColumn: [column name and what it represents]\nData type: [numeric / datetime]\nSample statistics: [e.g. min: 0, max: 99,000, mean: 450, median: 380, std: 1,200]\nContext: [e.g. this is order value in USD; very high values could be legitimate bulk orders or data errors]\n\nSuggest appropriate detection methods (IQR, z-score, isolation forest, etc.), provide code in [Python/SQL], and advise on how to treat confirmed outliers." },
+      { title: 'Standardize messy data', text: "Help me standardize inconsistent values in this column.\n\nColumn name: [e.g. country]\nSample of messy values: [e.g. 'USA', 'United States', 'US', 'u.s.a', 'America']\nDesired output format: [e.g. ISO 3166-1 alpha-2 country codes]\nTool: [e.g. Python pandas, SQL, dbt]\n\nWrite the code to map and standardize these values, handle edge cases, and flag any values that cannot be mapped automatically." },
+    ]
+  },
+  {
+    cat: 'Python & R',
+    prompts: [
+      { title: 'Write pandas data pipeline', text: "Write a pandas data pipeline for the following task.\n\nInput: [describe the data source, e.g. a CSV file with columns: user_id, event_type, timestamp, revenue]\nTransformations needed:\n1. [e.g. filter to purchase events only]\n2. [e.g. aggregate revenue by user per month]\n3. [e.g. calculate month-over-month growth rate]\nOutput: [describe desired result, e.g. a DataFrame with one row per user per month]\n\nWrite clean, readable code with comments. Use method chaining where it improves clarity." },
+      { title: 'Create matplotlib/seaborn visualization', text: "Write Python code to create the following visualization.\n\nChart type: [e.g. heatmap, grouped bar chart, time series with confidence interval]\nData: [describe the DataFrame structure, e.g. df has columns: month, category, value]\nStyle requirements: [e.g. dark background, colorblind-friendly palette, no chart borders]\nOutput: [e.g. save as PNG at 300 DPI]\n\nUse matplotlib and/or seaborn. Add proper title, axis labels, and legend. Make it publication-ready." },
+      { title: 'Feature engineering ideas', text: "Suggest feature engineering ideas for my machine learning dataset.\n\nPrediction target: [e.g. whether a user will churn in the next 30 days]\nAvailable raw features: [list them with types, e.g. signup_date (date), last_login (date), num_sessions (int), plan_type (categorical)]\nData granularity: [e.g. one row per user]\n\nSuggest 10-15 derived features, explain the intuition behind each, and provide pandas code to create them." },
+      { title: 'Write data validation script', text: "Write a Python data validation script for my dataset.\n\nDataset: [describe columns, types, and source]\nValidation rules to enforce:\n1. [e.g. user_id must be non-null and unique]\n2. [e.g. event_date must be between 2020-01-01 and today]\n3. [e.g. revenue must be >= 0]\n4. [e.g. status must be one of: active, inactive, pending]\n\nThe script should print a summary of violations, not just raise on the first error. Use pandas or Great Expectations." },
+    ]
+  },
+  {
+    cat: 'Reporting',
+    prompts: [
+      { title: 'Executive summary from data', text: "Write an executive summary based on the following data findings.\n\nContext: [e.g. Q1 2026 performance review for a SaaS product]\nKey metrics:\n- [metric 1]: [value and change vs prior period]\n- [metric 2]: [value and change]\n- [metric 3]: [value and change]\nNotable events: [e.g. launched feature X in February, lost a major account in March]\n\nWrite a 150-200 word executive summary. Lead with the most important insight, be direct about problems, and end with the top 2-3 priorities for next quarter." },
+      { title: 'Weekly metrics report', text: "Write a concise weekly metrics report for the following numbers.\n\nTeam / product: [e.g. Growth team, mobile app]\nWeek: [e.g. week of March 17, 2026]\nMetrics this week:\n- [metric]: [value] vs [last week value]\n- [metric]: [value] vs [last week value]\nHighlights: [any wins or notable events]\nConcerns: [any drops or issues]\n\nFormat it as a short Slack or email update: 3-5 bullet points, plain language, no jargon. Flag items that need attention." },
+      { title: 'A/B test results writeup', text: "Write a clear summary of my A/B test results for a non-technical audience.\n\nTest name: [e.g. New checkout flow]\nHypothesis: [e.g. Simplifying the checkout to 2 steps will increase conversion]\nControl vs variant: [describe the change]\nResults:\n- Primary metric: [e.g. conversion rate] — Control: [X%], Variant: [Y%], relative lift: [Z%]\n- Statistical significance: [e.g. p=0.03, 95% CI: +1.2% to +4.8%]\n- Secondary metrics: [any guardrail metrics and their results]\nTest duration: [e.g. 14 days, 25,000 users per group]\n\nExplain what the results mean, whether to ship the change, and any caveats." },
+      { title: 'Data dictionary documentation', text: "Write a data dictionary for the following table or dataset.\n\nTable name: [e.g. orders]\nColumns:\n- [column_name]: [data type, e.g. INT] — [brief description of what it contains]\n- [column_name]: [data type] — [description]\n- [add more as needed]\nAudience: [e.g. new data analysts joining the team]\n\nFor each column include: name, data type, description, example values, whether it can be null, and any known quirks or gotchas. Format it as a clean markdown table." },
+    ]
+  },
+];
+
+/* ── State ───────────────────────────────────────────────────── */
+let activeCat = 'All';
+let selectedCard = null;
+
+/* ── DOM refs ────────────────────────────────────────────────── */
+const catsEl       = document.getElementById('cats');
+const cardsEl      = document.getElementById('prompt-cards');
+const promptEl     = document.getElementById('prompt');
+const providersEl  = document.getElementById('providers');
+const charCountEl  = document.getElementById('charCount');
+const copyBtn      = document.getElementById('copyBtn');
+const clearBtnEl   = document.getElementById('clearBtn');
+const toastEl      = document.getElementById('toast');
+
+/* ── Render categories ──────────────────────────────────────── */
+function renderCats() {
+  const cats = ['All', ...DEV_PROMPTS.map(c => c.cat)];
+  catsEl.innerHTML = '';
+  cats.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'cat' + (activeCat === cat ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', () => {
+      activeCat = cat;
+      selectedCard = null;
+      renderCats();
+      renderCards();
+    });
+    catsEl.appendChild(btn);
+  });
+}
+
+/* ── Render prompt cards ────────────────────────────────────── */
+function renderCards() {
+  cardsEl.innerHTML = '';
+  const groups = activeCat === 'All' ? DEV_PROMPTS : DEV_PROMPTS.filter(c => c.cat === activeCat);
+
+  groups.forEach(group => {
+    if (activeCat === 'All') {
+      const catLabel = document.createElement('span');
+      catLabel.className = 'lbl';
+      catLabel.textContent = group.cat;
+      catLabel.style.marginTop = cardsEl.children.length ? '20px' : '0';
+      cardsEl.appendChild(catLabel);
+    }
+
+    group.prompts.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'prompt-card';
+      card.innerHTML = `<div class="prompt-card-title">${p.title}</div><div class="prompt-card-preview">${escHtml(p.text)}</div>`;
+      card.addEventListener('click', () => {
+        const wasSelected = selectedCard === p;
+        document.querySelectorAll('.prompt-card').forEach(c => c.classList.remove('selected'));
+
+        if (wasSelected) {
+          selectedCard = null;
+          promptEl.value = '';
+        } else {
+          selectedCard = p;
+          card.classList.add('selected');
+          promptEl.value = p.text;
+          promptEl.focus();
+        }
+        updateCount();
+      });
+      cardsEl.appendChild(card);
+    });
+  });
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+/* ── Providers ──────────────────────────────────────────────── */
+const enc = s => encodeURIComponent(s);
+const providers = [
+  { id: 'chatgpt',    label: 'ChatGPT',    cls: 'pc-chatgpt',    url: q => `https://chatgpt.com/?q=${enc(q)}` },
+  { id: 'claude',     label: 'Claude',     cls: 'pc-claude',     url: q => `https://claude.ai/new?q=${enc(q)}` },
+  { id: 'gemini',     label: 'Gemini',     cls: 'pc-gemini',     url: q => `https://gemini.google.com/app?q=${enc(q)}` },
+  { id: 'copilot',    label: 'Copilot',    cls: 'pc-copilot',    url: q => `https://copilot.microsoft.com/?q=${enc(q)}` },
+  { id: 'perplexity', label: 'Perplexity', cls: 'pc-perplexity', url: q => `https://www.perplexity.ai/search?q=${enc(q)}` },
+  { id: 'lechat',     label: 'Le Chat',    cls: 'pc-lechat',     url: q => `https://chat.mistral.ai/chat?q=${enc(q)}` },
+  { id: 'grok',       label: 'Grok',       cls: 'pc-grok',       url: q => `https://x.com/i/grok?text=${enc(q)}` },
+  { id: 'deepseek',   label: 'DeepSeek',   cls: 'pc-deepseek',   url: q => `https://chat.deepseek.com/?q=${enc(q)}` },
+];
+
+providers.forEach(p => {
+  const li = document.createElement('li');
+  const btn = document.createElement('button');
+  btn.type = 'button'; btn.className = `p-btn ${p.cls}`;
+  btn.setAttribute('aria-label', `Open in ${p.label}`);
+  btn.innerHTML = `<span class="p-dot" aria-hidden="true"></span><span class="p-name">${p.label}</span><span class="p-arrow" aria-hidden="true">&nearr;</span>`;
+  btn.addEventListener('click', () => openProvider(p));
+  li.appendChild(btn); providersEl.appendChild(li);
+});
+
+/* ── Core actions ────────────────────────────────────────────── */
+function getPrompt() { return promptEl.value.trim(); }
+
+function openProvider(p) {
+  const q = getPrompt();
+  if (!q) { showToast('Write a prompt first'); return; }
+  const w = window.open(p.url(q), '_blank', 'noopener,noreferrer');
+  if (!w) showToast('Popup blocked — copy & paste instead');
+}
+
+function updateCount() {
+  const n = promptEl.value.length;
+  charCountEl.textContent = n > 0 ? n.toLocaleString() : '';
+  charCountEl.classList.toggle('warn', n > 3000);
+}
+
+promptEl.addEventListener('input', () => {
+  updateCount();
+  if (!promptEl.value) {
+    selectedCard = null;
+    document.querySelectorAll('.prompt-card').forEach(c => c.classList.remove('selected'));
+  }
+});
+
+copyBtn.addEventListener('click', async () => {
+  const q = getPrompt();
+  if (!q) { showToast('Nothing to copy yet'); return; }
+  try {
+    await navigator.clipboard.writeText(q);
+    copyBtn.textContent = '\u2713 Copied!';
+    copyBtn.classList.add('copied');
+    setTimeout(() => {
+      copyBtn.textContent = 'Copy to clipboard';
+      copyBtn.classList.remove('copied');
+    }, 2200);
+  } catch { showToast('Copy failed — try manually'); }
+});
+
+clearBtnEl.addEventListener('click', () => {
+  promptEl.value = ''; updateCount();
+  selectedCard = null;
+  document.querySelectorAll('.prompt-card').forEach(c => c.classList.remove('selected'));
+  promptEl.focus();
+});
+
+/* ── Keyboard shortcuts ──────────────────────────────────────── */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && document.activeElement === promptEl) {
+    clearBtnEl.click(); return;
+  }
+  if ((e.metaKey || e.ctrlKey) && e.key === 'c' && document.activeElement === promptEl && !window.getSelection()?.toString()) {
+    e.preventDefault(); copyBtn.click();
+  }
+});
+
+/* ── Toast ───────────────────────────────────────────────────── */
+let toastTimer;
+function showToast(msg) {
+  toastEl.textContent = msg; toastEl.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toastEl.classList.remove('show'), 3000);
+}
+
+/* ── Init ────────────────────────────────────────────────────── */
+renderCats();
+renderCards();
+
+/* ── Service Worker ──────────────────────────────────────────── */
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').catch(() => {});
+}
+</script>
+</body>
+</html>

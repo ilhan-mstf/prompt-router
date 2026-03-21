@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<title>AI Prompts Every Startup Founder Should Steal | Prompt Router Blog</title>
+<meta name="description" content="Not 'write my business plan' prompts — these are thinking tools. A practical prompt playbook for founders covering ideation, pitching, product, growth, ops, and legal.">
+<meta name="keywords" content="startup prompts, AI for founders, prompt engineering, ChatGPT for startups, Claude prompts, founder tools, startup productivity">
+<meta name="author" content="Prompt Router">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://prompt-router.pages.dev/blog-startup-prompts">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Prompt Router">
+<meta property="og:title" content="AI Prompts Every Startup Founder Should Steal">
+<meta property="og:description" content="Not 'write my business plan' prompts — these are thinking tools. A practical prompt playbook for founders covering ideation, pitching, product, growth, ops, and legal.">
+<meta property="og:url" content="https://prompt-router.pages.dev/blog-startup-prompts">
+<meta property="og:image" content="https://prompt-router.pages.dev/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-03-21">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Prompts Every Startup Founder Should Steal">
+<meta name="twitter:description" content="Not 'write my business plan' prompts — these are thinking tools for founders covering ideation, pitching, product, growth, ops, and legal.">
+<meta name="twitter:image" content="https://prompt-router.pages.dev/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AI Prompts Every Startup Founder Should Steal",
+  "description": "Not 'write my business plan' prompts — these are thinking tools. A practical prompt playbook for founders covering ideation, pitching, product, growth, ops, and legal.",
+  "datePublished": "2026-03-21",
+  "author": { "@type": "Person", "name": "Prompt Router" },
+  "publisher": { "@type": "Organization", "name": "Prompt Router", "url": "https://prompt-router.pages.dev/" },
+  "mainEntityOfPage": "https://prompt-router.pages.dev/blog-startup-prompts",
+  "image": "https://prompt-router.pages.dev/og-image.png"
+}
+</script>
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230f0f10'/><text y='24' x='4' font-size='22' font-family='serif' fill='%23d4a847'>P</text></svg>">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f0f10" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f4f0e8" media="(prefers-color-scheme: light)">
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,200&display=swap" rel="stylesheet">
+
+<style>
+/* ── Tokens ──────────────────────────────────────────────────── */
+:root {
+  --bg:        #0f0f10;
+  --surface:   #1a1a1c;
+  --surface-2: #222225;
+  --border:    #2c2c30;
+  --border-2:  #404046;
+  --text:      #f0ece4;
+  --text-2:    #9e9a96;
+  --text-3:    #5a5856;
+  --gold:      #d4a847;
+  --gold-dim:  #9a7830;
+  --gold-glow: rgba(212,168,71,.1);
+  --focus:     #d4a847;
+
+  --xs:   0.8125rem;
+  --sm:   0.9375rem;
+  --base: 1.0625rem;
+  --lg:   1.125rem;
+  --2xl:  2.375rem;
+
+  --r:    8px;
+  --r-lg: 12px;
+  --max:  700px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg:        #f4f0e8;
+    --surface:   #fdfaf5;
+    --surface-2: #f0ece2;
+    --border:    #e0dbd0;
+    --border-2:  #c8c2b4;
+    --text:      #1a1714;
+    --text-2:    #5a554e;
+    --text-3:    #9c968e;
+    --gold:      #7a5518;
+    --gold-dim:  #9a6c28;
+    --gold-glow: rgba(122,85,24,.07);
+    --focus:     #7a5518;
+  }
+}
+
+/* ── Reset ───────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: var(--base);
+  line-height: 1.65;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Focus ───────────────────────────────────────────────────── */
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: var(--r); }
+:focus:not(:focus-visible) { outline: none; }
+
+/* ── Page shell ──────────────────────────────────────────────── */
+.page { width: 100%; max-width: var(--max); padding: 0 28px; }
+
+/* ── Header ──────────────────────────────────────────────────── */
+header.page { padding-top: 60px; padding-bottom: 52px; }
+
+h1.logo {
+  display: flex; align-items: baseline; gap: 8px;
+  font-size: inherit; font-weight: inherit; margin-bottom: 12px;
+}
+.logo-a {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto; font-weight: 600;
+  font-size: var(--2xl); letter-spacing: -0.03em;
+  line-height: 1; color: var(--text);
+}
+.logo-b {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto; font-weight: 200; font-style: italic;
+  font-size: var(--2xl); letter-spacing: -0.02em;
+  line-height: 1; color: var(--gold);
+}
+.logo a { text-decoration: none; color: inherit; }
+
+/* ── Nav ─────────────────────────────────────────────────────── */
+.nav-links {
+  display: flex; gap: 16px; margin-top: 16px;
+}
+.nav-links a {
+  font-size: var(--xs); color: var(--text-3);
+  text-decoration: none; letter-spacing: 0.04em;
+  transition: color .12s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-links a.active { color: var(--gold); }
+
+/* ── Article ─────────────────────────────────────────────────── */
+article.page { padding-bottom: 86px; }
+
+.article-date {
+  font-size: var(--xs); color: var(--text-3);
+  letter-spacing: 0.04em; margin-bottom: 8px;
+}
+
+.article-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600; font-size: 1.75rem;
+  letter-spacing: -0.02em; line-height: 1.3;
+  color: var(--text); margin-bottom: 32px;
+}
+
+article h2 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600; font-size: 1.25rem;
+  letter-spacing: -0.01em; line-height: 1.3;
+  color: var(--text); margin: 40px 0 16px;
+}
+
+article p {
+  color: var(--text-2); margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+article a {
+  color: var(--gold); text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--gold-dim);
+  transition: color .12s;
+}
+article a:hover { color: var(--text); }
+
+article ul {
+  color: var(--text-2); margin: 0 0 20px 20px;
+  line-height: 2;
+}
+
+article blockquote {
+  border-left: 3px solid var(--gold-dim);
+  padding: 12px 20px; margin: 24px 0;
+  background: var(--gold-glow);
+  border-radius: 0 var(--r) var(--r) 0;
+  color: var(--text-2); font-style: italic;
+}
+
+article code {
+  background: var(--surface-2); padding: 2px 6px;
+  border-radius: 4px; font-size: var(--sm);
+  color: var(--gold);
+}
+
+.cta-box {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 24px;
+  margin: 32px 0; text-align: center;
+}
+.cta-box p { color: var(--text); margin-bottom: 16px; }
+.cta-link {
+  display: inline-block; padding: 12px 28px;
+  border: 1px solid var(--gold); border-radius: var(--r);
+  color: var(--gold); text-decoration: none;
+  font-family: 'DM Mono', monospace; font-size: var(--sm);
+  letter-spacing: 0.04em; transition: background .12s, color .12s;
+}
+.cta-link:hover { background: var(--gold); color: var(--bg); }
+
+/* ── Footer ──────────────────────────────────────────────────── */
+footer {
+  width: 100%; border-top: 1px solid var(--border);
+  display: flex; justify-content: center; margin-top: 8px;
+}
+.footer-inner {
+  width: 100%; max-width: var(--max);
+  padding: 32px 28px 48px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.footer-links {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  font-size: var(--xs); margin-bottom: 4px;
+}
+.footer-links a {
+  color: var(--text-2); text-decoration: none;
+  letter-spacing: 0.02em; transition: color .12s;
+}
+.footer-links a:hover { color: var(--gold); }
+.footer-copy { font-size: var(--xs); color: var(--text-3); }
+.footer-doodle {
+  display: block; margin: 16px auto 0; width: 180px; height: auto;
+  opacity: .18; transition: opacity .3s;
+}
+.footer-doodle:hover { opacity: .35; }
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 580px) {
+  .logo-a, .logo-b { font-size: 2rem; }
+  header.page { padding-top: 44px; padding-bottom: 36px; }
+  .article-title { font-size: 1.4rem; }
+}
+@media (max-width: 360px) {
+  .page, .footer-inner { padding-left: 16px; padding-right: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<header class="page">
+  <h1 class="logo">
+    <a href="/"><span class="logo-a">Prompt</span><span class="logo-b">Router</span></a>
+  </h1>
+  <nav class="nav-links">
+    <a href="/">Home</a>
+    <a href="/startup">Startup Prompts</a>
+    <a href="/blog" class="active">Blog</a>
+  </nav>
+</header>
+
+<!-- ── Article ── -->
+<article class="page">
+  <p class="article-date">March 21, 2026</p>
+  <h1 class="article-title">AI Prompts Every Startup Founder Should Steal</h1>
+
+  <p>Founders wear every hat. On any given Tuesday you might be closing a sales call, reviewing a legal clause, writing a job description, and trying to figure out why your activation rate dropped &mdash; all before lunch. Nobody is actually good at all of those things. But AI can make you <em>good enough</em> at all of them, fast.</p>
+
+  <p>The prompts below aren't magic. They won't replace thinking. What they will do is get you to a first draft, a framework, or a useful second opinion in minutes instead of hours. That's the real value: not outsourcing decisions to AI, but using it to think faster and more clearly across every domain you're suddenly responsible for.</p>
+
+  <p>One caveat before we get into it: use these for first drafts and frameworks, not final decisions. AI is confidently wrong often enough that anything legal, financial, or customer-facing should get a human review before it ships.</p>
+
+  <h2>Ideation</h2>
+
+  <p>The best use of AI in early-stage work is as a sparring partner that never gets tired of your half-baked ideas. Don't ask it to validate you &mdash; ask it to poke holes.</p>
+
+  <blockquote>"I'm building [one-sentence description]. What are the three most likely reasons this fails in the first 18 months? Be specific and don't hold back."</blockquote>
+
+  <blockquote>"List 10 adjacent problems to [problem you're solving] that might be bigger opportunities. For each, explain who has it and why it's underserved."</blockquote>
+
+  <p>The goal isn't to get answers you like. It's to surface assumptions you haven't examined yet.</p>
+
+  <h2>Pitch &amp; Fundraising</h2>
+
+  <p>Investors hear hundreds of pitches. The ones that land are clear, specific, and make the opportunity feel inevitable. AI is surprisingly good at helping you find that clarity &mdash; especially when you're too close to your own idea to see what's confusing.</p>
+
+  <blockquote>"Here's my current one-liner: [paste it]. Rewrite it five ways. Each version should be under 25 words, jargon-free, and lead with the problem not the solution."</blockquote>
+
+  <blockquote>"Play the role of a skeptical Series A investor. I'll describe my startup and you ask the ten hardest questions you'd ask in a first meeting. Start when I'm ready."</blockquote>
+
+  <p>For the second one, actually answer the questions out loud. You'll find the gaps in your narrative faster than any pitch coach session.</p>
+
+  <h2>Product</h2>
+
+  <p>Product decisions are where founders most often let gut instinct override evidence. AI can help you stress-test your reasoning and spot the edge cases you've been quietly ignoring.</p>
+
+  <blockquote>"Here's a feature I'm considering: [describe it]. Who benefits most from this? Who might it confuse or frustrate? What's the simplest version I could ship to learn whether it's worth building fully?"</blockquote>
+
+  <blockquote>"I want to write a PRD for [feature]. Ask me 8 clarifying questions first before drafting anything &mdash; I want to make sure we cover edge cases, success metrics, and rollback criteria."</blockquote>
+
+  <p>That second prompt is one of the most useful things I've found for product work. Forcing the questions before the document almost always surfaces something important.</p>
+
+  <h2>Growth</h2>
+
+  <p>Growth is where startup advice gets the most generic. "Do things that don't scale." "Find your ICP." Helpful in the abstract, useless in practice. Use AI to get specific.</p>
+
+  <blockquote>"My product is [description]. My current ICP is [describe them]. Give me 10 non-obvious channels to reach them that most B2B SaaS companies ignore. For each, give a concrete first step I could take this week."</blockquote>
+
+  <blockquote>"Here's my onboarding flow: [describe or paste steps]. Where are users most likely to drop off and why? What would you change to get more people to the 'aha moment' faster?"</blockquote>
+
+  <p>For growth work especially, run the same prompt through two or three different AI models. You'll often get meaningfully different angles, and the overlap is usually where the real insight lives.</p>
+
+  <h2>Operations</h2>
+
+  <p>Nobody teaches you the ops side of running a company. Hiring, managing people, writing processes, running meetings &mdash; you figure it out on the fly. AI is a solid shortcut for the parts that are mostly just templates.</p>
+
+  <blockquote>"Write a job description for a [role] at an early-stage B2B SaaS startup. We're [X] people, [Y stage], focused on [domain]. The role will own [responsibilities]. Be honest about the chaos &mdash; we want someone who thrives in it."</blockquote>
+
+  <blockquote>"I need to write a performance improvement plan for a direct report who is [describe situation honestly]. Draft a fair, specific, 30-day PIP that focuses on behaviors and outcomes, not personality."</blockquote>
+
+  <p>For anything people-related, treat the AI output as a starting draft. Adjust it to sound like you and reflect the actual situation before sending it to anyone.</p>
+
+  <h2>Legal &amp; Finance</h2>
+
+  <p>This is where the "first draft, not final decision" rule matters most. AI can explain concepts, draft simple documents, and help you know what questions to ask a lawyer. It cannot replace a lawyer.</p>
+
+  <blockquote>"Explain the key differences between a SAFE and a convertible note for a first-time founder raising a pre-seed round. What are the main gotchas I should watch out for in each?"</blockquote>
+
+  <blockquote>"Draft a simple contractor agreement for a freelance designer I'm hiring for a 3-month project. Include IP assignment, confidentiality, and payment terms. Flag anything that typically needs jurisdiction-specific language."</blockquote>
+
+  <p>That last one is genuinely useful for getting a working draft that your lawyer can review and clean up &mdash; which is much cheaper than having them start from scratch.</p>
+
+  <h2>How to actually use these</h2>
+
+  <p>A few things that make all of these work better:</p>
+
+  <ul>
+    <li><strong>Give context upfront.</strong> The more specific you are about your stage, market, and constraints, the more useful the output.</li>
+    <li><strong>Push back.</strong> If the first answer is generic, say so. "That's too vague &mdash; give me something more specific to my situation."</li>
+    <li><strong>Try multiple models.</strong> Claude, ChatGPT, and Gemini have different strengths. A fundraising question might get a sharper answer from one than another.</li>
+    <li><strong>Don't stop at the first draft.</strong> Use AI output as raw material, not a finished product. Edit, cut, and make it yours.</li>
+  </ul>
+
+  <p>The founders getting the most out of AI right now aren't the ones using it to avoid thinking &mdash; they're the ones using it to think harder, faster, and across more domains than they could alone.</p>
+
+  <div class="cta-box">
+    <p>Try these prompts across multiple AI models at once &mdash; no copy-pasting required.</p>
+    <a href="/startup" class="cta-link">Startup Prompts</a>
+    &nbsp;&nbsp;
+    <a href="/" class="cta-link">Open Prompt Router</a>
+  </div>
+</article>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/startup">Startup Prompts</a>
+      <a href="/blog">Blog</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Prompt Router &mdash; Free.</p>
+    <img src="/clumsy.svg" alt="" class="footer-doodle" aria-hidden="true" loading="lazy" width="180" height="135">
+  </div>
+</footer>
+
+</body>
+</html>
