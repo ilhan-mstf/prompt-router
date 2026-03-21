@@ -65,18 +65,18 @@
   --border:    #2c2c30;
   --border-2:  #404046;
   --text:      #f0ece4;
-  --text-2:    #9e9a96;
-  --text-3:    #5a5856;
+  --text-2:    #c5c0b9;
+  --text-3:    #8a8580;
   --gold:      #d4a847;
   --gold-dim:  #9a7830;
   --gold-glow: rgba(212,168,71,.1);
   --focus:     #d4a847;
 
-  --xs:   0.8125rem;
-  --sm:   0.9375rem;
-  --base: 1.0625rem;
-  --lg:   1.125rem;
-  --2xl:  2.375rem;
+  --xs:   0.9rem;
+  --sm:   1.05rem;
+  --base: 1.1875rem;
+  --lg:   1.25rem;
+  --2xl:  2.625rem;
 
   --r:    8px;
   --r-lg: 12px;
@@ -91,8 +91,8 @@
     --border:    #e0dbd0;
     --border-2:  #c8c2b4;
     --text:      #1a1714;
-    --text-2:    #5a554e;
-    --text-3:    #9c968e;
+    --text-2:    #3d3832;
+    --text-3:    #736d65;
     --gold:      #7a5518;
     --gold-dim:  #9a6c28;
     --gold-glow: rgba(122,85,24,.07);
@@ -125,37 +125,59 @@ body {
 .page { width: 100%; max-width: var(--max); padding: 0 28px; }
 
 /* ── Header ──────────────────────────────────────────────────── */
-header.page { padding-top: 60px; padding-bottom: 52px; }
+/* ── Top bar ─────────────────────────────────────────────────── */
+.topbar {
+  width: 100%; background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 100;
+  display: flex; justify-content: center;
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  background: color-mix(in srgb, var(--surface) 85%, transparent);
+}
+.topbar-inner {
+  width: 100%; max-width: var(--max); padding: 12px 28px;
+  display: flex; align-items: center; justify-content: space-between;
+}
 
 h1.logo {
-  display: flex; align-items: baseline; gap: 8px;
-  font-size: inherit; font-weight: inherit; margin-bottom: 12px;
+  font-size: inherit; font-weight: inherit; margin: 0;
 }
+.logo a { text-decoration: none; display: flex; align-items: baseline; gap: 6px; }
 .logo-a {
   font-family: 'Fraunces', Georgia, serif;
   font-optical-sizing: auto; font-weight: 600;
-  font-size: var(--2xl); letter-spacing: -0.03em;
+  font-size: 1.65rem; letter-spacing: -0.03em;
   line-height: 1; color: var(--text);
 }
 .logo-b {
   font-family: 'Fraunces', Georgia, serif;
   font-optical-sizing: auto; font-weight: 200; font-style: italic;
-  font-size: var(--2xl); letter-spacing: -0.02em;
+  font-size: 1.65rem; letter-spacing: -0.02em;
   line-height: 1; color: var(--gold);
 }
-.logo a { text-decoration: none; color: inherit; }
 
-/* ── Nav ─────────────────────────────────────────────────────── */
 .nav-links {
-  display: flex; gap: 16px; margin-top: 16px;
+  display: flex; gap: 4px; align-items: center;
 }
 .nav-links a {
-  font-size: var(--xs); color: var(--text-3);
-  text-decoration: none; letter-spacing: 0.04em;
-  transition: color .12s;
+  font-size: var(--xs); color: var(--text-2);
+  text-decoration: none; letter-spacing: 0.03em;
+  font-weight: 500;
+  padding: 6px 12px; border-radius: 100px;
+  transition: color .12s, background .12s;
+  white-space: nowrap;
 }
-.nav-links a:hover { color: var(--gold); }
-.nav-links a.active { color: var(--gold); }
+.nav-links a:hover { color: var(--text); background: var(--surface-2); }
+.nav-links a.active {
+  color: var(--gold); background: var(--gold-glow);
+}
+.nav-sep {
+  width: 1px; height: 16px; background: var(--border);
+  margin: 0 4px; flex-shrink: 0;
+}
+
+/* ── Header ──────────────────────────────────────────────────── */
+header.page { padding-top: 40px; padding-bottom: 40px; }
 
 /* ── Article ─────────────────────────────────────────────────── */
 article.page { padding-bottom: 86px; }
@@ -221,7 +243,7 @@ article code {
   display: inline-block; padding: 12px 28px;
   border: 1px solid var(--gold); border-radius: var(--r);
   color: var(--gold); text-decoration: none;
-  font-family: 'DM Mono', monospace; font-size: var(--sm);
+  font-family: 'DM Mono', 'Courier New', monospace; font-size: var(--sm);
   letter-spacing: 0.04em; transition: background .12s, color .12s;
 }
 .cta-link:hover { background: var(--gold); color: var(--bg); }
@@ -233,29 +255,49 @@ footer {
 }
 .footer-inner {
   width: 100%; max-width: var(--max);
-  padding: 32px 28px 48px;
+  padding: 36px 28px 48px;
+  display: flex; flex-direction: column; gap: 24px;
+}
+.footer-section { display: flex; flex-direction: column; gap: 12px; }
+.footer-heading {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: var(--xs); font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-2);
+}
+.footer-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 6px 16px;
+}
+.footer-grid a {
+  font-size: var(--xs); color: var(--text-3);
+  text-decoration: none; letter-spacing: 0.02em;
+  padding: 4px 0; transition: color .12s;
+}
+.footer-grid a:hover { color: var(--gold); }
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
   display: flex; flex-direction: column; gap: 8px;
 }
 .footer-links {
   display: flex; gap: 16px; flex-wrap: wrap;
-  font-size: var(--xs); margin-bottom: 4px;
 }
 .footer-links a {
-  color: var(--text-2); text-decoration: none;
+  font-size: var(--xs); color: var(--text-2);
+  text-decoration: none; font-weight: 500;
   letter-spacing: 0.02em; transition: color .12s;
 }
 .footer-links a:hover { color: var(--gold); }
 .footer-copy { font-size: var(--xs); color: var(--text-3); }
 .footer-doodle {
-  display: block; margin: 16px auto 0; width: 180px; height: auto;
+  display: block; margin: 4px auto 0; width: 180px; height: auto;
   opacity: .18; transition: opacity .3s;
 }
 .footer-doodle:hover { opacity: .35; }
 
 /* ── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 580px) {
-  .logo-a, .logo-b { font-size: 2rem; }
-  header.page { padding-top: 44px; padding-bottom: 36px; }
   .article-title { font-size: 1.4rem; }
 }
 @media (max-width: 360px) {
@@ -265,17 +307,18 @@ footer {
 </head>
 <body>
 
-<!-- ── Header ── -->
-<header class="page">
-  <h1 class="logo">
-    <a href="/"><span class="logo-a">Prompt</span><span class="logo-b">Router</span></a>
-  </h1>
-  <nav class="nav-links">
-    <a href="/">Home</a>
-    <a href="/student">Student Prompts</a>
-    <a href="/blog" class="active">Blog</a>
-  </nav>
-</header>
+<!-- ── Top bar ── -->
+<nav class="topbar" aria-label="Main navigation">
+  <div class="topbar-inner">
+    <h1 class="logo"><a href="/"><span class="logo-a">Prompt</span><span class="logo-b">Router</span></a></h1>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/dev">Dev</a>
+      <span class="nav-sep" aria-hidden="true"></span>
+      <a href="/blog" class="active">Blog</a>
+    </div>
+  </div>
+</nav>
 
 <!-- ── Article ── -->
 <article class="page">
@@ -356,12 +399,29 @@ footer {
 <!-- ── Footer ── -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-links">
-      <a href="/">Home</a>
-      <a href="/student">Student Prompts</a>
-      <a href="/blog">Blog</a>
+    <div class="footer-section">
+      <span class="footer-heading">Prompt Libraries</span>
+      <nav class="footer-grid" aria-label="Prompt libraries">
+        <a href="/dev">Dev</a>
+        <a href="/writing">Writing</a>
+        <a href="/marketing">Marketing</a>
+        <a href="/job">Job Search</a>
+        <a href="/startup">Startup</a>
+        <a href="/data">Data</a>
+        <a href="/design">Design</a>
+        <a href="/student">Student</a>
+        <a href="/productivity">Productivity</a>
+        <a href="/legal">Legal</a>
+        <a href="/sales">Sales</a>
+      </nav>
     </div>
-    <p class="footer-copy">&copy; 2026 Prompt Router &mdash; Free.</p>
+    <div class="footer-bottom">
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="/">Home</a>
+        <a href="/blog">Blog</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Prompt Router &mdash; Free, no login, no tracking.</p>
+    </div>
     <img src="/clumsy.svg" alt="" class="footer-doodle" aria-hidden="true" loading="lazy" width="180" height="135">
   </div>
 </footer>
