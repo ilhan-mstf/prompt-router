@@ -471,8 +471,13 @@ footer {
 .footer-doodle {
   display: block; margin: 4px auto 0; width: 180px; height: auto;
   opacity: .18; transition: opacity .3s;
+  filter: invert(1) brightness(1.5);
 }
 .footer-doodle:hover { opacity: .35; }
+
+@media (prefers-color-scheme: light) {
+  .footer-doodle { filter: none; }
+}
 
 /* ── Noscript ────────────────────────────────────────────────── */
 .noscript {
