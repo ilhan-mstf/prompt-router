@@ -177,7 +177,7 @@ body {
   display: flex; align-items: center; justify-content: space-between;
 }
 
-h1.logo {
+.logo {
   font-size: inherit; font-weight: inherit; margin: 0;
 }
 .logo a { text-decoration: none; display: flex; align-items: baseline; gap: 6px; }
@@ -219,7 +219,7 @@ header.page { padding-top: 40px; padding-bottom: 40px; }
 
 .tagline {
   font-size: var(--sm); color: var(--text-3);
-  letter-spacing: 0.01em; line-height: 1;
+  font-weight: inherit; letter-spacing: 0.01em; line-height: 1;
 }
 
 /* ── Dev link ────────────────────────────────────────────────── */
@@ -517,7 +517,7 @@ footer {
 <!-- ── Top bar ── -->
 <nav class="topbar" aria-label="Main navigation">
   <div class="topbar-inner">
-    <h1 class="logo"><a href="/"><span class="logo-a">Prompt</span><span class="logo-b">Router</span></a></h1>
+    <div class="logo"><a href="/"><span class="logo-a">Prompt</span><span class="logo-b">Router</span></a></div>
     <div class="nav-links" id="nav-links">
       <a href="/" class="active">Home</a>
       <a href="/dev">Dev</a>
@@ -529,7 +529,7 @@ footer {
 
 <!-- ── Header ── -->
 <header class="page">
-  <p class="tagline" id="tagline">Write once &mdash; send to every AI</p>
+  <h1 class="tagline" id="tagline">Write once &mdash; send to every AI</h1>
 </header>
 
 <!-- ── Main ── -->

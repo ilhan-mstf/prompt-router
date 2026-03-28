@@ -79,6 +79,8 @@ export default {
 
     const m = META[lang];
 
+    const langUrl = `https://prompt-router.pages.dev/?lang=${lang}`;
+
     // HTMLRewriter streams the response, patching only the relevant elements.
     // Attribute values are automatically HTML-entity-escaped by the runtime.
     return new HTMLRewriter()
@@ -87,10 +89,12 @@ export default {
       .on('meta[name="description"]',       { element: el => el.setAttribute('content', m.desc)    })
       .on('meta[property="og:title"]',      { element: el => el.setAttribute('content', m.title)   })
       .on('meta[property="og:description"]',{ element: el => el.setAttribute('content', m.desc)    })
+      .on('meta[property="og:url"]',        { element: el => el.setAttribute('content', langUrl)   })
       .on('meta[property="og:locale"]',     { element: el => el.setAttribute('content', m.ogLocale)})
       .on('meta[property="og:image:alt"]',  { element: el => el.setAttribute('content', m.ogImageAlt) })
       .on('meta[name="twitter:title"]',     { element: el => el.setAttribute('content', m.title)   })
       .on('meta[name="twitter:description"]',{ element: el => el.setAttribute('content', m.desc)   })
+      .on('link[rel="canonical"]',          { element: el => el.setAttribute('href', langUrl)      })
       .transform(response);
   },
 };

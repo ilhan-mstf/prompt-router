@@ -27,12 +27,8 @@ There is no visible control for users to change language. Language detection is 
 
 ## HIGH
 
-**5. `hreflang` URLs are inconsistent with Cloudflare Worker routing (lines 17–23)**
-The `<head>` declares:
-```html
-<link rel="alternate" hreflang="es" href="https://prompt-router.pages.dev/?lang=es">
-```
-But the README states the Cloudflare Worker serves language versions at path-based URLs (`/es`, `/de`, etc.). If Google indexes `/es` as the canonical Spanish URL, the hreflang pointing to `?lang=es` (a different URL) creates a mismatch that breaks hreflang signals — a direct SEO harm.
+**5. ~~`hreflang` URLs are inconsistent with Cloudflare Worker routing (lines 17–23)~~ FIXED**
+The `<head>` declares hreflang alternates using `?lang=xx` query-string URLs. The Cloudflare Worker now rewrites `<link rel="canonical">` and `<meta property="og:url">` to match the `?lang=xx` format for non-default languages, ensuring consistency between hreflang, canonical, and OG URLs.
 
 **6. `<noscript>` message is English-only (line 425)**
 ```html
@@ -91,7 +87,7 @@ If `@promptrouter` is not a registered X/Twitter account, this metadata is incor
 | 2 | Critical | i18n | Keyboard shortcut words ("save", "copy", "clear") not localized |
 | 3 | Critical | a11y/i18n | Provider ARIA labels use hardcoded "Open in" |
 | 4 | Critical | UX | No language switcher UI — language not discoverable |
-| 5 | High | SEO | `hreflang` URLs (`?lang=es`) conflict with Worker path routes (`/es`) |
+| 5 | ~~High~~ Fixed | SEO | ~~`hreflang` URLs (`?lang=es`) conflict with Worker path routes (`/es`)~~ Canonical and OG URL now rewritten by Worker |
 | 6 | High | i18n | `<noscript>` message English-only |
 | 7 | Medium | i18n/perf | English content flash before `applyLocale()` fires |
 | 8 | Medium | code quality | `enc()` used before `const` declaration |

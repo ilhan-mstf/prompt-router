@@ -360,6 +360,21 @@ textarea:focus { border-color: var(--gold-dim); box-shadow: 0 0 0 3px var(--gold
 }
 .toast.show { transform: translateX(-50%) translateY(0); }
 
+/* ── Related libraries ──────────────────────────────────────── */
+.related-libs { margin-top: 20px; }
+.related-grid {
+  display: flex; flex-wrap: wrap; gap: 7px;
+}
+.related-grid a {
+  padding: 7px 14px; background: none;
+  border: 1px solid var(--border); border-radius: 100px;
+  color: var(--text-2); font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: var(--xs); letter-spacing: 0.03em; line-height: 1;
+  text-decoration: none;
+  transition: color .12s, border-color .12s, background .12s;
+}
+.related-grid a:hover { color: var(--gold); border-color: var(--gold-dim); background: var(--gold-glow); }
+
 /* ── Footer ──────────────────────────────────────────────────── */
 footer {
   width: 100%; border-top: 1px solid var(--border);
@@ -496,6 +511,17 @@ footer {
       Clear
     </button>
   </div>
+
+  <!-- Related libraries -->
+  <section class="related-libs" aria-labelledby="lbl-related">
+    <span class="lbl" id="lbl-related">Explore more prompts</span>
+    <nav class="related-grid" aria-label="Related prompt libraries">
+      <a href="/marketing">Marketing</a>
+      <a href="/sales">Sales</a>
+      <a href="/dev">Dev</a>
+      <a href="/data">Data</a>
+    </nav>
+  </section>
 
 </main>
 
@@ -756,6 +782,9 @@ function showToast(msg) {
 /* ── Init ────────────────────────────────────────────────────── */
 renderCats();
 renderCards();
+
+/* ── ItemList structured data ───────────────────────────────── */
+(function(){var n=1,items=[];DEV_PROMPTS.forEach(function(c){c.prompts.forEach(function(p){items.push({"@type":"ListItem","position":n++,"name":p.title});});});var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ItemList","name":document.title.split('|')[0].split('—')[0].trim(),"numberOfItems":items.length,"itemListElement":items});document.head.appendChild(s);})();
 
 /* ── Service Worker ──────────────────────────────────────────── */
 if ('serviceWorker' in navigator) {
