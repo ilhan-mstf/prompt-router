@@ -63,180 +63,34 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,200&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="/css/core.css">
+<link rel="stylesheet" href="/css/prompt.css">
 <style>
-/* ── Tokens ──────────────────────────────────────────────────── */
-:root {
-  --bg:        #0f0f10;
-  --surface:   #1a1a1c;
-  --surface-2: #222225;
-  --border:    #2c2c30;
-  --border-2:  #404046;
-  --text:      #f0ece4;
-  --text-2:    #c5c0b9;
-  --text-3:    #8a8580;
-  --gold:      #d4a847;
-  --gold-dim:  #9a7830;
-  --gold-glow: rgba(212,168,71,.1);
-  --focus:     #d4a847;
-
-  --chatgpt:    #10a37f;
-  --claude:     #c8845a;
-  --gemini:     #4285f4;
-  --copilot:    #7b6fcc;
-  --perplexity: #17b0a7;
-  --lechat:     #f06830;
-  --grok:       #aaaaaa;
-  --deepseek:   #4d6bfe;
-
-  --xs:   0.9rem;
-  --sm:   1.05rem;
-  --base: 1.1875rem;
-  --lg:   1.25rem;
-  --2xl:  2.625rem;
-
-  --r:    8px;
-  --r-lg: 12px;
-  --max:  700px;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg:        #f4f0e8;
-    --surface:   #fdfaf5;
-    --surface-2: #f0ece2;
-    --border:    #e0dbd0;
-    --border-2:  #c8c2b4;
-    --text:      #1a1714;
-    --text-2:    #3d3832;
-    --text-3:    #736d65;
-    --gold:      #7a5518;
-    --gold-dim:  #9a6c28;
-    --gold-glow: rgba(122,85,24,.07);
-    --focus:     #7a5518;
-  }
-}
-
-/* ── Reset ───────────────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'DM Mono', 'Courier New', monospace;
-  font-size: var(--base);
-  line-height: 1.65;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* ── Skip link ───────────────────────────────────────────────── */
-.skip {
-  position: absolute; top: -100%; left: 16px;
-  background: var(--gold); color: var(--bg);
-  font-size: var(--sm); padding: 8px 16px;
-  border-radius: 0 0 var(--r) var(--r);
-  text-decoration: none; z-index: 999; transition: top .15s;
-}
-.skip:focus { top: 0; outline: none; }
-
-/* ── Focus ───────────────────────────────────────────────────── */
-:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: var(--r); }
-:focus:not(:focus-visible) { outline: none; }
-
-/* ── Page shell ──────────────────────────────────────────────── */
-.page { width: 100%; max-width: var(--max); padding: 0 28px; }
-
-/* ── Top bar ─────────────────────────────────────────────────── */
-.topbar {
-  width: 100%; background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  position: sticky; top: 0; z-index: 100;
-  display: flex; justify-content: center;
-  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
-  background: color-mix(in srgb, var(--surface) 85%, transparent);
-}
-.topbar-inner {
-  width: 100%; max-width: var(--max); padding: 12px 28px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-
-h1.logo {
-  font-size: inherit; font-weight: inherit; margin: 0;
-}
-.logo a { text-decoration: none; display: flex; align-items: baseline; gap: 6px; }
-.logo-a {
-  font-family: 'Fraunces', Georgia, serif;
-  font-optical-sizing: auto; font-weight: 600;
-  font-size: 1.65rem; letter-spacing: -0.03em;
-  line-height: 1; color: var(--text);
-}
-.logo-b {
-  font-family: 'Fraunces', Georgia, serif;
-  font-optical-sizing: auto; font-weight: 200; font-style: italic;
-  font-size: 1.65rem; letter-spacing: -0.02em;
-  line-height: 1; color: var(--gold);
-}
-
-.nav-links {
-  display: flex; gap: 4px; align-items: center;
-}
-.nav-links a {
-  font-size: var(--xs); color: var(--text-2);
-  text-decoration: none; letter-spacing: 0.03em;
-  font-weight: 500;
-  padding: 6px 12px; border-radius: 100px;
-  transition: color .12s, background .12s;
-  white-space: nowrap;
-}
-.nav-links a:hover { color: var(--text); background: var(--surface-2); }
-.nav-links a.active {
-  color: var(--gold); background: var(--gold-glow);
-}
-.nav-sep {
-  width: 1px; height: 16px; background: var(--border);
-  margin: 0 4px; flex-shrink: 0;
-}
-
-/* ── Header ──────────────────────────────────────────────────── */
+/* ── Header ── */
 header.page { padding-top: 40px; padding-bottom: 40px; }
-
 .tagline {
-  font-size: var(--sm); color: var(--text-3);
+  font-size: var(--text-sm); color: var(--text-3);
   letter-spacing: 0.01em; line-height: 1;
 }
 
-/* ── Main ────────────────────────────────────────────────────── */
+/* ── Main ── */
 main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40px; }
 
-/* ── Section labels ──────────────────────────────────────────── */
-.lbl {
-  display: block;
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: var(--xs); letter-spacing: 0.12em;
-  text-transform: uppercase; color: var(--text-2);
-  font-weight: 600; margin-bottom: 12px;
-}
-
-/* ── Category chips ──────────────────────────────────────────── */
+/* ── Category chips ── */
 .cats { display: flex; flex-wrap: wrap; gap: 7px; }
 .cat {
   padding: 7px 14px; background: none;
   border: 1px solid var(--border); border-radius: 100px;
-  color: var(--text-2); font-family: 'DM Mono', 'Courier New', monospace;
-  font-size: var(--xs); letter-spacing: 0.03em; line-height: 1;
+  color: var(--text-2); font-family: inherit;
+  font-size: var(--text-sm); letter-spacing: 0; line-height: 1;
   cursor: pointer; user-select: none;
   transition: color .12s, border-color .12s, background .12s;
 }
 .cat:hover { color: var(--gold); border-color: var(--gold-dim); background: var(--gold-glow); }
 .cat.active { color: var(--gold); border-color: var(--gold); background: var(--gold-glow); }
 
-/* ── Prompt cards ────────────────────────────────────────────── */
+/* ── Prompt cards ── */
 .prompt-cards { display: flex; flex-direction: column; gap: 10px; }
-
 .prompt-card {
   background: var(--surface); border: 1px solid var(--border);
   border-radius: var(--r-lg); padding: 16px 18px;
@@ -245,13 +99,12 @@ main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40
 }
 .prompt-card:hover { border-color: var(--border-2); background: var(--surface-2); }
 .prompt-card.selected { border-color: var(--gold); background: var(--gold-glow); }
-
 .prompt-card-title {
-  font-size: var(--sm); font-weight: 500; color: var(--text);
+  font-size: var(--text-sm); font-weight: 500; color: var(--text);
   margin-bottom: 6px; line-height: 1.3;
 }
 .prompt-card-preview {
-  font-size: var(--xs); color: var(--text-3);
+  font-size: var(--text-xs); color: var(--text-3);
   line-height: 1.5; white-space: pre-line;
   display: -webkit-box; -webkit-line-clamp: 2;
   -webkit-box-orient: vertical; overflow: hidden;
@@ -261,189 +114,18 @@ main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40
   color: var(--text-2);
 }
 
-/* ── Textarea ────────────────────────────────────────────────── */
-.prompt-wrap { position: relative; }
-textarea {
-  display: block; width: 100%; min-height: 210px;
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--r-lg); color: var(--text);
-  font-family: 'DM Mono', 'Courier New', monospace; font-size: var(--base);
-  line-height: 1.75; padding: 20px 20px 50px;
-  resize: vertical; outline: none; caret-color: var(--gold);
-  transition: border-color .18s, box-shadow .18s;
-}
-textarea::placeholder { color: var(--text-3); font-style: italic; }
-textarea:hover { border-color: var(--border-2); }
-textarea:focus { border-color: var(--gold-dim); box-shadow: 0 0 0 3px var(--gold-glow); }
-
-.prompt-meta {
-  position: absolute; bottom: 15px; left: 20px; right: 20px;
-  display: flex; justify-content: space-between; align-items: center;
-  pointer-events: none;
-}
-.char-count {
-  font-size: var(--xs); color: var(--text-3);
-  font-variant-numeric: tabular-nums; transition: color .2s;
-}
-.char-count.warn { color: #c97a40; }
-
-/* ── Provider cards ──────────────────────────────────────────── */
-.providers {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-}
-.p-btn {
-  width: 100%; display: flex; flex-direction: column;
-  align-items: flex-start; gap: 10px; padding: 14px 14px 12px;
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--r-lg); color: var(--text);
-  font-family: 'DM Mono', 'Courier New', monospace; cursor: pointer;
-  transition: border-color .12s, background .12s, transform .12s, box-shadow .12s;
-  text-align: left; position: relative; overflow: hidden;
-}
-.p-btn:hover {
-  background: var(--surface-2); border-color: var(--border-2);
-  transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.18);
-}
-.p-btn:active { transform: translateY(0); box-shadow: none; }
-.p-dot {
-  width: 28px; height: 4px; border-radius: 2px;
-  background: var(--pc, var(--border)); opacity: .65;
-  transition: opacity .12s, width .12s;
-}
-.p-btn:hover .p-dot { opacity: 1; width: 36px; }
-.p-name { font-size: var(--sm); letter-spacing: 0.02em; line-height: 1; }
-.p-arrow {
-  position: absolute; top: 12px; right: 12px;
-  font-size: 11px; color: var(--text-3); line-height: 1;
-  transition: transform .12s, color .12s;
-}
-.p-btn:hover .p-arrow { transform: translate(2px,-2px); color: var(--text-2); }
-
-.pc-chatgpt    { --pc: var(--chatgpt); }
-.pc-claude     { --pc: var(--claude); }
-.pc-gemini     { --pc: var(--gemini); }
-.pc-copilot    { --pc: var(--copilot); }
-.pc-perplexity { --pc: var(--perplexity); }
-.pc-lechat     { --pc: var(--lechat); }
-.pc-grok       { --pc: var(--grok); }
-.pc-deepseek   { --pc: var(--deepseek); }
-
-/* ── Actions row ─────────────────────────────────────────────── */
-.actions { display: flex; gap: 8px; }
-
-.btn {
-  padding: 14px 20px; background: none;
-  border: 1px solid var(--border); border-radius: var(--r);
-  color: var(--text-2); font-family: 'DM Mono', 'Courier New', monospace;
-  font-size: var(--sm); letter-spacing: 0.04em;
-  cursor: pointer; line-height: 1; white-space: nowrap;
-  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
-  transition: border-color .12s, color .12s;
-}
-.btn:hover { border-color: var(--border-2); color: var(--text); }
-.btn.flex-1 { flex: 1; }
-.btn.copied { border-color: var(--gold-dim); color: var(--gold); }
-
-/* ── Toast ───────────────────────────────────────────────────── */
-.toast {
-  position: fixed; bottom: 28px; left: 50%;
-  transform: translateX(-50%) translateY(64px);
-  background: var(--surface-2); border: 1px solid var(--border-2);
-  border-radius: var(--r); padding: 11px 20px;
-  font-size: var(--sm); letter-spacing: 0.02em; color: var(--text);
-  box-shadow: 0 8px 32px rgba(0,0,0,.3);
-  transition: transform .26s cubic-bezier(.34,1.56,.64,1);
-  z-index: 200; white-space: nowrap; pointer-events: none;
-}
-.toast.show { transform: translateX(-50%) translateY(0); }
-
-/* ── Related libraries ──────────────────────────────────────── */
+/* ── Related libraries ── */
 .related-libs { margin-top: 20px; }
-.related-grid {
-  display: flex; flex-wrap: wrap; gap: 7px;
-}
+.related-grid { display: flex; flex-wrap: wrap; gap: 7px; }
 .related-grid a {
   padding: 7px 14px; background: none;
   border: 1px solid var(--border); border-radius: 100px;
-  color: var(--text-2); font-family: 'DM Mono', 'Courier New', monospace;
-  font-size: var(--xs); letter-spacing: 0.03em; line-height: 1;
+  color: var(--text-2); font-family: inherit;
+  font-size: var(--text-sm); letter-spacing: 0; line-height: 1;
   text-decoration: none;
   transition: color .12s, border-color .12s, background .12s;
 }
 .related-grid a:hover { color: var(--gold); border-color: var(--gold-dim); background: var(--gold-glow); }
-
-/* ── Footer ──────────────────────────────────────────────────── */
-footer {
-  width: 100%; border-top: 1px solid var(--border);
-  display: flex; justify-content: center; margin-top: 8px;
-}
-.footer-inner {
-  width: 100%; max-width: var(--max);
-  padding: 36px 28px 48px;
-  display: flex; flex-direction: column; gap: 24px;
-}
-.footer-section { display: flex; flex-direction: column; gap: 12px; }
-.footer-heading {
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: var(--xs); font-weight: 600;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--text-2);
-}
-.footer-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 6px 16px;
-}
-.footer-grid a {
-  font-size: var(--xs); color: var(--text-3);
-  text-decoration: none; letter-spacing: 0.02em;
-  padding: 4px 0; transition: color .12s;
-}
-.footer-grid a:hover { color: var(--gold); }
-.footer-bottom {
-  border-top: 1px solid var(--border);
-  padding-top: 20px;
-  display: flex; flex-direction: column; gap: 8px;
-}
-.footer-links {
-  display: flex; gap: 16px; flex-wrap: wrap;
-}
-.footer-links a {
-  font-size: var(--xs); color: var(--text-2);
-  text-decoration: none; font-weight: 500;
-  letter-spacing: 0.02em; transition: color .12s;
-}
-.footer-links a:hover { color: var(--gold); }
-.footer-copy { font-size: var(--xs); color: var(--text-3); }
-.footer-doodle {
-  display: block; margin: 4px auto 0; width: 180px; height: auto;
-  opacity: .18; transition: opacity .3s;
-  filter: invert(1) brightness(1.5);
-}
-.footer-doodle:hover { opacity: .35; }
-
-@media (prefers-color-scheme: light) {
-  .footer-doodle { filter: none; }
-}
-
-/* ── Reduced motion ──────────────────────────────────────────── */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { transition-duration: .01ms !important; }
-  .toast { transition: none !important; }
-}
-
-/* ── Responsive ──────────────────────────────────────────────── */
-@media (max-width: 580px) {
-  .providers { grid-template-columns: repeat(2, 1fr); }
-  main.page { gap: 36px; }
-  .actions { flex-wrap: wrap; }
-  .actions .btn.flex-1 { flex: 0 0 100%; }
-}
-@media (max-width: 360px) {
-  .page, .footer-inner { padding-left: 16px; padding-right: 16px; }
-}
 </style>
 </head>
 <body>
@@ -557,8 +239,10 @@ footer {
 
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
+<script src="/js/prompt.js"></script>
 <script>
 'use strict';
+
 
 /* ── Writing prompt library ─────────────────────────────────── */
 const DEV_PROMPTS = [
@@ -630,7 +314,6 @@ const providersEl  = document.getElementById('providers');
 const charCountEl  = document.getElementById('charCount');
 const copyBtn      = document.getElementById('copyBtn');
 const clearBtnEl   = document.getElementById('clearBtn');
-const toastEl      = document.getElementById('toast');
 
 /* ── Render categories ──────────────────────────────────────── */
 function renderCats() {
@@ -693,39 +376,10 @@ function escHtml(s) {
   return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 
-/* ── Providers ──────────────────────────────────────────────── */
-const enc = s => encodeURIComponent(s);
-const providers = [
-  { id: 'chatgpt',    label: 'ChatGPT',    cls: 'pc-chatgpt',    url: q => `https://chatgpt.com/?q=${enc(q)}` },
-  { id: 'claude',     label: 'Claude',     cls: 'pc-claude',     url: q => `https://claude.ai/new?q=${enc(q)}` },
-  { id: 'gemini',     label: 'Gemini',     cls: 'pc-gemini',     url: q => `https://gemini.google.com/app?q=${enc(q)}` },
-  { id: 'copilot',    label: 'Copilot',    cls: 'pc-copilot',    url: q => `https://copilot.microsoft.com/?q=${enc(q)}` },
-  { id: 'perplexity', label: 'Perplexity', cls: 'pc-perplexity', url: q => `https://www.perplexity.ai/search?q=${enc(q)}` },
-  { id: 'lechat',     label: 'Le Chat',    cls: 'pc-lechat',     url: q => `https://chat.mistral.ai/chat?q=${enc(q)}` },
-  { id: 'grok',       label: 'Grok',       cls: 'pc-grok',       url: q => `https://x.com/i/grok?text=${enc(q)}` },
-  { id: 'deepseek',   label: 'DeepSeek',   cls: 'pc-deepseek',   url: q => `https://chat.deepseek.com/?q=${enc(q)}` },
-];
+/* ── Providers ── */
+renderProviders(providersEl);
 
-providers.forEach(p => {
-  const li = document.createElement('li');
-  const btn = document.createElement('button');
-  btn.type = 'button'; btn.className = `p-btn ${p.cls}`;
-  btn.setAttribute('aria-label', `Open in ${p.label}`);
-  btn.innerHTML = `<span class="p-dot" aria-hidden="true"></span><span class="p-name">${p.label}</span><span class="p-arrow" aria-hidden="true">&nearr;</span>`;
-  btn.addEventListener('click', () => openProvider(p));
-  li.appendChild(btn); providersEl.appendChild(li);
-});
-
-/* ── Core actions ────────────────────────────────────────────── */
-function getPrompt() { return promptEl.value.trim(); }
-
-function openProvider(p) {
-  const q = getPrompt();
-  if (!q) { showToast('Write a prompt first'); return; }
-  const w = window.open(p.url(q), '_blank', 'noopener,noreferrer');
-  if (!w) showToast('Popup blocked — copy & paste instead');
-}
-
+/* ── Page actions ── */
 function updateCount() {
   const n = promptEl.value.length;
   charCountEl.textContent = n > 0 ? n.toLocaleString() : '';
@@ -771,25 +425,12 @@ document.addEventListener('keydown', e => {
   }
 });
 
-/* ── Toast ───────────────────────────────────────────────────── */
-let toastTimer;
-function showToast(msg) {
-  toastEl.textContent = msg; toastEl.classList.add('show');
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => toastEl.classList.remove('show'), 3000);
-}
-
-/* ── Init ────────────────────────────────────────────────────── */
+/* ── Init ── */
 renderCats();
 renderCards();
 
 /* ── ItemList structured data ───────────────────────────────── */
 (function(){var n=1,items=[];DEV_PROMPTS.forEach(function(c){c.prompts.forEach(function(p){items.push({"@type":"ListItem","position":n++,"name":p.title});});});var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ItemList","name":document.title.split('|')[0].split('—')[0].trim(),"numberOfItems":items.length,"itemListElement":items});document.head.appendChild(s);})();
-
-/* ── Service Worker ──────────────────────────────────────────── */
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js').catch(() => {});
-}
 </script>
 </body>
 </html>

@@ -1,7 +1,10 @@
-const CACHE_NAME = 'pr-v1';
+const CACHE_NAME = 'pr-v2';
 
 const CORE_ASSETS = [
   '/',
+  '/css/core.css',
+  '/css/prompt.css',
+  '/js/prompt.js',
   '/dev',
   '/writing',
   '/marketing',
