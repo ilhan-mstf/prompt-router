@@ -74,17 +74,64 @@
 <link rel="stylesheet" href="/css/core.css">
 <link rel="stylesheet" href="/css/prompt.css">
 <style>
-/* ── Header ── */
-header.page { padding-top: 40px; padding-bottom: 40px; }
+/* ── Nav dropdown ── */
+.nav-dropdown { position: relative; }
+.nav-dropdown-btn {
+  font-family: inherit; font-size: var(--text-sm); color: var(--text-2);
+  background: none; border: none; cursor: pointer;
+  letter-spacing: 0; font-weight: 400;
+  padding: 6px 12px; border-radius: 100px;
+  transition: color .12s, background .12s;
+  white-space: nowrap;
+}
+.nav-dropdown-btn:hover { color: var(--text); background: var(--surface-2); }
+.nav-dropdown-btn[aria-expanded="true"] { color: var(--gold); background: var(--gold-glow); }
+.nav-dropdown-menu {
+  display: none; position: absolute; top: calc(100% + 6px); right: 0;
+  background: var(--surface); border: 1px solid var(--border-2);
+  border-radius: var(--r-lg); padding: 6px 0;
+  min-width: 160px; box-shadow: 0 12px 40px rgba(0,0,0,.35);
+  z-index: 200;
+}
+.nav-dropdown-menu.open { display: block; }
+.nav-dropdown-menu a {
+  display: block; padding: 8px 16px;
+  font-size: var(--text-sm); color: var(--text-2);
+  text-decoration: none; letter-spacing: 0;
+  transition: color .1s, background .1s;
+}
+.nav-dropdown-menu a:hover {
+  color: var(--gold); background: var(--gold-glow);
+}
+
+/* ── Header / Hero ── */
+header.page { padding-top: 48px; padding-bottom: 48px; }
+
 .tagline {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
+  font-size: var(--text-xl); font-weight: 200;
+  color: var(--text);
+  letter-spacing: -0.02em; line-height: 1.2;
+}
+.tagline em {
+  font-style: italic; color: var(--gold);
+}
+.hero-sub {
+  margin-top: 14px;
   font-size: var(--text-sm); color: var(--text-3);
-  font-weight: inherit; letter-spacing: 0.01em; line-height: 1;
+  line-height: 1.5; max-width: 540px;
+}
+
+/* ── Section header row ── */
+.section-header {
+  display: flex; justify-content: space-between; align-items: baseline;
 }
 
 /* ── Dev link ── */
 .dev-link {
-  font-size: var(--text-xs); color: var(--text-3);
-  text-decoration: none; letter-spacing: 0.02em;
+  font-size: var(--text-xs); color: var(--gold-dim);
+  text-decoration: none; letter-spacing: 0;
   transition: color .12s;
 }
 .dev-link:hover { color: var(--gold); }
@@ -92,11 +139,10 @@ header.page { padding-top: 40px; padding-bottom: 40px; }
 /* ── Main ── */
 main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40px; }
 
-/* ── Section labels (override prompt.css) ── */
-.lbl {
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: var(--text-xs); letter-spacing: 0.12em;
-  font-weight: 600;
+/* ── Section divider ── */
+.section-divider {
+  width: 48px; height: 1px; background: var(--border-2);
+  margin: 0 auto;
 }
 
 /* ── Template chips ── */
@@ -105,7 +151,7 @@ main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40
   padding: 7px 14px; background: none;
   border: 1px solid var(--border); border-radius: 100px;
   color: var(--text-2); font-family: inherit;
-  font-size: var(--text-xs); letter-spacing: 0.03em; line-height: 1;
+  font-size: var(--text-sm); letter-spacing: 0; line-height: 1;
   cursor: pointer; user-select: none;
   transition: color .12s, border-color .12s, background .12s;
 }
@@ -133,7 +179,7 @@ main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40
   background: none; border: none;
   border-left: 1px solid transparent;
   cursor: pointer; padding: 0 10px;
-  font-size: 12px; color: var(--text-3);
+  font-size: var(--text-xs); color: var(--text-3);
   opacity: 0; display: flex; align-items: center;
   transition: opacity .14s, color .14s, background .14s, border-left-color .14s;
 }
@@ -148,7 +194,7 @@ main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40
   background: none; border: none;
   border-left: 1px solid transparent;
   cursor: pointer; padding: 0 10px;
-  font-size: 12px; color: var(--text-3);
+  font-size: var(--text-xs); color: var(--text-3);
   opacity: 0; display: flex; align-items: center;
   transition: opacity .14s, color .14s, background .14s, border-left-color .14s;
 }
@@ -158,7 +204,7 @@ main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40
 /* ── Shortcut hint ── */
 .shortcut { font-size: var(--text-xs); color: var(--text-3); }
 .shortcut kbd {
-  font-family: inherit; font-size: 0.7rem;
+  font-family: inherit; font-size: var(--text-xs);
   background: var(--surface-2); border: 1px solid var(--border-2);
   border-radius: 3px; padding: 1px 5px; color: var(--text-2);
 }
@@ -166,7 +212,7 @@ main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40
 /* ── Extra button styles ── */
 .btn.saved-flash { border-color: var(--gold-dim); color: var(--gold); }
 .btn-kbd {
-  font-family: inherit; font-size: 0.65rem;
+  font-family: inherit; font-size: var(--text-xs);
   background: var(--surface-2); border: 1px solid var(--border-2);
   border-radius: 3px; padding: 2px 5px;
   color: var(--text-3); letter-spacing: 0;
@@ -182,7 +228,7 @@ main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40
 }
 
 /* ── Footer extras ── */
-.footer-desc { font-size: var(--text-xs); color: var(--text-3); line-height: 2; }
+.footer-desc { font-size: var(--text-sm); color: var(--text-3); line-height: 1.5; }
 .footer-desc strong { color: var(--text-2); font-weight: 500; }
 .footer-desc a {
   color: var(--text-2); text-decoration: underline;
@@ -192,13 +238,15 @@ main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40
 .footer-desc a:hover { color: var(--gold); }
 
 /* ── Responsive ── */
-@media (max-width: 580px) {
+@media (max-width: 640px) {
   header.page { padding-top: 32px; padding-bottom: 28px; }
+  .tagline { font-size: var(--text-lg); }
   .shortcut { display: none; }
   .actions #copyBtn { flex: 0 0 100%; }
   .actions #saveBtn, .actions #clearBtn { flex: 1; }
   .topbar-inner { padding: 10px 16px; }
-  .nav-links a { font-size: 0.7rem; padding: 5px 8px; }
+  .nav-links a { font-size: var(--text-xs); padding: 5px 8px; }
+  .nav-dropdown-btn { font-size: var(--text-xs); padding: 5px 8px; }
   .nav-sep { margin: 0 2px; }
 }
 </style>
@@ -214,7 +262,22 @@ main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40
     <div class="logo"><a href="/"><span class="logo-a">Prompt</span><span class="logo-b">Router</span></a></div>
     <div class="nav-links" id="nav-links">
       <a href="/" class="active">Home</a>
-      <a href="/dev">Dev</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-btn" type="button" aria-expanded="false" aria-haspopup="true">Libraries <span aria-hidden="true">&#9662;</span></button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="/dev" role="menuitem">Dev</a>
+          <a href="/writing" role="menuitem">Writing</a>
+          <a href="/marketing" role="menuitem">Marketing</a>
+          <a href="/job" role="menuitem">Job Search</a>
+          <a href="/startup" role="menuitem">Startup</a>
+          <a href="/data" role="menuitem">Data</a>
+          <a href="/design" role="menuitem">Design</a>
+          <a href="/student" role="menuitem">Student</a>
+          <a href="/productivity" role="menuitem">Productivity</a>
+          <a href="/legal" role="menuitem">Legal</a>
+          <a href="/sales" role="menuitem">Sales</a>
+        </div>
+      </div>
       <span class="nav-sep" aria-hidden="true"></span>
       <a href="/blog">Blog</a>
     </div>
@@ -223,7 +286,8 @@ main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40
 
 <!-- ── Header ── -->
 <header class="page">
-  <h1 class="tagline" id="tagline">Write once &mdash; send to every AI</h1>
+  <h1 class="tagline" id="tagline">Write once &mdash; send to <em>every AI</em></h1>
+  <p class="hero-sub" id="hero-sub">One prompt, eight AI providers. Compare responses from ChatGPT, Claude, Gemini, and more &mdash; free, no login.</p>
 </header>
 
 <!-- ── Main ── -->
@@ -231,9 +295,9 @@ main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40
 
   <!-- 1. Templates -->
   <section aria-labelledby="lbl-templates">
-    <div style="display:flex;justify-content:space-between;align-items:baseline;">
+    <div class="section-header">
       <span class="lbl" id="lbl-templates">Quick templates</span>
-      <a href="/dev" class="dev-link" id="dev-link">See dev prompts &rarr;</a>
+      <a href="/dev" class="dev-link" id="dev-link">Browse all libraries &rarr;</a>
     </div>
     <div class="chips" id="chips" role="group" aria-labelledby="lbl-templates"></div>
   </section>
@@ -263,13 +327,7 @@ main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40
     </div>
   </section>
 
-  <!-- 4. Providers -->
-  <section aria-labelledby="lbl-providers">
-    <span class="lbl" id="lbl-providers">Open in</span>
-    <ul class="providers" id="providers" aria-labelledby="lbl-providers"></ul>
-  </section>
-
-  <!-- 5. Actions -->
+  <!-- 4. Actions (grouped with textarea) -->
   <div class="actions">
     <button class="btn flex-1" id="copyBtn" type="button" aria-label="Copy prompt to clipboard" onclick="copyPrompt()">
       Copy to clipboard
@@ -281,6 +339,15 @@ main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40
       Clear
     </button>
   </div>
+
+  <!-- Divider between write zone and send zone -->
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <!-- 5. Providers -->
+  <section aria-labelledby="lbl-providers">
+    <span class="lbl" id="lbl-providers">Open in</span>
+    <ul class="providers" id="providers" aria-labelledby="lbl-providers"></ul>
+  </section>
 
 </main>
 
@@ -308,6 +375,7 @@ main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40
         <a href="/">Home</a>
         <a href="/blog">Blog</a>
       </nav>
+      <div class="footer-sep" aria-hidden="true"></div>
       <p class="footer-desc" id="footer-desc"></p>
       <p class="footer-copy" id="footer-copy"></p>
     </div>
@@ -329,7 +397,9 @@ const LOCALES = {
     ogLocale: 'en_US', ogImageAlt: 'Prompt Router \u2014 one prompt, every AI',
     lblTemplates: 'Quick templates', lblLibrary: 'My prompts', lblPrompt: 'Your prompt', lblProviders: 'Open in',
     tagline: 'Write once \u2014 send to every AI',
-    placeholder: 'Type or paste your prompt here\u2026',
+    taglineHTML: 'Write once \u2014 send to <em>every AI</em>',
+    heroSub: 'One prompt, eight AI providers. Compare responses from ChatGPT, Claude, Gemini, and more \u2014 free, no login.',
+    placeholder: 'Write your prompt here, then pick an AI below...',
     copyBtn: 'Copy to clipboard', copyBtnDone: '\u2713 Copied!', saveBtn: 'Save', clearBtn: 'Clear',
     toastNoPrompt: 'Write a prompt first', toastPopup: 'Popup blocked \u2014 copy & paste instead',
     toastNoCopy: 'Nothing to copy yet', toastCopyFail: 'Copy failed \u2014 try manually',
@@ -362,6 +432,8 @@ const LOCALES = {
     ogLocale: 'es_ES', ogImageAlt: 'Prompt Router \u2014 un prompt, toda la IA',
     lblTemplates: 'Plantillas r\u00e1pidas', lblLibrary: 'Mis prompts', lblPrompt: 'Tu prompt', lblProviders: 'Abrir en',
     tagline: 'Escribe una vez \u2014 env\u00eda a toda la IA',
+    taglineHTML: 'Escribe una vez \u2014 env\u00eda a <em>toda la IA</em>',
+    heroSub: 'Un prompt, ocho proveedores de IA. Compara respuestas de ChatGPT, Claude, Gemini y m\u00e1s \u2014 gratis, sin registro.',
     placeholder: 'Escribe o pega tu prompt aqu\u00ed\u2026',
     copyBtn: 'Copiar al portapapeles', copyBtnDone: '\u2713 \u00a1Copiado!', saveBtn: 'Guardar', clearBtn: 'Borrar',
     toastNoPrompt: 'Escribe un prompt primero', toastPopup: 'Ventana bloqueada \u2014 copia y pega en su lugar',
@@ -395,6 +467,8 @@ const LOCALES = {
     ogLocale: 'it_IT', ogImageAlt: 'Prompt Router \u2014 un prompt, ogni AI',
     lblTemplates: 'Modelli rapidi', lblLibrary: 'I miei prompt', lblPrompt: 'Il tuo prompt', lblProviders: 'Apri in',
     tagline: 'Scrivi una volta \u2014 invia a ogni AI',
+    taglineHTML: 'Scrivi una volta \u2014 invia a <em>ogni AI</em>',
+    heroSub: 'Un prompt, otto provider di IA. Confronta le risposte di ChatGPT, Claude, Gemini e altri \u2014 gratis, senza registrazione.',
     placeholder: 'Scrivi o incolla il tuo prompt qui\u2026',
     copyBtn: 'Copia negli appunti', copyBtnDone: '\u2713 Copiato!', saveBtn: 'Salva', clearBtn: 'Cancella',
     toastNoPrompt: 'Scrivi prima un prompt', toastPopup: 'Popup bloccato \u2014 copia e incolla invece',
@@ -428,6 +502,8 @@ const LOCALES = {
     ogLocale: 'pt_BR', ogImageAlt: 'Prompt Router \u2014 um prompt, toda IA',
     lblTemplates: 'Modelos r\u00e1pidos', lblLibrary: 'Meus prompts', lblPrompt: 'Seu prompt', lblProviders: 'Abrir em',
     tagline: 'Escreva uma vez \u2014 envie para toda IA',
+    taglineHTML: 'Escreva uma vez \u2014 envie para <em>toda IA</em>',
+    heroSub: 'Um prompt, oito provedores de IA. Compare respostas do ChatGPT, Claude, Gemini e mais \u2014 gratuito, sem cadastro.',
     placeholder: 'Digite ou cole seu prompt aqui\u2026',
     copyBtn: 'Copiar para \u00e1rea de transfer\u00eancia', copyBtnDone: '\u2713 Copiado!', saveBtn: 'Salvar', clearBtn: 'Limpar',
     toastNoPrompt: 'Escreva um prompt primeiro', toastPopup: 'Popup bloqueado \u2014 copie e cole em vez disso',
@@ -461,6 +537,8 @@ const LOCALES = {
     ogLocale: 'fr_FR', ogImageAlt: "Prompt Router \u2014 un prompt, toute l'IA",
     lblTemplates: 'Mod\u00e8les rapides', lblLibrary: 'Mes prompts', lblPrompt: 'Votre prompt', lblProviders: 'Ouvrir dans',
     tagline: "\u00c9crivez une fois \u2014 envoyez \u00e0 toute l'IA",
+    taglineHTML: "\u00c9crivez une fois \u2014 envoyez \u00e0 <em>toute l'IA</em>",
+    heroSub: "Un prompt, huit fournisseurs d'IA. Comparez les r\u00e9ponses de ChatGPT, Claude, Gemini et plus \u2014 gratuit, sans inscription.",
     placeholder: 'Tapez ou collez votre prompt ici\u2026',
     copyBtn: 'Copier dans le presse-papiers', copyBtnDone: '\u2713 Copi\u00e9\u00a0!', saveBtn: 'Enregistrer', clearBtn: 'Effacer',
     toastNoPrompt: 'R\u00e9digez d\u2019abord un prompt', toastPopup: 'Popup bloqu\u00e9 \u2014 copiez et collez \u00e0 la place',
@@ -494,6 +572,8 @@ const LOCALES = {
     ogLocale: 'de_DE', ogImageAlt: 'Prompt Router \u2014 ein Prompt, jede KI',
     lblTemplates: 'Schnellvorlagen', lblLibrary: 'Meine Prompts', lblPrompt: 'Dein Prompt', lblProviders: '\u00d6ffnen in',
     tagline: 'Einmal schreiben \u2014 an jede KI senden',
+    taglineHTML: 'Einmal schreiben \u2014 an <em>jede KI</em> senden',
+    heroSub: 'Ein Prompt, acht KI-Anbieter. Vergleiche Antworten von ChatGPT, Claude, Gemini und mehr \u2014 kostenlos, ohne Anmeldung.',
     placeholder: 'Deinen Prompt hier eingeben oder einf\u00fcgen\u2026',
     copyBtn: 'In die Zwischenablage kopieren', copyBtnDone: '\u2713 Kopiert!', saveBtn: 'Speichern', clearBtn: 'L\u00f6schen',
     toastNoPrompt: 'Schreibe zuerst einen Prompt', toastPopup: 'Popup blockiert \u2014 kopiere und f\u00fcge stattdessen ein',
@@ -527,6 +607,8 @@ const LOCALES = {
     ogLocale: 'tr_TR', ogImageAlt: 'Prompt Router \u2014 bir prompt, t\u00fcm yapay zeka',
     lblTemplates: 'H\u0131zl\u0131 \u015fablonlar', lblLibrary: 'Promptlar\u0131m', lblPrompt: 'Prompt\u2019unuz', lblProviders: 'A\u00e7',
     tagline: 'Bir kez yaz \u2014 t\u00fcm yapay zekaya g\u00f6nder',
+    taglineHTML: 'Bir kez yaz \u2014 <em>t\u00fcm yapay zekaya</em> g\u00f6nder',
+    heroSub: 'Bir prompt, sekiz yapay zeka sa\u011flay\u0131c\u0131s\u0131. ChatGPT, Claude, Gemini ve daha fazlas\u0131n\u0131n yan\u0131tlar\u0131n\u0131 kar\u015f\u0131la\u015ft\u0131r\u0131n \u2014 \u00fccretsiz, kay\u0131t gerekmez.',
     placeholder: 'Prompt\u2019unuzu buraya yaz\u0131n veya yap\u0131\u015ft\u0131r\u0131n\u2026',
     copyBtn: 'Panoya kopyala', copyBtnDone: '\u2713 Kopyaland\u0131!', saveBtn: 'Kaydet', clearBtn: 'Temizle',
     toastNoPrompt: '\u00d6nce bir prompt yaz\u0131n', toastPopup: 'Popup engellendi \u2014 bunun yerine kopyalay\u0131p yap\u0131\u015ft\u0131r\u0131n',
@@ -583,7 +665,11 @@ function applyLocale() {
   document.querySelector('meta[property="og:description"]').setAttribute('content', locale.metaDesc);
   document.querySelector('meta[name="twitter:title"]').setAttribute('content', locale.title);
   document.querySelector('meta[name="twitter:description"]').setAttribute('content', locale.metaDesc);
-  document.getElementById('tagline').textContent = locale.tagline;
+  const taglineEl = document.getElementById('tagline');
+  const heroSubEl = document.getElementById('hero-sub');
+  if (locale.taglineHTML) { taglineEl.innerHTML = locale.taglineHTML; }
+  else { taglineEl.textContent = locale.tagline; }
+  if (locale.heroSub && heroSubEl) { heroSubEl.textContent = locale.heroSub; }
   document.getElementById('lbl-templates').textContent = locale.lblTemplates;
   document.getElementById('lbl-library').textContent = locale.lblLibrary;
   document.getElementById('lbl-prompt').textContent = locale.lblPrompt;
@@ -853,6 +939,24 @@ function savePrompt() {
 
 /* ── Init ────────────────────────────────────────────────────── */
 renderLib();
+
+/* ── Nav dropdown ────────────────────────────────────────────── */
+(function() {
+  const btn = document.querySelector('.nav-dropdown-btn');
+  const menu = document.querySelector('.nav-dropdown-menu');
+  if (!btn || !menu) return;
+
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+
+  document.addEventListener('click', () => {
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+  });
+})();
 </script>
 </body>
 </html>

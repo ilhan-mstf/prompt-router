@@ -45,7 +45,7 @@ textarea {
   background: var(--surface); border: 1px solid var(--border);
   border-radius: var(--r-lg); color: var(--text);
   font-family: inherit; font-size: var(--text-base);
-  line-height: 1.75; padding: 20px 20px 50px;
+  line-height: 1.5; padding: 20px 20px 50px;
   resize: vertical; outline: none; caret-color: var(--gold);
   transition: border-color .18s, box-shadow .18s;
 }
@@ -86,15 +86,15 @@ textarea:focus { border-color: var(--gold-dim); box-shadow: 0 0 0 3px var(--gold
 }
 .p-btn:active { transform: translateY(0); box-shadow: none; }
 .p-dot {
-  width: 28px; height: 4px; border-radius: 2px;
-  background: var(--pc, var(--border)); opacity: .65;
+  width: 32px; height: 5px; border-radius: 3px;
+  background: var(--pc, var(--border)); opacity: .75;
   transition: opacity .12s, width .12s;
 }
-.p-btn:hover .p-dot { opacity: 1; width: 36px; }
+.p-btn:hover .p-dot { opacity: 1; width: 40px; }
 .p-name { font-size: var(--text-sm); letter-spacing: 0; line-height: 1; }
 .p-arrow {
   position: absolute; top: 12px; right: 12px;
-  font-size: 11px; color: var(--text-3); line-height: 1;
+  font-size: var(--text-xs); color: var(--text-3); line-height: 1;
   transition: transform .12s, color .12s;
 }
 .p-btn:hover .p-arrow { transform: translate(2px,-2px); color: var(--text-2); }
@@ -115,7 +115,7 @@ textarea:focus { border-color: var(--gold-dim); box-shadow: 0 0 0 3px var(--gold
   padding: 14px 20px; background: none;
   border: 1px solid var(--border); border-radius: var(--r);
   color: var(--text-2); font-family: inherit;
-  font-size: var(--text-sm); letter-spacing: 0.04em;
+  font-size: var(--text-sm); letter-spacing: 0;
   cursor: pointer; line-height: 1; white-space: nowrap;
   display: inline-flex; align-items: center; justify-content: center; gap: 7px;
   transition: border-color .12s, color .12s;
@@ -144,7 +144,7 @@ textarea:focus { border-color: var(--gold-dim); box-shadow: 0 0 0 3px var(--gold
 }
 
 /* ── Responsive ──────────────────────────────────────────────── */
-@media (max-width: 580px) {
+@media (max-width: 640px) {
   .providers { grid-template-columns: repeat(2, 1fr); }
   main.page { gap: 36px; }
   .actions { flex-wrap: wrap; }
