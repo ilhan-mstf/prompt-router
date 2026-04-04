@@ -28,6 +28,7 @@ const CORE_ASSETS = [
   '/legal',
   '/sales',
   '/blog',
+  '/blog-compare-ai',
 ];
 
 // Install: Cache core assets
