@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prompt Router — Mockup</title>
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230f0f10'/><text y='24' x='4' font-size='22' font-family='serif' fill='%23d4a847'>P</text></svg>">
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,200&display=swap" rel="stylesheet">
+
+<style>
+/* ── Tokens ──────────────────────────────────────────────────── */
+:root {
+  --bg:        #0f0f10;
+  --surface:   #1a1a1c;
+  --surface-2: #222225;
+  --border:    #2c2c30;
+  --border-2:  #404046;
+  --text:      #f0ece4;
+  --text-2:    #c5c0b9;
+  --text-3:    #8a8580;
+  --gold:      #d4a847;
+  --gold-dim:  #9a7830;
+  --gold-glow: rgba(212,168,71,.1);
+  --focus:     #d4a847;
+  --red-soft:  rgba(176,70,70,.08);
+  --red:       #b04646;
+
+  --chatgpt:    #10a37f;
+  --claude:     #c8845a;
+  --gemini:     #4285f4;
+  --copilot:    #7b6fcc;
+  --perplexity: #17b0a7;
+  --lechat:     #f06830;
+  --grok:       #aaaaaa;
+  --deepseek:   #4d6bfe;
+
+  /* Type scale — 5 steps */
+  --text-xs:   0.8125rem;  /* 13px — metadata, kbd, copyright */
+  --text-sm:   0.9375rem;  /* 15px — UI: chips, buttons, nav, labels */
+  --text-base: 1.0625rem;  /* 17px — body: textarea, descriptions */
+  --text-lg:   1.375rem;   /* 22px — reserved */
+  --text-xl:   2.25rem;    /* 36px — hero heading */
+
+  --r:    8px;
+  --r-lg: 12px;
+  --max:  780px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg:        #f4f0e8;
+    --surface:   #fdfaf5;
+    --surface-2: #f0ece2;
+    --border:    #e0dbd0;
+    --border-2:  #c8c2b4;
+    --text:      #1a1714;
+    --text-2:    #3d3832;
+    --text-3:    #736d65;
+    --gold:      #7a5518;
+    --gold-dim:  #9a6c28;
+    --gold-glow: rgba(122,85,24,.07);
+    --focus:     #7a5518;
+    --red:       #903030;
+    --red-soft:  rgba(144,48,48,.07);
+  }
+}
+
+/* ── Reset ───────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: var(--text-base);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Skip link ───────────────────────────────────────────────── */
+.skip {
+  position: absolute; top: -100%; left: 16px;
+  background: var(--gold); color: var(--bg);
+  font-size: var(--text-sm); padding: 8px 16px;
+  border-radius: 0 0 var(--r) var(--r);
+  text-decoration: none; z-index: 999; transition: top .15s;
+}
+.skip:focus { top: 0; outline: none; }
+
+/* ── Focus ───────────────────────────────────────────────────── */
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: var(--r); }
+:focus:not(:focus-visible) { outline: none; }
+
+/* ── Page shell ──────────────────────────────────────────────── */
+.page { width: 100%; max-width: var(--max); padding: 0 28px; }
+
+/* ── Top bar ─────────────────────────────────────────────────── */
+.topbar {
+  width: 100%; background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 100;
+  display: flex; justify-content: center;
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  background: color-mix(in srgb, var(--surface) 85%, transparent);
+}
+.topbar-inner {
+  width: 100%; max-width: var(--max); padding: 12px 28px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-size: inherit; font-weight: inherit; margin: 0;
+}
+.logo a { text-decoration: none; display: flex; align-items: baseline; gap: 6px; }
+.logo-a {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto; font-weight: 600;
+  font-size: var(--text-lg); letter-spacing: -0.02em;
+  line-height: 1; color: var(--text);
+}
+.logo-b {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto; font-weight: 200; font-style: italic;
+  font-size: var(--text-lg); letter-spacing: -0.02em;
+  line-height: 1; color: var(--gold);
+}
+
+.nav-links {
+  display: flex; gap: 4px; align-items: center;
+}
+.nav-links a {
+  font-size: var(--text-sm); color: var(--text-2);
+  text-decoration: none; letter-spacing: 0;
+  font-weight: 400;
+  padding: 6px 12px; border-radius: 100px;
+  transition: color .12s, background .12s;
+  white-space: nowrap;
+}
+.nav-links a:hover { color: var(--text); background: var(--surface-2); }
+.nav-links a.active {
+  color: var(--gold); background: var(--gold-glow);
+}
+.nav-sep {
+  width: 1px; height: 16px; background: var(--border);
+  margin: 0 4px; flex-shrink: 0;
+}
+
+/* ── Nav dropdown ────────────────────────────────────────────── */
+.nav-dropdown { position: relative; }
+.nav-dropdown-btn {
+  font-family: inherit; font-size: var(--text-sm); color: var(--text-2);
+  background: none; border: none; cursor: pointer;
+  letter-spacing: 0; font-weight: 400;
+  padding: 6px 12px; border-radius: 100px;
+  transition: color .12s, background .12s;
+  white-space: nowrap;
+}
+.nav-dropdown-btn:hover { color: var(--text); background: var(--surface-2); }
+.nav-dropdown-btn[aria-expanded="true"] { color: var(--gold); background: var(--gold-glow); }
+.nav-dropdown-menu {
+  display: none; position: absolute; top: calc(100% + 6px); right: 0;
+  background: var(--surface); border: 1px solid var(--border-2);
+  border-radius: var(--r-lg); padding: 6px 0;
+  min-width: 160px; box-shadow: 0 12px 40px rgba(0,0,0,.35);
+  z-index: 200;
+}
+.nav-dropdown-menu.open { display: block; }
+.nav-dropdown-menu a {
+  display: block; padding: 8px 16px;
+  font-size: var(--text-sm); color: var(--text-2);
+  text-decoration: none; letter-spacing: 0;
+  transition: color .1s, background .1s;
+}
+.nav-dropdown-menu a:hover {
+  color: var(--gold); background: var(--gold-glow);
+}
+
+/* ── Header / Hero ───────────────────────────────────────────── */
+header.page { padding-top: 48px; padding-bottom: 48px; }
+
+.tagline {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
+  font-size: var(--text-xl); font-weight: 200;
+  color: var(--text);
+  letter-spacing: -0.02em; line-height: 1.2;
+}
+.tagline em {
+  font-style: italic; color: var(--gold);
+}
+.hero-sub {
+  margin-top: 14px;
+  font-size: var(--text-sm); color: var(--text-3);
+  line-height: 1.5; max-width: 540px;
+}
+
+/* ── Section header row ──────────────────────────────────────── */
+.section-header {
+  display: flex; justify-content: space-between; align-items: baseline;
+}
+
+/* ── Dev link ────────────────────────────────────────────────── */
+.dev-link {
+  font-size: var(--text-xs); color: var(--gold-dim);
+  text-decoration: none; letter-spacing: 0;
+  transition: color .12s;
+}
+.dev-link:hover { color: var(--gold); }
+
+/* ── Main ────────────────────────────────────────────────────── */
+main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40px; }
+
+/* ── Section divider ─────────────────────────────────────────── */
+.section-divider {
+  width: 48px; height: 1px; background: var(--border-2);
+  margin: 0 auto;
+}
+
+/* ── Section labels ──────────────────────────────────────────── */
+.lbl {
+  display: block;
+  font-size: var(--text-xs); letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--text-2);
+  font-weight: 500; margin-bottom: 12px;
+}
+
+/* ── Template chips ──────────────────────────────────────────── */
+.chips { display: flex; flex-wrap: wrap; gap: 7px; }
+.chip {
+  padding: 7px 14px; background: none;
+  border: 1px solid var(--border); border-radius: 100px;
+  color: var(--text-2); font-family: inherit;
+  font-size: var(--text-sm); letter-spacing: 0; line-height: 1;
+  cursor: pointer; user-select: none;
+  transition: color .12s, border-color .12s, background .12s;
+}
+.chip:hover { color: var(--gold); border-color: var(--gold-dim); background: var(--gold-glow); }
+.chip[aria-pressed="true"] { color: var(--gold); border-color: var(--gold); background: var(--gold-glow); }
+
+/* ── Chip groups (pill container for text + pin [+ del]) ─────── */
+.chip-group {
+  display: inline-flex; align-items: stretch;
+  border: 1px solid var(--border); border-radius: 100px;
+  overflow: hidden;
+  transition: border-color .12s, background .12s;
+}
+.chip-group.chip-hidden { display: none; }
+.chip-group:hover { border-color: var(--border-2); }
+.chip-group:has(> .chip:hover) { border-color: var(--gold-dim); background: var(--gold-glow); }
+.chip-group:has(.chip[aria-pressed="true"]) { border-color: var(--gold); background: var(--gold-glow); }
+
+/* strip chip's own pill when inside a group */
+.chip-group > .chip {
+  border: none; border-radius: 0;
+  padding: 7px 8px 7px 14px;
+}
+.chip-group > .chip:hover { background: none; border-color: transparent; }
+
+/* pin button inside pill */
+.chip-pin-btn {
+  background: none; border: none;
+  border-left: 1px solid transparent;
+  cursor: pointer; padding: 0 10px;
+  font-size: var(--text-xs); color: var(--text-3);
+  opacity: 0; display: flex; align-items: center;
+  transition: opacity .14s, color .14s, background .14s, border-left-color .14s;
+}
+.chip-group:hover .chip-pin-btn { opacity: 1; border-left-color: var(--border); }
+.chip-pin-btn:hover { color: var(--gold); background: var(--gold-glow); }
+.chip-pin-btn.active { opacity: 1; color: var(--gold); border-left-color: var(--border); }
+
+.chip.chip-show-more { border-style: dashed; color: var(--text-3); }
+.chip.chip-show-more:hover { color: var(--text-2); border-color: var(--border-2); background: none; }
+
+/* delete button inside pill (library only) */
+.chip-del-btn {
+  background: none; border: none;
+  border-left: 1px solid transparent;
+  cursor: pointer; padding: 0 10px;
+  font-size: var(--text-xs); color: var(--text-3);
+  opacity: 0; display: flex; align-items: center;
+  transition: opacity .14s, color .14s, background .14s, border-left-color .14s;
+}
+.chip-group:hover .chip-del-btn { opacity: 1; border-left-color: var(--border); }
+.chip-del-btn:hover { color: var(--red); background: var(--red-soft); }
+
+/* ── Textarea ────────────────────────────────────────────────── */
+.prompt-wrap { position: relative; }
+textarea {
+  display: block; width: 100%; min-height: 210px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); color: var(--text);
+  font-family: inherit; font-size: var(--text-base);
+  line-height: 1.5; padding: 20px 20px 50px;
+  resize: vertical; outline: none; caret-color: var(--gold);
+  transition: border-color .18s, box-shadow .18s;
+}
+textarea::placeholder { color: var(--text-3); font-style: italic; }
+textarea:hover { border-color: var(--border-2); }
+textarea:focus { border-color: var(--gold-dim); box-shadow: 0 0 0 3px var(--gold-glow); }
+
+.prompt-meta {
+  position: absolute; bottom: 15px; left: 20px; right: 20px;
+  display: flex; justify-content: space-between; align-items: center;
+  pointer-events: none;
+}
+.char-count {
+  font-size: var(--text-xs); color: var(--text-3);
+  font-variant-numeric: tabular-nums; transition: color .2s;
+}
+.char-count.warn { color: #c97a40; }
+.shortcut { font-size: var(--text-xs); color: var(--text-3); }
+.shortcut kbd {
+  font-family: inherit; font-size: var(--text-xs);
+  background: var(--surface-2); border: 1px solid var(--border-2);
+  border-radius: 3px; padding: 1px 5px; color: var(--text-2);
+}
+
+/* ── Provider cards ──────────────────────────────────────────── */
+.providers {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.p-btn {
+  width: 100%; display: flex; flex-direction: column;
+  align-items: flex-start; gap: 10px; padding: 14px 14px 12px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); color: var(--text);
+  font-family: inherit; cursor: pointer;
+  transition: border-color .12s, background .12s, transform .12s, box-shadow .12s;
+  text-align: left; position: relative; overflow: hidden;
+}
+.p-btn:hover {
+  background: var(--surface-2); border-color: var(--border-2);
+  transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.18);
+}
+.p-btn:active { transform: translateY(0); box-shadow: none; }
+.p-dot {
+  width: 32px; height: 5px; border-radius: 3px;
+  background: var(--pc, var(--border)); opacity: .75;
+  transition: opacity .12s, width .12s;
+}
+.p-btn:hover .p-dot { opacity: 1; width: 40px; }
+.p-name { font-size: var(--text-sm); letter-spacing: 0; line-height: 1; }
+.p-arrow {
+  position: absolute; top: 12px; right: 12px;
+  font-size: var(--text-xs); color: var(--text-3); line-height: 1;
+  transition: transform .12s, color .12s;
+}
+.p-btn:hover .p-arrow { transform: translate(2px,-2px); color: var(--text-2); }
+
+.pc-chatgpt    { --pc: var(--chatgpt); }
+.pc-claude     { --pc: var(--claude); }
+.pc-gemini     { --pc: var(--gemini); }
+.pc-copilot    { --pc: var(--copilot); }
+.pc-perplexity { --pc: var(--perplexity); }
+.pc-lechat     { --pc: var(--lechat); }
+.pc-grok       { --pc: var(--grok); }
+.pc-deepseek   { --pc: var(--deepseek); }
+
+/* ── Actions row ─────────────────────────────────────────────── */
+.actions { display: flex; gap: 8px; }
+
+.btn {
+  padding: 14px 20px; background: none;
+  border: 1px solid var(--border); border-radius: var(--r);
+  color: var(--text-2); font-family: inherit;
+  font-size: var(--text-sm); letter-spacing: 0;
+  cursor: pointer; line-height: 1; white-space: nowrap;
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  transition: border-color .12s, color .12s;
+}
+.btn:hover { border-color: var(--border-2); color: var(--text); }
+.btn.flex-1 { flex: 1; }
+.btn.copied { border-color: var(--gold-dim); color: var(--gold); }
+.btn.saved-flash { border-color: var(--gold-dim); color: var(--gold); }
+
+.btn-kbd {
+  font-family: inherit; font-size: var(--text-xs);
+  background: var(--surface-2); border: 1px solid var(--border-2);
+  border-radius: 3px; padding: 2px 5px;
+  color: var(--text-3); letter-spacing: 0;
+  line-height: 1; display: inline-block;
+  transition: color .12s, border-color .12s;
+}
+.btn:hover .btn-kbd { color: var(--text-2); border-color: var(--border-2); }
+
+/* ── Toast ───────────────────────────────────────────────────── */
+.toast {
+  position: fixed; bottom: 28px; left: 50%;
+  transform: translateX(-50%) translateY(64px);
+  background: var(--surface-2); border: 1px solid var(--border-2);
+  border-radius: var(--r); padding: 11px 20px;
+  font-size: var(--text-sm); letter-spacing: 0; color: var(--text);
+  box-shadow: 0 8px 32px rgba(0,0,0,.3);
+  transition: transform .26s cubic-bezier(.34,1.56,.64,1);
+  z-index: 200; white-space: nowrap; pointer-events: none;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ── Footer ──────────────────────────────────────────────────── */
+footer {
+  width: 100%; border-top: 1px solid var(--border);
+  display: flex; justify-content: center; margin-top: 8px;
+}
+.footer-inner {
+  width: 100%; max-width: var(--max);
+  padding: 36px 28px 48px;
+  display: flex; flex-direction: column; gap: 24px;
+}
+.footer-section { display: flex; flex-direction: column; gap: 12px; }
+.footer-heading {
+  font-size: var(--text-xs); font-weight: 500;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--text-2);
+}
+.footer-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 6px 16px;
+}
+.footer-grid a {
+  font-size: var(--text-sm); color: var(--text-3);
+  text-decoration: none; letter-spacing: 0;
+  padding: 4px 0; transition: color .12s;
+}
+.footer-grid a:hover { color: var(--gold); }
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+  display: flex; flex-direction: column; gap: 20px;
+}
+.footer-links {
+  display: flex; gap: 16px; flex-wrap: wrap;
+}
+.footer-links a {
+  font-size: var(--text-sm); color: var(--text-2);
+  text-decoration: none; font-weight: 500;
+  letter-spacing: 0; transition: color .12s;
+}
+.footer-links a:hover { color: var(--gold); }
+.footer-sep { width: 100%; height: 1px; background: var(--border); }
+.footer-desc { font-size: var(--text-sm); color: var(--text-3); line-height: 1.5; }
+.footer-desc strong { color: var(--text-2); font-weight: 500; }
+.footer-desc a {
+  color: var(--text-2); text-decoration: underline;
+  text-underline-offset: 3px; text-decoration-color: var(--border-2);
+  transition: color .12s;
+}
+.footer-desc a:hover { color: var(--gold); }
+.footer-copy { font-size: var(--text-xs); color: var(--text-3); }
+.footer-doodle {
+  display: block; margin: 4px auto 0; width: 180px; height: auto;
+  opacity: .18; transition: opacity .3s;
+  filter: invert(1) brightness(1.5);
+}
+.footer-doodle:hover { opacity: .35; }
+
+@media (prefers-color-scheme: light) {
+  .footer-doodle { filter: none; }
+}
+
+/* ── Reduced motion ──────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; }
+  .toast { transition: none !important; }
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .providers { grid-template-columns: repeat(2, 1fr); }
+  header.page { padding-top: 32px; padding-bottom: 28px; }
+  .tagline { font-size: var(--text-lg); }
+  main.page { gap: 36px; }
+  .shortcut { display: none; }
+  .actions { flex-wrap: wrap; }
+  .actions #copyBtn { flex: 0 0 100%; }
+  .actions #saveBtn, .actions #clearBtn { flex: 1; }
+  .topbar-inner { padding: 10px 16px; }
+  .nav-links a { font-size: var(--text-xs); padding: 5px 8px; }
+  .nav-dropdown-btn { font-size: var(--text-xs); padding: 5px 8px; }
+  .nav-sep { margin: 0 2px; }
+}
+@media (max-width: 360px) {
+  .page, .footer-inner { padding-left: 16px; padding-right: 16px; }
+}
+</style>
+</head>
+<body>
+
+<a href="#prompt" class="skip">Skip to prompt</a>
+
+<!-- ── Top bar ── -->
+<nav class="topbar" aria-label="Main navigation">
+  <div class="topbar-inner">
+    <div class="logo"><a href="/"><span class="logo-a">Prompt</span><span class="logo-b">Router</span></a></div>
+    <div class="nav-links">
+      <a href="/" class="active">Home</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-btn" type="button" aria-expanded="false" aria-haspopup="true">Libraries <span aria-hidden="true">&#9662;</span></button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="/dev" role="menuitem">Dev</a>
+          <a href="/writing" role="menuitem">Writing</a>
+          <a href="/marketing" role="menuitem">Marketing</a>
+          <a href="/job" role="menuitem">Job Search</a>
+          <a href="/startup" role="menuitem">Startup</a>
+          <a href="/data" role="menuitem">Data</a>
+          <a href="/design" role="menuitem">Design</a>
+          <a href="/student" role="menuitem">Student</a>
+          <a href="/productivity" role="menuitem">Productivity</a>
+          <a href="/legal" role="menuitem">Legal</a>
+          <a href="/sales" role="menuitem">Sales</a>
+        </div>
+      </div>
+      <span class="nav-sep" aria-hidden="true"></span>
+      <a href="/blog">Blog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Header / Hero ── -->
+<header class="page">
+  <h1 class="tagline">Write once &mdash; send to <em>every AI</em></h1>
+  <p class="hero-sub">One prompt, eight AI providers. Compare responses from ChatGPT, Claude, Gemini, and more &mdash; free, no login.</p>
+</header>
+
+<!-- ── Main ── -->
+<main class="page" id="main-content">
+
+  <!-- 1. Templates -->
+  <section aria-labelledby="lbl-templates">
+    <div class="section-header">
+      <span class="lbl" id="lbl-templates">Quick templates</span>
+      <a href="/dev" class="dev-link">Browse all libraries &rarr;</a>
+    </div>
+    <div class="chips" id="chips" role="group" aria-labelledby="lbl-templates"></div>
+  </section>
+
+  <!-- 2. Saved prompts -->
+  <section id="lib-section" style="display:none" aria-labelledby="lbl-library">
+    <span class="lbl" id="lbl-library">My prompts</span>
+    <div class="chips" id="lib-list" role="group" aria-labelledby="lbl-library"></div>
+  </section>
+
+  <!-- 3. Prompt textarea -->
+  <section aria-labelledby="lbl-prompt">
+    <label class="lbl" id="lbl-prompt" for="prompt">Your prompt</label>
+    <div class="prompt-wrap">
+      <textarea
+        id="prompt"
+        name="prompt"
+        placeholder="Write your prompt here, then pick an AI below..."
+        spellcheck="false"
+        autocomplete="off"
+        aria-describedby="charCount"
+      ></textarea>
+      <div class="prompt-meta" aria-hidden="true">
+        <span class="char-count" id="charCount"></span>
+        <span class="shortcut"><kbd>&#8984;S</kbd> save&nbsp;&nbsp; <kbd>&#8984;C</kbd> copy&nbsp;&nbsp; <kbd>Esc</kbd> clear</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Actions (grouped with textarea) -->
+  <div class="actions">
+    <button class="btn flex-1" id="copyBtn" type="button" aria-label="Copy prompt to clipboard" onclick="copyPrompt()">
+      Copy to clipboard
+    </button>
+    <button class="btn" id="saveBtn" type="button" aria-label="Save prompt to library" onclick="savePrompt()">
+      Save
+    </button>
+    <button class="btn" id="clearBtn" type="button" aria-label="Clear the prompt" onclick="clearPrompt()">
+      Clear
+    </button>
+  </div>
+
+  <!-- Divider between write zone and send zone -->
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <!-- 5. Providers -->
+  <section aria-labelledby="lbl-providers">
+    <span class="lbl" id="lbl-providers">Open in</span>
+    <ul class="providers" id="providers" aria-labelledby="lbl-providers"></ul>
+  </section>
+
+</main>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-section">
+      <span class="footer-heading">Prompt Libraries</span>
+      <nav class="footer-grid" aria-label="Prompt libraries">
+        <a href="/dev">Dev</a>
+        <a href="/writing">Writing</a>
+        <a href="/marketing">Marketing</a>
+        <a href="/job">Job Search</a>
+        <a href="/startup">Startup</a>
+        <a href="/data">Data</a>
+        <a href="/design">Design</a>
+        <a href="/student">Student</a>
+        <a href="/productivity">Productivity</a>
+        <a href="/legal">Legal</a>
+        <a href="/sales">Sales</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="/">Home</a>
+        <a href="/blog">Blog</a>
+      </nav>
+      <div class="footer-sep" aria-hidden="true"></div>
+      <p class="footer-desc"><strong>Prompt Router</strong> is a free tool for prompt engineers, developers, and AI power users. Write your prompt once and send it instantly to ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, and Le Chat. No account needed. No data stored.</p>
+      <p class="footer-copy">&copy; 2026 Prompt Router &mdash; Free to use.</p>
+    </div>
+    <img src="/clumsy.svg" alt="" class="footer-doodle" aria-hidden="true" loading="lazy" width="180" height="135">
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+<script>
+(function() {
+'use strict';
+
+
+/* ── Templates (English only) ───────────────────────────────── */
+const templates = [
+  { label: 'Summarize',    text: "Summarize the following in 3\u20135 clear bullet points. Focus on the most important takeaways:\n\n[paste content here]" },
+  { label: 'Explain it',   text: "Explain [concept or topic] in simple terms. Assume I have no prior knowledge. Use plain language and a short example." },
+  { label: 'Improve text', text: "Rewrite the following to be clearer, more concise, and more engaging. Keep the same meaning:\n\n[paste text here]" },
+  { label: 'Brainstorm',   text: "Give me 10 ideas for [topic or goal]. Be specific and varied \u2014 mix obvious and unexpected approaches." },
+  { label: 'Compare',      text: "Compare [option A] and [option B]. Cover the key differences, pros and cons of each, and end with a clear recommendation." },
+  { label: 'Write email',  text: "Write a professional email to [recipient] about [topic]. Tone: [formal / friendly]. Keep it concise with a clear next step." },
+  { label: 'Fix my code',  text: "Here is my code. It's not working as expected.\n\n[paste code here]\n\nThe error or problem: [describe it]\n\nFind the bug and explain the fix." },
+  { label: 'Make a plan',  text: "Create a step-by-step action plan for [goal]. Break it into clear phases with specific tasks. Keep it realistic and actionable." },
+  { label: 'Pros & cons',  text: "List the pros and cons of [decision or option]. Be thorough and include considerations I might not have thought of." },
+  { label: 'Ask questions', text: "I'm trying to understand [topic or problem]. What are the 10 most important questions I should be asking about this?" },
+];
+
+const enc = s => encodeURIComponent(s);
+
+const providers = [
+  { id: 'chatgpt',    label: 'ChatGPT',    cls: 'pc-chatgpt',    url: q => `https://chatgpt.com/?q=${enc(q)}` },
+  { id: 'claude',     label: 'Claude',     cls: 'pc-claude',     url: q => `https://claude.ai/new?q=${enc(q)}` },
+  { id: 'gemini',     label: 'Gemini',     cls: 'pc-gemini',     url: q => `https://gemini.google.com/app?q=${enc(q)}` },
+  { id: 'copilot',    label: 'Copilot',    cls: 'pc-copilot',    url: q => `https://copilot.microsoft.com/?q=${enc(q)}` },
+  { id: 'perplexity', label: 'Perplexity', cls: 'pc-perplexity', url: q => `https://www.perplexity.ai/search?q=${enc(q)}` },
+  { id: 'lechat',     label: 'Le Chat',    cls: 'pc-lechat',     url: q => `https://chat.mistral.ai/chat?q=${enc(q)}` },
+  { id: 'grok',       label: 'Grok',       cls: 'pc-grok',       url: q => `https://x.com/i/grok?text=${enc(q)}` },
+  { id: 'deepseek',   label: 'DeepSeek',   cls: 'pc-deepseek',   url: q => `https://chat.deepseek.com/?q=${enc(q)}` },
+];
+
+/* ── DOM refs ────────────────────────────────────────────────── */
+const promptEl    = document.getElementById('prompt');
+const chipsEl     = document.getElementById('chips');
+const providersEl = document.getElementById('providers');
+const charCountEl = document.getElementById('charCount');
+const copyBtn     = document.getElementById('copyBtn');
+const saveBtn     = document.getElementById('saveBtn');
+const clearBtnEl  = document.getElementById('clearBtn');
+const toastEl     = document.getElementById('toast');
+const libSection  = document.getElementById('lib-section');
+const libList     = document.getElementById('lib-list');
+
+/* ── State ───────────────────────────────────────────────────── */
+const TPL_PIN_KEY   = 'pr_pinned_tpls';
+const CHIPS_VISIBLE = 3;
+const LIB_VISIBLE   = 3;
+const TITLE_MAX     = 30;
+let activeTplLabel  = null;
+let tplExpanded     = false;
+let libExpanded     = false;
+
+function getPinnedTpls() {
+  try { return JSON.parse(localStorage.getItem(TPL_PIN_KEY)) || []; }
+  catch { return []; }
+}
+
+/* ── Render template chips ───────────────────────────────────── */
+function renderChips() {
+  const pinned = getPinnedTpls();
+  const sorted = [...templates].sort((a, b) =>
+    (pinned.includes(b.label) ? 1 : 0) - (pinned.includes(a.label) ? 1 : 0)
+  );
+  chipsEl.innerHTML = '';
+
+  sorted.forEach((tpl, i) => {
+    const isPinned = pinned.includes(tpl.label);
+    const isHidden = !tplExpanded && i >= CHIPS_VISIBLE;
+
+    const group = document.createElement('div');
+    group.className = 'chip-group' + (isHidden ? ' chip-hidden' : '');
+
+    const btn = document.createElement('button');
+    btn.type = 'button'; btn.className = 'chip';
+    btn.textContent = tpl.label;
+    btn.setAttribute('aria-pressed', activeTplLabel === tpl.label ? 'true' : 'false');
+    btn.addEventListener('click', () => {
+      const active = btn.getAttribute('aria-pressed') === 'true';
+      chipsEl.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', 'false'));
+      promptEl.value = active ? '' : tpl.text;
+      activeTplLabel = active ? null : tpl.label;
+      if (!active) { btn.setAttribute('aria-pressed', 'true'); promptEl.focus(); }
+      updateCount();
+    });
+
+    const pinBtn = document.createElement('button');
+    pinBtn.type = 'button';
+    pinBtn.className = 'chip-pin-btn' + (isPinned ? ' active' : '');
+    pinBtn.title = isPinned ? 'Unpin' : 'Pin to top';
+    pinBtn.setAttribute('aria-label', isPinned ? `Unpin ${tpl.label}` : `Pin ${tpl.label} to top`);
+    pinBtn.textContent = isPinned ? '\u2605' : '\u2606';
+    pinBtn.addEventListener('click', () => {
+      const p = getPinnedTpls();
+      const idx = p.indexOf(tpl.label);
+      if (idx >= 0) p.splice(idx, 1); else p.push(tpl.label);
+      localStorage.setItem(TPL_PIN_KEY, JSON.stringify(p));
+      renderChips();
+    });
+
+    group.appendChild(btn);
+    group.appendChild(pinBtn);
+    chipsEl.appendChild(group);
+  });
+
+  if (templates.length > CHIPS_VISIBLE) {
+    const moreBtn = document.createElement('button');
+    moreBtn.type = 'button';
+    moreBtn.className = 'chip chip-show-more';
+    moreBtn.textContent = tplExpanded ? 'Show less' : `+${templates.length - CHIPS_VISIBLE} more`;
+    moreBtn.addEventListener('click', () => { tplExpanded = !tplExpanded; renderChips(); });
+    chipsEl.appendChild(moreBtn);
+  }
+}
+renderChips();
+
+/* ── Render providers ────────────────────────────────────────── */
+providers.forEach(p => {
+  const li = document.createElement('li');
+  const btn = document.createElement('button');
+  btn.type = 'button'; btn.className = `p-btn ${p.cls}`;
+  btn.setAttribute('aria-label', `Open in ${p.label}`);
+  btn.innerHTML = `<span class="p-dot" aria-hidden="true"></span><span class="p-name">${p.label}</span><span class="p-arrow" aria-hidden="true">\u2197</span>`;
+  btn.addEventListener('click', () => openProvider(p));
+  li.appendChild(btn); providersEl.appendChild(li);
+});
+
+/* ── Core actions ────────────────────────────────────────────── */
+function getPrompt() { return promptEl.value.trim(); }
+
+function openProvider(p) {
+  const q = getPrompt();
+  if (!q) { showToast('Write a prompt first'); return; }
+  const w = window.open(p.url(q), '_blank', 'noopener,noreferrer');
+  if (!w) showToast('Popup blocked \u2014 copy & paste instead');
+}
+
+function updateCount() {
+  const n = promptEl.value.length;
+  charCountEl.textContent = n > 0 ? n.toLocaleString() : '';
+  charCountEl.classList.toggle('warn', n > 3000);
+}
+
+promptEl.addEventListener('input', () => {
+  updateCount();
+  if (!promptEl.value) {
+    activeTplLabel = null;
+    chipsEl.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', 'false'));
+  }
+});
+
+async function copyPrompt() {
+  const q = getPrompt();
+  if (!q) { showToast('Nothing to copy yet'); return; }
+  try {
+    await navigator.clipboard.writeText(q);
+    copyBtn.textContent = '\u2713 Copied!';
+    copyBtn.classList.add('copied');
+    setTimeout(() => {
+      copyBtn.textContent = 'Copy to clipboard';
+      copyBtn.classList.remove('copied');
+    }, 2200);
+  } catch { showToast('Copy failed \u2014 try manually'); }
+}
+
+function clearPrompt() {
+  promptEl.value = ''; updateCount();
+  activeTplLabel = null;
+  chipsEl.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', 'false'));
+  promptEl.focus();
+}
+
+/* ── Keyboard shortcuts ──────────────────────────────────────── */
+document.addEventListener('keydown', e => {
+  const inTextarea = document.activeElement === promptEl;
+  if (e.key === 'Escape' && inTextarea) { clearPrompt(); return; }
+  if ((e.metaKey || e.ctrlKey) && e.key === 's') { e.preventDefault(); savePrompt(); return; }
+  if ((e.metaKey || e.ctrlKey) && e.key === 'c' && inTextarea && !window.getSelection()?.toString()) {
+    e.preventDefault(); copyPrompt();
+  }
+});
+
+/* ── Toast ───────────────────────────────────────────────────── */
+let toastTimer;
+function showToast(msg) {
+  toastEl.textContent = msg; toastEl.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toastEl.classList.remove('show'), 3000);
+}
+
+/* ── Library persistence ─────────────────────────────────────── */
+const LIB_KEY  = 'pr_library';
+const LIB_MAX  = 10;
+
+function readLib() {
+  try { return JSON.parse(localStorage.getItem(LIB_KEY)) || []; }
+  catch { return []; }
+}
+function writeLib(lib) { localStorage.setItem(LIB_KEY, JSON.stringify(lib)); }
+
+/* ── Render library ──────────────────────────────────────────── */
+function renderLib() {
+  const lib = readLib();
+  lib.sort((a, b) => (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0) || b.ts - a.ts);
+
+  libSection.style.display = lib.length ? '' : 'none';
+  libList.innerHTML = '';
+
+  lib.forEach((item, i) => {
+    const displayTitle = item.title.length > TITLE_MAX
+      ? item.title.slice(0, TITLE_MAX).trimEnd() + '\u2026'
+      : item.title;
+
+    const isHidden = !libExpanded && i >= LIB_VISIBLE;
+    const group = document.createElement('div');
+    group.className = 'chip-group' + (isHidden ? ' chip-hidden' : '');
+
+    const loadBtn = document.createElement('button');
+    loadBtn.type = 'button'; loadBtn.className = 'chip';
+    loadBtn.textContent = displayTitle;
+    loadBtn.title = item.text;
+    loadBtn.setAttribute('aria-label', `Load: ${item.title}`);
+    loadBtn.addEventListener('click', () => {
+      promptEl.value = item.text; updateCount();
+      chipsEl.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', 'false'));
+      libList.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', 'false'));
+      activeTplLabel = null;
+      loadBtn.setAttribute('aria-pressed', 'true');
+      promptEl.focus();
+    });
+
+    const pinBtn = document.createElement('button');
+    pinBtn.type = 'button';
+    pinBtn.className = 'chip-pin-btn' + (item.pinned ? ' active' : '');
+    pinBtn.textContent = item.pinned ? '\u2605' : '\u2606';
+    pinBtn.title = item.pinned ? 'Unpin' : 'Pin to top';
+    pinBtn.setAttribute('aria-label', item.pinned ? `Unpin: ${item.title}` : `Pin to top: ${item.title}`);
+    pinBtn.addEventListener('click', () => {
+      const lib2 = readLib();
+      const f = lib2.find(x => x.ts === item.ts);
+      if (f) f.pinned = !f.pinned;
+      writeLib(lib2); renderLib();
+    });
+
+    const delBtn = document.createElement('button');
+    delBtn.type = 'button'; delBtn.className = 'chip-del-btn';
+    delBtn.textContent = '\u00d7';
+    delBtn.title = 'Delete';
+    delBtn.setAttribute('aria-label', `Delete: ${item.title}`);
+    delBtn.addEventListener('click', () => {
+      writeLib(readLib().filter(x => x.ts !== item.ts));
+      renderLib();
+    });
+
+    group.appendChild(loadBtn);
+    group.appendChild(pinBtn);
+    group.appendChild(delBtn);
+    libList.appendChild(group);
+  });
+
+  if (lib.length > LIB_VISIBLE) {
+    const moreBtn = document.createElement('button');
+    moreBtn.type = 'button';
+    moreBtn.className = 'chip chip-show-more';
+    moreBtn.textContent = libExpanded ? 'Show less' : `+${lib.length - LIB_VISIBLE} more`;
+    moreBtn.addEventListener('click', () => { libExpanded = !libExpanded; renderLib(); });
+    libList.appendChild(moreBtn);
+  }
+}
+
+/* ── Save prompt ─────────────────────────────────────────────── */
+function savePrompt() {
+  const text = getPrompt();
+  if (!text) { showToast('Nothing to save'); return; }
+  const lib = readLib();
+  if (lib.length >= LIB_MAX) { showToast('Library full \u2014 delete a prompt first'); return; }
+  if (lib.some(x => x.text === text)) { showToast('Already in your library'); return; }
+
+  const title = text.replace(/\s+/g, ' ').trim().slice(0, 50) + (text.length > 50 ? '\u2026' : '');
+  lib.push({ title, text, ts: Date.now(), pinned: false });
+  writeLib(lib); renderLib();
+
+  saveBtn.textContent = '\u2713 Saved';
+  saveBtn.classList.add('saved-flash');
+  setTimeout(() => {
+    saveBtn.textContent = 'Save';
+    saveBtn.classList.remove('saved-flash');
+  }, 2000);
+}
+
+/* ── Init ────────────────────────────────────────────────────── */
+renderLib();
+
+/* ── Nav dropdown ────────────────────────────────────────────── */
+(function() {
+  const btn = document.querySelector('.nav-dropdown-btn');
+  const menu = document.querySelector('.nav-dropdown-menu');
+  if (!btn || !menu) return;
+
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+
+  document.addEventListener('click', () => {
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+  });
+})();
+})();
+</script>
+</body>
+</html>

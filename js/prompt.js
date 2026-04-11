@@ -355,7 +355,7 @@ function savePrompt() {
 }
 
 /* ── Initialization ──────────────────────────────────────────── */
-if (promptEl) {
+if (promptEl && chipsEl) {
   applyLocale();
   renderChips();
   renderProviders(providersEl, locale.lblProviders);

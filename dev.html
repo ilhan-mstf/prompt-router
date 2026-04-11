@@ -246,6 +246,7 @@ main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40
 
 <script src="/js/prompt.js"></script>
 <script>
+(function() {
 'use strict';
 
 
@@ -445,6 +446,7 @@ renderCards();
 
 /* ── ItemList structured data ───────────────────────────────── */
 (function(){var n=1,items=[];DEV_PROMPTS.forEach(function(c){c.prompts.forEach(function(p){items.push({"@type":"ListItem","position":n++,"name":p.title});});});var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ItemList","name":document.title.split('|')[0].split('—')[0].trim(),"numberOfItems":items.length,"itemListElement":items});document.head.appendChild(s);})();
+})();
 </script>
 </body>
 </html>
