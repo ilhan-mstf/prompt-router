@@ -64,6 +64,38 @@
   "creator": { "@type": "Organization", "name": "Prompt Router", "url": "https://prompt-router.pages.dev/" }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a Prompt Router?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A prompt router is a tool that allows you to write a single prompt and send it to multiple AI models like ChatGPT, Claude, and Gemini simultaneously to compare their responses."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Prompt Router free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Prompt Router is 100% free and requires no account or login."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which AI models are supported?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Prompt Router supports ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, and Mistral Le Chat."
+      }
+    }
+  ]
+}
+</script>
 
 <link rel="dns-prefetch" href="//fonts.googleapis.com">
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -257,7 +289,22 @@ main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40
 </head>
 <body>
 
-<noscript><div class="noscript" role="alert">JavaScript is required to use Prompt Router. · Se requiere JavaScript para usar Prompt Router. · JavaScript è necessario per usare Prompt Router. · JavaScript é necessário para usar o Prompt Router. · JavaScript est requis pour utiliser Prompt Router. · JavaScript ist erforderlich, um Prompt Router zu verwenden. · Prompt Router'ı kullanmak için JavaScript gereklidir.</div></noscript>
+<noscript>
+  <div class="noscript" role="alert">JavaScript is required to use Prompt Router. · Se requiere JavaScript para usar Prompt Router.</div>
+  <section style="padding: 20px; max-width: 800px; margin: 0 auto;">
+    <h1>Free Multi-LLM Prompt Router & AI Comparison Tool</h1>
+    <p>Prompt Router is a free, no-login tool that lets you send one prompt to multiple AI models simultaneously. Compare responses from ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, and Le Chat side-by-side.</p>
+    <h2>Key Features:</h2>
+    <ul>
+      <li><strong>One Prompt, Every AI:</strong> Write once and open in 8+ major providers.</li>
+      <li><strong>11+ Prompt Libraries:</strong> Curated prompts for Developers, Marketing, Writing, Startups, and more.</li>
+      <li><strong>Private & Secure:</strong> No account required, no backend storage — your prompts stay in your browser.</li>
+      <li><strong>Compare AI Models:</strong> Instantly see which LLM gives the best result for your specific task.</li>
+    </ul>
+    <h2>Supported AI Providers:</h2>
+    <p>ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google), Copilot (Microsoft), Perplexity, DeepSeek, Grok (xAI), and Mistral Le Chat.</p>
+  </section>
+</noscript>
 <a href="#prompt" class="skip">Skip to prompt</a>
 
 <!-- ── Top bar ── -->
@@ -290,7 +337,7 @@ main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40
 
 <!-- ── Header ── -->
 <header class="page">
-  <h1 class="tagline" id="tagline">Write once &mdash; send to <em>every AI</em></h1>
+  <h1 class="tagline" id="tagline">Multi-LLM <em>Prompt Router</em> &mdash; Send to Every AI</h1>
   <p class="hero-sub" id="hero-sub">One prompt, eight AI providers. Compare responses from ChatGPT, Claude, Gemini, and more &mdash; free, no login.</p>
 </header>
 
