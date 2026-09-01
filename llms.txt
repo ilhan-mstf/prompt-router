@@ -1,0 +1,80 @@
+# Prompt Router
+
+> Write one prompt. Open every AI. Compare responses side-by-side across ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, and Mistral Le Chat.
+
+Prompt Router is a free, privacy-first web utility for prompt engineers, developers, writers, and AI power users. It allows users to compose a prompt once and immediately launch it in 8+ major LLMs pre-filled via direct URL parameter routing. No account, no login, and no backend data storage.
+
+- Website: https://prompt-router.pages.dev
+- Full Documentation & Prompt Dump: https://prompt-router.pages.dev/llms-full.txt
+- Repository: https://github.com/ilhan-mstf/prompt-router
+
+## AI Provider URL Routing Syntax
+
+Prompt Router routes prefilled prompts to LLM chat interfaces using standard URL query parameters:
+
+- **ChatGPT (OpenAI)**: `https://chatgpt.com/?q={encoded_prompt}`
+- **Claude (Anthropic)**: `https://claude.ai/new?q={encoded_prompt}`
+- **Gemini (Google)**: `https://gemini.google.com/app?q={encoded_prompt}`
+- **Microsoft Copilot**: `https://copilot.microsoft.com/?q={encoded_prompt}`
+- **Perplexity AI**: `https://www.perplexity.ai/search?q={encoded_prompt}`
+- **DeepSeek**: `https://chat.deepseek.com/?q={encoded_prompt}`
+- **Grok (xAI)**: `https://x.com/i/grok?text={encoded_prompt}`
+- **Mistral Le Chat**: `https://chat.mistral.ai/chat?q={encoded_prompt}`
+
+## Prompt Libraries
+
+Curated battle-tested prompt collections across 11 domains:
+
+- [Dev Prompts](https://prompt-router.pages.dev/dev): 30+ curated prompts for debugging, code review, refactoring, testing, DevOps, and system architecture.
+- [Writing Prompts](https://prompt-router.pages.dev/writing): Prompts for essay drafting, copywriting, tone adjustment, storytelling, and editing.
+- [Marketing Prompts](https://prompt-router.pages.dev/marketing): Prompts for SEO strategy, ad copy, campaign ideas, email newsletters, and content calendars.
+- [Data Prompts](https://prompt-router.pages.dev/data): SQL generation, Pandas data analysis, statistics interpretation, and visualization.
+- [Startup Prompts](https://prompt-router.pages.dev/startup): Pitch deck drafting, competitor analysis, business model validation, and GTM strategy.
+- [Design Prompts](https://prompt-router.pages.dev/design): UX research, UI design critique, user personas, wireframe specifications, and accessibility checks.
+- [Job Search Prompts](https://prompt-router.pages.dev/job): Resume optimization, cover letter tailoring, mock interview questions, and salary negotiation.
+- [Productivity Prompts](https://prompt-router.pages.dev/productivity): Time management, meeting summaries, task prioritization, and daily workflows.
+- [Legal Prompts](https://prompt-router.pages.dev/legal): Contract analysis, clause simplification, NDAs, and compliance guidelines.
+- [Sales Prompts](https://prompt-router.pages.dev/sales): Cold outreach, discovery calls, objection handling, and proposal generation.
+- [Student Prompts](https://prompt-router.pages.dev/student): Study schedules, concept explanations, flashcard generation, and exam prep.
+
+## Core Templates
+
+- **Summarize**: Summarize text into 3-5 clear bullet points focusing on key takeaways.
+- **Explain it**: Explain complex concepts in simple terms with plain language and analogies.
+- **Improve text**: Rewrite copy for clarity, engagement, and conciseness while preserving meaning.
+- **Brainstorm**: Generate 10 diverse and unexpected ideas for a given goal.
+- **Compare**: Side-by-side pros, cons, and recommendations for two options.
+- **Write email**: Professional email draft tailored by tone and desired action.
+- **Fix my code**: Diagnose bug, provide explanation, and output corrected code snippet.
+- **Make a plan**: Step-by-step implementation plan broken into realistic phases.
+- **Pros & cons**: Comprehensive evaluation of a decision including edge cases.
+- **Ask questions**: Uncover the 10 most critical questions to understand a problem deeply.
+
+## Multi-Language Routes
+
+Prompt Router features server-side edge rendering for 7 languages via clean subdirectories:
+
+- English (Default): `https://prompt-router.pages.dev/`
+- Spanish (Español): `https://prompt-router.pages.dev/es`
+- Turkish (Türkçe): `https://prompt-router.pages.dev/tr`
+- French (Français): `https://prompt-router.pages.dev/fr`
+- German (Deutsch): `https://prompt-router.pages.dev/de`
+- Italian (Italiano): `https://prompt-router.pages.dev/it`
+- Portuguese (Português): `https://prompt-router.pages.dev/pt`
+
+## Guides & Blog Articles
+
+- [Compare AI Models](https://prompt-router.pages.dev/blog-compare-ai): Comparative breakdown of LLMs for specialized tasks.
+- [Prompt Router Overview](https://prompt-router.pages.dev/blog-prompt-router): Benefits of multi-LLM workflows.
+- [Reduce AI Costs](https://prompt-router.pages.dev/blog-reduce-ai-costs): How to optimize prompts to reduce API and subscription costs.
+- [Dev Prompts Guide](https://prompt-router.pages.dev/blog-dev-prompts): Walkthrough of coding prompts.
+- [Writing Prompts Guide](https://prompt-router.pages.dev/blog-writing-prompts): Walkthrough of writing prompts.
+- [Marketing Prompts Guide](https://prompt-router.pages.dev/blog-marketing-prompts): Marketing prompt recipes.
+- [Data Prompts Guide](https://prompt-router.pages.dev/blog-data-prompts): Data analytics prompt recipes.
+- [Design Prompts Guide](https://prompt-router.pages.dev/blog-design-prompts): UX & product design prompt recipes.
+- [Startup Prompts Guide](https://prompt-router.pages.dev/blog-startup-prompts): Founder & startup prompt recipes.
+- [Job Search Prompts Guide](https://prompt-router.pages.dev/blog-job-prompts): Career & job search prompt recipes.
+- [Productivity Prompts Guide](https://prompt-router.pages.dev/blog-productivity-prompts): Productivity & focus prompt recipes.
+- [Legal Prompts Guide](https://prompt-router.pages.dev/blog-legal-prompts): Legal prompt engineering recipes.
+- [Sales Prompts Guide](https://prompt-router.pages.dev/blog-sales-prompts): B2B sales prompt engineering recipes.
+- [Student Prompts Guide](https://prompt-router.pages.dev/blog-student-prompts): Academic prompt engineering recipes.

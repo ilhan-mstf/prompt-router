@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<script>(function(){var S=['en','es','it','pt','fr','de','tr'],p=new URLSearchParams(location.search).get('lang'),l='en';function n(r){if(!r)return null;var b=r.split('-')[0].toLowerCase();return S.indexOf(b)!==-1?b:null;}l=n(p)||n(localStorage.getItem('pr_lang'))||(function(){var ls=navigator.languages||[navigator.language||'en'];for(var i=0;i<ls.length;i++){var c=n(ls[i]);if(c)return c;}return null;})()||'en';try{localStorage.setItem('pr_lang',l);}catch(e){}document.documentElement.lang=l;window.__LANG__=l;}());</script>
+<script>(function(){var S=['en','es','it','pt','fr','de','tr'],path=location.pathname.replace(/^\/|\/$/g,''),p=new URLSearchParams(location.search).get('lang'),l='en';function n(r){if(!r)return null;var b=r.split('-')[0].toLowerCase();return S.indexOf(b)!==-1?b:null;}l=n(window.__LANG__)||n(path)||n(p)||n(localStorage.getItem('pr_lang'))||(function(){var ls=navigator.languages||[navigator.language||'en'];for(var i=0;i<ls.length;i++){var c=n(ls[i]);if(c)return c;}return null;})()||'en';try{localStorage.setItem('pr_lang',l);}catch(e){}document.documentElement.lang=l;window.__LANG__=l;}());</script>
 
 <title>Prompt Router — Send One Prompt to ChatGPT, Claude, Gemini &amp; More</title>
 <meta name="description" content="Prompt Router lets you write one prompt and instantly open it in ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok and Le Chat. Compare AI responses side-by-side in seconds — free, no login required.">
@@ -14,13 +14,14 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="canonical" href="https://prompt-router.pages.dev/">
 <link rel="alternate" hreflang="x-default" href="https://prompt-router.pages.dev/">
-<link rel="alternate" hreflang="en" href="https://prompt-router.pages.dev/?lang=en">
-<link rel="alternate" hreflang="es" href="https://prompt-router.pages.dev/?lang=es">
-<link rel="alternate" hreflang="it" href="https://prompt-router.pages.dev/?lang=it">
-<link rel="alternate" hreflang="pt" href="https://prompt-router.pages.dev/?lang=pt">
-<link rel="alternate" hreflang="fr" href="https://prompt-router.pages.dev/?lang=fr">
-<link rel="alternate" hreflang="de" href="https://prompt-router.pages.dev/?lang=de">
-<link rel="alternate" hreflang="tr" href="https://prompt-router.pages.dev/?lang=tr">
+<link rel="alternate" hreflang="en" href="https://prompt-router.pages.dev/">
+<link rel="alternate" hreflang="es" href="https://prompt-router.pages.dev/es">
+<link rel="alternate" hreflang="it" href="https://prompt-router.pages.dev/it">
+<link rel="alternate" hreflang="pt" href="https://prompt-router.pages.dev/pt">
+<link rel="alternate" hreflang="fr" href="https://prompt-router.pages.dev/fr">
+<link rel="alternate" hreflang="de" href="https://prompt-router.pages.dev/de">
+<link rel="alternate" hreflang="tr" href="https://prompt-router.pages.dev/tr">
+<link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM Context">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Prompt Router">

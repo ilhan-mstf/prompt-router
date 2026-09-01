@@ -42,8 +42,10 @@ sales.html                 Sales prompt library
 blog.html                  Blog listing page
 blog-*.html                Individual blog posts (12 articles)
 site.webmanifest           PWA manifest
-robots.txt                 Crawler instructions
+robots.txt                 Crawler instructions & AI bot access
 sitemap.xml                Multilingual sitemap (all 7 language URLs)
+llms.txt                   Concise LLM & AI agent documentation index
+llms-full.txt              Full prompt library & provider documentation dump
 blog-post.md               Blog post copy
 googlee5dbd159d1306862.html  Google Search Console verification
 ```
@@ -67,29 +69,27 @@ googlee5dbd159d1306862.html  Google Search Console verification
 
 Language is detected in priority order:
 
-1. `?lang=xx` URL parameter
-2. `localStorage` (`pr_lang` key — persisted from previous visit)
-3. `navigator.languages` (browser default)
-4. Fallback: `en`
+1. Subdirectory URL path (`/es`, `/fr`, `/de`, `/it`, `/pt`, `/tr`)
+2. `?lang=xx` URL parameter (automatically 301 redirected to subdirectory)
+3. `localStorage` (`pr_lang` key — persisted from previous visit)
+4. `navigator.languages` (browser default)
+5. Fallback: `en` (`/`)
 
-Supported codes: `en`, `es`, `it`, `pt`, `fr`, `de`, `tr`
+Supported codes: `en` (`/`), `es` (`/es`), `it` (`/it`), `pt` (`/pt`), `fr` (`/fr`), `de` (`/de`), `tr` (`/tr`)
 
-Language-specific URLs use the `?lang=xx` format (e.g. `/?lang=fr`). These are declared as `hreflang` alternates in `<head>` and in `sitemap.xml`.
+Language-specific URLs use clean subdirectory paths (e.g. `/fr`). These are declared as `hreflang` alternates in `<head>` and in `sitemap.xml`.
 
 ---
 
 ## Cloudflare Worker (`_worker.js`)
 
-The Worker runs on every request to `/` and injects the correct translated `<title>`, `<meta name="description">`, Open Graph / Twitter Card tags, `<link rel="canonical">`, and `<meta property="og:url">` **server-side** using the `HTMLRewriter` API.
+The Worker runs on requests to localized paths (`/es`, `/fr`, etc.) and injects translated `<title>`, `<meta name="description">`, Open Graph tags, canonical links, translated `<h1>`, `<p>`, buttons, and `<noscript>` content **server-side** using the `HTMLRewriter` API.
 
 This ensures:
-- Social media scrapers (Facebook, Twitter/X, LinkedIn, Slack) see the right language meta tags when a `?lang=xx` URL is shared
-- Non-JS crawlers index translated titles and descriptions
-- Canonical URL and OG URL point to the correct language-specific URL (e.g. `/?lang=fr`)
-
-For the default English URL (`/` with no `?lang=` param), the Worker passes through the request untouched — zero overhead.
-
-All other paths (images, fonts, manifests, etc.) bypass the Worker entirely.
+- Full Edge SSR for search engine crawlers (Google, Bing) to index authentic localized content
+- Social media scrapers (Facebook, Twitter/X, LinkedIn, Slack) see the right language meta tags
+- Clean subdirectory URLs without duplicate parameter penalties
+- 301 redirects for legacy `?lang=xx` URLs and trailing slashes
 
 ---
 

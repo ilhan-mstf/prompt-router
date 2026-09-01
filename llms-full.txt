@@ -1,0 +1,546 @@
+# Prompt Router — Full Documentation & Prompt Repository
+
+> Write one prompt. Open every AI. Pre-filled multi-LLM prompt comparator & library.
+
+Website: https://prompt-router.pages.dev
+Repository: https://github.com/ilhan-mstf/prompt-router
+
+## AI Provider Routing URLs
+Use these URL patterns to send pre-filled prompts to AI providers:
+
+- **ChatGPT (OpenAI)**: `https://chatgpt.com/?q={encoded_prompt}`
+- **Claude (Anthropic)**: `https://claude.ai/new?q={encoded_prompt}`
+- **Gemini (Google)**: `https://gemini.google.com/app?q={encoded_prompt}`
+- **Microsoft Copilot**: `https://copilot.microsoft.com/?q={encoded_prompt}`
+- **Perplexity AI**: `https://www.perplexity.ai/search?q={encoded_prompt}`
+- **DeepSeek**: `https://chat.deepseek.com/?q={encoded_prompt}`
+- **Grok (xAI)**: `https://x.com/i/grok?text={encoded_prompt}`
+- **Mistral Le Chat**: `https://chat.mistral.ai/chat?q={encoded_prompt}`
+
+## Multi-Language Subdirectories
+- English: `https://prompt-router.pages.dev/`
+- Spanish: `https://prompt-router.pages.dev/es`
+- Turkish: `https://prompt-router.pages.dev/tr`
+- French: `https://prompt-router.pages.dev/fr`
+- German: `https://prompt-router.pages.dev/de`
+- Italian: `https://prompt-router.pages.dev/it`
+- Portuguese: `https://prompt-router.pages.dev/pt`
+
+---
+## Complete Prompt Libraries
+
+### Dev Prompts
+URL: https://prompt-router.pages.dev/dev
+
+#### Category: Debugging
+##### Find the bug
+```
+Here is my code. It's not working as expected.
+
+[paste code here]
+
+The error or problem: [describe it]
+
+Find the bug, explain why it happens, and show the fix.
+```
+
+##### Explain this error
+```
+I'm getting this error:
+
+[paste error message]
+
+Here's the relevant code:
+
+[paste code here]
+
+Explain what's causing this error and how to fix it.
+```
+
+##### Debug performance issue
+```
+This code is running slower than expected:
+
+[paste code here]
+
+Profile the logic, identify bottlenecks, and suggest specific optimizations with before/after examples.
+```
+
+##### Fix failing test
+```
+This test is failing:
+
+[paste test code]
+
+The error output:
+
+[paste error]
+
+Here's the implementation it tests:
+
+[paste code]
+
+Explain why the test fails and how to fix it.
+```
+
+#### Category: Code Review
+##### Review for bugs & quality
+```
+Review this code for bugs, edge cases, and code quality issues. Be specific about what's wrong and suggest fixes:
+
+[paste code here]
+```
+
+##### Security review
+```
+Review this code for security vulnerabilities (injection, auth issues, data exposure, OWASP top 10). Rate severity and suggest fixes:
+
+[paste code here]
+```
+
+##### Review PR diff
+```
+Here's a PR diff. Review it for correctness, style, performance, and potential issues. Be concise and actionable:
+
+[paste diff here]
+```
+
+##### Suggest improvements
+```
+Review this code and suggest improvements for readability, maintainability, and idiomatic style. Keep the same functionality:
+
+[paste code here]
+```
+
+#### Category: Refactoring
+##### Refactor for readability
+```
+Refactor this code to be more readable and maintainable. Keep the same behavior. Explain each change you make:
+
+[paste code here]
+```
+
+##### Extract reusable logic
+```
+This code has duplicated or tightly-coupled logic. Extract reusable functions/modules while keeping the same behavior:
+
+[paste code here]
+```
+
+##### Convert to async/await
+```
+Convert this callback-based or promise-chain code to use async/await. Handle errors properly:
+
+[paste code here]
+```
+
+##### Simplify complex function
+```
+This function is too complex. Break it down into smaller, well-named functions. Keep the same inputs/outputs:
+
+[paste code here]
+```
+
+#### Category: Testing
+##### Write unit tests
+```
+Write comprehensive unit tests for this function. Cover happy paths, edge cases, and error scenarios. Use [testing framework]:
+
+[paste code here]
+```
+
+##### Write integration test
+```
+Write an integration test for this feature. It should test the full flow from [start] to [end]:
+
+[paste code/API here]
+
+Use [testing framework].
+```
+
+##### Generate test cases
+```
+List all the test cases I should write for this function. Group them by: happy path, edge cases, error handling, and boundary conditions:
+
+[paste code here]
+```
+
+##### Add test coverage
+```
+This code has no tests. Analyze it, identify the most critical paths, and write tests in priority order. Use [testing framework]:
+
+[paste code here]
+```
+
+#### Category: Architecture
+##### Design a database schema
+```
+Design a database schema for [describe your app/feature]. Include tables, columns, types, relationships, and indexes. Explain your design decisions.
+```
+
+##### Design an API
+```
+Design a REST API for [feature/resource]. Include endpoints, methods, request/response schemas, status codes, and authentication. Follow best practices.
+```
+
+##### Compare approaches
+```
+I need to decide between these approaches for [problem]:
+
+Option A: [describe]
+Option B: [describe]
+
+Compare them on: performance, maintainability, complexity, and scalability. Recommend one with reasoning.
+```
+
+##### System design
+```
+Design a system for [describe use case]. Cover: high-level architecture, data flow, storage, caching strategy, and how it scales. Identify potential bottlenecks.
+```
+
+#### Category: DevOps
+##### Write a Dockerfile
+```
+Write a production-ready Dockerfile for this project:
+
+Language/framework: [e.g. Node.js, Python Flask]
+Needs: [e.g. multi-stage build, non-root user]
+
+Include best practices for security and image size.
+```
+
+##### CI/CD pipeline
+```
+Write a GitHub Actions workflow that:
+
+1. [list steps, e.g. lint, test, build, deploy]
+
+Language/framework: [specify]
+Deploy target: [e.g. AWS, Vercel, Docker Hub]
+
+Include caching and sensible triggers.
+```
+
+##### Debug CI failure
+```
+My CI pipeline is failing. Here's the log output:
+
+[paste CI log]
+
+The pipeline config:
+
+[paste config]
+
+Identify the issue and suggest a fix.
+```
+
+##### Infrastructure as code
+```
+Write [Terraform/CloudFormation/Pulumi] config for:
+
+[describe infrastructure, e.g. an S3 bucket with CloudFront, a VPC with subnets]
+
+Follow security best practices and add comments explaining each resource.
+```
+
+#### Category: Git & Docs
+##### Write commit message
+```
+Write a clear, conventional commit message for this diff. Use the format: type(scope): description. Be concise but descriptive:
+
+[paste diff here]
+```
+
+##### Write README
+```
+Generate a README.md for this project. Include: what it does, how to install, how to use, configuration options, and how to contribute:
+
+[paste project structure or main file here]
+```
+
+##### Document this code
+```
+Add clear, concise documentation to this code. Include function/method docstrings, parameter descriptions, return values, and usage examples:
+
+[paste code here]
+```
+
+##### Write changelog entry
+```
+Write a changelog entry for these changes. Group by: Added, Changed, Fixed, Removed. Use clear, user-facing language:
+
+[paste diff or list of changes]
+```
+
+### Writing Prompts
+URL: https://prompt-router.pages.dev/writing
+
+#### Category: Blog & Articles
+##### Write blog post outline
+```
+Create a detailed blog post outline on the topic: [topic]
+
+Target audience: [describe audience]
+Tone: [e.g. informative, conversational, authoritative]
+Target word count: [e.g. 1500 words]
+
+Include: a compelling title, intro hook, 4â6 main sections with subpoints, and a conclusion with a clear call to action.
+```
+
+##### Improve article intro
+```
+Rewrite the introduction to this article so it immediately hooks the reader. The current intro:
+
+[paste intro here]
+
+The article is about: [topic]
+Target reader: [describe audience]
+
+Make the new intro engaging, specific, and under 100 words. Offer 3 variations.
+```
+
+##### Generate blog post ideas
+```
+Generate 10 blog post ideas for a [describe blog/brand] targeting [audience].
+
+Focus area: [e.g. productivity, SaaS marketing, personal finance]
+
+For each idea, include: a working title, the core angle or hook, and who it's most useful for. Prioritize topics that are specific, actionable, and likely to rank well.
+```
+
+##### Write a strong conclusion
+```
+Write a conclusion for this blog post:
+
+Topic: [topic]
+Key points covered: [summarize main points]
+Desired action after reading: [e.g. subscribe, share, try the product]
+
+The conclusion should recap the core takeaway, provide a sense of closure, and end with a clear and natural call to action.
+```
+
+#### Category: Social Media
+##### Write a tweet thread
+```
+Write a Twitter/X thread about: [topic]
+
+Audience: [describe]
+Goal: [e.g. educate, drive traffic, build authority]
+Number of tweets: [e.g. 8â10]
+
+Start with a strong hook tweet, break the topic into digestible points, and end with a clear CTA. Keep each tweet under 280 characters. Use line breaks for readability.
+```
+
+##### Write a LinkedIn post
+```
+Write a LinkedIn post about: [topic or experience]
+
+Tone: [e.g. thoughtful, direct, story-driven]
+Goal: [e.g. share a lesson, generate comments, build credibility]
+
+Start with a one-line hook that stops the scroll. Use short paragraphs. Include a personal angle or insight. End with a question to encourage comments. Aim for 150â250 words.
+```
+
+##### Write an Instagram caption
+```
+Write an Instagram caption for a post about: [describe the image/topic]
+
+Brand voice: [e.g. playful, inspiring, minimal]
+Goal: [e.g. increase saves, drive profile visits, sell a product]
+
+Include: an engaging opening line, 2â3 sentences of supporting copy, a call to action, and 5â10 relevant hashtags.
+```
+
+##### Social media content calendar
+```
+Create a 2-week social media content calendar for [brand/creator] posting on [platforms, e.g. LinkedIn + Instagram].
+
+Niche: [topic area]
+Goal: [e.g. grow followers, drive traffic, launch a product]
+Posting frequency: [e.g. 3x/week per platform]
+
+For each post include: the date, platform, content type (e.g. tip, story, promo), and a one-line description of the post idea.
+```
+
+#### Category: Email
+##### Write a cold email
+```
+Write a cold outreach email for the following situation:
+
+Sender: [your name/role/company]
+Recipient: [job title or type of person]
+Goal: [e.g. book a call, get a referral, pitch a partnership]
+Context: [any relevant detail about why you're reaching out]
+
+Keep it under 150 words. Lead with value or relevance â not with who you are. Include a low-friction CTA.
+```
+
+##### Write a newsletter intro
+```
+Write an intro for this week's email newsletter.
+
+Newsletter name / topic: [describe]
+This issue is about: [main topic or theme]
+Audience: [describe subscribers]
+Tone: [e.g. warm, witty, concise]
+
+The intro should feel personal, tease the content inside, and make the reader want to keep reading. Keep it under 80 words.
+```
+
+##### Write a follow-up email
+```
+Write a follow-up email for this situation:
+
+Original context: [describe the first interaction â e.g. a sales call, a job interview, a proposal sent]
+Time since last contact: [e.g. 5 days]
+Goal of the follow-up: [e.g. get a decision, re-engage, confirm next steps]
+
+Be warm but direct. Reference the previous conversation briefly. Make it easy to reply. Keep it under 100 words.
+```
+
+##### Write a difficult email
+```
+Help me write a professional email for a sensitive situation:
+
+Situation: [describe â e.g. apologizing for a missed deadline, declining a request, delivering bad news]
+Recipient: [describe relationship â e.g. client, manager, colleague]
+Desired outcome: [what you want to happen after they read it]
+
+Be honest, take responsibility where appropriate, and keep a constructive tone. Avoid being defensive or over-apologetic.
+```
+
+#### Category: Copywriting
+##### Write a product description
+```
+Write a compelling product description for:
+
+Product name: [name]
+What it does: [describe]
+Key features: [list 3â5]
+Target customer: [describe]
+Tone: [e.g. premium, playful, technical]
+
+Focus on benefits over features. Lead with the biggest value. Keep it under 120 words and end with a natural nudge toward purchase.
+```
+
+##### Landing page headline + subhead
+```
+Write 5 headline and subheadline combinations for a landing page.
+
+Product/service: [describe]
+Target audience: [describe]
+Core value proposition: [what problem does it solve or what outcome does it deliver]
+Tone: [e.g. bold, reassuring, witty]
+
+Each headline should be clear, specific, and benefit-driven. The subheadline should expand on it and handle an objection or add credibility.
+```
+
+##### Write call to action variations
+```
+Write 10 call-to-action (CTA) button copy variations for:
+
+Product/service: [describe]
+Goal of the CTA: [e.g. start a free trial, book a demo, download a guide]
+Tone: [e.g. action-oriented, low-pressure, curious]
+
+Vary the angle â try urgency, benefit-first, curiosity, and social proof framings. Keep each option under 6 words where possible.
+```
+
+##### Brand voice rewrite
+```
+Rewrite the following copy to match our brand voice.
+
+Original copy:
+[paste copy here]
+
+Our brand voice is: [describe â e.g. confident but approachable, expert but never jargon-heavy, warm and witty]
+Audience: [describe]
+
+Keep the core message intact but adjust the tone, word choice, and sentence structure to fit the voice. Show before and after.
+```
+
+#### Category: Editing
+##### Simplify complex text
+```
+Simplify the following text so it's easy to understand for a general audience with no background knowledge on the topic.
+
+[paste text here]
+
+Avoid jargon. Use short sentences. Replace technical terms with plain language. Preserve the original meaning and all key information. Target a reading level of grade 8.
+```
+
+##### Fix tone and style
+```
+Edit the following text to improve its tone and style.
+
+Current text:
+[paste text here]
+
+The tone should be: [e.g. more confident, less formal, warmer, more concise]
+Keep the meaning and facts intact. Show the revised version and briefly explain the main changes you made.
+```
+
+##### Shorten to word count
+```
+Shorten the following text to approximately [target word count] words without losing the key message or changing the meaning.
+
+[paste text here]
+
+Prioritize cutting: filler phrases, redundant sentences, and over-explanation. Keep the most important points, the clearest examples, and the strongest language.
+```
+
+##### Proofread and improve
+```
+Proofread the following text and suggest improvements.
+
+[paste text here]
+
+Check for: spelling and grammar errors, awkward phrasing, unclear sentences, and inconsistent tone. Present the corrected version followed by a brief list of the changes made and why.
+```
+
+#### Category: Creative
+##### Write a short story opening
+```
+Write the opening 3 paragraphs of a short story with the following details:
+
+Genre: [e.g. literary fiction, sci-fi, thriller]
+Setting: [describe time and place]
+Main character: [brief description]
+Opening situation or conflict: [describe]
+Mood/tone: [e.g. tense, melancholic, hopeful]
+
+Start in the middle of the action or a vivid moment. Hook the reader immediately. Avoid preamble.
+```
+
+##### Generate character dialogue
+```
+Write a dialogue scene between two characters:
+
+Character A: [name, brief description, their goal in this scene]
+Character B: [name, brief description, their goal in this scene]
+Situation: [describe what's happening and where]
+Underlying tension: [what's really at stake or unsaid]
+
+Make the dialogue feel natural and revealing. Each character should have a distinct voice. Show subtext â what they mean vs. what they say.
+```
+
+##### Create metaphors and analogies
+```
+Generate 8 original metaphors or analogies to explain the following concept:
+
+Concept: [describe the idea, process, or thing]
+Audience: [who needs to understand it]
+Context: [where it will be used â e.g. a blog post, a speech, a product explainer]
+
+Aim for a mix of styles: some visual, some emotional, some humorous. Avoid cliches. For each, add a one-sentence note on when it works best.
+```
+
+##### Rewrite in a different style
+```
+Rewrite the following text in the style of [author name or style description, e.g. Ernest Hemingway, a Victorian novelist, a Gen Z social media post].
+
+Original text:
+[paste text here]
+
+Capture the voice, sentence rhythm, vocabulary, and structural patterns of that style. Keep the core content and meaning. Show only the rewritten version.
+```

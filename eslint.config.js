@@ -14,7 +14,9 @@ export default [
         clearTimeout: "readonly",
         HTMLRewriter: "readonly",
         Response: "readonly",
+        Request: "readonly",
         URL: "readonly",
+        fetch: "readonly",
       },
     },
     rules: {
