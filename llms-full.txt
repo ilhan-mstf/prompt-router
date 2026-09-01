@@ -544,3 +544,22 @@ Original text:
 
 Capture the voice, sentence rhythm, vocabulary, and structural patterns of that style. Keep the core content and meaning. Show only the rewritten version.
 ```
+
+---
+## Guides & Blog Articles
+
+- [Budget-Friendly Prompt Routing](https://prompt-router.pages.dev/blog-budget-prompt-routing): How top AI companies cut inference costs by up to 85% using model cascades and small models.
+- [Reduce AI Costs](https://prompt-router.pages.dev/blog-reduce-ai-costs): 5 proven strategies to cut OpenAI, Anthropic, and Google AI API costs by up to 80%.
+- [Compare AI Models](https://prompt-router.pages.dev/blog-compare-ai): Comparative breakdown of LLMs for specialized tasks and why side-by-side evaluation is essential.
+- [Prompt Router Overview](https://prompt-router.pages.dev/blog-prompt-router): Why multi-LLM workflows yield superior outputs and eliminate tab sprawl.
+- [Dev Prompts Guide](https://prompt-router.pages.dev/blog-dev-prompts): Walkthrough of coding prompts for debugging, refactoring, and system architecture.
+- [Writing Prompts Guide](https://prompt-router.pages.dev/blog-writing-prompts): Prompts designed to produce authentic, human-sounding copy.
+- [Marketing Prompts Guide](https://prompt-router.pages.dev/blog-marketing-prompts): Prompt playbook for SEO, advertising, and campaign strategy.
+- [Data Prompts Guide](https://prompt-router.pages.dev/blog-data-prompts): Recipes for SQL generation, Python analysis, and data storytelling.
+- [Startup Prompts Guide](https://prompt-router.pages.dev/blog-startup-prompts): Actionable prompt recipes for founder validation, pitch decks, and GTM.
+- [Design Prompts Guide](https://prompt-router.pages.dev/blog-design-prompts): Prompts for UX research, wireframing, and accessibility reviews.
+- [Job Search Prompts Guide](https://prompt-router.pages.dev/blog-job-prompts): Tailored prompts for resume crafting, interview prep, and salary negotiation.
+- [Productivity Prompts Guide](https://prompt-router.pages.dev/blog-productivity-prompts): System prompts for daily planning, meeting minutes, and task prioritization.
+- [Legal Prompts Guide](https://prompt-router.pages.dev/blog-legal-prompts): Plain-language translation and contract clause review guidelines.
+- [Sales Prompts Guide](https://prompt-router.pages.dev/blog-sales-prompts): B2B sales prompts for cold prospecting, discovery, and objection handling.
+- [Student Prompts Guide](https://prompt-router.pages.dev/blog-student-prompts): Study partner and academic tutor prompt frameworks.
