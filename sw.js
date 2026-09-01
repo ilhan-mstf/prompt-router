@@ -28,6 +28,8 @@ const CORE_ASSETS = [
   '/legal',
   '/sales',
   '/blog',
+  '/blog-budget-prompt-routing',
+  '/blog-reduce-ai-costs',
   '/blog-compare-ai',
 ];
 

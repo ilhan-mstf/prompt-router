@@ -15,7 +15,7 @@ Live at: **[prompt-router.pages.dev](https://prompt-router.pages.dev)**
 - **Quick templates** — 10 prompt patterns (Summarize, Explain, Brainstorm, Fix code, etc.) with pin-to-top
 - **My prompts library** — save, pin, and reuse your own prompts (stored in localStorage)
 - **11 prompt libraries** — curated prompts for Dev, Writing, Marketing, Job Search, Startup, Data, Design, Student, Productivity, Legal, and Sales
-- **Blog** — 12 articles covering prompt engineering tips and library walkthroughs
+- **Blog** — 13 articles covering prompt engineering tips and library walkthroughs
 - **7 languages** — English, Spanish, Italian, Portuguese, French, German, Turkish (auto-detected from browser)
 - **Dark / light mode** — follows system preference
 - **PWA-ready** — installable on mobile and desktop via "Add to Home Screen"
@@ -40,7 +40,7 @@ productivity.html          Productivity prompt library
 legal.html                 Legal prompt library
 sales.html                 Sales prompt library
 blog.html                  Blog listing page
-blog-*.html                Individual blog posts (12 articles)
+blog-*.html                Individual blog posts (13 articles)
 site.webmanifest           PWA manifest
 robots.txt                 Crawler instructions & AI bot access
 sitemap.xml                Multilingual sitemap (all 7 language URLs)

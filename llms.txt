@@ -64,6 +64,7 @@ Prompt Router features server-side edge rendering for 7 languages via clean subd
 
 ## Guides & Blog Articles
 
+- [Budget-Friendly Prompt Routing](https://prompt-router.pages.dev/blog-budget-prompt-routing): How top AI companies cut inference costs by up to 85% using model cascades and small models.
 - [Compare AI Models](https://prompt-router.pages.dev/blog-compare-ai): Comparative breakdown of LLMs for specialized tasks.
 - [Prompt Router Overview](https://prompt-router.pages.dev/blog-prompt-router): Benefits of multi-LLM workflows.
 - [Reduce AI Costs](https://prompt-router.pages.dev/blog-reduce-ai-costs): How to optimize prompts to reduce API and subscription costs.
