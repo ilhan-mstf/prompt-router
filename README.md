@@ -50,7 +50,7 @@ blog-post.md               Blog post copy
 googlee5dbd159d1306862.html  Google Search Console verification
 ```
 
-### Image assets (not in repo — create separately)
+### Image assets (included in repository)
 
 ```
 /favicon-32x32.png         32×32 PNG favicon
@@ -58,10 +58,8 @@ googlee5dbd159d1306862.html  Google Search Console verification
 /apple-touch-icon.png      180×180 PNG for iOS home screen
 /icons/icon-192.png        192×192 PNG for Android PWA
 /icons/icon-512.png        512×512 PNG for Android PWA splash
-/og-image.png              1200×630 PNG for social sharing previews
+/og-image.png              1200×630 PNG for social sharing previews (Open Graph & Twitter)
 ```
-
-> Tip: Use [realfavicongenerator.net](https://realfavicongenerator.net) — upload a 512×512 logo and it generates all icon sizes.
 
 ---
 
