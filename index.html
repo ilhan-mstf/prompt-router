@@ -8,7 +8,7 @@
 <script>(function(){var S=['en','es','it','pt','fr','de','tr'],path=location.pathname.replace(/^\/|\/$/g,''),p=new URLSearchParams(location.search).get('lang'),l='en';function n(r){if(!r)return null;var b=r.split('-')[0].toLowerCase();return S.indexOf(b)!==-1?b:null;}l=n(window.__LANG__)||n(path)||n(p)||n(localStorage.getItem('pr_lang'))||(function(){var ls=navigator.languages||[navigator.language||'en'];for(var i=0;i<ls.length;i++){var c=n(ls[i]);if(c)return c;}return null;})()||'en';try{localStorage.setItem('pr_lang',l);}catch(e){}document.documentElement.lang=l;window.__LANG__=l;}());</script>
 
 <title>Prompt Router — Send One Prompt to ChatGPT, Claude, Gemini &amp; More</title>
-<meta name="description" content="Prompt Router lets you write one prompt and instantly open it in ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok and Le Chat. Compare AI responses side-by-side in seconds — free, no login required.">
+<meta name="description" content="Prompt Router lets you write one prompt and instantly open it in ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi and Z.ai. Compare AI responses side-by-side in seconds — free, no login required.">
 <meta name="keywords" content="prompt router, AI prompt tool, compare AI models, ChatGPT vs Claude, send prompt to multiple AI, AI comparison tool, prompt engineering tool">
 <meta name="author" content="Prompt Router">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -26,7 +26,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Prompt Router">
 <meta property="og:title" content="Prompt Router — Send One Prompt to Every AI at Once">
-<meta property="og:description" content="Write your prompt once, open it instantly in ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok and Le Chat.">
+<meta property="og:description" content="Write your prompt once, open it instantly in ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi and Z.ai.">
 <meta property="og:url" content="https://prompt-router.pages.dev/">
 <meta property="og:image" content="https://prompt-router.pages.dev/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -91,7 +91,7 @@
       "name": "Which AI models are supported?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Prompt Router supports ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, and Mistral Le Chat."
+        "text": "Prompt Router supports ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Mistral Le Chat, Qwen, Kimi, and Z.ai."
       }
     }
   ]
@@ -111,190 +111,20 @@
 <link rel="stylesheet" href="/css/core.css">
 <link rel="stylesheet" href="/css/prompt.css">
 <style>
-/* ── Nav dropdown ── */
-.nav-dropdown { position: relative; }
-.nav-dropdown-btn {
-  font-family: inherit; font-size: var(--text-sm); color: var(--text-2);
-  background: none; border: none; cursor: pointer;
-  letter-spacing: 0; font-weight: 400;
-  padding: 6px 12px; border-radius: 100px;
-  transition: color .12s, background .12s;
-  white-space: nowrap;
-}
-.nav-dropdown-btn:hover { color: var(--text); background: var(--surface-2); }
-.nav-dropdown-btn[aria-expanded="true"] { color: var(--gold); background: var(--gold-glow); }
-.nav-dropdown-menu {
-  display: none; position: absolute; top: calc(100% + 6px); right: 0;
-  background: var(--surface); border: 1px solid var(--border-2);
-  border-radius: var(--r-lg); padding: 6px 0;
-  min-width: 160px; box-shadow: 0 12px 40px rgba(0,0,0,.35);
-  z-index: 200;
-}
-.nav-dropdown-menu.open { display: block; }
-.nav-dropdown-menu a {
-  display: block; padding: 8px 16px;
-  font-size: var(--text-sm); color: var(--text-2);
-  text-decoration: none; letter-spacing: 0;
-  transition: color .1s, background .1s;
-}
-.nav-dropdown-menu a:hover {
-  color: var(--gold); background: var(--gold-glow);
-}
-
-/* ── Header / Hero ── */
-header.page { padding-top: 48px; padding-bottom: 48px; }
-
-.tagline {
-  font-family: 'Fraunces', Georgia, serif;
-  font-optical-sizing: auto;
-  font-size: var(--text-xl); font-weight: 200;
-  color: var(--text);
-  letter-spacing: -0.02em; line-height: 1.2;
-}
-.tagline em {
-  font-style: italic; color: var(--gold);
-}
-.hero-sub {
-  margin-top: 14px;
-  font-size: var(--text-sm); color: var(--text-3);
-  line-height: 1.5; max-width: 540px;
-}
-
-/* ── Section header row ── */
-.section-header {
-  display: flex; justify-content: space-between; align-items: baseline;
-}
-
-/* ── Dev link ── */
-.dev-link {
-  font-size: var(--text-xs); color: var(--gold-dim);
-  text-decoration: none; letter-spacing: 0;
-  transition: color .12s;
-}
-.dev-link:hover { color: var(--gold); }
-
-/* ── Main ── */
-main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40px; }
-
-/* ── Section divider ── */
-.section-divider {
-  width: 48px; height: 1px; background: var(--border-2);
-  margin: 0 auto;
-}
-
-/* ── Template chips ── */
-.chips { display: flex; flex-wrap: wrap; gap: 7px; }
-.chip {
-  padding: 7px 14px; background: none;
-  border: 1px solid var(--border); border-radius: 100px;
-  color: var(--text-2); font-family: inherit;
-  font-size: var(--text-sm); letter-spacing: 0; line-height: 1;
-  cursor: pointer; user-select: none;
-  transition: color .12s, border-color .12s, background .12s;
-}
-.chip:hover { color: var(--gold); border-color: var(--gold-dim); background: var(--gold-glow); }
-.chip[aria-pressed="true"] { color: var(--gold); border-color: var(--gold); background: var(--gold-glow); }
-
-/* ── Chip groups ── */
-.chip-group {
-  display: inline-flex; align-items: stretch;
-  border: 1px solid var(--border); border-radius: 100px;
-  overflow: hidden;
-  transition: border-color .12s, background .12s;
-}
-.chip-group.chip-hidden { display: none; }
-.chip-group:hover { border-color: var(--border-2); }
-.chip-group:has(> .chip:hover) { border-color: var(--gold-dim); background: var(--gold-glow); }
-.chip-group:has(.chip[aria-pressed="true"]) { border-color: var(--gold); background: var(--gold-glow); }
-.chip-group > .chip {
-  border: none; border-radius: 0;
-  padding: 7px 8px 7px 14px;
-}
-.chip-group > .chip:hover { background: none; border-color: transparent; }
-
-.chip-pin-btn {
-  background: none; border: none;
-  border-left: 1px solid transparent;
-  cursor: pointer; padding: 0 10px;
-  font-size: var(--text-xs); color: var(--text-3);
-  opacity: 0; display: flex; align-items: center;
-  transition: opacity .14s, color .14s, background .14s, border-left-color .14s;
-}
-.chip-group:hover .chip-pin-btn { opacity: 1; border-left-color: var(--border); }
-.chip-pin-btn:hover { color: var(--gold); background: var(--gold-glow); }
-.chip-pin-btn.active { opacity: 1; color: var(--gold); border-left-color: var(--border); }
-
-.chip.chip-show-more { border-style: dashed; color: var(--text-3); }
-.chip.chip-show-more:hover { color: var(--text-2); border-color: var(--border-2); background: none; }
-
-.chip-del-btn {
-  background: none; border: none;
-  border-left: 1px solid transparent;
-  cursor: pointer; padding: 0 10px;
-  font-size: var(--text-xs); color: var(--text-3);
-  opacity: 0; display: flex; align-items: center;
-  transition: opacity .14s, color .14s, background .14s, border-left-color .14s;
-}
-.chip-group:hover .chip-del-btn { opacity: 1; border-left-color: var(--border); }
-.chip-del-btn:hover { color: var(--red); background: var(--red-soft); }
-
-/* ── Shortcut hint ── */
-.shortcut { font-size: var(--text-xs); color: var(--text-3); }
-.shortcut kbd {
-  font-family: inherit; font-size: var(--text-xs);
-  background: var(--surface-2); border: 1px solid var(--border-2);
-  border-radius: 3px; padding: 1px 5px; color: var(--text-2);
-}
-
-/* ── Extra button styles ── */
-.btn.saved-flash { border-color: var(--gold-dim); color: var(--gold); }
-.btn-kbd {
-  font-family: inherit; font-size: var(--text-xs);
-  background: var(--surface-2); border: 1px solid var(--border-2);
-  border-radius: 3px; padding: 2px 5px;
-  color: var(--text-3); letter-spacing: 0;
-  line-height: 1; display: inline-block;
-  transition: color .12s, border-color .12s;
-}
-.btn:hover .btn-kbd { color: var(--text-2); border-color: var(--border-2); }
-
 /* ── Noscript ── */
 .noscript {
   width: 100%; background: #6b2d10; color: #faf7f2;
   text-align: center; font-size: var(--text-sm); padding: 10px 16px;
 }
-
-/* ── Footer extras ── */
-.footer-desc { font-size: var(--text-sm); color: var(--text-3); line-height: 1.5; }
-.footer-desc strong { color: var(--text-2); font-weight: 500; }
-.footer-desc a {
-  color: var(--text-2); text-decoration: underline;
-  text-underline-offset: 3px; text-decoration-color: var(--border-2);
-  transition: color .12s;
-}
-.footer-desc a:hover { color: var(--gold); }
-
-/* ── Responsive ── */
-@media (max-width: 640px) {
-  header.page { padding-top: 32px; padding-bottom: 28px; }
-  .tagline { font-size: var(--text-lg); }
-  .shortcut { display: none; }
-  .actions #copyBtn { flex: 0 0 100%; }
-  .actions #saveBtn, .actions #clearBtn { flex: 1; }
-  .topbar-inner { padding: 10px 16px; }
-  .nav-links a { font-size: var(--text-xs); padding: 5px 8px; }
-  .nav-dropdown-btn { font-size: var(--text-xs); padding: 5px 8px; }
-  .nav-sep { margin: 0 2px; }
-}
 </style>
 </head>
-<body>
+<body class="has-sidebar">
 
 <noscript>
   <div class="noscript" role="alert">JavaScript is required to use Prompt Router. · Se requiere JavaScript para usar Prompt Router.</div>
   <section style="padding: 20px; max-width: 800px; margin: 0 auto;">
     <h1>Free Multi-LLM Prompt Router & AI Comparison Tool</h1>
-    <p>Prompt Router is a free, no-login tool that lets you send one prompt to multiple AI models simultaneously. Compare responses from ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, and Le Chat side-by-side.</p>
+    <p>Prompt Router is a free, no-login tool that lets you send one prompt to multiple AI models simultaneously. Compare responses from ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, and Z.ai side-by-side.</p>
     <h2>Key Features:</h2>
     <ul>
       <li><strong>One Prompt, Every AI:</strong> Write once and open in 8+ major providers.</li>
@@ -303,137 +133,262 @@ main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40
       <li><strong>Compare AI Models:</strong> Instantly see which LLM gives the best result for your specific task.</li>
     </ul>
     <h2>Supported AI Providers:</h2>
-    <p>ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google), Copilot (Microsoft), Perplexity, DeepSeek, Grok (xAI), and Mistral Le Chat.</p>
+    <p>ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google), Copilot (Microsoft), Perplexity, DeepSeek, Grok (xAI), Mistral Le Chat, Qwen (Alibaba), Kimi (Moonshot), and Z.ai (Zhipu).</p>
   </section>
 </noscript>
 <a href="#prompt" class="skip">Skip to prompt</a>
 
-<!-- ── Top bar ── -->
-<nav class="topbar" aria-label="Main navigation">
-  <div class="topbar-inner">
-    <div class="logo"><a href="/"><span class="logo-a">Prompt</span><span class="logo-b">Router</span></a></div>
-    <div class="nav-links" id="nav-links">
-      <a href="/" class="active">Home</a>
-      <div class="nav-dropdown">
-        <button class="nav-dropdown-btn" type="button" aria-expanded="false" aria-haspopup="true">Libraries <span aria-hidden="true">&#9662;</span></button>
-        <div class="nav-dropdown-menu" role="menu">
-          <a href="/dev" role="menuitem">Dev</a>
-          <a href="/writing" role="menuitem">Writing</a>
-          <a href="/marketing" role="menuitem">Marketing</a>
-          <a href="/job" role="menuitem">Job Search</a>
-          <a href="/startup" role="menuitem">Startup</a>
-          <a href="/data" role="menuitem">Data</a>
-          <a href="/design" role="menuitem">Design</a>
-          <a href="/student" role="menuitem">Student</a>
-          <a href="/productivity" role="menuitem">Productivity</a>
-          <a href="/legal" role="menuitem">Legal</a>
-          <a href="/sales" role="menuitem">Sales</a>
+<!-- ── Main App Layout ── -->
+<div class="app-layout">
+
+  <!-- ── Left Sidebar Navigation ── -->
+  <aside class="sidebar" id="sidebar" aria-label="Sidebar navigation">
+    
+    <!-- Sidebar Header -->
+    <div class="sidebar-header">
+      <a href="/" class="brand-link">
+        <div class="brand-icon">P</div>
+        <div class="brand-text">Prompt<span>Router</span></div>
+      </a>
+      <button type="button" class="collapse-btn" id="collapseSidebarBtn" title="Collapse sidebar (⌘B)" onclick="toggleSidebar()" aria-label="Collapse sidebar">
+        <span>&laquo;</span>
+      </button>
+    </div>
+
+    <!-- Sidebar Action: New Prompt -->
+    <div class="sidebar-action-wrap">
+      <button type="button" class="new-prompt-btn" onclick="newPrompt()" title="New prompt (Esc)">
+        <div class="new-prompt-btn-inner">
+          <span>+</span>
+          <span id="lblNewPrompt">New prompt</span>
+        </div>
+        <kbd class="kbd-hint">Esc</kbd>
+      </button>
+    </div>
+
+    <!-- Sidebar Search -->
+    <div class="sidebar-search-wrap">
+      <input 
+        type="search" 
+        class="sidebar-search" 
+        id="sidebarSearch" 
+        placeholder="Search prompts..." 
+        aria-label="Search prompts"
+        oninput="filterSidebar(this.value)"
+      >
+    </div>
+
+    <!-- Scrollable Lists -->
+    <div class="sidebar-scroll">
+
+      <!-- Section 1: Quick Prompts -->
+      <div class="nav-section">
+        <div class="section-title-wrap" onclick="toggleSection('quickSection')">
+          <div class="section-title">
+            <span id="lblQuickPrompts">Quick Prompts</span>
+            <span class="section-badge" id="quickCount">10</span>
+          </div>
+          <span class="item-chevron" id="quickChevron">&#9662;</span>
+        </div>
+        <div class="item-list" id="quickList"></div>
+      </div>
+
+      <!-- Section: Prompt Libraries -->
+      <div class="nav-section">
+        <div class="section-title-wrap" onclick="toggleSection('librariesSection')">
+          <div class="section-title">
+            <span id="lblPromptLibraries">Prompt Libraries</span>
+            <span class="section-badge">11</span>
+          </div>
+          <span class="item-chevron" id="librariesChevron" style="transform: rotate(-90deg);">&#9662;</span>
+        </div>
+        <div class="item-list" id="librariesList" style="display: none;">
+          <a href="/dev" class="item-btn"><div class="item-label-wrap"><span class="item-icon">&#128187;</span><span class="item-title">Dev &amp; Coding</span></div><span class="p-arrow">&nearr;</span></a>
+          <a href="/writing" class="item-btn"><div class="item-label-wrap"><span class="item-icon">&#9997;</span><span class="item-title">Writing &amp; Content</span></div><span class="p-arrow">&nearr;</span></a>
+          <a href="/marketing" class="item-btn"><div class="item-label-wrap"><span class="item-icon">&#128227;</span><span class="item-title">Marketing &amp; Growth</span></div><span class="p-arrow">&nearr;</span></a>
+          <a href="/job" class="item-btn"><div class="item-label-wrap"><span class="item-icon">&#128188;</span><span class="item-title">Job Search</span></div><span class="p-arrow">&nearr;</span></a>
+          <a href="/startup" class="item-btn"><div class="item-label-wrap"><span class="item-icon">&#128640;</span><span class="item-title">Startup &amp; Founders</span></div><span class="p-arrow">&nearr;</span></a>
+          <a href="/data" class="item-btn"><div class="item-label-wrap"><span class="item-icon">&#128202;</span><span class="item-title">Data Analysis</span></div><span class="p-arrow">&nearr;</span></a>
+          <a href="/design" class="item-btn"><div class="item-label-wrap"><span class="item-icon">&#127912;</span><span class="item-title">Design &amp; UX</span></div><span class="p-arrow">&nearr;</span></a>
+          <a href="/student" class="item-btn"><div class="item-label-wrap"><span class="item-icon">&#127891;</span><span class="item-title">Student &amp; Study</span></div><span class="p-arrow">&nearr;</span></a>
+          <a href="/productivity" class="item-btn"><div class="item-label-wrap"><span class="item-icon">&#9874;</span><span class="item-title">Productivity</span></div><span class="p-arrow">&nearr;</span></a>
+          <a href="/legal" class="item-btn"><div class="item-label-wrap"><span class="item-icon">&#9878;</span><span class="item-title">Legal &amp; Contracts</span></div><span class="p-arrow">&nearr;</span></a>
+          <a href="/sales" class="item-btn"><div class="item-label-wrap"><span class="item-icon">&#128176;</span><span class="item-title">Sales &amp; Deals</span></div><span class="p-arrow">&nearr;</span></a>
         </div>
       </div>
-      <span class="nav-sep" aria-hidden="true"></span>
-      <a href="/blog">Blog</a>
-    </div>
-  </div>
-</nav>
 
-<!-- ── Header ── -->
-<header class="page">
-  <h1 class="tagline" id="tagline">Multi-LLM <em>Prompt Router</em> &mdash; Send to Every AI</h1>
-  <p class="hero-sub" id="hero-sub">One prompt, eight AI providers. Compare responses from ChatGPT, Claude, Gemini, and more &mdash; free, no login.</p>
-</header>
-
-<!-- ── Main ── -->
-<main class="page" id="main-content">
-
-  <!-- 1. Templates -->
-  <section aria-labelledby="lbl-templates">
-    <div class="section-header">
-      <span class="lbl" id="lbl-templates">Quick templates</span>
-      <a href="/dev" class="dev-link" id="dev-link">Browse all libraries &rarr;</a>
-    </div>
-    <div class="chips" id="chips" role="group" aria-labelledby="lbl-templates"></div>
-  </section>
-
-  <!-- 2. Saved prompts (same style as quick templates) -->
-  <section id="lib-section" style="display:none" aria-labelledby="lbl-library">
-    <span class="lbl" id="lbl-library">My prompts</span>
-    <div class="chips" id="lib-list" role="group" aria-labelledby="lbl-library"></div>
-  </section>
-
-  <!-- 3. Prompt textarea -->
-  <section aria-labelledby="lbl-prompt">
-    <label class="lbl" id="lbl-prompt" for="prompt">Your prompt</label>
-    <div class="prompt-wrap">
-      <textarea
-        id="prompt"
-        name="prompt"
-        placeholder="Write your prompt here, then pick an AI below..."
-        spellcheck="false"
-        autocomplete="off"
-        aria-describedby="charCount"
-      ></textarea>
-      <div class="prompt-meta" aria-hidden="true">
-        <span class="char-count" id="charCount"></span>
-        <span class="shortcut" id="shortcut-hint"></span>
+      <!-- Section 2: Saved Prompts -->
+      <div class="nav-section">
+        <div class="section-title-wrap" onclick="toggleSection('savedSection')">
+          <div class="section-title">
+            <span id="lblSavedPrompts">Saved</span>
+            <span class="section-badge" id="savedCount">0</span>
+          </div>
+          <span class="item-chevron" id="savedChevron">&#9662;</span>
+        </div>
+        <div class="item-list" id="savedList"></div>
       </div>
+
+      <!-- Section 3: History -->
+      <div class="nav-section">
+        <div class="section-title-wrap" onclick="toggleSection('historySection')">
+          <div class="section-title">
+            <span id="lblHistory">History</span>
+            <span class="section-badge" id="historyCount">0</span>
+          </div>
+          <button type="button" class="section-clear-btn" id="btnClearHistory" title="Clear history" onclick="event.stopPropagation(); clearHistory()">Clear</button>
+        </div>
+        <div class="item-list" id="historyList"></div>
+      </div>
+
     </div>
-  </section>
 
-  <!-- 4. Actions (grouped with textarea) -->
-  <div class="actions">
-    <button class="btn flex-1" id="copyBtn" type="button" aria-label="Copy prompt to clipboard" onclick="copyPrompt()">
-      Copy to clipboard
-    </button>
-    <button class="btn" id="saveBtn" type="button" aria-label="Save prompt to library" onclick="savePrompt()">
-      Save
-    </button>
-    <button class="btn" id="clearBtn" type="button" aria-label="Clear the prompt" onclick="clearPrompt()">
-      Clear
-    </button>
-  </div>
+    <!-- Sidebar Footer -->
+    <div class="sidebar-footer">
+      <div class="lang-select-wrap">
+        <span class="item-icon" aria-hidden="true">&#127760;</span>
+        <select class="lang-select" id="langSelect" aria-label="Language selector">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="tr">Türkçe</option>
+          <option value="fr">Français</option>
+          <option value="de">Deutsch</option>
+          <option value="it">Italiano</option>
+          <option value="pt">Português</option>
+        </select>
+      </div>
+      <button type="button" class="icon-btn" title="Toggle dark/light" onclick="toggleTheme()" aria-label="Toggle theme">&#9789;</button>
+    </div>
 
-  <!-- Divider between write zone and send zone -->
-  <div class="section-divider" aria-hidden="true"></div>
+  </aside>
 
-  <!-- 5. Providers -->
-  <section aria-labelledby="lbl-providers">
-    <span class="lbl" id="lbl-providers">Open in</span>
-    <ul class="providers" id="providers" aria-labelledby="lbl-providers"></ul>
-  </section>
+  <!-- Mobile Backdrop -->
+  <div class="sidebar-backdrop" id="backdrop" onclick="closeMobileSidebar()"></div>
 
-</main>
-
-<!-- ── Footer ── -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-section">
-      <span class="footer-heading">Prompt Libraries</span>
-      <nav class="footer-grid" aria-label="Prompt libraries">
-        <a href="/dev">Dev</a>
-        <a href="/writing">Writing</a>
-        <a href="/marketing">Marketing</a>
-        <a href="/job">Job Search</a>
-        <a href="/startup">Startup</a>
-        <a href="/data">Data</a>
-        <a href="/design">Design</a>
-        <a href="/student">Student</a>
-        <a href="/productivity">Productivity</a>
-        <a href="/legal">Legal</a>
-        <a href="/sales">Sales</a>
+  <!-- ── Main Workspace ── -->
+  <main class="main-workspace" id="main-content">
+    
+    <!-- Topbar -->
+    <header class="main-topbar">
+      <div class="topbar-left">
+        <button type="button" class="toggle-sidebar-btn" id="openSidebarBtn" onclick="toggleSidebar()" aria-label="Toggle sidebar">
+          <span>&#9776;</span> <span id="lblToggleSidebar">Sidebar</span>
+        </button>
+      </div>
+      <div class="brand-link" style="font-size: 14px; font-weight: 500;">
+        <span>Prompt<span style="color: var(--gold);">Router</span></span>
+      </div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <div class="nav-dropdown" id="topbarNavDropdown">
+          <button class="nav-dropdown-btn" type="button" onclick="toggleLibrariesDropdown(event)" aria-expanded="false">
+            <span>Libraries</span> <span class="nav-dropdown-arrow">&#9662;</span>
+          </button>
+          <div class="nav-dropdown-menu" id="topbarLibMenu" role="menu">
+            <a href="/dev" role="menuitem">Dev &amp; Coding</a>
+            <a href="/writing" role="menuitem">Writing &amp; Content</a>
+            <a href="/marketing" role="menuitem">Marketing &amp; Growth</a>
+            <a href="/job" role="menuitem">Job Search</a>
+            <a href="/startup" role="menuitem">Startup &amp; Founders</a>
+            <a href="/data" role="menuitem">Data Analysis</a>
+            <a href="/design" role="menuitem">Design &amp; UX</a>
+            <a href="/student" role="menuitem">Student &amp; Study</a>
+            <a href="/productivity" role="menuitem">Productivity</a>
+            <a href="/legal" role="menuitem">Legal &amp; Contracts</a>
+            <a href="/sales" role="menuitem">Sales &amp; Deals</a>
+          </div>
+        </div>
+        <a href="/blog" class="nav-link">Blog</a>
       </nav>
+    </header>
+
+    <!-- Canvas -->
+    <div class="canvas-container">
+      
+      <!-- Hero -->
+      <div class="hero">
+        <h1 class="hero-tagline" id="tagline">Write once, <em>send everywhere</em></h1>
+        <p class="hero-sub" id="hero-sub">Compare responses from ChatGPT, Claude, Gemini,<br>and many more in one click.</p>
+      </div>
+
+      <!-- Prompt Editor Area (Clean, no card wrapper) -->
+      <div class="editor-area">
+        <textarea 
+          class="prompt-textarea" 
+          id="prompt" 
+          name="prompt"
+          placeholder="Write your prompt here, then pick an AI below..."
+          spellcheck="false"
+          autocomplete="off"
+          aria-describedby="charCount"
+        ></textarea>
+
+        <div class="editor-bottom">
+          <div class="actions-group">
+            <button class="btn btn-primary" id="copyBtn" type="button" onclick="copyPrompt()" title="Copy to clipboard (⌘C)" aria-label="Copy prompt to clipboard">
+              <span id="lblCopyBtn">Copy to clipboard</span>
+              <kbd class="btn-kbd">⌘C</kbd>
+            </button>
+            <button class="btn btn-secondary" id="saveBtn" type="button" onclick="savePrompt()" title="Save prompt (⌘S)" aria-label="Save prompt">
+              <span id="lblSaveBtn">Save</span>
+              <kbd class="btn-kbd">⌘S</kbd>
+            </button>
+            <button class="btn btn-ghost" id="clearBtn" type="button" onclick="clearPrompt()" title="Clear prompt (Esc)" aria-label="Clear prompt">
+              <span id="lblClearBtn">Clear</span>
+              <kbd class="btn-kbd">Esc</kbd>
+            </button>
+          </div>
+          <div class="editor-meta">
+            <span class="active-badge" id="activeBadge"></span>
+            <span class="char-counter" id="charCount">0 characters</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Open in Providers (11 Models) -->
+      <section class="providers-card" aria-labelledby="lbl-providers">
+        <span class="lbl-heading" id="lbl-providers">Open in</span>
+        <ul class="providers" id="providers" aria-labelledby="lbl-providers"></ul>
+      </section>
+
     </div>
-    <div class="footer-bottom">
-      <nav class="footer-links" aria-label="Footer navigation">
-        <a href="/">Home</a>
-        <a href="/blog">Blog</a>
-      </nav>
-      <div class="footer-sep" aria-hidden="true"></div>
-      <p class="footer-desc" id="footer-desc"></p>
-      <p class="footer-copy" id="footer-copy"></p>
-    </div>
-    <img src="/clumsy.svg" alt="" class="footer-doodle" aria-hidden="true" loading="lazy" width="180" height="135">
-  </div>
-</footer>
+
+    <!-- ── SEO & Discovery Footer ── -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-section">
+          <span class="footer-heading" id="lblFooterLibraries">Prompt Libraries</span>
+          <nav class="footer-grid" aria-label="Prompt libraries">
+            <a href="/dev">Dev &amp; Coding</a>
+            <a href="/writing">Writing &amp; Content</a>
+            <a href="/marketing">Marketing &amp; Growth</a>
+            <a href="/job">Job Search</a>
+            <a href="/startup">Startup &amp; Founders</a>
+            <a href="/data">Data Analysis</a>
+            <a href="/design">Design &amp; UX</a>
+            <a href="/student">Student &amp; Study</a>
+            <a href="/productivity">Productivity</a>
+            <a href="/legal">Legal &amp; Contracts</a>
+            <a href="/sales">Sales &amp; Deals</a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="/">Home</a>
+            <a href="/blog">Blog</a>
+          </nav>
+          <div class="footer-sep" aria-hidden="true"></div>
+          <p class="footer-desc" id="footer-desc"></p>
+          <p class="footer-copy">
+            Free, open-access multi-LLM router. Not affiliated with OpenAI, Anthropic, Google, Microsoft, Perplexity, DeepSeek, xAI, Mistral, Alibaba, Moonshot, or Zhipu.
+          </p>
+        </div>
+        <img src="/clumsy.svg" alt="" class="footer-doodle" aria-hidden="true" loading="lazy" width="160" height="120">
+      </div>
+    </footer>
+
+  </main>
+
+</div>
 
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 

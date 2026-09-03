@@ -16,15 +16,19 @@ Use these URL patterns to send pre-filled prompts to AI providers:
 - **DeepSeek**: `https://chat.deepseek.com/?q={encoded_prompt}`
 - **Grok (xAI)**: `https://x.com/i/grok?text={encoded_prompt}`
 - **Mistral Le Chat**: `https://chat.mistral.ai/chat?q={encoded_prompt}`
+- **Qwen (Alibaba)**: `https://chat.qwen.ai/?q={encoded_prompt}`
+- **Kimi (Moonshot)**: `https://www.kimi.com/en?q={encoded_prompt}`
+- **Z.ai (Zhipu)**: `https://z.ai/chat?q={encoded_prompt}`
 
 ## Multi-Language Subdirectories
-- English: `https://prompt-router.pages.dev/`
-- Spanish: `https://prompt-router.pages.dev/es`
-- Turkish: `https://prompt-router.pages.dev/tr`
-- French: `https://prompt-router.pages.dev/fr`
-- German: `https://prompt-router.pages.dev/de`
-- Italian: `https://prompt-router.pages.dev/it`
-- Portuguese: `https://prompt-router.pages.dev/pt`
+Prompt Router supports server-side edge rendering (SSR) for 7 languages across the homepage and all 11 prompt libraries:
+- English (Default): `https://prompt-router.pages.dev/` and `https://prompt-router.pages.dev/{library}`
+- Spanish: `https://prompt-router.pages.dev/es` and `https://prompt-router.pages.dev/es/{library}`
+- Turkish: `https://prompt-router.pages.dev/tr` and `https://prompt-router.pages.dev/tr/{library}`
+- French: `https://prompt-router.pages.dev/fr` and `https://prompt-router.pages.dev/fr/{library}`
+- German: `https://prompt-router.pages.dev/de` and `https://prompt-router.pages.dev/de/{library}`
+- Italian: `https://prompt-router.pages.dev/it` and `https://prompt-router.pages.dev/it/{library}`
+- Portuguese: `https://prompt-router.pages.dev/pt` and `https://prompt-router.pages.dev/pt/{library}`
 
 ---
 ## Complete Prompt Libraries

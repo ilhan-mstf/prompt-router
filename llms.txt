@@ -1,6 +1,6 @@
 # Prompt Router
 
-> Write one prompt. Open every AI. Compare responses side-by-side across ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, and Mistral Le Chat.
+> Write one prompt. Open every AI. Compare responses side-by-side across ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, and Z.ai.
 
 Prompt Router is a free, privacy-first web utility for prompt engineers, developers, writers, and AI power users. It allows users to compose a prompt once and immediately launch it in 8+ major LLMs pre-filled via direct URL parameter routing. No account, no login, and no backend data storage.
 
@@ -20,6 +20,9 @@ Prompt Router routes prefilled prompts to LLM chat interfaces using standard URL
 - **DeepSeek**: `https://chat.deepseek.com/?q={encoded_prompt}`
 - **Grok (xAI)**: `https://x.com/i/grok?text={encoded_prompt}`
 - **Mistral Le Chat**: `https://chat.mistral.ai/chat?q={encoded_prompt}`
+- **Qwen (Alibaba)**: `https://chat.qwen.ai/?q={encoded_prompt}`
+- **Kimi (Moonshot)**: `https://www.kimi.com/en?q={encoded_prompt}`
+- **Z.ai (Zhipu)**: `https://z.ai/chat?q={encoded_prompt}`
 
 ## Prompt Libraries
 
@@ -52,18 +55,24 @@ Curated battle-tested prompt collections across 11 domains:
 
 ## Multi-Language Routes
 
-Prompt Router features server-side edge rendering for 7 languages via clean subdirectories:
+Prompt Router features server-side edge rendering for 7 languages across the homepage and all 11 prompt libraries:
 
-- English (Default): `https://prompt-router.pages.dev/`
-- Spanish (Español): `https://prompt-router.pages.dev/es`
-- Turkish (Türkçe): `https://prompt-router.pages.dev/tr`
-- French (Français): `https://prompt-router.pages.dev/fr`
-- German (Deutsch): `https://prompt-router.pages.dev/de`
-- Italian (Italiano): `https://prompt-router.pages.dev/it`
-- Portuguese (Português): `https://prompt-router.pages.dev/pt`
+- English (Default): `https://prompt-router.pages.dev/` and `https://prompt-router.pages.dev/{library}`
+- Spanish (Español): `https://prompt-router.pages.dev/es` and `https://prompt-router.pages.dev/es/{library}`
+- Turkish (Türkçe): `https://prompt-router.pages.dev/tr` and `https://prompt-router.pages.dev/tr/{library}`
+- French (Français): `https://prompt-router.pages.dev/fr` and `https://prompt-router.pages.dev/fr/{library}`
+- German (Deutsch): `https://prompt-router.pages.dev/de` and `https://prompt-router.pages.dev/de/{library}`
+- Italian (Italiano): `https://prompt-router.pages.dev/it` and `https://prompt-router.pages.dev/it/{library}`
+- Portuguese (Português): `https://prompt-router.pages.dev/pt` and `https://prompt-router.pages.dev/pt/{library}`
+
+Example localized library endpoints:
+- `https://prompt-router.pages.dev/tr/dev` (Yazılımcılar için En İyi Yapay Zeka Promptları)
+- `https://prompt-router.pages.dev/es/writing` (Mejores Prompts de IA para Redacción)
+- `https://prompt-router.pages.dev/de/marketing` (Beste KI-Prompts für Marketing & Growth)
 
 ## Guides & Blog Articles
 
+- [Introducing the New Prompt Router](https://prompt-router.pages.dev/blog-new-look): Major redesign with collapsible sidebar, clean canvas, and 11 AI models.
 - [Budget-Friendly Prompt Routing](https://prompt-router.pages.dev/blog-budget-prompt-routing): How top AI companies cut inference costs by up to 85% using model cascades and small models.
 - [Compare AI Models](https://prompt-router.pages.dev/blog-compare-ai): Comparative breakdown of LLMs for specialized tasks.
 - [Prompt Router Overview](https://prompt-router.pages.dev/blog-prompt-router): Benefits of multi-LLM workflows.

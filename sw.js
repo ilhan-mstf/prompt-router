@@ -1,6 +1,6 @@
 'use strict';
 
-const CACHE_NAME = 'pr-v3';
+const CACHE_NAME = 'pr-v4';
 
 const CORE_ASSETS = [
   '/',
@@ -11,6 +11,7 @@ const CORE_ASSETS = [
   '/js/prompt.js',
   '/site.webmanifest',
   '/clumsy.svg',
+  '/favicon.ico',
   '/favicon-32x32.png',
   '/favicon-16x16.png',
   '/apple-touch-icon.png',
@@ -30,6 +31,7 @@ const CORE_ASSETS = [
   '/legal',
   '/sales',
   '/blog',
+  '/blog-new-look',
   '/blog-budget-prompt-routing',
   '/blog-reduce-ai-costs',
   '/blog-compare-ai',

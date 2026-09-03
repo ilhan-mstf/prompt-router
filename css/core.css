@@ -23,6 +23,9 @@
   --r:    8px;
   --r-lg: 12px;
   --max:  780px;
+
+  --sidebar-w: 290px;
+  --header-h:  56px;
 }
 
 @media (prefers-color-scheme: light) {

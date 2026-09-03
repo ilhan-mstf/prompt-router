@@ -65,192 +65,281 @@
 
 <link rel="stylesheet" href="/css/core.css">
 <link rel="stylesheet" href="/css/prompt.css">
-<style>
-/* ── Header ── */
-header.page { padding-top: 40px; padding-bottom: 40px; }
-.tagline {
-  font-size: var(--text-sm); color: var(--text-3);
-  letter-spacing: 0.01em; line-height: 1;
-}
 
-/* ── Main ── */
-main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 40px; }
-
-/* ── Category chips ── */
-.cats { display: flex; flex-wrap: wrap; gap: 7px; }
-.cat {
-  padding: 7px 14px; background: none;
-  border: 1px solid var(--border); border-radius: 100px;
-  color: var(--text-2); font-family: inherit;
-  font-size: var(--text-sm); letter-spacing: 0; line-height: 1;
-  cursor: pointer; user-select: none;
-  transition: color .12s, border-color .12s, background .12s;
-}
-.cat:hover { color: var(--gold); border-color: var(--gold-dim); background: var(--gold-glow); }
-.cat.active { color: var(--gold); border-color: var(--gold); background: var(--gold-glow); }
-
-/* ── Prompt cards ── */
-.prompt-cards { display: flex; flex-direction: column; gap: 10px; }
-.prompt-card {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--r-lg); padding: 16px 18px;
-  cursor: pointer;
-  transition: border-color .12s, background .12s;
-}
-.prompt-card:hover { border-color: var(--border-2); background: var(--surface-2); }
-.prompt-card.selected { border-color: var(--gold); background: var(--gold-glow); }
-.prompt-card-title {
-  font-size: var(--text-sm); font-weight: 500; color: var(--text);
-  margin-bottom: 6px; line-height: 1.3;
-}
-.prompt-card-preview {
-  font-size: var(--text-xs); color: var(--text-3);
-  line-height: 1.5; white-space: pre-line;
-  display: -webkit-box; -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical; overflow: hidden;
-}
-.prompt-card.selected .prompt-card-preview {
-  -webkit-line-clamp: unset;
-  color: var(--text-2);
-}
-
-/* ── Related libraries ── */
-.related-libs { margin-top: 20px; }
-.related-grid { display: flex; flex-wrap: wrap; gap: 7px; }
-.related-grid a {
-  padding: 7px 14px; background: none;
-  border: 1px solid var(--border); border-radius: 100px;
-  color: var(--text-2); font-family: inherit;
-  font-size: var(--text-sm); letter-spacing: 0; line-height: 1;
-  text-decoration: none;
-  transition: color .12s, border-color .12s, background .12s;
-}
-.related-grid a:hover { color: var(--gold); border-color: var(--gold-dim); background: var(--gold-glow); }
-</style>
 </head>
-<body>
+<body class="has-sidebar">
 
 <a href="#prompt" class="skip">Skip to prompt</a>
 
-<!-- ── Top bar ── -->
-<nav class="topbar" aria-label="Main navigation">
-  <div class="topbar-inner">
-    <h1 class="logo"><a href="/"><span class="logo-a">Prompt</span><span class="logo-b">Router</span></a></h1>
-    <div class="nav-links">
-      <a href="/">Home</a>
-      <a href="/dev">Dev</a>
-      <span class="nav-sep" aria-hidden="true"></span>
-      <a href="/blog">Blog</a>
+<!-- ── Main App Layout ── -->
+<div class="app-layout">
+
+  <!-- ── Left Sidebar Navigation ── -->
+  <aside class="sidebar" id="sidebar" aria-label="Sidebar navigation">
+    
+    <div class="sidebar-header">
+      <a href="/" class="brand-link">
+        <div class="brand-icon">P</div>
+        <div class="brand-text">Prompt<span>Router</span></div>
+      </a>
+      <button type="button" class="collapse-btn" id="collapseSidebarBtn" title="Collapse sidebar (⌘B)" onclick="toggleSidebar()" aria-label="Collapse sidebar">
+        <span>&laquo;</span>
+      </button>
     </div>
-  </div>
-</nav>
 
-<!-- ── Header ── -->
-<header class="page">
-  <h1 class="tagline">Best AI Prompts for Marketing</h1>
-</header>
+    <div class="sidebar-action-wrap">
+      <a href="/" class="new-prompt-btn" style="text-decoration: none;" title="New prompt">
+        <div class="new-prompt-btn-inner">
+          <span>+</span>
+          <span id="lblNewPrompt">New prompt</span>
+        </div>
+        <kbd class="kbd-hint">Esc</kbd>
+      </a>
+    </div>
 
-<!-- ── Main ── -->
-<main class="page" id="main-content">
+    <div class="sidebar-search-wrap">
+      <input 
+        type="search" 
+        class="sidebar-search" 
+        id="sidebarSearch" 
+        placeholder="Search prompts..." 
+        aria-label="Search prompts"
+        oninput="filterSidebar(this.value)"
+      >
+    </div>
 
-  <!-- 1. Categories -->
-  <section aria-labelledby="lbl-cats">
-    <span class="lbl" id="lbl-cats">Categories</span>
-    <div class="cats" id="cats" role="group" aria-labelledby="lbl-cats"></div>
-  </section>
+    <div class="sidebar-scroll">
+      <!-- Section 1: Quick Prompts -->
+      <div class="nav-section">
+        <div class="section-title-wrap" onclick="toggleSection('quickSection')">
+          <div class="section-title">
+            <span id="lblQuickPrompts">Quick Prompts</span>
+            <span class="section-badge" id="quickCount">10</span>
+          </div>
+          <span class="item-chevron" id="quickChevron">&#9662;</span>
+        </div>
+        <div class="item-list" id="quickList"></div>
+      </div>
 
-  <!-- 2. Prompt cards -->
-  <section aria-labelledby="lbl-prompts">
-    <span class="lbl" id="lbl-prompts">Prompts</span>
-    <div class="prompt-cards" id="prompt-cards"></div>
-  </section>
+      <!-- Section: Prompt Libraries -->
+      <div class="nav-section">
+        <div class="section-title-wrap" onclick="toggleSection('librariesSection')">
+          <div class="section-title">
+            <span id="lblPromptLibraries">Prompt Libraries</span>
+            <span class="section-badge">11</span>
+          </div>
+          <span class="item-chevron" id="librariesChevron">&#9662;</span>
+        </div>
+        <div class="item-list" id="librariesList">
+<a href="/dev" class="item-btn"><div class="item-label-wrap"><span class="item-icon">&#128187;</span><span class="item-title">Dev &amp; Coding</span></div><span class="p-arrow">&nearr;</span></a>
+<a href="/writing" class="item-btn"><div class="item-label-wrap"><span class="item-icon">&#9997;</span><span class="item-title">Writing &amp; Content</span></div><span class="p-arrow">&nearr;</span></a>
+<a href="/marketing" class="item-btn active"><div class="item-label-wrap"><span class="item-icon">&#128227;</span><span class="item-title">Marketing &amp; Growth</span></div><span class="p-arrow">&nearr;</span></a>
+<a href="/job" class="item-btn"><div class="item-label-wrap"><span class="item-icon">&#128188;</span><span class="item-title">Job Search</span></div><span class="p-arrow">&nearr;</span></a>
+<a href="/startup" class="item-btn"><div class="item-label-wrap"><span class="item-icon">&#128640;</span><span class="item-title">Startup &amp; Founders</span></div><span class="p-arrow">&nearr;</span></a>
+<a href="/data" class="item-btn"><div class="item-label-wrap"><span class="item-icon">&#128202;</span><span class="item-title">Data Analysis</span></div><span class="p-arrow">&nearr;</span></a>
+<a href="/design" class="item-btn"><div class="item-label-wrap"><span class="item-icon">&#127912;</span><span class="item-title">Design &amp; UX</span></div><span class="p-arrow">&nearr;</span></a>
+<a href="/student" class="item-btn"><div class="item-label-wrap"><span class="item-icon">&#127891;</span><span class="item-title">Student &amp; Study</span></div><span class="p-arrow">&nearr;</span></a>
+<a href="/productivity" class="item-btn"><div class="item-label-wrap"><span class="item-icon">&#9874;</span><span class="item-title">Productivity</span></div><span class="p-arrow">&nearr;</span></a>
+<a href="/legal" class="item-btn"><div class="item-label-wrap"><span class="item-icon">&#9878;</span><span class="item-title">Legal &amp; Contracts</span></div><span class="p-arrow">&nearr;</span></a>
+<a href="/sales" class="item-btn"><div class="item-label-wrap"><span class="item-icon">&#128176;</span><span class="item-title">Sales &amp; Deals</span></div><span class="p-arrow">&nearr;</span></a>
+        </div>
+      </div>
 
-  <!-- 3. Prompt textarea -->
-  <section aria-labelledby="lbl-prompt">
-    <label class="lbl" id="lbl-prompt" for="prompt">Your prompt</label>
-    <div class="prompt-wrap">
-      <textarea
-        id="prompt"
-        name="prompt"
-        placeholder="Click a prompt above or write your own..."
-        spellcheck="false"
-        autocomplete="off"
-        aria-describedby="charCount"
-      ></textarea>
-      <div class="prompt-meta" aria-hidden="true">
-        <span class="char-count" id="charCount"></span>
+      <!-- Section 2: Saved Prompts -->
+      <div class="nav-section">
+        <div class="section-title-wrap" onclick="toggleSection('savedSection')">
+          <div class="section-title">
+            <span id="lblSavedPrompts">Saved</span>
+            <span class="section-badge" id="savedCount">0</span>
+          </div>
+          <span class="item-chevron" id="savedChevron">&#9662;</span>
+        </div>
+        <div class="item-list" id="savedList"></div>
+      </div>
+
+      <!-- Section 3: History -->
+      <div class="nav-section">
+        <div class="section-title-wrap" onclick="toggleSection('historySection')">
+          <div class="section-title">
+            <span id="lblHistory">History</span>
+            <span class="section-badge" id="historyCount">0</span>
+          </div>
+          <button type="button" class="section-clear-btn" id="btnClearHistory" title="Clear history" onclick="event.stopPropagation(); clearHistory()">Clear</button>
+        </div>
+        <div class="item-list" id="historyList"></div>
       </div>
     </div>
-  </section>
 
-  <!-- 4. Providers -->
-  <section aria-labelledby="lbl-providers">
-    <span class="lbl" id="lbl-providers">Open in</span>
-    <ul class="providers" id="providers" aria-labelledby="lbl-providers"></ul>
-  </section>
-
-  <!-- 5. Actions -->
-  <div class="actions">
-    <button class="btn flex-1" id="copyBtn" type="button" aria-label="Copy prompt to clipboard">
-      Copy to clipboard
-    </button>
-    <button class="btn" id="clearBtn" type="button" aria-label="Clear the prompt">
-      Clear
-    </button>
-  </div>
-
-  <!-- Related libraries -->
-  <section class="related-libs" aria-labelledby="lbl-related">
-    <span class="lbl" id="lbl-related">Explore more prompts</span>
-    <nav class="related-grid" aria-label="Related prompt libraries">
-      <a href="/sales">Sales</a>
-      <a href="/writing">Writing</a>
-      <a href="/startup">Startup</a>
-      <a href="/data">Data</a>
-    </nav>
-  </section>
-
-</main>
-
-<!-- ── Footer ── -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-section">
-      <span class="footer-heading">Prompt Libraries</span>
-      <nav class="footer-grid" aria-label="Prompt libraries">
-        <a href="/dev">Dev</a>
-        <a href="/writing">Writing</a>
-        <a href="/marketing">Marketing</a>
-        <a href="/job">Job Search</a>
-        <a href="/startup">Startup</a>
-        <a href="/data">Data</a>
-        <a href="/design">Design</a>
-        <a href="/student">Student</a>
-        <a href="/productivity">Productivity</a>
-        <a href="/legal">Legal</a>
-        <a href="/sales">Sales</a>
-      </nav>
+    <div class="sidebar-footer">
+      <div class="lang-select-wrap">
+        <span class="item-icon" aria-hidden="true">&#127760;</span>
+        <select class="lang-select" id="langSelect" aria-label="Language selector">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="tr">Türkçe</option>
+          <option value="fr">Français</option>
+          <option value="de">Deutsch</option>
+          <option value="it">Italiano</option>
+          <option value="pt">Português</option>
+        </select>
+      </div>
+      <button type="button" class="icon-btn" title="Toggle dark/light" onclick="toggleTheme()" aria-label="Toggle theme">&#9789;</button>
     </div>
-    <div class="footer-bottom">
-      <nav class="footer-links" aria-label="Footer navigation">
-        <a href="/">Home</a>
-        <a href="/blog">Blog</a>
+  </aside>
+
+  <!-- Mobile Backdrop -->
+  <div class="sidebar-backdrop" id="backdrop" onclick="closeMobileSidebar()"></div>
+
+  <!-- ── Main Workspace ── -->
+  <main class="main-workspace" id="main-content">
+    
+    <header class="main-topbar">
+      <div class="topbar-left">
+        <button type="button" class="toggle-sidebar-btn" id="openSidebarBtn" onclick="toggleSidebar()" aria-label="Toggle sidebar">
+          <span>&#9776;</span> <span id="lblToggleSidebar">Sidebar</span>
+        </button>
+      </div>
+      <div class="brand-link" style="font-size: 14px; font-weight: 500;">
+        <a href="/" style="text-decoration: none; color: var(--text);">Prompt<span style="color: var(--gold);">Router</span></a>
+      </div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <div class="nav-dropdown" id="topbarNavDropdown">
+          <button class="nav-dropdown-btn" type="button" onclick="toggleLibrariesDropdown(event)" aria-expanded="false">
+            <span>Libraries</span> <span class="nav-dropdown-arrow">&#9662;</span>
+          </button>
+          <div class="nav-dropdown-menu" id="topbarLibMenu" role="menu">
+            <a href="/dev" role="menuitem">Dev &amp; Coding</a>
+            <a href="/writing" role="menuitem">Writing &amp; Content</a>
+            <a href="/marketing" role="menuitem">Marketing &amp; Growth</a>
+            <a href="/job" role="menuitem">Job Search</a>
+            <a href="/startup" role="menuitem">Startup &amp; Founders</a>
+            <a href="/data" role="menuitem">Data Analysis</a>
+            <a href="/design" role="menuitem">Design &amp; UX</a>
+            <a href="/student" role="menuitem">Student &amp; Study</a>
+            <a href="/productivity" role="menuitem">Productivity</a>
+            <a href="/legal" role="menuitem">Legal &amp; Contracts</a>
+            <a href="/sales" role="menuitem">Sales &amp; Deals</a>
+          </div>
+        </div>
+        <a href="/blog" class="nav-link">Blog</a>
       </nav>
-      <p class="footer-copy">&copy; 2026 Prompt Router &mdash; Free, no login, no tracking.</p>
+    </header>
+
+    <div class="canvas-container">
+      
+      <div class="hero">
+        <h1 class="hero-tagline">Best AI Prompts for Marketing & Growth</h1>
+        <p class="hero-sub">Curated prompts for SEO, copywriting, email campaigns, social media, and ad strategy.<br>Click any prompt below to load it into the router.</p>
+      </div>
+
+      <!-- Categories -->
+      <section aria-labelledby="lbl-cats">
+        <span class="lbl-heading" id="lbl-cats">Categories</span>
+        <div class="cats" id="cats" role="group" aria-labelledby="lbl-cats"></div>
+      </section>
+
+      <!-- Prompts Grid -->
+      <section aria-labelledby="lbl-prompts">
+        <span class="lbl-heading" id="lbl-prompts">Prompts</span>
+        <div class="prompt-cards" id="prompt-cards"></div>
+      </section>
+
+      <!-- Clean Editor Canvas -->
+      <div class="editor-area">
+        <span class="lbl-heading" id="lbl-prompt">Your prompt</span>
+        <textarea 
+          class="prompt-textarea" 
+          id="prompt" 
+          name="prompt"
+          placeholder="Click a prompt above or write your own..."
+          spellcheck="false"
+          autocomplete="off"
+          aria-describedby="charCount"
+        ></textarea>
+
+        <div class="editor-bottom">
+          <div class="actions-group">
+            <button class="btn btn-primary" id="copyBtn" type="button" onclick="copyPrompt()" title="Copy to clipboard (⌘C)" aria-label="Copy prompt to clipboard">
+              <span id="lblCopyBtn">Copy to clipboard</span>
+              <kbd class="btn-kbd">⌘C</kbd>
+            </button>
+            <button class="btn btn-secondary" id="saveBtn" type="button" onclick="savePrompt()" title="Save prompt (⌘S)" aria-label="Save prompt">
+              <span id="lblSaveBtn">Save</span>
+              <kbd class="btn-kbd">⌘S</kbd>
+            </button>
+            <button class="btn btn-ghost" id="clearBtn" type="button" onclick="clearPrompt()" title="Clear prompt (Esc)" aria-label="Clear prompt">
+              <span id="lblClearBtn">Clear</span>
+              <kbd class="btn-kbd">Esc</kbd>
+            </button>
+          </div>
+          <div class="editor-meta">
+            <span class="active-badge" id="activeBadge"></span>
+            <span class="char-counter" id="charCount">0 characters</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Open in Providers (11 Models) -->
+      <section class="providers-card" aria-labelledby="lbl-providers">
+        <span class="lbl-heading" id="lbl-providers">Open in</span>
+        <ul class="providers" id="providers" aria-labelledby="lbl-providers"></ul>
+      </section>
+
+      <!-- Related Libraries -->
+      <section class="related-libs" aria-labelledby="lbl-related">
+        <span class="lbl-heading" id="lbl-related">Explore more prompt libraries</span>
+        <nav class="related-grid" aria-label="Related prompt libraries">
+          <a href="/writing">Writing &amp; Content &rarr;</a><a href="/startup">Startup &amp; Founders &rarr;</a><a href="/sales">Sales &amp; Deals &rarr;</a><a href="/data">Data Analysis &rarr;</a>
+        </nav>
+      </section>
+
     </div>
-    <img src="/clumsy.svg" alt="" class="footer-doodle" aria-hidden="true" loading="lazy" width="180" height="135">
-  </div>
-</footer>
+
+    <!-- SEO Grounded Footer -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-section">
+          <span class="footer-heading" id="lblFooterLibraries">Prompt Libraries</span>
+          <nav class="footer-grid" aria-label="Prompt libraries">
+            <a href="/dev">Dev &amp; Coding</a>
+            <a href="/writing">Writing &amp; Content</a>
+            <a href="/marketing">Marketing &amp; Growth</a>
+            <a href="/job">Job Search</a>
+            <a href="/startup">Startup &amp; Founders</a>
+            <a href="/data">Data Analysis</a>
+            <a href="/design">Design &amp; UX</a>
+            <a href="/student">Student &amp; Study</a>
+            <a href="/productivity">Productivity</a>
+            <a href="/legal">Legal &amp; Contracts</a>
+            <a href="/sales">Sales &amp; Deals</a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="/">Home</a>
+            <a href="/blog">Blog</a>
+          </nav>
+          <div class="footer-sep" aria-hidden="true"></div>
+          <p class="footer-desc" id="footer-desc"></p>
+          <p class="footer-copy">
+            Free, open-access multi-LLM router. Not affiliated with OpenAI, Anthropic, Google, Microsoft, Perplexity, DeepSeek, xAI, Mistral, Alibaba, Moonshot, or Zhipu.
+          </p>
+        </div>
+        <img src="/clumsy.svg" alt="" class="footer-doodle" aria-hidden="true" loading="lazy" width="160" height="120">
+      </div>
+    </footer>
+
+  </main>
+</div>
 
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
+<script src="/js/locales.js"></script>
 <script src="/js/prompt.js"></script>
 <script>
 (function() {
 'use strict';
 
-
-/* ── Marketing prompt library ───────────────────────────────── */
 const DEV_PROMPTS = [
   {
     cat: 'Campaign Planning',
@@ -308,21 +397,15 @@ const DEV_PROMPTS = [
   },
 ];
 
-/* ── State ───────────────────────────────────────────────────── */
 let activeCat = 'All';
 let selectedCard = null;
 
-/* ── DOM refs ────────────────────────────────────────────────── */
-const catsEl       = document.getElementById('cats');
-const cardsEl      = document.getElementById('prompt-cards');
-const promptEl     = document.getElementById('prompt');
-const providersEl  = document.getElementById('providers');
-const charCountEl  = document.getElementById('charCount');
-const copyBtn      = document.getElementById('copyBtn');
-const clearBtnEl   = document.getElementById('clearBtn');
+const catsEl = document.getElementById('cats');
+const cardsEl = document.getElementById('prompt-cards');
+const promptEl = document.getElementById('prompt');
 
-/* ── Render categories ──────────────────────────────────────── */
 function renderCats() {
+  if (!catsEl) return;
   const cats = ['All', ...DEV_PROMPTS.map(c => c.cat)];
   catsEl.innerHTML = '';
   cats.forEach(cat => {
@@ -340,17 +423,18 @@ function renderCats() {
   });
 }
 
-/* ── Render prompt cards ────────────────────────────────────── */
 function renderCards() {
+  if (!cardsEl) return;
   cardsEl.innerHTML = '';
   const groups = activeCat === 'All' ? DEV_PROMPTS : DEV_PROMPTS.filter(c => c.cat === activeCat);
 
   groups.forEach(group => {
     if (activeCat === 'All') {
       const catLabel = document.createElement('span');
-      catLabel.className = 'lbl';
+      catLabel.className = 'lbl-heading';
       catLabel.textContent = group.cat;
-      catLabel.style.marginTop = cardsEl.children.length ? '20px' : '0';
+      catLabel.style.marginTop = cardsEl.children.length ? '16px' : '0';
+      catLabel.style.display = 'block';
       cardsEl.appendChild(catLabel);
     }
 
@@ -364,14 +448,20 @@ function renderCards() {
 
         if (wasSelected) {
           selectedCard = null;
-          promptEl.value = '';
+          clearPrompt();
         } else {
           selectedCard = p;
           card.classList.add('selected');
           promptEl.value = p.text;
+          const charCounter = document.getElementById('charCount');
+          if (charCounter) charCounter.textContent = `${p.text.length} characters`;
+          const activeBadge = document.getElementById('activeBadge');
+          if (activeBadge) {
+            activeBadge.textContent = p.title;
+            activeBadge.classList.add('show');
+          }
           promptEl.focus();
         }
-        updateCount();
       });
       cardsEl.appendChild(card);
     });
@@ -379,63 +469,12 @@ function renderCards() {
 }
 
 function escHtml(s) {
-  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 
-/* ── Providers ── */
-renderProviders(providersEl);
-
-/* ── Page actions ── */
-function updateCount() {
-  const n = promptEl.value.length;
-  charCountEl.textContent = n > 0 ? n.toLocaleString() : '';
-  charCountEl.classList.toggle('warn', n > 3000);
-}
-
-promptEl.addEventListener('input', () => {
-  updateCount();
-  if (!promptEl.value) {
-    selectedCard = null;
-    document.querySelectorAll('.prompt-card').forEach(c => c.classList.remove('selected'));
-  }
-});
-
-copyBtn.addEventListener('click', async () => {
-  const q = getPrompt();
-  if (!q) { showToast('Nothing to copy yet'); return; }
-  try {
-    await navigator.clipboard.writeText(q);
-    copyBtn.textContent = '\u2713 Copied!';
-    copyBtn.classList.add('copied');
-    setTimeout(() => {
-      copyBtn.textContent = 'Copy to clipboard';
-      copyBtn.classList.remove('copied');
-    }, 2200);
-  } catch { showToast('Copy failed — try manually'); }
-});
-
-clearBtnEl.addEventListener('click', () => {
-  promptEl.value = ''; updateCount();
-  selectedCard = null;
-  document.querySelectorAll('.prompt-card').forEach(c => c.classList.remove('selected'));
-  promptEl.focus();
-});
-
-/* ── Keyboard shortcuts ──────────────────────────────────────── */
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && document.activeElement === promptEl) {
-    clearBtnEl.click(); return;
-  }
-  if ((e.metaKey || e.ctrlKey) && e.key === 'c' && document.activeElement === promptEl && !window.getSelection()?.toString()) {
-    e.preventDefault(); copyBtn.click();
-  }
-});
-
-/* ── Init ── */
 renderCats();
 renderCards();
 
-/* ── ItemList structured data ───────────────────────────────── */
 (function(){var n=1,items=[];DEV_PROMPTS.forEach(function(c){c.prompts.forEach(function(p){items.push({"@type":"ListItem","position":n++,"name":p.title});});});var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ItemList","name":document.title.split('|')[0].split('—')[0].trim(),"numberOfItems":items.length,"itemListElement":items});document.head.appendChild(s);})();
 })();
 </script>
