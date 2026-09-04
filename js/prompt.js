@@ -450,11 +450,40 @@ function renderFooterDesc(locale) {
 }
 
 /* ── Theme Toggle ───────────────────────────────────────────── */
+function updateThemeIcon(theme) {
+  const icon = document.getElementById('themeToggleIcon');
+  const btn = document.getElementById('themeToggleBtn');
+  const isDark = theme === 'dark';
+  if (icon) {
+    icon.innerHTML = isDark ? '&#9788;' : '&#9789;'; // Sun in dark mode, Moon in light mode
+  }
+  if (btn) {
+    btn.title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+    btn.setAttribute('aria-label', btn.title);
+  }
+}
+
+function initTheme() {
+  try {
+    const urlParam = new URLSearchParams(window.location.search).get('theme');
+    if (urlParam === 'light' || urlParam === 'dark') {
+      safeSet('pr_theme', urlParam);
+    }
+  } catch {}
+  const savedTheme = safeGet('pr_theme');
+  const systemPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+  const activeTheme = savedTheme || (systemPrefersLight ? 'light' : 'dark');
+  document.documentElement.setAttribute('data-theme', activeTheme);
+  updateThemeIcon(activeTheme);
+}
+
 function toggleTheme() {
-  const curr = document.documentElement.getAttribute('data-theme') || 'dark';
+  const curr = document.documentElement.getAttribute('data-theme') ||
+    (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
   const next = curr === 'dark' ? 'light' : 'dark';
   document.documentElement.setAttribute('data-theme', next);
   safeSet('pr_theme', next);
+  updateThemeIcon(next);
 }
 
 /* ── Language Handling ───────────────────────────────────────── */
@@ -528,9 +557,17 @@ function setLanguage(lang) {
 
 /* ── Initialization ─────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
-  // Theme restore
-  const savedTheme = safeGet('pr_theme');
-  if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+  // Theme initialization
+  initTheme();
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', e => {
+      if (!safeGet('pr_theme')) {
+        const next = e.matches ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        updateThemeIcon(next);
+      }
+    });
+  }
 
   // Language detection
   const detectedLang = window.__LANG__ || (location.pathname.match(/^\/([a-z]{2})/)?.[1]) || 'en';

@@ -245,6 +245,36 @@ it('Routes /tr to localized homepage', () => {
 });
 
 // ─────────────────────────────────────────────────────────────
+// 6. Theme Switching & Contrast Verification
+// ─────────────────────────────────────────────────────────────
+console.log('\n🎨 6. Theme Switching & UI Contrast:');
+
+const APP_PAGES = [
+  'index.html',
+  ...VALID_LIBS.map(l => `${l}.html`)
+];
+
+APP_PAGES.forEach(page => {
+  it(`Page ${page} has #themeToggleBtn in topbar`, () => {
+    const content = fs.readFileSync(path.join(ROOT, page), 'utf-8');
+    assert.strictEqual(content.includes('id="themeToggleBtn"'), true, `Missing #themeToggleBtn in ${page}`);
+    assert.strictEqual(content.includes('main-topbar'), true, `Missing main-topbar in ${page}`);
+  });
+});
+
+it('core.css defines both data-theme="light" and data-theme="dark"', () => {
+  const coreCSS = fs.readFileSync(path.join(ROOT, 'css/core.css'), 'utf-8');
+  assert.strictEqual(coreCSS.includes(':root[data-theme="light"]'), true, 'Missing :root[data-theme="light"]');
+  assert.strictEqual(coreCSS.includes(':root[data-theme="dark"]'), true, 'Missing :root[data-theme="dark"]');
+});
+
+it('prompt.css defines readable, high-contrast light theme .btn-primary', () => {
+  const promptCSS = fs.readFileSync(path.join(ROOT, 'css/prompt.css'), 'utf-8');
+  assert.strictEqual(promptCSS.includes('[data-theme="light"] .btn-primary'), true, 'Missing [data-theme="light"] .btn-primary');
+  assert.strictEqual(promptCSS.includes('.theme-toggle-btn'), true, 'Missing .theme-toggle-btn styling');
+});
+
+// ─────────────────────────────────────────────────────────────
 // Summary
 // ─────────────────────────────────────────────────────────────
 console.log(`\n==================================================`);

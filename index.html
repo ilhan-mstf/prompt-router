@@ -117,6 +117,9 @@
   text-align: center; font-size: var(--text-sm); padding: 10px 16px;
 }
 </style>
+  <script>
+    (function(){try{var t=localStorage.getItem('pr_theme');var m=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches;document.documentElement.setAttribute('data-theme',t||(m?'light':'dark'));}catch(e){}})();
+  </script>
 </head>
 <body class="has-sidebar">
 
@@ -257,7 +260,6 @@
           <option value="pt">Português</option>
         </select>
       </div>
-      <button type="button" class="icon-btn" title="Toggle dark/light" onclick="toggleTheme()" aria-label="Toggle theme">&#9789;</button>
     </div>
 
   </aside>
@@ -274,9 +276,9 @@
         <button type="button" class="toggle-sidebar-btn" id="openSidebarBtn" onclick="toggleSidebar()" aria-label="Toggle sidebar">
           <span>&#9776;</span> <span id="lblToggleSidebar">Sidebar</span>
         </button>
-      </div>
-      <div class="brand-link" style="font-size: 14px; font-weight: 500;">
-        <span>Prompt<span style="color: var(--gold);">Router</span></span>
+        <a href="/" class="brand-link" style="font-size: 14px; font-weight: 500; text-decoration: none; color: inherit;">
+          <span>Prompt<span style="color: var(--gold);">Router</span></span>
+        </a>
       </div>
       <nav class="nav-links" aria-label="Main navigation">
         <div class="nav-dropdown" id="topbarNavDropdown">
@@ -298,6 +300,9 @@
           </div>
         </div>
         <a href="/blog" class="nav-link">Blog</a>
+        <button type="button" class="theme-toggle-btn" id="themeToggleBtn" title="Toggle dark/light mode" onclick="toggleTheme()" aria-label="Toggle theme">
+          <span class="theme-toggle-icon" id="themeToggleIcon" aria-hidden="true">&#9788;</span>
+        </button>
       </nav>
     </header>
 
