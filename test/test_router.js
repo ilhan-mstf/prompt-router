@@ -351,7 +351,7 @@ it('Primary buttons exceed WCAG AAA contrast ratio in both modes', () => {
 console.log('\n📑 8. Sidebar Accordion & Shortcut Badge Integrity:');
 
 APP_PAGES.forEach(page => {
-  it(`Page ${page} has valid unescaped accordion handlers and spaced command badges`, () => {
+  it(`Page ${page} has valid unescaped accordion handlers, spaced command badges, and no misplaced header clear button`, () => {
     const content = fs.readFileSync(path.join(ROOT, page), 'utf-8');
     assert.strictEqual(content.includes("toggleSection(\\'"), false, `Invalid escaped toggleSection in ${page}`);
     assert.strictEqual(content.includes("toggleSection('quickSection')"), true, `Missing quickSection toggle in ${page}`);
@@ -360,13 +360,22 @@ APP_PAGES.forEach(page => {
     assert.strictEqual(content.includes("toggleSection('historySection')"), true, `Missing historySection toggle in ${page}`);
     assert.strictEqual(content.includes('<span class="kbd-cmd">⌘</span> C'), true, `Missing spaced ⌘ C badge in ${page}`);
     assert.strictEqual(content.includes('<span class="kbd-cmd">⌘</span> S'), true, `Missing spaced ⌘ S badge in ${page}`);
+    assert.strictEqual(content.includes('id="btnClearHistory"'), false, `History clear button must not be in static header in ${page}`);
   });
 });
 
-it('prompt.css defines .kbd-cmd styling with margin and proportional sizing', () => {
+it('prompt.css defines .kbd-cmd and .history-clear-btn styling', () => {
   const promptCSS = fs.readFileSync(path.join(ROOT, 'css/prompt.css'), 'utf-8');
   assert.strictEqual(promptCSS.includes('.kbd-cmd'), true, 'Missing .kbd-cmd rule in prompt.css');
   assert.strictEqual(promptCSS.includes('margin-right: 2.5px'), true, 'Missing margin-right on .kbd-cmd in prompt.css');
+  assert.strictEqual(promptCSS.includes('.history-clear-btn'), true, 'Missing .history-clear-btn in prompt.css');
+  assert.strictEqual(promptCSS.includes('.history-footer'), true, 'Missing .history-footer in prompt.css');
+});
+
+it('prompt.js dynamically provides Clear history action when history items exist', () => {
+  const promptJS = fs.readFileSync(path.join(ROOT, 'js/prompt.js'), 'utf-8');
+  assert.strictEqual(promptJS.includes('id="btnClearHistory"'), true, 'Missing dynamic btnClearHistory in prompt.js');
+  assert.strictEqual(promptJS.includes('history-clear-btn'), true, 'Missing history-clear-btn in prompt.js');
 });
 
 // ─────────────────────────────────────────────────────────────

@@ -305,7 +305,7 @@ function renderSidebar() {
     if (!filteredHist.length) {
       hList.innerHTML = `<div class="item-empty">${escapeHTML(currentLocale.noHistory || 'No history yet.')}</div>`;
     } else {
-      hList.innerHTML = filteredHist.map(h => {
+      const itemsHtml = filteredHist.map(h => {
         const provDots = (h.providers || []).map(pid => {
           const p = providers.find(x => x.id === pid);
           return p ? `<span class="prov-badge" style="background:${p.color}" title="${p.label}"></span>` : '';
@@ -321,6 +321,18 @@ function renderSidebar() {
           </button>
         `;
       }).join('');
+
+      const clearLabel = currentLocale.clearHistory || 'Clear history';
+      const clearBtnHtml = `
+        <div class="history-footer">
+          <button type="button" class="history-clear-btn" id="btnClearHistory" onclick="clearHistory()" aria-label="${escapeHTML(clearLabel)}">
+            <span class="clear-icon" aria-hidden="true">&#128465;</span>
+            <span id="lblClearHistory">${escapeHTML(clearLabel)}</span>
+          </button>
+        </div>
+      `;
+
+      hList.innerHTML = itemsHtml + clearBtnHtml;
     }
   }
 

@@ -234,16 +234,13 @@
 
       <!-- Section 3: History -->
       <div class="nav-section">
-        <div class="section-header-row">
-          <button type="button" class="section-title-wrap" id="btnHistorySection" onclick="toggleSection('historySection')" aria-expanded="true" aria-controls="historyList">
-            <span class="section-title">
-              <span id="lblHistory">History</span>
-              <span class="section-badge" id="historyCount">0</span>
-            </span>
-            <span class="item-chevron" id="historyChevron" aria-hidden="true">&#9662;</span>
-          </button>
-          <button type="button" class="section-clear-btn" id="btnClearHistory" title="Clear history" aria-label="Clear history" onclick="clearHistory()">Clear</button>
-        </div>
+        <button type="button" class="section-title-wrap" id="btnHistorySection" onclick="toggleSection('historySection')" aria-expanded="true" aria-controls="historyList">
+          <span class="section-title">
+            <span id="lblHistory">History</span>
+            <span class="section-badge" id="historyCount">0</span>
+          </span>
+          <span class="item-chevron" id="historyChevron" aria-hidden="true">&#9662;</span>
+        </button>
         <div class="item-list" id="historyList"></div>
       </div>
 

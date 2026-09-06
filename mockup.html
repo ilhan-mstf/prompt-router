@@ -1080,7 +1080,7 @@ footer {
             <span id="lblHistory">History</span>
             <span class="section-badge" id="historyCount">0</span>
           </div>
-          <button class="section-clear-btn" id="btnClearHistory" title="Clear history" onclick="event.stopPropagation(); clearHistory()">Clear</button>
+          <span class="item-chevron" id="historyChevron">&#9662;</span>
         </div>
         <div class="item-list" id="historyList"></div>
       </div>
@@ -1701,7 +1701,7 @@ function renderSidebar() {
   if (!filteredHist.length) {
     hList.innerHTML = `<div class="item-empty">${loc.noHistory}</div>`;
   } else {
-    hList.innerHTML = filteredHist.map(h => {
+    const itemsHtml = filteredHist.map(h => {
       const provDots = (h.providers || []).map(pid => {
         const p = PROVIDERS.find(x => x.id === pid);
         return p ? `<span class="prov-badge" style="background:${p.color}" title="${p.label}"></span>` : '';
@@ -1717,6 +1717,18 @@ function renderSidebar() {
         </div>
       `;
     }).join('');
+
+    const clearLabel = loc.clearHistory || 'Clear';
+    const clearBtnHtml = `
+      <div class="history-footer">
+        <button type="button" class="history-clear-btn" id="btnClearHistory" onclick="clearHistory()" aria-label="${escapeHTML(clearLabel)}">
+          <span aria-hidden="true" class="clear-icon">&#128465;</span>
+          <span id="lblClearHistory">${escapeHTML(clearLabel)}</span>
+        </button>
+      </div>
+    `;
+
+    hList.innerHTML = itemsHtml + clearBtnHtml;
   }
 }
 
@@ -1804,7 +1816,8 @@ function changeLanguage(lang) {
   document.getElementById('lblQuickPrompts').textContent = loc.quickPrompts;
   document.getElementById('lblSavedPrompts').textContent = loc.savedPrompts;
   document.getElementById('lblHistory').textContent = loc.history;
-  document.getElementById('btnClearHistory').textContent = loc.clearHistory;
+  const btnClearHistory = document.getElementById('btnClearHistory');
+  if (btnClearHistory) btnClearHistory.textContent = loc.clearHistory;
 
   renderSidebar();
 }
