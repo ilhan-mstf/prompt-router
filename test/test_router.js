@@ -346,6 +346,30 @@ it('Primary buttons exceed WCAG AAA contrast ratio in both modes', () => {
 });
 
 // ─────────────────────────────────────────────────────────────
+// 8. Sidebar Accordion & Shortcut Badge Integrity
+// ─────────────────────────────────────────────────────────────
+console.log('\n📑 8. Sidebar Accordion & Shortcut Badge Integrity:');
+
+APP_PAGES.forEach(page => {
+  it(`Page ${page} has valid unescaped accordion handlers and spaced command badges`, () => {
+    const content = fs.readFileSync(path.join(ROOT, page), 'utf-8');
+    assert.strictEqual(content.includes("toggleSection(\\'"), false, `Invalid escaped toggleSection in ${page}`);
+    assert.strictEqual(content.includes("toggleSection('quickSection')"), true, `Missing quickSection toggle in ${page}`);
+    assert.strictEqual(content.includes("toggleSection('librariesSection')"), true, `Missing librariesSection toggle in ${page}`);
+    assert.strictEqual(content.includes("toggleSection('savedSection')"), true, `Missing savedSection toggle in ${page}`);
+    assert.strictEqual(content.includes("toggleSection('historySection')"), true, `Missing historySection toggle in ${page}`);
+    assert.strictEqual(content.includes('<span class="kbd-cmd">⌘</span> C'), true, `Missing spaced ⌘ C badge in ${page}`);
+    assert.strictEqual(content.includes('<span class="kbd-cmd">⌘</span> S'), true, `Missing spaced ⌘ S badge in ${page}`);
+  });
+});
+
+it('prompt.css defines .kbd-cmd styling with margin and proportional sizing', () => {
+  const promptCSS = fs.readFileSync(path.join(ROOT, 'css/prompt.css'), 'utf-8');
+  assert.strictEqual(promptCSS.includes('.kbd-cmd'), true, 'Missing .kbd-cmd rule in prompt.css');
+  assert.strictEqual(promptCSS.includes('margin-right: 2.5px'), true, 'Missing margin-right on .kbd-cmd in prompt.css');
+});
+
+// ─────────────────────────────────────────────────────────────
 // Summary
 // ─────────────────────────────────────────────────────────────
 console.log(`\n==================================================`);

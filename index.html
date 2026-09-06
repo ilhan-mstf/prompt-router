@@ -153,7 +153,7 @@
         <div class="brand-icon">P</div>
         <div class="brand-text">Prompt<span>Router</span></div>
       </a>
-      <button type="button" class="collapse-btn" id="collapseSidebarBtn" title="Collapse sidebar (⌘B)" onclick="toggleSidebar()" aria-label="Collapse sidebar" aria-expanded="true" aria-controls="sidebar">
+      <button type="button" class="collapse-btn" id="collapseSidebarBtn" title="Collapse sidebar (⌘ B)" onclick="toggleSidebar()" aria-label="Collapse sidebar" aria-expanded="true" aria-controls="sidebar">
         <span>&laquo;</span>
       </button>
     </div>
@@ -186,7 +186,7 @@
 
       <!-- Section 1: Quick Prompts -->
       <div class="nav-section">
-        <button type="button" class="section-title-wrap" id="btnQuickSection" onclick="toggleSection(\'quickSection\')" aria-expanded="true" aria-controls="quickList">
+        <button type="button" class="section-title-wrap" id="btnQuickSection" onclick="toggleSection('quickSection')" aria-expanded="true" aria-controls="quickList">
           <span class="section-title">
             <span id="lblQuickPrompts">Quick Prompts</span>
             <span class="section-badge" id="quickCount">10</span>
@@ -198,7 +198,7 @@
 
       <!-- Section: Prompt Libraries -->
       <div class="nav-section">
-        <button type="button" class="section-title-wrap" id="btnLibrariesSection" onclick="toggleSection(\'librariesSection\')" aria-expanded="false" aria-controls="librariesList">
+        <button type="button" class="section-title-wrap" id="btnLibrariesSection" onclick="toggleSection('librariesSection')" aria-expanded="false" aria-controls="librariesList">
           <span class="section-title">
             <span id="lblPromptLibraries">Prompt Libraries</span>
             <span class="section-badge">11</span>
@@ -222,7 +222,7 @@
 
       <!-- Section 2: Saved Prompts -->
       <div class="nav-section">
-        <button type="button" class="section-title-wrap" id="btnSavedSection" onclick="toggleSection(\'savedSection\')" aria-expanded="true" aria-controls="savedList">
+        <button type="button" class="section-title-wrap" id="btnSavedSection" onclick="toggleSection('savedSection')" aria-expanded="true" aria-controls="savedList">
           <span class="section-title">
             <span id="lblSavedPrompts">Saved</span>
             <span class="section-badge" id="savedCount">0</span>
@@ -235,7 +235,7 @@
       <!-- Section 3: History -->
       <div class="nav-section">
         <div class="section-header-row">
-          <button type="button" class="section-title-wrap" id="btnHistorySection" onclick="toggleSection(\'historySection\')" aria-expanded="true" aria-controls="historyList">
+          <button type="button" class="section-title-wrap" id="btnHistorySection" onclick="toggleSection('historySection')" aria-expanded="true" aria-controls="historyList">
             <span class="section-title">
               <span id="lblHistory">History</span>
               <span class="section-badge" id="historyCount">0</span>
@@ -334,13 +334,13 @@
 
         <div class="editor-bottom">
           <div class="actions-group">
-            <button class="btn btn-primary" id="copyBtn" type="button" onclick="copyPrompt()" title="Copy to clipboard (⌘C)" aria-label="Copy prompt to clipboard">
+            <button class="btn btn-primary" id="copyBtn" type="button" onclick="copyPrompt()" title="Copy to clipboard (⌘ C)" aria-label="Copy prompt to clipboard">
               <span id="lblCopyBtn">Copy to clipboard</span>
-              <kbd class="btn-kbd">⌘C</kbd>
+              <kbd class="btn-kbd"><span class="kbd-cmd">⌘</span> C</kbd>
             </button>
-            <button class="btn btn-secondary" id="saveBtn" type="button" onclick="savePrompt()" title="Save prompt (⌘S)" aria-label="Save prompt">
+            <button class="btn btn-secondary" id="saveBtn" type="button" onclick="savePrompt()" title="Save prompt (⌘ S)" aria-label="Save prompt">
               <span id="lblSaveBtn">Save</span>
-              <kbd class="btn-kbd">⌘S</kbd>
+              <kbd class="btn-kbd"><span class="kbd-cmd">⌘</span> S</kbd>
             </button>
             <button class="btn btn-ghost" id="clearBtn" type="button" onclick="clearPrompt()" title="Clear prompt (Esc)" aria-label="Clear prompt">
               <span id="lblClearBtn">Clear</span>
