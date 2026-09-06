@@ -411,6 +411,15 @@ it('blog.html provides top padding for the Blog title', () => {
   assert.strictEqual(blogHTML.includes('padding-top: 40px;'), true, 'Missing padding-top: 40px on .page-title in blog.html');
 });
 
+it('all blog post pages provide top padding for article date and title', () => {
+  const blogFiles = fs.readdirSync(ROOT).filter(f => f.startsWith('blog-') && f.endsWith('.html'));
+  assert.strictEqual(blogFiles.length, 16, 'Expected 16 blog post files');
+  blogFiles.forEach(file => {
+    const html = fs.readFileSync(path.join(ROOT, file), 'utf-8');
+    assert.strictEqual(html.includes('article.page { padding-top: 40px; padding-bottom: 86px; }'), true, `Missing padding-top: 40px on article.page in ${file}`);
+  });
+});
+
 // ─────────────────────────────────────────────────────────────
 // Summary
 // ─────────────────────────────────────────────────────────────
