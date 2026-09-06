@@ -919,15 +919,17 @@ footer {
   border-radius: var(--r);
   font-size: var(--text-sm);
   box-shadow: 0 10px 30px rgba(0,0,0,.5);
-  transform: translateY(60px);
+  transform: translateY(20px);
   opacity: 0;
-  transition: all .2s cubic-bezier(0.16, 1, 0.3, 1);
+  visibility: hidden;
+  transition: opacity .2s ease, transform .25s cubic-bezier(0.16, 1, 0.3, 1), visibility .25s;
   z-index: 1000;
   pointer-events: none;
 }
 .toast.show {
   transform: translateY(0);
   opacity: 1;
+  visibility: visible;
 }
 
 /* ── Mobile Layout (< 900px) ─────────────────────────────────── */

@@ -1113,7 +1113,9 @@ footer {
   position: fixed;
   bottom: 28px;
   left: 50%;
-  transform: translateX(-50%) translateY(64px);
+  transform: translateX(-50%) translateY(20px);
+  opacity: 0;
+  visibility: hidden;
   background: var(--surface-2);
   border: 1px solid var(--border-2);
   border-radius: var(--r);
@@ -1121,12 +1123,14 @@ footer {
   font-size: var(--text-sm);
   color: var(--text);
   box-shadow: 0 8px 32px rgba(0,0,0,.35);
-  transition: transform .26s cubic-bezier(.34,1.56,.64,1);
+  transition: opacity .2s ease, transform .25s cubic-bezier(.34,1.56,.64,1), visibility .25s;
   z-index: 300;
   pointer-events: none;
 }
 .toast.show {
   transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  visibility: visible;
 }
 
 /* ── Library Page Components (Category Chips & Prompt Cards) ── */

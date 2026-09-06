@@ -378,6 +378,13 @@ it('prompt.js dynamically provides Clear history action when history items exist
   assert.strictEqual(promptJS.includes('history-clear-btn'), true, 'Missing history-clear-btn in prompt.js');
 });
 
+it('prompt.css completely hides .toast when not .show (opacity: 0 and visibility: hidden)', () => {
+  const promptCSS = fs.readFileSync(path.join(ROOT, 'css/prompt.css'), 'utf-8');
+  assert.strictEqual(promptCSS.includes('opacity: 0;'), true, 'Missing opacity: 0 on .toast in prompt.css');
+  assert.strictEqual(promptCSS.includes('visibility: hidden;'), true, 'Missing visibility: hidden on .toast in prompt.css');
+  assert.strictEqual(promptCSS.includes('visibility: visible;'), true, 'Missing visibility: visible on .toast.show in prompt.css');
+});
+
 // ─────────────────────────────────────────────────────────────
 // Summary
 // ─────────────────────────────────────────────────────────────
