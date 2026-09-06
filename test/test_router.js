@@ -274,6 +274,81 @@ it('prompt.css defines readable, high-contrast light theme .btn-primary', () => 
   assert.strictEqual(promptCSS.includes('.theme-toggle-btn'), true, 'Missing .theme-toggle-btn styling');
 });
 
+it('All application pages, blog pages, and mockup.html include automatic system theme initialization in <head>', () => {
+  const pagesToCheck = [
+    'index.html',
+    ...VALID_LIBS.map(l => `${l}.html`),
+    'blog.html',
+    'mockup.html'
+  ];
+  pagesToCheck.forEach(p => {
+    const html = fs.readFileSync(path.join(ROOT, p), 'utf-8');
+    assert.strictEqual(html.includes("localStorage.removeItem('pr_theme')"), true, `Missing legacy theme purge in ${p}`);
+    assert.strictEqual(html.includes("prefers-color-scheme: dark"), true, `Missing system dark check in ${p}`);
+  });
+});
+
+it('prompt.js implements getSystemTheme, auto system sync, and dynamic prefers-color-scheme listener', () => {
+  const promptJS = fs.readFileSync(path.join(ROOT, 'js/prompt.js'), 'utf-8');
+  assert.strictEqual(promptJS.includes('function getSystemTheme()'), true, 'Missing getSystemTheme');
+  assert.strictEqual(promptJS.includes("window.matchMedia('(prefers-color-scheme: dark)')"), true, 'Missing prefers-color-scheme listener');
+  assert.strictEqual(promptJS.includes("sessionStorage.removeItem('pr_theme')"), true, 'Missing session override clear logic');
+});
+
+it('Theme behavior automatically follows OS appearance and correctly manages session overrides', () => {
+  let systemDark = true;
+  const attributes = {};
+  const sessionStorage = {
+    _data: {},
+    getItem(k) { return this._data[k] || null; },
+    setItem(k, v) { this._data[k] = String(v); },
+    removeItem(k) { delete this._data[k]; }
+  };
+  const localStorage = {
+    _data: { pr_theme: 'light' },
+    getItem(k) { return this._data[k] || null; },
+    removeItem(k) { delete this._data[k]; }
+  };
+  const mockWindow = {
+    location: { search: '', pathname: '/' },
+    matchMedia(q) {
+      return {
+        matches: q.includes('dark') ? systemDark : !systemDark,
+        addEventListener() {}
+      };
+    }
+  };
+  const mockDoc = {
+    documentElement: {
+      setAttribute(k, v) { attributes[k] = v; },
+      getAttribute(k) { return attributes[k] || null; }
+    },
+    getElementById() { return { textContent: '', title: '', setAttribute() {} }; },
+    addEventListener() {}
+  };
+
+  const fn = new Function('window', 'document', 'localStorage', 'sessionStorage', 'URLSearchParams', `
+    ${fs.readFileSync(path.join(ROOT, 'js/prompt.js'), 'utf-8')}
+    return { initTheme, toggleTheme, getSystemTheme };
+  `);
+  const { initTheme, toggleTheme } = fn(mockWindow, mockDoc, localStorage, sessionStorage, class { get() { return null; } });
+
+  // 1. Legacy localStorage override is purged and system dark is adopted
+  initTheme();
+  assert.strictEqual(localStorage.getItem('pr_theme'), null, 'Legacy pr_theme must be purged');
+  assert.strictEqual(attributes['data-theme'], 'dark', 'Must adopt system dark mode');
+
+  // 2. Toggle to light mode
+  toggleTheme();
+  assert.strictEqual(attributes['data-theme'], 'light', 'Must toggle to light');
+  assert.strictEqual(sessionStorage.getItem('pr_theme'), 'light', 'Session override saved');
+
+  // 3. Toggle back to system dark
+  toggleTheme();
+  assert.strictEqual(attributes['data-theme'], 'dark', 'Must toggle back to dark');
+  assert.strictEqual(sessionStorage.getItem('pr_theme'), null, 'Toggling back to system must clear session override');
+});
+
 // ─────────────────────────────────────────────────────────────
 // 7. Accessibility & WCAG Compliance Verification
 // ─────────────────────────────────────────────────────────────

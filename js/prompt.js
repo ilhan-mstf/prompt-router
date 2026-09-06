@@ -484,7 +484,15 @@ function renderFooterDesc(locale) {
     `${locale.footerDescOutro || ''}`;
 }
 
-/* ── Theme Toggle ───────────────────────────────────────────── */
+/* ── Theme Handling (Automatic System Settings) ─────────────── */
+function getSystemTheme() {
+  try {
+    return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+  } catch {
+    return 'dark';
+  }
+}
+
 function updateThemeIcon(theme) {
   const icon = document.getElementById('themeToggleIcon');
   const btn = document.getElementById('themeToggleBtn');
@@ -499,25 +507,48 @@ function updateThemeIcon(theme) {
 }
 
 function initTheme() {
+  // Purge legacy permanent localStorage theme override so system settings take priority
+  try { localStorage.removeItem('pr_theme'); } catch {}
+
+  let activeTheme = null;
   try {
     const urlParam = new URLSearchParams(window.location.search).get('theme');
     if (urlParam === 'light' || urlParam === 'dark') {
-      safeSet('pr_theme', urlParam);
+      activeTheme = urlParam;
+      try { sessionStorage.setItem('pr_theme', urlParam); } catch {}
     }
   } catch {}
-  const savedTheme = safeGet('pr_theme');
-  const systemPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-  const activeTheme = savedTheme || (systemPrefersLight ? 'light' : 'dark');
+
+  if (!activeTheme) {
+    try { activeTheme = sessionStorage.getItem('pr_theme'); } catch {}
+  }
+
+  // Automatically use system settings
+  if (!activeTheme) {
+    activeTheme = getSystemTheme();
+  }
+
   document.documentElement.setAttribute('data-theme', activeTheme);
   updateThemeIcon(activeTheme);
 }
 
 function toggleTheme() {
-  const curr = document.documentElement.getAttribute('data-theme') ||
-    (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  const sys = getSystemTheme();
+  const curr = document.documentElement.getAttribute('data-theme') || sys;
   const next = curr === 'dark' ? 'light' : 'dark';
   document.documentElement.setAttribute('data-theme', next);
-  safeSet('pr_theme', next);
+
+  if (next === sys) {
+    // Returned back to system preference — clear manual override
+    try {
+      sessionStorage.removeItem('pr_theme');
+      localStorage.removeItem('pr_theme');
+    } catch {}
+  } else {
+    // User explicitly chose an override for the active session
+    try { sessionStorage.setItem('pr_theme', next); } catch {}
+  }
+
   updateThemeIcon(next);
 }
 
@@ -592,16 +623,25 @@ function setLanguage(lang) {
 
 /* ── Initialization ─────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
-  // Theme initialization
+  // Theme initialization & automatic system settings synchronization
   initTheme();
   if (window.matchMedia) {
-    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', e => {
-      if (!safeGet('pr_theme')) {
-        const next = e.matches ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', next);
-        updateThemeIcon(next);
-      }
-    });
+    const darkMedia = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleSystemThemeChange = e => {
+      // Clear manual override when system setting changes so the app automatically tracks OS appearance
+      try {
+        sessionStorage.removeItem('pr_theme');
+        localStorage.removeItem('pr_theme');
+      } catch {}
+      const newTheme = e.matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      updateThemeIcon(newTheme);
+    };
+    if (darkMedia.addEventListener) {
+      darkMedia.addEventListener('change', handleSystemThemeChange);
+    } else if (darkMedia.addListener) {
+      darkMedia.addListener(handleSystemThemeChange);
+    }
   }
 
   // Language detection
@@ -693,5 +733,8 @@ window.getHistory = getHistory;
 window.openProvider = openProvider;
 window.filterSidebar = filterSidebar;
 window.toggleTheme = toggleTheme;
+window.getSystemTheme = getSystemTheme;
+window.initTheme = initTheme;
+window.updateThemeIcon = updateThemeIcon;
 window.setLanguage = setLanguage;
 

@@ -165,6 +165,9 @@ tr:last-child td { border-bottom: none; }
   .article-title { font-size: 1.4rem; }
 }
 </style>
+  <script>
+    (function(){try{localStorage.removeItem('pr_theme');var s=sessionStorage.getItem('pr_theme');var m=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(m?'dark':'light'));if(window.matchMedia){var dm=window.matchMedia('(prefers-color-scheme: dark)');var sc=function(e){try{sessionStorage.removeItem('pr_theme');localStorage.removeItem('pr_theme');}catch(x){}document.documentElement.setAttribute('data-theme',e.matches?'dark':'light');};if(dm.addEventListener){dm.addEventListener('change',sc);}else if(dm.addListener){dm.addListener(sc);}}}catch(e){}})();
+  </script>
 </head>
 <body>
 
