@@ -392,6 +392,20 @@ it('prompt.css and mockup.html ensure .canvas-container min-height keeps footer 
   assert.strictEqual(mockupHTML.includes('min-height: calc(100vh - var(--header-h));'), true, 'Missing canvas min-height in mockup.html');
 });
 
+it('prompt.css and mockup.html trim .active-badge with max-width and ellipsis to prevent line jump', () => {
+  const promptCSS = fs.readFileSync(path.join(ROOT, 'css/prompt.css'), 'utf-8');
+  const mockupHTML = fs.readFileSync(path.join(ROOT, 'mockup.html'), 'utf-8');
+  assert.strictEqual(promptCSS.includes('text-overflow: ellipsis;'), true, 'Missing text-overflow: ellipsis in prompt.css');
+  assert.strictEqual(promptCSS.includes('max-width: 160px;'), true, 'Missing max-width: 160px on .active-badge in prompt.css');
+  assert.strictEqual(mockupHTML.includes('text-overflow: ellipsis;'), true, 'Missing text-overflow: ellipsis in mockup.html');
+  assert.strictEqual(mockupHTML.includes('max-width: 160px;'), true, 'Missing max-width: 160px on .active-badge in mockup.html');
+});
+
+it('prompt.js sets badge.title for full tooltip on activeBadge', () => {
+  const promptJS = fs.readFileSync(path.join(ROOT, 'js/prompt.js'), 'utf-8');
+  assert.strictEqual(promptJS.includes('badge.title = title;'), true, 'Missing badge.title assignment in prompt.js');
+});
+
 // ─────────────────────────────────────────────────────────────
 // Summary
 // ─────────────────────────────────────────────────────────────

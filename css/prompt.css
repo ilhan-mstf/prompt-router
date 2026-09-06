@@ -910,6 +910,7 @@ button.section-title-wrap:focus-visible,
   display: flex;
   align-items: center;
   gap: 10px;
+  min-width: 0;
 }
 .active-badge {
   font-size: 11px;
@@ -919,6 +920,11 @@ button.section-title-wrap:focus-visible,
   border-radius: 100px;
   border: 1px solid var(--gold-dim);
   display: none;
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
 }
 .active-badge.show { display: inline-block; }
 

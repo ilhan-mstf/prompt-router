@@ -483,6 +483,7 @@ function renderCards() {
           const activeBadge = document.getElementById('activeBadge');
           if (activeBadge) {
             activeBadge.textContent = p.title;
+            activeBadge.title = p.title;
             activeBadge.classList.add('show');
           }
           promptEl.focus();

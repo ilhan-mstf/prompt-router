@@ -178,9 +178,11 @@ function updateActiveBadge(title) {
   if (!badge) return;
   if (title) {
     badge.textContent = title;
+    badge.title = title;
     badge.classList.add('show');
   } else {
     badge.textContent = '';
+    badge.removeAttribute('title');
     badge.classList.remove('show');
   }
 }
