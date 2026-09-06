@@ -406,6 +406,11 @@ it('prompt.js sets badge.title for full tooltip on activeBadge', () => {
   assert.strictEqual(promptJS.includes('badge.title = title;'), true, 'Missing badge.title assignment in prompt.js');
 });
 
+it('blog.html provides top padding for the Blog title', () => {
+  const blogHTML = fs.readFileSync(path.join(ROOT, 'blog.html'), 'utf-8');
+  assert.strictEqual(blogHTML.includes('padding-top: 40px;'), true, 'Missing padding-top: 40px on .page-title in blog.html');
+});
+
 // ─────────────────────────────────────────────────────────────
 // Summary
 // ─────────────────────────────────────────────────────────────
