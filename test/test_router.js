@@ -385,6 +385,13 @@ it('prompt.css completely hides .toast when not .show (opacity: 0 and visibility
   assert.strictEqual(promptCSS.includes('visibility: visible;'), true, 'Missing visibility: visible on .toast.show in prompt.css');
 });
 
+it('prompt.css and mockup.html ensure .canvas-container min-height keeps footer below fold until scrolled', () => {
+  const promptCSS = fs.readFileSync(path.join(ROOT, 'css/prompt.css'), 'utf-8');
+  const mockupHTML = fs.readFileSync(path.join(ROOT, 'mockup.html'), 'utf-8');
+  assert.strictEqual(promptCSS.includes('min-height: calc(100vh - var(--header-h));'), true, 'Missing canvas min-height in prompt.css');
+  assert.strictEqual(mockupHTML.includes('min-height: calc(100vh - var(--header-h));'), true, 'Missing canvas min-height in mockup.html');
+});
+
 // ─────────────────────────────────────────────────────────────
 // Summary
 // ─────────────────────────────────────────────────────────────
