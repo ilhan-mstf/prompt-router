@@ -72,7 +72,7 @@
 </head>
 <body class="has-sidebar">
 
-<a href="#prompt" class="skip">Skip to prompt</a>
+<a href="#main-content" class="skip">Skip to main content</a>
 
 <!-- ── Main App Layout ── -->
 <div class="app-layout">
@@ -85,7 +85,7 @@
         <div class="brand-icon">P</div>
         <div class="brand-text">Prompt<span>Router</span></div>
       </a>
-      <button type="button" class="collapse-btn" id="collapseSidebarBtn" title="Collapse sidebar (⌘B)" onclick="toggleSidebar()" aria-label="Collapse sidebar">
+      <button type="button" class="collapse-btn" id="collapseSidebarBtn" title="Collapse sidebar (⌘B)" onclick="toggleSidebar()" aria-label="Collapse sidebar" aria-expanded="true" aria-controls="sidebar">
         <span>&laquo;</span>
       </button>
     </div>
@@ -114,25 +114,25 @@
     <div class="sidebar-scroll">
       <!-- Section 1: Quick Prompts -->
       <div class="nav-section">
-        <div class="section-title-wrap" onclick="toggleSection('quickSection')">
-          <div class="section-title">
+        <button type="button" class="section-title-wrap" id="btnQuickSection" onclick="toggleSection(\'quickSection\')" aria-expanded="true" aria-controls="quickList">
+          <span class="section-title">
             <span id="lblQuickPrompts">Quick Prompts</span>
             <span class="section-badge" id="quickCount">10</span>
-          </div>
-          <span class="item-chevron" id="quickChevron">&#9662;</span>
-        </div>
+          </span>
+          <span class="item-chevron" id="quickChevron" aria-hidden="true">&#9662;</span>
+        </button>
         <div class="item-list" id="quickList"></div>
       </div>
 
       <!-- Section: Prompt Libraries -->
       <div class="nav-section">
-        <div class="section-title-wrap" onclick="toggleSection('librariesSection')">
-          <div class="section-title">
+        <button type="button" class="section-title-wrap" id="btnLibrariesSection" onclick="toggleSection(\'librariesSection\')" aria-expanded="false" aria-controls="librariesList">
+          <span class="section-title">
             <span id="lblPromptLibraries">Prompt Libraries</span>
             <span class="section-badge">11</span>
-          </div>
-          <span class="item-chevron" id="librariesChevron">&#9662;</span>
-        </div>
+          </span>
+          <span class="item-chevron" id="librariesChevron" aria-hidden="true" style="transform: rotate(-90deg);">&#9662;</span>
+        </button>
         <div class="item-list" id="librariesList">
 <a href="/dev" class="item-btn"><div class="item-label-wrap"><span class="item-icon">&#128187;</span><span class="item-title">Dev &amp; Coding</span></div><span class="p-arrow">&nearr;</span></a>
 <a href="/writing" class="item-btn"><div class="item-label-wrap"><span class="item-icon">&#9997;</span><span class="item-title">Writing &amp; Content</span></div><span class="p-arrow">&nearr;</span></a>
@@ -150,24 +150,27 @@
 
       <!-- Section 2: Saved Prompts -->
       <div class="nav-section">
-        <div class="section-title-wrap" onclick="toggleSection('savedSection')">
-          <div class="section-title">
+        <button type="button" class="section-title-wrap" id="btnSavedSection" onclick="toggleSection(\'savedSection\')" aria-expanded="true" aria-controls="savedList">
+          <span class="section-title">
             <span id="lblSavedPrompts">Saved</span>
             <span class="section-badge" id="savedCount">0</span>
-          </div>
-          <span class="item-chevron" id="savedChevron">&#9662;</span>
-        </div>
+          </span>
+          <span class="item-chevron" id="savedChevron" aria-hidden="true">&#9662;</span>
+        </button>
         <div class="item-list" id="savedList"></div>
       </div>
 
       <!-- Section 3: History -->
       <div class="nav-section">
-        <div class="section-title-wrap" onclick="toggleSection('historySection')">
-          <div class="section-title">
-            <span id="lblHistory">History</span>
-            <span class="section-badge" id="historyCount">0</span>
-          </div>
-          <button type="button" class="section-clear-btn" id="btnClearHistory" title="Clear history" onclick="event.stopPropagation(); clearHistory()">Clear</button>
+        <div class="section-header-row">
+          <button type="button" class="section-title-wrap" id="btnHistorySection" onclick="toggleSection(\'historySection\')" aria-expanded="true" aria-controls="historyList">
+            <span class="section-title">
+              <span id="lblHistory">History</span>
+              <span class="section-badge" id="historyCount">0</span>
+            </span>
+            <span class="item-chevron" id="historyChevron" aria-hidden="true">&#9662;</span>
+          </button>
+          <button type="button" class="section-clear-btn" id="btnClearHistory" title="Clear history" aria-label="Clear history" onclick="clearHistory()">Clear</button>
         </div>
         <div class="item-list" id="historyList"></div>
       </div>
@@ -175,6 +178,7 @@
 
     <div class="sidebar-footer">
       <div class="lang-select-wrap">
+        <label for="langSelect" class="sr-only">Select language</label>
         <span class="item-icon" aria-hidden="true">&#127760;</span>
         <select class="lang-select" id="langSelect" aria-label="Language selector">
           <option value="en">English</option>
@@ -197,7 +201,7 @@
     
     <header class="main-topbar">
       <div class="topbar-left">
-        <button type="button" class="toggle-sidebar-btn" id="openSidebarBtn" onclick="toggleSidebar()" aria-label="Toggle sidebar">
+        <button type="button" class="toggle-sidebar-btn" id="openSidebarBtn" onclick="toggleSidebar()" aria-label="Toggle sidebar" aria-expanded="false" aria-controls="sidebar">
           <span>&#9776;</span> <span id="lblToggleSidebar">Sidebar</span>
         </button>
         <a href="/" class="brand-link" style="font-size: 14px; font-weight: 500; text-decoration: none; color: inherit;">
@@ -206,7 +210,7 @@
       </div>
       <nav class="nav-links" aria-label="Main navigation">
         <div class="nav-dropdown" id="topbarNavDropdown">
-          <button class="nav-dropdown-btn" type="button" onclick="toggleLibrariesDropdown(event)" aria-expanded="false">
+          <button class="nav-dropdown-btn" id="topbarNavDropdownBtn" type="button" onclick="toggleLibrariesDropdown(event)" aria-expanded="false" aria-haspopup="true" aria-controls="topbarLibMenu">
             <span>Libraries</span> <span class="nav-dropdown-arrow">&#9662;</span>
           </button>
           <div class="nav-dropdown-menu" id="topbarLibMenu" role="menu">
@@ -251,7 +255,7 @@
 
       <!-- Clean Editor Canvas -->
       <div class="editor-area">
-        <span class="lbl-heading" id="lbl-prompt">Your prompt</span>
+        <label for="prompt" class="lbl-heading" id="lbl-prompt">Your prompt</label>
         <textarea 
           class="prompt-textarea" 
           id="prompt" 
@@ -259,7 +263,7 @@
           placeholder="Click a prompt above or write your own..."
           spellcheck="false"
           autocomplete="off"
-          aria-describedby="charCount"
+          aria-label="Prompt text" aria-describedby="charCount"
         ></textarea>
 
         <div class="editor-bottom">
@@ -417,6 +421,7 @@ function renderCats() {
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'cat' + (activeCat === cat ? ' active' : '');
+    btn.setAttribute('aria-pressed', activeCat === cat ? 'true' : 'false');
     btn.textContent = cat;
     btn.addEventListener('click', () => {
       activeCat = cat;
@@ -444,12 +449,17 @@ function renderCards() {
     }
 
     group.prompts.forEach(p => {
-      const card = document.createElement('div');
+      const card = document.createElement('button');
+      card.type = 'button';
       card.className = 'prompt-card';
-      card.innerHTML = `<div class="prompt-card-title">${p.title}</div><div class="prompt-card-preview">${escHtml(p.text)}</div>`;
+      card.setAttribute('aria-pressed', 'false');
+      card.innerHTML = `<div class=\"prompt-card-title\">${p.title}</div><div class=\"prompt-card-preview\">${escHtml(p.text)}</div>`;
       card.addEventListener('click', () => {
         const wasSelected = selectedCard === p;
-        document.querySelectorAll('.prompt-card').forEach(c => c.classList.remove('selected'));
+        document.querySelectorAll('.prompt-card').forEach(c => {
+          c.classList.remove('selected');
+          c.setAttribute('aria-pressed', 'false');
+        });
 
         if (wasSelected) {
           selectedCard = null;
@@ -457,6 +467,7 @@ function renderCards() {
         } else {
           selectedCard = p;
           card.classList.add('selected');
+          card.setAttribute('aria-pressed', 'true');
           promptEl.value = p.text;
           const charCounter = document.getElementById('charCount');
           if (charCounter) charCounter.textContent = `${p.text.length} characters`;

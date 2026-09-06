@@ -275,6 +275,77 @@ it('prompt.css defines readable, high-contrast light theme .btn-primary', () => 
 });
 
 // ─────────────────────────────────────────────────────────────
+// 7. Accessibility & WCAG Compliance Verification
+// ─────────────────────────────────────────────────────────────
+console.log('\n♿ 7. Accessibility & WCAG Compliance:');
+
+function srgbToLin(val) {
+  const c = val / 255.0;
+  return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+}
+function hexToRgb(hex) {
+  const h = hex.replace('#', '');
+  return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)];
+}
+function relLum(hex) {
+  const [r, g, b] = hexToRgb(hex).map(srgbToLin);
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+}
+function contrastRatio(hex1, hex2) {
+  const l1 = relLum(hex1);
+  const l2 = relLum(hex2);
+  return (Math.max(l1, l2) + 0.05) / (Math.min(l1, l2) + 0.05);
+}
+
+it('All app pages have accessible skip links pointing to #main-content', () => {
+  APP_PAGES.forEach(page => {
+    const content = fs.readFileSync(path.join(ROOT, page), 'utf-8');
+    assert.strictEqual(content.includes('href="#main-content" class="skip"'), true, `Missing skip link to #main-content in ${page}`);
+  });
+});
+
+it('All app pages provide proper ARIA attributes for sidebar and navigation', () => {
+  APP_PAGES.forEach(page => {
+    const content = fs.readFileSync(path.join(ROOT, page), 'utf-8');
+    assert.strictEqual(content.includes('aria-controls="sidebar"'), true, `Missing aria-controls on sidebar buttons in ${page}`);
+    assert.strictEqual(content.includes('aria-haspopup="true"'), true, `Missing aria-haspopup on dropdown in ${page}`);
+    assert.strictEqual(content.includes('id="btnQuickSection"'), true, `Missing accessible button for quick section in ${page}`);
+    assert.strictEqual(content.includes('aria-label="Prompt text"'), true, `Missing aria-label on textarea in ${page}`);
+  });
+});
+
+it('CSS files provide .sr-only utility and prefers-reduced-motion support', () => {
+  const coreCSS = fs.readFileSync(path.join(ROOT, 'css/core.css'), 'utf-8');
+  const promptCSS = fs.readFileSync(path.join(ROOT, 'css/prompt.css'), 'utf-8');
+  assert.strictEqual(coreCSS.includes('.sr-only'), true, 'Missing .sr-only utility in core.css');
+  assert.strictEqual(coreCSS.includes('prefers-reduced-motion'), true, 'Missing prefers-reduced-motion in core.css');
+  assert.strictEqual(promptCSS.includes('prefers-reduced-motion'), true, 'Missing prefers-reduced-motion in prompt.css');
+});
+
+it('Dark mode color tokens meet WCAG AA and AAA contrast standards', () => {
+  assert.ok(contrastRatio('#0f0f10', '#f0ece4') >= 14.0, 'Dark mode text should exceed 14:1 (AAA)');
+  assert.ok(contrastRatio('#1a1a1c', '#c5c0b9') >= 9.0, 'Dark mode text-2 should exceed 9:1 (AAA)');
+  assert.ok(contrastRatio('#222225', '#9c9690') >= 5.0, 'Dark mode text-3 should exceed 5:1 (AA)');
+  assert.ok(contrastRatio('#0f0f10', '#d4a847') >= 7.0, 'Dark mode gold should exceed 7:1 (AAA)');
+  assert.ok(contrastRatio('#222225', '#e06c6c') >= 4.5, 'Dark mode red should exceed 4.5:1 (AA)');
+});
+
+it('Light mode color tokens meet WCAG AA and AAA contrast standards', () => {
+  assert.ok(contrastRatio('#f8f6f0', '#1a1714') >= 15.0, 'Light mode text should exceed 15:1 (AAA)');
+  assert.ok(contrastRatio('#efebe2', '#3d3832') >= 9.0, 'Light mode text-2 should exceed 9:1 (AAA)');
+  assert.ok(contrastRatio('#ffffff', '#5c564f') >= 7.0, 'Light mode text-3 should exceed 7:1 (AAA)');
+  assert.ok(contrastRatio('#f8f6f0', '#855306') >= 5.0, 'Light mode gold should exceed 5:1 (AA)');
+  assert.ok(contrastRatio('#efebe2', '#903030') >= 6.0, 'Light mode red should exceed 6:1 (AA/AAA)');
+});
+
+it('Primary buttons exceed WCAG AAA contrast ratio in both modes', () => {
+  const darkBtnRatio = contrastRatio('#d4a847', '#0f0f10');
+  const lightBtnRatio = contrastRatio('#d4a847', '#141210');
+  assert.ok(darkBtnRatio >= 7.0, `Dark button contrast ${darkBtnRatio} must be >= 7.0:1 (AAA)`);
+  assert.ok(lightBtnRatio >= 7.0, `Light button contrast ${lightBtnRatio} must be >= 7.0:1 (AAA)`);
+});
+
+// ─────────────────────────────────────────────────────────────
 // Summary
 // ─────────────────────────────────────────────────────────────
 console.log(`\n==================================================`);

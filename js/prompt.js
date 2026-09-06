@@ -281,14 +281,14 @@ function renderSidebar() {
       sList.innerHTML = `<div class="item-empty">${escapeHTML(currentLocale.noSaved || 'No saved prompts.')}</div>`;
     } else {
       sList.innerHTML = filteredSaved.map(s => `
-        <div class="item-btn ${activeItemId === s.id ? 'active' : ''}" onclick="loadPromptById('${s.id}')">
+        <div class="item-btn ${activeItemId === s.id ? 'active' : ''}" role="button" tabindex="0" aria-label="${escapeHTML(s.title)}" onclick="loadPromptById('${s.id}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();loadPromptById('${s.id}');}">
           <div class="item-label-wrap">
-            <span class="item-icon">${s.pinned ? '★' : '☆'}</span>
+            <span class="item-icon" aria-hidden="true">${s.pinned ? '★' : '☆'}</span>
             <span class="item-title">${escapeHTML(s.title)}</span>
           </div>
           <div class="item-actions" onclick="event.stopPropagation()">
-            <button type="button" class="action-sub-btn" title="${s.pinned ? 'Unpin' : 'Pin'}" onclick="togglePin('${s.id}')">${s.pinned ? '★' : '☆'}</button>
-            <button type="button" class="action-sub-btn delete" title="Delete" onclick="deleteSaved('${s.id}')">×</button>
+            <button type="button" class="action-sub-btn" title="${s.pinned ? 'Unpin prompt' : 'Pin prompt'}" aria-label="${s.pinned ? 'Unpin prompt' : 'Pin prompt'}" onclick="togglePin('${s.id}')"><span aria-hidden="true">${s.pinned ? '★' : '☆'}</span></button>
+            <button type="button" class="action-sub-btn delete" title="Delete prompt" aria-label="Delete prompt" onclick="deleteSaved('${s.id}')"><span aria-hidden="true">×</span></button>
           </div>
         </div>
       `).join('');
@@ -312,13 +312,13 @@ function renderSidebar() {
         }).join('');
 
         return `
-          <div class="item-btn ${activeItemId === h.id ? 'active' : ''}" onclick="loadPromptById('${h.id}')">
+          <button type="button" class="item-btn ${activeItemId === h.id ? 'active' : ''}" onclick="loadPromptById('${h.id}')" aria-label="${escapeHTML(h.title)}">
             <div class="item-label-wrap">
-              <span class="item-icon">&#8635;</span>
+              <span class="item-icon" aria-hidden="true">&#8635;</span>
               <span class="item-title">${escapeHTML(h.title)}</span>
             </div>
-            <div>${provDots}</div>
-          </div>
+            <div aria-hidden="true">${provDots}</div>
+          </button>
         `;
       }).join('');
     }
@@ -355,19 +355,23 @@ function escapeHTML(str) {
 
 /* ── Accordion Sections ─────────────────────────────────────── */
 function toggleSection(sec) {
-  let listId, chevronId;
-  if (sec === 'quickSection') { listId = 'quickList'; chevronId = 'quickChevron'; }
-  else if (sec === 'librariesSection') { listId = 'librariesList'; chevronId = 'librariesChevron'; }
-  else if (sec === 'savedSection') { listId = 'savedList'; chevronId = 'savedChevron'; }
-  else if (sec === 'historySection') { listId = 'historyList'; chevronId = 'historyChevron'; }
+  let listId, chevronId, btnId;
+  if (sec === 'quickSection') { listId = 'quickList'; chevronId = 'quickChevron'; btnId = 'btnQuickSection'; }
+  else if (sec === 'librariesSection') { listId = 'librariesList'; chevronId = 'librariesChevron'; btnId = 'btnLibrariesSection'; }
+  else if (sec === 'savedSection') { listId = 'savedList'; chevronId = 'savedChevron'; btnId = 'btnSavedSection'; }
+  else if (sec === 'historySection') { listId = 'historyList'; chevronId = 'historyChevron'; btnId = 'btnHistorySection'; }
 
   const el = document.getElementById(listId);
   const ch = document.getElementById(chevronId);
+  const btn = document.getElementById(btnId);
   if (!el) return;
   const isHidden = el.style.display === 'none';
   el.style.display = isHidden ? '' : 'none';
   if (ch) {
     ch.style.transform = isHidden ? 'rotate(0deg)' : 'rotate(-90deg)';
+  }
+  if (btn) {
+    btn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
   }
 }
 
@@ -375,33 +379,50 @@ function toggleSection(sec) {
 function toggleSidebar() {
   const sb = document.getElementById('sidebar');
   const bd = document.getElementById('backdrop');
+  const openBtn = document.getElementById('openSidebarBtn');
+  const collapseBtn = document.getElementById('collapseSidebarBtn');
   if (!sb) return;
   const isMobile = window.innerWidth <= 900;
   if (isMobile) {
-    sb.classList.toggle('mobile-open');
+    const isOpen = sb.classList.toggle('mobile-open');
     if (bd) bd.classList.toggle('show');
+    if (openBtn) openBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    if (collapseBtn) collapseBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   } else {
-    sb.classList.toggle('collapsed');
-    safeSet('pr_sidebar_state', sb.classList.contains('collapsed') ? 'collapsed' : 'open');
+    const isCollapsed = sb.classList.toggle('collapsed');
+    const isOpen = !isCollapsed;
+    if (openBtn) openBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    if (collapseBtn) collapseBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    safeSet('pr_sidebar_state', isCollapsed ? 'collapsed' : 'open');
   }
 }
 
 function closeMobileSidebar() {
   const sb = document.getElementById('sidebar');
   const bd = document.getElementById('backdrop');
+  const openBtn = document.getElementById('openSidebarBtn');
+  const collapseBtn = document.getElementById('collapseSidebarBtn');
   if (sb) sb.classList.remove('mobile-open');
   if (bd) bd.classList.remove('show');
+  if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
+  if (collapseBtn) collapseBtn.setAttribute('aria-expanded', 'false');
 }
 
 /* ── Topbar Libraries Dropdown ──────────────────────────────── */
 function toggleLibrariesDropdown(e) {
   if (e) e.stopPropagation();
   const dd = document.getElementById('topbarNavDropdown');
-  if (dd) dd.classList.toggle('open');
+  const btn = document.getElementById('topbarNavDropdownBtn') || dd?.querySelector('.nav-dropdown-btn');
+  if (dd) {
+    const isOpen = dd.classList.toggle('open');
+    if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
 }
 document.addEventListener('click', () => {
   const dd = document.getElementById('topbarNavDropdown');
+  const btn = document.getElementById('topbarNavDropdownBtn') || dd?.querySelector('.nav-dropdown-btn');
   if (dd) dd.classList.remove('open');
+  if (btn) btn.setAttribute('aria-expanded', 'false');
 });
 
 /* ── Providers Grid Rendering ───────────────────────────────── */
