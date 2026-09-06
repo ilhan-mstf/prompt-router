@@ -476,7 +476,7 @@ function updateThemeIcon(theme) {
   const btn = document.getElementById('themeToggleBtn');
   const isDark = theme === 'dark';
   if (icon) {
-    icon.innerHTML = isDark ? '&#9788;' : '&#9789;'; // Sun in dark mode, Moon in light mode
+    icon.textContent = isDark ? '☀️' : '🌙'; // Native emoji: ☀️ in dark mode, 🌙 in light mode
   }
   if (btn) {
     btn.title = isDark ? 'Switch to light mode' : 'Switch to dark mode';

@@ -586,7 +586,7 @@ button.section-title-wrap:focus-visible,
   justify-content: center;
   cursor: pointer;
   padding: 0;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1;
   transition: color .12s, background .12s, border-color .12s;
   flex-shrink: 0;
