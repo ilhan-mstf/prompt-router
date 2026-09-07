@@ -15,6 +15,7 @@ export default [
         HTMLRewriter: "readonly",
         Response: "readonly",
         Request: "readonly",
+        Headers: "readonly",
         URL: "readonly",
         fetch: "readonly",
       },

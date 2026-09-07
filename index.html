@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<script>(function(){var S=['en','es','it','pt','fr','de','tr'],path=location.pathname.replace(/^\/|\/$/g,''),p=new URLSearchParams(location.search).get('lang'),l='en';function n(r){if(!r)return null;var b=r.split('-')[0].toLowerCase();return S.indexOf(b)!==-1?b:null;}l=n(window.__LANG__)||n(path)||n(p)||n(localStorage.getItem('pr_lang'))||(function(){var ls=navigator.languages||[navigator.language||'en'];for(var i=0;i<ls.length;i++){var c=n(ls[i]);if(c)return c;}return null;})()||'en';try{localStorage.setItem('pr_lang',l);}catch(e){}document.documentElement.lang=l;window.__LANG__=l;}());</script>
+<script>(function(){var S=['en','es','it','pt','fr','de','tr'],seg=location.pathname.split('/').filter(Boolean)[0],p=new URLSearchParams(location.search).get('lang'),l='en';function n(r){if(!r)return null;var b=r.split('-')[0].toLowerCase();return S.indexOf(b)!==-1?b:null;}l=n(window.__LANG__)||n(seg)||n(p)||n(localStorage.getItem('pr_lang'))||(function(){var ls=navigator.languages||[navigator.language||'en'];for(var i=0;i<ls.length;i++){var c=n(ls[i]);if(c)return c;}return null;})()||'en';try{localStorage.setItem('pr_lang',l);}catch(e){}document.documentElement.lang=l;window.__LANG__=l;}());</script>
 
 <title>Prompt Router — Send One Prompt to ChatGPT, Claude, Gemini &amp; More</title>
 <meta name="description" content="Prompt Router lets you write one prompt and instantly open it in ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi and Z.ai. Compare AI responses side-by-side in seconds — free, no login required.">
@@ -126,16 +126,16 @@
 <noscript>
   <div class="noscript" role="alert">JavaScript is required to use Prompt Router. · Se requiere JavaScript para usar Prompt Router.</div>
   <section style="padding: 20px; max-width: 800px; margin: 0 auto;">
-    <h1>Free Multi-LLM Prompt Router & AI Comparison Tool</h1>
+    <h2>Free Multi-LLM Prompt Router & AI Comparison Tool</h2>
     <p>Prompt Router is a free, no-login tool that lets you send one prompt to multiple AI models simultaneously. Compare responses from ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, and Z.ai side-by-side.</p>
-    <h2>Key Features:</h2>
+    <h3>Key Features:</h3>
     <ul>
-      <li><strong>One Prompt, Every AI:</strong> Write once and open in 8+ major providers.</li>
+      <li><strong>One Prompt, Every AI:</strong> Write once and open in 11+ major providers.</li>
       <li><strong>11+ Prompt Libraries:</strong> Curated prompts for Developers, Marketing, Writing, Startups, and more.</li>
       <li><strong>Private & Secure:</strong> No account required, no backend storage — your prompts stay in your browser.</li>
       <li><strong>Compare AI Models:</strong> Instantly see which LLM gives the best result for your specific task.</li>
     </ul>
-    <h2>Supported AI Providers:</h2>
+    <h3>Supported AI Providers:</h3>
     <p>ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google), Copilot (Microsoft), Perplexity, DeepSeek, Grok (xAI), Mistral Le Chat, Qwen (Alibaba), Kimi (Moonshot), and Z.ai (Zhipu).</p>
   </section>
 </noscript>
@@ -384,10 +384,11 @@
             <a href="/blog">Blog</a>
           </nav>
           <div class="footer-sep" aria-hidden="true"></div>
-          <p class="footer-desc" id="footer-desc"></p>
+          <p class="footer-desc" id="footer-desc"><strong>Prompt Router</strong> is a free tool that lets you send a single prompt to multiple AI models simultaneously. Compare responses across <a href="https://chatgpt.com" rel="noopener noreferrer" target="_blank">ChatGPT</a>, <a href="https://claude.ai" rel="noopener noreferrer" target="_blank">Claude</a>, <a href="https://gemini.google.com" rel="noopener noreferrer" target="_blank">Gemini</a>, <a href="https://copilot.microsoft.com" rel="noopener noreferrer" target="_blank">Copilot</a>, <a href="https://www.perplexity.ai" rel="noopener noreferrer" target="_blank">Perplexity</a>, <a href="https://chat.deepseek.com" rel="noopener noreferrer" target="_blank">DeepSeek</a>, <a href="https://x.com/i/grok" rel="noopener noreferrer" target="_blank">Grok</a>, <a href="https://chat.mistral.ai" rel="noopener noreferrer" target="_blank">Le Chat</a>, <a href="https://chat.qwen.ai" rel="noopener noreferrer" target="_blank">Qwen</a>, <a href="https://www.kimi.com" rel="noopener noreferrer" target="_blank">Kimi</a>, and <a href="https://z.ai" rel="noopener noreferrer" target="_blank">Z.ai</a>. No login required, completely free.</p>
           <p class="footer-copy">
             Free, open-access multi-LLM router. Not affiliated with OpenAI, Anthropic, Google, Microsoft, Perplexity, DeepSeek, xAI, Mistral, Alibaba, Moonshot, or Zhipu.
           </p>
+          <p class="footer-made">Made with ❤️ in Munich</p>
         </div>
         <img src="/clumsy.svg" alt="" class="footer-doodle" aria-hidden="true" loading="lazy" width="160" height="120">
       </div>
@@ -401,21 +402,5 @@
 
 <script src="/js/locales.js"></script>
 <script src="/js/prompt.js"></script>
-
-<script>
-window.addEventListener('load', () => {
-  const docW = document.documentElement.clientWidth;
-  console.log('CLIENT_WIDTH=' + docW);
-  document.querySelectorAll('*').forEach(el => {
-    if (el.scrollWidth > docW) {
-      console.log('OVERFLOW_ELEMENT: tag=' + el.tagName + ' id=' + el.id + ' class=' + el.className + ' scrollWidth=' + el.scrollWidth + ' clientWidth=' + el.clientWidth);
-    }
-    const r = el.getBoundingClientRect();
-    if (r.right > docW + 1) {
-      console.log('OVERFLOW_RIGHT: tag=' + el.tagName + ' id=' + el.id + ' class=' + el.className + ' right=' + r.right);
-    }
-  });
-});
-</script>
 </body>
 </html>

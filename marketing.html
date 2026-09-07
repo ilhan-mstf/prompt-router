@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="referrer" content="strict-origin-when-cross-origin">
+<script>(function(){var S=['en','es','it','pt','fr','de','tr'],seg=location.pathname.split('/').filter(Boolean)[0],p=new URLSearchParams(location.search).get('lang'),l='en';function n(r){if(!r)return null;var b=r.split('-')[0].toLowerCase();return S.indexOf(b)!==-1?b:null;}l=n(window.__LANG__)||n(seg)||n(p)||n(localStorage.getItem('pr_lang'))||(function(){var ls=navigator.languages||[navigator.language||'en'];for(var i=0;i<ls.length;i++){var c=n(ls[i]);if(c)return c;}return null;})()||'en';try{localStorage.setItem('pr_lang',l);}catch(e){}document.documentElement.lang=l;window.__LANG__=l;}());</script>
 
 <title>Best AI Prompts for Marketing 2026 | Prompt Router</title>
 <meta name="description" content="24+ best AI prompts for Marketing — campaign planning, SEO, ads, analytics, brand, and growth prompts. Send any prompt to ChatGPT, Claude, Gemini and 5 other AIs instantly.">
@@ -126,12 +127,12 @@
 
       <!-- Section: Prompt Libraries -->
       <div class="nav-section">
-        <button type="button" class="section-title-wrap" id="btnLibrariesSection" onclick="toggleSection('librariesSection')" aria-expanded="false" aria-controls="librariesList">
+        <button type="button" class="section-title-wrap" id="btnLibrariesSection" onclick="toggleSection('librariesSection')" aria-expanded="true" aria-controls="librariesList">
           <span class="section-title">
             <span id="lblPromptLibraries">Prompt Libraries</span>
             <span class="section-badge">11</span>
           </span>
-          <span class="item-chevron" id="librariesChevron" aria-hidden="true" style="transform: rotate(-90deg);">&#9662;</span>
+          <span class="item-chevron" id="librariesChevron" aria-hidden="true">&#9662;</span>
         </button>
         <div class="item-list" id="librariesList">
 <a href="/dev" class="item-btn"><div class="item-label-wrap"><span class="item-icon">&#128187;</span><span class="item-title">Dev &amp; Coding</span></div><span class="p-arrow">&nearr;</span></a>
@@ -326,10 +327,11 @@
             <a href="/blog">Blog</a>
           </nav>
           <div class="footer-sep" aria-hidden="true"></div>
-          <p class="footer-desc" id="footer-desc"></p>
+          <p class="footer-desc" id="footer-desc"><strong>Prompt Router</strong> is a free tool that lets you send a single prompt to multiple AI models simultaneously. Compare responses across <a href="https://chatgpt.com" rel="noopener noreferrer" target="_blank">ChatGPT</a>, <a href="https://claude.ai" rel="noopener noreferrer" target="_blank">Claude</a>, <a href="https://gemini.google.com" rel="noopener noreferrer" target="_blank">Gemini</a>, <a href="https://copilot.microsoft.com" rel="noopener noreferrer" target="_blank">Copilot</a>, <a href="https://www.perplexity.ai" rel="noopener noreferrer" target="_blank">Perplexity</a>, <a href="https://chat.deepseek.com" rel="noopener noreferrer" target="_blank">DeepSeek</a>, <a href="https://x.com/i/grok" rel="noopener noreferrer" target="_blank">Grok</a>, <a href="https://chat.mistral.ai" rel="noopener noreferrer" target="_blank">Le Chat</a>, <a href="https://chat.qwen.ai" rel="noopener noreferrer" target="_blank">Qwen</a>, <a href="https://www.kimi.com" rel="noopener noreferrer" target="_blank">Kimi</a>, and <a href="https://z.ai" rel="noopener noreferrer" target="_blank">Z.ai</a>. No login required, completely free.</p>
           <p class="footer-copy">
             Free, open-access multi-LLM router. Not affiliated with OpenAI, Anthropic, Google, Microsoft, Perplexity, DeepSeek, xAI, Mistral, Alibaba, Moonshot, or Zhipu.
           </p>
+          <p class="footer-made">Made with ❤️ in Munich</p>
         </div>
         <img src="/clumsy.svg" alt="" class="footer-doodle" aria-hidden="true" loading="lazy" width="160" height="120">
       </div>
@@ -419,7 +421,8 @@ function renderCats() {
     btn.type = 'button';
     btn.className = 'cat' + (activeCat === cat ? ' active' : '');
     btn.setAttribute('aria-pressed', activeCat === cat ? 'true' : 'false');
-    btn.textContent = cat;
+    const allLabel = (typeof LOCALES !== 'undefined' && LOCALES[document.documentElement.lang] && LOCALES[document.documentElement.lang].lblAll) || 'All';
+    btn.textContent = cat === 'All' ? allLabel : cat;
     btn.addEventListener('click', () => {
       activeCat = cat;
       selectedCard = null;
@@ -488,6 +491,14 @@ function escHtml(s) {
 
 renderCats();
 renderCards();
+
+window.__onPromptCleared = function() {
+  selectedCard = null;
+  document.querySelectorAll('.prompt-card.selected').forEach(function(c) {
+    c.classList.remove('selected');
+    c.setAttribute('aria-pressed', 'false');
+  });
+};
 
 (function(){var n=1,items=[];DEV_PROMPTS.forEach(function(c){c.prompts.forEach(function(p){items.push({"@type":"ListItem","position":n++,"name":p.title});});});var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ItemList","name":document.title.split('|')[0].split('—')[0].trim(),"numberOfItems":items.length,"itemListElement":items});document.head.appendChild(s);})();
 })();

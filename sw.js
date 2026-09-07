@@ -1,6 +1,6 @@
 'use strict';
 
-const CACHE_NAME = 'pr-v4';
+const CACHE_NAME = 'pr-v5';
 
 const CORE_ASSETS = [
   '/',
@@ -35,12 +35,32 @@ const CORE_ASSETS = [
   '/blog-budget-prompt-routing',
   '/blog-reduce-ai-costs',
   '/blog-compare-ai',
+  '/blog-dev-prompts',
+  '/blog-writing-prompts',
+  '/blog-marketing-prompts',
+  '/blog-job-prompts',
+  '/blog-startup-prompts',
+  '/blog-data-prompts',
+  '/blog-design-prompts',
+  '/blog-student-prompts',
+  '/blog-productivity-prompts',
+  '/blog-legal-prompts',
+  '/blog-sales-prompts',
+  '/blog-prompt-router',
 ];
 
-// Install: Cache core assets
+// Install: Cache core assets resiliently
 self.addEventListener('install', e => {
   e.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(CORE_ASSETS))
+    caches.open(CACHE_NAME).then(cache => {
+      return Promise.all(
+        CORE_ASSETS.map(asset => {
+          return cache.add(asset).catch(err => {
+            console.warn(`[SW] Failed to precache ${asset}:`, err);
+          });
+        })
+      );
+    })
   );
   self.skipWaiting();
 });
@@ -67,28 +87,54 @@ self.addEventListener('fetch', e => {
   if (url.origin.includes('fonts.googleapis.com') || url.origin.includes('fonts.gstatic.com')) {
     e.respondWith(
       caches.match(e.request).then(cached => {
-        return cached || fetch(e.request).then(res => {
-          const clone = res.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put(e.request, clone));
+        if (cached) return cached;
+        return fetch(e.request).then(res => {
+          if (res && res.status === 200) {
+            const clone = res.clone();
+            caches.open(CACHE_NAME).then(cache => cache.put(e.request, clone));
+          }
           return res;
         });
-      })
+      }).catch(() => new Response('', { status: 408, statusText: 'Request Timeout' }))
     );
     return;
   }
 
-  // Default: Stale-While-Revalidate
+  // Default: Stale-While-Revalidate with status validation and offline fallback
   e.respondWith(
     caches.match(e.request, { ignoreSearch: true }).then(cached => {
       const networked = fetch(e.request)
         .then(res => {
-          const clone = res.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put(e.request, clone));
+          if (res && res.status === 200 && (res.type === 'basic' || res.type === 'cors')) {
+            const clone = res.clone();
+            caches.open(CACHE_NAME).then(cache => cache.put(e.request, clone));
+          }
           return res;
         })
-        .catch(() => cached); // Fallback to cached if network fails completely
+        .catch(err => {
+          if (cached) return cached;
+          throw err;
+        });
 
-      return cached || networked;
+      if (cached) {
+        // Trigger background revalidation without uncaught promise rejection
+        networked.catch(() => {});
+        return cached;
+      }
+
+      return networked.catch(async () => {
+        if (e.request.mode === 'navigate') {
+          const fallback = await caches.match('/') || await caches.match('/index.html');
+          if (fallback) return fallback;
+        }
+        return new Response('Network offline', { status: 503, statusText: 'Service Unavailable' });
+      });
+    }).catch(async () => {
+      if (e.request.mode === 'navigate') {
+        const fallback = await caches.match('/') || await caches.match('/index.html');
+        if (fallback) return fallback;
+      }
+      return new Response('Network offline', { status: 503, statusText: 'Service Unavailable' });
     })
   );
 });

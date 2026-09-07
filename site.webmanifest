@@ -1,7 +1,7 @@
 {
   "name": "Prompt Router",
   "short_name": "Prompt Router",
-  "description": "Send one prompt to ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok and Le Chat at once.",
+  "description": "Send one prompt to ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, and Z.ai at once.",
   "start_url": "/?utm_source=pwa",
   "display": "standalone",
   "orientation": "portrait-any",

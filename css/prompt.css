@@ -87,6 +87,8 @@ body.has-sidebar {
 .sidebar.collapsed {
   width: 0;
   border-right: none;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 /* Sidebar Header */
@@ -285,8 +287,7 @@ button.section-title-wrap:focus-visible,
 }
 .section-title {
   font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   color: var(--text-3);
   font-weight: 600;
   display: flex;
@@ -396,6 +397,28 @@ button.section-title-wrap:focus-visible,
   background: var(--surface-2);
   border-color: var(--border-2);
   color: var(--gold);
+}
+.item-main-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: var(--text-xs);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+.item-main-btn:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 .item-label-wrap {
   display: flex;
@@ -944,8 +967,7 @@ button.section-title-wrap:focus-visible,
 .lbl-heading {
   font-size: var(--text-xs);
   color: var(--text-3);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   font-weight: 500;
 }
 .providers-grid,
@@ -1034,7 +1056,6 @@ footer {
   font-size: var(--text-xs);
   font-weight: 500;
   letter-spacing: 0.04em;
-  text-transform: uppercase;
   color: var(--text-2);
 }
 .footer-grid {
@@ -1093,6 +1114,11 @@ footer {
   font-size: 11px;
   color: var(--text-3);
   line-height: 1.5;
+}
+.footer-made {
+  font-size: 11px;
+  color: var(--text-3);
+  text-align: center;
 }
 .footer-sep {
   width: 100%;

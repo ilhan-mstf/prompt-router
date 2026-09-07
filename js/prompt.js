@@ -141,14 +141,42 @@ function savePrompt() {
   updateActiveBadge(newItem.title);
 }
 
+function clearCardSelections() {
+  document.querySelectorAll('.prompt-card.selected').forEach(c => {
+    c.classList.remove('selected');
+    c.setAttribute('aria-pressed', 'false');
+  });
+  if (typeof window.__onPromptCleared === 'function') {
+    window.__onPromptCleared();
+  }
+}
+
 function clearPrompt() {
   const el = getPromptEl();
+  const val = el ? el.value : '';
+  if (val.trim()) {
+    window.__lastClearedPrompt = val;
+    try { sessionStorage.setItem('pr_draft_backup', val); } catch {}
+    showToast(currentLocale.toastCleared || 'Prompt cleared. Press ⌘Z to undo');
+  }
   if (el) el.value = '';
   activeItemId = null;
   updateActiveBadge(null);
   updateCharCount();
   renderSidebar();
+  clearCardSelections();
   if (el) el.focus();
+}
+
+function undoClearPrompt() {
+  const backup = window.__lastClearedPrompt || (function(){ try { return sessionStorage.getItem('pr_draft_backup'); } catch { return null; } })();
+  if (backup) {
+    const el = getPromptEl();
+    if (el) { el.value = backup; el.focus(); }
+    window.__lastClearedPrompt = null;
+    updateCharCount();
+    showToast(currentLocale.toastRestored || 'Draft restored');
+  }
 }
 
 function newPrompt() {
@@ -160,6 +188,12 @@ function openProvider(p) {
   const q = getPromptVal();
   if (!q) { showToast(currentLocale.toastNoPrompt || 'Write a prompt first'); return; }
   logHistory(q, p.id);
+
+  if (q.length > 2000) {
+    navigator.clipboard.writeText(q).catch(() => {});
+    showToast(`Prompt is large (${q.length} chars). Copied to clipboard for safety.`);
+  }
+
   const w = window.open(p.url(q), '_blank', 'noopener,noreferrer');
   if (!w) showToast(currentLocale.toastPopup || 'Popup blocked — copy & paste instead');
 }
@@ -223,6 +257,7 @@ function loadPrompt(id, text, title) {
   updateCharCount();
   updateActiveBadge(title);
   renderSidebar();
+  clearCardSelections();
   closeMobileSidebar();
   el.focus();
 }
@@ -283,12 +318,12 @@ function renderSidebar() {
       sList.innerHTML = `<div class="item-empty">${escapeHTML(currentLocale.noSaved || 'No saved prompts.')}</div>`;
     } else {
       sList.innerHTML = filteredSaved.map(s => `
-        <div class="item-btn ${activeItemId === s.id ? 'active' : ''}" role="button" tabindex="0" aria-label="${escapeHTML(s.title)}" onclick="loadPromptById('${s.id}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();loadPromptById('${s.id}');}">
-          <div class="item-label-wrap">
+        <div class="item-btn ${activeItemId === s.id ? 'active' : ''}">
+          <button type="button" class="item-main-btn" onclick="loadPromptById('${s.id}')" aria-label="${escapeHTML(s.title)}">
             <span class="item-icon" aria-hidden="true">${s.pinned ? '★' : '☆'}</span>
             <span class="item-title">${escapeHTML(s.title)}</span>
-          </div>
-          <div class="item-actions" onclick="event.stopPropagation()">
+          </button>
+          <div class="item-actions">
             <button type="button" class="action-sub-btn" title="${s.pinned ? 'Unpin prompt' : 'Pin prompt'}" aria-label="${s.pinned ? 'Unpin prompt' : 'Pin prompt'}" onclick="togglePin('${s.id}')"><span aria-hidden="true">${s.pinned ? '★' : '☆'}</span></button>
             <button type="button" class="action-sub-btn delete" title="Delete prompt" aria-label="Delete prompt" onclick="deleteSaved('${s.id}')"><span aria-hidden="true">×</span></button>
           </div>
@@ -343,9 +378,13 @@ function renderSidebar() {
   const prefix = detectedLang === 'en' ? '' : `/${detectedLang}`;
   const validLibs = ['dev', 'writing', 'marketing', 'job', 'startup', 'data', 'design', 'student', 'productivity', 'legal', 'sales'];
 
-  document.querySelectorAll('#librariesList a.item-btn, #topbarLibMenu a').forEach(a => {
+  document.querySelectorAll('#librariesList a.item-btn, #topbarLibMenu a, footer .footer-grid a, .related-grid a, a.brand-link, a.new-prompt-btn, .footer-links a[href="/"]').forEach(a => {
     const href = a.getAttribute('href');
     if (!href) return;
+    if (href === '/' || href.match(/^\/[a-z]{2}$/)) {
+      a.setAttribute('href', prefix || '/');
+      return;
+    }
     const cleanLib = href.replace(/^\/[a-z]{2}\//, '/').replace(/^\//, '');
     if (validLibs.includes(cleanLib)) {
       a.setAttribute('href', `${prefix}/${cleanLib}`);
@@ -402,11 +441,13 @@ function toggleSidebar() {
     if (bd) bd.classList.toggle('show');
     if (openBtn) openBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     if (collapseBtn) collapseBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    if (isOpen) { sb.removeAttribute('aria-hidden'); } else { sb.setAttribute('aria-hidden', 'true'); }
   } else {
     const isCollapsed = sb.classList.toggle('collapsed');
     const isOpen = !isCollapsed;
     if (openBtn) openBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     if (collapseBtn) collapseBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    if (isCollapsed) { sb.setAttribute('aria-hidden', 'true'); } else { sb.removeAttribute('aria-hidden'); }
     safeSet('pr_sidebar_state', isCollapsed ? 'collapsed' : 'open');
   }
 }
@@ -416,10 +457,14 @@ function closeMobileSidebar() {
   const bd = document.getElementById('backdrop');
   const openBtn = document.getElementById('openSidebarBtn');
   const collapseBtn = document.getElementById('collapseSidebarBtn');
-  if (sb) sb.classList.remove('mobile-open');
+  const isMobile = window.innerWidth <= 900;
+  if (sb && isMobile) {
+    sb.classList.remove('mobile-open');
+    sb.setAttribute('aria-hidden', 'true');
+    if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
+    if (collapseBtn) collapseBtn.setAttribute('aria-expanded', 'false');
+  }
   if (bd) bd.classList.remove('show');
-  if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
-  if (collapseBtn) collapseBtn.setAttribute('aria-expanded', 'false');
 }
 
 /* ── Topbar Libraries Dropdown ──────────────────────────────── */
@@ -583,6 +628,9 @@ function setLanguage(lang) {
   const qLbl = document.getElementById('lblQuickPrompts');
   if (qLbl && currentLocale.quickPrompts) qLbl.textContent = currentLocale.quickPrompts;
 
+  const libLbl = document.getElementById('lblPromptLibraries');
+  if (libLbl && currentLocale.promptLibraries) libLbl.textContent = currentLocale.promptLibraries;
+
   const sLbl = document.getElementById('lblSavedPrompts');
   if (sLbl && currentLocale.savedPrompts) sLbl.textContent = currentLocale.savedPrompts;
 
@@ -597,6 +645,27 @@ function setLanguage(lang) {
 
   const searchInput = document.getElementById('sidebarSearch');
   if (searchInput && currentLocale.search) searchInput.placeholder = currentLocale.search;
+
+  const provHeading = document.getElementById('lbl-providers');
+  if (provHeading && currentLocale.lblProviders) provHeading.textContent = currentLocale.lblProviders;
+
+  const catsHeading = document.getElementById('lbl-cats');
+  if (catsHeading && currentLocale.lblCats) catsHeading.textContent = currentLocale.lblCats;
+
+  const promptsHeading = document.getElementById('lbl-prompts');
+  if (promptsHeading && currentLocale.lblPrompts) promptsHeading.textContent = currentLocale.lblPrompts;
+
+  const promptLabel = document.getElementById('lbl-prompt');
+  if (promptLabel && currentLocale.lblPrompt) promptLabel.textContent = currentLocale.lblPrompt;
+
+  const relatedHeading = document.getElementById('lbl-related');
+  if (relatedHeading && currentLocale.lblRelated) relatedHeading.textContent = currentLocale.lblRelated;
+
+  const footerLibHeading = document.getElementById('lblFooterLibraries');
+  if (footerLibHeading && currentLocale.promptLibraries) footerLibHeading.textContent = currentLocale.promptLibraries;
+
+  const allCatBtn = document.querySelector('#cats button.cat:first-child, .cat-btn[data-cat="all"]');
+  if (allCatBtn && currentLocale.lblAll) allCatBtn.textContent = currentLocale.lblAll;
 
   renderSidebar();
   renderFooterDesc(currentLocale);
@@ -661,6 +730,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const sb = document.getElementById('sidebar');
   if (sb && safeGet('pr_sidebar_state') === 'collapsed' && window.innerWidth > 900) {
     sb.classList.add('collapsed');
+    sb.setAttribute('aria-hidden', 'true');
+    const openBtn = document.getElementById('openSidebarBtn');
+    const collapseBtn = document.getElementById('collapseSidebarBtn');
+    if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
+    if (collapseBtn) collapseBtn.setAttribute('aria-expanded', 'false');
+  } else if (sb && window.innerWidth > 900) {
+    const openBtn = document.getElementById('openSidebarBtn');
+    const collapseBtn = document.getElementById('collapseSidebarBtn');
+    if (openBtn) openBtn.setAttribute('aria-expanded', 'true');
+    if (collapseBtn) collapseBtn.setAttribute('aria-expanded', 'true');
   }
 
   // Textarea listeners
@@ -669,6 +748,7 @@ document.addEventListener('DOMContentLoaded', () => {
     promptEl.addEventListener('input', () => {
       updateCharCount();
       if (!promptEl.value) updateActiveBadge(null);
+      clearCardSelections();
     });
   }
 
@@ -682,9 +762,48 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', e => {
     const inTextarea = document.activeElement === promptEl;
     if (e.key === 'Escape') {
-      if (inTextarea) { clearPrompt(); }
-      else { closeMobileSidebar(); }
+      // Close topbar dropdown first if open
+      const dd = document.getElementById('topbarNavDropdown');
+      if (dd && dd.classList.contains('open')) {
+        dd.classList.remove('open');
+        const ddBtn = document.getElementById('topbarNavDropdownBtn');
+        if (ddBtn) {
+          ddBtn.setAttribute('aria-expanded', 'false');
+          ddBtn.focus();
+        }
+        return;
+      }
+
+      if (inTextarea) {
+        const val = promptEl.value.trim();
+        if (!val) return;
+        if (val.length < 20) {
+          clearPrompt();
+        } else {
+          const now = Date.now();
+          if (window.__lastEscPress && (now - window.__lastEscPress < 1500)) {
+            window.__lastEscPress = 0;
+            clearPrompt();
+          } else {
+            window.__lastEscPress = now;
+            showToast('Press Esc again to clear prompt (or click Clear)');
+          }
+        }
+      } else {
+        closeMobileSidebar();
+      }
       return;
+    }
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'z' && inTextarea && !promptEl.value) {
+      const backup = window.__lastClearedPrompt || (function(){ try { return sessionStorage.getItem('pr_draft_backup'); } catch { return null; } })();
+      if (backup) {
+        e.preventDefault();
+        promptEl.value = backup;
+        window.__lastClearedPrompt = null;
+        updateCharCount();
+        showToast(currentLocale.toastRestored || 'Draft restored');
+        return;
+      }
     }
     if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'b') {
       e.preventDefault();
@@ -715,6 +834,8 @@ if ('serviceWorker' in navigator) {
 window.copyPrompt = copyPrompt;
 window.savePrompt = savePrompt;
 window.clearPrompt = clearPrompt;
+window.undoClearPrompt = undoClearPrompt;
+window.clearCardSelections = clearCardSelections;
 window.newPrompt = newPrompt;
 window.toggleSidebar = toggleSidebar;
 window.closeMobileSidebar = closeMobileSidebar;
@@ -737,4 +858,5 @@ window.getSystemTheme = getSystemTheme;
 window.initTheme = initTheme;
 window.updateThemeIcon = updateThemeIcon;
 window.setLanguage = setLanguage;
+
 
