@@ -534,7 +534,7 @@ Generate 8 original metaphors or analogies to explain the following concept:
 
 Concept: [describe the idea, process, or thing]
 Audience: [who needs to understand it]
-Context: [where it will be used â e.g. a blog post, a speech, a product explainer]
+Context: [where it will be used — e.g. a blog post, a speech, a product explainer]
 
 Aim for a mix of styles: some visual, some emotional, some humorous. Avoid cliches. For each, add a one-sentence note on when it works best.
 ```
@@ -552,6 +552,7 @@ Capture the voice, sentence rhythm, vocabulary, and structural patterns of that 
 ---
 ## Guides & Blog Articles
 
+- [Introducing the New Prompt Router](https://prompt-router.pages.dev/blog-new-look): Major redesign with collapsible sidebar, clean canvas, and 11 AI models.
 - [Budget-Friendly Prompt Routing](https://prompt-router.pages.dev/blog-budget-prompt-routing): How top AI companies cut inference costs by up to 85% using model cascades and small models.
 - [Reduce AI Costs](https://prompt-router.pages.dev/blog-reduce-ai-costs): 5 proven strategies to cut OpenAI, Anthropic, and Google AI API costs by up to 80%.
 - [Compare AI Models](https://prompt-router.pages.dev/blog-compare-ai): Comparative breakdown of LLMs for specialized tasks and why side-by-side evaluation is essential.

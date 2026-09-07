@@ -304,3 +304,32 @@ Total Defects Identified: 19
 3. **Blog Theme Switcher:** Integrate `#themeToggleBtn` into blog navigation bar.
 4. **Harden Service Worker:** Add missing 12 blog posts to precache and implement proper fallback responses on network failure.
 5. **Code Hygiene:** Remove residual `console.log` statements from `index.html`.
+
+---
+
+## 9. Verification & Remediation Status (Completed 2026-09-07)
+
+All 19 defects identified across P0, P1, P2, and P3 tiers have been remediated and verified through an expanded automated test suite of **146 regression tests** (`npm test`):
+
+| Defect ID | Description | Severity | Resolution Status | Verified By |
+| :--- | :--- | :---: | :---: | :--- |
+| **DEF-01** | Prompt erasure on `Esc` | P0 | ✅ Resolved | Length guard + `window.__lastClearedPrompt` undo buffer (`⌘Z`) + toast action |
+| **DEF-02** | Localized navigation drops `/lang/` | P0 | ✅ Resolved | Edge Worker SSR rewrites and client JS links retain language subpath |
+| **DEF-03** | Server/client key & translation divergence | P0 | ✅ Resolved | Standardized keys (`quickPrompts`, `promptLibraries`, `savedPrompts`, `history`, `sidebar`) |
+| **DEF-04** | Legacy `?lang=` strips library route | P0 | ✅ Resolved | `_worker.js` preserves subpaths on 301 redirects (`/dev?lang=tr` → `/tr/dev`) |
+| **DEF-05** | Library card selection desync | P1 | ✅ Resolved | `window.__onPromptCleared` hook resets selected cards on clear |
+| **DEF-06** | Multiple/competing `<h1>` tags | P1 | ✅ Resolved | Single `<h1>` per page, logo demoted to `<div>`, `<noscript>` demoted to `<h2>` |
+| **DEF-07** | Non-canonical URL indexing | P1 | ✅ Resolved | 301 redirects for trailing slashes and `.html` extensions (google verification exempt) |
+| **DEF-08** | Flash of unlocalized content | P1 | ✅ Resolved | Early head language detector script inserted into all 11 library pages |
+| **DEF-09** | Untranslated library "All" button | P1 | ✅ Resolved | Dynamic category button label translation support across all libraries |
+| **DEF-10** | Missing theme toggle on blog | P2 | ✅ Resolved | Universal `#themeToggleBtn` added to topbar across all 16 blog articles & `blog.html` |
+| **DEF-11** | Accordion ARIA & focus trap | P2 | ✅ Resolved | `aria-expanded="true"` initial sync; `visibility: hidden` & `pointer-events: none` on collapsed sidebar; unnested buttons (WCAG 4.1.2) |
+| **DEF-12** | Raw Spanglish copy in Spanish locale | P2 | ✅ Resolved | Fully translated Spanish strings in `LOCALES.es` and `LIB_LOCALES.es` |
+| **DEF-13** | Service worker precache gaps & crash | P2 | ✅ Resolved | Precaches all 16 blog posts, `res.status === 200` guard, version bumped to `pr-v5` |
+| **DEF-14** | Missing HTTP security headers | P2 | ✅ Resolved | Injected CSP, `X-Frame-Options: DENY`, `X-Content-Type-Options: nosniff`, Referrer Policy |
+| **DEF-15** | Empty `#footer-desc` in raw HTML | P3 | ✅ Resolved | Pre-populated static English fallback description across all 11 library templates |
+| **DEF-16** | Development `console.log` listeners | P3 | ✅ Resolved | Removed dev resize and overflow listeners from `index.html` |
+| **DEF-17** | Sitemap duplicate URLs | P3 | ✅ Resolved | Zero duplicate URLs; all 77 library pages and 16 articles verified |
+| **DEF-18** | French locale missing 3 LLMs | P3 | ✅ Resolved | French copy updated to reference all 11 AI models |
+| **DEF-19** | Unindexed `mockup.html` prototype | P3 | ✅ Resolved | Cleaned and kept in sync with core styles and design system |
+
