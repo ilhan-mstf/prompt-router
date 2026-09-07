@@ -5,13 +5,14 @@
   "type": "module",
   "main": "_worker.js",
   "scripts": {
-    "dev": "npx wrangler pages dev .",
-    "preview": "python3 serve.py",
+    "build": "node scripts/build.js",
+    "dev": "npm run build && npx wrangler pages dev .",
+    "preview": "npm run build && python3 serve.py",
     "lint": "npm run lint:html && npm run lint:js",
     "lint:html": "htmlhint --ignore google*.html *.html",
     "lint:js": "eslint _worker.js eslint.config.js",
     "test:routes": "node test/test_router.js",
-    "test": "npm run lint && npm run test:routes"
+    "test": "npm run build && npm run lint && npm run test:routes"
   },
   "repository": {
     "type": "git",

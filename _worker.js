@@ -18,11 +18,19 @@ const SECURITY_HEADERS = {
   'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';",
 };
 
-function addSecurityHeaders(response) {
+function addSecurityHeaders(response, requestUrl) {
   if (!response) return response;
   const newHeaders = new Headers(response.headers);
   for (const [key, val] of Object.entries(SECURITY_HEADERS)) {
     newHeaders.set(key, val);
+  }
+  if (requestUrl) {
+    try {
+      const p = typeof requestUrl === 'string' ? new URL(requestUrl).pathname : requestUrl.pathname;
+      if (p && p.match(/\.[a-f0-9]{8}\.(css|js)$/)) {
+        newHeaders.set('Cache-Control', 'public, max-age=31536000, immutable');
+      }
+    } catch {}
   }
   return new Response(response.body, {
     status: response.status,
@@ -240,7 +248,17 @@ export default {
     }
 
     // 8. Default: pass through to static assets (English homepage, css, js, etc.)
-    const baseResponse = await env.ASSETS.fetch(request);
-    return addSecurityHeaders(baseResponse);
+    let baseResponse = await env.ASSETS.fetch(request);
+    if (!baseResponse.ok) {
+      const hashMatch = pathname.match(/^\/(css|js)\/([a-z-]+)\.[a-f0-9]{8}\.(css|js)$/);
+      if (hashMatch) {
+        const fallbackUrl = new URL(`/${hashMatch[1]}/${hashMatch[2]}.${hashMatch[3]}`, request.url);
+        const fallbackResp = await env.ASSETS.fetch(new Request(fallbackUrl, request));
+        if (fallbackResp.ok) {
+          baseResponse = fallbackResp;
+        }
+      }
+    }
+    return addSecurityHeaders(baseResponse, url);
   },
 };

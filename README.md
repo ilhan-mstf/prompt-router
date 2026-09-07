@@ -91,16 +91,17 @@ npm run preview
 ```
 
 ### 3. Run Automated Tests & Linters
-The test suite performs 146 automated checks across routing, edge rewrites, sitemaps, WCAG AAA contrast, security headers, and PWA caches:
+The test suite performs 147 automated checks across routing, edge rewrites, sitemaps, WCAG AAA contrast, security headers, fingerprinted asset caches, and PWA caches:
 ```bash
 npm test
 ```
 
 Individual checks:
 ```bash
-npm run lint:html    # Scans all 30 HTML files with HTMLHint
-npm run lint:js      # Scans _worker.js and config with ESLint
-npm run test:routes  # Executes test/test_router.js
+npm run build      # Generates content-hashed assets (CSS/JS) and updates HTML & sw.js
+npm run lint:html  # Scans all HTML files with HTMLHint
+npm run lint:js    # Scans _worker.js and config with ESLint
+npm run test:routes # Executes test/test_router.js
 ```
 
 ---

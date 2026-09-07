@@ -656,9 +656,9 @@ it('All application pages, library pages, blog index and blog posts include cent
 // ─────────────────────────────────────────────────────────────
 console.log('\n⚡ 11. Service Worker & Offline Resiliency:');
 
-it('sw.js precaches all 16 blog posts and version bumped to pr-v5', () => {
+it('sw.js precaches all 16 blog posts and version bumped to pr-v6', () => {
   const swCode = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf-8');
-  assert.strictEqual(swCode.includes("const CACHE_NAME = 'pr-v5';"), true, 'sw.js cache name is not pr-v5');
+  assert.strictEqual(swCode.includes("const CACHE_NAME = 'pr-v6';"), true, 'sw.js cache name is not pr-v6');
   const blogFiles = fs.readdirSync(ROOT).filter(f => f.startsWith('blog-') && f.endsWith('.html'));
   blogFiles.forEach(file => {
     const cleanRoute = `/${file.replace('.html', '')}`;
@@ -670,6 +670,17 @@ it('sw.js guards against caching non-200 responses and handles offline fallback'
   const swCode = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf-8');
   assert.strictEqual(swCode.includes("res.status === 200"), true, 'sw.js does not verify res.status === 200');
   assert.strictEqual(swCode.includes("e.request.mode === 'navigate'"), true, 'sw.js missing navigate offline fallback');
+});
+
+it('asset-manifest.json exists and fingerprinted assets are generated on disk', () => {
+  const manifestPath = path.join(ROOT, 'asset-manifest.json');
+  assert.strictEqual(fs.existsSync(manifestPath), true, 'Missing asset-manifest.json');
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+  ['/css/core.css', '/css/prompt.css', '/js/locales.js', '/js/prompt.js'].forEach(orig => {
+    assert.strictEqual(Boolean(manifest[orig]), true, `Missing manifest entry for ${orig}`);
+    const hashedPath = path.join(ROOT, manifest[orig].replace(/^\//, ''));
+    assert.strictEqual(fs.existsSync(hashedPath), true, `Missing hashed file on disk: ${hashedPath}`);
+  });
 });
 
 // ─────────────────────────────────────────────────────────────
