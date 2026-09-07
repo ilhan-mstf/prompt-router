@@ -95,7 +95,12 @@ self.addEventListener('fetch', e => {
           }
           return res;
         });
-      }).catch(() => new Response('', { status: 408, statusText: 'Request Timeout' }))
+      }).catch(() => {
+        if (url.pathname.includes('/css2')) {
+          return new Response('/* offline font fallback */', { headers: { 'Content-Type': 'text/css' } });
+        }
+        return new Response('', { status: 504, statusText: 'Gateway Timeout' });
+      })
     );
     return;
   }
