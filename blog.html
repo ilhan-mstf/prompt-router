@@ -56,54 +56,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,200&display=swap">
 </noscript>
 
-<link rel="stylesheet" href="/css/core.d3ced108.css">
+<link rel="stylesheet" href="/css/core.99f35dd1.css">
 <style>
 /* ── Header ── */
-header.page { padding-top: 40px; padding-bottom: 40px; }
-main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 24px; }
-
-.page-title {
-  font-family: 'Fraunces', Georgia, serif;
-  font-weight: 600; font-size: 1.75rem;
-  letter-spacing: -0.02em; line-height: 1.3;
-  color: var(--text); margin-bottom: 8px;
-  padding-top: 40px;
-}
-
-/* ── Post cards ── */
-.post-card {
-  display: block; text-decoration: none;
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--r-lg); padding: 20px 22px;
-  transition: border-color .12s, background .12s, transform .12s;
-}
-.post-card:hover {
-  border-color: var(--border-2); background: var(--surface-2);
-  transform: translateY(-2px);
-}
-.post-card-date {
-  font-size: var(--text-xs); color: var(--text-3);
-  letter-spacing: 0.04em; margin-bottom: 6px;
-}
-.post-card-title {
-  font-family: 'Fraunces', Georgia, serif;
-  font-weight: 600; font-size: 1.1rem;
-  color: var(--text); margin-bottom: 8px;
-  line-height: 1.3;
-}
-.post-card-desc {
-  font-size: var(--text-sm); color: var(--text-2);
-  line-height: 1.6;
-}
-.post-card-arrow {
-  display: inline-block; margin-top: 12px;
-  font-size: var(--text-xs); color: var(--gold);
-  letter-spacing: 0.02em;
-}
-
-@media (max-width: 580px) {
-  .page-title { font-size: 1.4rem; padding-top: 24px; }
-}
+.page-title { padding-top: 40px; }
 </style>
   <script>
     (function(){function getSys(){return window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}function updIcon(t){var i=document.getElementById('themeToggleIcon');if(i)i.textContent=t==='dark'?'☀️':'🌙';}window.toggleTheme=function(){var sys=getSys();var cur=document.documentElement.getAttribute('data-theme')||sys;var nxt=cur==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',nxt);if(nxt===sys){try{sessionStorage.removeItem('pr_theme');localStorage.removeItem('pr_theme');}catch(e){}}else{try{sessionStorage.setItem('pr_theme',nxt);}catch(e){}}updIcon(nxt);};try{localStorage.removeItem('pr_theme');var s=sessionStorage.getItem('pr_theme');var init=s||getSys();document.documentElement.setAttribute('data-theme',init);if(window.matchMedia){var dm=window.matchMedia('(prefers-color-scheme: dark)');var sc=function(e){try{sessionStorage.removeItem('pr_theme');localStorage.removeItem('pr_theme');}catch(x){}var t=e.matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);updIcon(t);};if(dm.addEventListener){dm.addEventListener('change',sc);}else if(dm.addListener){dm.addListener(sc);}}}catch(e){}document.addEventListener('DOMContentLoaded',function(){updIcon(document.documentElement.getAttribute('data-theme')||getSys());});})();
@@ -117,7 +73,7 @@ main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 24
     <div class="logo"><a href="/"><span class="logo-a">Prompt</span><span class="logo-b">Router</span></a></div>
     <div class="nav-links">
       <a href="/">Home</a>
-      <a href="/dev">Dev</a>
+      <a href="/dev">Prompt Libraries</a>
       <span class="nav-sep" aria-hidden="true"></span>
       <a href="/blog" class="active">Blog</a>
       <button type="button" class="theme-toggle-btn" id="themeToggleBtn" title="Toggle dark/light mode" onclick="toggleTheme()" aria-label="Toggle theme">

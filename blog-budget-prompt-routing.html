@@ -63,111 +63,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,200&display=swap">
 </noscript>
 
-<link rel="stylesheet" href="/css/core.d3ced108.css">
+<link rel="stylesheet" href="/css/core.99f35dd1.css">
 <style>
-/* ── Header ── */
-header.page { padding-top: 40px; padding-bottom: 40px; }
-
 /* ── Article ── */
 article.page { padding-top: 40px; padding-bottom: 86px; }
-
-.article-date {
-  font-size: var(--text-xs); color: var(--text-3);
-  letter-spacing: 0.04em; margin-bottom: 8px;
-}
-
-.article-title {
-  font-family: 'Fraunces', Georgia, serif;
-  font-weight: 600; font-size: 1.75rem;
-  letter-spacing: -0.02em; line-height: 1.3;
-  color: var(--text); margin-bottom: 32px;
-}
-
-article h2 {
-  font-family: 'Fraunces', Georgia, serif;
-  font-weight: 600; font-size: 1.25rem;
-  letter-spacing: -0.01em; line-height: 1.3;
-  color: var(--text); margin: 40px 0 16px;
-}
-
-article h3 {
-  font-family: 'Fraunces', Georgia, serif;
-  font-weight: 600; font-size: 1.05rem;
-  color: var(--text); margin: 28px 0 12px;
-}
-
-article p {
-  color: var(--text-2); margin-bottom: 20px;
-  line-height: 1.8;
-}
-
-article a {
-  color: var(--gold); text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-color: var(--gold-dim);
-  transition: color .12s;
-}
-article a:hover { color: var(--text); }
-
-article ul, article ol {
-  color: var(--text-2); margin: 0 0 20px 20px;
-  line-height: 2;
-}
-
-article blockquote {
-  border-left: 3px solid var(--gold-dim);
-  padding: 12px 20px; margin: 24px 0;
-  background: var(--gold-glow);
-  border-radius: 0 var(--r) var(--r) 0;
-  color: var(--text-2); font-style: italic;
-}
-
-article code {
-  background: var(--surface-2); padding: 2px 6px;
-  border-radius: 4px; font-size: var(--text-sm);
-  color: var(--gold);
-}
-
-.table-wrap {
-  overflow-x: auto; margin: 24px 0 32px;
-  border: 1px solid var(--border); border-radius: var(--r-lg);
-}
-
-table {
-  width: 100%; border-collapse: collapse; text-align: left;
-  font-size: var(--text-sm); color: var(--text-2);
-}
-
-th, td {
-  padding: 12px 16px; border-bottom: 1px solid var(--border);
-}
-
-th {
-  background: var(--surface-2); color: var(--text);
-  font-weight: 500; font-family: 'DM Mono', monospace; font-size: var(--text-xs);
-}
-
-tr:last-child td { border-bottom: none; }
-
-.cta-box {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--r-lg); padding: 24px;
-  margin: 36px 0; text-align: center;
-}
-.cta-box p { color: var(--text); margin-bottom: 16px; }
-.cta-link {
-  display: inline-block; padding: 12px 28px;
-  border: 1px solid var(--gold); border-radius: var(--r);
-  color: var(--gold); text-decoration: none;
-  font-family: 'DM Mono', 'Courier New', monospace; font-size: var(--text-sm);
-  letter-spacing: 0.04em; transition: background .12s, color .12s;
-}
-.cta-link:hover { background: var(--gold); color: var(--bg); }
-
-@media (max-width: 580px) {
-  article.page { padding-top: 24px; }
-  .article-title { font-size: 1.4rem; }
-}
 </style>
   <script>
     (function(){function getSys(){return window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}function updIcon(t){var i=document.getElementById('themeToggleIcon');if(i)i.textContent=t==='dark'?'☀️':'🌙';}window.toggleTheme=function(){var sys=getSys();var cur=document.documentElement.getAttribute('data-theme')||sys;var nxt=cur==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',nxt);if(nxt===sys){try{sessionStorage.removeItem('pr_theme');localStorage.removeItem('pr_theme');}catch(e){}}else{try{sessionStorage.setItem('pr_theme',nxt);}catch(e){}}updIcon(nxt);};try{localStorage.removeItem('pr_theme');var s=sessionStorage.getItem('pr_theme');var init=s||getSys();document.documentElement.setAttribute('data-theme',init);if(window.matchMedia){var dm=window.matchMedia('(prefers-color-scheme: dark)');var sc=function(e){try{sessionStorage.removeItem('pr_theme');localStorage.removeItem('pr_theme');}catch(x){}var t=e.matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);updIcon(t);};if(dm.addEventListener){dm.addEventListener('change',sc);}else if(dm.addListener){dm.addListener(sc);}}}catch(e){}document.addEventListener('DOMContentLoaded',function(){updIcon(document.documentElement.getAttribute('data-theme')||getSys());});})();
@@ -181,7 +80,7 @@ tr:last-child td { border-bottom: none; }
     <div class="logo"><a href="/"><span class="logo-a">Prompt</span><span class="logo-b">Router</span></a></div>
     <div class="nav-links">
       <a href="/">Home</a>
-      <a href="/dev">Dev</a>
+      <a href="/dev">Prompt Libraries</a>
       <span class="nav-sep" aria-hidden="true"></span>
       <a href="/blog" class="active">Blog</a>
       <button type="button" class="theme-toggle-btn" id="themeToggleBtn" title="Toggle dark/light mode" onclick="toggleTheme()" aria-label="Toggle theme">
