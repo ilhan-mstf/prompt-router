@@ -888,6 +888,130 @@ it('All derived static icon files exist, are non-empty, and up to date', () => {
 });
 
 // ─────────────────────────────────────────────────────────────
+// 14. Typography Token Enforcement & Navigation Parity Guard
+// ─────────────────────────────────────────────────────────────
+console.log('\n🎨 14. Typography Token Enforcement & Navigation Parity:');
+
+it('All CSS font-sizes in core.css and prompt.css strictly adhere to design tokens (zero raw px/rem drift)', () => {
+  const ALLOWED_VALUES = [
+    'var(--text-xs)',
+    'var(--text-sm)',
+    'var(--text-base)',
+    'var(--text-lg)',
+    'var(--text-xl)',
+    'var(--text-2xl)',
+    'inherit',
+    '0'
+  ];
+
+  const violations = [];
+  for (const cssFile of ['css/core.css', 'css/prompt.css']) {
+    const raw = fs.readFileSync(path.join(ROOT, cssFile), 'utf-8');
+    // Strip comments
+    const clean = raw.replace(/\/\*[\s\S]*?\*\//g, '');
+    const lines = clean.split('\n');
+
+    lines.forEach((line, idx) => {
+      const match = line.match(/font-size\s*:\s*([^;]+);/);
+      if (match) {
+        const val = match[1].trim();
+        // Allow root token definitions and html base 16px
+        if (line.includes('--text-') || line.includes('16px')) {
+          return;
+        }
+        if (!ALLOWED_VALUES.includes(val)) {
+          violations.push(`${cssFile}:${idx + 1} declared invalid '${val}' in '${line.trim()}'`);
+        }
+      }
+    });
+  }
+
+  assert.strictEqual(
+    violations.length,
+    0,
+    `Found hardcoded non-token font-size values in CSS:\n${violations.join('\n')}`
+  );
+});
+
+it('Topbar and footer navigation maintain complete parity across all application and library pages', () => {
+  const appPages = ['index.html', ...VALID_LIBS.map(l => `${l}.html`)];
+
+  for (const page of appPages) {
+    const html = fs.readFileSync(path.join(ROOT, page), 'utf-8');
+
+    // Topbar check: Prompt Libraries dropdown & Blog link
+    assert.strictEqual(
+      html.includes('<span>Prompt Libraries</span>'),
+      true,
+      `Page ${page} missing '<span>Prompt Libraries</span>' in topbar navigation`
+    );
+    assert.strictEqual(
+      html.includes('<a href="/blog" class="nav-link">Blog</a>'),
+      true,
+      `Page ${page} missing '<a href="/blog" class="nav-link">Blog</a>' in topbar`
+    );
+
+    // Footer check: Heading & links
+    assert.strictEqual(
+      /<span class="footer-heading"[^>]*>Prompt Libraries<\/span>/.test(html),
+      true,
+      `Page ${page} missing 'Prompt Libraries' footer-heading`
+    );
+    assert.strictEqual(
+      html.includes('<a href="/">Home</a>') && html.includes('<a href="/blog">Blog</a>'),
+      true,
+      `Page ${page} missing Home/Blog links in footer-links`
+    );
+  }
+});
+
+it('Topbar and footer navigation maintain complete parity across blog.html and all 16 blog posts', () => {
+  const blogFiles = ['blog.html', ...fs.readdirSync(ROOT).filter(f => f.startsWith('blog-') && f.endsWith('.html'))];
+  assert.strictEqual(blogFiles.length, 17, 'Expected exactly 17 blog pages');
+
+  for (const file of blogFiles) {
+    const html = fs.readFileSync(path.join(ROOT, file), 'utf-8');
+
+    // Topbar check: Home, Prompt Libraries (never Dev), Blog
+    assert.strictEqual(
+      html.includes('<a href="/">Home</a>'),
+      true,
+      `Blog page ${file} missing '<a href="/">Home</a>' in topbar`
+    );
+    assert.strictEqual(
+      html.includes('<a href="/dev">Prompt Libraries</a>'),
+      true,
+      `Blog page ${file} must have '<a href="/dev">Prompt Libraries</a>' in topbar (found legacy 'Dev' or drifted text)`
+    );
+    assert.strictEqual(
+      html.includes('<a href="/blog"'),
+      true,
+      `Blog page ${file} missing '<a href="/blog"' in topbar`
+    );
+
+    // Footer check: Heading & links
+    assert.strictEqual(
+      /<span class="footer-heading"[^>]*>Prompt Libraries<\/span>/.test(html),
+      true,
+      `Blog page ${file} missing 'Prompt Libraries' footer-heading`
+    );
+    assert.strictEqual(
+      html.includes('<a href="/">Home</a>') && html.includes('<a href="/blog">Blog</a>'),
+      true,
+      `Blog page ${file} missing Home/Blog links in footer-links`
+    );
+  }
+});
+
+it('Sidebar section badges inherit typography from section headers and eliminate independent pill drift', () => {
+  const promptCSS = fs.readFileSync(path.join(ROOT, 'css/prompt.css'), 'utf-8');
+  assert.strictEqual(promptCSS.includes('font-size: inherit'), true, '.section-badge must use font-size: inherit');
+  assert.strictEqual(promptCSS.includes('font-weight: inherit'), true, '.section-badge must use font-weight: inherit');
+  assert.strictEqual(promptCSS.includes('color: inherit'), true, '.section-badge must use color: inherit');
+  assert.strictEqual(promptCSS.includes('background: none'), true, '.section-badge must use background: none');
+});
+
+// ─────────────────────────────────────────────────────────────
 // Summary
 // ─────────────────────────────────────────────────────────────
 console.log(`\n==================================================`);
