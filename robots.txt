@@ -18,3 +18,7 @@ User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://prompt-router.pages.dev/sitemap.xml
+
+# LLM & AI Context
+# llms.txt: https://prompt-router.pages.dev/llms.txt
+# llms-full.txt: https://prompt-router.pages.dev/llms-full.txt

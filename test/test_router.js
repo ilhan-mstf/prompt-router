@@ -231,6 +231,26 @@ it('llms-full.txt has zero mojibake, contains 10 core quick templates, and all 1
   });
 });
 
+it('All 29 HTML application and blog pages contain <link rel="alternate" href="/llms.txt">', () => {
+  const allPages = [
+    'index.html',
+    'blog.html',
+    ...VALID_LIBS.map(l => `${l}.html`),
+    ...fs.readdirSync(ROOT).filter(f => f.startsWith('blog-') && f.endsWith('.html'))
+  ];
+  assert.strictEqual(allPages.length, 29);
+  allPages.forEach(p => {
+    const html = fs.readFileSync(path.join(ROOT, p), 'utf-8');
+    assert.strictEqual(html.includes('href="/llms.txt"'), true, `Missing llms.txt alternate link in ${p}`);
+  });
+});
+
+it('robots.txt allows all AI bots and references sitemap.xml and llms.txt', () => {
+  const robots = fs.readFileSync(path.join(ROOT, 'robots.txt'), 'utf-8');
+  assert.strictEqual(robots.includes('Sitemap: https://prompt-router.pages.dev/sitemap.xml'), true);
+  assert.strictEqual(robots.includes('llms.txt'), true);
+});
+
 // ─────────────────────────────────────────────────────────────
 // 5. Worker Routing Simulation (Edge SSR logic)
 // ─────────────────────────────────────────────────────────────
@@ -775,6 +795,7 @@ await itAsync('Edge worker attaches security headers on all responses', async ()
   assert.strictEqual(res.headers.get('Referrer-Policy'), 'strict-origin-when-cross-origin');
   assert.strictEqual(res.headers.get('Permissions-Policy'), 'camera=(), microphone=(), geolocation=()');
   assert.strictEqual(res.headers.has('Content-Security-Policy'), true);
+  assert.strictEqual(res.headers.get('Link'), '</llms.txt>; rel="alternate"; type="text/markdown"');
 });
 
 
