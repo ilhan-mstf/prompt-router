@@ -307,9 +307,9 @@ Total Defects Identified: 19
 
 ---
 
-## 9. Verification & Remediation Status (Completed 2026-09-07)
+## 9. Verification & Remediation Status (Updated 2026-09-08)
 
-All 19 defects identified across P0, P1, P2, and P3 tiers have been remediated and verified through an expanded automated test suite of **146 regression tests** (`npm test`):
+All 20 defects identified across P0, P1, P2, and P3 tiers have been remediated and verified through an expanded automated test suite of **164 regression tests** (`npm test`):
 
 | Defect ID | Description | Severity | Resolution Status | Verified By |
 | :--- | :--- | :---: | :---: | :--- |
@@ -325,11 +325,13 @@ All 19 defects identified across P0, P1, P2, and P3 tiers have been remediated a
 | **DEF-10** | Missing theme toggle on blog | P2 | ✅ Resolved | Universal `#themeToggleBtn` added to topbar across all 16 blog articles & `blog.html` |
 | **DEF-11** | Accordion ARIA & focus trap | P2 | ✅ Resolved | `aria-expanded="true"` initial sync; `visibility: hidden` & `pointer-events: none` on collapsed sidebar; unnested buttons (WCAG 4.1.2) |
 | **DEF-12** | Raw Spanglish copy in Spanish locale | P2 | ✅ Resolved | Fully translated Spanish strings in `LOCALES.es` and `LIB_LOCALES.es` |
-| **DEF-13** | Service worker precache gaps & crash | P2 | ✅ Resolved | Precaches all 16 blog posts, `res.status === 200` guard, version bumped to `pr-v5` |
+| **DEF-13** | Service worker precache gaps & crash | P2 | ✅ Resolved | Precaches all 16 blog posts, `res.status === 200` guard, version bumped to `pr-v6` |
 | **DEF-14** | Missing HTTP security headers | P2 | ✅ Resolved | Injected CSP, `X-Frame-Options: DENY`, `X-Content-Type-Options: nosniff`, Referrer Policy |
 | **DEF-15** | Empty `#footer-desc` in raw HTML | P3 | ✅ Resolved | Pre-populated static English fallback description across all 11 library templates |
 | **DEF-16** | Development `console.log` listeners | P3 | ✅ Resolved | Removed dev resize and overflow listeners from `index.html` |
 | **DEF-17** | Sitemap duplicate URLs | P3 | ✅ Resolved | Zero duplicate URLs; all 77 library pages and 16 articles verified |
 | **DEF-18** | French locale missing 3 LLMs | P3 | ✅ Resolved | French copy updated to reference all 11 AI models |
 | **DEF-19** | Unindexed `mockup.html` prototype | P3 | ✅ Resolved | Cleaned and kept in sync with core styles and design system |
+| **DEF-20** | CSS font-size fragmentation & nav drift | P2 | ✅ Resolved | Consolidated to strict 6-step token scale, centralized blog styles (-1,278 lines), automated token & nav parity tests |
+
 

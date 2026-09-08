@@ -34,6 +34,9 @@ Supported providers:
 - **DeepSeek** — fast-rising open-weight model
 - **Grok** — xAI's model, with access to real-time X/Twitter data
 - **Le Chat** — Mistral AI's conversational interface
+- **Qwen** — Alibaba's top-tier multilingual reasoning model
+- **Kimi** — Moonshot AI's long-context research assistant
+- **Z.ai** — Zhipu AI's bilingual knowledge engine
 
 ---
 

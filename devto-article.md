@@ -23,11 +23,11 @@ So I spent a weekend and built the laziest possible fix.
 
 **[Prompt Router](https://prompt-router.pages.dev)** is a free tool where you write your prompt once and click any AI to open it with your prompt pre-filled.
 
-That's it. One text box. Eight buttons. Zero friction.
+That's it. One text box. Eleven buttons. Zero friction.
 
-![Prompt Router supports ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, and Le Chat](https://prompt-router.pages.dev/og-image.png)
+![Prompt Router supports ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, and Z.ai](https://prompt-router.pages.dev/og-image.png)
 
-**Supported AIs:** ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat
+**Supported AIs:** ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, and Z.ai
 
 ### What makes it different from "just bookmarking all the AI tabs"
 

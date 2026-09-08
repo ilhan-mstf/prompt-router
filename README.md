@@ -19,6 +19,7 @@ Live at: **[prompt-router.pages.dev](https://prompt-router.pages.dev)**
 - **Dark & Light Mode** — Automatically follows OS system preferences (`prefers-color-scheme`) with an accessible topbar toggle and session persistence.
 - **PWA & Offline Ready** — Installable on desktop and mobile with a Service Worker precaching core assets, libraries, and articles.
 - **Accessibility (WCAG 2.1 AAA)** — Fully navigable by keyboard, accessible skip links, screen-reader friendly heading hierarchies, and high-contrast color tokens.
+- **Design Token System & Architecture** — Strict 6-step typographic scale (`--text-xs` to `--text-2xl`), standardized vertical rhythm (`--leading-*`), tracking (`--tracking-*`), centralized blog reading styles, and automated zero-drift CSS token guardrails.
 - **Keyboard Shortcuts**:
   - `⌘Enter` / `Ctrl+Enter` — Dispatch prompt to active AI provider
   - `⌘S` / `Ctrl+S` — Save prompt to library
@@ -49,7 +50,7 @@ promptrouter/
 ├── blog.html                   # Blog index listing 16 articles
 ├── blog-*.html                 # 16 individual blog guides & technical deep dives
 ├── css/
-│   ├── core.css                # Global typography, CSS tokens, topbars, and footers
+│   ├── core.css                # Global 6-step typography tokens, vertical rhythm, centralized blog styles, topbars, and footers
 │   └── prompt.css              # Canvas, sidebar accordion, provider grid, and toasts
 ├── js/
 │   ├── prompt.js               # Application logic, keyboard handlers, history, and theme sync
@@ -59,7 +60,7 @@ promptrouter/
 ├── sw.js                       # Service Worker for PWA precaching and offline navigation fallback
 ├── serve.py                    # Lightweight Python preview server with clean URL support
 ├── test/
-│   └── test_router.js          # Automated regression test suite (146 checks)
+│   └── test_router.js          # Automated regression test suite (164 checks)
 ├── site.webmanifest            # PWA manifest
 ├── robots.txt                  # Search engine and AI crawler rules
 ├── sitemap.xml                 # Multilingual XML sitemap (all 77 library + 7 root URLs)
@@ -91,7 +92,7 @@ npm run preview
 ```
 
 ### 3. Run Automated Tests & Linters
-The test suite performs 147 automated checks across routing, edge rewrites, sitemaps, WCAG AAA contrast, security headers, fingerprinted asset caches, and PWA caches:
+The test suite performs 164 automated checks across routing, edge rewrites, typography design token adherence, navigation parity, sitemaps, WCAG AAA contrast, security headers, fingerprinted asset caches, and PWA caches:
 ```bash
 npm test
 ```
