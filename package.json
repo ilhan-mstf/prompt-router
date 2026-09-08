@@ -6,6 +6,7 @@
   "main": "_worker.js",
   "scripts": {
     "build": "node scripts/build.js",
+    "icons": "python3 scripts/generate-icons.py",
     "dev": "npm run build && npx wrangler pages dev .",
     "preview": "npm run build && python3 serve.py",
     "lint": "npm run lint:html && npm run lint:js",

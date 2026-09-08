@@ -48,6 +48,7 @@ const CORE_STATIC_FILES = [
   'favicon-32x32.png',
   'favicon-16x16.png',
   'apple-touch-icon.png',
+  'favicon.svg',
   'og-image.png',
   'site.webmanifest',
   'clumsy.svg',
@@ -162,6 +163,22 @@ it('Sitemap includes new redesign blog post', () => {
   assert.strictEqual(locMatches.includes('https://prompt-router.pages.dev/blog-new-look'), true, 'Missing blog-new-look in sitemap');
 });
 
+it('Sitemap includes blog index and all 16 blog posts', () => {
+  assert.strictEqual(locMatches.includes('https://prompt-router.pages.dev/blog'), true, 'Missing /blog in sitemap');
+  const blogFiles = fs.readdirSync(ROOT).filter(f => f.startsWith('blog-') && f.endsWith('.html'));
+  assert.strictEqual(blogFiles.length, 16, 'Expected 16 blog post files');
+  blogFiles.forEach(file => {
+    const route = `https://prompt-router.pages.dev/${file.replace('.html', '')}`;
+    assert.strictEqual(locMatches.includes(route), true, `Missing blog post in sitemap: ${route}`);
+  });
+});
+
+it('Sitemap has proper UTF-8 XML declaration, exactly 101 URLs, and no stale dates', () => {
+  assert.strictEqual(sitemapContent.startsWith('<?xml version="1.0" encoding="UTF-8"?>'), true, 'Missing UTF-8 XML declaration');
+  assert.strictEqual(locMatches.length, 101, `Expected 101 URLs, found ${locMatches.length}`);
+  assert.strictEqual(sitemapContent.includes('2026-04-11'), false, 'Found stale 2026-04-11 lastmod dates in sitemap');
+});
+
 // ─────────────────────────────────────────────────────────────
 // 4. AI Search & llms.txt Coverage
 // ─────────────────────────────────────────────────────────────
@@ -191,6 +208,27 @@ it('llms.txt documents multi-language library subdirectories', () => {
 
 it('llms.txt references the new redesign blog post', () => {
   assert.strictEqual(llmsTxt.includes('/blog-new-look'), true, 'llms.txt missing /blog-new-look');
+});
+
+it('llms.txt documents blog index and all 11 prompt libraries', () => {
+  assert.strictEqual(llmsTxt.includes('/blog'), true, 'llms.txt missing /blog');
+  VALID_LIBS.forEach(lib => {
+    assert.strictEqual(llmsTxt.includes(`https://prompt-router.pages.dev/${lib}`), true, `llms.txt missing library link: /${lib}`);
+  });
+});
+
+it('llms-full.txt has zero mojibake, contains 10 core quick templates, and all 11 prompt libraries', () => {
+  assert.strictEqual(/â€|â\x80|\ufffd/.test(llmsFullTxt), false, 'Found mojibake in llms-full.txt');
+  VALID_LIBS.forEach(lib => {
+    assert.strictEqual(llmsFullTxt.includes(`https://prompt-router.pages.dev/${lib}`), true, `llms-full.txt missing library link: /${lib}`);
+  });
+  const coreTemplates = [
+    'Summarize', 'Explain it', 'Improve text', 'Brainstorm', 'Compare',
+    'Write email', 'Fix my code', 'Make a plan', 'Pros & cons', 'Ask questions'
+  ];
+  coreTemplates.forEach(tpl => {
+    assert.strictEqual(llmsFullTxt.includes(`### ${tpl}`), true, `llms-full.txt missing core template: ${tpl}`);
+  });
 });
 
 // ─────────────────────────────────────────────────────────────

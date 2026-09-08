@@ -31,6 +31,70 @@ Prompt Router supports server-side edge rendering (SSR) for 7 languages across t
 - Portuguese: `https://prompt-router.pages.dev/pt` and `https://prompt-router.pages.dev/pt/{library}`
 
 ---
+## Core Quick Templates
+Ten standard templates available directly from the workbench sidebar:
+
+### Summarize
+```
+Summarize the following in 3–5 clear bullet points. Focus on the most important takeaways:
+
+[paste content here]
+```
+
+### Explain it
+```
+Explain [concept or topic] in simple terms. Assume I have no prior knowledge. Use plain language and a short example.
+```
+
+### Improve text
+```
+Rewrite the following to be clearer, more concise, and more engaging. Keep the same meaning:
+
+[paste text here]
+```
+
+### Brainstorm
+```
+Give me 10 ideas for [topic or goal]. Be specific and varied — mix obvious and unexpected approaches.
+```
+
+### Compare
+```
+Compare [option A] and [option B]. Cover the key differences, pros and cons of each, and end with a clear recommendation.
+```
+
+### Write email
+```
+Write a professional email to [recipient] about [topic]. Tone: [formal / friendly]. Keep it concise with a clear next step.
+```
+
+### Fix my code
+```
+Here is my code. It's not working as expected.
+
+[paste code here]
+
+The error or problem: [describe it]
+
+Find the bug and explain the fix.
+```
+
+### Make a plan
+```
+Create a step-by-step action plan for [goal]. Break it into clear phases with specific tasks. Keep it realistic and actionable.
+```
+
+### Pros & cons
+```
+List the pros and cons of [decision or option]. Be thorough and include considerations I might not have thought of.
+```
+
+### Ask questions
+```
+I'm trying to understand [topic or problem]. What are the 10 most important questions I should be asking about this?
+```
+
+---
 ## Complete Prompt Libraries
 
 ### Dev Prompts
@@ -288,7 +352,7 @@ Target audience: [describe audience]
 Tone: [e.g. informative, conversational, authoritative]
 Target word count: [e.g. 1500 words]
 
-Include: a compelling title, intro hook, 4â6 main sections with subpoints, and a conclusion with a clear call to action.
+Include: a compelling title, intro hook, 4–6 main sections with subpoints, and a conclusion with a clear call to action.
 ```
 
 ##### Improve article intro
@@ -330,7 +394,7 @@ Write a Twitter/X thread about: [topic]
 
 Audience: [describe]
 Goal: [e.g. educate, drive traffic, build authority]
-Number of tweets: [e.g. 8â10]
+Number of tweets: [e.g. 8–10]
 
 Start with a strong hook tweet, break the topic into digestible points, and end with a clear CTA. Keep each tweet under 280 characters. Use line breaks for readability.
 ```
@@ -342,7 +406,7 @@ Write a LinkedIn post about: [topic or experience]
 Tone: [e.g. thoughtful, direct, story-driven]
 Goal: [e.g. share a lesson, generate comments, build credibility]
 
-Start with a one-line hook that stops the scroll. Use short paragraphs. Include a personal angle or insight. End with a question to encourage comments. Aim for 150â250 words.
+Start with a one-line hook that stops the scroll. Use short paragraphs. Include a personal angle or insight. End with a question to encourage comments. Aim for 150–250 words.
 ```
 
 ##### Write an Instagram caption
@@ -352,7 +416,7 @@ Write an Instagram caption for a post about: [describe the image/topic]
 Brand voice: [e.g. playful, inspiring, minimal]
 Goal: [e.g. increase saves, drive profile visits, sell a product]
 
-Include: an engaging opening line, 2â3 sentences of supporting copy, a call to action, and 5â10 relevant hashtags.
+Include: an engaging opening line, 2–3 sentences of supporting copy, a call to action, and 5–10 relevant hashtags.
 ```
 
 ##### Social media content calendar
@@ -376,7 +440,7 @@ Recipient: [job title or type of person]
 Goal: [e.g. book a call, get a referral, pitch a partnership]
 Context: [any relevant detail about why you're reaching out]
 
-Keep it under 150 words. Lead with value or relevance â not with who you are. Include a low-friction CTA.
+Keep it under 150 words. Lead with value or relevance — not with who you are. Include a low-friction CTA.
 ```
 
 ##### Write a newsletter intro
@@ -395,7 +459,7 @@ The intro should feel personal, tease the content inside, and make the reader wa
 ```
 Write a follow-up email for this situation:
 
-Original context: [describe the first interaction â e.g. a sales call, a job interview, a proposal sent]
+Original context: [describe the first interaction — e.g. a sales call, a job interview, a proposal sent]
 Time since last contact: [e.g. 5 days]
 Goal of the follow-up: [e.g. get a decision, re-engage, confirm next steps]
 
@@ -406,8 +470,8 @@ Be warm but direct. Reference the previous conversation briefly. Make it easy to
 ```
 Help me write a professional email for a sensitive situation:
 
-Situation: [describe â e.g. apologizing for a missed deadline, declining a request, delivering bad news]
-Recipient: [describe relationship â e.g. client, manager, colleague]
+Situation: [describe — e.g. apologizing for a missed deadline, declining a request, delivering bad news]
+Recipient: [describe relationship — e.g. client, manager, colleague]
 Desired outcome: [what you want to happen after they read it]
 
 Be honest, take responsibility where appropriate, and keep a constructive tone. Avoid being defensive or over-apologetic.
@@ -420,7 +484,7 @@ Write a compelling product description for:
 
 Product name: [name]
 What it does: [describe]
-Key features: [list 3â5]
+Key features: [list 3–5]
 Target customer: [describe]
 Tone: [e.g. premium, playful, technical]
 
@@ -447,7 +511,7 @@ Product/service: [describe]
 Goal of the CTA: [e.g. start a free trial, book a demo, download a guide]
 Tone: [e.g. action-oriented, low-pressure, curious]
 
-Vary the angle â try urgency, benefit-first, curiosity, and social proof framings. Keep each option under 6 words where possible.
+Vary the angle — try urgency, benefit-first, curiosity, and social proof framings. Keep each option under 6 words where possible.
 ```
 
 ##### Brand voice rewrite
@@ -457,7 +521,7 @@ Rewrite the following copy to match our brand voice.
 Original copy:
 [paste copy here]
 
-Our brand voice is: [describe â e.g. confident but approachable, expert but never jargon-heavy, warm and witty]
+Our brand voice is: [describe — e.g. confident but approachable, expert but never jargon-heavy, warm and witty]
 Audience: [describe]
 
 Keep the core message intact but adjust the tone, word choice, and sentence structure to fit the voice. Show before and after.
@@ -525,7 +589,7 @@ Character B: [name, brief description, their goal in this scene]
 Situation: [describe what's happening and where]
 Underlying tension: [what's really at stake or unsaid]
 
-Make the dialogue feel natural and revealing. Each character should have a distinct voice. Show subtext â what they mean vs. what they say.
+Make the dialogue feel natural and revealing. Each character should have a distinct voice. Show subtext — what they mean vs. what they say.
 ```
 
 ##### Create metaphors and analogies
@@ -549,10 +613,2789 @@ Original text:
 Capture the voice, sentence rhythm, vocabulary, and structural patterns of that style. Keep the core content and meaning. Show only the rewritten version.
 ```
 
+### Marketing Prompts
+URL: https://prompt-router.pages.dev/marketing
+
+#### Category: Campaign Planning
+##### Plan marketing campaign
+```
+Help me plan a marketing campaign for [product/service].
+
+Target audience: [describe]
+Goal: [e.g. leads, signups, awareness]
+Budget range: [amount]
+Timeline: [duration]
+
+Outline the campaign strategy, key messages, channels, milestones, and success metrics.
+```
+
+##### Create content calendar
+```
+Create a [30/60/90]-day content calendar for [brand/product].
+
+Audience: [describe]
+Channels: [e.g. LinkedIn, email, blog, Instagram]
+Content themes: [list any]
+Posting frequency goal: [e.g. 3x/week]
+
+Include content types, topics, and a suggested posting schedule.
+```
+
+##### Define target audience persona
+```
+Build a detailed marketing persona for [product/service].
+
+What we know so far: [describe your current customer or assumption]
+
+Include: demographics, job title, goals, pain points, objections, preferred channels, and how they make purchase decisions.
+```
+
+##### Campaign post-mortem analysis
+```
+Help me write a post-mortem for a marketing campaign.
+
+Campaign goal: [e.g. generate 500 leads]
+Actual result: [what happened]
+Channels used: [list]
+Key metrics: [CTR, conversion rate, CAC, etc.]
+
+Analyze what worked, what did not, root causes, and specific recommendations for the next campaign.
+```
+
+#### Category: SEO
+##### Keyword research brief
+```
+Create a keyword research brief for [topic/product].
+
+Website: [URL or description]
+Target audience: [describe]
+Competitors: [list if known]
+
+Suggest primary keywords, long-tail variations, search intent categories (informational, commercial, transactional), and content opportunities for each cluster.
+```
+
+##### Write SEO meta tags
+```
+Write SEO-optimized title tags and meta descriptions for the following page.
+
+Page topic: [describe]
+Target keyword: [keyword]
+URL: [page URL]
+Word count of page: [approx]
+
+Provide 3 title tag options (under 60 characters each) and 3 meta description options (under 155 characters each). Note the target keyword placement in each.
+```
+
+##### Content gap analysis
+```
+Perform a content gap analysis for [website/brand] in the [industry] space.
+
+Our existing content topics: [list or describe]
+Main competitors: [list]
+Target audience: [describe]
+
+Identify topics and keywords our competitors rank for that we are missing, and prioritize them by traffic potential and business relevance.
+```
+
+##### Internal linking strategy
+```
+Create an internal linking strategy for a [blog/website] about [topic].
+
+Existing key pages: [list your pillar pages or important URLs]
+Goal: [e.g. improve rankings for X, reduce bounce rate, distribute link equity]
+
+Suggest anchor text, which pages should link to which, and a linking structure to support topical authority.
+```
+
+#### Category: Ads
+##### Write Google Ads copy
+```
+Write Google Ads copy for [product/service].
+
+Target keyword: [keyword]
+Landing page URL: [URL]
+Key benefit: [main value prop]
+Audience: [describe who will see this ad]
+
+Provide 3 headlines (max 30 characters each) and 2 descriptions (max 90 characters each) for a responsive search ad. Highlight benefits, include a CTA, and match the keyword intent.
+```
+
+##### Facebook ad variations
+```
+Write 3 Facebook ad variations for [product/service].
+
+Target audience: [describe demographics and interests]
+Objective: [e.g. clicks, conversions, awareness]
+Key offer or hook: [describe]
+
+For each variation write: a primary text (2-3 sentences), headline (under 40 characters), and description (under 25 characters). Use a different angle for each — e.g. pain point, social proof, and offer-led.
+```
+
+##### A/B test ideas for landing page
+```
+Generate A/B test ideas for a landing page for [product/service].
+
+Current conversion rate: [if known]
+Primary CTA: [e.g. Sign up free]
+Main traffic source: [e.g. Google Ads, Facebook]
+Page goal: [describe]
+
+List 8-10 specific, high-impact test ideas across: headline, CTA copy, social proof, layout, and offer framing. Prioritize by expected impact and ease of implementation.
+```
+
+##### Ad audience targeting strategy
+```
+Help me build an audience targeting strategy for paid ads promoting [product/service].
+
+Platform: [e.g. Meta, Google, LinkedIn]
+Budget: [monthly]
+Goal: [e.g. leads, purchases, signups]
+Ideal customer: [describe]
+
+Recommend: cold audience targeting options, retargeting segments, lookalike strategy, and exclusions. Explain the reasoning for each.
+```
+
+#### Category: Analytics
+##### Interpret traffic drop
+```
+Help me diagnose a traffic drop on [website/page].
+
+Drop details: [e.g. organic traffic fell 30% in the last 2 weeks]
+Timestamp of drop: [date]
+Pages affected: [which pages or site-wide]
+Recent changes: [any site changes, algorithm updates, redirects, etc.]
+
+List the most likely causes in order of probability, and provide specific investigation steps and fixes for each.
+```
+
+##### Funnel analysis
+```
+Analyze this marketing funnel and identify where we are losing users.
+
+Funnel steps and conversion rates:
+[e.g. Visitor > Landing page: 100%]
+[Landing page > Signup: 12%]
+[Signup > Activation: 40%]
+[Activation > Purchase: 18%]
+
+Benchmark these rates against typical industry standards, highlight the biggest drop-off points, and suggest specific improvements for each stage.
+```
+
+##### Monthly report summary
+```
+Write a concise monthly marketing report summary for [month].
+
+Key metrics:
+- Traffic: [number, vs last month]
+- Leads: [number, vs last month]
+- CAC: [amount]
+- Conversion rate: [%]
+- Top channel: [channel]
+- Notable wins: [list]
+- Challenges: [list]
+
+Write an executive summary (3-4 sentences), a highlights section, a challenges section, and 3 clear action items for next month.
+```
+
+##### Attribution model comparison
+```
+Compare attribution models for a [B2B/B2C] business selling [product/service].
+
+Our main marketing channels: [e.g. paid search, organic, email, social]
+Average sales cycle: [e.g. 2 weeks / 3 months]
+Current attribution model: [e.g. last click]
+
+Explain how first-touch, last-touch, linear, time-decay, and data-driven models would each interpret our funnel differently, and recommend the best fit with reasoning.
+```
+
+#### Category: Brand
+##### Write brand positioning statement
+```
+Write a brand positioning statement for [company/product].
+
+What we do: [describe]
+Target audience: [describe]
+Key benefit: [primary value we deliver]
+Differentiator: [what makes us different from alternatives]
+Competitors: [list main ones]
+
+Use the format: For [audience] who [need], [brand] is the [category] that [benefit] because [reason to believe]. Then provide 2 alternative versions with different emphasis.
+```
+
+##### Competitive differentiation
+```
+Help me articulate how [product/company] is differentiated from competitors.
+
+Our product: [describe]
+Main competitors: [list with brief description of each]
+Our key strengths: [list]
+Customer feedback themes: [what customers say they love]
+
+Identify our strongest differentiators, which ones are most defensible, and how to communicate them clearly in marketing copy. Flag any claims that sound generic and need sharpening.
+```
+
+##### Brand voice guidelines
+```
+Create brand voice guidelines for [company/product].
+
+What we do: [describe]
+Target audience: [describe]
+Personality we want to project: [e.g. expert but approachable, bold, warm]
+Personality we want to avoid: [e.g. corporate, jargon-heavy]
+Examples of copy we like: [paste any]
+
+Define 4-5 voice attributes, explain each with a description, do/don't examples, and a before/after rewrite sample.
+```
+
+##### Tagline brainstorm
+```
+Brainstorm taglines for [company/product].
+
+What we do: [describe in one sentence]
+Target audience: [describe]
+Key benefit: [main value prop]
+Tone: [e.g. punchy, thoughtful, confident, playful]
+Existing taglines we dislike and why: [optional]
+
+Generate 15 tagline options. Group them by approach: benefit-led, emotion-led, and challenger. Mark your top 3 picks with a brief reason for each.
+```
+
+#### Category: Growth
+##### Referral program ideas
+```
+Design a referral program for [product/service].
+
+Business model: [e.g. SaaS subscription, e-commerce]
+Current user base: [approximate size]
+Average customer LTV: [amount]
+Acquisition cost goal: [target CAC]
+
+Propose 3 referral program structures with different incentive mechanics (e.g. two-sided reward, credits, cash). For each: describe the mechanic, referral flow, reward structure, and expected impact on viral coefficient.
+```
+
+##### Retention email sequence
+```
+Write a retention email sequence for users who signed up for [product] but have not been active for [X days].
+
+Product: [describe what it does]
+Common reason for drop-off: [if known]
+Tone: [e.g. friendly, direct]
+Number of emails: [e.g. 3-email sequence]
+
+For each email provide: subject line, preview text, body copy, and CTA. Space them [X] days apart. Focus on re-engaging with value, not just discounts.
+```
+
+##### Onboarding flow optimization
+```
+Help me optimize the onboarding flow for [product].
+
+Current onboarding steps: [list them]
+Drop-off point: [where users quit]
+Time to value goal: [e.g. user gets value within 5 minutes]
+Key activation event: [e.g. created first project, invited a teammate]
+
+Identify friction points in the current flow, suggest specific improvements for each step, and recommend the minimum viable onboarding that gets users to the activation event fastest.
+```
+
+##### Viral loop strategy
+```
+Design a viral loop strategy for [product/service].
+
+Product type: [e.g. collaboration tool, marketplace, social app]
+Current growth mechanism: [describe how users find you today]
+Natural sharing moments: [when do users naturally want to share?]
+Target viral coefficient goal: [e.g. K > 1]
+
+Propose 2-3 viral loop designs. For each: describe the trigger, the sharing mechanism, the incentive, and the conversion flow for referred users. Estimate the realistic viral coefficient for each.
+```
+
+### Data Prompts
+URL: https://prompt-router.pages.dev/data
+
+#### Category: SQL
+##### Write SQL query
+```
+Write a SQL query for the following task:
+
+Task: [describe what you need, e.g. find all users who signed up in the last 30 days and made at least one purchase]
+
+Relevant tables and columns:
+
+[describe your schema or paste CREATE TABLE statements]
+
+Database: [e.g. PostgreSQL, MySQL, BigQuery]
+
+Return the query with comments explaining each key step.
+```
+
+##### Optimize slow query
+```
+This SQL query is running slowly. Help me optimize it.
+
+Query:
+
+[paste query here]
+
+Database: [e.g. PostgreSQL, MySQL]
+Table sizes: [e.g. orders has 50M rows, users has 2M rows]
+Existing indexes: [list them or paste EXPLAIN output]
+
+Identify the bottlenecks, suggest index changes, and rewrite the query if needed. Explain each optimization.
+```
+
+##### Explain complex query
+```
+Explain this SQL query in plain English. Walk through it step by step — what each clause does, what data it produces, and what the final result represents:
+
+[paste query here]
+```
+
+##### Database schema design
+```
+Design a database schema for the following use case:
+
+Use case: [describe your application or feature, e.g. a multi-tenant SaaS with projects, tasks, and user roles]
+
+Database: [e.g. PostgreSQL]
+
+Include: table names, columns with types and constraints, primary/foreign keys, indexes, and an explanation of your design decisions and any trade-offs.
+```
+
+#### Category: Analysis
+##### Exploratory data analysis plan
+```
+I have a dataset and want to perform exploratory data analysis. Create a step-by-step EDA plan.
+
+Dataset description: [describe columns, data types, approximate size, and domain, e.g. e-commerce orders with customer ID, product, price, date]
+
+Business question I am trying to answer: [describe it]
+
+Include: data quality checks, univariate analysis, relationships to explore, visualizations to create, and potential red flags to watch for.
+```
+
+##### Statistical significance test
+```
+Help me choose and interpret the right statistical test for my analysis.
+
+What I am comparing: [e.g. conversion rates between two user groups]
+Data type: [e.g. binary outcomes, continuous measurements]
+Sample sizes: [e.g. Group A: 1,200, Group B: 1,400]
+Current results: [e.g. Group A: 4.2%, Group B: 5.1%]
+
+Recommend the appropriate test, state the assumptions, show the calculation or code, and explain how to interpret the p-value and confidence interval in plain language.
+```
+
+##### Cohort analysis
+```
+Help me design and interpret a cohort analysis.
+
+Goal: [e.g. measure 30/60/90-day retention by signup month]
+Available data: [describe tables and columns, e.g. users table with signup_date, events table with user_id and event_date]
+Database / tool: [e.g. BigQuery, pandas]
+
+Write the query or code to build the cohort table, explain how to read the output, and flag any interpretation pitfalls.
+```
+
+##### Trend interpretation
+```
+I am seeing a trend in my data and need help interpreting it.
+
+Metric: [e.g. weekly active users]
+What I observe: [e.g. 15% decline over the past 6 weeks after steady growth]
+Context: [any known events, product changes, seasonality, or external factors]
+
+Help me: identify likely causes, rule out data artifacts, suggest additional analyses to confirm the root cause, and recommend next steps.
+```
+
+#### Category: Visualization
+##### Chart type recommendation
+```
+Recommend the best chart type for my use case and explain why.
+
+What I want to show: [e.g. how revenue breaks down by product category and changes month over month]
+Audience: [e.g. executive team in a quarterly business review]
+Data shape: [e.g. 12 months x 6 categories, values range from $10K to $2M]
+Tool: [e.g. Tableau, matplotlib, Looker Studio]
+
+Suggest 2-3 options, rank them, and explain the trade-offs.
+```
+
+##### Dashboard layout design
+```
+Help me design an effective dashboard layout.
+
+Purpose: [e.g. daily operations monitoring for a support team]
+Key metrics to show: [list them, e.g. open tickets, resolution time, CSAT score, ticket volume by channel]
+Audience and how they use it: [e.g. team leads check it at the start of each shift]
+Tool: [e.g. Metabase, Tableau, Grafana]
+
+Propose a layout with sections, chart types for each metric, and UX best practices for at-a-glance readability.
+```
+
+##### Data storytelling narrative
+```
+Help me turn this data into a clear narrative for a presentation.
+
+Key findings: [list 3-5 main insights from your analysis]
+Audience: [e.g. non-technical stakeholders, C-suite]
+Goal of the presentation: [e.g. get approval to invest in retention improvements]
+
+Write a narrative arc that leads with the most important insight, supports it with data points, and ends with a clear recommendation. Keep it concise and free of jargon.
+```
+
+##### Annotate a chart
+```
+Help me write annotations for this chart to make it self-explanatory.
+
+Chart type: [e.g. line chart]
+What it shows: [e.g. monthly revenue for the past 2 years]
+Key moments to call out: [e.g. product launch in March, pricing change in August, a dip in December]
+Audience: [e.g. investors in a pitch deck]
+
+Write 3-5 short, punchy annotation labels and a one-sentence chart title and subtitle.
+```
+
+#### Category: Cleaning
+##### Data cleaning checklist
+```
+Generate a comprehensive data cleaning checklist for my dataset.
+
+Dataset description: [describe columns, data types, source, and domain]
+Known issues: [list any problems you already see, e.g. duplicate rows, inconsistent date formats, missing values in key columns]
+Downstream use: [e.g. feeding a machine learning model, building a dashboard]
+
+Organize the checklist by priority and include the specific checks to run and how to fix each issue.
+```
+
+##### Handle missing values strategy
+```
+Help me decide how to handle missing values in my dataset.
+
+Column with missing values: [column name and what it represents]
+Percentage missing: [e.g. 18%]
+Data type: [e.g. numeric, categorical, datetime]
+How the column is used downstream: [e.g. it is a feature in a regression model]
+
+Compare the options (drop rows, impute with mean/median/mode, model-based imputation, flag as a separate category) and recommend the best approach with reasoning.
+```
+
+##### Detect outliers
+```
+Help me detect and handle outliers in my dataset.
+
+Column: [column name and what it represents]
+Data type: [numeric / datetime]
+Sample statistics: [e.g. min: 0, max: 99,000, mean: 450, median: 380, std: 1,200]
+Context: [e.g. this is order value in USD; very high values could be legitimate bulk orders or data errors]
+
+Suggest appropriate detection methods (IQR, z-score, isolation forest, etc.), provide code in [Python/SQL], and advise on how to treat confirmed outliers.
+```
+
+##### Standardize messy data
+```
+Help me standardize inconsistent values in this column.
+
+Column name: [e.g. country]
+Sample of messy values: [e.g. 'USA', 'United States', 'US', 'u.s.a', 'America']
+Desired output format: [e.g. ISO 3166-1 alpha-2 country codes]
+Tool: [e.g. Python pandas, SQL, dbt]
+
+Write the code to map and standardize these values, handle edge cases, and flag any values that cannot be mapped automatically.
+```
+
+#### Category: Python & R
+##### Write pandas data pipeline
+```
+Write a pandas data pipeline for the following task.
+
+Input: [describe the data source, e.g. a CSV file with columns: user_id, event_type, timestamp, revenue]
+Transformations needed:
+1. [e.g. filter to purchase events only]
+2. [e.g. aggregate revenue by user per month]
+3. [e.g. calculate month-over-month growth rate]
+Output: [describe desired result, e.g. a DataFrame with one row per user per month]
+
+Write clean, readable code with comments. Use method chaining where it improves clarity.
+```
+
+##### Create matplotlib/seaborn visualization
+```
+Write Python code to create the following visualization.
+
+Chart type: [e.g. heatmap, grouped bar chart, time series with confidence interval]
+Data: [describe the DataFrame structure, e.g. df has columns: month, category, value]
+Style requirements: [e.g. dark background, colorblind-friendly palette, no chart borders]
+Output: [e.g. save as PNG at 300 DPI]
+
+Use matplotlib and/or seaborn. Add proper title, axis labels, and legend. Make it publication-ready.
+```
+
+##### Feature engineering ideas
+```
+Suggest feature engineering ideas for my machine learning dataset.
+
+Prediction target: [e.g. whether a user will churn in the next 30 days]
+Available raw features: [list them with types, e.g. signup_date (date), last_login (date), num_sessions (int), plan_type (categorical)]
+Data granularity: [e.g. one row per user]
+
+Suggest 10-15 derived features, explain the intuition behind each, and provide pandas code to create them.
+```
+
+##### Write data validation script
+```
+Write a Python data validation script for my dataset.
+
+Dataset: [describe columns, types, and source]
+Validation rules to enforce:
+1. [e.g. user_id must be non-null and unique]
+2. [e.g. event_date must be between 2020-01-01 and today]
+3. [e.g. revenue must be >= 0]
+4. [e.g. status must be one of: active, inactive, pending]
+
+The script should print a summary of violations, not just raise on the first error. Use pandas or Great Expectations.
+```
+
+#### Category: Reporting
+##### Executive summary from data
+```
+Write an executive summary based on the following data findings.
+
+Context: [e.g. Q1 2026 performance review for a SaaS product]
+Key metrics:
+- [metric 1]: [value and change vs prior period]
+- [metric 2]: [value and change]
+- [metric 3]: [value and change]
+Notable events: [e.g. launched feature X in February, lost a major account in March]
+
+Write a 150-200 word executive summary. Lead with the most important insight, be direct about problems, and end with the top 2-3 priorities for next quarter.
+```
+
+##### Weekly metrics report
+```
+Write a concise weekly metrics report for the following numbers.
+
+Team / product: [e.g. Growth team, mobile app]
+Week: [e.g. week of March 17, 2026]
+Metrics this week:
+- [metric]: [value] vs [last week value]
+- [metric]: [value] vs [last week value]
+Highlights: [any wins or notable events]
+Concerns: [any drops or issues]
+
+Format it as a short Slack or email update: 3-5 bullet points, plain language, no jargon. Flag items that need attention.
+```
+
+##### A/B test results writeup
+```
+Write a clear summary of my A/B test results for a non-technical audience.
+
+Test name: [e.g. New checkout flow]
+Hypothesis: [e.g. Simplifying the checkout to 2 steps will increase conversion]
+Control vs variant: [describe the change]
+Results:
+- Primary metric: [e.g. conversion rate] — Control: [X%], Variant: [Y%], relative lift: [Z%]
+- Statistical significance: [e.g. p=0.03, 95% CI: +1.2% to +4.8%]
+- Secondary metrics: [any guardrail metrics and their results]
+Test duration: [e.g. 14 days, 25,000 users per group]
+
+Explain what the results mean, whether to ship the change, and any caveats.
+```
+
+##### Data dictionary documentation
+```
+Write a data dictionary for the following table or dataset.
+
+Table name: [e.g. orders]
+Columns:
+- [column_name]: [data type, e.g. INT] — [brief description of what it contains]
+- [column_name]: [data type] — [description]
+- [add more as needed]
+Audience: [e.g. new data analysts joining the team]
+
+For each column include: name, data type, description, example values, whether it can be null, and any known quirks or gotchas. Format it as a clean markdown table.
+```
+
+### Startup Prompts
+URL: https://prompt-router.pages.dev/startup
+
+#### Category: Ideation
+##### Validate business idea
+```
+I have a business idea: [describe your idea in 2-3 sentences].
+
+Help me validate it by covering:
+1. Problem clarity — is there a real, painful problem here?
+2. Target customer — who would pay for this?
+3. Market size — rough estimate of TAM/SAM/SOM
+4. Key risks and assumptions I need to test
+5. 3 fast, cheap ways to validate before building anything.
+```
+
+##### Find target market
+```
+My product is: [describe product or service].
+
+Help me identify and prioritize my target market:
+1. List 5 potential customer segments who might need this
+2. For each segment, describe their pain level, willingness to pay, and ease of reach
+3. Recommend which segment to target first and why
+4. Describe the ideal customer profile (ICP) for that segment in detail.
+```
+
+##### Competitive landscape analysis
+```
+I'm building [describe your product/service] in the [industry/space] space.
+
+Analyze the competitive landscape:
+1. Who are the main direct and indirect competitors?
+2. What are their strengths and weaknesses?
+3. What gaps or underserved needs exist in the market?
+4. Where could a new entrant realistically differentiate?
+5. What would make customers switch from existing solutions?
+```
+
+##### MVP feature prioritization
+```
+I'm building an MVP for [describe product]. My target user is [describe user] and the core problem I'm solving is [describe problem].
+
+Help me prioritize features:
+1. List the absolute must-have features for a working MVP
+2. List features that are nice-to-have but not essential at launch
+3. List features to defer to a later version
+4. Suggest the smallest possible version I could ship in [timeframe] to get real user feedback.
+
+Use the MoSCoW method where helpful.
+```
+
+#### Category: Pitch & Fundraising
+##### Write elevator pitch
+```
+Help me write a sharp 30-second elevator pitch for my startup.
+
+Details:
+- What we do: [describe the product/service]
+- Problem we solve: [describe the problem]
+- Target customer: [who is it for]
+- How we make money: [business model]
+- Traction so far: [any metrics, users, revenue]
+
+Write 3 versions: one for an investor, one for a potential customer, and one for a general networking event. Keep each under 60 words.
+```
+
+##### Pitch deck narrative
+```
+Help me write the narrative arc for my investor pitch deck.
+
+Startup details:
+- Company name: [name]
+- What we do: [description]
+- Problem: [problem]
+- Solution: [solution]
+- Market: [market size]
+- Business model: [how we make money]
+- Traction: [metrics]
+- Team: [key team members]
+- Ask: [how much, for what]
+
+For each slide (Problem, Solution, Market, Product, Traction, Team, Ask), write the key message and 3 supporting bullet points. Keep it investor-focused and story-driven.
+```
+
+##### Investor email intro
+```
+Write a cold email to introduce my startup to a venture capital investor.
+
+Context:
+- Investor focus: [e.g. B2B SaaS, early stage, fintech]
+- My startup: [name and one-line description]
+- Why this investor specifically: [reason]
+- Traction/proof points: [key metrics or milestones]
+- Ask: [e.g. 20-minute intro call]
+
+Write a subject line and email under 150 words. Make it direct, specific, and compelling. Avoid generic language and buzzwords.
+```
+
+##### Financial projections assumptions
+```
+Help me build the key assumptions behind my 3-year financial projections.
+
+Business model: [describe how you charge, e.g. SaaS subscription, marketplace, one-time sale]
+Target customer: [describe customer segment]
+Current state: [revenue, users, or pre-revenue]
+
+For each year (Y1, Y2, Y3), help me define realistic assumptions for:
+1. Customer acquisition (channels, CAC, growth rate)
+2. Revenue per customer (ACV or ARPU, churn)
+3. Headcount and key hires
+4. Key cost drivers
+5. Path to breakeven
+
+Flag which assumptions are most likely to be challenged by investors.
+```
+
+#### Category: Product
+##### Write PRD (product requirements doc)
+```
+Write a product requirements document (PRD) for the following feature.
+
+Feature name: [feature name]
+Product: [product description]
+User problem: [what problem does this solve and for whom]
+Business goal: [why are we building this]
+
+The PRD should include:
+1. Overview and goals
+2. User stories (as a [user], I want to [action] so that [outcome])
+3. Functional requirements
+4. Out of scope
+5. Success metrics
+6. Open questions
+
+Keep it concise and actionable for an engineering team.
+```
+
+##### User story mapping
+```
+Help me create a user story map for [product or feature].
+
+Target user: [describe the user]
+Core user journey: [describe the main flow from start to finish]
+
+1. Break the journey into 5-7 high-level activities (the top row of the story map)
+2. Under each activity, list the user tasks (stories) needed to complete it
+3. Identify which stories belong in the MVP release vs. later releases
+4. Flag any dependencies between stories
+
+Format as a structured list grouped by activity.
+```
+
+##### Pricing strategy analysis
+```
+Help me define the right pricing strategy for my product.
+
+Product: [describe what it does]
+Target customer: [who buys it, company size, industry]
+Value delivered: [what outcome does it create for the customer]
+Competitor pricing: [what do alternatives charge]
+Current thinking: [any pricing ideas I already have]
+
+Analyze:
+1. Best pricing model (subscription, usage-based, one-time, freemium, etc.) with pros/cons
+2. Recommended price point and rationale
+3. Packaging tiers if applicable
+4. How to test and validate pricing before committing
+5. Common pricing mistakes to avoid in this market.
+```
+
+##### Feature prioritization framework
+```
+I have a backlog of feature requests and need to prioritize them. Help me apply a structured prioritization framework.
+
+Product: [describe product]
+Current stage: [e.g. pre-launch, early traction, scaling]
+Top business goal right now: [e.g. retain users, acquire first 100 customers, reduce churn]
+
+Feature backlog:
+[list your features here]
+
+For each feature, score it on:
+1. Impact on the top business goal (1-5)
+2. Effort to build (1-5, where 5 = high effort)
+3. User demand signal (how many users asked for it)
+4. Strategic fit
+
+Rank them and recommend what to build first, second, and what to park.
+```
+
+#### Category: Growth
+##### Go-to-market strategy
+```
+Help me build a go-to-market (GTM) strategy for my startup.
+
+Product: [describe product]
+Target customer: [ICP — industry, company size, role, pain point]
+Unique value proposition: [what makes you different]
+Price point: [pricing]
+Launch timeline: [when do you plan to launch]
+
+Cover:
+1. GTM motion (product-led, sales-led, or marketing-led) and why
+2. First 3 acquisition channels to focus on and rationale
+3. Launch plan for the first 90 days with key milestones
+4. Key risks and how to mitigate them
+5. What success looks like at 30, 60, and 90 days post-launch.
+```
+
+##### Customer acquisition channels
+```
+I need to identify the best customer acquisition channels for my startup.
+
+Product: [describe product]
+Target customer: [who they are, where they spend time online and offline]
+Budget for acquisition: [monthly budget range]
+Team size: [number of people available for growth]
+Current traction: [existing customers or zero]
+
+For each recommended channel:
+1. Why it fits my customer and product
+2. Estimated CAC range
+3. How to test it cheaply in 2 weeks
+4. What a scaled version looks like
+
+Rank channels by highest ROI potential for my stage.
+```
+
+##### Retention strategy
+```
+Help me design a retention strategy for my product.
+
+Product: [describe product]
+User type: [B2B or B2C, describe the user]
+Current retention: [e.g. 30-day retention rate or churn rate if known]
+Key usage pattern: [how often should users ideally use the product]
+Top reasons users churn (if known): [list them]
+
+Provide:
+1. The most important retention lever to focus on first and why
+2. An onboarding flow that drives users to the 'aha moment' faster
+3. 3 lifecycle email/notification campaigns to improve retention
+4. In-product features or changes that reduce churn
+5. How to identify at-risk users before they churn.
+```
+
+##### Metrics dashboard design
+```
+Help me design the core metrics dashboard for my startup.
+
+Business type: [e.g. B2B SaaS, marketplace, consumer app, e-commerce]
+Stage: [pre-revenue / early traction / scaling]
+Top goal right now: [e.g. grow MRR, improve retention, increase activation]
+
+Define:
+1. The single most important metric (north star metric) I should optimize for
+2. The 5-7 key metrics that drive the north star (inputs)
+3. Health metrics to monitor (to catch problems early)
+4. Metrics to ignore at my current stage
+5. How to set up a simple weekly review cadence around these metrics.
+```
+
+#### Category: Operations
+##### Hiring plan
+```
+Help me create a hiring plan for my startup.
+
+Current team: [list current roles/headcount]
+Funding status: [bootstrapped / pre-seed / seed / Series A]
+Runway: [months of runway]
+Top priorities for the next 12 months: [list 2-3 key goals]
+
+Provide:
+1. The first 3 hires I should make and why (in priority order)
+2. For each role: title, key responsibilities, must-have skills, and whether to hire full-time, part-time, or contract
+3. How to attract top candidates without a big recruiting budget
+4. Red flags to watch for when hiring at an early stage
+5. A simple hiring process that moves fast without sacrificing quality.
+```
+
+##### Company culture document
+```
+Help me write a foundational company culture document for my startup.
+
+Company: [name and what you do]
+Stage: [team size, stage]
+Founder values: [list 3-5 values that are personally important to you]
+Type of work: [remote / in-person / hybrid]
+Kind of team you want to build: [describe in a sentence]
+
+Write:
+1. A brief culture statement (2-3 sentences)
+2. 4-6 core values with a plain-English explanation of what each means in practice
+3. 3 examples of what these values look like in everyday decisions
+4. What behaviors are NOT acceptable (anti-values)
+5. How to keep culture strong as the team grows.
+```
+
+##### OKR setting
+```
+Help me set OKRs (Objectives and Key Results) for my startup.
+
+Company stage: [e.g. seed, Series A]
+Time period: [Q1 2026 or annual]
+Top company priorities: [list 2-3 strategic priorities]
+Current metrics baseline: [key numbers if available]
+
+For each priority, write:
+- 1 Objective (inspiring, qualitative, directional)
+- 3 Key Results (measurable, specific, time-bound)
+
+Also provide:
+1. How to cascade OKRs to team level
+2. A cadence for checking in and grading OKRs
+3. Common OKR mistakes to avoid at an early-stage startup.
+```
+
+##### Vendor/tool evaluation
+```
+Help me evaluate and choose between tools or vendors for [specific need, e.g. CRM, data warehouse, customer support platform].
+
+Use case: [describe exactly what I need it to do]
+Team size: [how many people will use it]
+Budget: [monthly budget range]
+Must-have requirements: [list non-negotiables]
+Nice-to-have requirements: [list secondary needs]
+
+Options I'm considering:
+1. [Option A]
+2. [Option B]
+3. [Option C]
+
+Compare them on: features, pricing, ease of setup, scalability, integrations, and support. Recommend one with clear reasoning and flag any hidden costs or lock-in risks.
+```
+
+#### Category: Legal & Finance
+##### Terms of service outline
+```
+Help me create an outline for the Terms of Service for my product.
+
+Product type: [e.g. SaaS app, marketplace, consumer app]
+Users: [B2B customers / consumers / both]
+Key features: [describe what users can do on the platform]
+Any specific concerns: [e.g. user-generated content, payments, data handling]
+
+Provide:
+1. A recommended structure with all key sections a ToS should include
+2. A plain-English summary of what each section covers and why it matters
+3. Clauses that are especially important for my product type
+4. Common mistakes founders make with ToS at an early stage
+
+Note: this is for planning purposes only — I will have a lawyer review the final document.
+```
+
+##### Privacy policy considerations
+```
+Help me understand what my privacy policy needs to cover.
+
+Product: [describe product]
+Data collected: [list types of data you collect, e.g. email, payment info, usage data]
+Users located in: [e.g. US, EU, global]
+Third-party tools used: [e.g. Stripe, Google Analytics, Intercom]
+
+Cover:
+1. Key sections every privacy policy must include
+2. Specific requirements based on my user geography (GDPR, CCPA, etc.)
+3. Data I'm collecting that may require explicit consent
+4. Third-party data sharing disclosures I need to make
+5. How to keep the policy up to date as the product evolves
+
+Note: this is for planning only — I will have a lawyer review the final document.
+```
+
+##### Cap table scenario
+```
+Help me model a cap table scenario for my startup.
+
+Current cap table:
+- Founder 1: [name, % ownership]
+- Founder 2: [name, % ownership]
+- Employee option pool: [%]
+- Other: [angels, SAFEs, etc.]
+
+Proposed funding round:
+- Round type: [e.g. Seed, Series A]
+- Amount raising: [$X]
+- Pre-money valuation: [$Y] (or 'help me think through this')
+- New investor(s): [name or 'TBD']
+
+Show:
+1. Post-money ownership percentages for all parties
+2. How the option pool top-up (if any) affects founder dilution
+3. What the cap table looks like after this round
+4. Key terms to negotiate beyond valuation (pro-rata, board seats, etc.)
+```
+
+##### Unit economics analysis
+```
+Help me analyze the unit economics of my business.
+
+Business model: [describe how you make money]
+Pricing: [how much customers pay and how often]
+Key costs to acquire a customer: [list main CAC components]
+Key costs to serve a customer: [list main COGS/service costs per customer]
+Churn rate (if known): [monthly or annual]
+
+Calculate and explain:
+1. Customer Acquisition Cost (CAC)
+2. Average Revenue Per User (ARPU) or Annual Contract Value (ACV)
+3. Gross margin per customer
+4. Customer Lifetime Value (LTV)
+5. LTV:CAC ratio and what it means for my business health
+6. Payback period
+7. What I need to improve to reach healthy unit economics.
+```
+
+### Design Prompts
+URL: https://prompt-router.pages.dev/design
+
+#### Category: UI Review
+##### Critique this UI design
+```
+Act as a senior product designer. Critique this UI design:
+
+[describe the screen or paste a description/screenshot]
+
+Evaluate: visual hierarchy, spacing, typography, color usage, and consistency. Be specific about what to improve and why.
+```
+
+##### Accessibility audit checklist
+```
+Audit this UI for accessibility issues based on WCAG 2.1 AA:
+
+[describe the UI or list its components]
+
+Check for: color contrast, keyboard navigation, focus states, screen reader compatibility, touch target sizes, and ARIA usage. List issues by severity.
+```
+
+##### Mobile responsiveness review
+```
+Review this UI design for mobile responsiveness:
+
+[describe the layout or list the components]
+
+Identify: elements that won't scale well, tap targets that are too small, content that will overflow, and spacing issues on small screens. Suggest specific fixes.
+```
+
+##### Visual hierarchy analysis
+```
+Analyze the visual hierarchy of this UI:
+
+[describe the screen layout and its elements]
+
+Identify: what the user's eye will land on first, whether the hierarchy matches the intended user goal, and what changes would improve scanning and comprehension.
+```
+
+#### Category: UX Research
+##### Write user interview questions
+```
+Write a user interview guide for researching [topic or feature, e.g. 'how people manage their finances'].
+
+Include: 3 warm-up questions, 8–10 core questions, and 2 wrap-up questions. Use open-ended phrasing. Avoid leading the participant.
+```
+
+##### Create user persona
+```
+Create a realistic user persona for [product or feature].
+
+Target user: [describe broadly, e.g. 'freelance graphic designers, 28–40']
+
+Include: name, age, occupation, goals, frustrations, key behaviors, and a short quote. Keep it grounded and actionable.
+```
+
+##### Usability test script
+```
+Write a usability test script for [feature or flow, e.g. 'the checkout flow'].
+
+Include: facilitator introduction, consent reminder, 4–6 task scenarios with realistic context, and follow-up probing questions after each task. Avoid revealing the correct path.
+```
+
+##### Survey design for feature feedback
+```
+Design a user survey to gather feedback on [feature, e.g. 'our new onboarding flow'].
+
+Include: 1 NPS or CSAT question, 4–6 rating or multiple-choice questions, and 2 open-ended questions. Keep it under 3 minutes to complete. Suggest the best order.
+```
+
+#### Category: Design Systems
+##### Component naming convention
+```
+Propose a naming convention for UI components in our design system.
+
+Context: [e.g. 'We use React, Figma, and have a mix of atomic and composed components']
+
+Cover: component names, variant naming, prop naming, and file/layer naming in Figma. Provide examples for Button, Modal, and Form Field.
+```
+
+##### Write component documentation
+```
+Write clear documentation for this UI component:
+
+Component: [component name, e.g. 'Toast notification']
+Props/variants: [list them]
+Usage context: [where it's used]
+
+Include: description, when to use vs. not use, prop table, accessibility notes, and a usage example.
+```
+
+##### Design token structure
+```
+Propose a design token structure for [product or design system name].
+
+Brand colors: [list key colors]
+Typography: [list typefaces or scale]
+Context: [e.g. web app, mobile app, or both]
+
+Organize tokens into: color, typography, spacing, border radius, shadow, and motion. Show both primitive and semantic token examples.
+```
+
+##### Pattern library audit
+```
+Help me audit our pattern library for inconsistencies.
+
+Here is a list of our current components and variants:
+
+[paste component list]
+
+Identify: duplicate patterns serving the same purpose, naming inconsistencies, gaps where a reusable component is missing, and components that may be too specific to be reusable.
+```
+
+#### Category: Wireframing
+##### User flow for feature
+```
+Map out the user flow for [feature, e.g. 'resetting a password'].
+
+User goal: [describe what the user wants to achieve]
+Entry point: [where the user starts]
+
+List each step the user takes, decisions they encounter, and possible error or edge case paths. Format as a numbered flow with branching where needed.
+```
+
+##### Information architecture for app section
+```
+Propose the information architecture for [app section, e.g. 'the settings area of a SaaS dashboard'].
+
+User types: [list if multiple]
+Key tasks users perform: [list 4–6 tasks]
+
+Suggest a navigation structure with top-level sections, sub-sections, and the content or actions within each. Justify your groupings.
+```
+
+##### Navigation structure proposal
+```
+Propose a navigation structure for [product, e.g. 'a B2B project management tool'].
+
+Key features: [list main features]
+User roles: [list roles if applicable]
+
+Recommend: primary navigation items, secondary navigation, and how to handle role-based access. Consider both desktop sidebar and mobile bottom nav patterns.
+```
+
+##### Onboarding flow design
+```
+Design an onboarding flow for [product, e.g. 'a habit-tracking mobile app'].
+
+New user goal: [what they need to achieve to get value]
+Key setup steps required: [list any mandatory steps, e.g. 'create first habit']
+
+Propose: screen sequence, what to ask vs. defer, progress indication, and how to handle skip/later options. Keep time-to-value as short as possible.
+```
+
+#### Category: Copy & Microcopy
+##### Error message writing
+```
+Write clear, user-friendly error messages for these scenarios:
+
+[list error scenarios, e.g. 'invalid email format', 'file too large', 'session expired']
+
+For each: write the error title, a plain-language explanation of what went wrong, and the action the user should take. Tone: [e.g. friendly, professional, minimal].
+```
+
+##### Empty state copy
+```
+Write empty state copy for these UI states:
+
+[list states, e.g. 'no search results', 'no notifications yet', 'no files uploaded']
+
+For each: write a heading, a 1–2 sentence explanation, and a CTA if appropriate. Tone: [e.g. encouraging, neutral, playful]. Avoid filler phrases like 'Nothing to see here'.
+```
+
+##### Button and CTA label variations
+```
+Write button and CTA label variations for [action or feature, e.g. 'starting a free trial'].
+
+Context: [where the button appears, e.g. 'pricing page', 'empty state', 'modal header']
+Tone: [e.g. direct, benefit-focused, low-friction]
+
+Provide 6–8 label options ranked from most to least assertive. Explain the tradeoffs.
+```
+
+##### Tooltip and helper text
+```
+Write tooltips and helper text for these UI elements:
+
+[list elements, e.g. 'API key field', 'billing cycle toggle', 'notification frequency setting']
+
+For each: write a concise tooltip (under 15 words) and an optional longer helper text for inline use. Prioritize clarity over cleverness.
+```
+
+#### Category: Presentation
+##### Design decision rationale
+```
+Help me write a clear rationale for this design decision:
+
+Decision: [describe what was decided, e.g. 'We moved from a tabbed layout to a single scrollable page']
+Context: [what problem it solves or what data/insight drove it]
+Alternatives considered: [list 1–2]
+
+Write a concise explanation I can share with stakeholders that covers: the problem, the decision, why it's the right call, and any tradeoffs.
+```
+
+##### Design review presentation outline
+```
+Create an outline for a design review presentation for [feature or project name].
+
+Audience: [e.g. 'product team + engineering leads']
+Goal of the review: [e.g. 'get sign-off before handoff' or 'gather feedback on direction']
+Phase: [e.g. 'early concept', 'refined mockups', 'final designs']
+
+Include: suggested sections, what to show in each, time allocation, and how to frame the feedback ask.
+```
+
+##### Before/after comparison narrative
+```
+Write a before/after narrative for this design improvement:
+
+Before: [describe the old design and its problems]
+After: [describe the new design and what changed]
+Metrics or user feedback (if any): [paste if available]
+
+Write a concise story I can use in a case study or stakeholder update that explains the problem, the insight, and the impact of the change.
+```
+
+##### Stakeholder feedback summary
+```
+Help me summarize and synthesize this stakeholder feedback from a design review:
+
+[paste raw notes or feedback]
+
+Organize it into: themes, specific actionable requests, questions that need clarification, and feedback that conflicts with other feedback. Flag any items that conflict with user research or design principles.
+```
+
+### Job Search Prompts
+URL: https://prompt-router.pages.dev/job
+
+#### Category: Resume
+##### Rewrite resume bullet points
+```
+Rewrite these resume bullet points to be stronger, more impactful, and results-oriented. Use active verbs and quantify outcomes where possible:
+
+[paste your bullet points here]
+
+Role I'm applying for: [job title]
+Industry: [industry]
+```
+
+##### Tailor resume to job description
+```
+Here is my current resume and a job description I want to apply for. Identify the gaps, suggest which skills and keywords to add or emphasize, and rewrite the most relevant sections to match the role.
+
+My resume:
+[paste resume here]
+
+Job description:
+[paste job description here]
+```
+
+##### Write resume summary
+```
+Write a compelling professional summary for my resume. It should be 3-4 sentences, highlight my key strengths and experience, and be tailored to the role I'm targeting.
+
+My background: [years of experience, key skills, notable achievements]
+Role I'm targeting: [job title and industry]
+```
+
+##### Quantify achievements
+```
+Help me quantify and strengthen these resume achievements. If I haven't provided numbers, suggest what metrics I could research or estimate to make each bullet more impactful:
+
+[paste achievements here]
+
+My role: [job title]
+Company size / industry: [details]
+```
+
+#### Category: Cover Letter
+##### Write a cover letter
+```
+Write a compelling cover letter for this job application. Keep it to 3 paragraphs: why I'm excited about the company, what I bring to the role, and a clear call to action.
+
+My background: [brief summary]
+Job title: [title]
+Company: [company name]
+Key job requirements: [paste 3-5 requirements from the listing]
+One specific reason I want this company: [your reason]
+```
+
+##### Career change cover letter
+```
+Write a cover letter for a career change application. Acknowledge the shift, connect my transferable skills to the new role, and show genuine motivation for the change.
+
+My current background: [current field and experience]
+Role I'm moving into: [new job title and field]
+Transferable skills I have: [list them]
+Why I'm making this change: [your reason]
+```
+
+##### Internal transfer letter
+```
+Write a letter requesting an internal transfer to a different team or role within my company. Emphasize my institutional knowledge, my contributions so far, and why this move benefits both me and the company.
+
+My current role: [title and team]
+Role I want to transfer to: [title and team]
+Time at company: [duration]
+Key contributions so far: [list 2-3]
+Reason for transfer: [your reason]
+```
+
+##### Follow-up after application
+```
+Write a brief, professional follow-up email to send after submitting a job application. It should express continued interest, be polite and concise, and not be pushy.
+
+Job title: [title]
+Company: [company name]
+Date applied: [date]
+Hiring manager name (if known): [name or 'Hiring Manager']
+```
+
+#### Category: Interview Prep
+##### Practice behavioral questions (STAR)
+```
+Help me prepare STAR-format answers for behavioral interview questions for this role. For each question, prompt me with a structure: Situation, Task, Action, Result.
+
+Role I'm interviewing for: [job title]
+Industry: [industry]
+My background: [brief summary]
+
+Start with these common questions:
+1. Tell me about a time you handled a conflict at work.
+2. Describe a project you led from start to finish.
+3. Tell me about a time you failed and what you learned.
+```
+
+##### Technical interview prep
+```
+I have a technical interview for this role. Create a focused study plan and list the most likely topics and question types I should prepare for. Include sample questions and explain what strong answers look like.
+
+Role: [job title]
+Company type: [startup / enterprise / FAANG-style]
+Key skills listed in the job description: [paste them]
+My current skill level: [beginner / intermediate / strong]
+Time until interview: [days/weeks]
+```
+
+##### Questions to ask the interviewer
+```
+Generate a list of thoughtful, strategic questions I can ask at the end of my interview. Include questions about the role, team culture, growth opportunities, and success metrics. Avoid generic questions.
+
+Role: [job title]
+Company: [company name]
+Stage of interview: [first round / final round / hiring manager / panel]
+What I already know about the company: [brief notes]
+```
+
+##### Salary negotiation script
+```
+Write a salary negotiation script I can use after receiving a job offer. It should be confident but collaborative, justify my ask with market data and my experience, and keep the conversation positive.
+
+Offer received: [salary amount]
+My target salary: [target amount]
+My experience: [years and key qualifications]
+Role: [job title]
+Location / remote: [location]
+```
+
+#### Category: LinkedIn
+##### Optimize LinkedIn headline
+```
+Write 5 variations of a LinkedIn headline for my profile. Each should be keyword-rich for recruiter searches, communicate my value proposition clearly, and be under 220 characters.
+
+My current role: [title]
+Industry: [industry]
+Key skills: [list 3-5]
+What I want to be known for: [brief description]
+Open to new roles: [yes / no]
+```
+
+##### Write LinkedIn summary (About)
+```
+Write a LinkedIn About section for my profile. Use first-person voice, lead with a strong hook, highlight my experience and key skills, and end with what I'm looking for or how people can contact me. Aim for 250-350 words.
+
+My background: [summary of experience]
+Key skills and expertise: [list them]
+Notable achievements: [1-3 highlights]
+What I'm looking for: [roles, opportunities, or collaborations]
+```
+
+##### Connection request message
+```
+Write a short, personalized LinkedIn connection request message (under 300 characters). It should be warm, specific about why I'm reaching out, and not immediately ask for anything.
+
+Who I'm reaching out to: [their name and title]
+Why I want to connect: [shared interest, mutual connection, admire their work, etc.]
+My background: [one-line description of who I am]
+```
+
+##### LinkedIn post about career insight
+```
+Write a LinkedIn post sharing a career insight or lesson I've learned. Use a strong first line to stop the scroll, tell a brief story or observation, and end with a question to drive engagement. Avoid buzzwords and keep it authentic.
+
+Topic or lesson: [what I want to share]
+Context or story behind it: [brief details]
+Target audience: [who I write for]
+Tone: [reflective / motivational / practical]
+```
+
+#### Category: Networking
+##### Write informational interview request
+```
+Write an email requesting a 20-minute informational interview with someone in a role or company I'm interested in. Keep it concise, show genuine interest in their experience, and make it easy to say yes.
+
+Their name: [name]
+Their role and company: [details]
+How I found them: [LinkedIn, mutual connection, article, etc.]
+What I want to learn: [specific topics or questions]
+My background: [one sentence about who I am]
+```
+
+##### Thank you email after networking meeting
+```
+Write a follow-up thank you email to send within 24 hours of an informational interview or networking meeting. Reference something specific from our conversation, express genuine appreciation, and suggest a natural next step.
+
+Their name: [name]
+Date of meeting: [date]
+Something specific we discussed: [topic or insight]
+Next step I want to propose: [e.g., stay in touch, share a resource, follow up in 3 months]
+```
+
+##### Elevator pitch
+```
+Write a 30-second elevator pitch I can use at networking events or when someone asks 'what do you do?'. It should be clear, memorable, and naturally lead to a conversation. Write 3 versions: formal, casual, and career-changer.
+
+My background: [current or recent role and industry]
+Key skills or expertise: [list them]
+What I'm working toward: [goals or the type of opportunity I'm seeking]
+```
+
+##### Conference follow-up email
+```
+Write a follow-up email to someone I met briefly at a conference or industry event. Reference how we met, recap the conversation, and propose a way to stay connected or continue the discussion.
+
+Their name: [name]
+Event name: [conference or event]
+How we met / what we talked about: [brief details]
+Next step I want to suggest: [call, coffee chat, sharing a resource, etc.]
+```
+
+#### Category: Career Growth
+##### Create a career development plan
+```
+Help me build a 12-month career development plan. Include specific goals, skills to develop, milestones to hit, and actions to take each quarter. Make it realistic and tied to my target role.
+
+My current role: [title and level]
+Target role in 12 months: [title and level]
+Key gaps to close: [skills, experience, or credentials I'm missing]
+Resources available to me: [courses, mentors, budget, etc.]
+```
+
+##### Ask for a promotion
+```
+Write a script for asking my manager for a promotion. Structure it as a conversation opener, a summary of my contributions and impact, a clear ask, and an invitation to discuss a path forward. Keep it confident and collaborative.
+
+My current title: [title]
+Title I'm asking for: [target title]
+Time in current role: [duration]
+Key accomplishments: [list 3-5 with impact]
+Why now: [timing or trigger]
+```
+
+##### Write a self-review
+```
+Help me write a strong self-review for my annual performance review. For each area, highlight specific accomplishments with measurable impact, acknowledge areas for growth honestly, and connect my work to team and company goals.
+
+My role: [title]
+Key projects or responsibilities this period: [list them]
+Notable achievements: [with metrics where possible]
+Areas I want to grow in: [be specific]
+Goals for next period: [list 2-3]
+```
+
+##### Skill gap analysis
+```
+Analyze the gap between my current skills and the requirements for my target role. Prioritize the gaps by importance, suggest specific ways to close each one, and estimate a realistic timeline.
+
+My current skills: [list technical and soft skills]
+Target role: [job title]
+Job description or requirements: [paste or describe key requirements]
+Timeline I'm working with: [months or years]
+```
+
+### Productivity Prompts
+URL: https://prompt-router.pages.dev/productivity
+
+#### Category: Planning
+##### Weekly planning session
+```
+Help me plan my week. Here are my tasks, deadlines, and commitments:
+
+[list everything on your plate]
+
+Organize these into a day-by-day schedule, flag conflicts, and suggest what to defer. Prioritize by impact.
+```
+
+##### Break down a big project
+```
+I have a large project I need to break into manageable pieces:
+
+Project: [describe the project and its goal]
+Deadline: [date]
+Team size: [number of people or solo]
+
+Create a phased breakdown with milestones, dependencies, and estimated time per task.
+```
+
+##### Priority matrix (urgent/important)
+```
+Help me build a priority matrix for my current workload. Categorize each item into: Do Now, Schedule, Delegate, or Drop.
+
+My tasks:
+[list your tasks here]
+
+For each, briefly explain the categorization.
+```
+
+##### Quarterly goal setting
+```
+Help me set goals for the next quarter. My role is [job title/function] and my main objective is [describe what you are trying to achieve].
+
+Draft 3-5 SMART goals with success metrics, key actions per goal, and a simple way to track progress weekly.
+```
+
+#### Category: Meetings
+##### Meeting agenda template
+```
+Create a structured agenda for this meeting:
+
+Meeting type: [e.g. weekly sync, project kickoff, retrospective]
+Duration: [time]
+Attendees: [roles or names]
+Goal: [what must be decided or accomplished]
+
+Include time boxes for each section and a clear desired outcome.
+```
+
+##### Summarize meeting notes
+```
+Summarize these meeting notes into a clean, scannable format with three sections: Key Decisions, Action Items (with owners and due dates), and Open Questions.
+
+Raw notes:
+[paste your notes here]
+```
+
+##### Write action items from notes
+```
+Extract all action items from these meeting notes. For each, identify: the task, the owner (if mentioned), and the due date (if mentioned). Format as a numbered list.
+
+Meeting notes:
+[paste notes here]
+```
+
+##### Meeting follow-up email
+```
+Write a concise follow-up email for a meeting that just ended.
+
+Meeting topic: [topic]
+Attendees: [names or roles]
+Key decisions made: [list them]
+Action items: [list with owners]
+Next meeting: [date or TBD]
+
+Keep it brief and professional.
+```
+
+#### Category: Email
+##### Draft professional email
+```
+Write a professional email with the following details:
+
+To: [recipient and their role]
+Context: [background on the situation]
+Main ask or message: [what you need to communicate]
+Tone: [e.g. formal, friendly, direct]
+
+Keep it concise and end with a clear next step.
+```
+
+##### Respond to difficult email
+```
+Help me respond to this email in a professional, measured way.
+
+The email I received:
+[paste the email here]
+
+My situation: [add any relevant context]
+Desired outcome: [what I want to happen after sending my reply]
+
+Draft a response that is firm but constructive.
+```
+
+##### Batch email templates
+```
+Create [number] reusable email templates for [use case, e.g. client check-ins, project status updates, onboarding new contacts].
+
+Each template should have a subject line, a body with [placeholders] for personalization, and a call to action. Keep them under 150 words each.
+```
+
+##### Decline request politely
+```
+Help me write a polite but clear email declining this request:
+
+The request: [describe what was asked]
+Reason I am declining: [brief honest reason]
+Relationship with sender: [colleague, client, manager, etc.]
+
+Suggest an alternative or soften the refusal where appropriate. Keep it short.
+```
+
+#### Category: Decisions
+##### Decision framework for choice
+```
+I need to make a decision between these options:
+
+Option A: [describe]
+Option B: [describe]
+Option C: [describe, or remove if only two]
+
+Context: [what is at stake, constraints, timeline]
+
+Evaluate each option on: impact, effort, risk, and reversibility. Recommend the best option with reasoning.
+```
+
+##### Pre-mortem analysis
+```
+Run a pre-mortem on this plan. Assume it is [6 months / 1 year] from now and the plan has failed completely.
+
+The plan: [describe your plan or initiative]
+
+List the most likely reasons it failed, the warning signs I should watch for early on, and changes I should make to the plan right now.
+```
+
+##### Pros/cons with weighted criteria
+```
+Help me evaluate this decision using weighted criteria.
+
+Decision: [what I am deciding]
+Options: [list the options]
+Criteria that matter to me (rate importance 1-5): [list criteria, e.g. cost, speed, quality, risk]
+
+Build a weighted scoring table, score each option, and recommend the winner.
+```
+
+##### Stakeholder impact analysis
+```
+Analyze the stakeholder impact of this decision or change:
+
+The decision: [describe it]
+Stakeholders involved: [list groups or individuals]
+
+For each stakeholder, identify: how they are affected (positively or negatively), their likely reaction, and what I should communicate or do to manage their response.
+```
+
+#### Category: Communication
+##### Write project status update
+```
+Write a project status update for [audience, e.g. leadership, the team, a client].
+
+Project: [name and one-line description]
+Status: [on track / at risk / delayed]
+Accomplished this period: [list]
+Planned next period: [list]
+Blockers or risks: [list, or none]
+
+Keep it to one page. Be direct about risks.
+```
+
+##### Explain technical concept to non-technical audience
+```
+Explain [technical concept or term] to someone who has no technical background. Use a simple analogy, avoid jargon, and keep it under 150 words. The audience is [describe them, e.g. executives, clients, HR team].
+```
+
+##### Feedback for team member
+```
+Help me write clear, constructive feedback for a team member.
+
+Situation: [what happened and when]
+Impact: [how it affected the team, project, or outcome]
+Behavior to address: [be specific, not personal]
+Desired change: [what you want them to do differently]
+
+Frame it using the SBI model (Situation, Behavior, Impact) and keep the tone supportive.
+```
+
+##### Escalation email
+```
+Write an escalation email for a situation that is blocked or at risk.
+
+Issue: [describe the problem clearly]
+Impact if unresolved: [timeline, business risk, or cost]
+What has already been tried: [actions taken so far]
+What I need: [decision, resource, or unblocking action]
+Recipient: [their role and relationship to the issue]
+
+Be direct and solution-oriented, not accusatory.
+```
+
+#### Category: Personal
+##### Morning routine optimization
+```
+Help me design an effective morning routine. Here is my current situation:
+
+Wake time: [time]
+Available time before work: [duration]
+Current routine: [describe it or say none]
+Goals I want to support: [e.g. focus, fitness, calm, learning]
+Constraints: [e.g. kids, commute, limited space]
+
+Design a realistic routine with time blocks and explain the purpose of each element.
+```
+
+##### Habit tracker design
+```
+Help me design a habit tracker for these habits I want to build:
+
+Habits: [list them]
+Tracking period: [daily / weekly]
+Preferred format: [simple checklist, spreadsheet columns, journal prompt, etc.]
+
+For each habit, suggest a trigger, a minimum viable version for bad days, and a metric to measure progress.
+```
+
+##### Weekly review template
+```
+Create a weekly review template I can use every [day of week] to reflect and plan.
+
+My main areas of focus: [e.g. work projects, health, relationships, learning]
+Time I have for the review: [duration]
+
+Include reflection questions, a section to capture wins and lessons, and a planning section for the coming week. Keep it practical and fast to complete.
+```
+
+##### Learning plan for new skill
+```
+Create a structured learning plan for [skill I want to learn].
+
+My current level: [complete beginner / some exposure / intermediate]
+Time I can dedicate: [hours per week]
+Deadline or target date: [date or flexible]
+Preferred learning style: [videos, reading, hands-on projects, courses, etc.]
+
+Break the plan into phases with specific resources, milestones, and a way to test my progress at each stage.
+```
+
+### Legal Prompts
+URL: https://prompt-router.pages.dev/legal
+
+#### Category: Contracts
+##### Review contract for red flags
+```
+Review this contract and identify any red flags, unusual clauses, or terms that are heavily one-sided. Flag anything that could create significant risk or liability:
+
+[paste contract text here]
+
+For each issue found, explain the risk and suggest how it could be improved.
+```
+
+##### Summarize contract key terms
+```
+Summarize the key terms of this contract in plain language. Cover: parties involved, duration, payment terms, obligations of each party, termination conditions, and any notable restrictions:
+
+[paste contract text here]
+```
+
+##### Draft NDA outline
+```
+Draft an outline for a non-disclosure agreement between:
+
+Disclosing party: [name/type, e.g. a SaaS startup]
+Receiving party: [name/type, e.g. a potential enterprise customer]
+Purpose: [e.g. evaluating a software integration]
+Duration: [e.g. 2 years]
+
+Include standard NDA sections: definition of confidential information, obligations, exclusions, term, and remedies.
+```
+
+##### Compare two contract versions
+```
+Compare these two versions of a contract and summarize the key differences. Highlight any changes that meaningfully affect rights, obligations, liability, or payment:
+
+Version 1:
+[paste here]
+
+Version 2:
+[paste here]
+```
+
+#### Category: Compliance
+##### GDPR compliance checklist
+```
+Create a GDPR compliance checklist for a [type of organization, e.g. B2B SaaS company] that collects [types of data, e.g. email addresses and usage analytics] from users in the EU.
+
+Cover: lawful basis for processing, consent, data subject rights, data retention, breach notification, and DPA requirements.
+```
+
+##### Data processing assessment
+```
+Help me conduct a data processing assessment for the following activity:
+
+Activity: [describe, e.g. sending marketing emails to EU residents]
+Data collected: [list types]
+Third-party processors involved: [list, e.g. Mailchimp, Stripe]
+
+Identify compliance obligations, risks, and recommended safeguards.
+```
+
+##### Regulatory change impact analysis
+```
+Analyze the impact of this regulatory change on our organization:
+
+Regulation: [name and jurisdiction, e.g. EU AI Act, California SB 1047]
+Our business: [brief description]
+Existing practices: [describe relevant current practices]
+
+What do we need to change? Prioritize by urgency.
+```
+
+##### Audit preparation guide
+```
+Help us prepare for an upcoming [type of audit, e.g. SOC 2 Type II, ISO 27001, GDPR audit].
+
+Our organization: [brief description]
+Audit scope: [describe]
+Timeline: [e.g. audit is in 3 months]
+
+Provide a prioritized checklist of what to prepare, common findings to address proactively, and documentation we should have ready.
+```
+
+#### Category: Policies
+##### Draft privacy policy outline
+```
+Draft an outline for a privacy policy for:
+
+Product/service: [describe]
+Data collected: [list types, e.g. name, email, payment info, usage data]
+Third-party services used: [e.g. Stripe, Google Analytics, AWS]
+User locations: [e.g. US and EU]
+
+Include all sections required by GDPR and CCPA. Write in plain, user-friendly language.
+```
+
+##### Write acceptable use policy
+```
+Write an acceptable use policy (AUP) for [product/platform name], a [describe the product, e.g. cloud-based collaboration tool for businesses].
+
+Include: permitted uses, prohibited activities, enforcement and consequences, and how to report violations.
+
+Tone should be clear and professional, not overly legalistic.
+```
+
+##### Employee handbook section
+```
+Write a section for our employee handbook on [topic, e.g. remote work policy / data security / social media use].
+
+Company type: [describe]
+Key rules to cover: [list]
+Tone: [e.g. friendly but clear]
+
+Make it easy to understand and include what is expected, what is not allowed, and consequences for non-compliance.
+```
+
+##### Code of conduct draft
+```
+Draft a code of conduct for [organization type, e.g. an open source project / a tech startup].
+
+Key values to reflect: [list, e.g. inclusivity, respect, transparency]
+Scope: [e.g. applies to contributors, employees, events]
+
+Include: expected behaviors, unacceptable behaviors, reporting process, and enforcement.
+```
+
+#### Category: Intellectual Property
+##### Trademark search preparation
+```
+Help me prepare for a trademark search for the following:
+
+Proposed mark: [name or phrase]
+Goods/services: [describe what you sell or do]
+Jurisdictions: [e.g. US, EU, UK]
+
+Explain what to look for in a search, what makes a mark registrable, and what conflicts to watch out for.
+```
+
+##### Patent prior art summary
+```
+Help me summarize prior art relevant to this invention concept for a patent application:
+
+Invention description: [describe in plain language]
+Technology field: [e.g. machine learning, biotech, software]
+
+Describe what prior art means, what categories to search, and help me articulate what may be novel about this invention.
+```
+
+##### Open source license comparison
+```
+Compare these open source licenses for our use case:
+
+Licenses to compare: [e.g. MIT, Apache 2.0, GPL v3, AGPL]
+Our use case: [e.g. we are building a commercial SaaS product that includes open source libraries]
+
+For each license, explain: what we can do, what we must do, and what we cannot do. Recommend the most suitable license for our project.
+```
+
+##### IP assignment checklist
+```
+Create an IP assignment checklist for when we hire [freelancers / employees / contractors] to build [describe work, e.g. software features].
+
+What clauses should be in the contract? What do we need to verify? What common mistakes should we avoid to ensure IP ownership is properly transferred to our company?
+```
+
+#### Category: Business
+##### Terms of service outline
+```
+Draft an outline for terms of service for:
+
+Product: [describe]
+Business model: [e.g. subscription SaaS, marketplace, e-commerce]
+User base: [e.g. consumers, businesses]
+
+Include: account terms, payment and refunds, prohibited uses, limitation of liability, dispute resolution, and governing law. Flag any sections that require a lawyer's review.
+```
+
+##### Liability risk assessment
+```
+Help me assess the liability risks for this business activity:
+
+Activity: [describe, e.g. offering AI-generated financial summaries to retail investors]
+Business type: [describe]
+Jurisdictions: [where you operate]
+
+Identify the main categories of liability risk, their likelihood and potential impact, and suggest mitigation strategies.
+```
+
+##### Partnership agreement key terms
+```
+Outline the key terms that should be covered in a partnership agreement between:
+
+Party A: [describe]
+Party B: [describe]
+Nature of partnership: [e.g. revenue share on a co-developed product]
+
+Cover: roles and responsibilities, revenue/profit split, IP ownership, decision-making, exit provisions, and dispute resolution.
+```
+
+##### Vendor contract review checklist
+```
+Create a checklist for reviewing vendor contracts before signing. Our company is a [describe, e.g. Series A startup in fintech].
+
+We particularly care about: [list concerns, e.g. data handling, SLAs, liability caps, termination rights]
+
+What should we always check, what are common unfavorable terms vendors include, and what should we push back on?
+```
+
+#### Category: Plain Language
+##### Simplify legal language
+```
+Rewrite this legal text in plain, clear language that a non-lawyer can understand. Keep all the meaning intact but remove jargon, passive constructions, and unnecessary complexity:
+
+[paste legal text here]
+
+Target audience: [e.g. general consumers / small business owners]
+```
+
+##### Write user-facing legal notice
+```
+Write a user-facing notice for the following legal requirement:
+
+Requirement: [e.g. GDPR consent for marketing emails / cookie notice / data retention policy update]
+Context: [where this notice will appear, e.g. on sign-up form / in app banner]
+Tone: [e.g. friendly, concise, trustworthy]
+
+Make it clear, honest, and as short as possible while covering the essentials.
+```
+
+##### FAQ from legal document
+```
+Turn this legal document into a plain-language FAQ that users will actually read and understand. Extract the most important points and the questions users are most likely to have:
+
+[paste document here]
+
+Format as Q&A. Aim for 8-12 questions. Keep each answer to 2-3 sentences.
+```
+
+##### Translate policy to employee guide
+```
+Take this formal policy and rewrite it as a friendly, practical guide for employees. The goal is for staff to actually understand and follow it — not just sign off on it.
+
+Policy:
+[paste here]
+
+Include: what it means day-to-day, concrete examples of dos and don'ts, and what to do if unsure.
+```
+
+### Sales Prompts
+URL: https://prompt-router.pages.dev/sales
+
+#### Category: Prospecting
+##### Write cold outreach email
+```
+Write a cold outreach email to a prospective customer.
+
+Company name: [prospect company]
+Prospect role: [e.g. VP of Sales, Head of Operations]
+Our product/service: [brief description]
+Key value proposition: [what problem we solve]
+Desired outcome: [e.g. book a 20-minute call]
+
+Keep it under 150 words. Lead with their pain, not our product. End with a single low-friction CTA.
+```
+
+##### LinkedIn connection + message sequence
+```
+Write a 3-step LinkedIn outreach sequence for a cold prospect.
+
+Prospect profile: [role, company, industry]
+Our offer: [product/service and key benefit]
+
+Step 1: Connection request note (under 300 characters)
+Step 2: First message after connecting (value-focused, no pitch, under 100 words)
+Step 3: Follow-up message if no reply after 5 days (gentle nudge, under 80 words)
+
+Tone: professional but human. No generic openers like 'I came across your profile'.
+```
+
+##### Research prospect before call
+```
+Help me research this prospect before a sales call.
+
+Prospect name: [name]
+Role: [title]
+Company: [company name]
+Industry: [industry]
+Call objective: [e.g. discovery, demo, close]
+
+Provide:
+1. 5 smart questions to ask based on their likely priorities
+2. 3 potential pain points for someone in their role
+3. 2 recent industry trends I can reference to show credibility
+4. One icebreaker based on their role or company
+```
+
+##### Ideal customer profile definition
+```
+Help me define an Ideal Customer Profile (ICP) for our product.
+
+Product/service: [describe what you sell]
+Best customers we already have: [describe 2-3 examples if available]
+Problem we solve: [describe the core pain point]
+Our price point: [approximate]
+
+Output:
+1. Firmographic profile (company size, industry, geography, revenue)
+2. Technographic signals (tools/tech they likely use)
+3. Behavioral triggers (what prompts them to buy)
+4. Anti-ICP: who we should NOT target and why
+```
+
+#### Category: Discovery
+##### Discovery call question framework
+```
+Create a discovery call question framework for a sales call.
+
+Product/service: [what we sell]
+Target persona: [role and industry]
+Call duration: [e.g. 30 minutes]
+
+Structure the questions in this order:
+1. Situation (2-3 questions to understand their current state)
+2. Problem (2-3 questions to surface pain)
+3. Implication (2 questions to explore the cost of the problem)
+4. Need-payoff (2 questions to get them to articulate the value of solving it)
+
+Include one open-ended closing question to gauge next steps.
+```
+
+##### Pain point identification
+```
+Based on the following discovery call notes, identify the prospect's core pain points and rank them by urgency.
+
+Call notes:
+[paste your call notes here]
+
+For each pain point:
+1. Name and describe it clearly
+2. Quote or paraphrase what the prospect said
+3. Rate urgency: High / Medium / Low
+4. Suggest which product feature or outcome maps to it
+
+Also flag any unstated pain points implied by what they said.
+```
+
+##### Needs analysis template
+```
+Help me complete a needs analysis based on this prospect conversation.
+
+Prospect: [name, role, company]
+What they said their goal is: [quote or paraphrase]
+Current process/tool: [what they use today]
+Frustrations mentioned: [list them]
+Timeline they indicated: [if any]
+Budget signals: [if any]
+
+Output a structured needs analysis including:
+- Primary need
+- Secondary needs
+- Success criteria (what does 'solved' look like to them?)
+- Recommended next step in the sales process
+```
+
+##### Qualification checklist (BANT/MEDDIC)
+```
+Evaluate this prospect against a qualification framework.
+
+Prospect: [name, role, company]
+Discovery notes: [paste notes]
+
+Score them against both frameworks:
+
+BANT:
+- Budget: [known / unknown / confirmed]
+- Authority: [decision maker / influencer / unknown]
+- Need: [strong / moderate / weak / unclear]
+- Timeline: [urgent / within 6 months / no timeline]
+
+MEDDIC:
+- Metrics: [quantified impact identified?]
+- Economic Buyer: [identified?]
+- Decision Criteria: [known?]
+- Decision Process: [mapped?]
+- Identify Pain: [confirmed?]
+- Champion: [do we have one?]
+
+Recommend: Qualify / Nurture / Disqualify — with reasoning.
+```
+
+#### Category: Pitch & Demo
+##### Tailor pitch to persona
+```
+Tailor our sales pitch for a specific persona.
+
+Our product/service: [describe it]
+Core value proposition: [1-2 sentences]
+Prospect persona: [role, company type, industry]
+Their likely top priorities: [e.g. cost reduction, team efficiency, compliance]
+Pain points uncovered: [from discovery]
+
+Rewrite the pitch so it:
+1. Leads with what matters most to this persona
+2. Uses language they would use (not our internal jargon)
+3. Connects our features directly to their stated pain
+4. Ends with a compelling reason to move forward now
+```
+
+##### Demo script outline
+```
+Write a demo script outline for a product demo call.
+
+Product: [name and brief description]
+Prospect: [role, company, industry]
+Pain points confirmed in discovery: [list them]
+Demo duration: [e.g. 30 minutes]
+Key features to highlight: [list 3-4]
+
+Structure:
+1. Opening (re-confirm agenda and goals, 2 min)
+2. Context-setting (tie demo to their pain, 3 min)
+3. Core demo flow (feature-by-feature with 'so what' for each, 18 min)
+4. Objection checkpoint (pause for questions, 4 min)
+5. Close (next steps and call to action, 3 min)
+
+Include a transition line between each section.
+```
+
+##### ROI calculation narrative
+```
+Help me build an ROI narrative to present to a prospect.
+
+Our product/service: [description]
+Prospect company size: [employees / revenue if known]
+Pain they are experiencing: [describe]
+Our solution outcome: [what we improve]
+
+Build a narrative that includes:
+1. Current cost of the problem (time, money, or risk)
+2. Conservative estimate of improvement with our solution
+3. Annual ROI calculation with clear assumptions
+4. Payback period
+5. One-sentence summary suitable for an executive
+
+Use round numbers and flag assumptions clearly so the prospect can adjust them.
+```
+
+##### Case study summary for prospect
+```
+Summarize a customer case study to share with a prospect.
+
+Customer: [company name or 'a [industry] company']
+Their problem before us: [describe]
+How they used our product: [describe]
+Results achieved: [metrics if available]
+Timeframe: [how long to see results]
+
+Write a 150-word summary formatted as:
+- Situation
+- Challenge
+- Solution
+- Results
+
+Then write a 1-sentence version I can drop into an email.
+Then write 2 follow-up questions I can ask the prospect to connect this story to their situation.
+```
+
+#### Category: Objection Handling
+##### Respond to price objection
+```
+Help me respond to a price objection.
+
+What the prospect said: "[exact quote or paraphrase]"
+Our price: [approximate]
+Value we deliver: [key outcomes]
+Competitor or alternative they may be comparing to: [if known]
+
+Write a response that:
+1. Acknowledges the concern without being defensive
+2. Reframes price as investment with ROI language
+3. Breaks the cost down to a per-unit or per-day figure if helpful
+4. Offers a next step (not a discount) to move forward
+
+Also suggest one clarifying question to ask before responding, to understand if it's a true budget issue or a value issue.
+```
+
+##### Address competitor comparison
+```
+Help me handle a competitor comparison objection.
+
+What the prospect said: "[quote or paraphrase]"
+Competitor mentioned: [competitor name]
+What they likely value about the competitor: [price / features / brand / existing relationship]
+Our key differentiators: [list 2-3]
+
+Write a response that:
+1. Validates that they're doing their due diligence
+2. Acknowledges the competitor fairly (no trash-talking)
+3. Pivots to our unique strengths relevant to their pain
+4. Suggests a side-by-side evaluation criteria they should use
+
+End with a question that keeps the conversation moving forward.
+```
+
+##### Handle "not the right time"
+```
+Help me respond to a timing objection.
+
+What the prospect said: "[quote or paraphrase, e.g. 'We're too busy right now' or 'Let's revisit in Q3']"
+What I know about their situation: [any context from discovery]
+Our typical implementation timeline: [e.g. 2 weeks, 1 day]
+
+Write a response that:
+1. Empathizes with their bandwidth
+2. Gently challenges whether waiting makes the problem better or worse
+3. Offers a low-commitment next step (not a full sale)
+4. Gives them a concrete reason why now is better than later
+
+Keep it under 120 words. Avoid pressure tactics.
+```
+
+##### Overcome "need to think about it"
+```
+Help me respond to a 'need to think about it' or 'let me get back to you' objection.
+
+Context: [where we are in the deal — demo done, proposal sent, etc.]
+What the prospect said: "[exact quote]"
+What I think the real hesitation might be: [price / internal approval / risk / unsure of value]
+
+Write a response that:
+1. Respects their process without letting the deal go cold
+2. Surfaces the real objection with a direct but non-pushy question
+3. Offers to help with whatever is causing the pause (e.g. internal business case)
+4. Locks in a specific follow-up time before ending the call
+```
+
+#### Category: Follow-up
+##### Post-demo follow-up email
+```
+Write a follow-up email to send within 24 hours of a product demo.
+
+Prospect name: [name]
+Company: [company]
+Demo date: [date]
+Key pain points discussed: [list 1-3]
+Features they responded to most: [list]
+Agreed next step: [e.g. send proposal, intro call with their team, trial]
+Any open questions they had: [list if any]
+
+Email should:
+1. Thank them and reference something specific from the call
+2. Recap the 2-3 key value points relevant to their pain
+3. Answer any open questions
+4. Confirm the agreed next step with a clear action item
+
+Tone: warm and professional. Under 200 words.
+```
+
+##### Re-engage cold lead
+```
+Write an email to re-engage a prospect who went cold.
+
+Prospect name: [name]
+Company: [company]
+Last interaction: [date and what happened — e.g. demo, proposal sent]
+Time since last contact: [e.g. 6 weeks]
+Reason they may have gone quiet: [if known]
+New angle or trigger to reference: [e.g. their company news, new feature we launched, industry change]
+
+Write an email that:
+1. Does not guilt-trip or over-apologize
+2. Leads with something new or relevant (not 'just checking in')
+3. Re-establishes value in one sentence
+4. Has a single, easy-to-act-on CTA
+
+Under 100 words.
+```
+
+##### Proposal summary email
+```
+Write an email to accompany a proposal being sent to a prospect.
+
+Prospect name: [name]
+Company: [company]
+Proposal summary: [brief overview of what's included]
+Total value/investment: [price or range]
+Key outcomes they'll get: [2-3 bullet points]
+Expiry or decision deadline: [if applicable]
+Next step: [e.g. review call scheduled, awaiting signature]
+
+Email should:
+1. Frame the proposal as a solution to their specific pain (reference discovery)
+2. Highlight the 2-3 most important outcomes
+3. Make it easy to find the key sections of the proposal
+4. State the next step clearly
+
+Tone: confident and helpful. Under 180 words.
+```
+
+##### Deal stuck — next steps email
+```
+Write an email to unstick a deal that has stalled.
+
+Prospect name: [name]
+Company: [company]
+Deal stage: [e.g. proposal sent, verbal yes but no signature, waiting on legal]
+How long it has been stalled: [timeframe]
+Last communication: [brief summary]
+What I think the blocker is: [your best guess]
+
+Write an email that:
+1. Does not feel like pressure or nagging
+2. Offers something genuinely helpful (e.g. a template, data, a call to work through blockers)
+3. Creates mild urgency without being artificial
+4. Proposes a specific next action with a date
+
+Also suggest one alternative approach if the email gets no response.
+```
+
+#### Category: Reporting
+##### Weekly pipeline summary
+```
+Write a weekly pipeline summary for my sales manager or team.
+
+This week's activity:
+- New opportunities opened: [number and brief description]
+- Demos or calls completed: [number]
+- Proposals sent: [number]
+- Deals closed (won): [number and value]
+- Deals closed (lost): [number and reason if known]
+
+Pipeline snapshot:
+- Total open pipeline: [value]
+- Deals at each stage: [list]
+- Deals at risk: [any stalled or at-risk deals]
+
+Next week priorities: [list 3-4 actions]
+
+Format as a clear, skimmable summary. Use plain language, not jargon.
+```
+
+##### Lost deal analysis
+```
+Help me write a lost deal analysis.
+
+Deal details:
+- Prospect: [company name]
+- Deal size: [value]
+- Sales cycle length: [duration]
+- Stage lost at: [e.g. after demo, after proposal]
+- Stated reason for loss: [what they told us]
+- Actual reason (your read): [your honest assessment]
+- Competitor chosen (if known): [name]
+
+Analyze:
+1. What signals did we miss or ignore?
+2. Where did the sales process break down?
+3. Was this a winnable deal? Why or why not?
+4. What would we do differently?
+5. Is there a path to re-engage in the future?
+
+Be honest and actionable, not defensive.
+```
+
+##### Win/loss patterns
+```
+Analyze these win/loss results to identify patterns.
+
+Recent wins:
+[list deals won — include size, industry, persona, deal length, key reason won]
+
+Recent losses:
+[list deals lost — include size, industry, persona, deal length, key reason lost]
+
+Identify:
+1. Common characteristics of deals we win (ICP fit, use case, persona, deal size)
+2. Common characteristics of deals we lose
+3. Patterns in why we win (price, relationships, features, speed)
+4. Patterns in why we lose (same)
+5. Recommendations: where to focus, what to fix in the process, and which segment to double down on
+```
+
+##### Forecast narrative for leadership
+```
+Write a sales forecast narrative for a leadership or board update.
+
+Forecast period: [e.g. Q2 2026]
+Quota: [total target]
+Current pipeline: [total value]
+Committed forecast: [what I'm confident will close]
+Best case: [if everything goes right]
+Worthy risks: [deals that could slip]
+
+Key deals to highlight:
+[list 3-5 with name/placeholder, stage, value, expected close date]
+
+Write a 200-word narrative that:
+1. States the headline number clearly
+2. Explains what's driving confidence
+3. Names the key risks and what's being done to mitigate them
+4. Ends with one clear ask or action needed from leadership (if any)
+
+Tone: confident and data-grounded, not defensive.
+```
+
+### Student Prompts
+URL: https://prompt-router.pages.dev/student
+
+#### Category: Studying
+##### Create study guide for topic
+```
+Create a comprehensive study guide for [topic].
+
+Include:
+- Key concepts and definitions
+- Important dates, formulas, or names to memorize
+- Common misconceptions to watch out for
+- A quick summary I can review before an exam
+
+Level: [beginner / intermediate / advanced]
+```
+
+##### Explain concept with analogies
+```
+Explain [concept] to me using clear, everyday analogies.
+
+I'm a [year/level] student studying [subject]. I understand [related concept] but I'm struggling with this one.
+
+Use at least two different analogies and check my understanding at the end with a quick question.
+```
+
+##### Generate flashcard Q&As
+```
+Generate 10 flashcard question-and-answer pairs for the following topic:
+
+[topic or paste notes here]
+
+Format each card as:
+Q: [question]
+A: [concise answer]
+
+Mix factual recall, conceptual understanding, and application questions.
+```
+
+##### Summarize textbook chapter
+```
+Summarize the following textbook chapter into clear, concise notes.
+
+[paste chapter text here]
+
+Organize the summary with:
+- Main idea (1–2 sentences)
+- Key points (bullet list)
+- Terms to know (with definitions)
+- Things likely to appear on an exam
+```
+
+#### Category: Writing Essays
+##### Essay outline generator
+```
+Generate a detailed essay outline for the following prompt:
+
+[essay prompt]
+
+Course: [course name]
+Word count target: [e.g. 1500 words]
+Argument style: [persuasive / analytical / compare & contrast / expository]
+
+Include a thesis statement, topic sentences for each body paragraph, and supporting points.
+```
+
+##### Thesis statement workshop
+```
+Help me craft a strong thesis statement for my essay.
+
+Topic: [topic]
+My initial idea or argument: [describe your rough idea]
+Assignment type: [argumentative / analytical / research]
+
+Provide three different thesis statement options ranging from safe to bold, with a brief note on the strength of each.
+```
+
+##### Strengthen my argument
+```
+Review this paragraph from my essay and help me strengthen the argument.
+
+[paste paragraph here]
+
+Specifically:
+1. Is the claim clear and defensible?
+2. Is the evidence well-integrated?
+3. Does the analysis explain the 'so what'?
+
+Rewrite the paragraph with your improvements and explain each change.
+```
+
+##### Write introduction paragraph
+```
+Write an engaging introduction paragraph for my essay.
+
+Topic: [topic]
+Thesis: [your thesis statement]
+Audience: [e.g. professor, general reader]
+Tone: [academic / semi-formal]
+
+Start with a hook, provide brief context, and end with the thesis. Then give me one alternative opening hook.
+```
+
+#### Category: Research
+##### Research question refinement
+```
+Help me refine my research question.
+
+Current question: [your draft question]
+Subject area: [field of study]
+Scope: [e.g. undergraduate paper, 3000 words, one semester]
+
+Is it too broad, too narrow, or well-scoped? Suggest three refined versions and explain why each is stronger.
+```
+
+##### Literature review summary
+```
+Summarize the key themes and debates in the literature on [topic].
+
+Context: I'm writing a [type of paper] for [course/level].
+
+Cover:
+- Major schools of thought or theoretical frameworks
+- Key agreements and disagreements in the field
+- Gaps in the existing research
+- Suggested search terms for finding more sources
+```
+
+##### Find gaps in research
+```
+I'm researching [topic]. Based on the following sources and notes, help me identify gaps in the existing research that my paper could address:
+
+[paste notes or source summaries here]
+
+What angles are underexplored? What questions remain unanswered? What would make a novel contribution?
+```
+
+##### Annotated bibliography entry
+```
+Write an annotated bibliography entry for the following source.
+
+Citation: [full citation]
+Source summary: [paste abstract or key points]
+Citation style: [APA / MLA / Chicago]
+
+The annotation should include: a brief summary (2–3 sentences), an assessment of credibility and relevance, and how I might use this source in my paper.
+```
+
+#### Category: Math & Science
+##### Explain math concept step by step
+```
+Explain [math concept] step by step as if I've never seen it before.
+
+My current level: [e.g. high school algebra, first-year calculus]
+Where I'm getting stuck: [describe the sticking point]
+
+Walk through the concept with a worked example, then give me a slightly harder example to try myself. Show me the solution after.
+```
+
+##### Practice problem generator
+```
+Generate 5 practice problems for [topic/concept].
+
+Difficulty: [easy / medium / hard]
+My level: [e.g. AP Chemistry, university physics]
+
+Present the problems first without solutions. Then, after a separator line, provide full step-by-step solutions for each.
+```
+
+##### Lab report structure
+```
+Help me structure a lab report for the following experiment.
+
+Experiment: [describe what you did]
+Subject: [e.g. Biology, Chemistry, Physics]
+Institution level: [high school / undergraduate]
+
+Provide the standard sections (Title, Abstract, Introduction, Methods, Results, Discussion, Conclusion) with bullet points on what to include in each, and common mistakes to avoid.
+```
+
+##### Scientific method walkthrough
+```
+Walk me through applying the scientific method to the following question:
+
+Research question: [your question]
+Subject area: [biology / chemistry / physics / other]
+
+For each step — observation, hypothesis, experiment design, data collection, analysis, and conclusion — explain what I should do and why. Flag any ethical considerations if relevant.
+```
+
+#### Category: Languages
+##### Grammar explanation with examples
+```
+Explain the following grammar rule in [language] clearly and concisely.
+
+Grammar point: [e.g. subjunctive mood, passive voice, particle usage]
+My level: [A1 / A2 / B1 / B2 / C1]
+
+Provide:
+- A plain-language explanation of the rule
+- 5 example sentences with translations
+- The most common mistakes learners make
+- A quick practice exercise
+```
+
+##### Vocabulary in context
+```
+Help me learn the following [language] vocabulary in context.
+
+Words: [list words here]
+
+For each word provide:
+- Definition in English
+- Example sentence in [language] with translation
+- A note on register (formal / informal / slang)
+- A common collocation or phrase it appears in
+
+Then create a short paragraph that uses all the words naturally.
+```
+
+##### Translation with nuance notes
+```
+Translate the following text from [source language] to [target language].
+
+[paste text here]
+
+After the translation, add nuance notes explaining:
+- Any words or phrases that don't translate directly
+- Cultural references that may need context
+- Alternative translations where the meaning is ambiguous
+- Register or tone differences between the original and translation
+```
+
+##### Conversation practice dialogue
+```
+Write a realistic practice dialogue in [language] for the following scenario:
+
+Scenario: [e.g. ordering food at a restaurant, asking for directions, a job interview]
+My level: [A1 / A2 / B1 / B2 / C1]
+
+Include:
+- The full dialogue between two speakers
+- An English translation below each line
+- Vocabulary notes for key words and phrases
+- Two follow-up questions I could use to extend the conversation
+```
+
+#### Category: Exam Prep
+##### Practice exam questions
+```
+Generate 10 practice exam questions for [subject/topic].
+
+Exam format: [multiple choice / short answer / essay / mixed]
+Level: [e.g. GCSE, A-level, first-year university]
+Topics to focus on: [list key topics]
+
+After the questions, provide an answer key with brief explanations for each correct answer.
+```
+
+##### Explain wrong answer
+```
+I got this exam question wrong. Help me understand why.
+
+Question: [paste question]
+My answer: [what you wrote or chose]
+Correct answer: [the right answer]
+
+Explain:
+1. Why my answer is incorrect
+2. Why the correct answer is right
+3. The underlying concept I need to understand
+4. A similar practice question to test my understanding now
+```
+
+##### Memory techniques for topic
+```
+Give me effective memory techniques to remember [topic/information].
+
+Content to memorize: [paste content, list, or concept]
+Exam date: [how far away]
+Learning style preference: [visual / verbal / pattern-based / doesn't matter]
+
+Provide at least three different techniques (e.g. mnemonics, method of loci, chunking) with specific examples applied to this content.
+```
+
+##### Last-minute review checklist
+```
+Create a last-minute review checklist for my upcoming exam.
+
+Subject: [subject]
+Exam is in: [e.g. 24 hours, 3 days]
+Topics covered: [list main topics]
+Format: [multiple choice / essay / problem-solving]
+
+Prioritize what to review first, flag the highest-yield concepts, and include a short list of common mistakes to avoid going into the exam.
+```
+
 ---
 ## Guides & Blog Articles
 
 - [Introducing the New Prompt Router](https://prompt-router.pages.dev/blog-new-look): Major redesign with collapsible sidebar, clean canvas, and 11 AI models.
+- [Prompt Engineering Blog](https://prompt-router.pages.dev/blog): Index of all 16 prompt engineering articles, model comparisons, and cost optimization guides.
 - [Budget-Friendly Prompt Routing](https://prompt-router.pages.dev/blog-budget-prompt-routing): How top AI companies cut inference costs by up to 85% using model cascades and small models.
 - [Reduce AI Costs](https://prompt-router.pages.dev/blog-reduce-ai-costs): 5 proven strategies to cut OpenAI, Anthropic, and Google AI API costs by up to 80%.
 - [Compare AI Models](https://prompt-router.pages.dev/blog-compare-ai): Comparative breakdown of LLMs for specialized tasks and why side-by-side evaluation is essential.

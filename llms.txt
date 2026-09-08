@@ -73,6 +73,7 @@ Example localized library endpoints:
 ## Guides & Blog Articles
 
 - [Introducing the New Prompt Router](https://prompt-router.pages.dev/blog-new-look): Major redesign with collapsible sidebar, clean canvas, and 11 AI models.
+- [Prompt Engineering Blog](https://prompt-router.pages.dev/blog): Index of all 16 prompt engineering articles, model comparisons, and cost optimization guides.
 - [Budget-Friendly Prompt Routing](https://prompt-router.pages.dev/blog-budget-prompt-routing): How top AI companies cut inference costs by up to 85% using model cascades and small models.
 - [Compare AI Models](https://prompt-router.pages.dev/blog-compare-ai): Comparative breakdown of LLMs for specialized tasks.
 - [Prompt Router Overview](https://prompt-router.pages.dev/blog-prompt-router): Benefits of multi-LLM workflows.
