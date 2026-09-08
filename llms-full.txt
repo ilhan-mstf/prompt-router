@@ -909,310 +909,262 @@ Target viral coefficient goal: [e.g. K > 1]
 Propose 2-3 viral loop designs. For each: describe the trigger, the sharing mechanism, the incentive, and the conversion flow for referred users. Estimate the realistic viral coefficient for each.
 ```
 
-### Data Prompts
-URL: https://prompt-router.pages.dev/data
+### Job Search Prompts
+URL: https://prompt-router.pages.dev/job
 
-#### Category: SQL
-##### Write SQL query
+#### Category: Resume
+##### Rewrite resume bullet points
 ```
-Write a SQL query for the following task:
+Rewrite these resume bullet points to be stronger, more impactful, and results-oriented. Use active verbs and quantify outcomes where possible:
 
-Task: [describe what you need, e.g. find all users who signed up in the last 30 days and made at least one purchase]
+[paste your bullet points here]
 
-Relevant tables and columns:
-
-[describe your schema or paste CREATE TABLE statements]
-
-Database: [e.g. PostgreSQL, MySQL, BigQuery]
-
-Return the query with comments explaining each key step.
+Role I'm applying for: [job title]
+Industry: [industry]
 ```
 
-##### Optimize slow query
+##### Tailor resume to job description
 ```
-This SQL query is running slowly. Help me optimize it.
+Here is my current resume and a job description I want to apply for. Identify the gaps, suggest which skills and keywords to add or emphasize, and rewrite the most relevant sections to match the role.
 
-Query:
+My resume:
+[paste resume here]
 
-[paste query here]
-
-Database: [e.g. PostgreSQL, MySQL]
-Table sizes: [e.g. orders has 50M rows, users has 2M rows]
-Existing indexes: [list them or paste EXPLAIN output]
-
-Identify the bottlenecks, suggest index changes, and rewrite the query if needed. Explain each optimization.
+Job description:
+[paste job description here]
 ```
 
-##### Explain complex query
+##### Write resume summary
 ```
-Explain this SQL query in plain English. Walk through it step by step — what each clause does, what data it produces, and what the final result represents:
+Write a compelling professional summary for my resume. It should be 3-4 sentences, highlight my key strengths and experience, and be tailored to the role I'm targeting.
 
-[paste query here]
-```
-
-##### Database schema design
-```
-Design a database schema for the following use case:
-
-Use case: [describe your application or feature, e.g. a multi-tenant SaaS with projects, tasks, and user roles]
-
-Database: [e.g. PostgreSQL]
-
-Include: table names, columns with types and constraints, primary/foreign keys, indexes, and an explanation of your design decisions and any trade-offs.
+My background: [years of experience, key skills, notable achievements]
+Role I'm targeting: [job title and industry]
 ```
 
-#### Category: Analysis
-##### Exploratory data analysis plan
+##### Quantify achievements
 ```
-I have a dataset and want to perform exploratory data analysis. Create a step-by-step EDA plan.
+Help me quantify and strengthen these resume achievements. If I haven't provided numbers, suggest what metrics I could research or estimate to make each bullet more impactful:
 
-Dataset description: [describe columns, data types, approximate size, and domain, e.g. e-commerce orders with customer ID, product, price, date]
+[paste achievements here]
 
-Business question I am trying to answer: [describe it]
-
-Include: data quality checks, univariate analysis, relationships to explore, visualizations to create, and potential red flags to watch for.
+My role: [job title]
+Company size / industry: [details]
 ```
 
-##### Statistical significance test
+#### Category: Cover Letter
+##### Write a cover letter
 ```
-Help me choose and interpret the right statistical test for my analysis.
+Write a compelling cover letter for this job application. Keep it to 3 paragraphs: why I'm excited about the company, what I bring to the role, and a clear call to action.
 
-What I am comparing: [e.g. conversion rates between two user groups]
-Data type: [e.g. binary outcomes, continuous measurements]
-Sample sizes: [e.g. Group A: 1,200, Group B: 1,400]
-Current results: [e.g. Group A: 4.2%, Group B: 5.1%]
-
-Recommend the appropriate test, state the assumptions, show the calculation or code, and explain how to interpret the p-value and confidence interval in plain language.
-```
-
-##### Cohort analysis
-```
-Help me design and interpret a cohort analysis.
-
-Goal: [e.g. measure 30/60/90-day retention by signup month]
-Available data: [describe tables and columns, e.g. users table with signup_date, events table with user_id and event_date]
-Database / tool: [e.g. BigQuery, pandas]
-
-Write the query or code to build the cohort table, explain how to read the output, and flag any interpretation pitfalls.
+My background: [brief summary]
+Job title: [title]
+Company: [company name]
+Key job requirements: [paste 3-5 requirements from the listing]
+One specific reason I want this company: [your reason]
 ```
 
-##### Trend interpretation
+##### Career change cover letter
 ```
-I am seeing a trend in my data and need help interpreting it.
+Write a cover letter for a career change application. Acknowledge the shift, connect my transferable skills to the new role, and show genuine motivation for the change.
 
-Metric: [e.g. weekly active users]
-What I observe: [e.g. 15% decline over the past 6 weeks after steady growth]
-Context: [any known events, product changes, seasonality, or external factors]
-
-Help me: identify likely causes, rule out data artifacts, suggest additional analyses to confirm the root cause, and recommend next steps.
-```
-
-#### Category: Visualization
-##### Chart type recommendation
-```
-Recommend the best chart type for my use case and explain why.
-
-What I want to show: [e.g. how revenue breaks down by product category and changes month over month]
-Audience: [e.g. executive team in a quarterly business review]
-Data shape: [e.g. 12 months x 6 categories, values range from $10K to $2M]
-Tool: [e.g. Tableau, matplotlib, Looker Studio]
-
-Suggest 2-3 options, rank them, and explain the trade-offs.
+My current background: [current field and experience]
+Role I'm moving into: [new job title and field]
+Transferable skills I have: [list them]
+Why I'm making this change: [your reason]
 ```
 
-##### Dashboard layout design
+##### Internal transfer letter
 ```
-Help me design an effective dashboard layout.
+Write a letter requesting an internal transfer to a different team or role within my company. Emphasize my institutional knowledge, my contributions so far, and why this move benefits both me and the company.
 
-Purpose: [e.g. daily operations monitoring for a support team]
-Key metrics to show: [list them, e.g. open tickets, resolution time, CSAT score, ticket volume by channel]
-Audience and how they use it: [e.g. team leads check it at the start of each shift]
-Tool: [e.g. Metabase, Tableau, Grafana]
-
-Propose a layout with sections, chart types for each metric, and UX best practices for at-a-glance readability.
-```
-
-##### Data storytelling narrative
-```
-Help me turn this data into a clear narrative for a presentation.
-
-Key findings: [list 3-5 main insights from your analysis]
-Audience: [e.g. non-technical stakeholders, C-suite]
-Goal of the presentation: [e.g. get approval to invest in retention improvements]
-
-Write a narrative arc that leads with the most important insight, supports it with data points, and ends with a clear recommendation. Keep it concise and free of jargon.
+My current role: [title and team]
+Role I want to transfer to: [title and team]
+Time at company: [duration]
+Key contributions so far: [list 2-3]
+Reason for transfer: [your reason]
 ```
 
-##### Annotate a chart
+##### Follow-up after application
 ```
-Help me write annotations for this chart to make it self-explanatory.
+Write a brief, professional follow-up email to send after submitting a job application. It should express continued interest, be polite and concise, and not be pushy.
 
-Chart type: [e.g. line chart]
-What it shows: [e.g. monthly revenue for the past 2 years]
-Key moments to call out: [e.g. product launch in March, pricing change in August, a dip in December]
-Audience: [e.g. investors in a pitch deck]
-
-Write 3-5 short, punchy annotation labels and a one-sentence chart title and subtitle.
+Job title: [title]
+Company: [company name]
+Date applied: [date]
+Hiring manager name (if known): [name or 'Hiring Manager']
 ```
 
-#### Category: Cleaning
-##### Data cleaning checklist
+#### Category: Interview Prep
+##### Practice behavioral questions (STAR)
 ```
-Generate a comprehensive data cleaning checklist for my dataset.
+Help me prepare STAR-format answers for behavioral interview questions for this role. For each question, prompt me with a structure: Situation, Task, Action, Result.
 
-Dataset description: [describe columns, data types, source, and domain]
-Known issues: [list any problems you already see, e.g. duplicate rows, inconsistent date formats, missing values in key columns]
-Downstream use: [e.g. feeding a machine learning model, building a dashboard]
+Role I'm interviewing for: [job title]
+Industry: [industry]
+My background: [brief summary]
 
-Organize the checklist by priority and include the specific checks to run and how to fix each issue.
-```
-
-##### Handle missing values strategy
-```
-Help me decide how to handle missing values in my dataset.
-
-Column with missing values: [column name and what it represents]
-Percentage missing: [e.g. 18%]
-Data type: [e.g. numeric, categorical, datetime]
-How the column is used downstream: [e.g. it is a feature in a regression model]
-
-Compare the options (drop rows, impute with mean/median/mode, model-based imputation, flag as a separate category) and recommend the best approach with reasoning.
+Start with these common questions:
+1. Tell me about a time you handled a conflict at work.
+2. Describe a project you led from start to finish.
+3. Tell me about a time you failed and what you learned.
 ```
 
-##### Detect outliers
+##### Technical interview prep
 ```
-Help me detect and handle outliers in my dataset.
+I have a technical interview for this role. Create a focused study plan and list the most likely topics and question types I should prepare for. Include sample questions and explain what strong answers look like.
 
-Column: [column name and what it represents]
-Data type: [numeric / datetime]
-Sample statistics: [e.g. min: 0, max: 99,000, mean: 450, median: 380, std: 1,200]
-Context: [e.g. this is order value in USD; very high values could be legitimate bulk orders or data errors]
-
-Suggest appropriate detection methods (IQR, z-score, isolation forest, etc.), provide code in [Python/SQL], and advise on how to treat confirmed outliers.
-```
-
-##### Standardize messy data
-```
-Help me standardize inconsistent values in this column.
-
-Column name: [e.g. country]
-Sample of messy values: [e.g. 'USA', 'United States', 'US', 'u.s.a', 'America']
-Desired output format: [e.g. ISO 3166-1 alpha-2 country codes]
-Tool: [e.g. Python pandas, SQL, dbt]
-
-Write the code to map and standardize these values, handle edge cases, and flag any values that cannot be mapped automatically.
+Role: [job title]
+Company type: [startup / enterprise / FAANG-style]
+Key skills listed in the job description: [paste them]
+My current skill level: [beginner / intermediate / strong]
+Time until interview: [days/weeks]
 ```
 
-#### Category: Python & R
-##### Write pandas data pipeline
+##### Questions to ask the interviewer
 ```
-Write a pandas data pipeline for the following task.
+Generate a list of thoughtful, strategic questions I can ask at the end of my interview. Include questions about the role, team culture, growth opportunities, and success metrics. Avoid generic questions.
 
-Input: [describe the data source, e.g. a CSV file with columns: user_id, event_type, timestamp, revenue]
-Transformations needed:
-1. [e.g. filter to purchase events only]
-2. [e.g. aggregate revenue by user per month]
-3. [e.g. calculate month-over-month growth rate]
-Output: [describe desired result, e.g. a DataFrame with one row per user per month]
-
-Write clean, readable code with comments. Use method chaining where it improves clarity.
+Role: [job title]
+Company: [company name]
+Stage of interview: [first round / final round / hiring manager / panel]
+What I already know about the company: [brief notes]
 ```
 
-##### Create matplotlib/seaborn visualization
+##### Salary negotiation script
 ```
-Write Python code to create the following visualization.
+Write a salary negotiation script I can use after receiving a job offer. It should be confident but collaborative, justify my ask with market data and my experience, and keep the conversation positive.
 
-Chart type: [e.g. heatmap, grouped bar chart, time series with confidence interval]
-Data: [describe the DataFrame structure, e.g. df has columns: month, category, value]
-Style requirements: [e.g. dark background, colorblind-friendly palette, no chart borders]
-Output: [e.g. save as PNG at 300 DPI]
-
-Use matplotlib and/or seaborn. Add proper title, axis labels, and legend. Make it publication-ready.
-```
-
-##### Feature engineering ideas
-```
-Suggest feature engineering ideas for my machine learning dataset.
-
-Prediction target: [e.g. whether a user will churn in the next 30 days]
-Available raw features: [list them with types, e.g. signup_date (date), last_login (date), num_sessions (int), plan_type (categorical)]
-Data granularity: [e.g. one row per user]
-
-Suggest 10-15 derived features, explain the intuition behind each, and provide pandas code to create them.
+Offer received: [salary amount]
+My target salary: [target amount]
+My experience: [years and key qualifications]
+Role: [job title]
+Location / remote: [location]
 ```
 
-##### Write data validation script
+#### Category: LinkedIn
+##### Optimize LinkedIn headline
 ```
-Write a Python data validation script for my dataset.
+Write 5 variations of a LinkedIn headline for my profile. Each should be keyword-rich for recruiter searches, communicate my value proposition clearly, and be under 220 characters.
 
-Dataset: [describe columns, types, and source]
-Validation rules to enforce:
-1. [e.g. user_id must be non-null and unique]
-2. [e.g. event_date must be between 2020-01-01 and today]
-3. [e.g. revenue must be >= 0]
-4. [e.g. status must be one of: active, inactive, pending]
-
-The script should print a summary of violations, not just raise on the first error. Use pandas or Great Expectations.
+My current role: [title]
+Industry: [industry]
+Key skills: [list 3-5]
+What I want to be known for: [brief description]
+Open to new roles: [yes / no]
 ```
 
-#### Category: Reporting
-##### Executive summary from data
+##### Write LinkedIn summary (About)
 ```
-Write an executive summary based on the following data findings.
+Write a LinkedIn About section for my profile. Use first-person voice, lead with a strong hook, highlight my experience and key skills, and end with what I'm looking for or how people can contact me. Aim for 250-350 words.
 
-Context: [e.g. Q1 2026 performance review for a SaaS product]
-Key metrics:
-- [metric 1]: [value and change vs prior period]
-- [metric 2]: [value and change]
-- [metric 3]: [value and change]
-Notable events: [e.g. launched feature X in February, lost a major account in March]
-
-Write a 150-200 word executive summary. Lead with the most important insight, be direct about problems, and end with the top 2-3 priorities for next quarter.
+My background: [summary of experience]
+Key skills and expertise: [list them]
+Notable achievements: [1-3 highlights]
+What I'm looking for: [roles, opportunities, or collaborations]
 ```
 
-##### Weekly metrics report
+##### Connection request message
 ```
-Write a concise weekly metrics report for the following numbers.
+Write a short, personalized LinkedIn connection request message (under 300 characters). It should be warm, specific about why I'm reaching out, and not immediately ask for anything.
 
-Team / product: [e.g. Growth team, mobile app]
-Week: [e.g. week of March 17, 2026]
-Metrics this week:
-- [metric]: [value] vs [last week value]
-- [metric]: [value] vs [last week value]
-Highlights: [any wins or notable events]
-Concerns: [any drops or issues]
-
-Format it as a short Slack or email update: 3-5 bullet points, plain language, no jargon. Flag items that need attention.
+Who I'm reaching out to: [their name and title]
+Why I want to connect: [shared interest, mutual connection, admire their work, etc.]
+My background: [one-line description of who I am]
 ```
 
-##### A/B test results writeup
+##### LinkedIn post about career insight
 ```
-Write a clear summary of my A/B test results for a non-technical audience.
+Write a LinkedIn post sharing a career insight or lesson I've learned. Use a strong first line to stop the scroll, tell a brief story or observation, and end with a question to drive engagement. Avoid buzzwords and keep it authentic.
 
-Test name: [e.g. New checkout flow]
-Hypothesis: [e.g. Simplifying the checkout to 2 steps will increase conversion]
-Control vs variant: [describe the change]
-Results:
-- Primary metric: [e.g. conversion rate] — Control: [X%], Variant: [Y%], relative lift: [Z%]
-- Statistical significance: [e.g. p=0.03, 95% CI: +1.2% to +4.8%]
-- Secondary metrics: [any guardrail metrics and their results]
-Test duration: [e.g. 14 days, 25,000 users per group]
-
-Explain what the results mean, whether to ship the change, and any caveats.
+Topic or lesson: [what I want to share]
+Context or story behind it: [brief details]
+Target audience: [who I write for]
+Tone: [reflective / motivational / practical]
 ```
 
-##### Data dictionary documentation
+#### Category: Networking
+##### Write informational interview request
 ```
-Write a data dictionary for the following table or dataset.
+Write an email requesting a 20-minute informational interview with someone in a role or company I'm interested in. Keep it concise, show genuine interest in their experience, and make it easy to say yes.
 
-Table name: [e.g. orders]
-Columns:
-- [column_name]: [data type, e.g. INT] — [brief description of what it contains]
-- [column_name]: [data type] — [description]
-- [add more as needed]
-Audience: [e.g. new data analysts joining the team]
+Their name: [name]
+Their role and company: [details]
+How I found them: [LinkedIn, mutual connection, article, etc.]
+What I want to learn: [specific topics or questions]
+My background: [one sentence about who I am]
+```
 
-For each column include: name, data type, description, example values, whether it can be null, and any known quirks or gotchas. Format it as a clean markdown table.
+##### Thank you email after networking meeting
+```
+Write a follow-up thank you email to send within 24 hours of an informational interview or networking meeting. Reference something specific from our conversation, express genuine appreciation, and suggest a natural next step.
+
+Their name: [name]
+Date of meeting: [date]
+Something specific we discussed: [topic or insight]
+Next step I want to propose: [e.g., stay in touch, share a resource, follow up in 3 months]
+```
+
+##### Elevator pitch
+```
+Write a 30-second elevator pitch I can use at networking events or when someone asks 'what do you do?'. It should be clear, memorable, and naturally lead to a conversation. Write 3 versions: formal, casual, and career-changer.
+
+My background: [current or recent role and industry]
+Key skills or expertise: [list them]
+What I'm working toward: [goals or the type of opportunity I'm seeking]
+```
+
+##### Conference follow-up email
+```
+Write a follow-up email to someone I met briefly at a conference or industry event. Reference how we met, recap the conversation, and propose a way to stay connected or continue the discussion.
+
+Their name: [name]
+Event name: [conference or event]
+How we met / what we talked about: [brief details]
+Next step I want to suggest: [call, coffee chat, sharing a resource, etc.]
+```
+
+#### Category: Career Growth
+##### Create a career development plan
+```
+Help me build a 12-month career development plan. Include specific goals, skills to develop, milestones to hit, and actions to take each quarter. Make it realistic and tied to my target role.
+
+My current role: [title and level]
+Target role in 12 months: [title and level]
+Key gaps to close: [skills, experience, or credentials I'm missing]
+Resources available to me: [courses, mentors, budget, etc.]
+```
+
+##### Ask for a promotion
+```
+Write a script for asking my manager for a promotion. Structure it as a conversation opener, a summary of my contributions and impact, a clear ask, and an invitation to discuss a path forward. Keep it confident and collaborative.
+
+My current title: [title]
+Title I'm asking for: [target title]
+Time in current role: [duration]
+Key accomplishments: [list 3-5 with impact]
+Why now: [timing or trigger]
+```
+
+##### Write a self-review
+```
+Help me write a strong self-review for my annual performance review. For each area, highlight specific accomplishments with measurable impact, acknowledge areas for growth honestly, and connect my work to team and company goals.
+
+My role: [title]
+Key projects or responsibilities this period: [list them]
+Notable achievements: [with metrics where possible]
+Areas I want to grow in: [be specific]
+Goals for next period: [list 2-3]
+```
+
+##### Skill gap analysis
+```
+Analyze the gap between my current skills and the requirements for my target role. Prioritize the gaps by importance, suggest specific ways to close each one, and estimate a realistic timeline.
+
+My current skills: [list technical and soft skills]
+Target role: [job title]
+Job description or requirements: [paste or describe key requirements]
+Timeline I'm working with: [months or years]
 ```
 
 ### Startup Prompts
@@ -1632,6 +1584,312 @@ Calculate and explain:
 7. What I need to improve to reach healthy unit economics.
 ```
 
+### Data Prompts
+URL: https://prompt-router.pages.dev/data
+
+#### Category: SQL
+##### Write SQL query
+```
+Write a SQL query for the following task:
+
+Task: [describe what you need, e.g. find all users who signed up in the last 30 days and made at least one purchase]
+
+Relevant tables and columns:
+
+[describe your schema or paste CREATE TABLE statements]
+
+Database: [e.g. PostgreSQL, MySQL, BigQuery]
+
+Return the query with comments explaining each key step.
+```
+
+##### Optimize slow query
+```
+This SQL query is running slowly. Help me optimize it.
+
+Query:
+
+[paste query here]
+
+Database: [e.g. PostgreSQL, MySQL]
+Table sizes: [e.g. orders has 50M rows, users has 2M rows]
+Existing indexes: [list them or paste EXPLAIN output]
+
+Identify the bottlenecks, suggest index changes, and rewrite the query if needed. Explain each optimization.
+```
+
+##### Explain complex query
+```
+Explain this SQL query in plain English. Walk through it step by step — what each clause does, what data it produces, and what the final result represents:
+
+[paste query here]
+```
+
+##### Database schema design
+```
+Design a database schema for the following use case:
+
+Use case: [describe your application or feature, e.g. a multi-tenant SaaS with projects, tasks, and user roles]
+
+Database: [e.g. PostgreSQL]
+
+Include: table names, columns with types and constraints, primary/foreign keys, indexes, and an explanation of your design decisions and any trade-offs.
+```
+
+#### Category: Analysis
+##### Exploratory data analysis plan
+```
+I have a dataset and want to perform exploratory data analysis. Create a step-by-step EDA plan.
+
+Dataset description: [describe columns, data types, approximate size, and domain, e.g. e-commerce orders with customer ID, product, price, date]
+
+Business question I am trying to answer: [describe it]
+
+Include: data quality checks, univariate analysis, relationships to explore, visualizations to create, and potential red flags to watch for.
+```
+
+##### Statistical significance test
+```
+Help me choose and interpret the right statistical test for my analysis.
+
+What I am comparing: [e.g. conversion rates between two user groups]
+Data type: [e.g. binary outcomes, continuous measurements]
+Sample sizes: [e.g. Group A: 1,200, Group B: 1,400]
+Current results: [e.g. Group A: 4.2%, Group B: 5.1%]
+
+Recommend the appropriate test, state the assumptions, show the calculation or code, and explain how to interpret the p-value and confidence interval in plain language.
+```
+
+##### Cohort analysis
+```
+Help me design and interpret a cohort analysis.
+
+Goal: [e.g. measure 30/60/90-day retention by signup month]
+Available data: [describe tables and columns, e.g. users table with signup_date, events table with user_id and event_date]
+Database / tool: [e.g. BigQuery, pandas]
+
+Write the query or code to build the cohort table, explain how to read the output, and flag any interpretation pitfalls.
+```
+
+##### Trend interpretation
+```
+I am seeing a trend in my data and need help interpreting it.
+
+Metric: [e.g. weekly active users]
+What I observe: [e.g. 15% decline over the past 6 weeks after steady growth]
+Context: [any known events, product changes, seasonality, or external factors]
+
+Help me: identify likely causes, rule out data artifacts, suggest additional analyses to confirm the root cause, and recommend next steps.
+```
+
+#### Category: Visualization
+##### Chart type recommendation
+```
+Recommend the best chart type for my use case and explain why.
+
+What I want to show: [e.g. how revenue breaks down by product category and changes month over month]
+Audience: [e.g. executive team in a quarterly business review]
+Data shape: [e.g. 12 months x 6 categories, values range from $10K to $2M]
+Tool: [e.g. Tableau, matplotlib, Looker Studio]
+
+Suggest 2-3 options, rank them, and explain the trade-offs.
+```
+
+##### Dashboard layout design
+```
+Help me design an effective dashboard layout.
+
+Purpose: [e.g. daily operations monitoring for a support team]
+Key metrics to show: [list them, e.g. open tickets, resolution time, CSAT score, ticket volume by channel]
+Audience and how they use it: [e.g. team leads check it at the start of each shift]
+Tool: [e.g. Metabase, Tableau, Grafana]
+
+Propose a layout with sections, chart types for each metric, and UX best practices for at-a-glance readability.
+```
+
+##### Data storytelling narrative
+```
+Help me turn this data into a clear narrative for a presentation.
+
+Key findings: [list 3-5 main insights from your analysis]
+Audience: [e.g. non-technical stakeholders, C-suite]
+Goal of the presentation: [e.g. get approval to invest in retention improvements]
+
+Write a narrative arc that leads with the most important insight, supports it with data points, and ends with a clear recommendation. Keep it concise and free of jargon.
+```
+
+##### Annotate a chart
+```
+Help me write annotations for this chart to make it self-explanatory.
+
+Chart type: [e.g. line chart]
+What it shows: [e.g. monthly revenue for the past 2 years]
+Key moments to call out: [e.g. product launch in March, pricing change in August, a dip in December]
+Audience: [e.g. investors in a pitch deck]
+
+Write 3-5 short, punchy annotation labels and a one-sentence chart title and subtitle.
+```
+
+#### Category: Cleaning
+##### Data cleaning checklist
+```
+Generate a comprehensive data cleaning checklist for my dataset.
+
+Dataset description: [describe columns, data types, source, and domain]
+Known issues: [list any problems you already see, e.g. duplicate rows, inconsistent date formats, missing values in key columns]
+Downstream use: [e.g. feeding a machine learning model, building a dashboard]
+
+Organize the checklist by priority and include the specific checks to run and how to fix each issue.
+```
+
+##### Handle missing values strategy
+```
+Help me decide how to handle missing values in my dataset.
+
+Column with missing values: [column name and what it represents]
+Percentage missing: [e.g. 18%]
+Data type: [e.g. numeric, categorical, datetime]
+How the column is used downstream: [e.g. it is a feature in a regression model]
+
+Compare the options (drop rows, impute with mean/median/mode, model-based imputation, flag as a separate category) and recommend the best approach with reasoning.
+```
+
+##### Detect outliers
+```
+Help me detect and handle outliers in my dataset.
+
+Column: [column name and what it represents]
+Data type: [numeric / datetime]
+Sample statistics: [e.g. min: 0, max: 99,000, mean: 450, median: 380, std: 1,200]
+Context: [e.g. this is order value in USD; very high values could be legitimate bulk orders or data errors]
+
+Suggest appropriate detection methods (IQR, z-score, isolation forest, etc.), provide code in [Python/SQL], and advise on how to treat confirmed outliers.
+```
+
+##### Standardize messy data
+```
+Help me standardize inconsistent values in this column.
+
+Column name: [e.g. country]
+Sample of messy values: [e.g. 'USA', 'United States', 'US', 'u.s.a', 'America']
+Desired output format: [e.g. ISO 3166-1 alpha-2 country codes]
+Tool: [e.g. Python pandas, SQL, dbt]
+
+Write the code to map and standardize these values, handle edge cases, and flag any values that cannot be mapped automatically.
+```
+
+#### Category: Python & R
+##### Write pandas data pipeline
+```
+Write a pandas data pipeline for the following task.
+
+Input: [describe the data source, e.g. a CSV file with columns: user_id, event_type, timestamp, revenue]
+Transformations needed:
+1. [e.g. filter to purchase events only]
+2. [e.g. aggregate revenue by user per month]
+3. [e.g. calculate month-over-month growth rate]
+Output: [describe desired result, e.g. a DataFrame with one row per user per month]
+
+Write clean, readable code with comments. Use method chaining where it improves clarity.
+```
+
+##### Create matplotlib/seaborn visualization
+```
+Write Python code to create the following visualization.
+
+Chart type: [e.g. heatmap, grouped bar chart, time series with confidence interval]
+Data: [describe the DataFrame structure, e.g. df has columns: month, category, value]
+Style requirements: [e.g. dark background, colorblind-friendly palette, no chart borders]
+Output: [e.g. save as PNG at 300 DPI]
+
+Use matplotlib and/or seaborn. Add proper title, axis labels, and legend. Make it publication-ready.
+```
+
+##### Feature engineering ideas
+```
+Suggest feature engineering ideas for my machine learning dataset.
+
+Prediction target: [e.g. whether a user will churn in the next 30 days]
+Available raw features: [list them with types, e.g. signup_date (date), last_login (date), num_sessions (int), plan_type (categorical)]
+Data granularity: [e.g. one row per user]
+
+Suggest 10-15 derived features, explain the intuition behind each, and provide pandas code to create them.
+```
+
+##### Write data validation script
+```
+Write a Python data validation script for my dataset.
+
+Dataset: [describe columns, types, and source]
+Validation rules to enforce:
+1. [e.g. user_id must be non-null and unique]
+2. [e.g. event_date must be between 2020-01-01 and today]
+3. [e.g. revenue must be >= 0]
+4. [e.g. status must be one of: active, inactive, pending]
+
+The script should print a summary of violations, not just raise on the first error. Use pandas or Great Expectations.
+```
+
+#### Category: Reporting
+##### Executive summary from data
+```
+Write an executive summary based on the following data findings.
+
+Context: [e.g. Q1 2026 performance review for a SaaS product]
+Key metrics:
+- [metric 1]: [value and change vs prior period]
+- [metric 2]: [value and change]
+- [metric 3]: [value and change]
+Notable events: [e.g. launched feature X in February, lost a major account in March]
+
+Write a 150-200 word executive summary. Lead with the most important insight, be direct about problems, and end with the top 2-3 priorities for next quarter.
+```
+
+##### Weekly metrics report
+```
+Write a concise weekly metrics report for the following numbers.
+
+Team / product: [e.g. Growth team, mobile app]
+Week: [e.g. week of March 17, 2026]
+Metrics this week:
+- [metric]: [value] vs [last week value]
+- [metric]: [value] vs [last week value]
+Highlights: [any wins or notable events]
+Concerns: [any drops or issues]
+
+Format it as a short Slack or email update: 3-5 bullet points, plain language, no jargon. Flag items that need attention.
+```
+
+##### A/B test results writeup
+```
+Write a clear summary of my A/B test results for a non-technical audience.
+
+Test name: [e.g. New checkout flow]
+Hypothesis: [e.g. Simplifying the checkout to 2 steps will increase conversion]
+Control vs variant: [describe the change]
+Results:
+- Primary metric: [e.g. conversion rate] — Control: [X%], Variant: [Y%], relative lift: [Z%]
+- Statistical significance: [e.g. p=0.03, 95% CI: +1.2% to +4.8%]
+- Secondary metrics: [any guardrail metrics and their results]
+Test duration: [e.g. 14 days, 25,000 users per group]
+
+Explain what the results mean, whether to ship the change, and any caveats.
+```
+
+##### Data dictionary documentation
+```
+Write a data dictionary for the following table or dataset.
+
+Table name: [e.g. orders]
+Columns:
+- [column_name]: [data type, e.g. INT] — [brief description of what it contains]
+- [column_name]: [data type] — [description]
+- [add more as needed]
+Audience: [e.g. new data analysts joining the team]
+
+For each column include: name, data type, description, example values, whether it can be null, and any known quirks or gotchas. Format it as a clean markdown table.
+```
+
 ### Design Prompts
 URL: https://prompt-router.pages.dev/design
 
@@ -1868,262 +2126,301 @@ Help me summarize and synthesize this stakeholder feedback from a design review:
 Organize it into: themes, specific actionable requests, questions that need clarification, and feedback that conflicts with other feedback. Flag any items that conflict with user research or design principles.
 ```
 
-### Job Search Prompts
-URL: https://prompt-router.pages.dev/job
+### Student Prompts
+URL: https://prompt-router.pages.dev/student
 
-#### Category: Resume
-##### Rewrite resume bullet points
+#### Category: Studying
+##### Create study guide for topic
 ```
-Rewrite these resume bullet points to be stronger, more impactful, and results-oriented. Use active verbs and quantify outcomes where possible:
+Create a comprehensive study guide for [topic].
 
-[paste your bullet points here]
+Include:
+- Key concepts and definitions
+- Important dates, formulas, or names to memorize
+- Common misconceptions to watch out for
+- A quick summary I can review before an exam
 
-Role I'm applying for: [job title]
-Industry: [industry]
-```
-
-##### Tailor resume to job description
-```
-Here is my current resume and a job description I want to apply for. Identify the gaps, suggest which skills and keywords to add or emphasize, and rewrite the most relevant sections to match the role.
-
-My resume:
-[paste resume here]
-
-Job description:
-[paste job description here]
+Level: [beginner / intermediate / advanced]
 ```
 
-##### Write resume summary
+##### Explain concept with analogies
 ```
-Write a compelling professional summary for my resume. It should be 3-4 sentences, highlight my key strengths and experience, and be tailored to the role I'm targeting.
+Explain [concept] to me using clear, everyday analogies.
 
-My background: [years of experience, key skills, notable achievements]
-Role I'm targeting: [job title and industry]
-```
+I'm a [year/level] student studying [subject]. I understand [related concept] but I'm struggling with this one.
 
-##### Quantify achievements
-```
-Help me quantify and strengthen these resume achievements. If I haven't provided numbers, suggest what metrics I could research or estimate to make each bullet more impactful:
-
-[paste achievements here]
-
-My role: [job title]
-Company size / industry: [details]
+Use at least two different analogies and check my understanding at the end with a quick question.
 ```
 
-#### Category: Cover Letter
-##### Write a cover letter
+##### Generate flashcard Q&As
 ```
-Write a compelling cover letter for this job application. Keep it to 3 paragraphs: why I'm excited about the company, what I bring to the role, and a clear call to action.
+Generate 10 flashcard question-and-answer pairs for the following topic:
 
-My background: [brief summary]
-Job title: [title]
-Company: [company name]
-Key job requirements: [paste 3-5 requirements from the listing]
-One specific reason I want this company: [your reason]
-```
+[topic or paste notes here]
 
-##### Career change cover letter
-```
-Write a cover letter for a career change application. Acknowledge the shift, connect my transferable skills to the new role, and show genuine motivation for the change.
+Format each card as:
+Q: [question]
+A: [concise answer]
 
-My current background: [current field and experience]
-Role I'm moving into: [new job title and field]
-Transferable skills I have: [list them]
-Why I'm making this change: [your reason]
+Mix factual recall, conceptual understanding, and application questions.
 ```
 
-##### Internal transfer letter
+##### Summarize textbook chapter
 ```
-Write a letter requesting an internal transfer to a different team or role within my company. Emphasize my institutional knowledge, my contributions so far, and why this move benefits both me and the company.
+Summarize the following textbook chapter into clear, concise notes.
 
-My current role: [title and team]
-Role I want to transfer to: [title and team]
-Time at company: [duration]
-Key contributions so far: [list 2-3]
-Reason for transfer: [your reason]
-```
+[paste chapter text here]
 
-##### Follow-up after application
-```
-Write a brief, professional follow-up email to send after submitting a job application. It should express continued interest, be polite and concise, and not be pushy.
-
-Job title: [title]
-Company: [company name]
-Date applied: [date]
-Hiring manager name (if known): [name or 'Hiring Manager']
+Organize the summary with:
+- Main idea (1–2 sentences)
+- Key points (bullet list)
+- Terms to know (with definitions)
+- Things likely to appear on an exam
 ```
 
-#### Category: Interview Prep
-##### Practice behavioral questions (STAR)
+#### Category: Writing Essays
+##### Essay outline generator
 ```
-Help me prepare STAR-format answers for behavioral interview questions for this role. For each question, prompt me with a structure: Situation, Task, Action, Result.
+Generate a detailed essay outline for the following prompt:
 
-Role I'm interviewing for: [job title]
-Industry: [industry]
-My background: [brief summary]
+[essay prompt]
 
-Start with these common questions:
-1. Tell me about a time you handled a conflict at work.
-2. Describe a project you led from start to finish.
-3. Tell me about a time you failed and what you learned.
-```
+Course: [course name]
+Word count target: [e.g. 1500 words]
+Argument style: [persuasive / analytical / compare & contrast / expository]
 
-##### Technical interview prep
-```
-I have a technical interview for this role. Create a focused study plan and list the most likely topics and question types I should prepare for. Include sample questions and explain what strong answers look like.
-
-Role: [job title]
-Company type: [startup / enterprise / FAANG-style]
-Key skills listed in the job description: [paste them]
-My current skill level: [beginner / intermediate / strong]
-Time until interview: [days/weeks]
+Include a thesis statement, topic sentences for each body paragraph, and supporting points.
 ```
 
-##### Questions to ask the interviewer
+##### Thesis statement workshop
 ```
-Generate a list of thoughtful, strategic questions I can ask at the end of my interview. Include questions about the role, team culture, growth opportunities, and success metrics. Avoid generic questions.
+Help me craft a strong thesis statement for my essay.
 
-Role: [job title]
-Company: [company name]
-Stage of interview: [first round / final round / hiring manager / panel]
-What I already know about the company: [brief notes]
-```
+Topic: [topic]
+My initial idea or argument: [describe your rough idea]
+Assignment type: [argumentative / analytical / research]
 
-##### Salary negotiation script
-```
-Write a salary negotiation script I can use after receiving a job offer. It should be confident but collaborative, justify my ask with market data and my experience, and keep the conversation positive.
-
-Offer received: [salary amount]
-My target salary: [target amount]
-My experience: [years and key qualifications]
-Role: [job title]
-Location / remote: [location]
+Provide three different thesis statement options ranging from safe to bold, with a brief note on the strength of each.
 ```
 
-#### Category: LinkedIn
-##### Optimize LinkedIn headline
+##### Strengthen my argument
 ```
-Write 5 variations of a LinkedIn headline for my profile. Each should be keyword-rich for recruiter searches, communicate my value proposition clearly, and be under 220 characters.
+Review this paragraph from my essay and help me strengthen the argument.
 
-My current role: [title]
-Industry: [industry]
-Key skills: [list 3-5]
-What I want to be known for: [brief description]
-Open to new roles: [yes / no]
-```
+[paste paragraph here]
 
-##### Write LinkedIn summary (About)
-```
-Write a LinkedIn About section for my profile. Use first-person voice, lead with a strong hook, highlight my experience and key skills, and end with what I'm looking for or how people can contact me. Aim for 250-350 words.
+Specifically:
+1. Is the claim clear and defensible?
+2. Is the evidence well-integrated?
+3. Does the analysis explain the 'so what'?
 
-My background: [summary of experience]
-Key skills and expertise: [list them]
-Notable achievements: [1-3 highlights]
-What I'm looking for: [roles, opportunities, or collaborations]
+Rewrite the paragraph with your improvements and explain each change.
 ```
 
-##### Connection request message
+##### Write introduction paragraph
 ```
-Write a short, personalized LinkedIn connection request message (under 300 characters). It should be warm, specific about why I'm reaching out, and not immediately ask for anything.
+Write an engaging introduction paragraph for my essay.
 
-Who I'm reaching out to: [their name and title]
-Why I want to connect: [shared interest, mutual connection, admire their work, etc.]
-My background: [one-line description of who I am]
-```
+Topic: [topic]
+Thesis: [your thesis statement]
+Audience: [e.g. professor, general reader]
+Tone: [academic / semi-formal]
 
-##### LinkedIn post about career insight
-```
-Write a LinkedIn post sharing a career insight or lesson I've learned. Use a strong first line to stop the scroll, tell a brief story or observation, and end with a question to drive engagement. Avoid buzzwords and keep it authentic.
-
-Topic or lesson: [what I want to share]
-Context or story behind it: [brief details]
-Target audience: [who I write for]
-Tone: [reflective / motivational / practical]
+Start with a hook, provide brief context, and end with the thesis. Then give me one alternative opening hook.
 ```
 
-#### Category: Networking
-##### Write informational interview request
+#### Category: Research
+##### Research question refinement
 ```
-Write an email requesting a 20-minute informational interview with someone in a role or company I'm interested in. Keep it concise, show genuine interest in their experience, and make it easy to say yes.
+Help me refine my research question.
 
-Their name: [name]
-Their role and company: [details]
-How I found them: [LinkedIn, mutual connection, article, etc.]
-What I want to learn: [specific topics or questions]
-My background: [one sentence about who I am]
-```
+Current question: [your draft question]
+Subject area: [field of study]
+Scope: [e.g. undergraduate paper, 3000 words, one semester]
 
-##### Thank you email after networking meeting
-```
-Write a follow-up thank you email to send within 24 hours of an informational interview or networking meeting. Reference something specific from our conversation, express genuine appreciation, and suggest a natural next step.
-
-Their name: [name]
-Date of meeting: [date]
-Something specific we discussed: [topic or insight]
-Next step I want to propose: [e.g., stay in touch, share a resource, follow up in 3 months]
+Is it too broad, too narrow, or well-scoped? Suggest three refined versions and explain why each is stronger.
 ```
 
-##### Elevator pitch
+##### Literature review summary
 ```
-Write a 30-second elevator pitch I can use at networking events or when someone asks 'what do you do?'. It should be clear, memorable, and naturally lead to a conversation. Write 3 versions: formal, casual, and career-changer.
+Summarize the key themes and debates in the literature on [topic].
 
-My background: [current or recent role and industry]
-Key skills or expertise: [list them]
-What I'm working toward: [goals or the type of opportunity I'm seeking]
-```
+Context: I'm writing a [type of paper] for [course/level].
 
-##### Conference follow-up email
-```
-Write a follow-up email to someone I met briefly at a conference or industry event. Reference how we met, recap the conversation, and propose a way to stay connected or continue the discussion.
-
-Their name: [name]
-Event name: [conference or event]
-How we met / what we talked about: [brief details]
-Next step I want to suggest: [call, coffee chat, sharing a resource, etc.]
+Cover:
+- Major schools of thought or theoretical frameworks
+- Key agreements and disagreements in the field
+- Gaps in the existing research
+- Suggested search terms for finding more sources
 ```
 
-#### Category: Career Growth
-##### Create a career development plan
+##### Find gaps in research
 ```
-Help me build a 12-month career development plan. Include specific goals, skills to develop, milestones to hit, and actions to take each quarter. Make it realistic and tied to my target role.
+I'm researching [topic]. Based on the following sources and notes, help me identify gaps in the existing research that my paper could address:
 
-My current role: [title and level]
-Target role in 12 months: [title and level]
-Key gaps to close: [skills, experience, or credentials I'm missing]
-Resources available to me: [courses, mentors, budget, etc.]
+[paste notes or source summaries here]
+
+What angles are underexplored? What questions remain unanswered? What would make a novel contribution?
 ```
 
-##### Ask for a promotion
+##### Annotated bibliography entry
 ```
-Write a script for asking my manager for a promotion. Structure it as a conversation opener, a summary of my contributions and impact, a clear ask, and an invitation to discuss a path forward. Keep it confident and collaborative.
+Write an annotated bibliography entry for the following source.
 
-My current title: [title]
-Title I'm asking for: [target title]
-Time in current role: [duration]
-Key accomplishments: [list 3-5 with impact]
-Why now: [timing or trigger]
-```
+Citation: [full citation]
+Source summary: [paste abstract or key points]
+Citation style: [APA / MLA / Chicago]
 
-##### Write a self-review
-```
-Help me write a strong self-review for my annual performance review. For each area, highlight specific accomplishments with measurable impact, acknowledge areas for growth honestly, and connect my work to team and company goals.
-
-My role: [title]
-Key projects or responsibilities this period: [list them]
-Notable achievements: [with metrics where possible]
-Areas I want to grow in: [be specific]
-Goals for next period: [list 2-3]
+The annotation should include: a brief summary (2–3 sentences), an assessment of credibility and relevance, and how I might use this source in my paper.
 ```
 
-##### Skill gap analysis
+#### Category: Math & Science
+##### Explain math concept step by step
 ```
-Analyze the gap between my current skills and the requirements for my target role. Prioritize the gaps by importance, suggest specific ways to close each one, and estimate a realistic timeline.
+Explain [math concept] step by step as if I've never seen it before.
 
-My current skills: [list technical and soft skills]
-Target role: [job title]
-Job description or requirements: [paste or describe key requirements]
-Timeline I'm working with: [months or years]
+My current level: [e.g. high school algebra, first-year calculus]
+Where I'm getting stuck: [describe the sticking point]
+
+Walk through the concept with a worked example, then give me a slightly harder example to try myself. Show me the solution after.
+```
+
+##### Practice problem generator
+```
+Generate 5 practice problems for [topic/concept].
+
+Difficulty: [easy / medium / hard]
+My level: [e.g. AP Chemistry, university physics]
+
+Present the problems first without solutions. Then, after a separator line, provide full step-by-step solutions for each.
+```
+
+##### Lab report structure
+```
+Help me structure a lab report for the following experiment.
+
+Experiment: [describe what you did]
+Subject: [e.g. Biology, Chemistry, Physics]
+Institution level: [high school / undergraduate]
+
+Provide the standard sections (Title, Abstract, Introduction, Methods, Results, Discussion, Conclusion) with bullet points on what to include in each, and common mistakes to avoid.
+```
+
+##### Scientific method walkthrough
+```
+Walk me through applying the scientific method to the following question:
+
+Research question: [your question]
+Subject area: [biology / chemistry / physics / other]
+
+For each step — observation, hypothesis, experiment design, data collection, analysis, and conclusion — explain what I should do and why. Flag any ethical considerations if relevant.
+```
+
+#### Category: Languages
+##### Grammar explanation with examples
+```
+Explain the following grammar rule in [language] clearly and concisely.
+
+Grammar point: [e.g. subjunctive mood, passive voice, particle usage]
+My level: [A1 / A2 / B1 / B2 / C1]
+
+Provide:
+- A plain-language explanation of the rule
+- 5 example sentences with translations
+- The most common mistakes learners make
+- A quick practice exercise
+```
+
+##### Vocabulary in context
+```
+Help me learn the following [language] vocabulary in context.
+
+Words: [list words here]
+
+For each word provide:
+- Definition in English
+- Example sentence in [language] with translation
+- A note on register (formal / informal / slang)
+- A common collocation or phrase it appears in
+
+Then create a short paragraph that uses all the words naturally.
+```
+
+##### Translation with nuance notes
+```
+Translate the following text from [source language] to [target language].
+
+[paste text here]
+
+After the translation, add nuance notes explaining:
+- Any words or phrases that don't translate directly
+- Cultural references that may need context
+- Alternative translations where the meaning is ambiguous
+- Register or tone differences between the original and translation
+```
+
+##### Conversation practice dialogue
+```
+Write a realistic practice dialogue in [language] for the following scenario:
+
+Scenario: [e.g. ordering food at a restaurant, asking for directions, a job interview]
+My level: [A1 / A2 / B1 / B2 / C1]
+
+Include:
+- The full dialogue between two speakers
+- An English translation below each line
+- Vocabulary notes for key words and phrases
+- Two follow-up questions I could use to extend the conversation
+```
+
+#### Category: Exam Prep
+##### Practice exam questions
+```
+Generate 10 practice exam questions for [subject/topic].
+
+Exam format: [multiple choice / short answer / essay / mixed]
+Level: [e.g. GCSE, A-level, first-year university]
+Topics to focus on: [list key topics]
+
+After the questions, provide an answer key with brief explanations for each correct answer.
+```
+
+##### Explain wrong answer
+```
+I got this exam question wrong. Help me understand why.
+
+Question: [paste question]
+My answer: [what you wrote or chose]
+Correct answer: [the right answer]
+
+Explain:
+1. Why my answer is incorrect
+2. Why the correct answer is right
+3. The underlying concept I need to understand
+4. A similar practice question to test my understanding now
+```
+
+##### Memory techniques for topic
+```
+Give me effective memory techniques to remember [topic/information].
+
+Content to memorize: [paste content, list, or concept]
+Exam date: [how far away]
+Learning style preference: [visual / verbal / pattern-based / doesn't matter]
+
+Provide at least three different techniques (e.g. mnemonics, method of loci, chunking) with specific examples applied to this content.
+```
+
+##### Last-minute review checklist
+```
+Create a last-minute review checklist for my upcoming exam.
+
+Subject: [subject]
+Exam is in: [e.g. 24 hours, 3 days]
+Topics covered: [list main topics]
+Format: [multiple choice / essay / problem-solving]
+
+Prioritize what to review first, flag the highest-yield concepts, and include a short list of common mistakes to avoid going into the exam.
 ```
 
 ### Productivity Prompts
@@ -3092,303 +3389,6 @@ Write a 200-word narrative that:
 4. Ends with one clear ask or action needed from leadership (if any)
 
 Tone: confident and data-grounded, not defensive.
-```
-
-### Student Prompts
-URL: https://prompt-router.pages.dev/student
-
-#### Category: Studying
-##### Create study guide for topic
-```
-Create a comprehensive study guide for [topic].
-
-Include:
-- Key concepts and definitions
-- Important dates, formulas, or names to memorize
-- Common misconceptions to watch out for
-- A quick summary I can review before an exam
-
-Level: [beginner / intermediate / advanced]
-```
-
-##### Explain concept with analogies
-```
-Explain [concept] to me using clear, everyday analogies.
-
-I'm a [year/level] student studying [subject]. I understand [related concept] but I'm struggling with this one.
-
-Use at least two different analogies and check my understanding at the end with a quick question.
-```
-
-##### Generate flashcard Q&As
-```
-Generate 10 flashcard question-and-answer pairs for the following topic:
-
-[topic or paste notes here]
-
-Format each card as:
-Q: [question]
-A: [concise answer]
-
-Mix factual recall, conceptual understanding, and application questions.
-```
-
-##### Summarize textbook chapter
-```
-Summarize the following textbook chapter into clear, concise notes.
-
-[paste chapter text here]
-
-Organize the summary with:
-- Main idea (1–2 sentences)
-- Key points (bullet list)
-- Terms to know (with definitions)
-- Things likely to appear on an exam
-```
-
-#### Category: Writing Essays
-##### Essay outline generator
-```
-Generate a detailed essay outline for the following prompt:
-
-[essay prompt]
-
-Course: [course name]
-Word count target: [e.g. 1500 words]
-Argument style: [persuasive / analytical / compare & contrast / expository]
-
-Include a thesis statement, topic sentences for each body paragraph, and supporting points.
-```
-
-##### Thesis statement workshop
-```
-Help me craft a strong thesis statement for my essay.
-
-Topic: [topic]
-My initial idea or argument: [describe your rough idea]
-Assignment type: [argumentative / analytical / research]
-
-Provide three different thesis statement options ranging from safe to bold, with a brief note on the strength of each.
-```
-
-##### Strengthen my argument
-```
-Review this paragraph from my essay and help me strengthen the argument.
-
-[paste paragraph here]
-
-Specifically:
-1. Is the claim clear and defensible?
-2. Is the evidence well-integrated?
-3. Does the analysis explain the 'so what'?
-
-Rewrite the paragraph with your improvements and explain each change.
-```
-
-##### Write introduction paragraph
-```
-Write an engaging introduction paragraph for my essay.
-
-Topic: [topic]
-Thesis: [your thesis statement]
-Audience: [e.g. professor, general reader]
-Tone: [academic / semi-formal]
-
-Start with a hook, provide brief context, and end with the thesis. Then give me one alternative opening hook.
-```
-
-#### Category: Research
-##### Research question refinement
-```
-Help me refine my research question.
-
-Current question: [your draft question]
-Subject area: [field of study]
-Scope: [e.g. undergraduate paper, 3000 words, one semester]
-
-Is it too broad, too narrow, or well-scoped? Suggest three refined versions and explain why each is stronger.
-```
-
-##### Literature review summary
-```
-Summarize the key themes and debates in the literature on [topic].
-
-Context: I'm writing a [type of paper] for [course/level].
-
-Cover:
-- Major schools of thought or theoretical frameworks
-- Key agreements and disagreements in the field
-- Gaps in the existing research
-- Suggested search terms for finding more sources
-```
-
-##### Find gaps in research
-```
-I'm researching [topic]. Based on the following sources and notes, help me identify gaps in the existing research that my paper could address:
-
-[paste notes or source summaries here]
-
-What angles are underexplored? What questions remain unanswered? What would make a novel contribution?
-```
-
-##### Annotated bibliography entry
-```
-Write an annotated bibliography entry for the following source.
-
-Citation: [full citation]
-Source summary: [paste abstract or key points]
-Citation style: [APA / MLA / Chicago]
-
-The annotation should include: a brief summary (2–3 sentences), an assessment of credibility and relevance, and how I might use this source in my paper.
-```
-
-#### Category: Math & Science
-##### Explain math concept step by step
-```
-Explain [math concept] step by step as if I've never seen it before.
-
-My current level: [e.g. high school algebra, first-year calculus]
-Where I'm getting stuck: [describe the sticking point]
-
-Walk through the concept with a worked example, then give me a slightly harder example to try myself. Show me the solution after.
-```
-
-##### Practice problem generator
-```
-Generate 5 practice problems for [topic/concept].
-
-Difficulty: [easy / medium / hard]
-My level: [e.g. AP Chemistry, university physics]
-
-Present the problems first without solutions. Then, after a separator line, provide full step-by-step solutions for each.
-```
-
-##### Lab report structure
-```
-Help me structure a lab report for the following experiment.
-
-Experiment: [describe what you did]
-Subject: [e.g. Biology, Chemistry, Physics]
-Institution level: [high school / undergraduate]
-
-Provide the standard sections (Title, Abstract, Introduction, Methods, Results, Discussion, Conclusion) with bullet points on what to include in each, and common mistakes to avoid.
-```
-
-##### Scientific method walkthrough
-```
-Walk me through applying the scientific method to the following question:
-
-Research question: [your question]
-Subject area: [biology / chemistry / physics / other]
-
-For each step — observation, hypothesis, experiment design, data collection, analysis, and conclusion — explain what I should do and why. Flag any ethical considerations if relevant.
-```
-
-#### Category: Languages
-##### Grammar explanation with examples
-```
-Explain the following grammar rule in [language] clearly and concisely.
-
-Grammar point: [e.g. subjunctive mood, passive voice, particle usage]
-My level: [A1 / A2 / B1 / B2 / C1]
-
-Provide:
-- A plain-language explanation of the rule
-- 5 example sentences with translations
-- The most common mistakes learners make
-- A quick practice exercise
-```
-
-##### Vocabulary in context
-```
-Help me learn the following [language] vocabulary in context.
-
-Words: [list words here]
-
-For each word provide:
-- Definition in English
-- Example sentence in [language] with translation
-- A note on register (formal / informal / slang)
-- A common collocation or phrase it appears in
-
-Then create a short paragraph that uses all the words naturally.
-```
-
-##### Translation with nuance notes
-```
-Translate the following text from [source language] to [target language].
-
-[paste text here]
-
-After the translation, add nuance notes explaining:
-- Any words or phrases that don't translate directly
-- Cultural references that may need context
-- Alternative translations where the meaning is ambiguous
-- Register or tone differences between the original and translation
-```
-
-##### Conversation practice dialogue
-```
-Write a realistic practice dialogue in [language] for the following scenario:
-
-Scenario: [e.g. ordering food at a restaurant, asking for directions, a job interview]
-My level: [A1 / A2 / B1 / B2 / C1]
-
-Include:
-- The full dialogue between two speakers
-- An English translation below each line
-- Vocabulary notes for key words and phrases
-- Two follow-up questions I could use to extend the conversation
-```
-
-#### Category: Exam Prep
-##### Practice exam questions
-```
-Generate 10 practice exam questions for [subject/topic].
-
-Exam format: [multiple choice / short answer / essay / mixed]
-Level: [e.g. GCSE, A-level, first-year university]
-Topics to focus on: [list key topics]
-
-After the questions, provide an answer key with brief explanations for each correct answer.
-```
-
-##### Explain wrong answer
-```
-I got this exam question wrong. Help me understand why.
-
-Question: [paste question]
-My answer: [what you wrote or chose]
-Correct answer: [the right answer]
-
-Explain:
-1. Why my answer is incorrect
-2. Why the correct answer is right
-3. The underlying concept I need to understand
-4. A similar practice question to test my understanding now
-```
-
-##### Memory techniques for topic
-```
-Give me effective memory techniques to remember [topic/information].
-
-Content to memorize: [paste content, list, or concept]
-Exam date: [how far away]
-Learning style preference: [visual / verbal / pattern-based / doesn't matter]
-
-Provide at least three different techniques (e.g. mnemonics, method of loci, chunking) with specific examples applied to this content.
-```
-
-##### Last-minute review checklist
-```
-Create a last-minute review checklist for my upcoming exam.
-
-Subject: [subject]
-Exam is in: [e.g. 24 hours, 3 days]
-Topics covered: [list main topics]
-Format: [multiple choice / essay / problem-solving]
-
-Prioritize what to review first, flag the highest-yield concepts, and include a short list of common mistakes to avoid going into the exam.
 ```
 
 ---

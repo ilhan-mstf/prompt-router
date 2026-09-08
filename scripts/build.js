@@ -79,6 +79,16 @@ export function build() {
   const htmlFiles = fs.readdirSync(ROOT).filter(f => f.endsWith('.html'));
   let htmlUpdatedCount = 0;
 
+  // Prepare master favicon data URI from favicon.svg
+  let expectedSvgDataUri = null;
+  const favSvgPath = path.join(ROOT, 'favicon.svg');
+  if (fs.existsSync(favSvgPath)) {
+    const rawSvg = fs.readFileSync(favSvgPath, 'utf-8');
+    const compactSvg = rawSvg.replace(/>\s+</g, '><').replace(/\s+/g, ' ').trim();
+    const encodedSvg = compactSvg.replace(/"/g, "'").replace(/#/g, '%23');
+    expectedSvgDataUri = `data:image/svg+xml,${encodedSvg}`;
+  }
+
   for (const file of htmlFiles) {
     const filePath = path.join(ROOT, file);
     let html = fs.readFileSync(filePath, 'utf-8');
@@ -90,6 +100,17 @@ export function build() {
       const pattern = new RegExp(`/${item.dir}/${item.prefix}(\\.[a-f0-9]{8})?\\${item.ext}`, 'g');
       if (pattern.test(html)) {
         html = html.replace(pattern, targetHashedUrl);
+        modified = true;
+      }
+    }
+
+    // Ensure inline SVG favicon matches master favicon.svg
+    if (expectedSvgDataUri) {
+      const svgLinkPattern = /<link\s+rel="icon"\s+type="image\/svg\+xml"\s+href="[^"]*">/g;
+      const targetSvgLink = `<link rel="icon" type="image/svg+xml" href="${expectedSvgDataUri}">`;
+      const currentMatch = html.match(svgLinkPattern);
+      if (currentMatch && currentMatch[0] !== targetSvgLink) {
+        html = html.replace(svgLinkPattern, targetSvgLink);
         modified = true;
       }
     }

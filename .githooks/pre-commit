@@ -1,0 +1,4 @@
+#!/bin/sh
+set -e
+echo "🔍 Running pre-commit test & lint suite..."
+npm test

@@ -31,18 +31,18 @@ Curated battle-tested prompt collections across 11 domains:
 - [Dev Prompts](https://prompt-router.pages.dev/dev): 30+ curated prompts for debugging, code review, refactoring, testing, DevOps, and system architecture.
 - [Writing Prompts](https://prompt-router.pages.dev/writing): Prompts for essay drafting, copywriting, tone adjustment, storytelling, and editing.
 - [Marketing Prompts](https://prompt-router.pages.dev/marketing): Prompts for SEO strategy, ad copy, campaign ideas, email newsletters, and content calendars.
-- [Data Prompts](https://prompt-router.pages.dev/data): SQL generation, Pandas data analysis, statistics interpretation, and visualization.
-- [Startup Prompts](https://prompt-router.pages.dev/startup): Pitch deck drafting, competitor analysis, business model validation, and GTM strategy.
-- [Design Prompts](https://prompt-router.pages.dev/design): UX research, UI design critique, user personas, wireframe specifications, and accessibility checks.
 - [Job Search Prompts](https://prompt-router.pages.dev/job): Resume optimization, cover letter tailoring, mock interview questions, and salary negotiation.
+- [Startup Prompts](https://prompt-router.pages.dev/startup): Pitch deck drafting, competitor analysis, business model validation, and GTM strategy.
+- [Data Prompts](https://prompt-router.pages.dev/data): SQL generation, Pandas data analysis, statistics interpretation, and visualization.
+- [Design Prompts](https://prompt-router.pages.dev/design): UX research, UI design critique, user personas, wireframe specifications, and accessibility checks.
+- [Student Prompts](https://prompt-router.pages.dev/student): Study schedules, concept explanations, flashcard generation, and exam prep.
 - [Productivity Prompts](https://prompt-router.pages.dev/productivity): Time management, meeting summaries, task prioritization, and daily workflows.
 - [Legal Prompts](https://prompt-router.pages.dev/legal): Contract analysis, clause simplification, NDAs, and compliance guidelines.
 - [Sales Prompts](https://prompt-router.pages.dev/sales): Cold outreach, discovery calls, objection handling, and proposal generation.
-- [Student Prompts](https://prompt-router.pages.dev/student): Study schedules, concept explanations, flashcard generation, and exam prep.
 
 ## Core Templates
 
-- **Summarize**: Summarize text into 3-5 clear bullet points focusing on key takeaways.
+- **Summarize**: Summarize text into 3–5 clear bullet points focusing on key takeaways.
 - **Explain it**: Explain complex concepts in simple terms with plain language and analogies.
 - **Improve text**: Rewrite copy for clarity, engagement, and conciseness while preserving meaning.
 - **Brainstorm**: Generate 10 diverse and unexpected ideas for a given goal.
@@ -81,7 +81,7 @@ Example localized library endpoints:
 - [Dev Prompts Guide](https://prompt-router.pages.dev/blog-dev-prompts): Walkthrough of coding prompts.
 - [Writing Prompts Guide](https://prompt-router.pages.dev/blog-writing-prompts): Walkthrough of writing prompts.
 - [Marketing Prompts Guide](https://prompt-router.pages.dev/blog-marketing-prompts): Marketing prompt recipes.
-- [Data Prompts Guide](https://prompt-router.pages.dev/blog-data-prompts): Data analytics prompt recipes.
+- [Data Prompts Guide](https://prompt-router.pages.dev/blog-data-prompts): Recipes for SQL generation, Python analysis, and data storytelling.
 - [Design Prompts Guide](https://prompt-router.pages.dev/blog-design-prompts): UX & product design prompt recipes.
 - [Startup Prompts Guide](https://prompt-router.pages.dev/blog-startup-prompts): Founder & startup prompt recipes.
 - [Job Search Prompts Guide](https://prompt-router.pages.dev/blog-job-prompts): Career & job search prompt recipes.

@@ -251,6 +251,42 @@ it('robots.txt allows all AI bots and references sitemap.xml and llms.txt', () =
   assert.strictEqual(robots.includes('llms.txt'), true);
 });
 
+it('Zero files contain mojibake or corrupt encoding sequences across repository', () => {
+  const filesToCheck = [
+    'llms.txt', 'llms-full.txt', 'sitemap.xml', 'robots.txt',
+    'index.html', 'blog.html', ...VALID_LIBS.map(l => `${l}.html`)
+  ];
+  const mojibakeRegex = /â€|â\x80|\ufffd/;
+  filesToCheck.forEach(f => {
+    const content = fs.readFileSync(path.join(ROOT, f), 'utf-8');
+    assert.strictEqual(mojibakeRegex.test(content), false, `Mojibake encoding error found in ${f}`);
+  });
+});
+
+it('Prompt parity: llms-full.txt contains exactly 268 prompts matching all 11 library HTML files', () => {
+  let expectedTotal = 0;
+  for (const lib of VALID_LIBS) {
+    const html = fs.readFileSync(path.join(ROOT, `${lib}.html`), 'utf-8');
+    const match = html.match(/const\s+[A-Z_]+PROMPTS\s*=\s*(\[\s*\{[\s\S]*?\n\]);/);
+    assert.ok(match, `Could not parse prompts from ${lib}.html`);
+    const data = eval(match[1]);
+    for (const cat of data) {
+      expectedTotal += cat.prompts.length;
+    }
+  }
+  const fullPromptsCount = (llmsFullTxt.match(/##### /g) || []).length;
+  assert.strictEqual(fullPromptsCount, expectedTotal, `Mismatch: llms-full.txt has ${fullPromptsCount} prompts, HTML files have ${expectedTotal}`);
+  assert.strictEqual(fullPromptsCount, 268, `Expected exactly 268 prompts, got ${fullPromptsCount}`);
+});
+
+it('Sitemap 1:1 parity: every non-exempt HTML file corresponds to an indexed sitemap URL', () => {
+  const allHtml = fs.readdirSync(ROOT).filter(f => f.endsWith('.html') && !f.startsWith('google') && f !== 'mockup.html');
+  allHtml.forEach(file => {
+    const route = file === 'index.html' ? 'https://prompt-router.pages.dev/' : `https://prompt-router.pages.dev/${file.replace('.html', '')}`;
+    assert.strictEqual(locMatches.includes(route), true, `Missing HTML page in sitemap: ${route}`);
+  });
+});
+
 // ─────────────────────────────────────────────────────────────
 // 5. Worker Routing Simulation (Edge SSR logic)
 // ─────────────────────────────────────────────────────────────
@@ -798,6 +834,58 @@ await itAsync('Edge worker attaches security headers on all responses', async ()
   assert.strictEqual(res.headers.get('Link'), '</llms.txt>; rel="alternate"; type="text/markdown"');
 });
 
+// ─────────────────────────────────────────────────────────────
+// 13. Favicon & App Icon Single-Source-of-Truth Integrity
+// ─────────────────────────────────────────────────────────────
+console.log('\n🎨 13. Favicon & App Icon SSOT Integrity:');
+
+it('Master favicon.svg exists and defines the canonical vector icon', () => {
+  const svgPath = path.join(ROOT, 'favicon.svg');
+  assert.strictEqual(fs.existsSync(svgPath), true, 'Missing master favicon.svg');
+  const content = fs.readFileSync(svgPath, 'utf-8');
+  assert.strictEqual(content.includes('<svg'), true, 'favicon.svg must contain valid SVG');
+  assert.strictEqual(content.includes('#0f0f10'), true, 'favicon.svg background must be #0f0f10');
+  assert.strictEqual(content.includes('#d4a847'), true, 'favicon.svg text color must be #d4a847');
+});
+
+it('All 30 HTML pages use an inline SVG favicon that matches master favicon.svg', () => {
+  const svgContent = fs.readFileSync(path.join(ROOT, 'favicon.svg'), 'utf-8');
+  const compact = svgContent.replace(/>\s+</g, '><').replace(/\s+/g, ' ').trim();
+  const encoded = compact.replace(/"/g, "'").replace(/#/g, '%23');
+  const expectedDataUri = `data:image/svg+xml,${encoded}`;
+
+  const htmlFiles = fs.readdirSync(ROOT).filter(f => f.endsWith('.html') && !f.startsWith('google'));
+  assert.strictEqual(htmlFiles.length, 30, 'Expected exactly 30 application and blog HTML files');
+
+  for (const file of htmlFiles) {
+    const html = fs.readFileSync(path.join(ROOT, file), 'utf-8');
+    const match = html.match(/<link\s+rel="icon"\s+type="image\/svg\+xml"\s+href="([^"]+)">/);
+    assert.strictEqual(Boolean(match), true, `Page ${file} is missing <link rel="icon" type="image/svg+xml"> tag`);
+    assert.strictEqual(
+      match[1],
+      expectedDataUri,
+      `Inline SVG favicon in ${file} drifted from master favicon.svg. Run 'npm run build' or 'npm run icons' to synchronize.`
+    );
+  }
+});
+
+it('All derived static icon files exist, are non-empty, and up to date', () => {
+  const icons = [
+    { file: 'favicon.ico', minSize: 1000 },
+    { file: 'favicon-16x16.png', minSize: 200 },
+    { file: 'favicon-32x32.png', minSize: 400 },
+    { file: 'apple-touch-icon.png', minSize: 1000 },
+    { file: 'icons/icon-192.png', minSize: 1000 },
+    { file: 'icons/icon-512.png', minSize: 3000 }
+  ];
+
+  for (const item of icons) {
+    const p = path.join(ROOT, item.file);
+    assert.strictEqual(fs.existsSync(p), true, `Missing icon file: ${item.file}`);
+    const stat = fs.statSync(p);
+    assert.strictEqual(stat.size >= item.minSize, true, `Icon file ${item.file} is unexpectedly small: ${stat.size} bytes`);
+  }
+});
 
 // ─────────────────────────────────────────────────────────────
 // Summary

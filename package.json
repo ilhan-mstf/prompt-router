@@ -5,7 +5,9 @@
   "type": "module",
   "main": "_worker.js",
   "scripts": {
-    "build": "node scripts/build.js",
+    "build:icons": "python3 scripts/generate-icons.py",
+    "build:seo": "node scripts/generate-seo.js",
+    "build": "python3 scripts/generate-icons.py && node scripts/generate-seo.js && node scripts/build.js",
     "icons": "python3 scripts/generate-icons.py",
     "dev": "npm run build && npx wrangler pages dev .",
     "preview": "npm run build && python3 serve.py",
@@ -13,7 +15,8 @@
     "lint:html": "htmlhint --ignore google*.html *.html",
     "lint:js": "eslint _worker.js eslint.config.js",
     "test:routes": "node test/test_router.js",
-    "test": "npm run build && npm run lint && npm run test:routes"
+    "test": "npm run build && npm run lint && npm run test:routes",
+    "prepare": "git config core.hooksPath .githooks 2>/dev/null || true"
   },
   "repository": {
     "type": "git",
