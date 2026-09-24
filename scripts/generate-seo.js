@@ -227,8 +227,9 @@ export function generateLlmsTxt() {
   txt += `- \`${BASE_URL}/de/marketing\` (Beste KI-Prompts für Marketing & Growth)\n\n`;
 
   txt += '## Guides & Blog Articles\n\n';
+  txt += `- [The Curated Prompt Library Guide](${BASE_URL}/blog-prompt-library): 260+ battle-tested AI prompts across 11 professional domains.\n`;
   txt += `- [Introducing the New Prompt Router](${BASE_URL}/blog-new-look): Major redesign with collapsible sidebar, clean canvas, and 11 AI models.\n`;
-  txt += `- [Prompt Engineering Blog](${BASE_URL}/blog): Index of all 16 prompt engineering articles, model comparisons, and cost optimization guides.\n`;
+  txt += `- [Prompt Engineering Blog](${BASE_URL}/blog): Index of all 17 prompt engineering articles, model comparisons, and cost optimization guides.\n`;
   txt += `- [Budget-Friendly Prompt Routing](${BASE_URL}/blog-budget-prompt-routing): How top AI companies cut inference costs by up to 85% using model cascades and small models.\n`;
   txt += `- [Compare AI Models](${BASE_URL}/blog-compare-ai): Comparative breakdown of LLMs for specialized tasks.\n`;
   txt += `- [Prompt Router Overview](${BASE_URL}/blog-prompt-router): Benefits of multi-LLM workflows.\n`;
@@ -317,8 +318,9 @@ export function generateLlmsFullTxt() {
 
   txt += '---\n';
   txt += '## Guides & Blog Articles\n\n';
+  txt += `- [The Curated Prompt Library Guide](${BASE_URL}/blog-prompt-library): 260+ battle-tested AI prompts across 11 professional domains.\n`;
   txt += `- [Introducing the New Prompt Router](${BASE_URL}/blog-new-look): Major redesign with collapsible sidebar, clean canvas, and 11 AI models.\n`;
-  txt += `- [Prompt Engineering Blog](${BASE_URL}/blog): Index of all 16 prompt engineering articles, model comparisons, and cost optimization guides.\n`;
+  txt += `- [Prompt Engineering Blog](${BASE_URL}/blog): Index of all 17 prompt engineering articles, model comparisons, and cost optimization guides.\n`;
   txt += `- [Budget-Friendly Prompt Routing](${BASE_URL}/blog-budget-prompt-routing): How top AI companies cut inference costs by up to 85% using model cascades and small models.\n`;
   txt += `- [Reduce AI Costs](${BASE_URL}/blog-reduce-ai-costs): 5 proven strategies to cut OpenAI, Anthropic, and Google AI API costs by up to 80%.\n`;
   txt += `- [Compare AI Models](${BASE_URL}/blog-compare-ai): Comparative breakdown of LLMs for specialized tasks and why side-by-side evaluation is essential.\n`;

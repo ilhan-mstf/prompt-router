@@ -163,19 +163,19 @@ it('Sitemap includes new redesign blog post', () => {
   assert.strictEqual(locMatches.includes('https://prompt-router.pages.dev/blog-new-look'), true, 'Missing blog-new-look in sitemap');
 });
 
-it('Sitemap includes blog index and all 16 blog posts', () => {
+it('Sitemap includes blog index and all 17 blog posts', () => {
   assert.strictEqual(locMatches.includes('https://prompt-router.pages.dev/blog'), true, 'Missing /blog in sitemap');
   const blogFiles = fs.readdirSync(ROOT).filter(f => f.startsWith('blog-') && f.endsWith('.html'));
-  assert.strictEqual(blogFiles.length, 16, 'Expected 16 blog post files');
+  assert.strictEqual(blogFiles.length, 17, 'Expected 17 blog post files');
   blogFiles.forEach(file => {
     const route = `https://prompt-router.pages.dev/${file.replace('.html', '')}`;
     assert.strictEqual(locMatches.includes(route), true, `Missing blog post in sitemap: ${route}`);
   });
 });
 
-it('Sitemap has proper UTF-8 XML declaration, exactly 101 URLs, and no stale dates', () => {
+it('Sitemap has proper UTF-8 XML declaration, exactly 102 URLs, and no stale dates', () => {
   assert.strictEqual(sitemapContent.startsWith('<?xml version="1.0" encoding="UTF-8"?>'), true, 'Missing UTF-8 XML declaration');
-  assert.strictEqual(locMatches.length, 101, `Expected 101 URLs, found ${locMatches.length}`);
+  assert.strictEqual(locMatches.length, 102, `Expected 102 URLs, found ${locMatches.length}`);
   assert.strictEqual(sitemapContent.includes('2026-04-11'), false, 'Found stale 2026-04-11 lastmod dates in sitemap');
 });
 
@@ -231,14 +231,14 @@ it('llms-full.txt has zero mojibake, contains 10 core quick templates, and all 1
   });
 });
 
-it('All 29 HTML application and blog pages contain <link rel="alternate" href="/llms.txt">', () => {
+it('All 30 HTML application and blog pages contain <link rel="alternate" href="/llms.txt">', () => {
   const allPages = [
     'index.html',
     'blog.html',
     ...VALID_LIBS.map(l => `${l}.html`),
     ...fs.readdirSync(ROOT).filter(f => f.startsWith('blog-') && f.endsWith('.html'))
   ];
-  assert.strictEqual(allPages.length, 29);
+  assert.strictEqual(allPages.length, 30);
   allPages.forEach(p => {
     const html = fs.readFileSync(path.join(ROOT, p), 'utf-8');
     assert.strictEqual(html.includes('href="/llms.txt"'), true, `Missing llms.txt alternate link in ${p}`);
@@ -595,7 +595,7 @@ it('blog.html provides top padding for the Blog title', () => {
 
 it('all blog post pages provide top padding for article date and title', () => {
   const blogFiles = fs.readdirSync(ROOT).filter(f => f.startsWith('blog-') && f.endsWith('.html'));
-  assert.strictEqual(blogFiles.length, 16, 'Expected 16 blog post files');
+  assert.strictEqual(blogFiles.length, 17, 'Expected 17 blog post files');
   blogFiles.forEach(file => {
     const html = fs.readFileSync(path.join(ROOT, file), 'utf-8');
     assert.strictEqual(html.includes('article.page { padding-top: 40px; padding-bottom: 86px; }'), true, `Missing padding-top: 40px on article.page in ${file}`);
@@ -607,7 +607,7 @@ it('all blog post pages provide top padding for article date and title', () => {
 // ─────────────────────────────────────────────────────────────
 console.log('\n🏷️ 9. Semantic Headings & Accessibility:');
 
-it('All 16 blog posts and blog.html have zero <h1 class="logo"> tags', () => {
+it('All 17 blog posts and blog.html have zero <h1 class="logo"> tags', () => {
   const blogFiles = ['blog.html', ...fs.readdirSync(ROOT).filter(f => f.startsWith('blog-') && f.endsWith('.html'))];
   blogFiles.forEach(file => {
     const html = fs.readFileSync(path.join(ROOT, file), 'utf-8');
@@ -615,7 +615,7 @@ it('All 16 blog posts and blog.html have zero <h1 class="logo"> tags', () => {
   });
 });
 
-it('All 16 blog posts and blog.html have exactly one primary <h1> tag', () => {
+it('All 17 blog posts and blog.html have exactly one primary <h1> tag', () => {
   const blogFiles = ['blog.html', ...fs.readdirSync(ROOT).filter(f => f.startsWith('blog-') && f.endsWith('.html'))];
   blogFiles.forEach(file => {
     const html = fs.readFileSync(path.join(ROOT, file), 'utf-8');
@@ -631,7 +631,7 @@ it('index.html has no competing <h1> tags (noscript heading is <h2>)', () => {
   assert.strictEqual(h1Matches.length, 1, `Expected exactly 1 <h1> in index.html, found ${h1Matches.length}`);
 });
 
-it('All 16 blog posts and blog.html include #themeToggleBtn in topbar', () => {
+it('All 17 blog posts and blog.html include #themeToggleBtn in topbar', () => {
   const blogFiles = ['blog.html', ...fs.readdirSync(ROOT).filter(f => f.startsWith('blog-') && f.endsWith('.html'))];
   blogFiles.forEach(file => {
     const html = fs.readFileSync(path.join(ROOT, file), 'utf-8');
@@ -750,7 +750,7 @@ it('All application pages, library pages, blog index and blog posts include cent
 // ─────────────────────────────────────────────────────────────
 console.log('\n⚡ 11. Service Worker & Offline Resiliency:');
 
-it('sw.js precaches all 16 blog posts and version bumped to pr-v6', () => {
+it('sw.js precaches all 17 blog posts and version bumped to pr-v6', () => {
   const swCode = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf-8');
   assert.strictEqual(swCode.includes("const CACHE_NAME = 'pr-v6';"), true, 'sw.js cache name is not pr-v6');
   const blogFiles = fs.readdirSync(ROOT).filter(f => f.startsWith('blog-') && f.endsWith('.html'));
@@ -848,14 +848,14 @@ it('Master favicon.svg exists and defines the canonical vector icon', () => {
   assert.strictEqual(content.includes('#d4a847'), true, 'favicon.svg text color must be #d4a847');
 });
 
-it('All 30 HTML pages use an inline SVG favicon that matches master favicon.svg', () => {
+it('All 31 HTML pages use an inline SVG favicon that matches master favicon.svg', () => {
   const svgContent = fs.readFileSync(path.join(ROOT, 'favicon.svg'), 'utf-8');
   const compact = svgContent.replace(/>\s+</g, '><').replace(/\s+/g, ' ').trim();
   const encoded = compact.replace(/"/g, "'").replace(/#/g, '%23');
   const expectedDataUri = `data:image/svg+xml,${encoded}`;
 
   const htmlFiles = fs.readdirSync(ROOT).filter(f => f.endsWith('.html') && !f.startsWith('google'));
-  assert.strictEqual(htmlFiles.length, 30, 'Expected exactly 30 application and blog HTML files');
+  assert.strictEqual(htmlFiles.length, 31, 'Expected exactly 31 application and blog HTML files');
 
   for (const file of htmlFiles) {
     const html = fs.readFileSync(path.join(ROOT, file), 'utf-8');
@@ -965,9 +965,9 @@ it('Topbar and footer navigation maintain complete parity across all application
   }
 });
 
-it('Topbar and footer navigation maintain complete parity across blog.html and all 16 blog posts', () => {
+it('Topbar and footer navigation maintain complete parity across blog.html and all 17 blog posts', () => {
   const blogFiles = ['blog.html', ...fs.readdirSync(ROOT).filter(f => f.startsWith('blog-') && f.endsWith('.html'))];
-  assert.strictEqual(blogFiles.length, 17, 'Expected exactly 17 blog pages');
+  assert.strictEqual(blogFiles.length, 18, 'Expected exactly 18 blog pages');
 
   for (const file of blogFiles) {
     const html = fs.readFileSync(path.join(ROOT, file), 'utf-8');
