@@ -70,7 +70,7 @@
 </noscript>
 
 <link rel="stylesheet" href="/css/core.99f35dd1.css">
-<link rel="stylesheet" href="/css/prompt.d59fb11b.css">
+<link rel="stylesheet" href="/css/prompt.a2f1a0d8.css">
 
   <script>
     (function(){try{localStorage.removeItem('pr_theme');var s=sessionStorage.getItem('pr_theme');var m=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(m?'dark':'light'));if(window.matchMedia){var dm=window.matchMedia('(prefers-color-scheme: dark)');var sc=function(e){try{sessionStorage.removeItem('pr_theme');localStorage.removeItem('pr_theme');}catch(x){}document.documentElement.setAttribute('data-theme',e.matches?'dark':'light');};if(dm.addEventListener){dm.addEventListener('change',sc);}else if(dm.addListener){dm.addListener(sc);}}}catch(e){}})();
@@ -127,7 +127,18 @@
           </span>
           <span class="item-chevron" id="quickChevron" aria-hidden="true">&#9662;</span>
         </button>
-        <div class="item-list" id="quickList"></div>
+        <div class="item-list" id="quickList">
+  <button type="button" class="item-btn" data-tid="t_0"><span class="item-title">Summarize</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_1"><span class="item-title">Explain it</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_2"><span class="item-title">Improve text</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_3"><span class="item-title">Brainstorm</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_4"><span class="item-title">Compare</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_5"><span class="item-title">Write email</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_6"><span class="item-title">Fix my code</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_7"><span class="item-title">Make a plan</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_8"><span class="item-title">Pros &amp; cons</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_9"><span class="item-title">Ask questions</span><span class="p-arrow">&nearr;</span></button>
+</div>
       </div>
 
       <!-- Section: Prompt Libraries -->
@@ -247,13 +258,340 @@
       <!-- Categories -->
       <section aria-labelledby="lbl-cats">
         <span class="lbl-heading" id="lbl-cats">Categories</span>
-        <div class="cats" id="cats" role="group" aria-labelledby="lbl-cats"></div>
+        
+<button type="button" class="cat active" aria-pressed="true">All</button>
+<button type="button" class="cat" aria-pressed="false">Ideation</button>
+<button type="button" class="cat" aria-pressed="false">Pitch &amp; Fundraising</button>
+<button type="button" class="cat" aria-pressed="false">Product</button>
+<button type="button" class="cat" aria-pressed="false">Growth</button>
+<button type="button" class="cat" aria-pressed="false">Operations</button>
+<button type="button" class="cat" aria-pressed="false">Legal &amp; Finance</button>
+
       </section>
 
       <!-- Prompts Grid -->
       <section aria-labelledby="lbl-prompts">
         <span class="lbl-heading" id="lbl-prompts">Prompts</span>
-        <div class="prompt-cards" id="prompt-cards"></div>
+        
+<span class="lbl-heading" style="margin-top: 0; display: block;">Ideation</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Validate business idea</div><div class="prompt-card-preview">I have a business idea: [describe your idea in 2-3 sentences].
+
+Help me validate it by covering:
+1. Problem clarity — is there a real, painful problem here?
+2. Target customer — who would pay for this?
+3. Market size — rough estimate of TAM/SAM/SOM
+4. Key risks and assumptions I need to test
+5. 3 fast, cheap ways to validate before building anything.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Find target market</div><div class="prompt-card-preview">My product is: [describe product or service].
+
+Help me identify and prioritize my target market:
+1. List 5 potential customer segments who might need this
+2. For each segment, describe their pain level, willingness to pay, and ease of reach
+3. Recommend which segment to target first and why
+4. Describe the ideal customer profile (ICP) for that segment in detail.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Competitive landscape analysis</div><div class="prompt-card-preview">I'm building [describe your product/service] in the [industry/space] space.
+
+Analyze the competitive landscape:
+1. Who are the main direct and indirect competitors?
+2. What are their strengths and weaknesses?
+3. What gaps or underserved needs exist in the market?
+4. Where could a new entrant realistically differentiate?
+5. What would make customers switch from existing solutions?</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">MVP feature prioritization</div><div class="prompt-card-preview">I'm building an MVP for [describe product]. My target user is [describe user] and the core problem I'm solving is [describe problem].
+
+Help me prioritize features:
+1. List the absolute must-have features for a working MVP
+2. List features that are nice-to-have but not essential at launch
+3. List features to defer to a later version
+4. Suggest the smallest possible version I could ship in [timeframe] to get real user feedback.
+
+Use the MoSCoW method where helpful.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Pitch &amp; Fundraising</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write elevator pitch</div><div class="prompt-card-preview">Help me write a sharp 30-second elevator pitch for my startup.
+
+Details:
+- What we do: [describe the product/service]
+- Problem we solve: [describe the problem]
+- Target customer: [who is it for]
+- How we make money: [business model]
+- Traction so far: [any metrics, users, revenue]
+
+Write 3 versions: one for an investor, one for a potential customer, and one for a general networking event. Keep each under 60 words.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Pitch deck narrative</div><div class="prompt-card-preview">Help me write the narrative arc for my investor pitch deck.
+
+Startup details:
+- Company name: [name]
+- What we do: [description]
+- Problem: [problem]
+- Solution: [solution]
+- Market: [market size]
+- Business model: [how we make money]
+- Traction: [metrics]
+- Team: [key team members]
+- Ask: [how much, for what]
+
+For each slide (Problem, Solution, Market, Product, Traction, Team, Ask), write the key message and 3 supporting bullet points. Keep it investor-focused and story-driven.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Investor email intro</div><div class="prompt-card-preview">Write a cold email to introduce my startup to a venture capital investor.
+
+Context:
+- Investor focus: [e.g. B2B SaaS, early stage, fintech]
+- My startup: [name and one-line description]
+- Why this investor specifically: [reason]
+- Traction/proof points: [key metrics or milestones]
+- Ask: [e.g. 20-minute intro call]
+
+Write a subject line and email under 150 words. Make it direct, specific, and compelling. Avoid generic language and buzzwords.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Financial projections assumptions</div><div class="prompt-card-preview">Help me build the key assumptions behind my 3-year financial projections.
+
+Business model: [describe how you charge, e.g. SaaS subscription, marketplace, one-time sale]
+Target customer: [describe customer segment]
+Current state: [revenue, users, or pre-revenue]
+
+For each year (Y1, Y2, Y3), help me define realistic assumptions for:
+1. Customer acquisition (channels, CAC, growth rate)
+2. Revenue per customer (ACV or ARPU, churn)
+3. Headcount and key hires
+4. Key cost drivers
+5. Path to breakeven
+
+Flag which assumptions are most likely to be challenged by investors.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Product</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write PRD (product requirements doc)</div><div class="prompt-card-preview">Write a product requirements document (PRD) for the following feature.
+
+Feature name: [feature name]
+Product: [product description]
+User problem: [what problem does this solve and for whom]
+Business goal: [why are we building this]
+
+The PRD should include:
+1. Overview and goals
+2. User stories (as a [user], I want to [action] so that [outcome])
+3. Functional requirements
+4. Out of scope
+5. Success metrics
+6. Open questions
+
+Keep it concise and actionable for an engineering team.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">User story mapping</div><div class="prompt-card-preview">Help me create a user story map for [product or feature].
+
+Target user: [describe the user]
+Core user journey: [describe the main flow from start to finish]
+
+1. Break the journey into 5-7 high-level activities (the top row of the story map)
+2. Under each activity, list the user tasks (stories) needed to complete it
+3. Identify which stories belong in the MVP release vs. later releases
+4. Flag any dependencies between stories
+
+Format as a structured list grouped by activity.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Pricing strategy analysis</div><div class="prompt-card-preview">Help me define the right pricing strategy for my product.
+
+Product: [describe what it does]
+Target customer: [who buys it, company size, industry]
+Value delivered: [what outcome does it create for the customer]
+Competitor pricing: [what do alternatives charge]
+Current thinking: [any pricing ideas I already have]
+
+Analyze:
+1. Best pricing model (subscription, usage-based, one-time, freemium, etc.) with pros/cons
+2. Recommended price point and rationale
+3. Packaging tiers if applicable
+4. How to test and validate pricing before committing
+5. Common pricing mistakes to avoid in this market.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Feature prioritization framework</div><div class="prompt-card-preview">I have a backlog of feature requests and need to prioritize them. Help me apply a structured prioritization framework.
+
+Product: [describe product]
+Current stage: [e.g. pre-launch, early traction, scaling]
+Top business goal right now: [e.g. retain users, acquire first 100 customers, reduce churn]
+
+Feature backlog:
+[list your features here]
+
+For each feature, score it on:
+1. Impact on the top business goal (1-5)
+2. Effort to build (1-5, where 5 = high effort)
+3. User demand signal (how many users asked for it)
+4. Strategic fit
+
+Rank them and recommend what to build first, second, and what to park.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Growth</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Go-to-market strategy</div><div class="prompt-card-preview">Help me build a go-to-market (GTM) strategy for my startup.
+
+Product: [describe product]
+Target customer: [ICP — industry, company size, role, pain point]
+Unique value proposition: [what makes you different]
+Price point: [pricing]
+Launch timeline: [when do you plan to launch]
+
+Cover:
+1. GTM motion (product-led, sales-led, or marketing-led) and why
+2. First 3 acquisition channels to focus on and rationale
+3. Launch plan for the first 90 days with key milestones
+4. Key risks and how to mitigate them
+5. What success looks like at 30, 60, and 90 days post-launch.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Customer acquisition channels</div><div class="prompt-card-preview">I need to identify the best customer acquisition channels for my startup.
+
+Product: [describe product]
+Target customer: [who they are, where they spend time online and offline]
+Budget for acquisition: [monthly budget range]
+Team size: [number of people available for growth]
+Current traction: [existing customers or zero]
+
+For each recommended channel:
+1. Why it fits my customer and product
+2. Estimated CAC range
+3. How to test it cheaply in 2 weeks
+4. What a scaled version looks like
+
+Rank channels by highest ROI potential for my stage.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Retention strategy</div><div class="prompt-card-preview">Help me design a retention strategy for my product.
+
+Product: [describe product]
+User type: [B2B or B2C, describe the user]
+Current retention: [e.g. 30-day retention rate or churn rate if known]
+Key usage pattern: [how often should users ideally use the product]
+Top reasons users churn (if known): [list them]
+
+Provide:
+1. The most important retention lever to focus on first and why
+2. An onboarding flow that drives users to the 'aha moment' faster
+3. 3 lifecycle email/notification campaigns to improve retention
+4. In-product features or changes that reduce churn
+5. How to identify at-risk users before they churn.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Metrics dashboard design</div><div class="prompt-card-preview">Help me design the core metrics dashboard for my startup.
+
+Business type: [e.g. B2B SaaS, marketplace, consumer app, e-commerce]
+Stage: [pre-revenue / early traction / scaling]
+Top goal right now: [e.g. grow MRR, improve retention, increase activation]
+
+Define:
+1. The single most important metric (north star metric) I should optimize for
+2. The 5-7 key metrics that drive the north star (inputs)
+3. Health metrics to monitor (to catch problems early)
+4. Metrics to ignore at my current stage
+5. How to set up a simple weekly review cadence around these metrics.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Operations</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Hiring plan</div><div class="prompt-card-preview">Help me create a hiring plan for my startup.
+
+Current team: [list current roles/headcount]
+Funding status: [bootstrapped / pre-seed / seed / Series A]
+Runway: [months of runway]
+Top priorities for the next 12 months: [list 2-3 key goals]
+
+Provide:
+1. The first 3 hires I should make and why (in priority order)
+2. For each role: title, key responsibilities, must-have skills, and whether to hire full-time, part-time, or contract
+3. How to attract top candidates without a big recruiting budget
+4. Red flags to watch for when hiring at an early stage
+5. A simple hiring process that moves fast without sacrificing quality.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Company culture document</div><div class="prompt-card-preview">Help me write a foundational company culture document for my startup.
+
+Company: [name and what you do]
+Stage: [team size, stage]
+Founder values: [list 3-5 values that are personally important to you]
+Type of work: [remote / in-person / hybrid]
+Kind of team you want to build: [describe in a sentence]
+
+Write:
+1. A brief culture statement (2-3 sentences)
+2. 4-6 core values with a plain-English explanation of what each means in practice
+3. 3 examples of what these values look like in everyday decisions
+4. What behaviors are NOT acceptable (anti-values)
+5. How to keep culture strong as the team grows.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">OKR setting</div><div class="prompt-card-preview">Help me set OKRs (Objectives and Key Results) for my startup.
+
+Company stage: [e.g. seed, Series A]
+Time period: [Q1 2026 or annual]
+Top company priorities: [list 2-3 strategic priorities]
+Current metrics baseline: [key numbers if available]
+
+For each priority, write:
+- 1 Objective (inspiring, qualitative, directional)
+- 3 Key Results (measurable, specific, time-bound)
+
+Also provide:
+1. How to cascade OKRs to team level
+2. A cadence for checking in and grading OKRs
+3. Common OKR mistakes to avoid at an early-stage startup.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Vendor/tool evaluation</div><div class="prompt-card-preview">Help me evaluate and choose between tools or vendors for [specific need, e.g. CRM, data warehouse, customer support platform].
+
+Use case: [describe exactly what I need it to do]
+Team size: [how many people will use it]
+Budget: [monthly budget range]
+Must-have requirements: [list non-negotiables]
+Nice-to-have requirements: [list secondary needs]
+
+Options I'm considering:
+1. [Option A]
+2. [Option B]
+3. [Option C]
+
+Compare them on: features, pricing, ease of setup, scalability, integrations, and support. Recommend one with clear reasoning and flag any hidden costs or lock-in risks.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Legal &amp; Finance</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Terms of service outline</div><div class="prompt-card-preview">Help me create an outline for the Terms of Service for my product.
+
+Product type: [e.g. SaaS app, marketplace, consumer app]
+Users: [B2B customers / consumers / both]
+Key features: [describe what users can do on the platform]
+Any specific concerns: [e.g. user-generated content, payments, data handling]
+
+Provide:
+1. A recommended structure with all key sections a ToS should include
+2. A plain-English summary of what each section covers and why it matters
+3. Clauses that are especially important for my product type
+4. Common mistakes founders make with ToS at an early stage
+
+Note: this is for planning purposes only — I will have a lawyer review the final document.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Privacy policy considerations</div><div class="prompt-card-preview">Help me understand what my privacy policy needs to cover.
+
+Product: [describe product]
+Data collected: [list types of data you collect, e.g. email, payment info, usage data]
+Users located in: [e.g. US, EU, global]
+Third-party tools used: [e.g. Stripe, Google Analytics, Intercom]
+
+Cover:
+1. Key sections every privacy policy must include
+2. Specific requirements based on my user geography (GDPR, CCPA, etc.)
+3. Data I'm collecting that may require explicit consent
+4. Third-party data sharing disclosures I need to make
+5. How to keep the policy up to date as the product evolves
+
+Note: this is for planning only — I will have a lawyer review the final document.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Cap table scenario</div><div class="prompt-card-preview">Help me model a cap table scenario for my startup.
+
+Current cap table:
+- Founder 1: [name, % ownership]
+- Founder 2: [name, % ownership]
+- Employee option pool: [%]
+- Other: [angels, SAFEs, etc.]
+
+Proposed funding round:
+- Round type: [e.g. Seed, Series A]
+- Amount raising: [$X]
+- Pre-money valuation: [$Y] (or 'help me think through this')
+- New investor(s): [name or 'TBD']
+
+Show:
+1. Post-money ownership percentages for all parties
+2. How the option pool top-up (if any) affects founder dilution
+3. What the cap table looks like after this round
+4. Key terms to negotiate beyond valuation (pro-rata, board seats, etc.)</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Unit economics analysis</div><div class="prompt-card-preview">Help me analyze the unit economics of my business.
+
+Business model: [describe how you make money]
+Pricing: [how much customers pay and how often]
+Key costs to acquire a customer: [list main CAC components]
+Key costs to serve a customer: [list main COGS/service costs per customer]
+Churn rate (if known): [monthly or annual]
+
+Calculate and explain:
+1. Customer Acquisition Cost (CAC)
+2. Average Revenue Per User (ARPU) or Annual Contract Value (ACV)
+3. Gross margin per customer
+4. Customer Lifetime Value (LTV)
+5. LTV:CAC ratio and what it means for my business health
+6. Payback period
+7. What I need to improve to reach healthy unit economics.</div></button>
+
       </section>
 
       <!-- Clean Editor Canvas -->
@@ -294,7 +632,19 @@
       <!-- Open in Providers (11 Models) -->
       <section class="providers-card" aria-labelledby="lbl-providers">
         <span class="lbl-heading" id="lbl-providers">Open in</span>
-        <ul class="providers" id="providers" aria-labelledby="lbl-providers"></ul>
+        <ul class="providers" id="providers" aria-labelledby="lbl-providers">
+  <li><button type="button" class="p-btn pc-chatgpt" aria-label="Open prompt in ChatGPT"><div class="p-left"><span class="dot" style="background:var(--chatgpt)"></span><span>ChatGPT</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-claude" aria-label="Open prompt in Claude"><div class="p-left"><span class="dot" style="background:var(--claude)"></span><span>Claude</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-gemini" aria-label="Open prompt in Gemini"><div class="p-left"><span class="dot" style="background:var(--gemini)"></span><span>Gemini</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-copilot" aria-label="Open prompt in Copilot"><div class="p-left"><span class="dot" style="background:var(--copilot)"></span><span>Copilot</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-perplexity" aria-label="Open prompt in Perplexity"><div class="p-left"><span class="dot" style="background:var(--perplexity)"></span><span>Perplexity</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-deepseek" aria-label="Open prompt in DeepSeek"><div class="p-left"><span class="dot" style="background:var(--deepseek)"></span><span>DeepSeek</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-grok" aria-label="Open prompt in Grok"><div class="p-left"><span class="dot" style="background:var(--grok)"></span><span>Grok</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-lechat" aria-label="Open prompt in Le Chat"><div class="p-left"><span class="dot" style="background:var(--lechat)"></span><span>Le Chat</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-qwen" aria-label="Open prompt in Qwen"><div class="p-left"><span class="dot" style="background:var(--qwen)"></span><span>Qwen</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-kimi" aria-label="Open prompt in Kimi"><div class="p-left"><span class="dot" style="background:var(--kimi)"></span><span>Kimi</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-zai" aria-label="Open prompt in Z.ai"><div class="p-left"><span class="dot" style="background:var(--zai)"></span><span>Z.ai</span></div><span class="p-arrow">&nearr;</span></button></li>
+</ul>
       </section>
 
       <!-- Related Libraries -->
@@ -348,7 +698,7 @@
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <script src="/js/locales.f9476f0a.js"></script>
-<script src="/js/prompt.653cafef.js"></script>
+<script src="/js/prompt.9c395192.js"></script>
 <script>
 (function() {
 'use strict';
@@ -419,7 +769,8 @@ const promptEl = document.getElementById('prompt');
 
 function renderCats() {
   if (!catsEl) return;
-  const cats = ['All', ...DEV_PROMPTS.map(c => c.cat)];
+  const CURRENT_PROMPTS = (typeof window !== 'undefined' && window.__PROMPTS__) || DEV_PROMPTS;
+  const cats = ['All', ...CURRENT_PROMPTS.map(c => c.cat)];
   catsEl.innerHTML = '';
   cats.forEach(cat => {
     const btn = document.createElement('button');
@@ -441,7 +792,8 @@ function renderCats() {
 function renderCards() {
   if (!cardsEl) return;
   cardsEl.innerHTML = '';
-  const groups = activeCat === 'All' ? DEV_PROMPTS : DEV_PROMPTS.filter(c => c.cat === activeCat);
+  const CURRENT_PROMPTS = (typeof window !== 'undefined' && window.__PROMPTS__) || DEV_PROMPTS;
+  const groups = activeCat === 'All' ? CURRENT_PROMPTS : CURRENT_PROMPTS.filter(c => c.cat === activeCat);
 
   groups.forEach(group => {
     if (activeCat === 'All') {
@@ -505,7 +857,7 @@ window.__onPromptCleared = function() {
   });
 };
 
-(function(){var n=1,items=[];DEV_PROMPTS.forEach(function(c){c.prompts.forEach(function(p){items.push({"@type":"ListItem","position":n++,"name":p.title});});});var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ItemList","name":document.title.split('|')[0].split('—')[0].trim(),"numberOfItems":items.length,"itemListElement":items});document.head.appendChild(s);})();
+(function(){var n=1,items=[];((typeof window !== 'undefined' && window.__PROMPTS__) || DEV_PROMPTS).forEach(function(c){c.prompts.forEach(function(p){items.push({"@type":"ListItem","position":n++,"name":p.title});});});var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ItemList","name":document.title.split('|')[0].split('—')[0].trim(),"numberOfItems":items.length,"itemListElement":items});document.head.appendChild(s);})();
 })();
 </script>
 </body>

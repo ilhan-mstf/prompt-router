@@ -15,7 +15,8 @@
     "lint:html": "htmlhint --ignore google*.html *.html",
     "lint:js": "eslint _worker.js eslint.config.js",
     "test:routes": "node test/test_router.js",
-    "test": "npm run build && npm run lint && npm run test:routes",
+    "test:tiles": "node --test test/test_tiles.js",
+    "test": "npm run build && npm run lint && npm run test:routes && npm run test:tiles",
     "prepare": "git config core.hooksPath .githooks 2>/dev/null || true"
   },
   "repository": {

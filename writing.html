@@ -70,7 +70,7 @@
 </noscript>
 
 <link rel="stylesheet" href="/css/core.99f35dd1.css">
-<link rel="stylesheet" href="/css/prompt.d59fb11b.css">
+<link rel="stylesheet" href="/css/prompt.a2f1a0d8.css">
 
   <script>
     (function(){try{localStorage.removeItem('pr_theme');var s=sessionStorage.getItem('pr_theme');var m=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(m?'dark':'light'));if(window.matchMedia){var dm=window.matchMedia('(prefers-color-scheme: dark)');var sc=function(e){try{sessionStorage.removeItem('pr_theme');localStorage.removeItem('pr_theme');}catch(x){}document.documentElement.setAttribute('data-theme',e.matches?'dark':'light');};if(dm.addEventListener){dm.addEventListener('change',sc);}else if(dm.addListener){dm.addListener(sc);}}}catch(e){}})();
@@ -127,7 +127,18 @@
           </span>
           <span class="item-chevron" id="quickChevron" aria-hidden="true">&#9662;</span>
         </button>
-        <div class="item-list" id="quickList"></div>
+        <div class="item-list" id="quickList">
+  <button type="button" class="item-btn" data-tid="t_0"><span class="item-title">Summarize</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_1"><span class="item-title">Explain it</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_2"><span class="item-title">Improve text</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_3"><span class="item-title">Brainstorm</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_4"><span class="item-title">Compare</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_5"><span class="item-title">Write email</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_6"><span class="item-title">Fix my code</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_7"><span class="item-title">Make a plan</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_8"><span class="item-title">Pros &amp; cons</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_9"><span class="item-title">Ask questions</span><span class="p-arrow">&nearr;</span></button>
+</div>
       </div>
 
       <!-- Section: Prompt Libraries -->
@@ -247,13 +258,196 @@
       <!-- Categories -->
       <section aria-labelledby="lbl-cats">
         <span class="lbl-heading" id="lbl-cats">Categories</span>
-        <div class="cats" id="cats" role="group" aria-labelledby="lbl-cats"></div>
+        
+<button type="button" class="cat active" aria-pressed="true">All</button>
+<button type="button" class="cat" aria-pressed="false">Blog &amp; Articles</button>
+<button type="button" class="cat" aria-pressed="false">Social Media</button>
+<button type="button" class="cat" aria-pressed="false">Email</button>
+<button type="button" class="cat" aria-pressed="false">Copywriting</button>
+<button type="button" class="cat" aria-pressed="false">Editing</button>
+<button type="button" class="cat" aria-pressed="false">Creative</button>
+
       </section>
 
       <!-- Prompts Grid -->
       <section aria-labelledby="lbl-prompts">
         <span class="lbl-heading" id="lbl-prompts">Prompts</span>
-        <div class="prompt-cards" id="prompt-cards"></div>
+        
+<span class="lbl-heading" style="margin-top: 0; display: block;">Blog &amp; Articles</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write blog post outline</div><div class="prompt-card-preview">Create a detailed blog post outline on the topic: [topic]
+
+Target audience: [describe audience]
+Tone: [e.g. informative, conversational, authoritative]
+Target word count: [e.g. 1500 words]
+
+Include: a compelling title, intro hook, 4–6 main sections with subpoints, and a conclusion with a clear call to action.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Improve article intro</div><div class="prompt-card-preview">Rewrite the introduction to this article so it immediately hooks the reader. The current intro:
+
+[paste intro here]
+
+The article is about: [topic]
+Target reader: [describe audience]
+
+Make the new intro engaging, specific, and under 100 words. Offer 3 variations.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Generate blog post ideas</div><div class="prompt-card-preview">Generate 10 blog post ideas for a [describe blog/brand] targeting [audience].
+
+Focus area: [e.g. productivity, SaaS marketing, personal finance]
+
+For each idea, include: a working title, the core angle or hook, and who it's most useful for. Prioritize topics that are specific, actionable, and likely to rank well.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write a strong conclusion</div><div class="prompt-card-preview">Write a conclusion for this blog post:
+
+Topic: [topic]
+Key points covered: [summarize main points]
+Desired action after reading: [e.g. subscribe, share, try the product]
+
+The conclusion should recap the core takeaway, provide a sense of closure, and end with a clear and natural call to action.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Social Media</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write a tweet thread</div><div class="prompt-card-preview">Write a Twitter/X thread about: [topic]
+
+Audience: [describe]
+Goal: [e.g. educate, drive traffic, build authority]
+Number of tweets: [e.g. 8–10]
+
+Start with a strong hook tweet, break the topic into digestible points, and end with a clear CTA. Keep each tweet under 280 characters. Use line breaks for readability.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write a LinkedIn post</div><div class="prompt-card-preview">Write a LinkedIn post about: [topic or experience]
+
+Tone: [e.g. thoughtful, direct, story-driven]
+Goal: [e.g. share a lesson, generate comments, build credibility]
+
+Start with a one-line hook that stops the scroll. Use short paragraphs. Include a personal angle or insight. End with a question to encourage comments. Aim for 150–250 words.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write an Instagram caption</div><div class="prompt-card-preview">Write an Instagram caption for a post about: [describe the image/topic]
+
+Brand voice: [e.g. playful, inspiring, minimal]
+Goal: [e.g. increase saves, drive profile visits, sell a product]
+
+Include: an engaging opening line, 2–3 sentences of supporting copy, a call to action, and 5–10 relevant hashtags.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Social media content calendar</div><div class="prompt-card-preview">Create a 2-week social media content calendar for [brand/creator] posting on [platforms, e.g. LinkedIn + Instagram].
+
+Niche: [topic area]
+Goal: [e.g. grow followers, drive traffic, launch a product]
+Posting frequency: [e.g. 3x/week per platform]
+
+For each post include: the date, platform, content type (e.g. tip, story, promo), and a one-line description of the post idea.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Email</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write a cold email</div><div class="prompt-card-preview">Write a cold outreach email for the following situation:
+
+Sender: [your name/role/company]
+Recipient: [job title or type of person]
+Goal: [e.g. book a call, get a referral, pitch a partnership]
+Context: [any relevant detail about why you're reaching out]
+
+Keep it under 150 words. Lead with value or relevance — not with who you are. Include a low-friction CTA.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write a newsletter intro</div><div class="prompt-card-preview">Write an intro for this week's email newsletter.
+
+Newsletter name / topic: [describe]
+This issue is about: [main topic or theme]
+Audience: [describe subscribers]
+Tone: [e.g. warm, witty, concise]
+
+The intro should feel personal, tease the content inside, and make the reader want to keep reading. Keep it under 80 words.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write a follow-up email</div><div class="prompt-card-preview">Write a follow-up email for this situation:
+
+Original context: [describe the first interaction — e.g. a sales call, a job interview, a proposal sent]
+Time since last contact: [e.g. 5 days]
+Goal of the follow-up: [e.g. get a decision, re-engage, confirm next steps]
+
+Be warm but direct. Reference the previous conversation briefly. Make it easy to reply. Keep it under 100 words.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write a difficult email</div><div class="prompt-card-preview">Help me write a professional email for a sensitive situation:
+
+Situation: [describe — e.g. apologizing for a missed deadline, declining a request, delivering bad news]
+Recipient: [describe relationship — e.g. client, manager, colleague]
+Desired outcome: [what you want to happen after they read it]
+
+Be honest, take responsibility where appropriate, and keep a constructive tone. Avoid being defensive or over-apologetic.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Copywriting</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write a product description</div><div class="prompt-card-preview">Write a compelling product description for:
+
+Product name: [name]
+What it does: [describe]
+Key features: [list 3–5]
+Target customer: [describe]
+Tone: [e.g. premium, playful, technical]
+
+Focus on benefits over features. Lead with the biggest value. Keep it under 120 words and end with a natural nudge toward purchase.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Landing page headline + subhead</div><div class="prompt-card-preview">Write 5 headline and subheadline combinations for a landing page.
+
+Product/service: [describe]
+Target audience: [describe]
+Core value proposition: [what problem does it solve or what outcome does it deliver]
+Tone: [e.g. bold, reassuring, witty]
+
+Each headline should be clear, specific, and benefit-driven. The subheadline should expand on it and handle an objection or add credibility.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write call to action variations</div><div class="prompt-card-preview">Write 10 call-to-action (CTA) button copy variations for:
+
+Product/service: [describe]
+Goal of the CTA: [e.g. start a free trial, book a demo, download a guide]
+Tone: [e.g. action-oriented, low-pressure, curious]
+
+Vary the angle — try urgency, benefit-first, curiosity, and social proof framings. Keep each option under 6 words where possible.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Brand voice rewrite</div><div class="prompt-card-preview">Rewrite the following copy to match our brand voice.
+
+Original copy:
+[paste copy here]
+
+Our brand voice is: [describe — e.g. confident but approachable, expert but never jargon-heavy, warm and witty]
+Audience: [describe]
+
+Keep the core message intact but adjust the tone, word choice, and sentence structure to fit the voice. Show before and after.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Editing</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Simplify complex text</div><div class="prompt-card-preview">Simplify the following text so it's easy to understand for a general audience with no background knowledge on the topic.
+
+[paste text here]
+
+Avoid jargon. Use short sentences. Replace technical terms with plain language. Preserve the original meaning and all key information. Target a reading level of grade 8.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Fix tone and style</div><div class="prompt-card-preview">Edit the following text to improve its tone and style.
+
+Current text:
+[paste text here]
+
+The tone should be: [e.g. more confident, less formal, warmer, more concise]
+Keep the meaning and facts intact. Show the revised version and briefly explain the main changes you made.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Shorten to word count</div><div class="prompt-card-preview">Shorten the following text to approximately [target word count] words without losing the key message or changing the meaning.
+
+[paste text here]
+
+Prioritize cutting: filler phrases, redundant sentences, and over-explanation. Keep the most important points, the clearest examples, and the strongest language.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Proofread and improve</div><div class="prompt-card-preview">Proofread the following text and suggest improvements.
+
+[paste text here]
+
+Check for: spelling and grammar errors, awkward phrasing, unclear sentences, and inconsistent tone. Present the corrected version followed by a brief list of the changes made and why.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Creative</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write a short story opening</div><div class="prompt-card-preview">Write the opening 3 paragraphs of a short story with the following details:
+
+Genre: [e.g. literary fiction, sci-fi, thriller]
+Setting: [describe time and place]
+Main character: [brief description]
+Opening situation or conflict: [describe]
+Mood/tone: [e.g. tense, melancholic, hopeful]
+
+Start in the middle of the action or a vivid moment. Hook the reader immediately. Avoid preamble.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Generate character dialogue</div><div class="prompt-card-preview">Write a dialogue scene between two characters:
+
+Character A: [name, brief description, their goal in this scene]
+Character B: [name, brief description, their goal in this scene]
+Situation: [describe what's happening and where]
+Underlying tension: [what's really at stake or unsaid]
+
+Make the dialogue feel natural and revealing. Each character should have a distinct voice. Show subtext — what they mean vs. what they say.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Create metaphors and analogies</div><div class="prompt-card-preview">Generate 8 original metaphors or analogies to explain the following concept:
+
+Concept: [describe the idea, process, or thing]
+Audience: [who needs to understand it]
+Context: [where it will be used — e.g. a blog post, a speech, a product explainer]
+
+Aim for a mix of styles: some visual, some emotional, some humorous. Avoid cliches. For each, add a one-sentence note on when it works best.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Rewrite in a different style</div><div class="prompt-card-preview">Rewrite the following text in the style of [author name or style description, e.g. Ernest Hemingway, a Victorian novelist, a Gen Z social media post].
+
+Original text:
+[paste text here]
+
+Capture the voice, sentence rhythm, vocabulary, and structural patterns of that style. Keep the core content and meaning. Show only the rewritten version.</div></button>
+
       </section>
 
       <!-- Clean Editor Canvas -->
@@ -294,7 +488,19 @@
       <!-- Open in Providers (11 Models) -->
       <section class="providers-card" aria-labelledby="lbl-providers">
         <span class="lbl-heading" id="lbl-providers">Open in</span>
-        <ul class="providers" id="providers" aria-labelledby="lbl-providers"></ul>
+        <ul class="providers" id="providers" aria-labelledby="lbl-providers">
+  <li><button type="button" class="p-btn pc-chatgpt" aria-label="Open prompt in ChatGPT"><div class="p-left"><span class="dot" style="background:var(--chatgpt)"></span><span>ChatGPT</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-claude" aria-label="Open prompt in Claude"><div class="p-left"><span class="dot" style="background:var(--claude)"></span><span>Claude</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-gemini" aria-label="Open prompt in Gemini"><div class="p-left"><span class="dot" style="background:var(--gemini)"></span><span>Gemini</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-copilot" aria-label="Open prompt in Copilot"><div class="p-left"><span class="dot" style="background:var(--copilot)"></span><span>Copilot</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-perplexity" aria-label="Open prompt in Perplexity"><div class="p-left"><span class="dot" style="background:var(--perplexity)"></span><span>Perplexity</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-deepseek" aria-label="Open prompt in DeepSeek"><div class="p-left"><span class="dot" style="background:var(--deepseek)"></span><span>DeepSeek</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-grok" aria-label="Open prompt in Grok"><div class="p-left"><span class="dot" style="background:var(--grok)"></span><span>Grok</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-lechat" aria-label="Open prompt in Le Chat"><div class="p-left"><span class="dot" style="background:var(--lechat)"></span><span>Le Chat</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-qwen" aria-label="Open prompt in Qwen"><div class="p-left"><span class="dot" style="background:var(--qwen)"></span><span>Qwen</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-kimi" aria-label="Open prompt in Kimi"><div class="p-left"><span class="dot" style="background:var(--kimi)"></span><span>Kimi</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-zai" aria-label="Open prompt in Z.ai"><div class="p-left"><span class="dot" style="background:var(--zai)"></span><span>Z.ai</span></div><span class="p-arrow">&nearr;</span></button></li>
+</ul>
       </section>
 
       <!-- Related Libraries -->
@@ -348,7 +554,7 @@
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <script src="/js/locales.f9476f0a.js"></script>
-<script src="/js/prompt.653cafef.js"></script>
+<script src="/js/prompt.9c395192.js"></script>
 <script>
 (function() {
 'use strict';
@@ -419,7 +625,8 @@ const promptEl = document.getElementById('prompt');
 
 function renderCats() {
   if (!catsEl) return;
-  const cats = ['All', ...WRITING_PROMPTS.map(c => c.cat)];
+  const CURRENT_PROMPTS = (typeof window !== 'undefined' && window.__PROMPTS__) || WRITING_PROMPTS;
+  const cats = ['All', ...CURRENT_PROMPTS.map(c => c.cat)];
   catsEl.innerHTML = '';
   cats.forEach(cat => {
     const btn = document.createElement('button');
@@ -441,7 +648,8 @@ function renderCats() {
 function renderCards() {
   if (!cardsEl) return;
   cardsEl.innerHTML = '';
-  const groups = activeCat === 'All' ? WRITING_PROMPTS : WRITING_PROMPTS.filter(c => c.cat === activeCat);
+  const CURRENT_PROMPTS = (typeof window !== 'undefined' && window.__PROMPTS__) || WRITING_PROMPTS;
+  const groups = activeCat === 'All' ? CURRENT_PROMPTS : CURRENT_PROMPTS.filter(c => c.cat === activeCat);
 
   groups.forEach(group => {
     if (activeCat === 'All') {
@@ -505,7 +713,7 @@ window.__onPromptCleared = function() {
   });
 };
 
-(function(){var n=1,items=[];WRITING_PROMPTS.forEach(function(c){c.prompts.forEach(function(p){items.push({"@type":"ListItem","position":n++,"name":p.title});});});var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ItemList","name":document.title.split('|')[0].split('—')[0].trim(),"numberOfItems":items.length,"itemListElement":items});document.head.appendChild(s);})();
+(function(){var n=1,items=[];((typeof window !== 'undefined' && window.__PROMPTS__) || WRITING_PROMPTS).forEach(function(c){c.prompts.forEach(function(p){items.push({"@type":"ListItem","position":n++,"name":p.title});});});var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ItemList","name":document.title.split('|')[0].split('—')[0].trim(),"numberOfItems":items.length,"itemListElement":items});document.head.appendChild(s);})();
 })();
 </script>
 </body>

@@ -70,7 +70,7 @@
 </noscript>
 
 <link rel="stylesheet" href="/css/core.99f35dd1.css">
-<link rel="stylesheet" href="/css/prompt.d59fb11b.css">
+<link rel="stylesheet" href="/css/prompt.a2f1a0d8.css">
 
   <script>
     (function(){try{localStorage.removeItem('pr_theme');var s=sessionStorage.getItem('pr_theme');var m=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(m?'dark':'light'));if(window.matchMedia){var dm=window.matchMedia('(prefers-color-scheme: dark)');var sc=function(e){try{sessionStorage.removeItem('pr_theme');localStorage.removeItem('pr_theme');}catch(x){}document.documentElement.setAttribute('data-theme',e.matches?'dark':'light');};if(dm.addEventListener){dm.addEventListener('change',sc);}else if(dm.addListener){dm.addListener(sc);}}}catch(e){}})();
@@ -127,7 +127,18 @@
           </span>
           <span class="item-chevron" id="quickChevron" aria-hidden="true">&#9662;</span>
         </button>
-        <div class="item-list" id="quickList"></div>
+        <div class="item-list" id="quickList">
+  <button type="button" class="item-btn" data-tid="t_0"><span class="item-title">Summarize</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_1"><span class="item-title">Explain it</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_2"><span class="item-title">Improve text</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_3"><span class="item-title">Brainstorm</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_4"><span class="item-title">Compare</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_5"><span class="item-title">Write email</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_6"><span class="item-title">Fix my code</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_7"><span class="item-title">Make a plan</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_8"><span class="item-title">Pros &amp; cons</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_9"><span class="item-title">Ask questions</span><span class="p-arrow">&nearr;</span></button>
+</div>
       </div>
 
       <!-- Section: Prompt Libraries -->
@@ -247,13 +258,185 @@
       <!-- Categories -->
       <section aria-labelledby="lbl-cats">
         <span class="lbl-heading" id="lbl-cats">Categories</span>
-        <div class="cats" id="cats" role="group" aria-labelledby="lbl-cats"></div>
+        
+<button type="button" class="cat active" aria-pressed="true">All</button>
+<button type="button" class="cat" aria-pressed="false">Planning</button>
+<button type="button" class="cat" aria-pressed="false">Meetings</button>
+<button type="button" class="cat" aria-pressed="false">Email</button>
+<button type="button" class="cat" aria-pressed="false">Decisions</button>
+<button type="button" class="cat" aria-pressed="false">Communication</button>
+<button type="button" class="cat" aria-pressed="false">Personal</button>
+
       </section>
 
       <!-- Prompts Grid -->
       <section aria-labelledby="lbl-prompts">
         <span class="lbl-heading" id="lbl-prompts">Prompts</span>
-        <div class="prompt-cards" id="prompt-cards"></div>
+        
+<span class="lbl-heading" style="margin-top: 0; display: block;">Planning</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Weekly planning session</div><div class="prompt-card-preview">Help me plan my week. Here are my tasks, deadlines, and commitments:
+
+[list everything on your plate]
+
+Organize these into a day-by-day schedule, flag conflicts, and suggest what to defer. Prioritize by impact.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Break down a big project</div><div class="prompt-card-preview">I have a large project I need to break into manageable pieces:
+
+Project: [describe the project and its goal]
+Deadline: [date]
+Team size: [number of people or solo]
+
+Create a phased breakdown with milestones, dependencies, and estimated time per task.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Priority matrix (urgent/important)</div><div class="prompt-card-preview">Help me build a priority matrix for my current workload. Categorize each item into: Do Now, Schedule, Delegate, or Drop.
+
+My tasks:
+[list your tasks here]
+
+For each, briefly explain the categorization.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Quarterly goal setting</div><div class="prompt-card-preview">Help me set goals for the next quarter. My role is [job title/function] and my main objective is [describe what you are trying to achieve].
+
+Draft 3-5 SMART goals with success metrics, key actions per goal, and a simple way to track progress weekly.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Meetings</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Meeting agenda template</div><div class="prompt-card-preview">Create a structured agenda for this meeting:
+
+Meeting type: [e.g. weekly sync, project kickoff, retrospective]
+Duration: [time]
+Attendees: [roles or names]
+Goal: [what must be decided or accomplished]
+
+Include time boxes for each section and a clear desired outcome.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Summarize meeting notes</div><div class="prompt-card-preview">Summarize these meeting notes into a clean, scannable format with three sections: Key Decisions, Action Items (with owners and due dates), and Open Questions.
+
+Raw notes:
+[paste your notes here]</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write action items from notes</div><div class="prompt-card-preview">Extract all action items from these meeting notes. For each, identify: the task, the owner (if mentioned), and the due date (if mentioned). Format as a numbered list.
+
+Meeting notes:
+[paste notes here]</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Meeting follow-up email</div><div class="prompt-card-preview">Write a concise follow-up email for a meeting that just ended.
+
+Meeting topic: [topic]
+Attendees: [names or roles]
+Key decisions made: [list them]
+Action items: [list with owners]
+Next meeting: [date or TBD]
+
+Keep it brief and professional.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Email</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Draft professional email</div><div class="prompt-card-preview">Write a professional email with the following details:
+
+To: [recipient and their role]
+Context: [background on the situation]
+Main ask or message: [what you need to communicate]
+Tone: [e.g. formal, friendly, direct]
+
+Keep it concise and end with a clear next step.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Respond to difficult email</div><div class="prompt-card-preview">Help me respond to this email in a professional, measured way.
+
+The email I received:
+[paste the email here]
+
+My situation: [add any relevant context]
+Desired outcome: [what I want to happen after sending my reply]
+
+Draft a response that is firm but constructive.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Batch email templates</div><div class="prompt-card-preview">Create [number] reusable email templates for [use case, e.g. client check-ins, project status updates, onboarding new contacts].
+
+Each template should have a subject line, a body with [placeholders] for personalization, and a call to action. Keep them under 150 words each.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Decline request politely</div><div class="prompt-card-preview">Help me write a polite but clear email declining this request:
+
+The request: [describe what was asked]
+Reason I am declining: [brief honest reason]
+Relationship with sender: [colleague, client, manager, etc.]
+
+Suggest an alternative or soften the refusal where appropriate. Keep it short.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Decisions</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Decision framework for choice</div><div class="prompt-card-preview">I need to make a decision between these options:
+
+Option A: [describe]
+Option B: [describe]
+Option C: [describe, or remove if only two]
+
+Context: [what is at stake, constraints, timeline]
+
+Evaluate each option on: impact, effort, risk, and reversibility. Recommend the best option with reasoning.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Pre-mortem analysis</div><div class="prompt-card-preview">Run a pre-mortem on this plan. Assume it is [6 months / 1 year] from now and the plan has failed completely.
+
+The plan: [describe your plan or initiative]
+
+List the most likely reasons it failed, the warning signs I should watch for early on, and changes I should make to the plan right now.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Pros/cons with weighted criteria</div><div class="prompt-card-preview">Help me evaluate this decision using weighted criteria.
+
+Decision: [what I am deciding]
+Options: [list the options]
+Criteria that matter to me (rate importance 1-5): [list criteria, e.g. cost, speed, quality, risk]
+
+Build a weighted scoring table, score each option, and recommend the winner.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Stakeholder impact analysis</div><div class="prompt-card-preview">Analyze the stakeholder impact of this decision or change:
+
+The decision: [describe it]
+Stakeholders involved: [list groups or individuals]
+
+For each stakeholder, identify: how they are affected (positively or negatively), their likely reaction, and what I should communicate or do to manage their response.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Communication</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write project status update</div><div class="prompt-card-preview">Write a project status update for [audience, e.g. leadership, the team, a client].
+
+Project: [name and one-line description]
+Status: [on track / at risk / delayed]
+Accomplished this period: [list]
+Planned next period: [list]
+Blockers or risks: [list, or none]
+
+Keep it to one page. Be direct about risks.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Explain technical concept to non-technical audience</div><div class="prompt-card-preview">Explain [technical concept or term] to someone who has no technical background. Use a simple analogy, avoid jargon, and keep it under 150 words. The audience is [describe them, e.g. executives, clients, HR team].</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Feedback for team member</div><div class="prompt-card-preview">Help me write clear, constructive feedback for a team member.
+
+Situation: [what happened and when]
+Impact: [how it affected the team, project, or outcome]
+Behavior to address: [be specific, not personal]
+Desired change: [what you want them to do differently]
+
+Frame it using the SBI model (Situation, Behavior, Impact) and keep the tone supportive.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Escalation email</div><div class="prompt-card-preview">Write an escalation email for a situation that is blocked or at risk.
+
+Issue: [describe the problem clearly]
+Impact if unresolved: [timeline, business risk, or cost]
+What has already been tried: [actions taken so far]
+What I need: [decision, resource, or unblocking action]
+Recipient: [their role and relationship to the issue]
+
+Be direct and solution-oriented, not accusatory.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Personal</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Morning routine optimization</div><div class="prompt-card-preview">Help me design an effective morning routine. Here is my current situation:
+
+Wake time: [time]
+Available time before work: [duration]
+Current routine: [describe it or say none]
+Goals I want to support: [e.g. focus, fitness, calm, learning]
+Constraints: [e.g. kids, commute, limited space]
+
+Design a realistic routine with time blocks and explain the purpose of each element.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Habit tracker design</div><div class="prompt-card-preview">Help me design a habit tracker for these habits I want to build:
+
+Habits: [list them]
+Tracking period: [daily / weekly]
+Preferred format: [simple checklist, spreadsheet columns, journal prompt, etc.]
+
+For each habit, suggest a trigger, a minimum viable version for bad days, and a metric to measure progress.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Weekly review template</div><div class="prompt-card-preview">Create a weekly review template I can use every [day of week] to reflect and plan.
+
+My main areas of focus: [e.g. work projects, health, relationships, learning]
+Time I have for the review: [duration]
+
+Include reflection questions, a section to capture wins and lessons, and a planning section for the coming week. Keep it practical and fast to complete.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Learning plan for new skill</div><div class="prompt-card-preview">Create a structured learning plan for [skill I want to learn].
+
+My current level: [complete beginner / some exposure / intermediate]
+Time I can dedicate: [hours per week]
+Deadline or target date: [date or flexible]
+Preferred learning style: [videos, reading, hands-on projects, courses, etc.]
+
+Break the plan into phases with specific resources, milestones, and a way to test my progress at each stage.</div></button>
+
       </section>
 
       <!-- Clean Editor Canvas -->
@@ -294,7 +477,19 @@
       <!-- Open in Providers (11 Models) -->
       <section class="providers-card" aria-labelledby="lbl-providers">
         <span class="lbl-heading" id="lbl-providers">Open in</span>
-        <ul class="providers" id="providers" aria-labelledby="lbl-providers"></ul>
+        <ul class="providers" id="providers" aria-labelledby="lbl-providers">
+  <li><button type="button" class="p-btn pc-chatgpt" aria-label="Open prompt in ChatGPT"><div class="p-left"><span class="dot" style="background:var(--chatgpt)"></span><span>ChatGPT</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-claude" aria-label="Open prompt in Claude"><div class="p-left"><span class="dot" style="background:var(--claude)"></span><span>Claude</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-gemini" aria-label="Open prompt in Gemini"><div class="p-left"><span class="dot" style="background:var(--gemini)"></span><span>Gemini</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-copilot" aria-label="Open prompt in Copilot"><div class="p-left"><span class="dot" style="background:var(--copilot)"></span><span>Copilot</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-perplexity" aria-label="Open prompt in Perplexity"><div class="p-left"><span class="dot" style="background:var(--perplexity)"></span><span>Perplexity</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-deepseek" aria-label="Open prompt in DeepSeek"><div class="p-left"><span class="dot" style="background:var(--deepseek)"></span><span>DeepSeek</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-grok" aria-label="Open prompt in Grok"><div class="p-left"><span class="dot" style="background:var(--grok)"></span><span>Grok</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-lechat" aria-label="Open prompt in Le Chat"><div class="p-left"><span class="dot" style="background:var(--lechat)"></span><span>Le Chat</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-qwen" aria-label="Open prompt in Qwen"><div class="p-left"><span class="dot" style="background:var(--qwen)"></span><span>Qwen</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-kimi" aria-label="Open prompt in Kimi"><div class="p-left"><span class="dot" style="background:var(--kimi)"></span><span>Kimi</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-zai" aria-label="Open prompt in Z.ai"><div class="p-left"><span class="dot" style="background:var(--zai)"></span><span>Z.ai</span></div><span class="p-arrow">&nearr;</span></button></li>
+</ul>
       </section>
 
       <!-- Related Libraries -->
@@ -348,7 +543,7 @@
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <script src="/js/locales.f9476f0a.js"></script>
-<script src="/js/prompt.653cafef.js"></script>
+<script src="/js/prompt.9c395192.js"></script>
 <script>
 (function() {
 'use strict';
@@ -419,7 +614,8 @@ const promptEl = document.getElementById('prompt');
 
 function renderCats() {
   if (!catsEl) return;
-  const cats = ['All', ...DEV_PROMPTS.map(c => c.cat)];
+  const CURRENT_PROMPTS = (typeof window !== 'undefined' && window.__PROMPTS__) || DEV_PROMPTS;
+  const cats = ['All', ...CURRENT_PROMPTS.map(c => c.cat)];
   catsEl.innerHTML = '';
   cats.forEach(cat => {
     const btn = document.createElement('button');
@@ -441,7 +637,8 @@ function renderCats() {
 function renderCards() {
   if (!cardsEl) return;
   cardsEl.innerHTML = '';
-  const groups = activeCat === 'All' ? DEV_PROMPTS : DEV_PROMPTS.filter(c => c.cat === activeCat);
+  const CURRENT_PROMPTS = (typeof window !== 'undefined' && window.__PROMPTS__) || DEV_PROMPTS;
+  const groups = activeCat === 'All' ? CURRENT_PROMPTS : CURRENT_PROMPTS.filter(c => c.cat === activeCat);
 
   groups.forEach(group => {
     if (activeCat === 'All') {
@@ -505,7 +702,7 @@ window.__onPromptCleared = function() {
   });
 };
 
-(function(){var n=1,items=[];DEV_PROMPTS.forEach(function(c){c.prompts.forEach(function(p){items.push({"@type":"ListItem","position":n++,"name":p.title});});});var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ItemList","name":document.title.split('|')[0].split('—')[0].trim(),"numberOfItems":items.length,"itemListElement":items});document.head.appendChild(s);})();
+(function(){var n=1,items=[];((typeof window !== 'undefined' && window.__PROMPTS__) || DEV_PROMPTS).forEach(function(c){c.prompts.forEach(function(p){items.push({"@type":"ListItem","position":n++,"name":p.title});});});var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ItemList","name":document.title.split('|')[0].split('—')[0].trim(),"numberOfItems":items.length,"itemListElement":items});document.head.appendChild(s);})();
 })();
 </script>
 </body>

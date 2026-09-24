@@ -70,7 +70,7 @@
 </noscript>
 
 <link rel="stylesheet" href="/css/core.99f35dd1.css">
-<link rel="stylesheet" href="/css/prompt.d59fb11b.css">
+<link rel="stylesheet" href="/css/prompt.a2f1a0d8.css">
 
   <script>
     (function(){try{localStorage.removeItem('pr_theme');var s=sessionStorage.getItem('pr_theme');var m=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(m?'dark':'light'));if(window.matchMedia){var dm=window.matchMedia('(prefers-color-scheme: dark)');var sc=function(e){try{sessionStorage.removeItem('pr_theme');localStorage.removeItem('pr_theme');}catch(x){}document.documentElement.setAttribute('data-theme',e.matches?'dark':'light');};if(dm.addEventListener){dm.addEventListener('change',sc);}else if(dm.addListener){dm.addListener(sc);}}}catch(e){}})();
@@ -127,7 +127,18 @@
           </span>
           <span class="item-chevron" id="quickChevron" aria-hidden="true">&#9662;</span>
         </button>
-        <div class="item-list" id="quickList"></div>
+        <div class="item-list" id="quickList">
+  <button type="button" class="item-btn" data-tid="t_0"><span class="item-title">Summarize</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_1"><span class="item-title">Explain it</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_2"><span class="item-title">Improve text</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_3"><span class="item-title">Brainstorm</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_4"><span class="item-title">Compare</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_5"><span class="item-title">Write email</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_6"><span class="item-title">Fix my code</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_7"><span class="item-title">Make a plan</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_8"><span class="item-title">Pros &amp; cons</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_9"><span class="item-title">Ask questions</span><span class="p-arrow">&nearr;</span></button>
+</div>
       </div>
 
       <!-- Section: Prompt Libraries -->
@@ -247,13 +258,220 @@
       <!-- Categories -->
       <section aria-labelledby="lbl-cats">
         <span class="lbl-heading" id="lbl-cats">Categories</span>
-        <div class="cats" id="cats" role="group" aria-labelledby="lbl-cats"></div>
+        
+<button type="button" class="cat active" aria-pressed="true">All</button>
+<button type="button" class="cat" aria-pressed="false">Studying</button>
+<button type="button" class="cat" aria-pressed="false">Writing Essays</button>
+<button type="button" class="cat" aria-pressed="false">Research</button>
+<button type="button" class="cat" aria-pressed="false">Math &amp; Science</button>
+<button type="button" class="cat" aria-pressed="false">Languages</button>
+<button type="button" class="cat" aria-pressed="false">Exam Prep</button>
+
       </section>
 
       <!-- Prompts Grid -->
       <section aria-labelledby="lbl-prompts">
         <span class="lbl-heading" id="lbl-prompts">Prompts</span>
-        <div class="prompt-cards" id="prompt-cards"></div>
+        
+<span class="lbl-heading" style="margin-top: 0; display: block;">Studying</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Create study guide for topic</div><div class="prompt-card-preview">Create a comprehensive study guide for [topic].
+
+Include:
+- Key concepts and definitions
+- Important dates, formulas, or names to memorize
+- Common misconceptions to watch out for
+- A quick summary I can review before an exam
+
+Level: [beginner / intermediate / advanced]</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Explain concept with analogies</div><div class="prompt-card-preview">Explain [concept] to me using clear, everyday analogies.
+
+I'm a [year/level] student studying [subject]. I understand [related concept] but I'm struggling with this one.
+
+Use at least two different analogies and check my understanding at the end with a quick question.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Generate flashcard Q&amp;As</div><div class="prompt-card-preview">Generate 10 flashcard question-and-answer pairs for the following topic:
+
+[topic or paste notes here]
+
+Format each card as:
+Q: [question]
+A: [concise answer]
+
+Mix factual recall, conceptual understanding, and application questions.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Summarize textbook chapter</div><div class="prompt-card-preview">Summarize the following textbook chapter into clear, concise notes.
+
+[paste chapter text here]
+
+Organize the summary with:
+- Main idea (1–2 sentences)
+- Key points (bullet list)
+- Terms to know (with definitions)
+- Things likely to appear on an exam</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Writing Essays</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Essay outline generator</div><div class="prompt-card-preview">Generate a detailed essay outline for the following prompt:
+
+[essay prompt]
+
+Course: [course name]
+Word count target: [e.g. 1500 words]
+Argument style: [persuasive / analytical / compare &amp; contrast / expository]
+
+Include a thesis statement, topic sentences for each body paragraph, and supporting points.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Thesis statement workshop</div><div class="prompt-card-preview">Help me craft a strong thesis statement for my essay.
+
+Topic: [topic]
+My initial idea or argument: [describe your rough idea]
+Assignment type: [argumentative / analytical / research]
+
+Provide three different thesis statement options ranging from safe to bold, with a brief note on the strength of each.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Strengthen my argument</div><div class="prompt-card-preview">Review this paragraph from my essay and help me strengthen the argument.
+
+[paste paragraph here]
+
+Specifically:
+1. Is the claim clear and defensible?
+2. Is the evidence well-integrated?
+3. Does the analysis explain the 'so what'?
+
+Rewrite the paragraph with your improvements and explain each change.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write introduction paragraph</div><div class="prompt-card-preview">Write an engaging introduction paragraph for my essay.
+
+Topic: [topic]
+Thesis: [your thesis statement]
+Audience: [e.g. professor, general reader]
+Tone: [academic / semi-formal]
+
+Start with a hook, provide brief context, and end with the thesis. Then give me one alternative opening hook.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Research</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Research question refinement</div><div class="prompt-card-preview">Help me refine my research question.
+
+Current question: [your draft question]
+Subject area: [field of study]
+Scope: [e.g. undergraduate paper, 3000 words, one semester]
+
+Is it too broad, too narrow, or well-scoped? Suggest three refined versions and explain why each is stronger.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Literature review summary</div><div class="prompt-card-preview">Summarize the key themes and debates in the literature on [topic].
+
+Context: I'm writing a [type of paper] for [course/level].
+
+Cover:
+- Major schools of thought or theoretical frameworks
+- Key agreements and disagreements in the field
+- Gaps in the existing research
+- Suggested search terms for finding more sources</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Find gaps in research</div><div class="prompt-card-preview">I'm researching [topic]. Based on the following sources and notes, help me identify gaps in the existing research that my paper could address:
+
+[paste notes or source summaries here]
+
+What angles are underexplored? What questions remain unanswered? What would make a novel contribution?</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Annotated bibliography entry</div><div class="prompt-card-preview">Write an annotated bibliography entry for the following source.
+
+Citation: [full citation]
+Source summary: [paste abstract or key points]
+Citation style: [APA / MLA / Chicago]
+
+The annotation should include: a brief summary (2–3 sentences), an assessment of credibility and relevance, and how I might use this source in my paper.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Math &amp; Science</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Explain math concept step by step</div><div class="prompt-card-preview">Explain [math concept] step by step as if I've never seen it before.
+
+My current level: [e.g. high school algebra, first-year calculus]
+Where I'm getting stuck: [describe the sticking point]
+
+Walk through the concept with a worked example, then give me a slightly harder example to try myself. Show me the solution after.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Practice problem generator</div><div class="prompt-card-preview">Generate 5 practice problems for [topic/concept].
+
+Difficulty: [easy / medium / hard]
+My level: [e.g. AP Chemistry, university physics]
+
+Present the problems first without solutions. Then, after a separator line, provide full step-by-step solutions for each.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Lab report structure</div><div class="prompt-card-preview">Help me structure a lab report for the following experiment.
+
+Experiment: [describe what you did]
+Subject: [e.g. Biology, Chemistry, Physics]
+Institution level: [high school / undergraduate]
+
+Provide the standard sections (Title, Abstract, Introduction, Methods, Results, Discussion, Conclusion) with bullet points on what to include in each, and common mistakes to avoid.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Scientific method walkthrough</div><div class="prompt-card-preview">Walk me through applying the scientific method to the following question:
+
+Research question: [your question]
+Subject area: [biology / chemistry / physics / other]
+
+For each step — observation, hypothesis, experiment design, data collection, analysis, and conclusion — explain what I should do and why. Flag any ethical considerations if relevant.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Languages</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Grammar explanation with examples</div><div class="prompt-card-preview">Explain the following grammar rule in [language] clearly and concisely.
+
+Grammar point: [e.g. subjunctive mood, passive voice, particle usage]
+My level: [A1 / A2 / B1 / B2 / C1]
+
+Provide:
+- A plain-language explanation of the rule
+- 5 example sentences with translations
+- The most common mistakes learners make
+- A quick practice exercise</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Vocabulary in context</div><div class="prompt-card-preview">Help me learn the following [language] vocabulary in context.
+
+Words: [list words here]
+
+For each word provide:
+- Definition in English
+- Example sentence in [language] with translation
+- A note on register (formal / informal / slang)
+- A common collocation or phrase it appears in
+
+Then create a short paragraph that uses all the words naturally.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Translation with nuance notes</div><div class="prompt-card-preview">Translate the following text from [source language] to [target language].
+
+[paste text here]
+
+After the translation, add nuance notes explaining:
+- Any words or phrases that don't translate directly
+- Cultural references that may need context
+- Alternative translations where the meaning is ambiguous
+- Register or tone differences between the original and translation</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Conversation practice dialogue</div><div class="prompt-card-preview">Write a realistic practice dialogue in [language] for the following scenario:
+
+Scenario: [e.g. ordering food at a restaurant, asking for directions, a job interview]
+My level: [A1 / A2 / B1 / B2 / C1]
+
+Include:
+- The full dialogue between two speakers
+- An English translation below each line
+- Vocabulary notes for key words and phrases
+- Two follow-up questions I could use to extend the conversation</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Exam Prep</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Practice exam questions</div><div class="prompt-card-preview">Generate 10 practice exam questions for [subject/topic].
+
+Exam format: [multiple choice / short answer / essay / mixed]
+Level: [e.g. GCSE, A-level, first-year university]
+Topics to focus on: [list key topics]
+
+After the questions, provide an answer key with brief explanations for each correct answer.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Explain wrong answer</div><div class="prompt-card-preview">I got this exam question wrong. Help me understand why.
+
+Question: [paste question]
+My answer: [what you wrote or chose]
+Correct answer: [the right answer]
+
+Explain:
+1. Why my answer is incorrect
+2. Why the correct answer is right
+3. The underlying concept I need to understand
+4. A similar practice question to test my understanding now</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Memory techniques for topic</div><div class="prompt-card-preview">Give me effective memory techniques to remember [topic/information].
+
+Content to memorize: [paste content, list, or concept]
+Exam date: [how far away]
+Learning style preference: [visual / verbal / pattern-based / doesn't matter]
+
+Provide at least three different techniques (e.g. mnemonics, method of loci, chunking) with specific examples applied to this content.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Last-minute review checklist</div><div class="prompt-card-preview">Create a last-minute review checklist for my upcoming exam.
+
+Subject: [subject]
+Exam is in: [e.g. 24 hours, 3 days]
+Topics covered: [list main topics]
+Format: [multiple choice / essay / problem-solving]
+
+Prioritize what to review first, flag the highest-yield concepts, and include a short list of common mistakes to avoid going into the exam.</div></button>
+
       </section>
 
       <!-- Clean Editor Canvas -->
@@ -294,7 +512,19 @@
       <!-- Open in Providers (11 Models) -->
       <section class="providers-card" aria-labelledby="lbl-providers">
         <span class="lbl-heading" id="lbl-providers">Open in</span>
-        <ul class="providers" id="providers" aria-labelledby="lbl-providers"></ul>
+        <ul class="providers" id="providers" aria-labelledby="lbl-providers">
+  <li><button type="button" class="p-btn pc-chatgpt" aria-label="Open prompt in ChatGPT"><div class="p-left"><span class="dot" style="background:var(--chatgpt)"></span><span>ChatGPT</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-claude" aria-label="Open prompt in Claude"><div class="p-left"><span class="dot" style="background:var(--claude)"></span><span>Claude</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-gemini" aria-label="Open prompt in Gemini"><div class="p-left"><span class="dot" style="background:var(--gemini)"></span><span>Gemini</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-copilot" aria-label="Open prompt in Copilot"><div class="p-left"><span class="dot" style="background:var(--copilot)"></span><span>Copilot</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-perplexity" aria-label="Open prompt in Perplexity"><div class="p-left"><span class="dot" style="background:var(--perplexity)"></span><span>Perplexity</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-deepseek" aria-label="Open prompt in DeepSeek"><div class="p-left"><span class="dot" style="background:var(--deepseek)"></span><span>DeepSeek</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-grok" aria-label="Open prompt in Grok"><div class="p-left"><span class="dot" style="background:var(--grok)"></span><span>Grok</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-lechat" aria-label="Open prompt in Le Chat"><div class="p-left"><span class="dot" style="background:var(--lechat)"></span><span>Le Chat</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-qwen" aria-label="Open prompt in Qwen"><div class="p-left"><span class="dot" style="background:var(--qwen)"></span><span>Qwen</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-kimi" aria-label="Open prompt in Kimi"><div class="p-left"><span class="dot" style="background:var(--kimi)"></span><span>Kimi</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-zai" aria-label="Open prompt in Z.ai"><div class="p-left"><span class="dot" style="background:var(--zai)"></span><span>Z.ai</span></div><span class="p-arrow">&nearr;</span></button></li>
+</ul>
       </section>
 
       <!-- Related Libraries -->
@@ -348,7 +578,7 @@
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <script src="/js/locales.f9476f0a.js"></script>
-<script src="/js/prompt.653cafef.js"></script>
+<script src="/js/prompt.9c395192.js"></script>
 <script>
 (function() {
 'use strict';
@@ -419,7 +649,8 @@ const promptEl = document.getElementById('prompt');
 
 function renderCats() {
   if (!catsEl) return;
-  const cats = ['All', ...DEV_PROMPTS.map(c => c.cat)];
+  const CURRENT_PROMPTS = (typeof window !== 'undefined' && window.__PROMPTS__) || DEV_PROMPTS;
+  const cats = ['All', ...CURRENT_PROMPTS.map(c => c.cat)];
   catsEl.innerHTML = '';
   cats.forEach(cat => {
     const btn = document.createElement('button');
@@ -441,7 +672,8 @@ function renderCats() {
 function renderCards() {
   if (!cardsEl) return;
   cardsEl.innerHTML = '';
-  const groups = activeCat === 'All' ? DEV_PROMPTS : DEV_PROMPTS.filter(c => c.cat === activeCat);
+  const CURRENT_PROMPTS = (typeof window !== 'undefined' && window.__PROMPTS__) || DEV_PROMPTS;
+  const groups = activeCat === 'All' ? CURRENT_PROMPTS : CURRENT_PROMPTS.filter(c => c.cat === activeCat);
 
   groups.forEach(group => {
     if (activeCat === 'All') {
@@ -505,7 +737,7 @@ window.__onPromptCleared = function() {
   });
 };
 
-(function(){var n=1,items=[];DEV_PROMPTS.forEach(function(c){c.prompts.forEach(function(p){items.push({"@type":"ListItem","position":n++,"name":p.title});});});var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ItemList","name":document.title.split('|')[0].split('—')[0].trim(),"numberOfItems":items.length,"itemListElement":items});document.head.appendChild(s);})();
+(function(){var n=1,items=[];((typeof window !== 'undefined' && window.__PROMPTS__) || DEV_PROMPTS).forEach(function(c){c.prompts.forEach(function(p){items.push({"@type":"ListItem","position":n++,"name":p.title});});});var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ItemList","name":document.title.split('|')[0].split('—')[0].trim(),"numberOfItems":items.length,"itemListElement":items});document.head.appendChild(s);})();
 })();
 </script>
 </body>

@@ -70,7 +70,7 @@
 </noscript>
 
 <link rel="stylesheet" href="/css/core.99f35dd1.css">
-<link rel="stylesheet" href="/css/prompt.d59fb11b.css">
+<link rel="stylesheet" href="/css/prompt.a2f1a0d8.css">
 
   <script>
     (function(){try{localStorage.removeItem('pr_theme');var s=sessionStorage.getItem('pr_theme');var m=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(m?'dark':'light'));if(window.matchMedia){var dm=window.matchMedia('(prefers-color-scheme: dark)');var sc=function(e){try{sessionStorage.removeItem('pr_theme');localStorage.removeItem('pr_theme');}catch(x){}document.documentElement.setAttribute('data-theme',e.matches?'dark':'light');};if(dm.addEventListener){dm.addEventListener('change',sc);}else if(dm.addListener){dm.addListener(sc);}}}catch(e){}})();
@@ -127,7 +127,18 @@
           </span>
           <span class="item-chevron" id="quickChevron" aria-hidden="true">&#9662;</span>
         </button>
-        <div class="item-list" id="quickList"></div>
+        <div class="item-list" id="quickList">
+  <button type="button" class="item-btn" data-tid="t_0"><span class="item-title">Summarize</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_1"><span class="item-title">Explain it</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_2"><span class="item-title">Improve text</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_3"><span class="item-title">Brainstorm</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_4"><span class="item-title">Compare</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_5"><span class="item-title">Write email</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_6"><span class="item-title">Fix my code</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_7"><span class="item-title">Make a plan</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_8"><span class="item-title">Pros &amp; cons</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_9"><span class="item-title">Ask questions</span><span class="p-arrow">&nearr;</span></button>
+</div>
       </div>
 
       <!-- Section: Prompt Libraries -->
@@ -247,13 +258,229 @@
       <!-- Categories -->
       <section aria-labelledby="lbl-cats">
         <span class="lbl-heading" id="lbl-cats">Categories</span>
-        <div class="cats" id="cats" role="group" aria-labelledby="lbl-cats"></div>
+        
+<button type="button" class="cat active" aria-pressed="true">All</button>
+<button type="button" class="cat" aria-pressed="false">SQL</button>
+<button type="button" class="cat" aria-pressed="false">Analysis</button>
+<button type="button" class="cat" aria-pressed="false">Visualization</button>
+<button type="button" class="cat" aria-pressed="false">Cleaning</button>
+<button type="button" class="cat" aria-pressed="false">Python &amp; R</button>
+<button type="button" class="cat" aria-pressed="false">Reporting</button>
+
       </section>
 
       <!-- Prompts Grid -->
       <section aria-labelledby="lbl-prompts">
         <span class="lbl-heading" id="lbl-prompts">Prompts</span>
-        <div class="prompt-cards" id="prompt-cards"></div>
+        
+<span class="lbl-heading" style="margin-top: 0; display: block;">SQL</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write SQL query</div><div class="prompt-card-preview">Write a SQL query for the following task:
+
+Task: [describe what you need, e.g. find all users who signed up in the last 30 days and made at least one purchase]
+
+Relevant tables and columns:
+
+[describe your schema or paste CREATE TABLE statements]
+
+Database: [e.g. PostgreSQL, MySQL, BigQuery]
+
+Return the query with comments explaining each key step.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Optimize slow query</div><div class="prompt-card-preview">This SQL query is running slowly. Help me optimize it.
+
+Query:
+
+[paste query here]
+
+Database: [e.g. PostgreSQL, MySQL]
+Table sizes: [e.g. orders has 50M rows, users has 2M rows]
+Existing indexes: [list them or paste EXPLAIN output]
+
+Identify the bottlenecks, suggest index changes, and rewrite the query if needed. Explain each optimization.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Explain complex query</div><div class="prompt-card-preview">Explain this SQL query in plain English. Walk through it step by step — what each clause does, what data it produces, and what the final result represents:
+
+[paste query here]</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Database schema design</div><div class="prompt-card-preview">Design a database schema for the following use case:
+
+Use case: [describe your application or feature, e.g. a multi-tenant SaaS with projects, tasks, and user roles]
+
+Database: [e.g. PostgreSQL]
+
+Include: table names, columns with types and constraints, primary/foreign keys, indexes, and an explanation of your design decisions and any trade-offs.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Analysis</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Exploratory data analysis plan</div><div class="prompt-card-preview">I have a dataset and want to perform exploratory data analysis. Create a step-by-step EDA plan.
+
+Dataset description: [describe columns, data types, approximate size, and domain, e.g. e-commerce orders with customer ID, product, price, date]
+
+Business question I am trying to answer: [describe it]
+
+Include: data quality checks, univariate analysis, relationships to explore, visualizations to create, and potential red flags to watch for.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Statistical significance test</div><div class="prompt-card-preview">Help me choose and interpret the right statistical test for my analysis.
+
+What I am comparing: [e.g. conversion rates between two user groups]
+Data type: [e.g. binary outcomes, continuous measurements]
+Sample sizes: [e.g. Group A: 1,200, Group B: 1,400]
+Current results: [e.g. Group A: 4.2%, Group B: 5.1%]
+
+Recommend the appropriate test, state the assumptions, show the calculation or code, and explain how to interpret the p-value and confidence interval in plain language.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Cohort analysis</div><div class="prompt-card-preview">Help me design and interpret a cohort analysis.
+
+Goal: [e.g. measure 30/60/90-day retention by signup month]
+Available data: [describe tables and columns, e.g. users table with signup_date, events table with user_id and event_date]
+Database / tool: [e.g. BigQuery, pandas]
+
+Write the query or code to build the cohort table, explain how to read the output, and flag any interpretation pitfalls.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Trend interpretation</div><div class="prompt-card-preview">I am seeing a trend in my data and need help interpreting it.
+
+Metric: [e.g. weekly active users]
+What I observe: [e.g. 15% decline over the past 6 weeks after steady growth]
+Context: [any known events, product changes, seasonality, or external factors]
+
+Help me: identify likely causes, rule out data artifacts, suggest additional analyses to confirm the root cause, and recommend next steps.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Visualization</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Chart type recommendation</div><div class="prompt-card-preview">Recommend the best chart type for my use case and explain why.
+
+What I want to show: [e.g. how revenue breaks down by product category and changes month over month]
+Audience: [e.g. executive team in a quarterly business review]
+Data shape: [e.g. 12 months x 6 categories, values range from <div class="prompt-cards" id="prompt-cards">0K to </div>M]
+Tool: [e.g. Tableau, matplotlib, Looker Studio]
+
+Suggest 2-3 options, rank them, and explain the trade-offs.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Dashboard layout design</div><div class="prompt-card-preview">Help me design an effective dashboard layout.
+
+Purpose: [e.g. daily operations monitoring for a support team]
+Key metrics to show: [list them, e.g. open tickets, resolution time, CSAT score, ticket volume by channel]
+Audience and how they use it: [e.g. team leads check it at the start of each shift]
+Tool: [e.g. Metabase, Tableau, Grafana]
+
+Propose a layout with sections, chart types for each metric, and UX best practices for at-a-glance readability.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Data storytelling narrative</div><div class="prompt-card-preview">Help me turn this data into a clear narrative for a presentation.
+
+Key findings: [list 3-5 main insights from your analysis]
+Audience: [e.g. non-technical stakeholders, C-suite]
+Goal of the presentation: [e.g. get approval to invest in retention improvements]
+
+Write a narrative arc that leads with the most important insight, supports it with data points, and ends with a clear recommendation. Keep it concise and free of jargon.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Annotate a chart</div><div class="prompt-card-preview">Help me write annotations for this chart to make it self-explanatory.
+
+Chart type: [e.g. line chart]
+What it shows: [e.g. monthly revenue for the past 2 years]
+Key moments to call out: [e.g. product launch in March, pricing change in August, a dip in December]
+Audience: [e.g. investors in a pitch deck]
+
+Write 3-5 short, punchy annotation labels and a one-sentence chart title and subtitle.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Cleaning</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Data cleaning checklist</div><div class="prompt-card-preview">Generate a comprehensive data cleaning checklist for my dataset.
+
+Dataset description: [describe columns, data types, source, and domain]
+Known issues: [list any problems you already see, e.g. duplicate rows, inconsistent date formats, missing values in key columns]
+Downstream use: [e.g. feeding a machine learning model, building a dashboard]
+
+Organize the checklist by priority and include the specific checks to run and how to fix each issue.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Handle missing values strategy</div><div class="prompt-card-preview">Help me decide how to handle missing values in my dataset.
+
+Column with missing values: [column name and what it represents]
+Percentage missing: [e.g. 18%]
+Data type: [e.g. numeric, categorical, datetime]
+How the column is used downstream: [e.g. it is a feature in a regression model]
+
+Compare the options (drop rows, impute with mean/median/mode, model-based imputation, flag as a separate category) and recommend the best approach with reasoning.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Detect outliers</div><div class="prompt-card-preview">Help me detect and handle outliers in my dataset.
+
+Column: [column name and what it represents]
+Data type: [numeric / datetime]
+Sample statistics: [e.g. min: 0, max: 99,000, mean: 450, median: 380, std: 1,200]
+Context: [e.g. this is order value in USD; very high values could be legitimate bulk orders or data errors]
+
+Suggest appropriate detection methods (IQR, z-score, isolation forest, etc.), provide code in [Python/SQL], and advise on how to treat confirmed outliers.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Standardize messy data</div><div class="prompt-card-preview">Help me standardize inconsistent values in this column.
+
+Column name: [e.g. country]
+Sample of messy values: [e.g. 'USA', 'United States', 'US', 'u.s.a', 'America']
+Desired output format: [e.g. ISO 3166-1 alpha-2 country codes]
+Tool: [e.g. Python pandas, SQL, dbt]
+
+Write the code to map and standardize these values, handle edge cases, and flag any values that cannot be mapped automatically.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Python &amp; R</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write pandas data pipeline</div><div class="prompt-card-preview">Write a pandas data pipeline for the following task.
+
+Input: [describe the data source, e.g. a CSV file with columns: user_id, event_type, timestamp, revenue]
+Transformations needed:
+1. [e.g. filter to purchase events only]
+2. [e.g. aggregate revenue by user per month]
+3. [e.g. calculate month-over-month growth rate]
+Output: [describe desired result, e.g. a DataFrame with one row per user per month]
+
+Write clean, readable code with comments. Use method chaining where it improves clarity.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Create matplotlib/seaborn visualization</div><div class="prompt-card-preview">Write Python code to create the following visualization.
+
+Chart type: [e.g. heatmap, grouped bar chart, time series with confidence interval]
+Data: [describe the DataFrame structure, e.g. df has columns: month, category, value]
+Style requirements: [e.g. dark background, colorblind-friendly palette, no chart borders]
+Output: [e.g. save as PNG at 300 DPI]
+
+Use matplotlib and/or seaborn. Add proper title, axis labels, and legend. Make it publication-ready.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Feature engineering ideas</div><div class="prompt-card-preview">Suggest feature engineering ideas for my machine learning dataset.
+
+Prediction target: [e.g. whether a user will churn in the next 30 days]
+Available raw features: [list them with types, e.g. signup_date (date), last_login (date), num_sessions (int), plan_type (categorical)]
+Data granularity: [e.g. one row per user]
+
+Suggest 10-15 derived features, explain the intuition behind each, and provide pandas code to create them.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write data validation script</div><div class="prompt-card-preview">Write a Python data validation script for my dataset.
+
+Dataset: [describe columns, types, and source]
+Validation rules to enforce:
+1. [e.g. user_id must be non-null and unique]
+2. [e.g. event_date must be between 2020-01-01 and today]
+3. [e.g. revenue must be &gt;= 0]
+4. [e.g. status must be one of: active, inactive, pending]
+
+The script should print a summary of violations, not just raise on the first error. Use pandas or Great Expectations.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Reporting</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Executive summary from data</div><div class="prompt-card-preview">Write an executive summary based on the following data findings.
+
+Context: [e.g. Q1 2026 performance review for a SaaS product]
+Key metrics:
+- [metric 1]: [value and change vs prior period]
+- [metric 2]: [value and change]
+- [metric 3]: [value and change]
+Notable events: [e.g. launched feature X in February, lost a major account in March]
+
+Write a 150-200 word executive summary. Lead with the most important insight, be direct about problems, and end with the top 2-3 priorities for next quarter.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Weekly metrics report</div><div class="prompt-card-preview">Write a concise weekly metrics report for the following numbers.
+
+Team / product: [e.g. Growth team, mobile app]
+Week: [e.g. week of March 17, 2026]
+Metrics this week:
+- [metric]: [value] vs [last week value]
+- [metric]: [value] vs [last week value]
+Highlights: [any wins or notable events]
+Concerns: [any drops or issues]
+
+Format it as a short Slack or email update: 3-5 bullet points, plain language, no jargon. Flag items that need attention.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">A/B test results writeup</div><div class="prompt-card-preview">Write a clear summary of my A/B test results for a non-technical audience.
+
+Test name: [e.g. New checkout flow]
+Hypothesis: [e.g. Simplifying the checkout to 2 steps will increase conversion]
+Control vs variant: [describe the change]
+Results:
+- Primary metric: [e.g. conversion rate] — Control: [X%], Variant: [Y%], relative lift: [Z%]
+- Statistical significance: [e.g. p=0.03, 95% CI: +1.2% to +4.8%]
+- Secondary metrics: [any guardrail metrics and their results]
+Test duration: [e.g. 14 days, 25,000 users per group]
+
+Explain what the results mean, whether to ship the change, and any caveats.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Data dictionary documentation</div><div class="prompt-card-preview">Write a data dictionary for the following table or dataset.
+
+Table name: [e.g. orders]
+Columns:
+- [column_name]: [data type, e.g. INT] — [brief description of what it contains]
+- [column_name]: [data type] — [description]
+- [add more as needed]
+Audience: [e.g. new data analysts joining the team]
+
+For each column include: name, data type, description, example values, whether it can be null, and any known quirks or gotchas. Format it as a clean markdown table.</div></button>
+
       </section>
 
       <!-- Clean Editor Canvas -->
@@ -294,7 +521,19 @@
       <!-- Open in Providers (11 Models) -->
       <section class="providers-card" aria-labelledby="lbl-providers">
         <span class="lbl-heading" id="lbl-providers">Open in</span>
-        <ul class="providers" id="providers" aria-labelledby="lbl-providers"></ul>
+        <ul class="providers" id="providers" aria-labelledby="lbl-providers">
+  <li><button type="button" class="p-btn pc-chatgpt" aria-label="Open prompt in ChatGPT"><div class="p-left"><span class="dot" style="background:var(--chatgpt)"></span><span>ChatGPT</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-claude" aria-label="Open prompt in Claude"><div class="p-left"><span class="dot" style="background:var(--claude)"></span><span>Claude</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-gemini" aria-label="Open prompt in Gemini"><div class="p-left"><span class="dot" style="background:var(--gemini)"></span><span>Gemini</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-copilot" aria-label="Open prompt in Copilot"><div class="p-left"><span class="dot" style="background:var(--copilot)"></span><span>Copilot</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-perplexity" aria-label="Open prompt in Perplexity"><div class="p-left"><span class="dot" style="background:var(--perplexity)"></span><span>Perplexity</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-deepseek" aria-label="Open prompt in DeepSeek"><div class="p-left"><span class="dot" style="background:var(--deepseek)"></span><span>DeepSeek</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-grok" aria-label="Open prompt in Grok"><div class="p-left"><span class="dot" style="background:var(--grok)"></span><span>Grok</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-lechat" aria-label="Open prompt in Le Chat"><div class="p-left"><span class="dot" style="background:var(--lechat)"></span><span>Le Chat</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-qwen" aria-label="Open prompt in Qwen"><div class="p-left"><span class="dot" style="background:var(--qwen)"></span><span>Qwen</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-kimi" aria-label="Open prompt in Kimi"><div class="p-left"><span class="dot" style="background:var(--kimi)"></span><span>Kimi</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-zai" aria-label="Open prompt in Z.ai"><div class="p-left"><span class="dot" style="background:var(--zai)"></span><span>Z.ai</span></div><span class="p-arrow">&nearr;</span></button></li>
+</ul>
       </section>
 
       <!-- Related Libraries -->
@@ -348,7 +587,7 @@
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <script src="/js/locales.f9476f0a.js"></script>
-<script src="/js/prompt.653cafef.js"></script>
+<script src="/js/prompt.9c395192.js"></script>
 <script>
 (function() {
 'use strict';
@@ -419,7 +658,8 @@ const promptEl = document.getElementById('prompt');
 
 function renderCats() {
   if (!catsEl) return;
-  const cats = ['All', ...DEV_PROMPTS.map(c => c.cat)];
+  const CURRENT_PROMPTS = (typeof window !== 'undefined' && window.__PROMPTS__) || DEV_PROMPTS;
+  const cats = ['All', ...CURRENT_PROMPTS.map(c => c.cat)];
   catsEl.innerHTML = '';
   cats.forEach(cat => {
     const btn = document.createElement('button');
@@ -441,7 +681,8 @@ function renderCats() {
 function renderCards() {
   if (!cardsEl) return;
   cardsEl.innerHTML = '';
-  const groups = activeCat === 'All' ? DEV_PROMPTS : DEV_PROMPTS.filter(c => c.cat === activeCat);
+  const CURRENT_PROMPTS = (typeof window !== 'undefined' && window.__PROMPTS__) || DEV_PROMPTS;
+  const groups = activeCat === 'All' ? CURRENT_PROMPTS : CURRENT_PROMPTS.filter(c => c.cat === activeCat);
 
   groups.forEach(group => {
     if (activeCat === 'All') {
@@ -505,7 +746,7 @@ window.__onPromptCleared = function() {
   });
 };
 
-(function(){var n=1,items=[];DEV_PROMPTS.forEach(function(c){c.prompts.forEach(function(p){items.push({"@type":"ListItem","position":n++,"name":p.title});});});var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ItemList","name":document.title.split('|')[0].split('—')[0].trim(),"numberOfItems":items.length,"itemListElement":items});document.head.appendChild(s);})();
+(function(){var n=1,items=[];((typeof window !== 'undefined' && window.__PROMPTS__) || DEV_PROMPTS).forEach(function(c){c.prompts.forEach(function(p){items.push({"@type":"ListItem","position":n++,"name":p.title});});});var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ItemList","name":document.title.split('|')[0].split('—')[0].trim(),"numberOfItems":items.length,"itemListElement":items});document.head.appendChild(s);})();
 })();
 </script>
 </body>

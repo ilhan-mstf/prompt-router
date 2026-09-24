@@ -871,6 +871,19 @@ button.section-title-wrap:focus-visible,
     color: #141210;
   }
 }
+.tile-controls {
+  margin-block: 12px;
+}
+.tile-controls p {
+  margin-block: 8px;
+  color: var(--text);
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
+}
+.tile-controls button[aria-pressed="true"] {
+  outline: 2px solid var(--gold-dim);
+  outline-offset: 2px;
+}
 .btn-secondary {
   background: var(--surface-2);
   border: 1px solid var(--border-2);

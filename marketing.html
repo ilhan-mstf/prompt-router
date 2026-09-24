@@ -70,7 +70,7 @@
 </noscript>
 
 <link rel="stylesheet" href="/css/core.99f35dd1.css">
-<link rel="stylesheet" href="/css/prompt.d59fb11b.css">
+<link rel="stylesheet" href="/css/prompt.a2f1a0d8.css">
 
   <script>
     (function(){try{localStorage.removeItem('pr_theme');var s=sessionStorage.getItem('pr_theme');var m=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(m?'dark':'light'));if(window.matchMedia){var dm=window.matchMedia('(prefers-color-scheme: dark)');var sc=function(e){try{sessionStorage.removeItem('pr_theme');localStorage.removeItem('pr_theme');}catch(x){}document.documentElement.setAttribute('data-theme',e.matches?'dark':'light');};if(dm.addEventListener){dm.addEventListener('change',sc);}else if(dm.addListener){dm.addListener(sc);}}}catch(e){}})();
@@ -127,7 +127,18 @@
           </span>
           <span class="item-chevron" id="quickChevron" aria-hidden="true">&#9662;</span>
         </button>
-        <div class="item-list" id="quickList"></div>
+        <div class="item-list" id="quickList">
+  <button type="button" class="item-btn" data-tid="t_0"><span class="item-title">Summarize</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_1"><span class="item-title">Explain it</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_2"><span class="item-title">Improve text</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_3"><span class="item-title">Brainstorm</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_4"><span class="item-title">Compare</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_5"><span class="item-title">Write email</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_6"><span class="item-title">Fix my code</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_7"><span class="item-title">Make a plan</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_8"><span class="item-title">Pros &amp; cons</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_9"><span class="item-title">Ask questions</span><span class="p-arrow">&nearr;</span></button>
+</div>
       </div>
 
       <!-- Section: Prompt Libraries -->
@@ -247,13 +258,219 @@
       <!-- Categories -->
       <section aria-labelledby="lbl-cats">
         <span class="lbl-heading" id="lbl-cats">Categories</span>
-        <div class="cats" id="cats" role="group" aria-labelledby="lbl-cats"></div>
+        
+<button type="button" class="cat active" aria-pressed="true">All</button>
+<button type="button" class="cat" aria-pressed="false">Campaign Planning</button>
+<button type="button" class="cat" aria-pressed="false">SEO</button>
+<button type="button" class="cat" aria-pressed="false">Ads</button>
+<button type="button" class="cat" aria-pressed="false">Analytics</button>
+<button type="button" class="cat" aria-pressed="false">Brand</button>
+<button type="button" class="cat" aria-pressed="false">Growth</button>
+
       </section>
 
       <!-- Prompts Grid -->
       <section aria-labelledby="lbl-prompts">
         <span class="lbl-heading" id="lbl-prompts">Prompts</span>
-        <div class="prompt-cards" id="prompt-cards"></div>
+        
+<span class="lbl-heading" style="margin-top: 0; display: block;">Campaign Planning</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Plan marketing campaign</div><div class="prompt-card-preview">Help me plan a marketing campaign for [product/service].
+
+Target audience: [describe]
+Goal: [e.g. leads, signups, awareness]
+Budget range: [amount]
+Timeline: [duration]
+
+Outline the campaign strategy, key messages, channels, milestones, and success metrics.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Create content calendar</div><div class="prompt-card-preview">Create a [30/60/90]-day content calendar for [brand/product].
+
+Audience: [describe]
+Channels: [e.g. LinkedIn, email, blog, Instagram]
+Content themes: [list any]
+Posting frequency goal: [e.g. 3x/week]
+
+Include content types, topics, and a suggested posting schedule.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Define target audience persona</div><div class="prompt-card-preview">Build a detailed marketing persona for [product/service].
+
+What we know so far: [describe your current customer or assumption]
+
+Include: demographics, job title, goals, pain points, objections, preferred channels, and how they make purchase decisions.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Campaign post-mortem analysis</div><div class="prompt-card-preview">Help me write a post-mortem for a marketing campaign.
+
+Campaign goal: [e.g. generate 500 leads]
+Actual result: [what happened]
+Channels used: [list]
+Key metrics: [CTR, conversion rate, CAC, etc.]
+
+Analyze what worked, what did not, root causes, and specific recommendations for the next campaign.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">SEO</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Keyword research brief</div><div class="prompt-card-preview">Create a keyword research brief for [topic/product].
+
+Website: [URL or description]
+Target audience: [describe]
+Competitors: [list if known]
+
+Suggest primary keywords, long-tail variations, search intent categories (informational, commercial, transactional), and content opportunities for each cluster.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write SEO meta tags</div><div class="prompt-card-preview">Write SEO-optimized title tags and meta descriptions for the following page.
+
+Page topic: [describe]
+Target keyword: [keyword]
+URL: [page URL]
+Word count of page: [approx]
+
+Provide 3 title tag options (under 60 characters each) and 3 meta description options (under 155 characters each). Note the target keyword placement in each.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Content gap analysis</div><div class="prompt-card-preview">Perform a content gap analysis for [website/brand] in the [industry] space.
+
+Our existing content topics: [list or describe]
+Main competitors: [list]
+Target audience: [describe]
+
+Identify topics and keywords our competitors rank for that we are missing, and prioritize them by traffic potential and business relevance.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Internal linking strategy</div><div class="prompt-card-preview">Create an internal linking strategy for a [blog/website] about [topic].
+
+Existing key pages: [list your pillar pages or important URLs]
+Goal: [e.g. improve rankings for X, reduce bounce rate, distribute link equity]
+
+Suggest anchor text, which pages should link to which, and a linking structure to support topical authority.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Ads</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write Google Ads copy</div><div class="prompt-card-preview">Write Google Ads copy for [product/service].
+
+Target keyword: [keyword]
+Landing page URL: [URL]
+Key benefit: [main value prop]
+Audience: [describe who will see this ad]
+
+Provide 3 headlines (max 30 characters each) and 2 descriptions (max 90 characters each) for a responsive search ad. Highlight benefits, include a CTA, and match the keyword intent.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Facebook ad variations</div><div class="prompt-card-preview">Write 3 Facebook ad variations for [product/service].
+
+Target audience: [describe demographics and interests]
+Objective: [e.g. clicks, conversions, awareness]
+Key offer or hook: [describe]
+
+For each variation write: a primary text (2-3 sentences), headline (under 40 characters), and description (under 25 characters). Use a different angle for each — e.g. pain point, social proof, and offer-led.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">A/B test ideas for landing page</div><div class="prompt-card-preview">Generate A/B test ideas for a landing page for [product/service].
+
+Current conversion rate: [if known]
+Primary CTA: [e.g. Sign up free]
+Main traffic source: [e.g. Google Ads, Facebook]
+Page goal: [describe]
+
+List 8-10 specific, high-impact test ideas across: headline, CTA copy, social proof, layout, and offer framing. Prioritize by expected impact and ease of implementation.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Ad audience targeting strategy</div><div class="prompt-card-preview">Help me build an audience targeting strategy for paid ads promoting [product/service].
+
+Platform: [e.g. Meta, Google, LinkedIn]
+Budget: [monthly]
+Goal: [e.g. leads, purchases, signups]
+Ideal customer: [describe]
+
+Recommend: cold audience targeting options, retargeting segments, lookalike strategy, and exclusions. Explain the reasoning for each.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Analytics</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Interpret traffic drop</div><div class="prompt-card-preview">Help me diagnose a traffic drop on [website/page].
+
+Drop details: [e.g. organic traffic fell 30% in the last 2 weeks]
+Timestamp of drop: [date]
+Pages affected: [which pages or site-wide]
+Recent changes: [any site changes, algorithm updates, redirects, etc.]
+
+List the most likely causes in order of probability, and provide specific investigation steps and fixes for each.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Funnel analysis</div><div class="prompt-card-preview">Analyze this marketing funnel and identify where we are losing users.
+
+Funnel steps and conversion rates:
+[e.g. Visitor &gt; Landing page: 100%]
+[Landing page &gt; Signup: 12%]
+[Signup &gt; Activation: 40%]
+[Activation &gt; Purchase: 18%]
+
+Benchmark these rates against typical industry standards, highlight the biggest drop-off points, and suggest specific improvements for each stage.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Monthly report summary</div><div class="prompt-card-preview">Write a concise monthly marketing report summary for [month].
+
+Key metrics:
+- Traffic: [number, vs last month]
+- Leads: [number, vs last month]
+- CAC: [amount]
+- Conversion rate: [%]
+- Top channel: [channel]
+- Notable wins: [list]
+- Challenges: [list]
+
+Write an executive summary (3-4 sentences), a highlights section, a challenges section, and 3 clear action items for next month.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Attribution model comparison</div><div class="prompt-card-preview">Compare attribution models for a [B2B/B2C] business selling [product/service].
+
+Our main marketing channels: [e.g. paid search, organic, email, social]
+Average sales cycle: [e.g. 2 weeks / 3 months]
+Current attribution model: [e.g. last click]
+
+Explain how first-touch, last-touch, linear, time-decay, and data-driven models would each interpret our funnel differently, and recommend the best fit with reasoning.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Brand</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write brand positioning statement</div><div class="prompt-card-preview">Write a brand positioning statement for [company/product].
+
+What we do: [describe]
+Target audience: [describe]
+Key benefit: [primary value we deliver]
+Differentiator: [what makes us different from alternatives]
+Competitors: [list main ones]
+
+Use the format: For [audience] who [need], [brand] is the [category] that [benefit] because [reason to believe]. Then provide 2 alternative versions with different emphasis.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Competitive differentiation</div><div class="prompt-card-preview">Help me articulate how [product/company] is differentiated from competitors.
+
+Our product: [describe]
+Main competitors: [list with brief description of each]
+Our key strengths: [list]
+Customer feedback themes: [what customers say they love]
+
+Identify our strongest differentiators, which ones are most defensible, and how to communicate them clearly in marketing copy. Flag any claims that sound generic and need sharpening.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Brand voice guidelines</div><div class="prompt-card-preview">Create brand voice guidelines for [company/product].
+
+What we do: [describe]
+Target audience: [describe]
+Personality we want to project: [e.g. expert but approachable, bold, warm]
+Personality we want to avoid: [e.g. corporate, jargon-heavy]
+Examples of copy we like: [paste any]
+
+Define 4-5 voice attributes, explain each with a description, do/don't examples, and a before/after rewrite sample.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Tagline brainstorm</div><div class="prompt-card-preview">Brainstorm taglines for [company/product].
+
+What we do: [describe in one sentence]
+Target audience: [describe]
+Key benefit: [main value prop]
+Tone: [e.g. punchy, thoughtful, confident, playful]
+Existing taglines we dislike and why: [optional]
+
+Generate 15 tagline options. Group them by approach: benefit-led, emotion-led, and challenger. Mark your top 3 picks with a brief reason for each.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Growth</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Referral program ideas</div><div class="prompt-card-preview">Design a referral program for [product/service].
+
+Business model: [e.g. SaaS subscription, e-commerce]
+Current user base: [approximate size]
+Average customer LTV: [amount]
+Acquisition cost goal: [target CAC]
+
+Propose 3 referral program structures with different incentive mechanics (e.g. two-sided reward, credits, cash). For each: describe the mechanic, referral flow, reward structure, and expected impact on viral coefficient.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Retention email sequence</div><div class="prompt-card-preview">Write a retention email sequence for users who signed up for [product] but have not been active for [X days].
+
+Product: [describe what it does]
+Common reason for drop-off: [if known]
+Tone: [e.g. friendly, direct]
+Number of emails: [e.g. 3-email sequence]
+
+For each email provide: subject line, preview text, body copy, and CTA. Space them [X] days apart. Focus on re-engaging with value, not just discounts.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Onboarding flow optimization</div><div class="prompt-card-preview">Help me optimize the onboarding flow for [product].
+
+Current onboarding steps: [list them]
+Drop-off point: [where users quit]
+Time to value goal: [e.g. user gets value within 5 minutes]
+Key activation event: [e.g. created first project, invited a teammate]
+
+Identify friction points in the current flow, suggest specific improvements for each step, and recommend the minimum viable onboarding that gets users to the activation event fastest.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Viral loop strategy</div><div class="prompt-card-preview">Design a viral loop strategy for [product/service].
+
+Product type: [e.g. collaboration tool, marketplace, social app]
+Current growth mechanism: [describe how users find you today]
+Natural sharing moments: [when do users naturally want to share?]
+Target viral coefficient goal: [e.g. K &gt; 1]
+
+Propose 2-3 viral loop designs. For each: describe the trigger, the sharing mechanism, the incentive, and the conversion flow for referred users. Estimate the realistic viral coefficient for each.</div></button>
+
       </section>
 
       <!-- Clean Editor Canvas -->
@@ -294,7 +511,19 @@
       <!-- Open in Providers (11 Models) -->
       <section class="providers-card" aria-labelledby="lbl-providers">
         <span class="lbl-heading" id="lbl-providers">Open in</span>
-        <ul class="providers" id="providers" aria-labelledby="lbl-providers"></ul>
+        <ul class="providers" id="providers" aria-labelledby="lbl-providers">
+  <li><button type="button" class="p-btn pc-chatgpt" aria-label="Open prompt in ChatGPT"><div class="p-left"><span class="dot" style="background:var(--chatgpt)"></span><span>ChatGPT</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-claude" aria-label="Open prompt in Claude"><div class="p-left"><span class="dot" style="background:var(--claude)"></span><span>Claude</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-gemini" aria-label="Open prompt in Gemini"><div class="p-left"><span class="dot" style="background:var(--gemini)"></span><span>Gemini</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-copilot" aria-label="Open prompt in Copilot"><div class="p-left"><span class="dot" style="background:var(--copilot)"></span><span>Copilot</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-perplexity" aria-label="Open prompt in Perplexity"><div class="p-left"><span class="dot" style="background:var(--perplexity)"></span><span>Perplexity</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-deepseek" aria-label="Open prompt in DeepSeek"><div class="p-left"><span class="dot" style="background:var(--deepseek)"></span><span>DeepSeek</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-grok" aria-label="Open prompt in Grok"><div class="p-left"><span class="dot" style="background:var(--grok)"></span><span>Grok</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-lechat" aria-label="Open prompt in Le Chat"><div class="p-left"><span class="dot" style="background:var(--lechat)"></span><span>Le Chat</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-qwen" aria-label="Open prompt in Qwen"><div class="p-left"><span class="dot" style="background:var(--qwen)"></span><span>Qwen</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-kimi" aria-label="Open prompt in Kimi"><div class="p-left"><span class="dot" style="background:var(--kimi)"></span><span>Kimi</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-zai" aria-label="Open prompt in Z.ai"><div class="p-left"><span class="dot" style="background:var(--zai)"></span><span>Z.ai</span></div><span class="p-arrow">&nearr;</span></button></li>
+</ul>
       </section>
 
       <!-- Related Libraries -->
@@ -348,7 +577,7 @@
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <script src="/js/locales.f9476f0a.js"></script>
-<script src="/js/prompt.653cafef.js"></script>
+<script src="/js/prompt.9c395192.js"></script>
 <script>
 (function() {
 'use strict';
@@ -419,7 +648,8 @@ const promptEl = document.getElementById('prompt');
 
 function renderCats() {
   if (!catsEl) return;
-  const cats = ['All', ...DEV_PROMPTS.map(c => c.cat)];
+  const CURRENT_PROMPTS = (typeof window !== 'undefined' && window.__PROMPTS__) || DEV_PROMPTS;
+  const cats = ['All', ...CURRENT_PROMPTS.map(c => c.cat)];
   catsEl.innerHTML = '';
   cats.forEach(cat => {
     const btn = document.createElement('button');
@@ -441,7 +671,8 @@ function renderCats() {
 function renderCards() {
   if (!cardsEl) return;
   cardsEl.innerHTML = '';
-  const groups = activeCat === 'All' ? DEV_PROMPTS : DEV_PROMPTS.filter(c => c.cat === activeCat);
+  const CURRENT_PROMPTS = (typeof window !== 'undefined' && window.__PROMPTS__) || DEV_PROMPTS;
+  const groups = activeCat === 'All' ? CURRENT_PROMPTS : CURRENT_PROMPTS.filter(c => c.cat === activeCat);
 
   groups.forEach(group => {
     if (activeCat === 'All') {
@@ -505,7 +736,7 @@ window.__onPromptCleared = function() {
   });
 };
 
-(function(){var n=1,items=[];DEV_PROMPTS.forEach(function(c){c.prompts.forEach(function(p){items.push({"@type":"ListItem","position":n++,"name":p.title});});});var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ItemList","name":document.title.split('|')[0].split('—')[0].trim(),"numberOfItems":items.length,"itemListElement":items});document.head.appendChild(s);})();
+(function(){var n=1,items=[];((typeof window !== 'undefined' && window.__PROMPTS__) || DEV_PROMPTS).forEach(function(c){c.prompts.forEach(function(p){items.push({"@type":"ListItem","position":n++,"name":p.title});});});var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ItemList","name":document.title.split('|')[0].split('—')[0].trim(),"numberOfItems":items.length,"itemListElement":items});document.head.appendChild(s);})();
 })();
 </script>
 </body>
