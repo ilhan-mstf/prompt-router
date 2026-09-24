@@ -184,103 +184,6 @@ function newPrompt() {
   closeMobileSidebar();
 }
 
-/* Four independent windows, with placement requested before external navigation. */
-let tileMode = false;
-let tileScreenDetails = null;
-const tileSlots = { chatgpt: 1, gemini: 2, claude: 3 };
-
-function tileBounds(slot, screenInfo = tileScreenDetails?.currentScreen || window.screen) {
-  const width = Math.floor(screenInfo.availWidth / 2);
-  const height = Math.floor(screenInfo.availHeight / 2);
-  return {
-    left: (screenInfo.availLeft || 0) + (slot % 2) * width,
-    top: (screenInfo.availTop || 0) + Math.floor(slot / 2) * height,
-    width,
-    height,
-  };
-}
-
-function tileStatus(message) {
-  const status = document.getElementById('tileStatus');
-  if (status) status.textContent = message;
-}
-
-async function toggleTileMode() {
-  const button = document.getElementById('tileModeBtn');
-  if (tileMode) {
-    tileMode = false;
-    button?.setAttribute('aria-pressed', 'false');
-    tileStatus('4-tile mode off. Existing windows stay where they are.');
-    return;
-  }
-  if (button) button.disabled = true;
-  try {
-    tileScreenDetails = null;
-    if (typeof window.getScreenDetails === 'function') {
-      try { tileScreenDetails = await window.getScreenDetails(); } catch { /* Manual placement remains available. */ }
-    }
-    tileMode = true;
-    button?.setAttribute('aria-pressed', 'true');
-    const bounds = tileBounds(0);
-    try {
-      window.resizeTo(bounds.width, bounds.height);
-      window.moveTo(bounds.left, bounds.top);
-    } catch { /* A regular browser tab may not be movable. */ }
-    tileStatus('Now click ChatGPT, Gemini, and Claude once each. Layout: Router top left, ChatGPT top right, Gemini bottom left, Claude bottom right. If placement is ignored, exit full screen and use the macOS green window button to arrange the windows.');
-  } finally {
-    if (button) button.disabled = false;
-  }
-}
-
-function initTileControls() {
-  const grid = document.getElementById('providers');
-  if (!grid || document.getElementById('tileModeBtn')) return;
-  const controls = document.createElement('div');
-  controls.className = 'tile-controls';
-  const button = document.createElement('button');
-  button.id = 'tileModeBtn';
-  button.type = 'button';
-  button.className = 'btn btn-secondary';
-  button.textContent = '4-tile mode';
-  button.setAttribute('aria-pressed', 'false');
-  button.setAttribute('aria-describedby', 'tileStatus');
-  button.addEventListener('click', toggleTileMode);
-  const status = document.createElement('p');
-  status.id = 'tileStatus';
-  status.setAttribute('role', 'status');
-  status.textContent = 'Desktop: arrange Prompt Router, ChatGPT, Gemini, and Claude on one screen. Window placement depends on your browser.';
-  controls.append(button, status);
-  grid.before(controls);
-}
-
-function openTiledProvider(p, q) {
-  const bounds = tileBounds(tileSlots[p.id]);
-  // Open a same-origin blank window synchronously to detect blocking and set
-  // outer dimensions (including browser chrome) before losing origin access.
-  const popup = window.open('about:blank', '_blank',
-    `popup=yes,left=${bounds.left},top=${bounds.top},width=${bounds.width},height=${bounds.height}`);
-  if (!popup) {
-    tileStatus('Window blocked. Allow popups for Prompt Router in Chrome, then click this provider again.');
-    return;
-  }
-  try {
-    popup.opener = null;
-    const meta = popup.document.createElement('meta');
-    meta.name = 'referrer';
-    meta.content = 'no-referrer';
-    popup.document.head.appendChild(meta);
-    try {
-      popup.resizeTo(bounds.width, bounds.height);
-      popup.moveTo(bounds.left, bounds.top);
-    } catch { /* Still open the provider when placement is restricted. */ }
-    popup.location.replace(p.url(q));
-    tileStatus(`${p.label} window requested. Open each remaining provider once. If a window opens elsewhere, arrange it with the macOS green window button. Prompts may need to be pasted or submitted on the provider's site.`);
-  } catch {
-    popup.close();
-    tileStatus('Could not open the provider window. Turn off 4-tile mode to open it normally.');
-  }
-}
-
 function openProvider(p) {
   const q = getPromptVal();
   if (!q) { showToast(currentLocale.toastNoPrompt || 'Write a prompt first'); return; }
@@ -291,12 +194,8 @@ function openProvider(p) {
     showToast(`Prompt is large (${q.length} chars). Copied to clipboard for safety.`);
   }
 
-  if (tileMode && Object.hasOwn(tileSlots, p.id)) {
-    openTiledProvider(p, q);
-    return;
-  }
-  // noopener deliberately returns null, even after a successful launch.
-  window.open(p.url(q), '_blank', 'noopener,noreferrer');
+  const w = window.open(p.url(q), '_blank', 'noopener,noreferrer');
+  if (!w) showToast(currentLocale.toastPopup || 'Popup blocked — copy & paste instead');
 }
 
 /* ── Active Badge & Counter ─────────────────────────────────── */
@@ -855,7 +754,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Render components
-  initTileControls();
   renderProvidersGrid();
   renderSidebar();
   renderFooterDesc(currentLocale);
@@ -961,4 +859,5 @@ window.getSystemTheme = getSystemTheme;
 window.initTheme = initTheme;
 window.updateThemeIcon = updateThemeIcon;
 window.setLanguage = setLanguage;
+
 

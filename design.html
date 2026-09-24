@@ -70,7 +70,7 @@
 </noscript>
 
 <link rel="stylesheet" href="/css/core.99f35dd1.css">
-<link rel="stylesheet" href="/css/prompt.a2f1a0d8.css">
+<link rel="stylesheet" href="/css/prompt.d59fb11b.css">
 
   <script>
     (function(){try{localStorage.removeItem('pr_theme');var s=sessionStorage.getItem('pr_theme');var m=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(m?'dark':'light'));if(window.matchMedia){var dm=window.matchMedia('(prefers-color-scheme: dark)');var sc=function(e){try{sessionStorage.removeItem('pr_theme');localStorage.removeItem('pr_theme');}catch(x){}document.documentElement.setAttribute('data-theme',e.matches?'dark':'light');};if(dm.addEventListener){dm.addEventListener('change',sc);}else if(dm.addListener){dm.addListener(sc);}}}catch(e){}})();
@@ -127,18 +127,7 @@
           </span>
           <span class="item-chevron" id="quickChevron" aria-hidden="true">&#9662;</span>
         </button>
-        <div class="item-list" id="quickList">
-  <button type="button" class="item-btn" data-tid="t_0"><span class="item-title">Summarize</span><span class="p-arrow">&nearr;</span></button>
-  <button type="button" class="item-btn" data-tid="t_1"><span class="item-title">Explain it</span><span class="p-arrow">&nearr;</span></button>
-  <button type="button" class="item-btn" data-tid="t_2"><span class="item-title">Improve text</span><span class="p-arrow">&nearr;</span></button>
-  <button type="button" class="item-btn" data-tid="t_3"><span class="item-title">Brainstorm</span><span class="p-arrow">&nearr;</span></button>
-  <button type="button" class="item-btn" data-tid="t_4"><span class="item-title">Compare</span><span class="p-arrow">&nearr;</span></button>
-  <button type="button" class="item-btn" data-tid="t_5"><span class="item-title">Write email</span><span class="p-arrow">&nearr;</span></button>
-  <button type="button" class="item-btn" data-tid="t_6"><span class="item-title">Fix my code</span><span class="p-arrow">&nearr;</span></button>
-  <button type="button" class="item-btn" data-tid="t_7"><span class="item-title">Make a plan</span><span class="p-arrow">&nearr;</span></button>
-  <button type="button" class="item-btn" data-tid="t_8"><span class="item-title">Pros &amp; cons</span><span class="p-arrow">&nearr;</span></button>
-  <button type="button" class="item-btn" data-tid="t_9"><span class="item-title">Ask questions</span><span class="p-arrow">&nearr;</span></button>
-</div>
+        <div class="item-list" id="quickList"></div>
       </div>
 
       <!-- Section: Prompt Libraries -->
@@ -258,159 +247,13 @@
       <!-- Categories -->
       <section aria-labelledby="lbl-cats">
         <span class="lbl-heading" id="lbl-cats">Categories</span>
-        
-<button type="button" class="cat active" aria-pressed="true">All</button>
-<button type="button" class="cat" aria-pressed="false">UI Review</button>
-<button type="button" class="cat" aria-pressed="false">UX Research</button>
-<button type="button" class="cat" aria-pressed="false">Design Systems</button>
-<button type="button" class="cat" aria-pressed="false">Wireframing</button>
-<button type="button" class="cat" aria-pressed="false">Copy &amp; Microcopy</button>
-<button type="button" class="cat" aria-pressed="false">Presentation</button>
-
+        <div class="cats" id="cats" role="group" aria-labelledby="lbl-cats"></div>
       </section>
 
       <!-- Prompts Grid -->
       <section aria-labelledby="lbl-prompts">
         <span class="lbl-heading" id="lbl-prompts">Prompts</span>
-        
-<span class="lbl-heading" style="margin-top: 0; display: block;">UI Review</span>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Critique this UI design</div><div class="prompt-card-preview">Act as a senior product designer. Critique this UI design:
-
-[describe the screen or paste a description/screenshot]
-
-Evaluate: visual hierarchy, spacing, typography, color usage, and consistency. Be specific about what to improve and why.</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Accessibility audit checklist</div><div class="prompt-card-preview">Audit this UI for accessibility issues based on WCAG 2.1 AA:
-
-[describe the UI or list its components]
-
-Check for: color contrast, keyboard navigation, focus states, screen reader compatibility, touch target sizes, and ARIA usage. List issues by severity.</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Mobile responsiveness review</div><div class="prompt-card-preview">Review this UI design for mobile responsiveness:
-
-[describe the layout or list the components]
-
-Identify: elements that won't scale well, tap targets that are too small, content that will overflow, and spacing issues on small screens. Suggest specific fixes.</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Visual hierarchy analysis</div><div class="prompt-card-preview">Analyze the visual hierarchy of this UI:
-
-[describe the screen layout and its elements]
-
-Identify: what the user's eye will land on first, whether the hierarchy matches the intended user goal, and what changes would improve scanning and comprehension.</div></button>
-<span class="lbl-heading" style="margin-top: 16px; display: block;">UX Research</span>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write user interview questions</div><div class="prompt-card-preview">Write a user interview guide for researching [topic or feature, e.g. 'how people manage their finances'].
-
-Include: 3 warm-up questions, 8–10 core questions, and 2 wrap-up questions. Use open-ended phrasing. Avoid leading the participant.</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Create user persona</div><div class="prompt-card-preview">Create a realistic user persona for [product or feature].
-
-Target user: [describe broadly, e.g. 'freelance graphic designers, 28–40']
-
-Include: name, age, occupation, goals, frustrations, key behaviors, and a short quote. Keep it grounded and actionable.</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Usability test script</div><div class="prompt-card-preview">Write a usability test script for [feature or flow, e.g. 'the checkout flow'].
-
-Include: facilitator introduction, consent reminder, 4–6 task scenarios with realistic context, and follow-up probing questions after each task. Avoid revealing the correct path.</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Survey design for feature feedback</div><div class="prompt-card-preview">Design a user survey to gather feedback on [feature, e.g. 'our new onboarding flow'].
-
-Include: 1 NPS or CSAT question, 4–6 rating or multiple-choice questions, and 2 open-ended questions. Keep it under 3 minutes to complete. Suggest the best order.</div></button>
-<span class="lbl-heading" style="margin-top: 16px; display: block;">Design Systems</span>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Component naming convention</div><div class="prompt-card-preview">Propose a naming convention for UI components in our design system.
-
-Context: [e.g. 'We use React, Figma, and have a mix of atomic and composed components']
-
-Cover: component names, variant naming, prop naming, and file/layer naming in Figma. Provide examples for Button, Modal, and Form Field.</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write component documentation</div><div class="prompt-card-preview">Write clear documentation for this UI component:
-
-Component: [component name, e.g. 'Toast notification']
-Props/variants: [list them]
-Usage context: [where it's used]
-
-Include: description, when to use vs. not use, prop table, accessibility notes, and a usage example.</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Design token structure</div><div class="prompt-card-preview">Propose a design token structure for [product or design system name].
-
-Brand colors: [list key colors]
-Typography: [list typefaces or scale]
-Context: [e.g. web app, mobile app, or both]
-
-Organize tokens into: color, typography, spacing, border radius, shadow, and motion. Show both primitive and semantic token examples.</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Pattern library audit</div><div class="prompt-card-preview">Help me audit our pattern library for inconsistencies.
-
-Here is a list of our current components and variants:
-
-[paste component list]
-
-Identify: duplicate patterns serving the same purpose, naming inconsistencies, gaps where a reusable component is missing, and components that may be too specific to be reusable.</div></button>
-<span class="lbl-heading" style="margin-top: 16px; display: block;">Wireframing</span>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">User flow for feature</div><div class="prompt-card-preview">Map out the user flow for [feature, e.g. 'resetting a password'].
-
-User goal: [describe what the user wants to achieve]
-Entry point: [where the user starts]
-
-List each step the user takes, decisions they encounter, and possible error or edge case paths. Format as a numbered flow with branching where needed.</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Information architecture for app section</div><div class="prompt-card-preview">Propose the information architecture for [app section, e.g. 'the settings area of a SaaS dashboard'].
-
-User types: [list if multiple]
-Key tasks users perform: [list 4–6 tasks]
-
-Suggest a navigation structure with top-level sections, sub-sections, and the content or actions within each. Justify your groupings.</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Navigation structure proposal</div><div class="prompt-card-preview">Propose a navigation structure for [product, e.g. 'a B2B project management tool'].
-
-Key features: [list main features]
-User roles: [list roles if applicable]
-
-Recommend: primary navigation items, secondary navigation, and how to handle role-based access. Consider both desktop sidebar and mobile bottom nav patterns.</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Onboarding flow design</div><div class="prompt-card-preview">Design an onboarding flow for [product, e.g. 'a habit-tracking mobile app'].
-
-New user goal: [what they need to achieve to get value]
-Key setup steps required: [list any mandatory steps, e.g. 'create first habit']
-
-Propose: screen sequence, what to ask vs. defer, progress indication, and how to handle skip/later options. Keep time-to-value as short as possible.</div></button>
-<span class="lbl-heading" style="margin-top: 16px; display: block;">Copy &amp; Microcopy</span>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Error message writing</div><div class="prompt-card-preview">Write clear, user-friendly error messages for these scenarios:
-
-[list error scenarios, e.g. 'invalid email format', 'file too large', 'session expired']
-
-For each: write the error title, a plain-language explanation of what went wrong, and the action the user should take. Tone: [e.g. friendly, professional, minimal].</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Empty state copy</div><div class="prompt-card-preview">Write empty state copy for these UI states:
-
-[list states, e.g. 'no search results', 'no notifications yet', 'no files uploaded']
-
-For each: write a heading, a 1–2 sentence explanation, and a CTA if appropriate. Tone: [e.g. encouraging, neutral, playful]. Avoid filler phrases like 'Nothing to see here'.</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Button and CTA label variations</div><div class="prompt-card-preview">Write button and CTA label variations for [action or feature, e.g. 'starting a free trial'].
-
-Context: [where the button appears, e.g. 'pricing page', 'empty state', 'modal header']
-Tone: [e.g. direct, benefit-focused, low-friction]
-
-Provide 6–8 label options ranked from most to least assertive. Explain the tradeoffs.</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Tooltip and helper text</div><div class="prompt-card-preview">Write tooltips and helper text for these UI elements:
-
-[list elements, e.g. 'API key field', 'billing cycle toggle', 'notification frequency setting']
-
-For each: write a concise tooltip (under 15 words) and an optional longer helper text for inline use. Prioritize clarity over cleverness.</div></button>
-<span class="lbl-heading" style="margin-top: 16px; display: block;">Presentation</span>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Design decision rationale</div><div class="prompt-card-preview">Help me write a clear rationale for this design decision:
-
-Decision: [describe what was decided, e.g. 'We moved from a tabbed layout to a single scrollable page']
-Context: [what problem it solves or what data/insight drove it]
-Alternatives considered: [list 1–2]
-
-Write a concise explanation I can share with stakeholders that covers: the problem, the decision, why it's the right call, and any tradeoffs.</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Design review presentation outline</div><div class="prompt-card-preview">Create an outline for a design review presentation for [feature or project name].
-
-Audience: [e.g. 'product team + engineering leads']
-Goal of the review: [e.g. 'get sign-off before handoff' or 'gather feedback on direction']
-Phase: [e.g. 'early concept', 'refined mockups', 'final designs']
-
-Include: suggested sections, what to show in each, time allocation, and how to frame the feedback ask.</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Before/after comparison narrative</div><div class="prompt-card-preview">Write a before/after narrative for this design improvement:
-
-Before: [describe the old design and its problems]
-After: [describe the new design and what changed]
-Metrics or user feedback (if any): [paste if available]
-
-Write a concise story I can use in a case study or stakeholder update that explains the problem, the insight, and the impact of the change.</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Stakeholder feedback summary</div><div class="prompt-card-preview">Help me summarize and synthesize this stakeholder feedback from a design review:
-
-[paste raw notes or feedback]
-
-Organize it into: themes, specific actionable requests, questions that need clarification, and feedback that conflicts with other feedback. Flag any items that conflict with user research or design principles.</div></button>
-
+        <div class="prompt-cards" id="prompt-cards"></div>
       </section>
 
       <!-- Clean Editor Canvas -->
@@ -451,19 +294,7 @@ Organize it into: themes, specific actionable requests, questions that need clar
       <!-- Open in Providers (11 Models) -->
       <section class="providers-card" aria-labelledby="lbl-providers">
         <span class="lbl-heading" id="lbl-providers">Open in</span>
-        <ul class="providers" id="providers" aria-labelledby="lbl-providers">
-  <li><button type="button" class="p-btn pc-chatgpt" aria-label="Open prompt in ChatGPT"><div class="p-left"><span class="dot" style="background:var(--chatgpt)"></span><span>ChatGPT</span></div><span class="p-arrow">&nearr;</span></button></li>
-  <li><button type="button" class="p-btn pc-claude" aria-label="Open prompt in Claude"><div class="p-left"><span class="dot" style="background:var(--claude)"></span><span>Claude</span></div><span class="p-arrow">&nearr;</span></button></li>
-  <li><button type="button" class="p-btn pc-gemini" aria-label="Open prompt in Gemini"><div class="p-left"><span class="dot" style="background:var(--gemini)"></span><span>Gemini</span></div><span class="p-arrow">&nearr;</span></button></li>
-  <li><button type="button" class="p-btn pc-copilot" aria-label="Open prompt in Copilot"><div class="p-left"><span class="dot" style="background:var(--copilot)"></span><span>Copilot</span></div><span class="p-arrow">&nearr;</span></button></li>
-  <li><button type="button" class="p-btn pc-perplexity" aria-label="Open prompt in Perplexity"><div class="p-left"><span class="dot" style="background:var(--perplexity)"></span><span>Perplexity</span></div><span class="p-arrow">&nearr;</span></button></li>
-  <li><button type="button" class="p-btn pc-deepseek" aria-label="Open prompt in DeepSeek"><div class="p-left"><span class="dot" style="background:var(--deepseek)"></span><span>DeepSeek</span></div><span class="p-arrow">&nearr;</span></button></li>
-  <li><button type="button" class="p-btn pc-grok" aria-label="Open prompt in Grok"><div class="p-left"><span class="dot" style="background:var(--grok)"></span><span>Grok</span></div><span class="p-arrow">&nearr;</span></button></li>
-  <li><button type="button" class="p-btn pc-lechat" aria-label="Open prompt in Le Chat"><div class="p-left"><span class="dot" style="background:var(--lechat)"></span><span>Le Chat</span></div><span class="p-arrow">&nearr;</span></button></li>
-  <li><button type="button" class="p-btn pc-qwen" aria-label="Open prompt in Qwen"><div class="p-left"><span class="dot" style="background:var(--qwen)"></span><span>Qwen</span></div><span class="p-arrow">&nearr;</span></button></li>
-  <li><button type="button" class="p-btn pc-kimi" aria-label="Open prompt in Kimi"><div class="p-left"><span class="dot" style="background:var(--kimi)"></span><span>Kimi</span></div><span class="p-arrow">&nearr;</span></button></li>
-  <li><button type="button" class="p-btn pc-zai" aria-label="Open prompt in Z.ai"><div class="p-left"><span class="dot" style="background:var(--zai)"></span><span>Z.ai</span></div><span class="p-arrow">&nearr;</span></button></li>
-</ul>
+        <ul class="providers" id="providers" aria-labelledby="lbl-providers"></ul>
       </section>
 
       <!-- Related Libraries -->
@@ -517,7 +348,7 @@ Organize it into: themes, specific actionable requests, questions that need clar
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <script src="/js/locales.f9476f0a.js"></script>
-<script src="/js/prompt.9c395192.js"></script>
+<script src="/js/prompt.653cafef.js"></script>
 <script>
 (function() {
 'use strict';
@@ -588,8 +419,7 @@ const promptEl = document.getElementById('prompt');
 
 function renderCats() {
   if (!catsEl) return;
-  const CURRENT_PROMPTS = (typeof window !== 'undefined' && window.__PROMPTS__) || DEV_PROMPTS;
-  const cats = ['All', ...CURRENT_PROMPTS.map(c => c.cat)];
+  const cats = ['All', ...DEV_PROMPTS.map(c => c.cat)];
   catsEl.innerHTML = '';
   cats.forEach(cat => {
     const btn = document.createElement('button');
@@ -611,8 +441,7 @@ function renderCats() {
 function renderCards() {
   if (!cardsEl) return;
   cardsEl.innerHTML = '';
-  const CURRENT_PROMPTS = (typeof window !== 'undefined' && window.__PROMPTS__) || DEV_PROMPTS;
-  const groups = activeCat === 'All' ? CURRENT_PROMPTS : CURRENT_PROMPTS.filter(c => c.cat === activeCat);
+  const groups = activeCat === 'All' ? DEV_PROMPTS : DEV_PROMPTS.filter(c => c.cat === activeCat);
 
   groups.forEach(group => {
     if (activeCat === 'All') {
@@ -676,7 +505,7 @@ window.__onPromptCleared = function() {
   });
 };
 
-(function(){var n=1,items=[];((typeof window !== 'undefined' && window.__PROMPTS__) || DEV_PROMPTS).forEach(function(c){c.prompts.forEach(function(p){items.push({"@type":"ListItem","position":n++,"name":p.title});});});var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ItemList","name":document.title.split('|')[0].split('—')[0].trim(),"numberOfItems":items.length,"itemListElement":items});document.head.appendChild(s);})();
+(function(){var n=1,items=[];DEV_PROMPTS.forEach(function(c){c.prompts.forEach(function(p){items.push({"@type":"ListItem","position":n++,"name":p.title});});});var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ItemList","name":document.title.split('|')[0].split('—')[0].trim(),"numberOfItems":items.length,"itemListElement":items});document.head.appendChild(s);})();
 })();
 </script>
 </body>

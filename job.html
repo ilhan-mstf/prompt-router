@@ -70,7 +70,7 @@
 </noscript>
 
 <link rel="stylesheet" href="/css/core.99f35dd1.css">
-<link rel="stylesheet" href="/css/prompt.a2f1a0d8.css">
+<link rel="stylesheet" href="/css/prompt.d59fb11b.css">
 
   <script>
     (function(){try{localStorage.removeItem('pr_theme');var s=sessionStorage.getItem('pr_theme');var m=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(m?'dark':'light'));if(window.matchMedia){var dm=window.matchMedia('(prefers-color-scheme: dark)');var sc=function(e){try{sessionStorage.removeItem('pr_theme');localStorage.removeItem('pr_theme');}catch(x){}document.documentElement.setAttribute('data-theme',e.matches?'dark':'light');};if(dm.addEventListener){dm.addEventListener('change',sc);}else if(dm.addListener){dm.addListener(sc);}}}catch(e){}})();
@@ -127,18 +127,7 @@
           </span>
           <span class="item-chevron" id="quickChevron" aria-hidden="true">&#9662;</span>
         </button>
-        <div class="item-list" id="quickList">
-  <button type="button" class="item-btn" data-tid="t_0"><span class="item-title">Summarize</span><span class="p-arrow">&nearr;</span></button>
-  <button type="button" class="item-btn" data-tid="t_1"><span class="item-title">Explain it</span><span class="p-arrow">&nearr;</span></button>
-  <button type="button" class="item-btn" data-tid="t_2"><span class="item-title">Improve text</span><span class="p-arrow">&nearr;</span></button>
-  <button type="button" class="item-btn" data-tid="t_3"><span class="item-title">Brainstorm</span><span class="p-arrow">&nearr;</span></button>
-  <button type="button" class="item-btn" data-tid="t_4"><span class="item-title">Compare</span><span class="p-arrow">&nearr;</span></button>
-  <button type="button" class="item-btn" data-tid="t_5"><span class="item-title">Write email</span><span class="p-arrow">&nearr;</span></button>
-  <button type="button" class="item-btn" data-tid="t_6"><span class="item-title">Fix my code</span><span class="p-arrow">&nearr;</span></button>
-  <button type="button" class="item-btn" data-tid="t_7"><span class="item-title">Make a plan</span><span class="p-arrow">&nearr;</span></button>
-  <button type="button" class="item-btn" data-tid="t_8"><span class="item-title">Pros &amp; cons</span><span class="p-arrow">&nearr;</span></button>
-  <button type="button" class="item-btn" data-tid="t_9"><span class="item-title">Ask questions</span><span class="p-arrow">&nearr;</span></button>
-</div>
+        <div class="item-list" id="quickList"></div>
       </div>
 
       <!-- Section: Prompt Libraries -->
@@ -258,181 +247,13 @@
       <!-- Categories -->
       <section aria-labelledby="lbl-cats">
         <span class="lbl-heading" id="lbl-cats">Categories</span>
-        
-<button type="button" class="cat active" aria-pressed="true">All</button>
-<button type="button" class="cat" aria-pressed="false">Resume</button>
-<button type="button" class="cat" aria-pressed="false">Cover Letter</button>
-<button type="button" class="cat" aria-pressed="false">Interview Prep</button>
-<button type="button" class="cat" aria-pressed="false">LinkedIn</button>
-<button type="button" class="cat" aria-pressed="false">Networking</button>
-<button type="button" class="cat" aria-pressed="false">Career Growth</button>
-
+        <div class="cats" id="cats" role="group" aria-labelledby="lbl-cats"></div>
       </section>
 
       <!-- Prompts Grid -->
       <section aria-labelledby="lbl-prompts">
         <span class="lbl-heading" id="lbl-prompts">Prompts</span>
-        
-<span class="lbl-heading" style="margin-top: 0; display: block;">Resume</span>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Rewrite resume bullet points</div><div class="prompt-card-preview">Rewrite these resume bullet points to be stronger, more impactful, and results-oriented. Use active verbs and quantify outcomes where possible:
-
-[paste your bullet points here]
-
-Role I'm applying for: [job title]
-Industry: [industry]</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Tailor resume to job description</div><div class="prompt-card-preview">Here is my current resume and a job description I want to apply for. Identify the gaps, suggest which skills and keywords to add or emphasize, and rewrite the most relevant sections to match the role.
-
-My resume:
-[paste resume here]
-
-Job description:
-[paste job description here]</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write resume summary</div><div class="prompt-card-preview">Write a compelling professional summary for my resume. It should be 3-4 sentences, highlight my key strengths and experience, and be tailored to the role I'm targeting.
-
-My background: [years of experience, key skills, notable achievements]
-Role I'm targeting: [job title and industry]</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Quantify achievements</div><div class="prompt-card-preview">Help me quantify and strengthen these resume achievements. If I haven't provided numbers, suggest what metrics I could research or estimate to make each bullet more impactful:
-
-[paste achievements here]
-
-My role: [job title]
-Company size / industry: [details]</div></button>
-<span class="lbl-heading" style="margin-top: 16px; display: block;">Cover Letter</span>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write a cover letter</div><div class="prompt-card-preview">Write a compelling cover letter for this job application. Keep it to 3 paragraphs: why I'm excited about the company, what I bring to the role, and a clear call to action.
-
-My background: [brief summary]
-Job title: [title]
-Company: [company name]
-Key job requirements: [paste 3-5 requirements from the listing]
-One specific reason I want this company: [your reason]</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Career change cover letter</div><div class="prompt-card-preview">Write a cover letter for a career change application. Acknowledge the shift, connect my transferable skills to the new role, and show genuine motivation for the change.
-
-My current background: [current field and experience]
-Role I'm moving into: [new job title and field]
-Transferable skills I have: [list them]
-Why I'm making this change: [your reason]</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Internal transfer letter</div><div class="prompt-card-preview">Write a letter requesting an internal transfer to a different team or role within my company. Emphasize my institutional knowledge, my contributions so far, and why this move benefits both me and the company.
-
-My current role: [title and team]
-Role I want to transfer to: [title and team]
-Time at company: [duration]
-Key contributions so far: [list 2-3]
-Reason for transfer: [your reason]</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Follow-up after application</div><div class="prompt-card-preview">Write a brief, professional follow-up email to send after submitting a job application. It should express continued interest, be polite and concise, and not be pushy.
-
-Job title: [title]
-Company: [company name]
-Date applied: [date]
-Hiring manager name (if known): [name or 'Hiring Manager']</div></button>
-<span class="lbl-heading" style="margin-top: 16px; display: block;">Interview Prep</span>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Practice behavioral questions (STAR)</div><div class="prompt-card-preview">Help me prepare STAR-format answers for behavioral interview questions for this role. For each question, prompt me with a structure: Situation, Task, Action, Result.
-
-Role I'm interviewing for: [job title]
-Industry: [industry]
-My background: [brief summary]
-
-Start with these common questions:
-1. Tell me about a time you handled a conflict at work.
-2. Describe a project you led from start to finish.
-3. Tell me about a time you failed and what you learned.</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Technical interview prep</div><div class="prompt-card-preview">I have a technical interview for this role. Create a focused study plan and list the most likely topics and question types I should prepare for. Include sample questions and explain what strong answers look like.
-
-Role: [job title]
-Company type: [startup / enterprise / FAANG-style]
-Key skills listed in the job description: [paste them]
-My current skill level: [beginner / intermediate / strong]
-Time until interview: [days/weeks]</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Questions to ask the interviewer</div><div class="prompt-card-preview">Generate a list of thoughtful, strategic questions I can ask at the end of my interview. Include questions about the role, team culture, growth opportunities, and success metrics. Avoid generic questions.
-
-Role: [job title]
-Company: [company name]
-Stage of interview: [first round / final round / hiring manager / panel]
-What I already know about the company: [brief notes]</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Salary negotiation script</div><div class="prompt-card-preview">Write a salary negotiation script I can use after receiving a job offer. It should be confident but collaborative, justify my ask with market data and my experience, and keep the conversation positive.
-
-Offer received: [salary amount]
-My target salary: [target amount]
-My experience: [years and key qualifications]
-Role: [job title]
-Location / remote: [location]</div></button>
-<span class="lbl-heading" style="margin-top: 16px; display: block;">LinkedIn</span>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Optimize LinkedIn headline</div><div class="prompt-card-preview">Write 5 variations of a LinkedIn headline for my profile. Each should be keyword-rich for recruiter searches, communicate my value proposition clearly, and be under 220 characters.
-
-My current role: [title]
-Industry: [industry]
-Key skills: [list 3-5]
-What I want to be known for: [brief description]
-Open to new roles: [yes / no]</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write LinkedIn summary (About)</div><div class="prompt-card-preview">Write a LinkedIn About section for my profile. Use first-person voice, lead with a strong hook, highlight my experience and key skills, and end with what I'm looking for or how people can contact me. Aim for 250-350 words.
-
-My background: [summary of experience]
-Key skills and expertise: [list them]
-Notable achievements: [1-3 highlights]
-What I'm looking for: [roles, opportunities, or collaborations]</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Connection request message</div><div class="prompt-card-preview">Write a short, personalized LinkedIn connection request message (under 300 characters). It should be warm, specific about why I'm reaching out, and not immediately ask for anything.
-
-Who I'm reaching out to: [their name and title]
-Why I want to connect: [shared interest, mutual connection, admire their work, etc.]
-My background: [one-line description of who I am]</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">LinkedIn post about career insight</div><div class="prompt-card-preview">Write a LinkedIn post sharing a career insight or lesson I've learned. Use a strong first line to stop the scroll, tell a brief story or observation, and end with a question to drive engagement. Avoid buzzwords and keep it authentic.
-
-Topic or lesson: [what I want to share]
-Context or story behind it: [brief details]
-Target audience: [who I write for]
-Tone: [reflective / motivational / practical]</div></button>
-<span class="lbl-heading" style="margin-top: 16px; display: block;">Networking</span>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write informational interview request</div><div class="prompt-card-preview">Write an email requesting a 20-minute informational interview with someone in a role or company I'm interested in. Keep it concise, show genuine interest in their experience, and make it easy to say yes.
-
-Their name: [name]
-Their role and company: [details]
-How I found them: [LinkedIn, mutual connection, article, etc.]
-What I want to learn: [specific topics or questions]
-My background: [one sentence about who I am]</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Thank you email after networking meeting</div><div class="prompt-card-preview">Write a follow-up thank you email to send within 24 hours of an informational interview or networking meeting. Reference something specific from our conversation, express genuine appreciation, and suggest a natural next step.
-
-Their name: [name]
-Date of meeting: [date]
-Something specific we discussed: [topic or insight]
-Next step I want to propose: [e.g., stay in touch, share a resource, follow up in 3 months]</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Elevator pitch</div><div class="prompt-card-preview">Write a 30-second elevator pitch I can use at networking events or when someone asks 'what do you do?'. It should be clear, memorable, and naturally lead to a conversation. Write 3 versions: formal, casual, and career-changer.
-
-My background: [current or recent role and industry]
-Key skills or expertise: [list them]
-What I'm working toward: [goals or the type of opportunity I'm seeking]</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Conference follow-up email</div><div class="prompt-card-preview">Write a follow-up email to someone I met briefly at a conference or industry event. Reference how we met, recap the conversation, and propose a way to stay connected or continue the discussion.
-
-Their name: [name]
-Event name: [conference or event]
-How we met / what we talked about: [brief details]
-Next step I want to suggest: [call, coffee chat, sharing a resource, etc.]</div></button>
-<span class="lbl-heading" style="margin-top: 16px; display: block;">Career Growth</span>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Create a career development plan</div><div class="prompt-card-preview">Help me build a 12-month career development plan. Include specific goals, skills to develop, milestones to hit, and actions to take each quarter. Make it realistic and tied to my target role.
-
-My current role: [title and level]
-Target role in 12 months: [title and level]
-Key gaps to close: [skills, experience, or credentials I'm missing]
-Resources available to me: [courses, mentors, budget, etc.]</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Ask for a promotion</div><div class="prompt-card-preview">Write a script for asking my manager for a promotion. Structure it as a conversation opener, a summary of my contributions and impact, a clear ask, and an invitation to discuss a path forward. Keep it confident and collaborative.
-
-My current title: [title]
-Title I'm asking for: [target title]
-Time in current role: [duration]
-Key accomplishments: [list 3-5 with impact]
-Why now: [timing or trigger]</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write a self-review</div><div class="prompt-card-preview">Help me write a strong self-review for my annual performance review. For each area, highlight specific accomplishments with measurable impact, acknowledge areas for growth honestly, and connect my work to team and company goals.
-
-My role: [title]
-Key projects or responsibilities this period: [list them]
-Notable achievements: [with metrics where possible]
-Areas I want to grow in: [be specific]
-Goals for next period: [list 2-3]</div></button>
-<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Skill gap analysis</div><div class="prompt-card-preview">Analyze the gap between my current skills and the requirements for my target role. Prioritize the gaps by importance, suggest specific ways to close each one, and estimate a realistic timeline.
-
-My current skills: [list technical and soft skills]
-Target role: [job title]
-Job description or requirements: [paste or describe key requirements]
-Timeline I'm working with: [months or years]</div></button>
-
+        <div class="prompt-cards" id="prompt-cards"></div>
       </section>
 
       <!-- Clean Editor Canvas -->
@@ -473,19 +294,7 @@ Timeline I'm working with: [months or years]</div></button>
       <!-- Open in Providers (11 Models) -->
       <section class="providers-card" aria-labelledby="lbl-providers">
         <span class="lbl-heading" id="lbl-providers">Open in</span>
-        <ul class="providers" id="providers" aria-labelledby="lbl-providers">
-  <li><button type="button" class="p-btn pc-chatgpt" aria-label="Open prompt in ChatGPT"><div class="p-left"><span class="dot" style="background:var(--chatgpt)"></span><span>ChatGPT</span></div><span class="p-arrow">&nearr;</span></button></li>
-  <li><button type="button" class="p-btn pc-claude" aria-label="Open prompt in Claude"><div class="p-left"><span class="dot" style="background:var(--claude)"></span><span>Claude</span></div><span class="p-arrow">&nearr;</span></button></li>
-  <li><button type="button" class="p-btn pc-gemini" aria-label="Open prompt in Gemini"><div class="p-left"><span class="dot" style="background:var(--gemini)"></span><span>Gemini</span></div><span class="p-arrow">&nearr;</span></button></li>
-  <li><button type="button" class="p-btn pc-copilot" aria-label="Open prompt in Copilot"><div class="p-left"><span class="dot" style="background:var(--copilot)"></span><span>Copilot</span></div><span class="p-arrow">&nearr;</span></button></li>
-  <li><button type="button" class="p-btn pc-perplexity" aria-label="Open prompt in Perplexity"><div class="p-left"><span class="dot" style="background:var(--perplexity)"></span><span>Perplexity</span></div><span class="p-arrow">&nearr;</span></button></li>
-  <li><button type="button" class="p-btn pc-deepseek" aria-label="Open prompt in DeepSeek"><div class="p-left"><span class="dot" style="background:var(--deepseek)"></span><span>DeepSeek</span></div><span class="p-arrow">&nearr;</span></button></li>
-  <li><button type="button" class="p-btn pc-grok" aria-label="Open prompt in Grok"><div class="p-left"><span class="dot" style="background:var(--grok)"></span><span>Grok</span></div><span class="p-arrow">&nearr;</span></button></li>
-  <li><button type="button" class="p-btn pc-lechat" aria-label="Open prompt in Le Chat"><div class="p-left"><span class="dot" style="background:var(--lechat)"></span><span>Le Chat</span></div><span class="p-arrow">&nearr;</span></button></li>
-  <li><button type="button" class="p-btn pc-qwen" aria-label="Open prompt in Qwen"><div class="p-left"><span class="dot" style="background:var(--qwen)"></span><span>Qwen</span></div><span class="p-arrow">&nearr;</span></button></li>
-  <li><button type="button" class="p-btn pc-kimi" aria-label="Open prompt in Kimi"><div class="p-left"><span class="dot" style="background:var(--kimi)"></span><span>Kimi</span></div><span class="p-arrow">&nearr;</span></button></li>
-  <li><button type="button" class="p-btn pc-zai" aria-label="Open prompt in Z.ai"><div class="p-left"><span class="dot" style="background:var(--zai)"></span><span>Z.ai</span></div><span class="p-arrow">&nearr;</span></button></li>
-</ul>
+        <ul class="providers" id="providers" aria-labelledby="lbl-providers"></ul>
       </section>
 
       <!-- Related Libraries -->
@@ -539,7 +348,7 @@ Timeline I'm working with: [months or years]</div></button>
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <script src="/js/locales.f9476f0a.js"></script>
-<script src="/js/prompt.9c395192.js"></script>
+<script src="/js/prompt.653cafef.js"></script>
 <script>
 (function() {
 'use strict';
@@ -610,8 +419,7 @@ const promptEl = document.getElementById('prompt');
 
 function renderCats() {
   if (!catsEl) return;
-  const CURRENT_PROMPTS = (typeof window !== 'undefined' && window.__PROMPTS__) || DEV_PROMPTS;
-  const cats = ['All', ...CURRENT_PROMPTS.map(c => c.cat)];
+  const cats = ['All', ...DEV_PROMPTS.map(c => c.cat)];
   catsEl.innerHTML = '';
   cats.forEach(cat => {
     const btn = document.createElement('button');
@@ -633,8 +441,7 @@ function renderCats() {
 function renderCards() {
   if (!cardsEl) return;
   cardsEl.innerHTML = '';
-  const CURRENT_PROMPTS = (typeof window !== 'undefined' && window.__PROMPTS__) || DEV_PROMPTS;
-  const groups = activeCat === 'All' ? CURRENT_PROMPTS : CURRENT_PROMPTS.filter(c => c.cat === activeCat);
+  const groups = activeCat === 'All' ? DEV_PROMPTS : DEV_PROMPTS.filter(c => c.cat === activeCat);
 
   groups.forEach(group => {
     if (activeCat === 'All') {
@@ -698,7 +505,7 @@ window.__onPromptCleared = function() {
   });
 };
 
-(function(){var n=1,items=[];((typeof window !== 'undefined' && window.__PROMPTS__) || DEV_PROMPTS).forEach(function(c){c.prompts.forEach(function(p){items.push({"@type":"ListItem","position":n++,"name":p.title});});});var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ItemList","name":document.title.split('|')[0].split('—')[0].trim(),"numberOfItems":items.length,"itemListElement":items});document.head.appendChild(s);})();
+(function(){var n=1,items=[];DEV_PROMPTS.forEach(function(c){c.prompts.forEach(function(p){items.push({"@type":"ListItem","position":n++,"name":p.title});});});var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ItemList","name":document.title.split('|')[0].split('—')[0].trim(),"numberOfItems":items.length,"itemListElement":items});document.head.appendChild(s);})();
 })();
 </script>
 </body>
