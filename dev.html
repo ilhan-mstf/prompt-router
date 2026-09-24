@@ -127,7 +127,18 @@
           </span>
           <span class="item-chevron" id="quickChevron" aria-hidden="true">&#9662;</span>
         </button>
-        <div class="item-list" id="quickList"></div>
+        <div class="item-list" id="quickList">
+  <button type="button" class="item-btn" data-tid="t_0"><span class="item-title">Summarize</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_1"><span class="item-title">Explain it</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_2"><span class="item-title">Improve text</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_3"><span class="item-title">Brainstorm</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_4"><span class="item-title">Compare</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_5"><span class="item-title">Write email</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_6"><span class="item-title">Fix my code</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_7"><span class="item-title">Make a plan</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_8"><span class="item-title">Pros &amp; cons</span><span class="p-arrow">&nearr;</span></button>
+  <button type="button" class="item-btn" data-tid="t_9"><span class="item-title">Ask questions</span><span class="p-arrow">&nearr;</span></button>
+</div>
       </div>
 
       <!-- Section: Prompt Libraries -->
@@ -247,13 +258,151 @@
       <!-- Categories -->
       <section aria-labelledby="lbl-cats">
         <span class="lbl-heading" id="lbl-cats">Categories</span>
-        <div class="cats" id="cats" role="group" aria-labelledby="lbl-cats"></div>
+        <div class="cats" id="cats" role="group" aria-labelledby="lbl-cats">
+<button type="button" class="cat active" aria-pressed="true">All</button>
+<button type="button" class="cat" aria-pressed="false">Debugging</button>
+<button type="button" class="cat" aria-pressed="false">Code Review</button>
+<button type="button" class="cat" aria-pressed="false">Refactoring</button>
+<button type="button" class="cat" aria-pressed="false">Testing</button>
+<button type="button" class="cat" aria-pressed="false">Architecture</button>
+<button type="button" class="cat" aria-pressed="false">DevOps</button>
+<button type="button" class="cat" aria-pressed="false">Git &amp; Docs</button>
+</div>
       </section>
 
       <!-- Prompts Grid -->
       <section aria-labelledby="lbl-prompts">
         <span class="lbl-heading" id="lbl-prompts">Prompts</span>
-        <div class="prompt-cards" id="prompt-cards"></div>
+        <div class="prompt-cards" id="prompt-cards" role="region" aria-live="polite">
+<span class="lbl-heading" style="margin-top: 0; display: block;">Debugging</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Find the bug</div><div class="prompt-card-preview">Here is my code. It's not working as expected.
+
+[paste code here]
+
+The error or problem: [describe it]
+
+Find the bug, explain why it happens, and show the fix.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Explain this error</div><div class="prompt-card-preview">I'm getting this error:
+
+[paste error message]
+
+Here's the relevant code:
+
+[paste code here]
+
+Explain what's causing this error and how to fix it.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Debug performance issue</div><div class="prompt-card-preview">This code is running slower than expected:
+
+[paste code here]
+
+Profile the logic, identify bottlenecks, and suggest specific optimizations with before/after examples.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Fix failing test</div><div class="prompt-card-preview">This test is failing:
+
+[paste test code]
+
+The error output:
+
+[paste error]
+
+Here's the implementation it tests:
+
+[paste code]
+
+Explain why the test fails and how to fix it.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Code Review</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Review for bugs &amp; quality</div><div class="prompt-card-preview">Review this code for bugs, edge cases, and code quality issues. Be specific about what's wrong and suggest fixes:
+
+[paste code here]</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Security review</div><div class="prompt-card-preview">Review this code for security vulnerabilities (injection, auth issues, data exposure, OWASP top 10). Rate severity and suggest fixes:
+
+[paste code here]</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Review PR diff</div><div class="prompt-card-preview">Here's a PR diff. Review it for correctness, style, performance, and potential issues. Be concise and actionable:
+
+[paste diff here]</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Suggest improvements</div><div class="prompt-card-preview">Review this code and suggest improvements for readability, maintainability, and idiomatic style. Keep the same functionality:
+
+[paste code here]</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Refactoring</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Refactor for readability</div><div class="prompt-card-preview">Refactor this code to be more readable and maintainable. Keep the same behavior. Explain each change you make:
+
+[paste code here]</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Extract reusable logic</div><div class="prompt-card-preview">This code has duplicated or tightly-coupled logic. Extract reusable functions/modules while keeping the same behavior:
+
+[paste code here]</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Convert to async/await</div><div class="prompt-card-preview">Convert this callback-based or promise-chain code to use async/await. Handle errors properly:
+
+[paste code here]</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Simplify complex function</div><div class="prompt-card-preview">This function is too complex. Break it down into smaller, well-named functions. Keep the same inputs/outputs:
+
+[paste code here]</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Testing</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write unit tests</div><div class="prompt-card-preview">Write comprehensive unit tests for this function. Cover happy paths, edge cases, and error scenarios. Use [testing framework]:
+
+[paste code here]</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write integration test</div><div class="prompt-card-preview">Write an integration test for this feature. It should test the full flow from [start] to [end]:
+
+[paste code/API here]
+
+Use [testing framework].</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Generate test cases</div><div class="prompt-card-preview">List all the test cases I should write for this function. Group them by: happy path, edge cases, error handling, and boundary conditions:
+
+[paste code here]</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Add test coverage</div><div class="prompt-card-preview">This code has no tests. Analyze it, identify the most critical paths, and write tests in priority order. Use [testing framework]:
+
+[paste code here]</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Architecture</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Design a database schema</div><div class="prompt-card-preview">Design a database schema for [describe your app/feature]. Include tables, columns, types, relationships, and indexes. Explain your design decisions.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Design an API</div><div class="prompt-card-preview">Design a REST API for [feature/resource]. Include endpoints, methods, request/response schemas, status codes, and authentication. Follow best practices.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Compare approaches</div><div class="prompt-card-preview">I need to decide between these approaches for [problem]:
+
+Option A: [describe]
+Option B: [describe]
+
+Compare them on: performance, maintainability, complexity, and scalability. Recommend one with reasoning.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">System design</div><div class="prompt-card-preview">Design a system for [describe use case]. Cover: high-level architecture, data flow, storage, caching strategy, and how it scales. Identify potential bottlenecks.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">DevOps</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write a Dockerfile</div><div class="prompt-card-preview">Write a production-ready Dockerfile for this project:
+
+Language/framework: [e.g. Node.js, Python Flask]
+Needs: [e.g. multi-stage build, non-root user]
+
+Include best practices for security and image size.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">CI/CD pipeline</div><div class="prompt-card-preview">Write a GitHub Actions workflow that:
+
+1. [list steps, e.g. lint, test, build, deploy]
+
+Language/framework: [specify]
+Deploy target: [e.g. AWS, Vercel, Docker Hub]
+
+Include caching and sensible triggers.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Debug CI failure</div><div class="prompt-card-preview">My CI pipeline is failing. Here's the log output:
+
+[paste CI log]
+
+The pipeline config:
+
+[paste config]
+
+Identify the issue and suggest a fix.</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Infrastructure as code</div><div class="prompt-card-preview">Write [Terraform/CloudFormation/Pulumi] config for:
+
+[describe infrastructure, e.g. an S3 bucket with CloudFront, a VPC with subnets]
+
+Follow security best practices and add comments explaining each resource.</div></button>
+<span class="lbl-heading" style="margin-top: 16px; display: block;">Git &amp; Docs</span>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write commit message</div><div class="prompt-card-preview">Write a clear, conventional commit message for this diff. Use the format: type(scope): description. Be concise but descriptive:
+
+[paste diff here]</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write README</div><div class="prompt-card-preview">Generate a README.md for this project. Include: what it does, how to install, how to use, configuration options, and how to contribute:
+
+[paste project structure or main file here]</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Document this code</div><div class="prompt-card-preview">Add clear, concise documentation to this code. Include function/method docstrings, parameter descriptions, return values, and usage examples:
+
+[paste code here]</div></button>
+<button type="button" class="prompt-card" aria-pressed="false"><div class="prompt-card-title">Write changelog entry</div><div class="prompt-card-preview">Write a changelog entry for these changes. Group by: Added, Changed, Fixed, Removed. Use clear, user-facing language:
+
+[paste diff or list of changes]</div></button>
+</div>
       </section>
 
       <!-- Clean Editor Canvas -->
@@ -431,7 +580,8 @@ const promptEl = document.getElementById('prompt');
 
 function renderCats() {
   if (!catsEl) return;
-  const cats = ['All', ...DEV_PROMPTS.map(c => c.cat)];
+  const CURRENT_PROMPTS = (typeof window !== 'undefined' && window.__PROMPTS__) || DEV_PROMPTS;
+  const cats = ['All', ...CURRENT_PROMPTS.map(c => c.cat)];
   catsEl.innerHTML = '';
   cats.forEach(cat => {
     const btn = document.createElement('button');
@@ -453,7 +603,8 @@ function renderCats() {
 function renderCards() {
   if (!cardsEl) return;
   cardsEl.innerHTML = '';
-  const groups = activeCat === 'All' ? DEV_PROMPTS : DEV_PROMPTS.filter(c => c.cat === activeCat);
+  const CURRENT_PROMPTS = (typeof window !== 'undefined' && window.__PROMPTS__) || DEV_PROMPTS;
+  const groups = activeCat === 'All' ? CURRENT_PROMPTS : CURRENT_PROMPTS.filter(c => c.cat === activeCat);
 
   groups.forEach(group => {
     if (activeCat === 'All') {
