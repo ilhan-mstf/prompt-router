@@ -388,6 +388,14 @@ function renderSidebar() {
     const cleanLib = href.replace(/^\/[a-z]{2}\//, '/').replace(/^\//, '');
     if (validLibs.includes(cleanLib)) {
       a.setAttribute('href', `${prefix}/${cleanLib}`);
+      if (currentLocale && currentLocale.libNames && currentLocale.libNames[cleanLib]) {
+        const titleSpan = a.querySelector('.item-title');
+        if (titleSpan) {
+          titleSpan.textContent = currentLocale.libNames[cleanLib];
+        } else if (a.matches('#topbarLibMenu a, footer .footer-grid a, .related-grid a')) {
+          a.textContent = currentLocale.libNames[cleanLib];
+        }
+      }
     }
   });
 }

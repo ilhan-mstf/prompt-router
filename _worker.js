@@ -31,6 +31,20 @@ const QUICK_TEMPLATES = {
   tr: ['Özetle', 'Açıkla', 'Metni geliştir', 'Fikir üret', 'Kıyasla', 'E-posta yaz', 'Kodu düzelt', 'Plan yap', 'Artı ve eksiler', 'Sorular sor'],
 };
 
+const LIB_ICONS = {
+  dev: '&#128187;',
+  writing: '&#9997;',
+  marketing: '&#128227;',
+  job: '&#128188;',
+  startup: '&#128640;',
+  data: '&#128202;',
+  design: '&#127912;',
+  student: '&#127891;',
+  productivity: '&#9874;',
+  legal: '&#9878;',
+  sales: '&#128176;',
+};
+
 const NOSCRIPT_LOCALES = {
   de: {
     alert: 'Für die Nutzung von Prompt Router ist JavaScript erforderlich.',
@@ -289,12 +303,29 @@ export default {
         .on('a.brand-link',                     { element: el => el.setAttribute('href', `/${lang}`) })
         .on('a.new-prompt-btn',                 { element: el => el.setAttribute('href', `/${lang}`) })
         .on('.footer-links a[href="/"]',        { element: el => el.setAttribute('href', `/${lang}`) })
-        .on('#librariesList a.item-btn, #topbarLibMenu a', { element: el => {
+        .on('#librariesList a.item-btn', { element: el => {
           const href = el.getAttribute('href');
           if (!href || !href.startsWith('/')) return;
           const cleanLib = href.replace(/^\/[a-z]{2}\//, '/').replace(/^\//, '');
           if (VALID_LIBS.includes(cleanLib)) {
             el.setAttribute('href', `/${lang}/${cleanLib}`);
+            const meta = LIB_LOCALES[cleanLib] && LIB_LOCALES[cleanLib][lang];
+            const icon = LIB_ICONS[cleanLib] || '';
+            if (meta && meta.name) {
+              el.setInnerContent(`<div class="item-label-wrap"><span class="item-icon">${icon}</span><span class="item-title">${escHtml(meta.name)}</span></div><span class="p-arrow">&nearr;</span>`, { html: true });
+            }
+          }
+        }})
+        .on('#topbarLibMenu a', { element: el => {
+          const href = el.getAttribute('href');
+          if (!href || !href.startsWith('/')) return;
+          const cleanLib = href.replace(/^\/[a-z]{2}\//, '/').replace(/^\//, '');
+          if (VALID_LIBS.includes(cleanLib)) {
+            el.setAttribute('href', `/${lang}/${cleanLib}`);
+            const meta = LIB_LOCALES[cleanLib] && LIB_LOCALES[cleanLib][lang];
+            if (meta && meta.name) {
+              el.setInnerContent(meta.name);
+            }
           }
         }})
         .on('footer .footer-grid a', { element: el => {
@@ -416,12 +447,29 @@ export default {
           .on('a.brand-link',                     { element: el => el.setAttribute('href', `/${langSub}`) })
           .on('a.new-prompt-btn',                 { element: el => el.setAttribute('href', `/${langSub}`) })
           .on('.footer-links a[href="/"]',        { element: el => el.setAttribute('href', `/${langSub}`) })
-          .on('#librariesList a.item-btn, #topbarLibMenu a', { element: el => {
+          .on('#librariesList a.item-btn', { element: el => {
             const href = el.getAttribute('href');
             if (!href || !href.startsWith('/')) return;
             const cleanLib = href.replace(/^\/[a-z]{2}\//, '/').replace(/^\//, '');
             if (VALID_LIBS.includes(cleanLib)) {
               el.setAttribute('href', `/${langSub}/${cleanLib}`);
+              const meta = LIB_LOCALES[cleanLib] && LIB_LOCALES[cleanLib][langSub];
+              const icon = LIB_ICONS[cleanLib] || '';
+              if (meta && meta.name) {
+                el.setInnerContent(`<div class="item-label-wrap"><span class="item-icon">${icon}</span><span class="item-title">${escHtml(meta.name)}</span></div><span class="p-arrow">&nearr;</span>`, { html: true });
+              }
+            }
+          }})
+          .on('#topbarLibMenu a', { element: el => {
+            const href = el.getAttribute('href');
+            if (!href || !href.startsWith('/')) return;
+            const cleanLib = href.replace(/^\/[a-z]{2}\//, '/').replace(/^\//, '');
+            if (VALID_LIBS.includes(cleanLib)) {
+              el.setAttribute('href', `/${langSub}/${cleanLib}`);
+              const meta = LIB_LOCALES[cleanLib] && LIB_LOCALES[cleanLib][langSub];
+              if (meta && meta.name) {
+                el.setInnerContent(meta.name);
+              }
             }
           }})
           .on('footer .footer-grid a', { element: el => {

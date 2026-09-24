@@ -2,6 +2,7 @@
 
 const LOCALES = {
   en: {
+    libNames: {"dev":"Dev & Coding","writing":"Writing & Content","marketing":"Marketing & Growth","job":"Job Search & Careers","startup":"Startup & Founders","data":"Data Analysis","design":"Design & UX","student":"Student & Study","productivity":"Productivity","legal":"Legal & Contracts","sales":"Sales & Deals"},
     title: 'Prompt Router \u2014 Send One Prompt to ChatGPT, Claude, Gemini & More',
     metaDesc: 'Prompt Router lets you write one prompt and instantly open it in ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi and Z.ai. Compare AI responses side-by-side in seconds \u2014 free, no login required.',
     ogLocale: 'en_US', ogImageAlt: 'Prompt Router \u2014 one prompt, every AI',
