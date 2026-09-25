@@ -947,8 +947,8 @@ it('Topbar and footer navigation maintain complete parity across all application
     );
     assert.strictEqual(
       html.includes('<a href="/blog" class="nav-link">Blog</a>'),
-      true,
-      `Page ${page} missing '<a href="/blog" class="nav-link">Blog</a>' in topbar`
+      false,
+      `Page ${page} should not have '<a href="/blog" class="nav-link">Blog</a>' in topbar (moved to footer)`
     );
 
     // Footer check: Heading & links

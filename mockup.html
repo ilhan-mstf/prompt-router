@@ -994,17 +994,32 @@ footer {
   .hero-sub { font-size: 12px; }
   .editor-area {
   min-width: 0; padding: 14px; }
-  .actions-group { width: 100%; display: flex; flex-wrap: wrap; gap: 8px; }
-  .actions-group #btnCopy { flex: 1 1 100%; justify-content: center; }
-  .actions-group #btnSave, .actions-group #btnClear { flex: 1; justify-content: center; }
-  .editor-bottom { flex-direction: column; align-items: flex-start; }
-  .char-counter { align-self: flex-end; }
-  .providers-grid { grid-template-columns: 1fr; }
+  .brand-link,
+  .topbar-left .brand-link {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .nav-dropdown-btn {
+    padding: 5px 8px;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    gap: 4px;
+  }
+  .actions-group { width: 100%; display: flex; flex-wrap: nowrap; gap: 6px; }
+  .actions-group .btn { padding: 8px 8px; font-size: var(--text-xs); justify-content: center; white-space: nowrap; min-width: 0; }
+  .actions-group .btn-kbd { display: none; }
+  .actions-group #btnCopy { flex: 2 1 auto; justify-content: center; }
+  .actions-group #btnSave, .actions-group #btnClear { flex: 1 1 auto; justify-content: center; }
+  .editor-bottom { flex-direction: column; align-items: stretch; gap: 8px; }
+  .editor-meta { width: 100%; display: flex; justify-content: flex-end; align-items: center; }
+  .char-counter { margin-left: auto; text-align: right; }
+  .providers-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
 }
 
 @media (max-width: 540px) {
   .providers-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 </style>
@@ -1143,9 +1158,9 @@ footer {
         <button class="toggle-sidebar-btn" id="openSidebarBtn" onclick="toggleSidebar()">
           <span>&#9776;</span> <span id="lblToggleSidebar">Sidebar</span>
         </button>
-      </div>
-      <div class="brand-link">
-        <span>Prompt<span style="color: var(--gold);">Router</span></span>
+        <a href="/" class="brand-link">
+          <span>Prompt<span style="color: var(--gold);">Router</span></span>
+        </a>
       </div>
       <nav class="nav-links">
         <div class="nav-dropdown" id="topbarNavDropdown">
@@ -1166,7 +1181,6 @@ footer {
             <a href="/sales">Sales &amp; Deals</a>
           </div>
         </div>
-        <a href="/blog" class="nav-link">Blog</a>
       </nav>
     </header>
 

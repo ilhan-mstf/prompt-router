@@ -110,6 +110,8 @@ body.has-sidebar {
   gap: 10px;
   text-decoration: none;
   color: var(--text);
+  font-size: var(--text-sm);
+  font-weight: 500;
 }
 .topbar-left .brand-link {
   font-size: var(--text-sm);
@@ -686,7 +688,7 @@ button.section-title-wrap:focus-visible,
 .nav-dropdown { position: relative; }
 .nav-dropdown-btn {
   background: none; border: none; cursor: pointer;
-  font-family: inherit; font-size: var(--text-sm); color: var(--text-2);
+  font-family: inherit; font-size: var(--text-sm); font-weight: 500; color: var(--text-2);
   padding: 6px 12px; border-radius: 100px;
   display: flex; align-items: center; gap: 6px;
   transition: color .12s, background .12s;
@@ -1350,20 +1352,18 @@ footer {
   }
   .brand-link,
   .topbar-left .brand-link {
-    font-size: var(--text-xs);
+    font-size: var(--text-sm);
+    font-weight: 500;
     white-space: nowrap;
   }
   .nav-links {
-    gap: 3px;
+    gap: 4px;
     flex-shrink: 0;
   }
-  .nav-link {
-    padding: 4px 6px;
-    font-size: var(--text-xs);
-  }
   .nav-dropdown-btn {
-    padding: 4px 6px;
-    font-size: var(--text-xs);
+    padding: 5px 8px;
+    font-size: var(--text-sm);
+    font-weight: 500;
     gap: 4px;
   }
   .theme-toggle-btn {
@@ -1384,21 +1384,66 @@ footer {
   .hero-sub {
     font-size: var(--text-xs);
   }
+  .editor-bottom {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .actions-group {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 6px;
+  }
+  .actions-group .btn {
+    padding: 8px 8px;
+    font-size: var(--text-xs);
+    justify-content: center;
+    white-space: nowrap;
+    min-width: 0;
+  }
+  .actions-group .btn span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .actions-group .btn-kbd,
+  .btn .btn-kbd {
+    display: none;
+  }
+  .btn-primary {
+    flex: 2 1 auto;
+  }
+  .btn-secondary {
+    flex: 1 1 auto;
+  }
+  .btn-ghost {
+    flex: 1 1 auto;
+  }
+  .editor-meta {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .char-counter,
+  .char-count {
+    margin-left: auto;
+    text-align: right;
+  }
   .providers-grid,
   .providers {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .p-btn {
+    padding: 9px 10px;
   }
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .footer-inner {
     padding: 28px 16px 40px;
-  }
-  .actions-group {
-    width: 100%;
-  }
-  .btn-primary {
-    flex: 1;
   }
 }
 
