@@ -1,6 +1,6 @@
 'use strict';
 
-/* ── Providers (11 Models) ──────────────────────────────────── */
+/* ── Providers (12 Models) ──────────────────────────────────── */
 const enc = s => encodeURIComponent(s);
 const providers = [
   { id: 'chatgpt',    label: 'ChatGPT',    cls: 'pc-chatgpt',    color: 'var(--chatgpt)',    url: q => `https://chatgpt.com/?q=${enc(q)}` },
@@ -14,6 +14,7 @@ const providers = [
   { id: 'qwen',       label: 'Qwen',       cls: 'pc-qwen',       color: 'var(--qwen)',       url: q => `https://chat.qwen.ai/?q=${enc(q)}` },
   { id: 'kimi',       label: 'Kimi',       cls: 'pc-kimi',       color: 'var(--kimi)',       url: q => `https://www.kimi.com/en?q=${enc(q)}` },
   { id: 'zai',        label: 'Z.ai',       cls: 'pc-zai',        color: 'var(--zai)',        url: q => `https://z.ai/chat?q=${enc(q)}` },
+  { id: 'meta',       label: 'Meta AI',    cls: 'pc-meta',       color: 'var(--meta)',       url: q => `https://www.meta.ai/?q=${enc(q)}` },
 ];
 
 /* ── Safe Storage Fallback ──────────────────────────────────── */
@@ -532,8 +533,9 @@ function renderFooterDesc(locale) {
     `<a href="https://x.com/i/grok" rel="noopener noreferrer" target="_blank">Grok</a>, ` +
     `<a href="https://chat.mistral.ai" rel="noopener noreferrer" target="_blank">Le Chat</a>, ` +
     `<a href="https://chat.qwen.ai" rel="noopener noreferrer" target="_blank">Qwen</a>, ` +
-    `<a href="https://www.kimi.com" rel="noopener noreferrer" target="_blank">Kimi</a>, and ` +
-    `<a href="https://z.ai" rel="noopener noreferrer" target="_blank">Z.ai</a>. ` +
+    `<a href="https://www.kimi.com" rel="noopener noreferrer" target="_blank">Kimi</a>, ` +
+    `<a href="https://z.ai" rel="noopener noreferrer" target="_blank">Z.ai</a>, and ` +
+    `<a href="https://www.meta.ai" rel="noopener noreferrer" target="_blank">Meta AI</a>. ` +
     `${locale.footerDescOutro || ''}`;
 }
 

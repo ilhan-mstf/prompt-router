@@ -4,7 +4,7 @@ const LOCALES = {
   en: {
     libNames: {"dev":"Dev & Coding","writing":"Writing & Content","marketing":"Marketing & Growth","job":"Job Search & Careers","startup":"Startup & Founders","data":"Data Analysis","design":"Design & UX","student":"Student & Study","productivity":"Productivity","legal":"Legal & Contracts","sales":"Sales & Deals"},
     title: 'Prompt Router \u2014 Send One Prompt to ChatGPT, Claude, Gemini & More',
-    metaDesc: 'Prompt Router lets you write one prompt and instantly open it in ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi and Z.ai. Compare AI responses side-by-side in seconds \u2014 free, no login required.',
+    metaDesc: 'Prompt Router lets you write one prompt and instantly open it in ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai, and Meta AI. Compare AI responses side-by-side in seconds \u2014 free, no login required.',
     ogLocale: 'en_US', ogImageAlt: 'Prompt Router \u2014 one prompt, every AI',
     lblTemplates: 'Quick templates', lblLibrary: 'My prompts', lblPrompt: 'Your prompt', lblProviders: 'Open in',
     lblCats: 'Categories', lblPrompts: 'Prompts', lblRelated: 'Explore more prompt libraries', lblAll: 'All',
@@ -42,7 +42,7 @@ const LOCALES = {
   },
   es: {
     title: 'Prompt Router \u2014 Escribe un Prompt y \u00c1brelo en ChatGPT, Claude, Gemini y m\u00e1s',
-    metaDesc: 'Prompt Router te permite escribir un prompt y abrirlo al instante en ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi y Z.ai. Compara respuestas de IA en segundos \u2014 gratis, sin registro.',
+    metaDesc: 'Prompt Router te permite escribir un prompt y abrirlo al instante en ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai y Meta AI. Compara respuestas de IA en segundos \u2014 gratis, sin registro.',
     ogLocale: 'es_ES', ogImageAlt: 'Prompt Router \u2014 un prompt, toda la IA',
     lblTemplates: 'Plantillas r\u00e1pidas', lblLibrary: 'Mis prompts', lblPrompt: 'Tu prompt', lblProviders: 'Abrir en',
     lblCats: 'Categorías', lblPrompts: 'Prompts', lblRelated: 'Explorar más bibliotecas de prompts', lblAll: 'Todos',
@@ -80,7 +80,7 @@ const LOCALES = {
   },
   it: {
     title: 'Prompt Router \u2014 Scrivi un Prompt e Aprilo su ChatGPT, Claude, Gemini e altri',
-    metaDesc: 'Prompt Router ti permette di scrivere un prompt e aprirlo istantaneamente su ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi e Z.ai. Confronta le risposte AI in secondi \u2014 gratis, senza registrazione.',
+    metaDesc: 'Prompt Router ti permette di scrivere un prompt e aprirlo istantaneamente su ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai e Meta AI. Confronta le risposte AI in secondi \u2014 gratis, senza registrazione.',
     ogLocale: 'it_IT', ogImageAlt: 'Prompt Router \u2014 un prompt, ogni AI',
     lblTemplates: 'Modelli rapidi', lblLibrary: 'I miei prompt', lblPrompt: 'Il tuo prompt', lblProviders: 'Apri in',
     lblCats: 'Categorie', lblPrompts: 'Prompts', lblRelated: 'Esplora altre raccolte di prompt', lblAll: 'Tutti',
@@ -118,7 +118,7 @@ const LOCALES = {
   },
   pt: {
     title: 'Prompt Router \u2014 Escreva um Prompt e Abra no ChatGPT, Claude, Gemini e mais',
-    metaDesc: 'Prompt Router permite escrever um prompt e abri-lo instantaneamente no ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi e Z.ai. Compare respostas de IA em segundos \u2014 gratuito, sem cadastro.',
+    metaDesc: 'Prompt Router permite escrever um prompt e abri-lo instantaneamente no ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai e Meta AI. Compare respostas de IA em segundos \u2014 gratuito, sem cadastro.',
     ogLocale: 'pt_BR', ogImageAlt: 'Prompt Router \u2014 um prompt, toda IA',
     lblTemplates: 'Modelos rápidos', lblLibrary: 'Meus prompts', lblPrompt: 'Seu prompt', lblProviders: 'Abrir em',
     lblCats: 'Categorias', lblPrompts: 'Prompts', lblRelated: 'Explorar mais bibliotecas de prompts', lblAll: 'Todos',
@@ -156,7 +156,7 @@ const LOCALES = {
   },
   fr: {
     title: 'Prompt Router \u2014 \u00c9crivez un Prompt et Ouvrez-le dans ChatGPT, Claude, Gemini et plus',
-    metaDesc: "Prompt Router vous permet d'\u00e9crire un prompt et de l'ouvrir instantan\u00e9ment dans ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi et Z.ai. Comparez les r\u00e9ponses IA en secondes \u2014 gratuit, sans inscription.",
+    metaDesc: "Prompt Router vous permet d'\u00e9crire un prompt et de l'ouvrir instantan\u00e9ment dans ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai et Meta AI. Comparez les r\u00e9ponses IA en secondes \u2014 gratuit, sans inscription.",
     ogLocale: 'fr_FR', ogImageAlt: "Prompt Router \u2014 un prompt, toute l'IA",
     lblTemplates: 'Mod\u00e8les rapides', lblLibrary: 'Mes prompts', lblPrompt: 'Votre prompt', lblProviders: 'Ouvrir dans',
     lblCats: 'Catégories', lblPrompts: 'Prompts', lblRelated: 'Explorer d\'autres bibliothèques de prompts', lblAll: 'Tous',
@@ -194,7 +194,7 @@ const LOCALES = {
   },
   de: {
     title: 'Prompt Router \u2014 Schreib einen Prompt und \u00f6ffne ihn in ChatGPT, Claude, Gemini und mehr',
-    metaDesc: 'Prompt Router erm\u00f6glicht es dir, einen Prompt zu schreiben und ihn sofort in ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi und Z.ai zu \u00f6ffnen. Vergleiche KI-Antworten in Sekunden \u2014 kostenlos, ohne Anmeldung.',
+    metaDesc: 'Prompt Router erm\u00f6glicht es dir, einen Prompt zu schreiben und ihn sofort in ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai und Meta AI zu \u00f6ffnen. Vergleiche KI-Antworten in Sekunden \u2014 kostenlos, ohne Anmeldung.',
     ogLocale: 'de_DE', ogImageAlt: 'Prompt Router \u2014 ein Prompt, jede KI',
     lblTemplates: 'Schnellvorlagen', lblLibrary: 'Meine Prompts', lblPrompt: 'Dein Prompt', lblProviders: '\u00d6ffnen in',
     lblCats: 'Kategorien', lblPrompts: 'Prompts', lblRelated: 'Weitere Prompt-Bibliotheken entdecken', lblAll: 'Alle',
@@ -232,7 +232,7 @@ const LOCALES = {
   },
   tr: {
     title: 'Prompt Router \u2014 Bir Prompt Yaz ve ChatGPT, Claude, Gemini ve Daha Fazlas\u0131nda A\u00e7',
-    metaDesc: 'Prompt Router, bir prompt yazman\u0131za ve onu ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi ve Z.ai\u2019de an\u0131nda a\u00e7man\u0131za olanak tan\u0131r. Yapay zeka yan\u0131tlar\u0131n\u0131 saniyeler i\u00e7inde kar\u015f\u0131la\u015ft\u0131r\u0131n \u2014 \u00fccretsiz, kay\u0131t gerekmez.',
+    metaDesc: 'Prompt Router, bir prompt yazman\u0131za ve onu ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai ve Meta AI\u2019de an\u0131nda a\u00e7man\u0131za olanak tan\u0131r. Yapay zeka yan\u0131tlar\u0131n\u0131 saniyeler i\u00e7inde kar\u015f\u0131la\u015ft\u0131r\u0131n \u2014 \u00fccretsiz, kay\u0131t gerekmez.',
     ogLocale: 'tr_TR', ogImageAlt: 'Prompt Router \u2014 bir prompt, t\u00fcm yapay zeka',
     lblTemplates: 'H\u0131zl\u0131 \u015fablonlar', lblLibrary: 'Promptlar\u0131m', lblPrompt: 'Prompt\u2019unuz', lblProviders: 'A\u00e7',
     lblCats: 'Kategoriler', lblPrompts: 'Prompts', lblRelated: 'Daha fazla prompt kütüphanesi keşfedin', lblAll: 'Tümü',

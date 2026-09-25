@@ -49,69 +49,69 @@ const NOSCRIPT_LOCALES = {
   de: {
     alert: 'Für die Nutzung von Prompt Router ist JavaScript erforderlich.',
     title: 'Kostenloser Multi-LLM Prompt Router & KI-Vergleichstool',
-    p1: 'Prompt Router ist ein kostenloses Tool ohne Anmeldung, mit dem du einen Prompt gleichzeitig an mehrere KI-Modelle senden kannst. Vergleiche Antworten von ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi und Z.ai Seite an Seite.',
+    p1: 'Prompt Router ist ein kostenloses Tool ohne Anmeldung, mit dem du einen Prompt gleichzeitig an mehrere KI-Modelle senden kannst. Vergleiche Antworten von ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai und Meta AI Seite an Seite.',
     featuresTitle: 'Hauptfunktionen:',
-    f1: ['Ein Prompt, jede KI', 'Einmal schreiben und in 11+ führenden Modellen öffnen.'],
+    f1: ['Ein Prompt, jede KI', 'Einmal schreiben und in 12+ führenden Modellen öffnen.'],
     f2: ['11+ Prompt-Bibliotheken', 'Kuratierte Prompts für Entwickler, Marketing, Schreiben, Startups und mehr.'],
     f3: ['Privat & Sicher', 'Kein Konto erforderlich, keine Datenspeicherung – deine Prompts bleiben im Browser.'],
     f4: ['KI-Modelle vergleichen', 'Sofort sehen, welches LLM das beste Ergebnis für deine Aufgabe liefert.'],
     providersTitle: 'Unterstützte KI-Anbieter:',
-    providersList: 'ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google), Copilot (Microsoft), Perplexity, DeepSeek, Grok (xAI), Mistral Le Chat, Qwen (Alibaba), Kimi (Moonshot) und Z.ai (Zhipu).'
+    providersList: 'ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google), Copilot (Microsoft), Perplexity, DeepSeek, Grok (xAI), Mistral Le Chat, Qwen (Alibaba), Kimi (Moonshot), Z.ai (Zhipu) und Meta AI.'
   },
   fr: {
     alert: 'JavaScript est requis pour utiliser Prompt Router.',
     title: 'Routeur de Prompts Multi-LLM & Outil de Comparaison IA Gratuit',
-    p1: "Prompt Router est un outil gratuit sans inscription qui vous permet d'envoyer un seul prompt à plusieurs modèles d'IA simultanément. Comparez les réponses de ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi et Z.ai côte à côte.",
+    p1: "Prompt Router est un outil gratuit sans inscription qui vous permet d'envoyer un seul prompt à plusieurs modèles d'IA simultanément. Comparez les réponses de ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai et Meta AI côte à côte.",
     featuresTitle: 'Fonctionnalités principales :',
-    f1: ['Un prompt, chaque IA', 'Rédigez une fois et ouvrez dans 11+ modèles majeurs.'],
+    f1: ['Un prompt, chaque IA', 'Rédigez une fois et ouvrez dans 12+ modèles majeurs.'],
     f2: ['11+ Bibliothèques de prompts', 'Prompts sélectionnés pour Développeurs, Marketing, Rédaction, Startups et plus.'],
     f3: ['Privé & Sécurisé', 'Aucun compte requis, aucun stockage serveur — vos prompts restent dans votre navigateur.'],
     f4: ["Comparer les modèles d'IA", "Voyez instantanément quel LLM offre le meilleur résultat pour votre tâche."],
     providersTitle: "Fournisseurs d'IA pris en charge :",
-    providersList: 'ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google), Copilot (Microsoft), Perplexity, DeepSeek, Grok (xAI), Mistral Le Chat, Qwen (Alibaba), Kimi (Moonshot) et Z.ai (Zhipu).'
+    providersList: 'ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google), Copilot (Microsoft), Perplexity, DeepSeek, Grok (xAI), Mistral Le Chat, Qwen (Alibaba), Kimi (Moonshot), Z.ai (Zhipu) et Meta AI.'
   },
   es: {
     alert: 'Se requiere JavaScript para usar Prompt Router.',
     title: 'Enrutador de Prompts Multi-LLM y Comparador de IA Gratuito',
-    p1: 'Prompt Router es una herramienta gratuita y sin registro que te permite enviar un único prompt a múltiples modelos de IA simultáneamente. Compara respuestas de ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi y Z.ai lado a lado.',
+    p1: 'Prompt Router es una herramienta gratuita y sin registro que te permite enviar un único prompt a múltiples modelos de IA simultáneamente. Compara respuestas de ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai y Meta AI lado a lado.',
     featuresTitle: 'Características principales:',
-    f1: ['Un Prompt, Toda la IA', 'Escribe una vez y abre en 11+ modelos líderes.'],
+    f1: ['Un Prompt, Toda la IA', 'Escribe una vez y abre en 12+ modelos líderes.'],
     f2: ['11+ Bibliotecas de Prompts', 'Prompts seleccionados para Desarrolladores, Marketing, Redacción, Startups y más.'],
     f3: ['Privado y Seguro', 'Sin registro ni almacenamiento en el servidor — tus prompts se quedan en tu navegador.'],
     f4: ['Comparar Modelos de IA', 'Descubre al instante qué LLM ofrece el mejor resultado para tu tarea.'],
     providersTitle: 'Proveedores de IA compatibles:',
-    providersList: 'ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google), Copilot (Microsoft), Perplexity, DeepSeek, Grok (xAI), Mistral Le Chat, Qwen (Alibaba), Kimi (Moonshot) y Z.ai (Zhipu).'
+    providersList: 'ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google), Copilot (Microsoft), Perplexity, DeepSeek, Grok (xAI), Mistral Le Chat, Qwen (Alibaba), Kimi (Moonshot), Z.ai (Zhipu) y Meta AI.'
   },
   tr: {
     alert: "Prompt Router'ı kullanmak için JavaScript gereklidir.",
     title: 'Ücretsiz Çoklu LLM Prompt Yönlendirici & Yapay Zeka Karşılaştırma Aracı',
-    p1: 'Prompt Router, tek bir prompt yazıp aynı anda birden fazla yapay zeka modeline göndermenizi sağlayan ücretsiz ve kayıtsız bir araçtır. ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi ve Z.ai yanıtlarını yan yana karşılaştırın.',
+    p1: 'Prompt Router, tek bir prompt yazıp aynı anda birden fazla yapay zeka modeline göndermenizi sağlayan ücretsiz ve kayıtsız bir araçtır. ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai ve Meta AI yanıtlarını yan yana karşılaştırın.',
     featuresTitle: 'Temel Özellikler:',
-    f1: ['Tek Prompt, Tüm Yapay Zeka', 'Bir kez yazın ve 11+ popüler yapay zekada anında açın.'],
+    f1: ['Tek Prompt, Tüm Yapay Zeka', 'Bir kez yazın ve 12+ popüler yapay zekada anında açın.'],
     f2: ['11+ Prompt Kütüphanesi', 'Geliştiriciler, Pazarlama, Yazarlık, Startup ve daha fazlası için seçilmiş promptlar.'],
     f3: ['Gizli ve Güvenli', 'Hesap gerekmez, sunucuda veri saklanmaz — promptlarınız tarayıcınızda kalır.'],
     f4: ['Yapay Zeka Modellerini Karşılaştırın', 'Göreviniz için en iyi yanıtı hangi modelin verdiğini saniyeler içinde görün.'],
     providersTitle: 'Desteklenen Yapay Zeka Sağlayıcıları:',
-    providersList: 'ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google), Copilot (Microsoft), Perplexity, DeepSeek, Grok (xAI), Mistral Le Chat, Qwen (Alibaba), Kimi (Moonshot) ve Z.ai (Zhipu).'
+    providersList: 'ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google), Copilot (Microsoft), Perplexity, DeepSeek, Grok (xAI), Mistral Le Chat, Qwen (Alibaba), Kimi (Moonshot), Z.ai (Zhipu) ve Meta AI.'
   },
   it: {
     alert: 'JavaScript è necessario per utilizzare Prompt Router.',
     title: 'Router di Prompt Multi-LLM e Strumento di Confronto AI Gratuito',
-    p1: 'Prompt Router è uno strumento gratuito e senza registrazione che ti consente di inviare un singolo prompt a più modelli di IA contemporaneamente. Confronta le risposte di ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi e Z.ai fianco a fianco.',
+    p1: 'Prompt Router è uno strumento gratuito e senza registrazione che ti consente di inviare un singolo prompt a più modelli di IA contemporaneamente. Confronta le risposte di ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai e Meta AI fianco a fianco.',
     featuresTitle: 'Funzionalità principali:',
-    f1: ['Un Prompt, Tutte le AI', 'Scrivi una volta e apri in 11+ modelli leader.'],
+    f1: ['Un Prompt, Tutte le AI', 'Scrivi una volta e apri in 12+ modelli leader.'],
     f2: ['11+ Librerie di Prompt', 'Prompt curati per Sviluppatori, Marketing, Scrittura, Startup e altro.'],
     f3: ['Privato e Sicuro', 'Nessun account richiesto, nessun salvataggio su server — i tuoi prompt rimangono nel browser.'],
     f4: ['Confronta Modelli di IA', "Scopri all'istante quale LLM offre il risultato migliore per la tua attività."],
     providersTitle: 'Provider AI supportati:',
-    providersList: 'ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google), Copilot (Microsoft), Perplexity, DeepSeek, Grok (xAI), Mistral Le Chat, Qwen (Alibaba), Kimi (Moonshot) e Z.ai (Zhipu).'
+    providersList: 'ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google), Copilot (Microsoft), Perplexity, DeepSeek, Grok (xAI), Mistral Le Chat, Qwen (Alibaba), Kimi (Moonshot), Z.ai (Zhipu) e Meta AI.'
   },
   pt: {
     alert: 'O JavaScript é necessário para usar o Prompt Router.',
     title: 'Roteador de Prompts Multi-LLM e Ferramenta de Comparação de IA Gratuita',
-    p1: 'O Prompt Router é uma ferramenta gratuita e sem cadastro que permite enviar um único prompt para múltiplos modelos de IA simultaneamente. Compare respostas de ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi e Z.ai lado a lado.',
+    p1: 'O Prompt Router é uma ferramenta gratuita e sem cadastro que permite enviar um único prompt para múltiplos modelos de IA simultaneamente. Compare respostas de ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai e Meta AI lado a lado.',
     featuresTitle: 'Principais recursos:',
-    f1: ['Um Prompt, Toda IA', 'Escreva uma vez e abra em 11+ modelos principais.'],
+    f1: ['Um Prompt, Toda IA', 'Escreva uma vez e abra em 12+ modelos principais.'],
     f2: ['11+ Bibliotecas de Prompts', 'Prompts selecionados para Desenvolvedores, Marketing, Redação, Startups e mais.'],
     f3: ['Privado e Seguro', 'Sem cadastro, sem armazenamento em servidor — seus prompts ficam no seu navegador.'],
     f4: ['Comparar Modelos de IA', 'Veja instantaneamente qual LLM entrega o melhor resultado.'],

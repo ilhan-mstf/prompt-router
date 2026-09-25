@@ -40,6 +40,7 @@ const PROVIDERS = [
   { id: 'qwen', name: 'Qwen' },
   { id: 'kimi', name: 'Kimi' },
   { id: 'zai', name: 'Z.ai' },
+  { id: 'meta', name: 'Meta AI' },
 ];
 
 let provHtml = '\n';

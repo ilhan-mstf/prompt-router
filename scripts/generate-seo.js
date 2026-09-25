@@ -166,8 +166,8 @@ export function generateSitemap() {
 
 export function generateLlmsTxt() {
   let txt = '# Prompt Router\n\n';
-  txt += '> Write one prompt. Open every AI. Compare responses side-by-side across ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, and Z.ai.\n\n';
-  txt += 'Prompt Router is a free, privacy-first web utility for prompt engineers, developers, writers, and AI power users. It allows users to compose a prompt once and immediately launch it in 11 major LLMs pre-filled via direct URL parameter routing. No account, no login, and no backend data storage.\n\n';
+  txt += '> Write one prompt. Open every AI. Compare responses side-by-side across ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai, and Meta AI.\n\n';
+  txt += 'Prompt Router is a free, privacy-first web utility for prompt engineers, developers, writers, and AI power users. It allows users to compose a prompt once and immediately launch it in 12 major LLMs pre-filled via direct URL parameter routing. No account, no login, and no backend data storage.\n\n';
   txt += `- [Website](${BASE_URL}): Free, privacy-first multi-LLM prompt router and side-by-side comparator.\n`;
   txt += `- [Full Documentation & Prompt Dump](${BASE_URL}/llms-full.txt): Complete prompt collection across 11 libraries, 10 core quick templates, edge routing syntax, and API endpoints.\n`;
   txt += `- [Repository](https://github.com/ilhan-mstf/prompt-router): Open-source codebase on GitHub.\n\n`;
@@ -184,7 +184,8 @@ export function generateLlmsTxt() {
   txt += '- **Mistral Le Chat**: `https://chat.mistral.ai/chat?q={encoded_prompt}`\n';
   txt += '- **Qwen (Alibaba)**: `https://chat.qwen.ai/?q={encoded_prompt}`\n';
   txt += '- **Kimi (Moonshot)**: `https://www.kimi.com/en?q={encoded_prompt}`\n';
-  txt += '- **Z.ai (Zhipu)**: `https://z.ai/chat?q={encoded_prompt}`\n\n';
+  txt += '- **Z.ai (Zhipu)**: `https://z.ai/chat?q={encoded_prompt}`\n';
+  txt += '- **Meta AI**: `https://www.meta.ai/?q={encoded_prompt}`\n\n';
 
   txt += '## Prompt Libraries\n\n';
   txt += 'Curated battle-tested prompt collections across 11 domains:\n\n';
@@ -227,9 +228,10 @@ export function generateLlmsTxt() {
   txt += `- \`${BASE_URL}/de/marketing\` (Beste KI-Prompts für Marketing & Growth)\n\n`;
 
   txt += '## Guides & Blog Articles\n\n';
+  txt += `- [Meta AI Integration Guide](${BASE_URL}/blog-meta-ai): Expanding Prompt Router to 12 AI models with Meta AI & Llama routing.\n`;
   txt += `- [The Curated Prompt Library Guide](${BASE_URL}/blog-prompt-library): 260+ battle-tested AI prompts across 11 professional domains.\n`;
   txt += `- [Introducing the New Prompt Router](${BASE_URL}/blog-new-look): Major redesign with collapsible sidebar, clean canvas, and 11 AI models.\n`;
-  txt += `- [Prompt Engineering Blog](${BASE_URL}/blog): Index of all 17 prompt engineering articles, model comparisons, and cost optimization guides.\n`;
+  txt += `- [Prompt Engineering Blog](${BASE_URL}/blog): Index of all 18 prompt engineering articles, model comparisons, and cost optimization guides.\n`;
   txt += `- [Budget-Friendly Prompt Routing](${BASE_URL}/blog-budget-prompt-routing): How top AI companies cut inference costs by up to 85% using model cascades and small models.\n`;
   txt += `- [Compare AI Models](${BASE_URL}/blog-compare-ai): Comparative breakdown of LLMs for specialized tasks.\n`;
   txt += `- [Prompt Router Overview](${BASE_URL}/blog-prompt-router): Benefits of multi-LLM workflows.\n`;
@@ -270,7 +272,8 @@ export function generateLlmsFullTxt() {
   txt += '- **Mistral Le Chat**: `https://chat.mistral.ai/chat?q={encoded_prompt}`\n';
   txt += '- **Qwen (Alibaba)**: `https://chat.qwen.ai/?q={encoded_prompt}`\n';
   txt += '- **Kimi (Moonshot)**: `https://www.kimi.com/en?q={encoded_prompt}`\n';
-  txt += '- **Z.ai (Zhipu)**: `https://z.ai/chat?q={encoded_prompt}`\n\n';
+  txt += '- **Z.ai (Zhipu)**: `https://z.ai/chat?q={encoded_prompt}`\n';
+  txt += '- **Meta AI**: `https://www.meta.ai/?q={encoded_prompt}`\n\n';
 
   txt += '## Multi-Language Subdirectories\n';
   txt += 'Prompt Router supports server-side edge rendering (SSR) for 7 languages across the homepage and all 11 prompt libraries:\n';
@@ -318,9 +321,10 @@ export function generateLlmsFullTxt() {
 
   txt += '---\n';
   txt += '## Guides & Blog Articles\n\n';
+  txt += `- [Meta AI Integration Guide](${BASE_URL}/blog-meta-ai): Expanding Prompt Router to 12 AI models with Meta AI & Llama routing.\n`;
   txt += `- [The Curated Prompt Library Guide](${BASE_URL}/blog-prompt-library): 260+ battle-tested AI prompts across 11 professional domains.\n`;
   txt += `- [Introducing the New Prompt Router](${BASE_URL}/blog-new-look): Major redesign with collapsible sidebar, clean canvas, and 11 AI models.\n`;
-  txt += `- [Prompt Engineering Blog](${BASE_URL}/blog): Index of all 17 prompt engineering articles, model comparisons, and cost optimization guides.\n`;
+  txt += `- [Prompt Engineering Blog](${BASE_URL}/blog): Index of all 18 prompt engineering articles, model comparisons, and cost optimization guides.\n`;
   txt += `- [Budget-Friendly Prompt Routing](${BASE_URL}/blog-budget-prompt-routing): How top AI companies cut inference costs by up to 85% using model cascades and small models.\n`;
   txt += `- [Reduce AI Costs](${BASE_URL}/blog-reduce-ai-costs): 5 proven strategies to cut OpenAI, Anthropic, and Google AI API costs by up to 80%.\n`;
   txt += `- [Compare AI Models](${BASE_URL}/blog-compare-ai): Comparative breakdown of LLMs for specialized tasks and why side-by-side evaluation is essential.\n`;

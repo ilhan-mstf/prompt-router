@@ -11,6 +11,7 @@
   --qwen:       #615ced;
   --kimi:       #059669;
   --zai:        #2563eb;
+  --meta:       #0081fb;
 
   --red-soft:  rgba(224,108,108,.12);
   --red:       #e06c6c;
@@ -531,15 +532,25 @@ button.section-title-wrap:focus-visible,
 }
 .lang-select {
   flex: 1;
-  background: var(--surface-2);
+  background-color: var(--surface-2);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238c827a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 11px 11px;
   border: 1px solid var(--border);
   color: var(--text);
   font-family: inherit;
   font-size: var(--text-xs);
-  padding: 6px 10px;
+  padding: 6px 32px 6px 10px;
   border-radius: 6px;
   outline: none;
   cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+:root[data-theme="light"] .lang-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236a645c' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 }
 .lang-select:focus { border-color: var(--focus); }
 .lang-select:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
@@ -609,7 +620,7 @@ button.section-title-wrap:focus-visible,
   color: var(--text-2);
   padding: 6px 10px;
   border-radius: 6px;
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -682,7 +693,7 @@ button.section-title-wrap:focus-visible,
 }
 .nav-dropdown-btn:hover { color: var(--text); background: var(--surface-2); }
 .nav-dropdown-arrow {
-  font-size: var(--text-xs);
+  font-size: inherit;
   opacity: 0.7;
   display: inline-block;
   transition: transform .2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -702,7 +713,7 @@ button.section-title-wrap:focus-visible,
 }
 .nav-dropdown.open .nav-dropdown-menu { display: block; }
 .nav-dropdown-menu a {
-  display: block; padding: 7px 16px; font-size: var(--text-xs);
+  display: block; padding: 7px 16px; font-size: var(--text-sm);
   color: var(--text-2); text-decoration: none;
   transition: color .1s, background .1s;
 }
@@ -968,7 +979,7 @@ button.section-title-wrap:focus-visible,
   font-variant-numeric: tabular-nums;
 }
 
-/* ── Providers Section (11 AI Models) ────────────────────────── */
+/* ── Providers Section (12 AI Models) ────────────────────────── */
 .providers-card {
   display: flex;
   flex-direction: column;
@@ -1038,6 +1049,7 @@ button.section-title-wrap:focus-visible,
 .pc-qwen       { --pc: var(--qwen); }
 .pc-kimi       { --pc: var(--kimi); }
 .pc-zai        { --pc: var(--zai); }
+.pc-meta       { --pc: var(--meta); }
 
 /* ── SEO Grounded Footer ─────────────────────────────────────── */
 footer {
@@ -1359,7 +1371,7 @@ footer {
     height: 32px;
     min-width: 32px;
     min-height: 32px;
-    font-size: var(--text-sm);
+    font-size: var(--text-xs);
     margin-left: 2px;
   }
   .canvas-container {

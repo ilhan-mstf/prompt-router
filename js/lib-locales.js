@@ -576,8 +576,8 @@ export const LIB_LOCALES = {
 export const APP_LOCALES = {
   es: {
     title: 'Prompt Router \u2014 Escribe un Prompt y \u00c1brelo en ChatGPT, Claude, Gemini y m\u00e1s',
-    desc: 'Prompt Router te permite escribir un prompt y abrirlo al instante en ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi y Z.ai. Compara respuestas de IA en segundos \u2014 gratis, sin registro.',
-    metaDesc: 'Prompt Router te permite escribir un prompt y abrirlo al instante en ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi y Z.ai. Compara respuestas de IA en segundos \u2014 gratis, sin registro.',
+    desc: 'Prompt Router te permite escribir un prompt y abrirlo al instante en ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai y Meta AI. Compara respuestas de IA en segundos \u2014 gratis, sin registro.',
+    metaDesc: 'Prompt Router te permite escribir un prompt y abrirlo al instante en ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai y Meta AI. Compara respuestas de IA en segundos \u2014 gratis, sin registro.',
     ogLocale: 'es_ES',
     ogImageAlt: 'Prompt Router \u2014 un prompt, toda la IA',
     taglineHTML: 'Escribe una vez, <em>env\u00eda a todas partes</em>',
@@ -608,8 +608,8 @@ export const APP_LOCALES = {
   },
   it: {
     title: 'Prompt Router \u2014 Scrivi un Prompt e Aprilo su ChatGPT, Claude, Gemini e altri',
-    desc: 'Prompt Router ti permette di scrivere un prompt e aprirlo istantaneamente su ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi e Z.ai. Confronta le risposte AI in secondi \u2014 gratis, senza registrazione.',
-    metaDesc: 'Prompt Router ti permette di scrivere un prompt e aprirlo istantaneamente su ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi e Z.ai. Confronta le risposte AI in secondi \u2014 gratis, senza registrazione.',
+    desc: 'Prompt Router ti permette di scrivere un prompt e aprirlo istantaneamente su ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai e Meta AI. Confronta le risposte AI in secondi \u2014 gratis, senza registrazione.',
+    metaDesc: 'Prompt Router ti permette di scrivere un prompt e aprirlo istantaneamente su ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai e Meta AI. Confronta le risposte AI in secondi \u2014 gratis, senza registrazione.',
     ogLocale: 'it_IT',
     ogImageAlt: 'Prompt Router \u2014 un prompt, ogni AI',
     taglineHTML: 'Scrivi una volta, <em>invia ovunque</em>',
@@ -640,8 +640,8 @@ export const APP_LOCALES = {
   },
   pt: {
     title: 'Prompt Router \u2014 Escreva um Prompt e Abra no ChatGPT, Claude, Gemini e mais',
-    desc: 'Prompt Router permite escrever um prompt e abri-lo instantaneamente no ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi e Z.ai. Compare respostas de IA em segundos \u2014 gratuito, sem cadastro.',
-    metaDesc: 'Prompt Router permite escrever um prompt e abri-lo instantaneamente no ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi e Z.ai. Compare respostas de IA em segundos \u2014 gratuito, sem cadastro.',
+    desc: 'Prompt Router permite escrever um prompt e abri-lo instantaneamente no ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai e Meta AI. Compare respostas de IA em segundos \u2014 gratuito, sem cadastro.',
+    metaDesc: 'Prompt Router permite escrever um prompt e abri-lo instantaneamente no ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai e Meta AI. Compare respostas de IA em segundos \u2014 gratuito, sem cadastro.',
     ogLocale: 'pt_BR',
     ogImageAlt: 'Prompt Router \u2014 um prompt, toda IA',
     taglineHTML: 'Escreva uma vez, <em>envie para qualquer lugar</em>',
@@ -672,8 +672,8 @@ export const APP_LOCALES = {
   },
   fr: {
     title: 'Prompt Router \u2014 \u00c9crivez un Prompt et Ouvrez-le dans ChatGPT, Claude, Gemini et plus',
-    desc: "Prompt Router vous permet d'\u00e9crire un prompt et de l'ouvrir instantan\u00e9ment dans ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi et Z.ai. Comparez les r\u00e9ponses IA en secondes \u2014 gratuit, sans inscription.",
-    metaDesc: "Prompt Router vous permet d'\u00e9crire un prompt et de l'ouvrir instantan\u00e9ment dans ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi et Z.ai. Comparez les r\u00e9ponses IA en secondes \u2014 gratuit, sans inscription.",
+    desc: "Prompt Router vous permet d'\u00e9crire un prompt et de l'ouvrir instantan\u00e9ment dans ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai et Meta AI. Comparez les r\u00e9ponses IA en secondes \u2014 gratuit, sans inscription.",
+    metaDesc: "Prompt Router vous permet d'\u00e9crire un prompt et de l'ouvrir instantan\u00e9ment dans ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai et Meta AI. Comparez les r\u00e9ponses IA en secondes \u2014 gratuit, sans inscription.",
     ogLocale: 'fr_FR',
     ogImageAlt: "Prompt Router \u2014 un prompt, toute l'IA",
     taglineHTML: '\u00c9crivez une fois, <em>envoyez partout</em>',
@@ -704,8 +704,8 @@ export const APP_LOCALES = {
   },
   de: {
     title: 'Prompt Router \u2014 Schreib einen Prompt und \u00f6ffne ihn in ChatGPT, Claude, Gemini und mehr',
-    desc: 'Prompt Router erm\u00f6glicht es dir, einen Prompt zu schreiben und ihn sofort in ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi und Z.ai zu \u00f6ffnen. Vergleiche KI-Antworten in Sekunden \u2014 kostenlos, ohne Anmeldung.',
-    metaDesc: 'Prompt Router erm\u00f6glicht es dir, einen Prompt zu schreiben und ihn sofort in ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi und Z.ai zu \u00f6ffnen. Vergleiche KI-Antworten in Sekunden \u2014 kostenlos, ohne Anmeldung.',
+    desc: 'Prompt Router erm\u00f6glicht es dir, einen Prompt zu schreiben und ihn sofort in ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai und Meta AI zu \u00f6ffnen. Vergleiche KI-Antworten in Sekunden \u2014 kostenlos, ohne Anmeldung.',
+    metaDesc: 'Prompt Router erm\u00f6glicht es dir, einen Prompt zu schreiben und ihn sofort in ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai und Meta AI zu \u00f6ffnen. Vergleiche KI-Antworten in Sekunden \u2014 kostenlos, ohne Anmeldung.',
     ogLocale: 'de_DE',
     ogImageAlt: 'Prompt Router \u2014 ein Prompt, jede KI',
     taglineHTML: 'Einmal schreiben, <em>\u00fcberall senden</em>',
@@ -736,8 +736,8 @@ export const APP_LOCALES = {
   },
   tr: {
     title: 'Prompt Router \u2014 Bir Prompt Yaz ve ChatGPT, Claude, Gemini ve Daha Fazlas\u0131nda A\u00e7',
-    desc: 'Prompt Router, bir prompt yazman\u0131za ve onu ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi ve Z.ai\u2019de an\u0131nda a\u00e7man\u0131za olanak tan\u0131r. Yapay zeka yan\u0131tlar\u0131n\u0131 saniyeler i\u00e7inde kar\u015f\u0131la\u015ft\u0131r\u0131n \u2014 \u00fccretsiz, kay\u0131t gerekmez.',
-    metaDesc: 'Prompt Router, bir prompt yazman\u0131za ve onu ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi ve Z.ai\u2019de an\u0131nda a\u00e7man\u0131za olanak tan\u0131r. Yapay zeka yan\u0131tlar\u0131n\u0131 saniyeler i\u00e7inde kar\u015f\u0131la\u015ft\u0131r\u0131n \u2014 \u00fccretsiz, kay\u0131t gerekmez.',
+    desc: 'Prompt Router, bir prompt yazman\u0131za ve onu ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai ve Meta AI\u2019de an\u0131nda a\u00e7man\u0131za olanak tan\u0131r. Yapay zeka yan\u0131tlar\u0131n\u0131 saniyeler i\u00e7inde kar\u015f\u0131la\u015ft\u0131r\u0131n \u2014 \u00fccretsiz, kay\u0131t gerekmez.',
+    metaDesc: 'Prompt Router, bir prompt yazman\u0131za ve onu ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai ve Meta AI\u2019de an\u0131nda a\u00e7man\u0131za olanak tan\u0131r. Yapay zeka yan\u0131tlar\u0131n\u0131 saniyeler i\u00e7inde kar\u015f\u0131la\u015ft\u0131r\u0131n \u2014 \u00fccretsiz, kay\u0131t gerekmez.',
     ogLocale: 'tr_TR',
     ogImageAlt: 'Prompt Router \u2014 bir prompt, t\u00fcm yapay zeka',
     taglineHTML: 'Bir kez yaz, <em>her yere g\u00f6nder</em>',
@@ -768,8 +768,8 @@ export const APP_LOCALES = {
   },
   en: {
     title: 'Prompt Router \u2014 Send One Prompt to ChatGPT, Claude, Gemini & More',
-    desc: 'Prompt Router lets you write one prompt and instantly open it in ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi and Z.ai. Compare AI responses side-by-side in seconds \u2014 free, no login required.',
-    metaDesc: 'Prompt Router lets you write one prompt and instantly open it in ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi and Z.ai. Compare AI responses side-by-side in seconds \u2014 free, no login required.',
+    desc: 'Prompt Router lets you write one prompt and instantly open it in ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai, and Meta AI. Compare AI responses side-by-side in seconds \u2014 free, no login required.',
+    metaDesc: 'Prompt Router lets you write one prompt and instantly open it in ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai, and Meta AI. Compare AI responses side-by-side in seconds \u2014 free, no login required.',
     ogLocale: 'en_US',
     ogImageAlt: 'Prompt Router \u2014 one prompt, every AI',
     taglineHTML: 'Write once, <em>send everywhere</em>',

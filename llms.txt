@@ -1,8 +1,8 @@
 # Prompt Router
 
-> Write one prompt. Open every AI. Compare responses side-by-side across ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, and Z.ai.
+> Write one prompt. Open every AI. Compare responses side-by-side across ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai, and Meta AI.
 
-Prompt Router is a free, privacy-first web utility for prompt engineers, developers, writers, and AI power users. It allows users to compose a prompt once and immediately launch it in 11 major LLMs pre-filled via direct URL parameter routing. No account, no login, and no backend data storage.
+Prompt Router is a free, privacy-first web utility for prompt engineers, developers, writers, and AI power users. It allows users to compose a prompt once and immediately launch it in 12 major LLMs pre-filled via direct URL parameter routing. No account, no login, and no backend data storage.
 
 - [Website](https://prompt-router.pages.dev): Free, privacy-first multi-LLM prompt router and side-by-side comparator.
 - [Full Documentation & Prompt Dump](https://prompt-router.pages.dev/llms-full.txt): Complete prompt collection across 11 libraries, 10 core quick templates, edge routing syntax, and API endpoints.
@@ -23,6 +23,7 @@ Prompt Router routes prefilled prompts to LLM chat interfaces using standard URL
 - **Qwen (Alibaba)**: `https://chat.qwen.ai/?q={encoded_prompt}`
 - **Kimi (Moonshot)**: `https://www.kimi.com/en?q={encoded_prompt}`
 - **Z.ai (Zhipu)**: `https://z.ai/chat?q={encoded_prompt}`
+- **Meta AI**: `https://www.meta.ai/?q={encoded_prompt}`
 
 ## Prompt Libraries
 
@@ -72,9 +73,10 @@ Example localized library endpoints:
 
 ## Guides & Blog Articles
 
+- [Meta AI Integration Guide](https://prompt-router.pages.dev/blog-meta-ai): Expanding Prompt Router to 12 AI models with Meta AI & Llama routing.
 - [The Curated Prompt Library Guide](https://prompt-router.pages.dev/blog-prompt-library): 260+ battle-tested AI prompts across 11 professional domains.
 - [Introducing the New Prompt Router](https://prompt-router.pages.dev/blog-new-look): Major redesign with collapsible sidebar, clean canvas, and 11 AI models.
-- [Prompt Engineering Blog](https://prompt-router.pages.dev/blog): Index of all 17 prompt engineering articles, model comparisons, and cost optimization guides.
+- [Prompt Engineering Blog](https://prompt-router.pages.dev/blog): Index of all 18 prompt engineering articles, model comparisons, and cost optimization guides.
 - [Budget-Friendly Prompt Routing](https://prompt-router.pages.dev/blog-budget-prompt-routing): How top AI companies cut inference costs by up to 85% using model cascades and small models.
 - [Compare AI Models](https://prompt-router.pages.dev/blog-compare-ai): Comparative breakdown of LLMs for specialized tasks.
 - [Prompt Router Overview](https://prompt-router.pages.dev/blog-prompt-router): Benefits of multi-LLM workflows.

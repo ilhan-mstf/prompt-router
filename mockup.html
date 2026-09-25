@@ -52,6 +52,7 @@
   --c-qwen:       #615ced;
   --c-kimi:       #059669;
   --c-zai:        #2563eb;
+  --c-meta:       #0081fb;
 
   --text-xs:   0.8125rem;
   --text-sm:   0.9375rem;
@@ -459,15 +460,23 @@ body {
   color: var(--text-2);
 }
 .lang-select {
-  background: var(--surface-2);
+  flex: 1;
+  background-color: var(--surface-2);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238c827a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 11px 11px;
   border: 1px solid var(--border);
   color: var(--text);
   font-family: inherit;
-  font-size: 12px;
-  padding: 4px 8px;
+  font-size: var(--text-xs);
+  padding: 6px 32px 6px 10px;
   border-radius: 6px;
   outline: none;
   cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .lang-select:focus { border-color: var(--gold); }
 
@@ -519,7 +528,7 @@ body {
   color: var(--text-2);
   padding: 6px 10px;
   border-radius: var(--r-sm);
-  font-size: 13px;
+  font-size: var(--text-sm);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -679,7 +688,7 @@ footer {
 }
 .nav-dropdown-btn:hover { color: var(--text); background: var(--surface-2); }
 .nav-dropdown-arrow {
-  font-size: 10px;
+  font-size: inherit;
   opacity: 0.7;
   display: inline-block;
   transition: transform .2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -699,7 +708,7 @@ footer {
 }
 .nav-dropdown.open .nav-dropdown-menu { display: block; }
 .nav-dropdown-menu a {
-  display: block; padding: 7px 16px; font-size: var(--text-xs);
+  display: block; padding: 7px 16px; font-size: var(--text-sm);
   color: var(--text-2); text-decoration: none;
   transition: color .1s, background .1s;
 }
@@ -1141,7 +1150,7 @@ footer {
       <nav class="nav-links">
         <div class="nav-dropdown" id="topbarNavDropdown">
           <button class="nav-dropdown-btn" type="button" onclick="toggleLibrariesDropdown(event)">
-            <span>Prompt Libraries</span> <span class="nav-dropdown-arrow">&#9662;</span>
+            <span>Libraries</span> <span class="nav-dropdown-arrow">&#9662;</span>
           </button>
           <div class="nav-dropdown-menu" id="topbarLibMenu">
             <a href="/dev">Dev &amp; Coding</a>
@@ -1475,6 +1484,7 @@ const PROVIDERS = [
   { id: 'qwen',       label: 'Qwen',        color: 'var(--c-qwen)',       url: q => `https://chat.qwen.ai/?q=${enc(q)}` },
   { id: 'kimi',       label: 'Kimi',        color: 'var(--c-kimi)',       url: q => `https://www.kimi.com/en?q=${enc(q)}` },
   { id: 'zai',        label: 'Z.ai',        color: 'var(--c-zai)',        url: q => `https://z.ai/chat?q=${enc(q)}` },
+  { id: 'meta',       label: 'Meta AI',     color: 'var(--c-meta)',       url: q => `https://www.meta.ai/?q=${enc(q)}` },
 ];
 
 /* ── State ──────────────────────────────────────────────────── */

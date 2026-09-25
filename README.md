@@ -2,7 +2,7 @@
 
 **Write one prompt. Open every AI.**
 
-Prompt Router is a free, privacy-first developer utility that lets you write your prompt once and instantly launch it pre-filled across 11 major AI providers: **ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, and Z.ai**.
+Prompt Router is a free, privacy-first developer utility that lets you write your prompt once and instantly launch it pre-filled across 12 major AI providers: **ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai, and Meta AI**.
 
 Live at: **[prompt-router.pages.dev](https://prompt-router.pages.dev)**
 
@@ -11,7 +11,7 @@ Live at: **[prompt-router.pages.dev](https://prompt-router.pages.dev)**
 ## Features
 
 - **Zero friction** — No account, no login, no database, no tracking. Your prompts stay in your browser.
-- **11 AI Providers** — ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google), Copilot (Microsoft), Perplexity, DeepSeek, Grok (xAI), Le Chat (Mistral), Qwen (Alibaba), Kimi (Moonshot), and Z.ai (Zhipu).
+- **12 AI Providers** — ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google), Copilot (Microsoft), Perplexity, DeepSeek, Grok (xAI), Le Chat (Mistral), Qwen (Alibaba), Kimi (Moonshot), Z.ai (Zhipu), and Meta AI.
 - **11 Curated Prompt Libraries** — Battle-tested prompts across Dev & Coding, Writing, Marketing, Job Search, Startup, Data Analysis, Design & UX, Student, Productivity, Legal, and Sales.
 - **10 Quick Templates** — Core prompt patterns (Summarize, Explain it, Improve text, Brainstorm, Compare, Write email, Fix my code, Make a plan, Pros & cons, Ask questions) with pin-to-top capability.
 - **My Prompts & History** — Save, pin, search, and manage custom prompts in `localStorage` with dispatch history and safe undo buffer (`⌘Z`).
@@ -27,7 +27,7 @@ Live at: **[prompt-router.pages.dev](https://prompt-router.pages.dev)**
   - `Esc` — Safe clear prompt with non-destructive undo buffer
   - `⌘Z` / `Ctrl+Z` — Restore cleared prompt
   - `⌘B` / `Ctrl+B` — Toggle sidebar navigation
-- **16 In-Depth Articles** — Guides on prompt engineering, multi-model cascades, and AI cost optimization.
+- **18 In-Depth Articles** — Guides on prompt engineering, multi-model cascades, and AI cost optimization.
 
 ---
 
@@ -47,8 +47,8 @@ promptrouter/
 ├── productivity.html           # Productivity & workflow prompt library
 ├── legal.html                  # Legal & contracts prompt library
 ├── sales.html                  # Sales & outreach prompt library
-├── blog.html                   # Blog index listing 16 articles
-├── blog-*.html                 # 16 individual blog guides & technical deep dives
+├── blog.html                   # Blog index listing 18 articles
+├── blog-*.html                 # 18 individual blog guides & technical deep dives
 ├── css/
 │   ├── core.css                # Global 6-step typography tokens, vertical rhythm, centralized blog styles, topbars, and footers
 │   └── prompt.css              # Canvas, sidebar accordion, provider grid, and toasts
@@ -130,7 +130,7 @@ npm run test:routes # Executes test/test_router.js
 
 Prompt Router adheres to the `/llms.txt` standard to allow autonomous AI agents and LLM scrapers to discover and utilize prompt templates programmatically:
 
-- [`/llms.txt`](https://prompt-router.pages.dev/llms.txt): Machine-readable index covering all 11 providers, query parameter syntax, library links, and articles.
+- [`/llms.txt`](https://prompt-router.pages.dev/llms.txt): Machine-readable index covering all 12 providers, query parameter syntax, library links, and articles.
 - [`/llms-full.txt`](https://prompt-router.pages.dev/llms-full.txt): Comprehensive prompt catalog containing full prompt templates and categories.
 
 ---

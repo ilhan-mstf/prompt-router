@@ -19,6 +19,7 @@ Use these URL patterns to send pre-filled prompts to AI providers:
 - **Qwen (Alibaba)**: `https://chat.qwen.ai/?q={encoded_prompt}`
 - **Kimi (Moonshot)**: `https://www.kimi.com/en?q={encoded_prompt}`
 - **Z.ai (Zhipu)**: `https://z.ai/chat?q={encoded_prompt}`
+- **Meta AI**: `https://www.meta.ai/?q={encoded_prompt}`
 
 ## Multi-Language Subdirectories
 Prompt Router supports server-side edge rendering (SSR) for 7 languages across the homepage and all 11 prompt libraries:
@@ -3394,9 +3395,10 @@ Tone: confident and data-grounded, not defensive.
 ---
 ## Guides & Blog Articles
 
+- [Meta AI Integration Guide](https://prompt-router.pages.dev/blog-meta-ai): Expanding Prompt Router to 12 AI models with Meta AI & Llama routing.
 - [The Curated Prompt Library Guide](https://prompt-router.pages.dev/blog-prompt-library): 260+ battle-tested AI prompts across 11 professional domains.
 - [Introducing the New Prompt Router](https://prompt-router.pages.dev/blog-new-look): Major redesign with collapsible sidebar, clean canvas, and 11 AI models.
-- [Prompt Engineering Blog](https://prompt-router.pages.dev/blog): Index of all 17 prompt engineering articles, model comparisons, and cost optimization guides.
+- [Prompt Engineering Blog](https://prompt-router.pages.dev/blog): Index of all 18 prompt engineering articles, model comparisons, and cost optimization guides.
 - [Budget-Friendly Prompt Routing](https://prompt-router.pages.dev/blog-budget-prompt-routing): How top AI companies cut inference costs by up to 85% using model cascades and small models.
 - [Reduce AI Costs](https://prompt-router.pages.dev/blog-reduce-ai-costs): 5 proven strategies to cut OpenAI, Anthropic, and Google AI API costs by up to 80%.
 - [Compare AI Models](https://prompt-router.pages.dev/blog-compare-ai): Comparative breakdown of LLMs for specialized tasks and why side-by-side evaluation is essential.

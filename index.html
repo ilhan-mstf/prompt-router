@@ -91,7 +91,7 @@
       "name": "Which AI models are supported?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Prompt Router supports ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Mistral Le Chat, Qwen, Kimi, and Z.ai."
+        "text": "Prompt Router supports ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Mistral Le Chat, Qwen, Kimi, Z.ai, and Meta AI."
       }
     }
   ]
@@ -109,7 +109,7 @@
 </noscript>
 
 <link rel="stylesheet" href="/css/core.99f35dd1.css">
-<link rel="stylesheet" href="/css/prompt.8c26e46e.css">
+<link rel="stylesheet" href="/css/prompt.8be9b5ee.css">
 <style>
 /* ── Noscript ── */
 .noscript {
@@ -127,16 +127,16 @@
   <div class="noscript" role="alert">JavaScript is required to use Prompt Router. · Se requiere JavaScript para usar Prompt Router.</div>
   <section style="padding: 20px; max-width: 800px; margin: 0 auto;">
     <h2>Free Multi-LLM Prompt Router & AI Comparison Tool</h2>
-    <p>Prompt Router is a free, no-login tool that lets you send one prompt to multiple AI models simultaneously. Compare responses from ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, and Z.ai side-by-side.</p>
+    <p>Prompt Router is a free, no-login tool that lets you send one prompt to multiple AI models simultaneously. Compare responses from ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai, and Meta AI side-by-side.</p>
     <h3>Key Features:</h3>
     <ul>
-      <li><strong>One Prompt, Every AI:</strong> Write once and open in 11+ major providers.</li>
+      <li><strong>One Prompt, Every AI:</strong> Write once and open in 12+ major providers.</li>
       <li><strong>11+ Prompt Libraries:</strong> Curated prompts for Developers, Marketing, Writing, Startups, and more.</li>
       <li><strong>Private & Secure:</strong> No account required, no backend storage — your prompts stay in your browser.</li>
       <li><strong>Compare AI Models:</strong> Instantly see which LLM gives the best result for your specific task.</li>
     </ul>
     <h3>Supported AI Providers:</h3>
-    <p>ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google), Copilot (Microsoft), Perplexity, DeepSeek, Grok (xAI), Mistral Le Chat, Qwen (Alibaba), Kimi (Moonshot), and Z.ai (Zhipu).</p>
+    <p>ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google), Copilot (Microsoft), Perplexity, DeepSeek, Grok (xAI), Mistral Le Chat, Qwen (Alibaba), Kimi (Moonshot), Z.ai (Zhipu), and Meta AI.</p>
   </section>
 </noscript>
 <a href="#main-content" class="skip">Skip to main content</a>
@@ -295,7 +295,7 @@
       <nav class="nav-links" aria-label="Main navigation">
         <div class="nav-dropdown" id="topbarNavDropdown">
           <button class="nav-dropdown-btn" id="topbarNavDropdownBtn" type="button" onclick="toggleLibrariesDropdown(event)" aria-expanded="false" aria-haspopup="true" aria-controls="topbarLibMenu">
-            <span>Prompt Libraries</span> <span class="nav-dropdown-arrow">&#9662;</span>
+            <span>Libraries</span> <span class="nav-dropdown-arrow">&#9662;</span>
           </button>
           <div class="nav-dropdown-menu" id="topbarLibMenu" role="menu">
             <a href="/dev" role="menuitem">Dev &amp; Coding</a>
@@ -362,7 +362,7 @@
         </div>
       </div>
 
-      <!-- Open in Providers (11 Models) -->
+      <!-- Open in Providers (12 Models) -->
       <section class="providers-card" aria-labelledby="lbl-providers">
         <span class="lbl-heading" id="lbl-providers">Open in</span>
         <ul class="providers" id="providers" aria-labelledby="lbl-providers">
@@ -377,6 +377,7 @@
   <li><button type="button" class="p-btn pc-qwen" aria-label="Open prompt in Qwen"><div class="p-left"><span class="dot" style="background:var(--qwen)"></span><span>Qwen</span></div><span class="p-arrow">&nearr;</span></button></li>
   <li><button type="button" class="p-btn pc-kimi" aria-label="Open prompt in Kimi"><div class="p-left"><span class="dot" style="background:var(--kimi)"></span><span>Kimi</span></div><span class="p-arrow">&nearr;</span></button></li>
   <li><button type="button" class="p-btn pc-zai" aria-label="Open prompt in Z.ai"><div class="p-left"><span class="dot" style="background:var(--zai)"></span><span>Z.ai</span></div><span class="p-arrow">&nearr;</span></button></li>
+  <li><button type="button" class="p-btn pc-meta" aria-label="Open prompt in Meta AI"><div class="p-left"><span class="dot" style="background:var(--meta)"></span><span>Meta AI</span></div><span class="p-arrow">&nearr;</span></button></li>
 </ul>
       </section>
 
@@ -407,9 +408,9 @@
             <a href="/blog">Blog</a>
           </nav>
           <div class="footer-sep" aria-hidden="true"></div>
-          <p class="footer-desc" id="footer-desc"><strong>Prompt Router</strong> is a free tool that lets you send a single prompt to multiple AI models simultaneously. Compare responses across <a href="https://chatgpt.com" rel="noopener noreferrer" target="_blank">ChatGPT</a>, <a href="https://claude.ai" rel="noopener noreferrer" target="_blank">Claude</a>, <a href="https://gemini.google.com" rel="noopener noreferrer" target="_blank">Gemini</a>, <a href="https://copilot.microsoft.com" rel="noopener noreferrer" target="_blank">Copilot</a>, <a href="https://www.perplexity.ai" rel="noopener noreferrer" target="_blank">Perplexity</a>, <a href="https://chat.deepseek.com" rel="noopener noreferrer" target="_blank">DeepSeek</a>, <a href="https://x.com/i/grok" rel="noopener noreferrer" target="_blank">Grok</a>, <a href="https://chat.mistral.ai" rel="noopener noreferrer" target="_blank">Le Chat</a>, <a href="https://chat.qwen.ai" rel="noopener noreferrer" target="_blank">Qwen</a>, <a href="https://www.kimi.com" rel="noopener noreferrer" target="_blank">Kimi</a>, and <a href="https://z.ai" rel="noopener noreferrer" target="_blank">Z.ai</a>. No login required, completely free.</p>
+          <p class="footer-desc" id="footer-desc"><strong>Prompt Router</strong> is a free tool that lets you send a single prompt to multiple AI models simultaneously. Compare responses across <a href="https://chatgpt.com" rel="noopener noreferrer" target="_blank">ChatGPT</a>, <a href="https://claude.ai" rel="noopener noreferrer" target="_blank">Claude</a>, <a href="https://gemini.google.com" rel="noopener noreferrer" target="_blank">Gemini</a>, <a href="https://copilot.microsoft.com" rel="noopener noreferrer" target="_blank">Copilot</a>, <a href="https://www.perplexity.ai" rel="noopener noreferrer" target="_blank">Perplexity</a>, <a href="https://chat.deepseek.com" rel="noopener noreferrer" target="_blank">DeepSeek</a>, <a href="https://x.com/i/grok" rel="noopener noreferrer" target="_blank">Grok</a>, <a href="https://chat.mistral.ai" rel="noopener noreferrer" target="_blank">Le Chat</a>, <a href="https://chat.qwen.ai" rel="noopener noreferrer" target="_blank">Qwen</a>, <a href="https://www.kimi.com" rel="noopener noreferrer" target="_blank">Kimi</a>, <a href="https://z.ai" rel="noopener noreferrer" target="_blank">Z.ai</a>, and <a href="https://www.meta.ai" rel="noopener noreferrer" target="_blank">Meta AI</a>. No login required, completely free.</p>
           <p class="footer-copy">
-            Free, open-access multi-LLM router. Not affiliated with OpenAI, Anthropic, Google, Microsoft, Perplexity, DeepSeek, xAI, Mistral, Alibaba, Moonshot, or Zhipu.
+            Free, open-access multi-LLM router. Not affiliated with OpenAI, Anthropic, Google, Microsoft, Perplexity, DeepSeek, xAI, Mistral, Alibaba, Moonshot, Zhipu, or Meta.
           </p>
           <p class="footer-made">Made with ❤️ in Munich</p>
         </div>
@@ -423,7 +424,7 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
-<script src="/js/locales.f971c439.js" defer></script>
-<script src="/js/prompt.db233168.js" defer></script>
+<script src="/js/locales.0b40db2a.js" defer></script>
+<script src="/js/prompt.1b779186.js" defer></script>
 </body>
 </html>

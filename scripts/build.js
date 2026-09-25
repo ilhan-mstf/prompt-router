@@ -134,11 +134,11 @@ export function build() {
       swContent = swContent.replace(pattern, `'${targetHashedUrl}'`);
     }
 
-    // Ensure cache version is updated to pr-v6
-    swContent = swContent.replace(/const CACHE_NAME = 'pr-v[0-9]+';/, "const CACHE_NAME = 'pr-v6';");
+    // Ensure cache version is updated to pr-v7
+    swContent = swContent.replace(/const CACHE_NAME = 'pr-v[0-9]+';/, "const CACHE_NAME = 'pr-v7';");
 
     fs.writeFileSync(swPath, swContent, 'utf-8');
-    console.log('  ✓ Updated sw.js with hashed CORE_ASSETS and bumped CACHE_NAME to pr-v6');
+    console.log('  ✓ Updated sw.js with hashed CORE_ASSETS and bumped CACHE_NAME to pr-v7');
   }
 
   console.log('🎉 Build complete! All assets fingerprinted successfully.\n');
