@@ -25,10 +25,10 @@ class CleanURLHandler(http.server.SimpleHTTPRequestHandler):
             self.path = f'/{lib_lang_match.group(2)}.html' + query
             return super().do_GET()
 
-        # 3. Match /dev -> dev.html
+        # 3. Match /dev -> dev.html (including /data which shares name with data/ directory)
         full_path = self.translate_path(clean_path)
-        if not os.path.exists(full_path) and os.path.exists(full_path + '.html'):
-            self.path = clean_path + '.html' + query
+        if clean_path.lstrip('/') in VALID_LIBS or (not os.path.exists(full_path) and os.path.exists(full_path + '.html')):
+            self.path = f"/{clean_path.lstrip('/')}.html" + query
 
         return super().do_GET()
 

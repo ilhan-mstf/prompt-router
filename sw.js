@@ -5,8 +5,8 @@ const CACHE_NAME = 'pr-v7';
 const CORE_ASSETS = [
   '/',
   '/index.html',
-  '/css/core.99f35dd1.css',
-  '/css/prompt.cc56fe29.css',
+  '/css/core.4ff07254.css',
+  '/css/prompt.bdc6f0d9.css',
   '/js/locales.0b40db2a.js',
   '/js/prompt.1b779186.js',
   '/site.webmanifest',
