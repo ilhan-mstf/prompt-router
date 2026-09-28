@@ -659,12 +659,6 @@ function setLanguage(lang) {
   const provHeading = document.getElementById('lbl-providers');
   if (provHeading && currentLocale.lblProviders) provHeading.textContent = currentLocale.lblProviders;
 
-  const catsHeading = document.getElementById('lbl-cats');
-  if (catsHeading && currentLocale.lblCats) catsHeading.textContent = currentLocale.lblCats;
-
-  const promptsHeading = document.getElementById('lbl-prompts');
-  if (promptsHeading && currentLocale.lblPrompts) promptsHeading.textContent = currentLocale.lblPrompts;
-
   const promptLabel = document.getElementById('lbl-prompt');
   if (promptLabel && currentLocale.lblPrompt) promptLabel.textContent = currentLocale.lblPrompt;
 

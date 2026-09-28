@@ -105,10 +105,10 @@ for (const lib of libs) {
   }
 
   // Pre-render cats if empty
-  if (html.includes('<div class="cats" id="cats" role="group" aria-labelledby="lbl-cats"></div>')) {
+  if (html.includes('<div class="cats" id="cats" role="group" aria-label="Categories"></div>')) {
     html = html.replace(
-      '<div class="cats" id="cats" role="group" aria-labelledby="lbl-cats"></div>',
-      () => `<div class="cats" id="cats" role="group" aria-labelledby="lbl-cats">${catsHtml}</div>`
+      '<div class="cats" id="cats" role="group" aria-label="Categories"></div>',
+      () => `<div class="cats" id="cats" role="group" aria-label="Categories">${catsHtml}</div>`
     );
   }
 

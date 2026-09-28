@@ -116,7 +116,7 @@ const NOSCRIPT_LOCALES = {
     f3: ['Privado e Seguro', 'Sem cadastro, sem armazenamento em servidor — seus prompts ficam no seu navegador.'],
     f4: ['Comparar Modelos de IA', 'Veja instantaneamente qual LLM entrega o melhor resultado.'],
     providersTitle: 'Provedores de IA suportados:',
-    providersList: 'ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google), Copilot (Microsoft), Perplexity, DeepSeek, Grok (xAI), Mistral Le Chat, Qwen (Alibaba), Kimi (Moonshot) e Z.ai (Zhipu).'
+    providersList: 'ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google), Copilot (Microsoft), Perplexity, DeepSeek, Grok (xAI), Mistral Le Chat, Qwen (Alibaba), Kimi (Moonshot), Z.ai (Zhipu) e Meta AI.'
   }
 };
 
@@ -209,8 +209,9 @@ function getFooterDescHTML(lang) {
     '<a href="https://x.com/i/grok" rel="noopener noreferrer" target="_blank">Grok</a>, ' +
     '<a href="https://chat.mistral.ai" rel="noopener noreferrer" target="_blank">Le Chat</a>, ' +
     '<a href="https://chat.qwen.ai" rel="noopener noreferrer" target="_blank">Qwen</a>, ' +
-    '<a href="https://www.kimi.com" rel="noopener noreferrer" target="_blank">Kimi</a>, and ' +
-    '<a href="https://z.ai" rel="noopener noreferrer" target="_blank">Z.ai</a>. ' +
+    '<a href="https://www.kimi.com" rel="noopener noreferrer" target="_blank">Kimi</a>, ' +
+    '<a href="https://z.ai" rel="noopener noreferrer" target="_blank">Z.ai</a>, and ' +
+    '<a href="https://www.meta.ai" rel="noopener noreferrer" target="_blank">Meta AI</a>. ' +
     `${m.footerDescOutro || ''}`;
 }
 
@@ -434,8 +435,6 @@ export default {
           .on('div#quickList',                    { element: el => el.setInnerContent(getLocalizedQuickListHtml(langSub), { html: true }) })
           .on('input#sidebarSearch',              { element: el => { if (m.search) el.setAttribute('placeholder', m.search); } })
           .on('textarea#prompt',                  { element: el => { if (m.placeholder) el.setAttribute('placeholder', m.placeholder); } })
-          .on('span#lbl-cats',                    { element: el => { if (m.lblCats) el.setInnerContent(m.lblCats); } })
-          .on('span#lbl-prompts',                 { element: el => { if (m.lblPrompts) el.setInnerContent(m.lblPrompts); } })
           .on('label#lbl-prompt',                 { element: el => { if (m.lblPrompt) el.setInnerContent(m.lblPrompt); } })
           .on('span#lbl-related',                 { element: el => { if (m.lblRelated) el.setInnerContent(m.lblRelated); } })
           .on('span#lblFooterLibraries',          { element: el => { if (m.promptLibraries) el.setInnerContent(m.promptLibraries); } })

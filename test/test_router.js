@@ -699,6 +699,22 @@ it('All 11 library pages support localized "All" category button', () => {
   });
 });
 
+it('prompt.css configures prompt-cards with 2-column grid, hidden preview, and mobile single-column fallback', () => {
+  const promptCSS = fs.readFileSync(path.join(ROOT, 'css/prompt.css'), 'utf-8');
+  assert.strictEqual(promptCSS.includes('grid-template-columns: repeat(2, minmax(0, 1fr));'), true, 'Missing 2-column grid-template-columns for .prompt-cards in prompt.css');
+  assert.strictEqual(promptCSS.includes('.prompt-cards .lbl-heading'), true, 'Missing .prompt-cards .lbl-heading rule in prompt.css');
+  assert.strictEqual(promptCSS.includes('grid-column: 1 / -1;'), true, 'Missing grid-column: 1 / -1 in prompt.css');
+  assert.strictEqual(promptCSS.includes('.prompt-card-preview {\n  display: none;\n}'), true, 'prompt-card-preview must be hidden via display: none in prompt.css');
+});
+
+it('All 11 library pages have removed lbl-cats and lbl-prompts headings', () => {
+  VALID_LIBS.forEach(lib => {
+    const html = fs.readFileSync(path.join(ROOT, `${lib}.html`), 'utf-8');
+    assert.strictEqual(html.includes('id="lbl-cats"'), false, `Found removed id="lbl-cats" in ${lib}.html`);
+    assert.strictEqual(html.includes('id="lbl-prompts"'), false, `Found removed id="lbl-prompts" in ${lib}.html`);
+  });
+});
+
 it('index.html has no development console.log listeners on window load', () => {
   const html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf-8');
   assert.strictEqual(html.includes("CLIENT_WIDTH="), false, 'Debug CLIENT_WIDTH console.log found in index.html');
@@ -722,6 +738,44 @@ it('prompt.js setLanguage and _worker.js translate #lblPromptLibraries for i18n'
   assert.strictEqual(promptJS.includes("document.getElementById('lblPromptLibraries')"), true, 'Missing lblPromptLibraries update in prompt.js');
   const workerJS = fs.readFileSync(path.join(ROOT, '_worker.js'), 'utf-8');
   assert.strictEqual(workerJS.includes("span#lblPromptLibraries"), true, 'Missing span#lblPromptLibraries rewrite in _worker.js');
+});
+
+it('locales.js provides libNames across all supported languages for seamless client translation', () => {
+  const localesRaw = fs.readFileSync(path.join(ROOT, 'js/locales.js'), 'utf-8');
+  const fn = new Function(localesRaw + '; return LOCALES;');
+  const LOCALES = fn();
+  SUPPORTED_LANGS.forEach(lang => {
+    assert.ok(LOCALES[lang], `Missing locale definition for ${lang}`);
+    assert.ok(LOCALES[lang].libNames, `Missing libNames dictionary for ${lang}`);
+    VALID_LIBS.forEach(lib => {
+      assert.ok(LOCALES[lang].libNames[lib], `Missing libName for ${lib} in ${lang}`);
+    });
+  });
+});
+
+it('LIB_LOCALES and PROMPTS_I18N maintain 100% translation coverage across all 11 libraries', async () => {
+  const { default: PROMPTS_I18N } = await import('../data/prompts/index.js');
+  const NON_EN = ['es', 'de', 'fr', 'tr', 'it', 'pt'];
+  
+  VALID_LIBS.forEach(lib => {
+    SUPPORTED_LANGS.forEach(lang => {
+      assert.ok(LIB_LOCALES[lib][lang], `Missing LIB_LOCALES entry for ${lib} in ${lang}`);
+      assert.ok(LIB_LOCALES[lib][lang].name, `Missing LIB_LOCALES name for ${lib} in ${lang}`);
+      assert.ok(LIB_LOCALES[lib][lang].title, `Missing LIB_LOCALES title for ${lib} in ${lang}`);
+      assert.ok(LIB_LOCALES[lib][lang].desc, `Missing LIB_LOCALES desc for ${lib} in ${lang}`);
+    });
+    
+    NON_EN.forEach(lang => {
+      assert.ok(PROMPTS_I18N[lang][lib], `Missing PROMPTS_I18N entry for ${lib} in ${lang}`);
+      assert.strictEqual(PROMPTS_I18N[lang][lib].length > 0, true, `Empty PROMPTS_I18N for ${lib} in ${lang}`);
+    });
+  });
+});
+
+it('Edge Worker maintains full provider parity including Meta AI in footer and noscript', () => {
+  const workerCode = fs.readFileSync(path.join(ROOT, '_worker.js'), 'utf-8');
+  assert.strictEqual(workerCode.includes('https://www.meta.ai'), true, 'Missing Meta AI in _worker.js getFooterDescHTML');
+  assert.strictEqual(workerCode.includes('Z.ai (Zhipu) e Meta AI'), true, 'Missing Meta AI in Portuguese noscript');
 });
 
 it('core.css and prompt.css do not force text-transform: uppercase on section headers', () => {

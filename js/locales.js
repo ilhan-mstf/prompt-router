@@ -41,6 +41,7 @@ const LOCALES = {
     ],
   },
   es: {
+    libNames: {"dev":"Desarrollo y Código","writing":"Redacción y Contenido","marketing":"Marketing y Crecimiento","job":"Búsqueda de Empleo","startup":"Startups y Fundadores","data":"Análisis de Datos","design":"Diseño y UX","student":"Estudiantes y Estudio","productivity":"Productividad","legal":"Legal y Contratos","sales":"Ventas y Negocios"},
     title: 'Prompt Router \u2014 Escribe un Prompt y \u00c1brelo en ChatGPT, Claude, Gemini y m\u00e1s',
     metaDesc: 'Prompt Router te permite escribir un prompt y abrirlo al instante en ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai y Meta AI. Compara respuestas de IA en segundos \u2014 gratis, sin registro.',
     ogLocale: 'es_ES', ogImageAlt: 'Prompt Router \u2014 un prompt, toda la IA',
@@ -79,6 +80,7 @@ const LOCALES = {
     ],
   },
   it: {
+    libNames: {"dev":"Sviluppo & Codice","writing":"Scrittura & Contenuti","marketing":"Marketing & Crescita","job":"Lavoro & Carriera","startup":"Startup & Founder","data":"Analisi Dati","design":"Design & UX","student":"Studenti & Studio","productivity":"Produttività","legal":"Legale & Contratti","sales":"Vendite & Trattative"},
     title: 'Prompt Router \u2014 Scrivi un Prompt e Aprilo su ChatGPT, Claude, Gemini e altri',
     metaDesc: 'Prompt Router ti permette di scrivere un prompt e aprirlo istantaneamente su ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai e Meta AI. Confronta le risposte AI in secondi \u2014 gratis, senza registrazione.',
     ogLocale: 'it_IT', ogImageAlt: 'Prompt Router \u2014 un prompt, ogni AI',
@@ -117,6 +119,7 @@ const LOCALES = {
     ],
   },
   pt: {
+    libNames: {"dev":"Desenvolvimento e Código","writing":"Escrita e Conteúdo","marketing":"Marketing e Crescimento","job":"Busca de Emprego","startup":"Startups e Fundadores","data":"Análise de Dados","design":"Design e UX","student":"Estudantes e Estudos","productivity":"Produtividade","legal":"Jurídico e Contratos","sales":"Vendas e Negociações"},
     title: 'Prompt Router \u2014 Escreva um Prompt e Abra no ChatGPT, Claude, Gemini e mais',
     metaDesc: 'Prompt Router permite escrever um prompt e abri-lo instantaneamente no ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai e Meta AI. Compare respostas de IA em segundos \u2014 gratuito, sem cadastro.',
     ogLocale: 'pt_BR', ogImageAlt: 'Prompt Router \u2014 um prompt, toda IA',
@@ -155,6 +158,7 @@ const LOCALES = {
     ],
   },
   fr: {
+    libNames: {"dev":"Dév & Programmation","writing":"Rédaction & Contenu","marketing":"Marketing & Croissance","job":"Recherche d'Emploi","startup":"Startups & Fondateurs","data":"Analyse de Données","design":"Design & UX","student":"Étudiants & Études","productivity":"Productivité","legal":"Juridique & Contrats","sales":"Vente & Négociation"},
     title: 'Prompt Router \u2014 \u00c9crivez un Prompt et Ouvrez-le dans ChatGPT, Claude, Gemini et plus',
     metaDesc: "Prompt Router vous permet d'\u00e9crire un prompt et de l'ouvrir instantan\u00e9ment dans ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai et Meta AI. Comparez les r\u00e9ponses IA en secondes \u2014 gratuit, sans inscription.",
     ogLocale: 'fr_FR', ogImageAlt: "Prompt Router \u2014 un prompt, toute l'IA",
@@ -193,6 +197,7 @@ const LOCALES = {
     ],
   },
   de: {
+    libNames: {"dev":"Entwicklung & Code","writing":"Schreiben & Content","marketing":"Marketing & Growth","job":"Jobsuche & Karriere","startup":"Startups & Gründer","data":"Datenanalyse","design":"Design & UX","student":"Studenten & Lernen","productivity":"Produktivität","legal":"Recht & Verträge","sales":"Vertrieb & Sales"},
     title: 'Prompt Router \u2014 Schreib einen Prompt und \u00f6ffne ihn in ChatGPT, Claude, Gemini und mehr',
     metaDesc: 'Prompt Router erm\u00f6glicht es dir, einen Prompt zu schreiben und ihn sofort in ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai und Meta AI zu \u00f6ffnen. Vergleiche KI-Antworten in Sekunden \u2014 kostenlos, ohne Anmeldung.',
     ogLocale: 'de_DE', ogImageAlt: 'Prompt Router \u2014 ein Prompt, jede KI',
@@ -231,6 +236,7 @@ const LOCALES = {
     ],
   },
   tr: {
+    libNames: {"dev":"Yazılım ve Kodlama","writing":"Yazarlık ve İçerik","marketing":"Pazarlama ve Büyüme","job":"İş Arama ve Kariyer","startup":"Girişim ve Kurucular","data":"Veri Analizi","design":"Tasarım ve UX","student":"Öğrenci ve Ders","productivity":"Verimlilik","legal":"Hukuk ve Sözleşmeler","sales":"Satış ve Anlaşmalar"},
     title: 'Prompt Router \u2014 Bir Prompt Yaz ve ChatGPT, Claude, Gemini ve Daha Fazlas\u0131nda A\u00e7',
     metaDesc: 'Prompt Router, bir prompt yazman\u0131za ve onu ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai ve Meta AI\u2019de an\u0131nda a\u00e7man\u0131za olanak tan\u0131r. Yapay zeka yan\u0131tlar\u0131n\u0131 saniyeler i\u00e7inde kar\u015f\u0131la\u015ft\u0131r\u0131n \u2014 \u00fccretsiz, kay\u0131t gerekmez.',
     ogLocale: 'tr_TR', ogImageAlt: 'Prompt Router \u2014 bir prompt, t\u00fcm yapay zeka',
