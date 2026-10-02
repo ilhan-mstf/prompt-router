@@ -32,6 +32,7 @@ const CORE_ASSETS = [
   '/legal',
   '/sales',
   '/blog',
+  '/blog-customer-support-prompts',
   '/blog-meta-ai',
   '/blog-new-look',
   '/blog-prompt-library',

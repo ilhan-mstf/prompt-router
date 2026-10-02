@@ -3398,7 +3398,8 @@ Tone: confident and data-grounded, not defensive.
 - [Meta AI Integration Guide](https://prompt-router.pages.dev/blog-meta-ai): Expanding Prompt Router to 12 AI models with Meta AI & Llama routing.
 - [The Curated Prompt Library Guide](https://prompt-router.pages.dev/blog-prompt-library): 260+ battle-tested AI prompts across 11 professional domains.
 - [Introducing the New Prompt Router](https://prompt-router.pages.dev/blog-new-look): Major redesign with collapsible sidebar, clean canvas, and 11 AI models.
-- [Prompt Engineering Blog](https://prompt-router.pages.dev/blog): Index of all 18 prompt engineering articles, model comparisons, and cost optimization guides.
+- [Prompt Engineering Blog](https://prompt-router.pages.dev/blog): Index of all 19 prompt engineering articles, model comparisons, and cost optimization guides.
+- [Customer Support Prompts Guide](https://prompt-router.pages.dev/blog-customer-support-prompts): Customer service prompt engineering recipes for live chat and email support.
 - [Budget-Friendly Prompt Routing](https://prompt-router.pages.dev/blog-budget-prompt-routing): How top AI companies cut inference costs by up to 85% using model cascades and small models.
 - [Reduce AI Costs](https://prompt-router.pages.dev/blog-reduce-ai-costs): 5 proven strategies to cut OpenAI, Anthropic, and Google AI API costs by up to 80%.
 - [Compare AI Models](https://prompt-router.pages.dev/blog-compare-ai): Comparative breakdown of LLMs for specialized tasks and why side-by-side evaluation is essential.
