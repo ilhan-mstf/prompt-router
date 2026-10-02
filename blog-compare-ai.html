@@ -64,7 +64,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,200&display=swap">
 </noscript>
 
-<link rel="stylesheet" href="/css/core.4ff07254.css">
+<link rel="stylesheet" href="/css/core.a92639e1.css">
 <style>
 /* ── Article ── */
 article.page { padding-top: 40px; padding-bottom: 86px; }
@@ -78,12 +78,17 @@ article.page { padding-top: 40px; padding-bottom: 86px; }
 <!-- ── Top bar ── -->
 <nav class="topbar" aria-label="Main navigation">
   <div class="topbar-inner">
-    <div class="logo"><a href="/"><span class="logo-a">Prompt</span><span class="logo-b">Router</span></a></div>
+    <div class="logo">
+      <a href="/" class="brand-link">
+        <div class="brand-icon">P</div>
+        <div class="brand-text">Prompt<span>Router</span></div>
+      </a>
+    </div>
     <div class="nav-links">
       <a href="/">Home</a>
       <a href="/dev">Libraries</a>
       <span class="nav-sep" aria-hidden="true"></span>
-      <a href="/blog" class="active">Blog</a>
+      <a href="/blog">Blog</a>
       <button type="button" class="theme-toggle-btn" id="themeToggleBtn" title="Toggle dark/light mode" onclick="toggleTheme()" aria-label="Toggle theme">
         <span class="theme-toggle-icon" id="themeToggleIcon" aria-hidden="true">☀️</span>
       </button>
@@ -93,8 +98,15 @@ article.page { padding-top: 40px; padding-bottom: 86px; }
 
 <!-- ── Article ── -->
 <article class="page">
-  <p class="article-date">April 4, 2026</p>
-  <h1 class="article-title">GPT vs Claude vs Gemini: Which AI Model Should You Use?</h1>
+  <a href="/blog" class="back-link">&larr; Back to all guides</a>
+  <header class="article-header">
+    <div class="article-meta-bar">
+      <span class="cat-pill">Guide</span>
+      <span class="article-date">April 4, 2026</span>
+      <span class="article-read-time">4 min read</span>
+    </div>
+    <h1 class="article-title">GPT vs Claude vs Gemini: Which AI Model Should You Use?</h1>
+  </header>
 
   <p>Most people treat AI like a search engine: you type a query, you get an answer, and you move on. But unlike search engines, AI models are "probabilistic." They don't just find information; they generate it based on patterns. And every model has a different set of patterns.</p>
 
@@ -183,6 +195,7 @@ article.page { padding-top: 40px; padding-bottom: 86px; }
   <p>By treating AI models as a panel of experts rather than a single oracle, you get better results, fewer errors, and a much deeper understanding of the task at hand.</p>
 
   <div class="cta-box">
+    <h3>Try Prompt Router</h3>
     <p>Ready to stop guessing? Compare your next prompt across every major AI.</p>
     <a href="/" class="cta-link">Try Prompt Router</a>
   </div>
@@ -194,17 +207,17 @@ article.page { padding-top: 40px; padding-bottom: 86px; }
     <div class="footer-section">
       <span class="footer-heading">Prompt Libraries</span>
       <nav class="footer-grid" aria-label="Prompt libraries">
-        <a href="/dev">Dev</a>
-        <a href="/writing">Writing</a>
-        <a href="/marketing">Marketing</a>
+        <a href="/dev">Dev &amp; Coding</a>
+        <a href="/writing">Writing &amp; Content</a>
+        <a href="/marketing">Marketing &amp; Growth</a>
         <a href="/job">Job Search</a>
-        <a href="/startup">Startup</a>
-        <a href="/data">Data</a>
-        <a href="/design">Design</a>
-        <a href="/student">Student</a>
+        <a href="/startup">Startup &amp; Founders</a>
+        <a href="/data">Data Analysis</a>
+        <a href="/design">Design &amp; UX</a>
+        <a href="/student">Student &amp; Study</a>
         <a href="/productivity">Productivity</a>
-        <a href="/legal">Legal</a>
-        <a href="/sales">Sales</a>
+        <a href="/legal">Legal &amp; Contracts</a>
+        <a href="/sales">Sales &amp; Deals</a>
       </nav>
     </div>
     <div class="footer-bottom">
@@ -212,10 +225,14 @@ article.page { padding-top: 40px; padding-bottom: 86px; }
         <a href="/">Home</a>
         <a href="/blog">Blog</a>
       </nav>
-      <p class="footer-copy">&copy; 2026 Prompt Router &mdash; Free, no login, no tracking.</p>
+      <div class="footer-sep" aria-hidden="true"></div>
+      <p class="footer-desc" id="footer-desc"><strong>Prompt Router</strong> is a free tool that lets you send a single prompt to multiple AI models simultaneously. Compare responses across <a href="https://chatgpt.com" rel="noopener noreferrer" target="_blank">ChatGPT</a>, <a href="https://claude.ai" rel="noopener noreferrer" target="_blank">Claude</a>, <a href="https://gemini.google.com" rel="noopener noreferrer" target="_blank">Gemini</a>, <a href="https://copilot.microsoft.com" rel="noopener noreferrer" target="_blank">Copilot</a>, <a href="https://www.perplexity.ai" rel="noopener noreferrer" target="_blank">Perplexity</a>, <a href="https://chat.deepseek.com" rel="noopener noreferrer" target="_blank">DeepSeek</a>, <a href="https://x.com/i/grok" rel="noopener noreferrer" target="_blank">Grok</a>, <a href="https://chat.mistral.ai" rel="noopener noreferrer" target="_blank">Le Chat</a>, <a href="https://chat.qwen.ai" rel="noopener noreferrer" target="_blank">Qwen</a>, <a href="https://www.kimi.com" rel="noopener noreferrer" target="_blank">Kimi</a>, <a href="https://z.ai" rel="noopener noreferrer" target="_blank">Z.ai</a>, and <a href="https://www.meta.ai" rel="noopener noreferrer" target="_blank">Meta AI</a>. No login required, completely free.</p>
+      <p class="footer-copy">
+        Free, open-access multi-LLM router. Not affiliated with OpenAI, Anthropic, Google, Microsoft, Perplexity, DeepSeek, xAI, Mistral, Alibaba, Moonshot, Zhipu, or Meta.
+      </p>
       <p class="footer-made">Made with ❤️ in Munich</p>
     </div>
-    <img src="/clumsy.svg" alt="" class="footer-doodle" aria-hidden="true" loading="lazy" width="180" height="135">
+    <img src="/clumsy.svg" alt="" class="footer-doodle" aria-hidden="true" loading="lazy" width="160" height="120">
   </div>
 </footer>
 
