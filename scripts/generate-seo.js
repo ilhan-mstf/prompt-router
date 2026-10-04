@@ -116,6 +116,15 @@ export function generateSitemap() {
     priority: '0.8'
   });
 
+  // 4b. FAQ Page
+  const faqDate = getGitDate('faq.html', homeDate);
+  urls.push({
+    loc: `${BASE_URL}/faq`,
+    lastmod: faqDate,
+    changefreq: 'monthly',
+    priority: '0.8'
+  });
+
   // 5. Blog Posts
   const blogFiles = fs.readdirSync(ROOT)
     .filter(f => f.startsWith('blog-') && f.endsWith('.html'))
@@ -228,6 +237,7 @@ export function generateLlmsTxt() {
   txt += `- \`${BASE_URL}/de/marketing\` (Beste KI-Prompts für Marketing & Growth)\n\n`;
 
   txt += '## Guides & Blog Articles\n\n';
+  txt += `- [Frequently Asked Questions (FAQ)](${BASE_URL}/faq): Comprehensive answers to common questions about Prompt Router, privacy, model routing, supported AI providers, and prompt engineering.\n`;
   txt += `- [Meta AI Integration Guide](${BASE_URL}/blog-meta-ai): Expanding Prompt Router to 12 AI models with Meta AI & Llama routing.\n`;
   txt += `- [The Curated Prompt Library Guide](${BASE_URL}/blog-prompt-library): 260+ battle-tested AI prompts across 11 professional domains.\n`;
   txt += `- [Introducing the New Prompt Router](${BASE_URL}/blog-new-look): Major redesign with collapsible sidebar, clean canvas, and 11 AI models.\n`;

@@ -73,6 +73,7 @@ Example localized library endpoints:
 
 ## Guides & Blog Articles
 
+- [Frequently Asked Questions (FAQ)](https://prompt-router.pages.dev/faq): Comprehensive answers to common questions about Prompt Router, privacy, model routing, supported AI providers, and prompt engineering.
 - [Meta AI Integration Guide](https://prompt-router.pages.dev/blog-meta-ai): Expanding Prompt Router to 12 AI models with Meta AI & Llama routing.
 - [The Curated Prompt Library Guide](https://prompt-router.pages.dev/blog-prompt-library): 260+ battle-tested AI prompts across 11 professional domains.
 - [Introducing the New Prompt Router](https://prompt-router.pages.dev/blog-new-look): Major redesign with collapsible sidebar, clean canvas, and 11 AI models.

@@ -169,7 +169,7 @@ body {
 .brand-link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-family: 'DM Mono', monospace;
   font-size: var(--text-sm);
   font-weight: 500;
@@ -179,25 +179,24 @@ body {
 }
 .brand-link:hover { text-decoration: none; }
 .brand-icon {
-  width: 24px;
-  height: 24px;
-  background: var(--surface-2);
-  border: 1px solid var(--border-2);
-  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  background: var(--gold-glow);
+  border: 1px solid var(--gold-dim);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Fraunces', Georgia, serif;
-  font-weight: 600;
-  font-size: var(--text-sm);
   color: var(--gold);
+  font-weight: 700;
+  font-size: var(--text-sm);
   line-height: 1;
   flex-shrink: 0;
 }
 .brand-text {
   font-family: 'DM Mono', monospace;
   font-size: var(--text-sm);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--text);
 }
@@ -346,12 +345,11 @@ footer {
 
 /* ── Blog Index & Article Typography ────────────────────────── */
 header.page { padding-top: 40px; padding-bottom: 24px; }
-main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 24px; }
+main.page { padding-top: 40px; padding-bottom: 60px; display: flex; flex-direction: column; gap: 24px; }
 
 .hero {
   text-align: center;
   padding-top: 10px;
-  margin-bottom: 24px;
 }
 .hero-tagline, .page-title {
   font-family: 'Fraunces', Georgia, serif;
@@ -360,8 +358,6 @@ main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 24
   line-height: 1.2;
   letter-spacing: -0.02em;
   color: var(--text);
-  margin-bottom: 8px;
-  padding-top: 40px;
 }
 .hero-tagline em {
   font-style: italic;
@@ -437,10 +433,10 @@ main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 24
 .post-card-title {
   font-family: 'Fraunces', Georgia, serif;
   font-weight: 600;
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   color: var(--text);
   margin-bottom: 8px;
-  line-height: var(--leading-tight);
+  line-height: 1.35;
 }
 .post-card-desc {
   font-size: var(--text-sm);
@@ -470,7 +466,7 @@ main.page { padding-bottom: 86px; display: flex; flex-direction: column; gap: 24
 }
 
 /* Article Reading View */
-article.page { padding-top: 40px; padding-bottom: 86px; }
+article.page { padding-top: 40px; padding-bottom: 60px; }
 
 .back-link {
   display: inline-flex;
@@ -706,15 +702,115 @@ tr:last-child td { border-bottom: none; }
   box-shadow: none;
 }
 
+/* ── FAQ Accordions & Layout ──────────────────────────────────── */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+.faq-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  transition: border-color .12s, background .12s, box-shadow .12s;
+  overflow: hidden;
+}
+.faq-item:hover {
+  border-color: var(--border-2);
+}
+.faq-item[open] {
+  border-color: var(--gold-dim);
+  box-shadow: 0 4px 16px rgba(0,0,0,.1);
+}
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 20px;
+  font-family: 'DM Mono', monospace;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+  line-height: 1.4;
+}
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+.faq-icon {
+  font-size: var(--text-sm);
+  color: var(--gold);
+  transition: transform .2s ease;
+  flex-shrink: 0;
+  font-weight: 500;
+}
+.faq-item[open] .faq-icon {
+  transform: rotate(45deg);
+}
+.faq-answer {
+  padding: 0 20px 18px;
+  font-size: var(--text-sm);
+  color: var(--text-2);
+  line-height: var(--leading-relaxed);
+}
+.faq-answer p:not(:last-child) {
+  margin-bottom: 12px;
+}
+.faq-answer ul, .faq-answer ol {
+  margin: 0 0 12px 20px;
+  line-height: 1.8;
+}
+.faq-answer a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--gold-dim);
+  transition: color .12s;
+}
+.faq-answer a:hover {
+  color: var(--text);
+}
+.faq-answer code {
+  background: var(--surface-2);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: var(--text-sm);
+  color: var(--gold);
+}
+.faq-answer kbd {
+  font-family: 'DM Mono', monospace;
+  font-size: var(--text-xs);
+  background: var(--surface-2);
+  color: var(--text-2);
+  border: 1px solid var(--border-2);
+  border-radius: 4px;
+  padding: 2px 6px;
+  box-shadow: 0 1px 0 var(--border-2);
+}
+
 /* ── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 600px) {
-  .page { padding: 0 16px; }
-  .topbar-inner { padding: 0 16px; }
-  .footer-inner { padding: 32px 16px 40px; }
-  .footer-grid { grid-template-columns: repeat(2, 1fr); }
-  article.page { padding-top: 24px; }
+  .page { padding: 0 12px; }
+  .topbar-inner { padding: 0 8px; gap: 4px; }
+  .nav-links { gap: 4px; }
+  .theme-toggle-btn {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    font-size: var(--text-sm);
+    margin-left: 2px;
+  }
+  main.page, article.page { padding-top: 20px; padding-bottom: 40px; }
+  .hero-tagline, .page-title { font-size: var(--text-lg); line-height: 1.25; padding-top: 0; }
   .article-title { font-size: var(--text-xl); }
-  .hero-tagline, .page-title { font-size: var(--text-xl); padding-top: 24px; }
+  .post-card { padding: 16px 18px; }
+  .footer-inner { padding: 28px 16px 40px; }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 380px) {

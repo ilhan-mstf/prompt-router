@@ -56,6 +56,7 @@ const CORE_STATIC_FILES = [
   'serve.py',
   'index.html',
   'blog.html',
+  'faq.html',
   'blog-new-look.html',
   'sitemap.xml',
   'robots.txt',
@@ -173,9 +174,9 @@ it('Sitemap includes blog index and all 19 blog posts', () => {
   });
 });
 
-it('Sitemap has proper UTF-8 XML declaration, exactly 104 URLs, and no stale dates', () => {
+it('Sitemap has proper UTF-8 XML declaration, exactly 105 URLs, and no stale dates', () => {
   assert.strictEqual(sitemapContent.startsWith('<?xml version="1.0" encoding="UTF-8"?>'), true, 'Missing UTF-8 XML declaration');
-  assert.strictEqual(locMatches.length, 104, `Expected 104 URLs, found ${locMatches.length}`);
+  assert.strictEqual(locMatches.length, 105, `Expected 105 URLs, found ${locMatches.length}`);
   assert.strictEqual(sitemapContent.includes('2026-04-11'), false, 'Found stale 2026-04-11 lastmod dates in sitemap');
 });
 
@@ -231,14 +232,15 @@ it('llms-full.txt has zero mojibake, contains 10 core quick templates, and all 1
   });
 });
 
-it('All 32 HTML application and blog pages contain <link rel="alternate" href="/llms.txt">', () => {
+it('All 33 HTML application and blog pages contain <link rel="alternate" href="/llms.txt">', () => {
   const allPages = [
     'index.html',
     'blog.html',
+    'faq.html',
     ...VALID_LIBS.map(l => `${l}.html`),
     ...fs.readdirSync(ROOT).filter(f => f.startsWith('blog-') && f.endsWith('.html'))
   ];
-  assert.strictEqual(allPages.length, 32);
+  assert.strictEqual(allPages.length, 33);
   allPages.forEach(p => {
     const html = fs.readFileSync(path.join(ROOT, p), 'utf-8');
     assert.strictEqual(html.includes('href="/llms.txt"'), true, `Missing llms.txt alternate link in ${p}`);
@@ -589,8 +591,8 @@ it('prompt.js sets badge.title for full tooltip on activeBadge', () => {
 });
 
 it('blog.html provides top padding for the Blog title', () => {
-  const blogHTML = fs.readFileSync(path.join(ROOT, 'blog.html'), 'utf-8');
-  assert.strictEqual(blogHTML.includes('padding-top: 40px;'), true, 'Missing padding-top: 40px on .page-title in blog.html');
+  const coreCSS = fs.readFileSync(path.join(ROOT, 'css/core.css'), 'utf-8');
+  assert.strictEqual(coreCSS.includes('main.page') && coreCSS.includes('padding-top: 40px;'), true, 'Missing padding-top: 40px on main.page in core.css');
 });
 
 it('all blog post pages provide top padding for article date and title', () => {
@@ -598,7 +600,7 @@ it('all blog post pages provide top padding for article date and title', () => {
   assert.strictEqual(blogFiles.length, 19, 'Expected 19 blog post files');
   blogFiles.forEach(file => {
     const html = fs.readFileSync(path.join(ROOT, file), 'utf-8');
-    assert.strictEqual(html.includes('article.page { padding-top: 40px; padding-bottom: 86px; }'), true, `Missing padding-top: 40px on article.page in ${file}`);
+    assert.strictEqual(html.includes('article.page { padding-top: 40px; padding-bottom: 60px; }'), true, `Missing padding-top: 40px on article.page in ${file}`);
   });
 });
 
@@ -902,14 +904,14 @@ it('Master favicon.svg exists and defines the canonical vector icon', () => {
   assert.strictEqual(content.includes('#d4a847'), true, 'favicon.svg text color must be #d4a847');
 });
 
-it('All 33 HTML pages use an inline SVG favicon that matches master favicon.svg', () => {
+it('All 34 HTML pages use an inline SVG favicon that matches master favicon.svg', () => {
   const svgContent = fs.readFileSync(path.join(ROOT, 'favicon.svg'), 'utf-8');
   const compact = svgContent.replace(/>\s+</g, '><').replace(/\s+/g, ' ').trim();
   const encoded = compact.replace(/"/g, "'").replace(/#/g, '%23');
   const expectedDataUri = `data:image/svg+xml,${encoded}`;
 
   const htmlFiles = fs.readdirSync(ROOT).filter(f => f.endsWith('.html') && !f.startsWith('google'));
-  assert.strictEqual(htmlFiles.length, 33, 'Expected exactly 33 application and blog HTML files');
+  assert.strictEqual(htmlFiles.length, 34, 'Expected exactly 34 application and blog HTML files');
 
   for (const file of htmlFiles) {
     const html = fs.readFileSync(path.join(ROOT, file), 'utf-8');
