@@ -783,11 +783,9 @@ it('Edge Worker maintains full provider parity including Meta AI in footer and n
   assert.strictEqual(workerCode.includes('Z.ai (Zhipu) e Meta AI'), true, 'Missing Meta AI in Portuguese noscript');
 });
 
-it('core.css and prompt.css do not force text-transform: uppercase on section headers', () => {
-  const coreCSS = fs.readFileSync(path.join(ROOT, 'css/core.css'), 'utf-8');
+it('.section-title and .section-badge in prompt.css use uppercase and text-sm', () => {
   const promptCSS = fs.readFileSync(path.join(ROOT, 'css/prompt.css'), 'utf-8');
-  assert.strictEqual(coreCSS.includes('text-transform: uppercase'), false, 'Found text-transform: uppercase in core.css');
-  assert.strictEqual(promptCSS.includes('text-transform: uppercase'), false, 'Found text-transform: uppercase in prompt.css');
+  assert.strictEqual(promptCSS.includes('text-transform: uppercase'), true, 'Missing text-transform: uppercase in prompt.css');
 });
 
 it('All application pages, library pages, blog index and blog posts include centered Munich footer badge with heart emoji', () => {
@@ -809,9 +807,9 @@ it('All application pages, library pages, blog index and blog posts include cent
 // ─────────────────────────────────────────────────────────────
 console.log('\n⚡ 11. Service Worker & Offline Resiliency:');
 
-it('sw.js precaches all blog posts and version bumped to pr-v7', () => {
+it('sw.js precaches all blog posts and version bumped to pr-v8', () => {
   const swCode = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf-8');
-  assert.strictEqual(swCode.includes("const CACHE_NAME = 'pr-v7';"), true, 'sw.js cache name is not pr-v7');
+  assert.strictEqual(swCode.includes("const CACHE_NAME = 'pr-v8';"), true, 'sw.js cache name is not pr-v8');
   const blogFiles = fs.readdirSync(ROOT).filter(f => f.startsWith('blog-') && f.endsWith('.html'));
   blogFiles.forEach(file => {
     const cleanRoute = `/${file.replace('.html', '')}`;
@@ -954,12 +952,22 @@ console.log('\n🎨 14. Typography Token Enforcement & Navigation Parity:');
 
 it('All CSS font-sizes in core.css and prompt.css strictly adhere to design tokens (zero raw px/rem drift)', () => {
   const ALLOWED_VALUES = [
+    'var(--text-2xs)',
     'var(--text-xs)',
+    'var(--text-caption)',
     'var(--text-sm)',
+    'var(--text-ui)',
     'var(--text-base)',
+    'var(--text-md)',
     'var(--text-lg)',
     'var(--text-xl)',
     'var(--text-2xl)',
+    'var(--icon-xs)',
+    'var(--icon-sm)',
+    'var(--icon-toggle)',
+    'var(--icon-md)',
+    'var(--icon-base)',
+    'var(--icon-lg)',
     'inherit',
     '0'
   ];
@@ -976,7 +984,7 @@ it('All CSS font-sizes in core.css and prompt.css strictly adhere to design toke
       if (match) {
         const val = match[1].trim();
         // Allow root token definitions and html base 16px
-        if (line.includes('--text-') || line.includes('16px')) {
+        if (line.includes('--text-') || line.includes('--icon-') || line.includes('16px')) {
           return;
         }
         if (!ALLOWED_VALUES.includes(val)) {
@@ -1064,12 +1072,12 @@ it('Topbar and footer navigation maintain complete parity across blog.html and a
   }
 });
 
-it('Sidebar section badges inherit typography from section headers and eliminate independent pill drift', () => {
+it('Sidebar section badges adhere to M3 badge specifications and tokens', () => {
   const promptCSS = fs.readFileSync(path.join(ROOT, 'css/prompt.css'), 'utf-8');
-  assert.strictEqual(promptCSS.includes('font-size: inherit'), true, '.section-badge must use font-size: inherit');
-  assert.strictEqual(promptCSS.includes('font-weight: inherit'), true, '.section-badge must use font-weight: inherit');
-  assert.strictEqual(promptCSS.includes('color: inherit'), true, '.section-badge must use color: inherit');
-  assert.strictEqual(promptCSS.includes('background: none'), true, '.section-badge must use background: none');
+  assert.strictEqual(promptCSS.includes('.section-badge {'), true, 'Missing .section-badge in prompt.css');
+  assert.strictEqual(promptCSS.includes('font-size: var(--text-sm)'), true, '.section-badge must use font-size: var(--text-sm)');
+  assert.strictEqual(promptCSS.includes('border-radius: var(--md-shape-corner-medium, 12px)'), true, '.section-badge must use standardized 12px border-radius');
+  assert.strictEqual(promptCSS.includes('padding: 2px 7px'), true, '.section-badge must use padding: 2px 7px');
 });
 
 // ─────────────────────────────────────────────────────────────

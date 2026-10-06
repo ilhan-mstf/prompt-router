@@ -65,8 +65,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Roboto:wght@400;500;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
 
-<link rel="stylesheet" href="/css/core.71864493.css">
-<link rel="stylesheet" href="/css/prompt.3f0727cc.css">
+<link rel="stylesheet" href="/css/core.c127155e.css">
+<link rel="stylesheet" href="/css/prompt.fcc99920.css">
 
   <script>
     (function(){try{localStorage.removeItem('pr_theme');var s=sessionStorage.getItem('pr_theme');var m=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(m?'dark':'light'));if(window.matchMedia){var dm=window.matchMedia('(prefers-color-scheme: dark)');var sc=function(e){try{sessionStorage.removeItem('pr_theme');localStorage.removeItem('pr_theme');}catch(x){}document.documentElement.setAttribute('data-theme',e.matches?'dark':'light');};if(dm.addEventListener){dm.addEventListener('change',sc);}else if(dm.addListener){dm.addListener(sc);}}}catch(e){}})();
@@ -98,7 +98,7 @@
           <span class="material-symbols-outlined fab-icon">add</span>
           <span id="lblNewPrompt">New prompt</span>
         </span>
-        <kbd class="kbd-hint">Esc</kbd>
+        <kbd class="btn-kbd">Esc</kbd>
         <span class="m3-state-layer"></span>
       </a>
     </div>
@@ -233,19 +233,19 @@
             <span class="material-symbols-outlined nav-dropdown-arrow" aria-hidden="true">expand_more</span>
           </button>
           <div class="nav-dropdown-menu" id="topbarLibMenu" role="menu">
-            <a href="/dev" role="menuitem"><span class="material-symbols-outlined" aria-hidden="true">code</span>Dev &amp; Coding</a>
-            <a href="/writing" role="menuitem"><span class="material-symbols-outlined" aria-hidden="true">edit_note</span>Writing &amp; Content</a>
-            <a href="/marketing" role="menuitem"><span class="material-symbols-outlined" aria-hidden="true">campaign</span>Marketing &amp; Growth</a>
-            <a href="/job" role="menuitem"><span class="material-symbols-outlined" aria-hidden="true">work</span>Job Search</a>
-            <a href="/startup" role="menuitem"><span class="material-symbols-outlined" aria-hidden="true">rocket_launch</span>Startup &amp; Founders</a>
-            <a href="/data" role="menuitem"><span class="material-symbols-outlined" aria-hidden="true">analytics</span>Data Analysis</a>
-            <a href="/design" role="menuitem"><span class="material-symbols-outlined" aria-hidden="true">palette</span>Design &amp; UX</a>
-            <a href="/student" role="menuitem"><span class="material-symbols-outlined" aria-hidden="true">school</span>Student &amp; Study</a>
-            <a href="/productivity" role="menuitem"><span class="material-symbols-outlined" aria-hidden="true">task_alt</span>Productivity</a>
-            <a href="/legal" role="menuitem"><span class="material-symbols-outlined" aria-hidden="true">gavel</span>Legal &amp; Contracts</a>
-            <a href="/sales" role="menuitem"><span class="material-symbols-outlined" aria-hidden="true">payments</span>Sales &amp; Deals</a>
-            <a href="/stocks" role="menuitem"><span class="material-symbols-outlined" aria-hidden="true">show_chart</span>Stock Analysis</a>
-            <a href="/finance" role="menuitem"><span class="material-symbols-outlined" aria-hidden="true">account_balance_wallet</span>Personal Finance</a>
+            <a href="/dev" role="menuitem"><span class="material-symbols-outlined" aria-hidden="true">code</span><span class="item-title">Dev &amp; Coding</span></a>
+            <a href="/writing" role="menuitem"><span class="material-symbols-outlined" aria-hidden="true">edit_note</span><span class="item-title">Writing &amp; Content</span></a>
+            <a href="/marketing" role="menuitem"><span class="material-symbols-outlined" aria-hidden="true">campaign</span><span class="item-title">Marketing &amp; Growth</span></a>
+            <a href="/job" role="menuitem"><span class="material-symbols-outlined" aria-hidden="true">work</span><span class="item-title">Job Search</span></a>
+            <a href="/startup" role="menuitem"><span class="material-symbols-outlined" aria-hidden="true">rocket_launch</span><span class="item-title">Startup &amp; Founders</span></a>
+            <a href="/data" role="menuitem"><span class="material-symbols-outlined" aria-hidden="true">analytics</span><span class="item-title">Data Analysis</span></a>
+            <a href="/design" role="menuitem"><span class="material-symbols-outlined" aria-hidden="true">palette</span><span class="item-title">Design &amp; UX</span></a>
+            <a href="/student" role="menuitem"><span class="material-symbols-outlined" aria-hidden="true">school</span><span class="item-title">Student &amp; Study</span></a>
+            <a href="/productivity" role="menuitem"><span class="material-symbols-outlined" aria-hidden="true">task_alt</span><span class="item-title">Productivity</span></a>
+            <a href="/legal" role="menuitem"><span class="material-symbols-outlined" aria-hidden="true">gavel</span><span class="item-title">Legal &amp; Contracts</span></a>
+            <a href="/sales" role="menuitem"><span class="material-symbols-outlined" aria-hidden="true">payments</span><span class="item-title">Sales &amp; Deals</span></a>
+            <a href="/stocks" role="menuitem"><span class="material-symbols-outlined" aria-hidden="true">show_chart</span><span class="item-title">Stock Analysis</span></a>
+            <a href="/finance" role="menuitem"><span class="material-symbols-outlined" aria-hidden="true">account_balance_wallet</span><span class="item-title">Personal Finance</span></a>
           </div>
         </div>
         <button type="button" class="theme-toggle-btn" id="themeToggleBtn" title="Toggle dark/light mode" onclick="toggleTheme()" aria-label="Toggle theme">
@@ -524,7 +524,7 @@ Organize it into: themes, specific actionable requests, questions that need clar
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <script src="/js/locales.97acb04b.js"></script>
-<script src="/js/prompt.cae1ca96.js"></script>
+<script src="/js/prompt.dc9402f5.js"></script>
 <script>
 (function() {
 'use strict';

@@ -31,20 +31,21 @@ const QUICK_TEMPLATES = {
   tr: ['Özetle', 'Açıkla', 'Metni geliştir', 'Fikir üret', 'Kıyasla', 'E-posta yaz', 'Kodu düzelt', 'Plan yap', 'Artı ve eksiler', 'Sorular sor'],
 };
 
-const LIB_ICONS = {
-  dev: '&#128187;',
-  writing: '&#9997;',
-  marketing: '&#128227;',
-  job: '&#128188;',
-  startup: '&#128640;',
-  data: '&#128202;',
-  design: '&#127912;',
-  student: '&#127891;',
-  productivity: '&#9874;',
-  legal: '&#9878;',
-  sales: '&#128176;',
-  stocks: '&#128200;',
-  finance: '&#128181;',
+
+const LIB_MATERIAL_ICONS = {
+  dev: 'code',
+  writing: 'edit_note',
+  marketing: 'campaign',
+  job: 'work',
+  startup: 'rocket_launch',
+  data: 'analytics',
+  design: 'palette',
+  student: 'school',
+  productivity: 'task_alt',
+  legal: 'gavel',
+  sales: 'payments',
+  stocks: 'show_chart',
+  finance: 'account_balance_wallet',
 };
 
 const NOSCRIPT_LOCALES = {
@@ -313,9 +314,9 @@ export default {
           if (VALID_LIBS.includes(cleanLib)) {
             el.setAttribute('href', `/${lang}/${cleanLib}`);
             const meta = LIB_LOCALES[cleanLib] && LIB_LOCALES[cleanLib][lang];
-            const icon = LIB_ICONS[cleanLib] || '';
+            const icon = LIB_MATERIAL_ICONS[cleanLib] || 'auto_stories';
             if (meta && meta.name) {
-              el.setInnerContent(`<div class="item-label-wrap"><span class="item-icon">${icon}</span><span class="item-title">${escHtml(meta.name)}</span></div><span class="p-arrow">&nearr;</span>`, { html: true });
+              el.setInnerContent(`<div class="item-label-wrap"><span class="material-symbols-outlined item-icon">${icon}</span><span class="item-title">${escHtml(meta.name)}</span></div><span class="material-symbols-outlined p-arrow">arrow_outward</span><span class="m3-state-layer"></span>`, { html: true });
             }
           }
         }})
@@ -326,8 +327,9 @@ export default {
           if (VALID_LIBS.includes(cleanLib)) {
             el.setAttribute('href', `/${lang}/${cleanLib}`);
             const meta = LIB_LOCALES[cleanLib] && LIB_LOCALES[cleanLib][lang];
+            const icon = LIB_MATERIAL_ICONS[cleanLib] || 'auto_stories';
             if (meta && meta.name) {
-              el.setInnerContent(meta.name);
+              el.setInnerContent(`<span class="material-symbols-outlined" aria-hidden="true">${icon}</span><span class="item-title">${escHtml(meta.name)}</span>`, { html: true });
             }
           }
         }})
@@ -455,9 +457,9 @@ export default {
             if (VALID_LIBS.includes(cleanLib)) {
               el.setAttribute('href', `/${langSub}/${cleanLib}`);
               const meta = LIB_LOCALES[cleanLib] && LIB_LOCALES[cleanLib][langSub];
-              const icon = LIB_ICONS[cleanLib] || '';
+              const icon = LIB_MATERIAL_ICONS[cleanLib] || 'auto_stories';
               if (meta && meta.name) {
-                el.setInnerContent(`<div class="item-label-wrap"><span class="item-icon">${icon}</span><span class="item-title">${escHtml(meta.name)}</span></div><span class="p-arrow">&nearr;</span>`, { html: true });
+                el.setInnerContent(`<div class="item-label-wrap"><span class="material-symbols-outlined item-icon">${icon}</span><span class="item-title">${escHtml(meta.name)}</span></div><span class="material-symbols-outlined p-arrow">arrow_outward</span><span class="m3-state-layer"></span>`, { html: true });
               }
             }
           }})
@@ -468,8 +470,9 @@ export default {
             if (VALID_LIBS.includes(cleanLib)) {
               el.setAttribute('href', `/${langSub}/${cleanLib}`);
               const meta = LIB_LOCALES[cleanLib] && LIB_LOCALES[cleanLib][langSub];
+              const icon = LIB_MATERIAL_ICONS[cleanLib] || 'auto_stories';
               if (meta && meta.name) {
-                el.setInnerContent(meta.name);
+                el.setInnerContent(`<span class="material-symbols-outlined" aria-hidden="true">${icon}</span><span class="item-title">${escHtml(meta.name)}</span>`, { html: true });
               }
             }
           }})

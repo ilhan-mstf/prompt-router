@@ -544,7 +544,7 @@ a:active > .m3-state-layer,
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.4px;
-  text-transform: uppercase;
+  line-height: var(--leading-normal, 1.5);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -1564,7 +1564,7 @@ footer {
           <span class="material-symbols-outlined fab-icon">add</span>
           <span id="lblNewPrompt">New prompt</span>
         </span>
-        <span class="kbd-hint">Esc</span>
+        <kbd class="btn-kbd">Esc</kbd>
         <span class="m3-state-layer"></span>
       </button>
     </div>
@@ -1685,19 +1685,19 @@ footer {
             <span class="material-symbols-outlined nav-dropdown-arrow">expand_more</span>
           </button>
           <div class="nav-dropdown-menu" id="topbarLibMenu">
-            <a href="/dev"><span class="material-symbols-outlined">code</span>Dev &amp; Coding</a>
-            <a href="/writing"><span class="material-symbols-outlined">edit_note</span>Writing &amp; Content</a>
-            <a href="/marketing"><span class="material-symbols-outlined">campaign</span>Marketing &amp; Growth</a>
-            <a href="/job"><span class="material-symbols-outlined">work</span>Job Search</a>
-            <a href="/startup"><span class="material-symbols-outlined">rocket_launch</span>Startup &amp; Founders</a>
-            <a href="/data"><span class="material-symbols-outlined">analytics</span>Data Analysis</a>
-            <a href="/design"><span class="material-symbols-outlined">palette</span>Design &amp; UX</a>
-            <a href="/student"><span class="material-symbols-outlined">school</span>Student &amp; Study</a>
-            <a href="/productivity"><span class="material-symbols-outlined">task_alt</span>Productivity</a>
-            <a href="/legal"><span class="material-symbols-outlined">gavel</span>Legal &amp; Contracts</a>
-            <a href="/sales"><span class="material-symbols-outlined">payments</span>Sales &amp; Deals</a>
-            <a href="/stocks"><span class="material-symbols-outlined">show_chart</span>Stock Analysis</a>
-            <a href="/finance"><span class="material-symbols-outlined">account_balance_wallet</span>Personal Finance</a>
+            <a href="/dev"><span class="material-symbols-outlined">code</span><span class="item-title">Dev &amp; Coding</span></a>
+            <a href="/writing"><span class="material-symbols-outlined">edit_note</span><span class="item-title">Writing &amp; Content</span></a>
+            <a href="/marketing"><span class="material-symbols-outlined">campaign</span><span class="item-title">Marketing &amp; Growth</span></a>
+            <a href="/job"><span class="material-symbols-outlined">work</span><span class="item-title">Job Search</span></a>
+            <a href="/startup"><span class="material-symbols-outlined">rocket_launch</span><span class="item-title">Startup &amp; Founders</span></a>
+            <a href="/data"><span class="material-symbols-outlined">analytics</span><span class="item-title">Data Analysis</span></a>
+            <a href="/design"><span class="material-symbols-outlined">palette</span><span class="item-title">Design &amp; UX</span></a>
+            <a href="/student"><span class="material-symbols-outlined">school</span><span class="item-title">Student &amp; Study</span></a>
+            <a href="/productivity"><span class="material-symbols-outlined">task_alt</span><span class="item-title">Productivity</span></a>
+            <a href="/legal"><span class="material-symbols-outlined">gavel</span><span class="item-title">Legal &amp; Contracts</span></a>
+            <a href="/sales"><span class="material-symbols-outlined">payments</span><span class="item-title">Sales &amp; Deals</span></a>
+            <a href="/stocks"><span class="material-symbols-outlined">show_chart</span><span class="item-title">Stock Analysis</span></a>
+            <a href="/finance"><span class="material-symbols-outlined">account_balance_wallet</span><span class="item-title">Personal Finance</span></a>
           </div>
         </div>
         <button type="button" class="theme-toggle-btn" id="themeToggleBtn" title="Toggle dark/light mode" onclick="toggleTheme()" aria-label="Toggle theme">

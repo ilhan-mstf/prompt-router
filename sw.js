@@ -1,14 +1,14 @@
 'use strict';
 
-const CACHE_NAME = 'pr-v7';
+const CACHE_NAME = 'pr-v8';
 
 const CORE_ASSETS = [
   '/',
   '/index.html',
-  '/css/core.71864493.css',
-  '/css/prompt.3f0727cc.css',
+  '/css/core.c127155e.css',
+  '/css/prompt.fcc99920.css',
   '/js/locales.97acb04b.js',
-  '/js/prompt.cae1ca96.js',
+  '/js/prompt.dc9402f5.js',
   '/site.webmanifest',
   '/clumsy.svg',
   '/favicon.ico',

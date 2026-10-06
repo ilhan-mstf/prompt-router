@@ -96,7 +96,7 @@ let toastTimer;
 function showToast(msg) {
   const el = document.getElementById('toast');
   if (!el) return;
-  el.textContent = msg;
+  el.innerHTML = `<span class="material-symbols-outlined" aria-hidden="true">check_circle</span> <span>${escapeHTML(msg)}</span>`;
   el.classList.add('show');
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => el.classList.remove('show'), 2400);
@@ -316,6 +316,7 @@ function renderSidebar() {
           <span class="material-symbols-outlined item-icon">bolt</span>
           <span class="item-title">${escapeHTML(t.label)}</span>
         </div>
+        <span class="m3-state-layer"></span>
       </button>
     `).join('');
   }
@@ -341,6 +342,7 @@ function renderSidebar() {
             <button type="button" class="action-sub-btn" title="${s.pinned ? 'Unpin prompt' : 'Pin prompt'}" aria-label="${s.pinned ? 'Unpin prompt' : 'Pin prompt'}" onclick="togglePin('${s.id}')"><span class="material-symbols-outlined" aria-hidden="true">${s.pinned ? 'star' : 'star_outline'}</span></button>
             <button type="button" class="action-sub-btn delete" title="Delete prompt" aria-label="Delete prompt" onclick="deleteSaved('${s.id}')"><span class="material-symbols-outlined" aria-hidden="true">delete</span></button>
           </div>
+          <span class="m3-state-layer"></span>
         </div>
       `).join('');
     }
@@ -368,7 +370,8 @@ function renderSidebar() {
               <span class="material-symbols-outlined item-icon" aria-hidden="true">history</span>
               <span class="item-title">${escapeHTML(h.title)}</span>
             </div>
-            <div aria-hidden="true">${provDots}</div>
+            <div class="hist-prov-dots" aria-hidden="true">${provDots}</div>
+            <span class="m3-state-layer"></span>
           </button>
         `;
       }).join('');
@@ -390,7 +393,7 @@ function renderSidebar() {
   // 4. Update Library links for active language
   const detectedLang = window.__LANG__ || (location.pathname.match(/^\/([a-z]{2})/)?.[1]) || 'en';
   const prefix = detectedLang === 'en' ? '' : `/${detectedLang}`;
-  const validLibs = ['dev', 'writing', 'marketing', 'job', 'startup', 'data', 'design', 'student', 'productivity', 'legal', 'sales'];
+  const validLibs = ['dev', 'writing', 'marketing', 'job', 'startup', 'data', 'design', 'student', 'productivity', 'legal', 'sales', 'stocks', 'finance'];
 
   document.querySelectorAll('#librariesList a.item-btn, #topbarLibMenu a, footer .footer-grid a, .related-grid a, a.brand-link, a.new-prompt-btn, .footer-links a[href="/"]').forEach(a => {
     const href = a.getAttribute('href');
@@ -404,9 +407,26 @@ function renderSidebar() {
       a.setAttribute('href', `${prefix}/${cleanLib}`);
       if (currentLocale && currentLocale.libNames && currentLocale.libNames[cleanLib]) {
         const titleSpan = a.querySelector('.item-title');
+        const iconSpan = a.querySelector('.material-symbols-outlined');
         if (titleSpan) {
           titleSpan.textContent = currentLocale.libNames[cleanLib];
-        } else if (a.matches('#topbarLibMenu a, footer .footer-grid a, .related-grid a')) {
+        } else if (iconSpan) {
+          // Safely preserve icon element and update only the text node
+          let textFound = false;
+          for (const node of Array.from(a.childNodes)) {
+            if (node !== iconSpan) {
+              if (!textFound && node.nodeType === Node.TEXT_NODE && node.textContent.trim().length > 0) {
+                node.textContent = currentLocale.libNames[cleanLib];
+                textFound = true;
+              } else if (node.nodeType === Node.TEXT_NODE && textFound) {
+                node.remove();
+              }
+            }
+          }
+          if (!textFound) {
+            a.appendChild(document.createTextNode(currentLocale.libNames[cleanLib]));
+          }
+        } else if (a.matches('footer .footer-grid a, .related-grid a')) {
           a.textContent = currentLocale.libNames[cleanLib];
         }
       }
@@ -522,9 +542,10 @@ function renderProvidersGrid(targetEl) {
     btn.innerHTML = `
       <div class="p-left">
         <span class="dot" style="background:${p.color}"></span>
-        <span>${p.label}</span>
+        <span class="p-name">${p.label}</span>
       </div>
-      <span class="p-arrow">&nearr;</span>
+      <span class="material-symbols-outlined p-arrow" aria-hidden="true">arrow_outward</span>
+      <span class="m3-state-layer"></span>
     `;
     li.appendChild(btn);
     grid.appendChild(li);
@@ -689,7 +710,7 @@ function setLanguage(lang) {
 
   try {
     const currentPath = window.location.pathname;
-    const validLibs = ['dev', 'writing', 'marketing', 'job', 'startup', 'data', 'design', 'student', 'productivity', 'legal', 'sales'];
+    const validLibs = ['dev', 'writing', 'marketing', 'job', 'startup', 'data', 'design', 'student', 'productivity', 'legal', 'sales', 'stocks', 'finance'];
     const libMatch = currentPath.match(/^(?:\/([a-z]{2}))?\/([a-z-]+)$/);
 
     let targetPath;
