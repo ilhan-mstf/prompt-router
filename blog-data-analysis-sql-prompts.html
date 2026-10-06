@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<title>AI Prompts for Complex SQL Queries, Pandas Transforms & Data Storytelling | Prompt Router</title>
+<meta name="description" content="Master complex SQL queries, window functions, Pandas cohort transformations, and executive data storytelling with precision-engineered AI prompts.">
+<meta name="keywords" content="AI SQL prompts, Pandas AI data analysis, window function SQL prompt, data engineering AI, SQL query optimizer, data science prompts">
+<meta name="author" content="Prompt Router">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://prompt-router.pages.dev/blog-data-analysis-sql-prompts">
+<link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM Context">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Prompt Router">
+<meta property="og:title" content="AI Prompts for Complex SQL Queries, Pandas Transforms & Data Storytelling">
+<meta property="og:description" content="Master complex SQL queries, window functions, Pandas cohort transformations, and executive data storytelling with precision-engineered AI prompts.">
+<meta property="og:url" content="https://prompt-router.pages.dev/blog-data-analysis-sql-prompts">
+<meta property="og:image" content="https://prompt-router.pages.dev/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-10-14">
+<meta property="article:author" content="Prompt Router">
+<meta property="article:section" content="Data">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Prompts for Complex SQL Queries, Pandas Transforms & Data Storytelling">
+<meta name="twitter:description" content="Master complex SQL queries, window functions, Pandas cohort transformations, and executive data storytelling with precision-engineered AI prompts.">
+<meta name="twitter:image" content="https://prompt-router.pages.dev/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "AI Prompts for Complex SQL Queries, Pandas Transforms & Data Storytelling",
+      "description": "Master complex SQL queries, window functions, Pandas cohort transformations, and executive data storytelling with precision-engineered AI prompts.",
+      "datePublished": "2026-10-14",
+      "dateModified": "2026-10-14",
+      "author": {
+        "@type": "Person",
+        "name": "Prompt Router"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Prompt Router",
+        "url": "https://prompt-router.pages.dev/"
+      },
+      "mainEntityOfPage": "https://prompt-router.pages.dev/blog-data-analysis-sql-prompts",
+      "image": "https://prompt-router.pages.dev/og-image.png"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why do AI models generate SQL queries with non-existent column names?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If you ask an AI to write a query without providing the exact CREATE TABLE DDL schema, it will invent plausible-sounding column names. Always supply the exact schema and a 3-row sample table."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which dialect of SQL do LLMs understand best?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standard ANSI SQL, PostgreSQL, and Snowflake dialects are the most thoroughly represented in LLM training corpora. For specialized dialects like BigQuery or ClickHouse, explicitly specify dialect quirks in the prompt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can AI help optimize slow-running SQL queries with huge tables?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. By pasting the EXPLAIN ANALYZE execution plan alongside the table indexing strategy, models like Claude 3.7 and GPT-4o can suggest composite indexes, partition pruning, and CTE materialization optimizations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Prompt Router accelerate data team workflows?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Prompt Router enables data analysts to draft a complex analytics question once and evaluate SQL and Python outputs across ChatGPT, Claude, Gemini, and DeepSeek simultaneously."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230f0f10'/><text y='24' x='4' font-size='22' font-family='serif' fill='%23d4a847'>P</text></svg>">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f0f10" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f4f0e8" media="(prefers-color-scheme: light)">
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,200&display=swap" as="style">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,200&display=swap" media="print" onload="this.media='all'">
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,200&display=swap">
+</noscript>
+
+<link rel="stylesheet" href="/css/core.a936cbde.css">
+<style>
+/* ── Article ── */
+article.page { padding-top: 40px; padding-bottom: 60px; }
+</style>
+  <script>
+    (function(){function getSys(){return window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}function updIcon(t){var i=document.getElementById('themeToggleIcon');if(i)i.textContent=t==='dark'?'☀️':'🌙';}window.toggleTheme=function(){var sys=getSys();var cur=document.documentElement.getAttribute('data-theme')||sys;var nxt=cur==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',nxt);if(nxt===sys){try{sessionStorage.removeItem('pr_theme');localStorage.removeItem('pr_theme');}catch(e){}}else{try{sessionStorage.setItem('pr_theme',nxt);}catch(e){}}updIcon(nxt);};try{localStorage.removeItem('pr_theme');var s=sessionStorage.getItem('pr_theme');var init=s||getSys();document.documentElement.setAttribute('data-theme',init);if(window.matchMedia){var dm=window.matchMedia('(prefers-color-scheme: dark)');var sc=function(e){try{sessionStorage.removeItem('pr_theme');localStorage.removeItem('pr_theme');}catch(x){}var t=e.matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);updIcon(t);};if(dm.addEventListener){dm.addEventListener('change',sc);}else if(dm.addListener){dm.addListener(sc);}}}catch(e){}document.addEventListener('DOMContentLoaded',function(){updIcon(document.documentElement.getAttribute('data-theme')||getSys());});})();
+  </script>
+</head>
+<body>
+
+<!-- ── Top bar ── -->
+<nav class="topbar" aria-label="Main navigation">
+  <div class="topbar-inner">
+    <div class="logo">
+      <a href="/" class="brand-link">
+        <div class="brand-icon">P</div>
+        <div class="brand-text">Prompt<span>Router</span></div>
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/dev">Libraries</a>
+      <span class="nav-sep" aria-hidden="true"></span>
+      <a href="/blog">Blog</a>
+      <button type="button" class="theme-toggle-btn" id="themeToggleBtn" title="Toggle dark/light mode" onclick="toggleTheme()" aria-label="Toggle theme">
+        <span class="theme-toggle-icon" id="themeToggleIcon" aria-hidden="true">☀️</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Article ── -->
+<article class="page">
+  <a href="/blog" class="back-link">&larr; Back to all guides</a>
+  <header class="article-header">
+    <div class="article-meta-bar">
+      <span class="cat-pill">Data</span>
+      <span class="article-date">October 14, 2026</span>
+      <span class="article-read-time">6 min read</span>
+    </div>
+    <h1 class="article-title">AI Prompts for Complex SQL Queries, Pandas Transforms & Data Storytelling</h1>
+  </header>
+
+
+  <p>Modern data analysts, analytics engineers, and data scientists spend a disproportionate amount of time wrangling messy CSVs, debugging intricate SQL window functions, and translating raw statistical outputs into executive-ready presentation slides.</p>
+
+  <p>While generative AI is proficient at writing code, poorly specified data prompts frequently lead to queries that produce Cartesian products, subtle off-by-one aggregation errors, or hallucinated database column names. Here is how to construct reliable data prompts that produce performant, production-ready analytics code.</p>
+
+  <h2>The 3 Rules of Fail-Safe SQL Prompting</h2>
+
+  <ol>
+    <li><strong>Provide the DDL:</strong> Always include the `CREATE TABLE` schema definition with column data types.</li>
+    <li><strong>Provide Sample Rows:</strong> Give 2-3 sample records so the model understands data granularity and format (e.g., ISO timestamp vs UNIX epoch).</li>
+    <li><strong>Specify Dialect &amp; Version:</strong> Explicitly state PostgreSQL 16, Snowflake, BigQuery, or MySQL 8.</li>
+  </ol>
+
+  <h2>1. Complex Window Function &amp; Monthly Cohort Retention</h2>
+
+  <p>Cohort retention queries are notoriously tricky to write by hand. Use this prompt to generate clean, optimized retention grids:</p>
+
+  <blockquote>
+    You are a Staff Analytics Engineer writing a performant PostgreSQL 16 cohort retention query.<br><br>
+    Schema Provided:<br>
+    ```sql<br>
+    CREATE TABLE user_events (<br>
+      user_id UUID NOT NULL,<br>
+      event_timestamp TIMESTAMPTZ NOT NULL,<br>
+      event_type VARCHAR(50) NOT NULL<br>
+    );<br>
+    ```<br><br>
+    Task:<br>
+    1. Define each user's signup cohort as the calendar month of their first event.<br>
+    2. Calculate retention for Month 0 through Month 12 as both absolute active user count and retention percentage.<br>
+    3. Use readable Common Table Expressions (CTEs) and window functions instead of nested subqueries.<br>
+    4. Include comments explaining the partition boundary logic.
+  </blockquote>
+
+  <h2>2. Pandas Data Wrangling &amp; Missing Value Imputation</h2>
+
+  <p>For data science and exploratory data analysis (EDA), prompt LLMs to write reproducible, vectorized Pandas pipelines:</p>
+
+  <blockquote>
+    You are a Senior Data Scientist writing a robust, vectorized Python Pandas data cleaning pipeline.<br><br>
+    Dataframe Context:<br>
+    - Dataset: 250,000 rows of customer transaction records.<br>
+    - Issues: Missing values in 'income', string dates formatted inconsistently, categorical column with high cardinality and typos.<br><br>
+    Instructions:<br>
+    1. Write vectorized Pandas operations (avoid slow `.apply()` loops).<br>
+    2. Impute missing numerical values using group-median based on 'job_tier' and 'region'.<br>
+    3. Normalize text columns using fast regex string methods.<br>
+    4. Add unit assertions (assert len(df) == original_len, assert df['income'].isna().sum() == 0).
+  </blockquote>
+
+  <h2>3. Translating Metrics into Executive Data Stories</h2>
+
+  <p>Executives do not want raw SQL tables; they want strategic insights. Use this prompt to convert query results into decision-making summaries:</p>
+
+  <blockquote>
+    Act as a VP of Business Operations communicating Q3 customer churn metrics to the CEO and Board.<br><br>
+    Data Table:<br>
+    [Paste raw table of churn by product tier, customer tenure, and support ticket count]<br><br>
+    Write a 3-paragraph executive memo:<br>
+    - Paragraph 1: Headline finding (the single metric that matters most and direction of trend).<br>
+    - Paragraph 2: Root cause analysis based on correlation in the data.<br>
+    - Paragraph 3: Two high-confidence, actionable interventions with expected revenue impact.
+  </blockquote>
+
+
+  <h2>Frequently Asked Questions</h2>
+  <h3>Why do AI models generate SQL queries with non-existent column names?</h3>
+  <p>If you ask an AI to write a query without providing the exact CREATE TABLE DDL schema, it will invent plausible-sounding column names. Always supply the exact schema and a 3-row sample table.</p>
+
+  <h3>Which dialect of SQL do LLMs understand best?</h3>
+  <p>Standard ANSI SQL, PostgreSQL, and Snowflake dialects are the most thoroughly represented in LLM training corpora. For specialized dialects like BigQuery or ClickHouse, explicitly specify dialect quirks in the prompt.</p>
+
+  <h3>Can AI help optimize slow-running SQL queries with huge tables?</h3>
+  <p>Yes. By pasting the EXPLAIN ANALYZE execution plan alongside the table indexing strategy, models like Claude 3.7 and GPT-4o can suggest composite indexes, partition pruning, and CTE materialization optimizations.</p>
+
+  <h3>How does Prompt Router accelerate data team workflows?</h3>
+  <p>Prompt Router enables data analysts to draft a complex analytics question once and evaluate SQL and Python outputs across ChatGPT, Claude, Gemini, and DeepSeek simultaneously.</p>
+
+  <div class="cta-box">
+    <h3>Try Prompt Router</h3>
+    <p>Route your prompts across 12 frontier AI models and compare responses side-by-side.</p>
+    <a href="/data" class="cta-link secondary">Browse Data Analysis Prompts</a>
+     &nbsp;&nbsp; 
+    <a href="/" class="cta-link">Open Prompt Router</a>
+  </div>
+</article>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-section">
+      <span class="footer-heading">Prompt Libraries</span>
+      <nav class="footer-grid" aria-label="Prompt libraries">
+        <a href="/dev">Dev &amp; Coding</a>
+        <a href="/writing">Writing &amp; Content</a>
+        <a href="/marketing">Marketing &amp; Growth</a>
+        <a href="/job">Job Search</a>
+        <a href="/startup">Startup &amp; Founders</a>
+        <a href="/data">Data Analysis</a>
+        <a href="/design">Design &amp; UX</a>
+        <a href="/student">Student &amp; Study</a>
+        <a href="/productivity">Productivity</a>
+        <a href="/legal">Legal &amp; Contracts</a>
+        <a href="/sales">Sales &amp; Deals</a>
+        <a href="/stocks">Stock Analysis</a>
+        <a href="/finance">Personal Finance</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="/">Home</a>
+        <a href="/blog">Blog</a>
+      </nav>
+      <div class="footer-sep" aria-hidden="true"></div>
+      <p class="footer-desc" id="footer-desc"><strong>Prompt Router</strong> is a free tool that lets you send a single prompt to multiple AI models simultaneously. Compare responses across <a href="https://chatgpt.com" rel="noopener noreferrer" target="_blank">ChatGPT</a>, <a href="https://claude.ai" rel="noopener noreferrer" target="_blank">Claude</a>, <a href="https://gemini.google.com" rel="noopener noreferrer" target="_blank">Gemini</a>, <a href="https://copilot.microsoft.com" rel="noopener noreferrer" target="_blank">Copilot</a>, <a href="https://www.perplexity.ai" rel="noopener noreferrer" target="_blank">Perplexity</a>, <a href="https://chat.deepseek.com" rel="noopener noreferrer" target="_blank">DeepSeek</a>, <a href="https://x.com/i/grok" rel="noopener noreferrer" target="_blank">Grok</a>, <a href="https://chat.mistral.ai" rel="noopener noreferrer" target="_blank">Le Chat</a>, <a href="https://chat.qwen.ai" rel="noopener noreferrer" target="_blank">Qwen</a>, <a href="https://www.kimi.com" rel="noopener noreferrer" target="_blank">Kimi</a>, <a href="https://z.ai" rel="noopener noreferrer" target="_blank">Z.ai</a>, and <a href="https://www.meta.ai" rel="noopener noreferrer" target="_blank">Meta AI</a>. No login required, completely free.</p>
+      <p class="footer-copy">
+        Free, open-access multi-LLM router. Not affiliated with OpenAI, Anthropic, Google, Microsoft, Perplexity, DeepSeek, xAI, Mistral, Alibaba, Moonshot, Zhipu, or Meta.
+      </p>
+      <p class="footer-made">Made with ❤️ in Munich</p>
+    </div>
+    <img src="/clumsy.svg" alt="" class="footer-doodle" aria-hidden="true" loading="lazy" width="160" height="120">
+  </div>
+</footer>
+
+</body>
+</html>
