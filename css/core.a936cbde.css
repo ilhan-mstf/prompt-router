@@ -379,13 +379,8 @@ main.page { padding-top: 40px; padding-bottom: 60px; display: flex; flex-directi
 /* Post Cards Grid (Blog Index) */
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 16px;
-}
-@media (max-width: 680px) {
-  .blog-grid {
-    grid-template-columns: 1fr;
-  }
 }
 .post-card {
   display: flex;
