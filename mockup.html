@@ -811,6 +811,12 @@ a:active > .m3-state-layer,
   color: var(--md-sys-color-on-surface);
 }
 
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 /* M3 Assist Chip Button (Libraries) */
 .nav-dropdown { position: relative; }
 .nav-dropdown-btn {
@@ -878,6 +884,46 @@ a:active > .m3-state-layer,
 .nav-dropdown-menu a .material-symbols-outlined {
   font-size: 18px;
   color: var(--md-sys-color-on-surface-variant);
+}
+
+/* Theme Toggle Button in Topbar (matching Home Page) */
+.theme-toggle-btn {
+  background: none;
+  border: 1px solid var(--md-sys-color-outline-variant);
+  color: var(--md-sys-color-on-surface-variant);
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  min-height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1;
+  transition: color var(--md-motion-duration-short), background var(--md-motion-duration-short), border-color var(--md-motion-duration-short);
+  flex-shrink: 0;
+  margin-left: 6px;
+}
+.theme-toggle-btn:hover {
+  color: var(--md-sys-color-on-surface);
+  background: var(--md-sys-color-surface-container);
+  border-color: var(--md-sys-color-outline);
+}
+.theme-toggle-btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-color: var(--gold);
+}
+.theme-toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-size: 1.0625rem;
+  user-select: none;
 }
 
 /* ── Canvas Container ────────────────────────────────────────── */
@@ -1469,6 +1515,14 @@ footer {
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .theme-toggle-btn {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    font-size: 0.9375rem;
+    margin-left: 2px;
+  }
 }
 </style>
 <script>
@@ -1603,9 +1657,6 @@ footer {
         </select>
         <span class="material-symbols-outlined select-arrow">expand_more</span>
       </div>
-      <button class="icon-btn" id="themeToggleBtn" title="Toggle dark / light theme" onclick="toggleTheme()" aria-label="Toggle theme">
-        <span class="material-symbols-outlined" id="themeIcon">dark_mode</span>
-      </button>
     </div>
 
   </aside>
@@ -1649,6 +1700,9 @@ footer {
             <a href="/finance"><span class="material-symbols-outlined">account_balance_wallet</span>Personal Finance</a>
           </div>
         </div>
+        <button type="button" class="theme-toggle-btn" id="themeToggleBtn" title="Toggle dark/light mode" onclick="toggleTheme()" aria-label="Toggle theme">
+          <span class="theme-toggle-icon" id="themeToggleIcon" aria-hidden="true">☀️</span>
+        </button>
       </nav>
     </header>
 
@@ -2404,8 +2458,15 @@ function getSystemTheme() {
 }
 
 function updateThemeIcon(theme) {
-  if (themeIcon) {
-    themeIcon.textContent = theme === 'dark' ? 'light_mode' : 'dark_mode';
+  const icon = document.getElementById('themeToggleIcon');
+  const btn = document.getElementById('themeToggleBtn');
+  const isDark = theme === 'dark';
+  if (icon) {
+    icon.textContent = isDark ? '☀️' : '🌙';
+  }
+  if (btn) {
+    btn.title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+    btn.setAttribute('aria-label', btn.title);
   }
 }
 
@@ -2429,6 +2490,18 @@ changeLanguage('en');
 handleInput();
 const initialTheme = document.documentElement.getAttribute('data-theme') || getSystemTheme();
 updateThemeIcon(initialTheme);
+
+if (window.matchMedia) {
+  const darkMedia = window.matchMedia('(prefers-color-scheme: dark)');
+  const handleSysChange = e => {
+    try { sessionStorage.removeItem('pr_theme'); localStorage.removeItem('pr_theme'); } catch {}
+    const newTheme = e.matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    updateThemeIcon(newTheme);
+  };
+  if (darkMedia.addEventListener) darkMedia.addEventListener('change', handleSysChange);
+  else if (darkMedia.addListener) darkMedia.addListener(handleSysChange);
+}
 
 // Restore desktop collapsed state
 if (location.search.includes('drawer')) { sidebar.classList.add('mobile-open'); backdrop.classList.add('show'); }
