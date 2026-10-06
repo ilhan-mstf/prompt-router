@@ -6,7 +6,8 @@
 export const SUPPORTED_LANGS = ['en', 'es', 'tr', 'fr', 'de', 'it', 'pt'];
 export const VALID_LIBS = [
   'dev', 'writing', 'marketing', 'job', 'startup',
-  'data', 'design', 'student', 'productivity', 'legal', 'sales'
+  'data', 'design', 'student', 'productivity', 'legal', 'sales',
+  'stocks', 'finance'
 ];
 
 export const LIB_LOCALES = {
@@ -569,6 +570,108 @@ export const LIB_LOCALES = {
       desc: 'Prompts de IA para times de vendas: prospecção fria, quebra de objeções e elaboração de propostas comerciais.',
       tagline: 'Melhores Prompts de IA para Vendas',
       sub: 'Prompts para prospecção fria, contorno de objeções e propostas comerciais.<br>Clique em qualquer prompt para carregá-lo no router.'
+    }
+  },
+  stocks: {
+    en: {
+      name: 'Stock Analysis',
+      title: 'Best AI Prompts for Stock Analysis & Investing — Prompt Router',
+      desc: 'Curated AI prompts for stock analysis, equity research, valuation modeling, earnings calls, and thesis validation. Send to ChatGPT, Claude, Gemini in one click.',
+      tagline: 'Best AI Prompts for Stock Analysis',
+      sub: 'Curated prompts for DCF modeling, financial statement teardowns, earnings calls, and moat evaluation.<br>Click any prompt below to load it into the router.'
+    },
+    es: {
+      name: 'Análisis de Acciones',
+      title: 'Los Mejores Prompts de IA para Análisis de Acciones — Prompt Router',
+      desc: 'Prompts de IA seleccionados para análisis bursátil, modelos de valoración, llamadas de resultados y tesis de inversión. Envíalos a ChatGPT, Claude, Gemini en un clic.',
+      tagline: 'Mejores Prompts de IA para Análisis de Acciones',
+      sub: 'Prompts seleccionados para modelos DCF, análisis de estados financieros y evaluación de ventajas competitivas.<br>Haz clic en cualquier prompt para cargarlo en el router.'
+    },
+    tr: {
+      name: 'Hisse Senedi Analizi',
+      title: 'Hisse Senedi Analizi ve Yatırım için En İyi Yapay Zeka Promptları — Prompt Router',
+      desc: 'Hisse analizi, finansal tablo incelemesi, bilanço analizi, değerleme modelleri ve yatırım tezi doğrulama için seçilmiş yapay zeka promptları. Tek tıkla ChatGPT ve Claude\'a gönderin.',
+      tagline: 'Hisse Senedi Analizi için En İyi Yapay Zeka Promptları',
+      sub: 'DCF değerlemesi, bilanço analizi, bilanço konferansları ve rekabet avantajı değerlendirmesi için seçilmiş promptlar.<br>Aşağıdaki herhangi bir prompta tıklayarak router\'a yükleyin.'
+    },
+    fr: {
+      name: 'Analyse Boursière',
+      title: 'Meilleurs Prompts IA pour l\'Analyse Boursière & l\'Investissement — Prompt Router',
+      desc: 'Prompts IA pour l\'analyse d\'actions, modèles de valorisation DCF, analyse des résultats financiers et thèses d\'investissement. Envoyez vers ChatGPT, Claude, Gemini en un clic.',
+      tagline: 'Meilleurs Prompts IA pour l\'Analyse Boursière',
+      sub: 'Prompts sélectionnés pour l\'analyse financière, la valorisation et l\'évaluation des avantages concurrentiels.<br>Cliquez sur un prompt pour le charger dans le routeur.'
+    },
+    de: {
+      name: 'Aktienanalyse',
+      title: 'Beste KI-Prompts für Aktienanalyse & Investments — Prompt Router',
+      desc: 'Kuratierte KI-Prompts für Aktienanalyse, DCF-Bewertungsmodelle, Bilanzanalysen und Quartalsberichte. Mit einem Klick an ChatGPT, Claude, Gemini senden.',
+      tagline: 'Beste KI-Prompts für Aktienanalyse',
+      sub: 'Kuratierte Prompts für Bewertungsmodelle, Bilanzprüfungen, Earnings Calls und Burggraben-Analysen.<br>Klicke auf einen Prompt, um ihn in den Router zu laden.'
+    },
+    it: {
+      name: 'Analisi Azionaria',
+      title: 'Migliori Prompt AI per Analisi Azionaria & Investimenti — Prompt Router',
+      desc: 'Prompt AI selezionati per analisi fondamentale, modelli di valutazione, analisi dei bilanci e tesi di investimento. Invia a ChatGPT, Claude, Gemini con un solo clic.',
+      tagline: 'Migliori Prompt AI per Analisi Azionaria',
+      sub: 'Prompt selezionati per modelli DCF, analisi del bilancio, conference call sugli utili e vantaggi competitivi.<br>Fai clic su un prompt per caricarlo nel router.'
+    },
+    pt: {
+      name: 'Análise de Ações',
+      title: 'Melhores Prompts de IA para Análise de Ações e Investimentos — Prompt Router',
+      desc: 'Prompts de IA selecionados para análise fundamentalista, modelos de valuation, teleconferências de resultados e teses de investimento. Envie para ChatGPT, Claude e Gemini em um clique.',
+      tagline: 'Melhores Prompts de IA para Análise de Ações',
+      sub: 'Prompts selecionados para modelos de DCF, análise de balanços, teleconferências e vantagens competitivas.<br>Clique em qualquer prompt para carregá-lo no router.'
+    }
+  },
+  finance: {
+    en: {
+      name: 'Personal Finance',
+      title: 'Best AI Prompts for Personal Finance & Wealth Building — Prompt Router',
+      desc: 'Curated AI prompts for budgeting, debt payoff, investing, retirement planning, and tax optimization. Send to ChatGPT, Claude, Gemini in one click.',
+      tagline: 'Best AI Prompts for Personal Finance',
+      sub: 'Curated prompts for budgeting frameworks, debt snowball vs avalanche, asset allocation, and FIRE planning.<br>Click any prompt below to load it into the router.'
+    },
+    es: {
+      name: 'Finanzas Personales',
+      title: 'Los Mejores Prompts de IA para Finanzas Personales — Prompt Router',
+      desc: 'Prompts de IA para presupuestos, eliminación de deudas, ahorro, inversión y planificación de jubilación. Envíalos a ChatGPT, Claude, Gemini en un solo clic.',
+      tagline: 'Mejores Prompts de IA para Finanzas Personales',
+      sub: 'Prompts seleccionados para presupuestos, pago de deudas, asignación de activos y planificación de retiro.<br>Haz clic en cualquier prompt para cargarlo en el router.'
+    },
+    tr: {
+      name: 'Kişisel Finans',
+      title: 'Kişisel Finans ve Tasarruf için En İyi Yapay Zeka Promptları — Prompt Router',
+      desc: 'Bütçe yönetimi, borç kapatma, birikim, varlık dağılımı ve emeklilik planlaması için seçilmiş yapay zeka promptları. Tek tıkla ChatGPT ve Claude\'a gönderin.',
+      tagline: 'Kişisel Finans için En İyi Yapay Zeka Promptları',
+      sub: 'Bütçeleme stratejileri, borç kartopu yöntemi, portföy dağılımı ve finansal özgürlük planlaması için seçilmiş promptlar.<br>Aşağıdaki herhangi bir prompta tıklayarak router\'a yükleyin.'
+    },
+    fr: {
+      name: 'Finances Personnelles',
+      title: 'Meilleurs Prompts IA pour les Finances Personnelles — Prompt Router',
+      desc: 'Prompts IA pour le budget, le remboursement de dettes, l\'épargne, l\'investissement et la préparation à la retraite. Envoyez vers ChatGPT, Claude, Gemini en un clic.',
+      tagline: 'Meilleurs Prompts IA pour les Finances Personnelles',
+      sub: 'Prompts sélectionnés pour l\'optimisation du budget, le remboursement des dettes et la planification financière.<br>Cliquez sur un prompt pour le charger dans le routeur.'
+    },
+    de: {
+      name: 'Persönliche Finanzen',
+      title: 'Beste KI-Prompts für persönliche Finanzen & Vermögensaufbau — Prompt Router',
+      desc: 'Kuratierte KI-Prompts für Haushaltsbudget, Schuldenabbau, Vermögensaufbau, Altersvorsorge und Steueroptimierung. Mit einem Klick an ChatGPT, Claude, Gemini senden.',
+      tagline: 'Beste KI-Prompts für persönliche Finanzen',
+      sub: 'Kuratierte Prompts für Budgetierung, Schuldenabbau, Asset-Allocation und finanzielle Unabhängigkeit.<br>Klicke auf einen Prompt, um ihn in den Router zu laden.'
+    },
+    it: {
+      name: 'Finanza Personale',
+      title: 'Migliori Prompt AI per la Finanza Personale — Prompt Router',
+      desc: 'Prompt AI per budgeting, estinzione debiti, risparmio, investimenti e pianificazione pensionistica. Invia a ChatGPT, Claude, Gemini con un solo clic.',
+      tagline: 'Migliori Prompt AI per la Finanza Personale',
+      sub: 'Prompt selezionati per budgeting, rimborso debiti, asset allocation e libertà finanziaria.<br>Fai clic su un prompt per caricarlo nel router.'
+    },
+    pt: {
+      name: 'Finanças Pessoais',
+      title: 'Melhores Prompts de IA para Finanças Pessoais — Prompt Router',
+      desc: 'Prompts de IA para orçamento doméstico, quitação de dívidas, investimentos, previdência e planejamento financeiro. Envie para ChatGPT, Claude e Gemini em um clique.',
+      tagline: 'Melhores Prompts de IA para Finanças Pessoais',
+      sub: 'Prompts selecionados para orçamento, quitação de dívidas, alocação de ativos e independência financeira.<br>Clique em qualquer prompt para carregá-lo no router.'
     }
   }
 };

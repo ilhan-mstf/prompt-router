@@ -5,7 +5,7 @@
 Prompt Router is a free, privacy-first web utility for prompt engineers, developers, writers, and AI power users. It allows users to compose a prompt once and immediately launch it in 12 major LLMs pre-filled via direct URL parameter routing. No account, no login, and no backend data storage.
 
 - [Website](https://prompt-router.pages.dev): Free, privacy-first multi-LLM prompt router and side-by-side comparator.
-- [Full Documentation & Prompt Dump](https://prompt-router.pages.dev/llms-full.txt): Complete prompt collection across 11 libraries, 10 core quick templates, edge routing syntax, and API endpoints.
+- [Full Documentation & Prompt Dump](https://prompt-router.pages.dev/llms-full.txt): Complete prompt collection across 13 libraries, 10 core quick templates, edge routing syntax, and API endpoints.
 - [Repository](https://github.com/ilhan-mstf/prompt-router): Open-source codebase on GitHub.
 
 ## AI Provider URL Routing Syntax
@@ -27,7 +27,7 @@ Prompt Router routes prefilled prompts to LLM chat interfaces using standard URL
 
 ## Prompt Libraries
 
-Curated battle-tested prompt collections across 11 domains:
+Curated battle-tested prompt collections across 13 domains:
 
 - [Dev Prompts](https://prompt-router.pages.dev/dev): 30+ curated prompts for debugging, code review, refactoring, testing, DevOps, and system architecture.
 - [Writing Prompts](https://prompt-router.pages.dev/writing): Prompts for essay drafting, copywriting, tone adjustment, storytelling, and editing.
@@ -40,6 +40,8 @@ Curated battle-tested prompt collections across 11 domains:
 - [Productivity Prompts](https://prompt-router.pages.dev/productivity): Time management, meeting summaries, task prioritization, and daily workflows.
 - [Legal Prompts](https://prompt-router.pages.dev/legal): Contract analysis, clause simplification, NDAs, and compliance guidelines.
 - [Sales Prompts](https://prompt-router.pages.dev/sales): Cold outreach, discovery calls, objection handling, and proposal generation.
+- [Stock Analysis Prompts](https://prompt-router.pages.dev/stocks): Prompts for 10-K teardowns, DCF valuation, moat audits, earnings calls, and risk management.
+- [Personal Finance Prompts](https://prompt-router.pages.dev/finance): Prompts for 50/30/20 budgeting, debt payoff, emergency funds, index investing, and FI/RE goals.
 
 ## Core Templates
 
@@ -56,7 +58,7 @@ Curated battle-tested prompt collections across 11 domains:
 
 ## Multi-Language Routes
 
-Prompt Router features server-side edge rendering for 7 languages across the homepage and all 11 prompt libraries:
+Prompt Router features server-side edge rendering for 7 languages across the homepage and all 13 prompt libraries:
 
 - English (Default): `https://prompt-router.pages.dev/` and `https://prompt-router.pages.dev/{library}`
 - Spanish (Español): `https://prompt-router.pages.dev/es` and `https://prompt-router.pages.dev/es/{library}`

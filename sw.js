@@ -7,7 +7,7 @@ const CORE_ASSETS = [
   '/index.html',
   '/css/core.4d7179bb.css',
   '/css/prompt.2150286e.css',
-  '/js/locales.f9266c85.js',
+  '/js/locales.349b6056.js',
   '/js/prompt.f20f31f4.js',
   '/site.webmanifest',
   '/clumsy.svg',

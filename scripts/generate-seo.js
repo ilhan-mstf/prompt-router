@@ -5,7 +5,7 @@
  *
  * 1. Generates sitemap.xml dynamically from current codebase routes and git lastmod.
  * 2. Generates llms.txt adhering to the llmstxt.org specification.
- * 3. Generates llms-full.txt extracting all prompts dynamically across all 11 libraries.
+ * 3. Generates llms-full.txt extracting all prompts dynamically across all 13 libraries.
  * 4. Ensures 100% clean UTF-8 encoding with zero mojibake.
  */
 
@@ -40,6 +40,8 @@ const LIB_DISPLAY_TITLES = {
   legal: 'Legal Prompts',
   sales: 'Sales Prompts',
   student: 'Student Prompts',
+  stocks: 'Stock Analysis Prompts',
+  finance: 'Personal Finance Prompts',
 };
 
 const LIB_DESCRIPTIONS = {
@@ -54,6 +56,8 @@ const LIB_DESCRIPTIONS = {
   legal: 'Contract analysis, clause simplification, NDAs, and compliance guidelines.',
   sales: 'Cold outreach, discovery calls, objection handling, and proposal generation.',
   student: 'Study schedules, concept explanations, flashcard generation, and exam prep.',
+  stocks: 'Prompts for 10-K teardowns, DCF valuation, moat audits, earnings calls, and risk management.',
+  finance: 'Prompts for 50/30/20 budgeting, debt payoff, emergency funds, index investing, and FI/RE goals.',
 };
 
 function getGitDate(filePath, fallbackDate) {
@@ -178,7 +182,7 @@ export function generateLlmsTxt() {
   txt += '> Write one prompt. Open every AI. Compare responses side-by-side across ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Grok, Le Chat, Qwen, Kimi, Z.ai, and Meta AI.\n\n';
   txt += 'Prompt Router is a free, privacy-first web utility for prompt engineers, developers, writers, and AI power users. It allows users to compose a prompt once and immediately launch it in 12 major LLMs pre-filled via direct URL parameter routing. No account, no login, and no backend data storage.\n\n';
   txt += `- [Website](${BASE_URL}): Free, privacy-first multi-LLM prompt router and side-by-side comparator.\n`;
-  txt += `- [Full Documentation & Prompt Dump](${BASE_URL}/llms-full.txt): Complete prompt collection across 11 libraries, 10 core quick templates, edge routing syntax, and API endpoints.\n`;
+  txt += `- [Full Documentation & Prompt Dump](${BASE_URL}/llms-full.txt): Complete prompt collection across 13 libraries, 10 core quick templates, edge routing syntax, and API endpoints.\n`;
   txt += `- [Repository](https://github.com/ilhan-mstf/prompt-router): Open-source codebase on GitHub.\n\n`;
 
   txt += '## AI Provider URL Routing Syntax\n\n';
@@ -197,7 +201,7 @@ export function generateLlmsTxt() {
   txt += '- **Meta AI**: `https://www.meta.ai/?q={encoded_prompt}`\n\n';
 
   txt += '## Prompt Libraries\n\n';
-  txt += 'Curated battle-tested prompt collections across 11 domains:\n\n';
+  txt += 'Curated battle-tested prompt collections across 13 domains:\n\n';
   for (const lib of VALID_LIBS) {
     const title = LIB_DISPLAY_TITLES[lib] || `${lib.charAt(0).toUpperCase() + lib.slice(1)} Prompts`;
     const desc = LIB_DESCRIPTIONS[lib] || 'Curated prompts.';
@@ -222,7 +226,7 @@ export function generateLlmsTxt() {
   }
 
   txt += '\n## Multi-Language Routes\n\n';
-  txt += 'Prompt Router features server-side edge rendering for 7 languages across the homepage and all 11 prompt libraries:\n\n';
+  txt += 'Prompt Router features server-side edge rendering for 7 languages across the homepage and all 13 prompt libraries:\n\n';
   txt += `- English (Default): \`${BASE_URL}/\` and \`${BASE_URL}/{library}\`\n`;
   txt += `- Spanish (Español): \`${BASE_URL}/es\` and \`${BASE_URL}/es/{library}\`\n`;
   txt += `- Turkish (Türkçe): \`${BASE_URL}/tr\` and \`${BASE_URL}/tr/{library}\`\n`;
@@ -287,7 +291,7 @@ export function generateLlmsFullTxt() {
   txt += '- **Meta AI**: `https://www.meta.ai/?q={encoded_prompt}`\n\n';
 
   txt += '## Multi-Language Subdirectories\n';
-  txt += 'Prompt Router supports server-side edge rendering (SSR) for 7 languages across the homepage and all 11 prompt libraries:\n';
+  txt += 'Prompt Router supports server-side edge rendering (SSR) for 7 languages across the homepage and all 13 prompt libraries:\n';
   txt += `- English (Default): \`${BASE_URL}/\` and \`${BASE_URL}/{library}\`\n`;
   txt += `- Spanish: \`${BASE_URL}/es\` and \`${BASE_URL}/es/{library}\`\n`;
   txt += `- Turkish: \`${BASE_URL}/tr\` and \`${BASE_URL}/tr/{library}\`\n`;

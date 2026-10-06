@@ -1427,5 +1427,261 @@ export default {
         }
       ]
     }
+  ],
+  "stocks": [
+    {
+      "cat": "Analisi Fondamentale",
+      "prompts": [
+        {
+          "title": "Analisi approfondita del bilancio 10-K / 10-Q",
+          "text": "Esegui un'analisi fondamentale dettagliata dell'ultimo report 10-K o 10-Q di questa società.\n\nAzienda: [Ticker / Nome]\nPeriodo di riferimento: [es. 10-K FY 2025 o 10-Q Q2 2026]\nDati finanziari chiave: [Ricavi, Margine Lordo, Utile Netto, Free Cash Flow]\n\nAnalizza e struttura:\n1. Motori di crescita dei ricavi: Crescita organica vs acquisizioni, ripartizione per linea di business e area geografica\n2. Traiettoria dei margini: Andamento dei margini lordo, operativo e netto negli ultimi 3-5 anni\n3. Solidità dello stato patrimoniale: Liquidità vs debito totale, scadenziario del debito e capitale circolante netto\n4. Qualità dei flussi di cassa: Confronto tra FCF e Utile Netto (impatto della remunerazione in azioni / SBC)\n5. Fattori di rischio critici: I 3 principali rischi operativi o normativi descritti nell'Item 1A\n\nConcludi con 3 domande strategiche che il management dovrebbe chiarire nella prossima earnings call."
+        },
+        {
+          "title": "Audit del vantaggio competitivo (Economic Moat)",
+          "text": "Valuta il fossato economico (Economic Moat) e il vantaggio competitivo durevole di questa azienda secondo i framework Morningstar e Porter.\n\nAzienda: [Nome / Ticker]\nSettore: [es. Infrastruttura Cloud, Semiconduttori, SaaS B2B]\nConcorrenti principali: [elenca 2-4 competitor]\n\nEsamina ciascuna fonte di vantaggio competitivo:\n1. Effetti di rete (Network effects): Il valore della piattaforma cresce all'aumentare degli utenti?\n2. Costi di passaggio (Switching costs): Quanto è gravoso e complesso per i clienti migrare a una soluzione rivale?\n3. Vantaggi di costo: Economie di scala, processi proprietari o forniture esclusive\n4. Asset intangibili: Brevetti, licenze normative o potere di determinazione del prezzo (Pricing power)\n5. Scala efficiente: La nicchia è protetta dall'ingresso razionale di nuovi concorrenti?\n\nGiudizio complessivo sul Moat: Assente / Stretto / Ampio con motivazione e la principale minaccia da monitorare nei prossimi 10 anni."
+        },
+        {
+          "title": "Allocazione del capitale e storico del ROIC",
+          "text": "Analizza l'efficienza nell'allocazione del capitale del management e il Ritorno sul Capitale Investito (ROIC).\n\nAzienda: [Nome / Ticker]\nDati degli ultimi 3-5 anni:\n- ROIC / ROCE: [valori o stima]\n- WACC: [costo medio ponderato del capitale stimato]\n- CapEx: [crescita vs mantenimento]\n- Storico M&A: [acquisizioni principali]\n- Buyback e dividendi: [importi]\n\nValuta:\n1. Creazione di valore: Il ROIC supera stabilmente il WACC? Cosa alimenta questo spread?\n2. Reinvestimento organico: Gli utili trattenuti generano rendimenti marginali elevati?\n3. Disciplina nelle M&A: Le acquisizioni hanno creato sinergie reali o svalutazioni di avviamento (goodwill)?\n4. Ritorno agli azionisti: I riacquisti di azioni avvengono sotto il valore intrinseco o servono solo ad azzerare la diluizione?\n5. Valutazione complessiva sull'allocazione del capitale (da A a F) con argomentazioni puntuali."
+        },
+        {
+          "title": "Efficienza del capitale circolante e ciclo di cassa",
+          "text": "Esamina la gestione del capitale circolante e il ciclo di conversione del contante (Cash Conversion Cycle).\n\nAzienda: [Nome / Ticker]\nMetriche:\n- Giorni di incasso crediti (DSO): [giorni]\n- Giorni di giacenza magazzino (DIO): [giorni]\n- Giorni di pagamento fornitori (DPO): [giorni]\n- Tasso di conversione in FCF (% dell'EBITDA o dell'Utile Netto): [%]\n\nAnalizza:\n1. Cash Conversion Cycle (CCC = DSO + DIO - DPO): Calcola la traiettoria degli ultimi 3 anni\n2. Qualità del circolante: I crediti commerciali crescono più rapidamente dei ricavi? C'è accumulo di scorte?\n3. Potere contrattuale verso i fornitori: L'aumento del DPO riflette forza sul mercato o tensioni di liquidità?\n4. Assorbimento vs generazione di cassa: La crescita aziendale richiede liquidità aggiuntiva o ne libera?\n5. Confronto di settore: Metti a confronto queste dinamiche con 2 concorrenti diretti."
+        }
+      ]
+    },
+    {
+      "cat": "Valutazione & Modelli Finanziari",
+      "prompts": [
+        {
+          "title": "Costruzione assunzioni per modello DCF",
+          "text": "Aiutami a definire ipotesi realistiche e fondate per un modello di Flusso di Cassa Attualizzato (DCF) a 5 anni.\n\nAzienda: [Nome / Ticker]\nPrezzo attuale dell'azione: $[Prezzo]\nRicavi attuali: $[Ricavi]\nFree Cash Flow (FCF) attuale: $[FCF]\nSettore: [Settore]\n\nStruttura una matrice a 3 scenari (Bear / Base / Bull):\n1. CAGR dei ricavi (Anni 1-5): Giustifica le stime in base all'espansione del TAM e alle quote di mercato\n2. Margine terminale di FCF: Dinamica della leva operativa e CapEx di mantenimento a regime\n3. Tasso di attualizzazione (WACC): Beta, costo del capitale proprio e costo del debito al netto delle imposte\n4. Tasso di crescita perpetua (g): Tasso conservativo allineato all'inflazione/PIL a lungo termine (2-3%)\n5. Passaggio da Enterprise Value a Equity Value: Rettifica per debito netto, minoranze e azioni diluite\n\nCalcola il valore intrinseco implicito per azione per ciascuno scenario e indica la variabile più sensibile."
+        },
+        {
+          "title": "Analisi dei multipli comparabili (Peer Group)",
+          "text": "Conduci un'analisi di valutazione relativa per multipli confrontando questa società con i suoi peer più diretti.\n\nAzienda target: [Ticker]\nPeer di confronto: [Peer 1, Peer 2, Peer 3, Peer 4]\nMetriche:\n- EV / Ricavi NTM: [Target vs Peer]\n- EV / EBITDA NTM: [Target vs Peer]\n- P/E prospettico (Forward): [Target vs Peer]\n- Ratio PEG: [Target vs Peer]\n- Regola del 40 / Tasso di crescita: [Crescita Ricavi + Margine FCF]\n\nFornisci:\n1. Tabella comparativa completa di tutti i multipli di mercato\n2. Premio o sconto: Il titolo scambia a premio o a sconto? È giustificato da crescita, margini o ROIC?\n3. Multiplo normalizzato: Quale multiplo sarebbe congruo al raggiungimento di una fase matura e stabile?\n4. Intervallo di prezzo obiettivo calcolato sulla mediana dei multipli di settore."
+        },
+        {
+          "title": "Reverse DCF: Verifica delle aspettative di mercato",
+          "text": "Esegui un DCF inverso (Reverse DCF) per quantificare quale tasso di crescita e redditività è già scontato nel prezzo attuale.\n\nAzienda: [Ticker]\nCapitalizzazione di mercato / Enterprise Value: $[Valore]\nPrezzo attuale dell'azione: $[Prezzo]\nFree Cash Flow annuo: $[FCF]\nWACC ipotizzato: [es. 9% o 10%]\nTasso di crescita perpetua: [es. 2.5%]\n\nDetermina:\n1. Crescita implicita del FCF: Quale tasso di crescita annuale composto a 5 o 10 anni sconta il titolo oggi?\n2. Risvolti operativi: Quale accelerazione dei ricavi ed espansione dei margini sono indispensabili per generare questo FCF?\n3. Confronto con il TAM: La quota di mercato implicita è plausibile rispetto alla dimensione complessiva del mercato?\n4. Profilo rischio/rendimento asimmetrico: Il prezzo attuale offre un margine di sicurezza (Margin of Safety) o esige una traiettoria impeccabile?"
+        },
+        {
+          "title": "Sicurezza del dividendo e copertura del FCF",
+          "text": "Valuta la sostenibilità, la sicurezza e il potenziale di crescita del dividendo di questa società.\n\nAzienda: [Nome / Ticker]\nRendimento da dividendo attuale (Dividend Yield): [%]\nCedola annua per azione: $[Importo]\nFree Cash Flow per azione: $[Importo]\nUtile per azione (EPS): $[Importo]\nDebito Netto / EBITDA: [Rapporto]\n\nEsamina:\n1. Payout ratio su FCF: Dividendi distribuiti come % del Free Cash Flow (è sotto la soglia di guardia del 60-70%?)\n2. Utile contabile vs Cassa reale: Il dividendo è sostenuto dalla cassa operativa o dal ricorso al debito?\n3. Profilo del debito e scadenze: Le scadenze creditizie minacciano la distribuzione durante un rallentamento economico?\n4. Storico di incremento: CAGR di aumento del dividendo a 3, 5 e 10 anni\n5. Stress test: Se i ricavi calassero del 15% e i margini di 300 punti base, il dividendo rimarrebbe coperto?\n\nVerdetto: Sicuro / Vulnerabile / Rischio di taglio imminente con indicatori d'allerta da monitorare."
+        }
+      ]
+    },
+    {
+      "cat": "Risultati & Trascrizioni Trimestrali",
+      "prompts": [
+        {
+          "title": "Analisi della conferenza trimestrale e Q&A",
+          "text": "Analizza la trascrizione o i passaggi salienti dell'ultima conferenza sui risultati trimestrali (Earnings Call).\n\nAzienda: [Nome / Ticker]\nTrimestre: [es. Q4 2025 / Q1 2026]\nTesto della trascrizione o estratti chiave:\n[incolla dichiarazioni dei vertici aziendali e domande degli analisti]\n\nStruttura:\n1. Messaggi cardine del management: Su quali punti l'amministrazione ha insistito nella presentazione?\n2. Frizioni durante la sessione Q&A: Quali argomenti hanno destato maggiore insistenza e dubbi tra gli analisti?\n3. Risposte elusive o difensive: Su quali metriche la direzione ha evitato impegni precisi?\n4. Indizi operativi tra le righe: Segnali precoci su colli di bottiglia, allungamento del ciclo di vendita o pressione sui costi\n5. Sintesi in 3 frasi chiave per un investitore fondamentale."
+        },
+        {
+          "title": "Scostamento delle stime (Guidance) vs Consenso",
+          "text": "Confronta le nuove previsioni (guidance) rilasciate dal management con le attese medie del consenso di mercato.\n\nAzienda: [Ticker]\nOrizzonte di previsione: [es. Q2 2026 / Intero esercizio 2026]\nNuova guidance comunicata dalla società:\n- Ricavi: [Intervallo]\n- Margine operativo / EBITDA: [Intervallo]\n- Utile per azione (EPS) rettificato: [Intervallo]\nConsenso precedente degli analisti:\n- Ricavi attesi: [Consenso]\n- EPS atteso: [Consenso]\n\nFornisci:\n1. Riepilogo Beat / Meet / Miss: Quantifica la variazione percentuale sia sul trimestre appena chiuso sia sulla guidance futura\n2. Qualità della stima: L'obiettivo annuale riflette una traiettoria lineare o posticipa un recupero irrealistico a fine anno (effetto hockey stick)?\n3. Leva operativa: I ricavi salgono ma l'EPS stimato frena (compressione dei margini)?\n4. Direzione delle revisioni di prezzo obiettivo da parte delle banche d'affari."
+        },
+        {
+          "title": "Storico delle sorprese sugli utili e reazione dei prezzi",
+          "text": "Analizza lo storico dei risultati trimestrali e la reattività del prezzo dell'azione dopo la diffusione dei conti.\n\nAzienda: [Ticker]\nStorico ultimi 4-8 trimestri:\n- Sorprese sull'EPS (% Beat/Miss): [elenco trimestri]\n- Sorprese sui Ricavi (% Beat/Miss): [elenco trimestri]\n- Reazione media del prezzo all'apertura successiva (%): [es. +/- 6%]\n- Volatilità implicita del mercato delle opzioni per la prossima trimestrale: [se disponibile]\n\nAnalizza:\n1. Affidabilità del management: La dirigenza tende storicamente a rilasciare stime prudenti per batterle con regolarità?\n2. Asimmetria di mercato: Il titolo subisce sell-off sproporzionati a fronte di minimi scostamenti negativi?\n3. Qualità del superamento: Il beat deriva da robustezza commerciale o da partite contabili straordinarie/fiscali?\n4. Gestione del rischio: Quale dimensionamento della posizione o copertura è raccomandabile prima dell'annuncio?"
+        },
+        {
+          "title": "Rilevamento del cambio di tono e sentiment del management",
+          "text": "Confronta il linguaggio e il tono della dirigenza tra gli ultimi due trimestri consecutivi per cogliere mutamenti di sentiment.\n\nAzienda: [Ticker]\nDichiarazioni Trimestre Precedente (Q1):\n[incolla citazioni]\nDichiarazioni Trimestre Attuale (Q2):\n[incolla citazioni]\n\nIndividua:\n1. Evoluzione del tono: La dirigenza appare più cauta, evasiva o nettamente più espansiva?\n2. Slittamenti lessicali: Ricorrenza di termini come 'venti contrari', 'prudenza' vs 'accelerazione', 'domanda robusta'\n3. Metriche omesse: Indicatori monitorati in passato (tasso di fidelizzazione netta, backlog) sono stati improvvisamente taciuti?\n4. Politica sul capitale: Cambiamenti di rotta su buyback, riduzione dell'indebitamento o piani di investimento\n5. Punteggio netto di sentiment: Conclusione rialzista, neutrale o ribassista motivata."
+        }
+      ]
+    },
+    {
+      "cat": "Analisi Tecnica & Gestione del Rischio",
+      "prompts": [
+        {
+          "title": "Trend multi-temporale e livelli di prezzo chiave",
+          "text": "Mappa la struttura tecnica, la coerenza dei trend e i livelli pivotali su orizzonti temporali multipli.\n\nTicker: [Ticker]\nPrezzo attuale: $[Prezzo]\nQuadro settimanale: [Massimi/minimi a 52 settimane, media a 200 settimane, trend primario]\nQuadro giornaliero: [Medie a 50 e 200 giorni, pattern grafico attuale come flag, cup & handle o consolidamento]\nIndicatori: [RSI, MACD, profilo dei volumi]\n\nFornisci:\n1. Trend dominante: Rialzista, ribassista o laterale sui timeframe weekly e daily\n2. Livelli di resistenza: 3 tetti tecnici dove è probabile incontrare prese di profitto e vendite\n3. Livelli di supporto: 3 pavimenti tecnici (precedenti breakout, convergenze di medie mobili)\n4. Dinamica delle medie mobili: Posizionamento rispetto alle SMA 20/50/200 (Golden Cross, Death Cross, iperestensione)\n5. Setup operativo: Fascia di ingresso favorevole, livello rigoroso di stop loss e primo target di profitto."
+        },
+        {
+          "title": "Rapporto rischio/rendimento e calcolatore di size",
+          "text": "Determina un rapporto rischio/rendimento asimmetrico e la dimensione ideale della posizione per preservare il capitale.\n\nCapitale totale di portafoglio: $[es. 50.000]\nPerdita massima tollerata per singola operazione: [es. 1% del portafoglio = 500 $]\nPrezzo di acquisto previsto: $[Ingresso]\nStop loss tecnico o fondamentale: $[Prezzo Stop]\nTarget di prezzo 1 (Prudente): $[Target 1]\nTarget di prezzo 2 (Scenario espansivo): $[Target 2]\n\nCalcola e definisci:\n1. Rischio unitario per azione: Ingresso - Stop Loss ($ e %)\n2. Dimensione della posizione: Numero esatto di azioni da acquistare affinché l'uscita in stop non oltrepassi il rischio prefissato\n3. Capitale impegnato: Controvalore totale dell'acquisto e incidenza percentuale sul portafoglio complessivo\n4. Rapporto Rischio/Rendimento (R:R): Calcolo per Target 1 e Target 2 (segnala anomalie se inferiore a 3:1)\n5. Strategia di gestione dell'uscita: Piano di presa di profitto parziale e spostamento dello stop a pareggio (breakeven)."
+        },
+        {
+          "title": "Audit delle posizioni corte e rischio di Short Squeeze",
+          "text": "Verifica l'esposizione allo scoperto, i tassi di prestito titoli e la vulnerabilità a uno 'short squeeze' su questa azione.\n\nAzienda: [Ticker]\nShort interest (% sul flottante): [%]\nDays to Cover (Giorni necessari per ricoprirsi): [Giorni]\nTasso di finanziamento titoli (Borrow Fee Rate): [%]\nQuota in mano a investitori istituzionali (%): [%]\nSentiment retail / discussioni social: [Elevato / Moderato / Scarso]\n\nValuta:\n1. Indice di vulnerabilità allo squeeze (scala da 1 a 10): In funzione del flottante effettivo, costi di prestito e volumi medi\n2. Tesi dei venditori allo scoperto: Perché i fondi speculativi scommettono al ribasso? Qual è il fulcro del loro pessimismo?\n3. Catalizzatore rialzista: Quale evento (utili, accordi, approvazioni) costringerebbe a chiusure forzate degli short?\n4. Disponibilità dei titoli: Le azioni disponibili a prestito si stanno esaurendo?\n5. Alert di rischio: Asimmetrie e rischi sia per le posizioni lunghe sia per quelle corte."
+        },
+        {
+          "title": "Volume Profile e accumulazione istituzionale",
+          "text": "Analizza i flussi di volume per verificare se gli investitori istituzionali stanno accumulando o distribuendo il titolo.\n\nAzione: [Ticker]\nAzione recente dei prezzi: [es. consolidamento post-utili tra 140 $ e 150 $]\nComportamento dei volumi:\n- Volumi nelle sedute positive vs sedute negative: [es. forte volume sul verde, volumi calanti sui ritracciamenti]\n- Contrattazioni a blocchi / passaggi in dark pool: [se noti]\n- Andamento dell'indicatore On-Balance Volume (OBV): [crescente, piatto, decrescente]\n\nVerifica:\n1. Fase di accumulazione vs distribuzione: Gli istituzionali assorbono le vendite sui supporti chiave?\n2. Contrazione dei volumi: I ritracciamenti verso le medie mobili avvengono con volumi in evidente calo?\n3. Point of Control (POC): Il livello di prezzo che ha registrato la massima concentrazione di scambi\n4. Segnali di esaurimento: Evidenze di capitulation ribassista o picchi di volume euforici\n5. Sintesi: La dinamica volumetrica supporta un posizionamento rialzista?"
+        }
+      ]
+    },
+    {
+      "cat": "Macroeconomia & Dinamiche Settoriali",
+      "prompts": [
+        {
+          "title": "Ciclicità settoriale e reattività macroeconomica",
+          "text": "Indaga il comportamento di questa azienda nelle varie fasi del ciclo economico e delle politiche monetarie.\n\nAzienda / Settore: [es. Automazione industriale, Lusso, Banche regionali]\nScenario macroeconomico corrente:\n- Tassi di interesse: [in rialzo / stabili / in calo]\n- Inflazione e dinamica salariale: [sostenute / in decelerazione]\n- Fiducia dei consumatori e insolvenze creditizie: [solide / in deterioramento]\n- Indice PMI manifatturiero o dei servizi: [espansione >50 / contrazione <50]\n\nAnalizza:\n1. Crescita ciclica vs strutturale: Quanta parte dell'espansione recente dipende dalla congiuntura vs megatrend secolari?\n2. Sensibilità ai tassi: Ripercussioni degli oneri finanziari sul debito e sulla propensione all'acquisto dei clienti\n3. Potere di prezzo: Capacità di trasferire i rincari sui clienti finali senza contrarre i volumi venduti\n4. Resilienza nelle recessioni: Tenuta di fatturato e redditività nei periodi critici del 2008 e del 2020\n5. Posizionamento ciclico: Il comparto è più prossimo a un picco o a un minimo di ciclo?"
+        },
+        {
+          "title": "Concentrazione della clientela e colli di bottiglia",
+          "text": "Controlla la dipendenza da singoli grandi clienti e i fattori di vulnerabilità nella catena di fornitura.\n\nAzienda: [Nome / Ticker]\nEsposizione commerciale:\n- Quota di fatturato del primo cliente: [es. il Cliente A genera il 18%]\n- Quota complessiva dei primi 5 o 10 clienti: [da report 10-K]\nCatena logistica e produttiva:\n- Fornitori o fonderie strategiche: [es. TSMC, componentistica a fornitura esclusiva]\n- Concentrazione geografica della produzione: [es. 70% degli stabilimenti in Asia]\n\nRestituisci:\n1. Punteggio di rischio concentrazione: Alto / Medio / Basso ed effetto sui ricavi in caso di interruzione dei contratti\n2. Single Points of Failure: Presenza di componenti essenziali privi di fornitori alternativi validati\n3. Impatto di barriere tariffarie, tensioni geopolitiche e restrizioni all'export\n4. Piano di mitigazione: Azioni e investimenti (CapEx) stanziati dal management per diversificare l'impronta produttiva."
+        },
+        {
+          "title": "Impatto normativo e procedimenti antitrust",
+          "text": "Analizza le indagini delle autorità antitrust, i contenziosi di settore e i mutamenti legislativi che gravano sul titolo.\n\nAzienda: [Ticker / Settore]\nEnti coinvolti: [es. Commissione Europea, FTC, DOJ, SEC, autorità garanti nazionali]\nContestazioni in essere: [descrivere procedimenti, proposte tariffarie o indagini di mercato]\n\nValuta:\n1. Scenario peggiore: Sanzioni pecuniarie, dismissioni societarie coatte, modifiche forzate al modello di business\n2. Fatturato esposto: Quota di vendite o di utili a elevata marginalità vincolata alle prassi contestate\n3. Precedenti legali: Risoluzione di procedimenti analoghi a carico di competitor del settore\n4. Barriere all'ingresso: Regolamentazioni più stringenti possono paradossalmente consolidare la posizione dell'azienda contro nuovi entranti?\n5. Riflessi finanziari ponderati sulla probabilità per l'EPS nei prossimi 1-3 anni."
+        },
+        {
+          "title": "Benchmark comparativo diretto contro i rivali",
+          "text": "Costruisci una matrice di confronto testa a testa tra questa realtà e i suoi due principali concorrenti diretti.\n\nAzienda analizzata: [Società A]\nConcorrente diretto 1: [Società B]\nConcorrente diretto 2: [Società C]\n\nConfronta lungo 6 dimensioni:\n1. Scala e ritmo di espansione: Crescita anno su anno dei ricavi e fatturato assoluto\n2. Redditività operativa: Margine lordo, margine operativo e conversione in FCF\n3. Metriche unitarie e monetizzazione: ARPU, retention netta (NRR) o marginalità per cliente\n4. Spinta sull'innovazione: Spese di R&D in rapporto al fatturato e cadenza di lanci prodotto\n5. Profilo patrimoniale: Cassa netta, moltiplicatore dell'indebitamento e merito creditizio\n6. Multipli di mercato: P/E, EV/Sales, EV/EBITDA\n\nConclusione: Quale tra le 3 opzioni presenta la combinazione più interessante tra qualità e valutazione?"
+        }
+      ]
+    },
+    {
+      "cat": "Tesi d'Investimento & Scenario Ribassista",
+      "prompts": [
+        {
+          "title": "Dibattito istituzionale tra tesi rialzista e ribassista",
+          "text": "Sviluppa un contraddittorio rigoroso di livello istituzionale tra la tesi ottimistica (Bull) e quella pessimistica (Bear).\n\nAzienda: [Nome / Ticker]\nPrezzo attuale / Multipli di borsa: $[Prezzo, Multipli]\nSintesi del modello di business: [1-2 frasi su proposta di valore e clienti serviti]\n\nArticola:\n\nTesi Rialzista (I 3 pilastri portanti):\n1. Fattore catalizzatore primario di espansione e apertura di nuovi mercati\n2. Efficienza operativa e margini di incremento della redditività\n3. Motivi per cui la valutazione corrente sottovaluta la reale capacità di generare utili futuri\n\nTesi Ribassista (I 3 principali elementi di rischio):\n1. Principale minaccia derivante da concorrenza, tecnologia o contesto macro\n2. Vulnerabilità legata a compressione dei margini o calo del pricing power\n3. Motivi per cui le stime medie di consenso peccano di eccessivo compiacimento\n\nElemento spartiacque: Quale traguardo operativo o indicatore nei prossimi 12 mesi dimostrerà quale visione è corretta?"
+        },
+        {
+          "title": "Pre-mortem d'investimento: Perché il titolo crolla",
+          "text": "Esegui un esercizio di pre-mortem: Immagina di trovarti tra 3 anni e che questa azione abbia perso il 50% del suo valore. Racconta cosa è andato storto.\n\nAzienda: [Nome / Ticker]\nMia attuale tesi di investimento: [motivazioni per l'acquisto o il mantenimento]\nIpotesi favorevoli di partenza: [ritmo di crescita, forza del vantaggio competitivo, stima nel management]\n\nRicostruisci la dinamica precisa del fallimento:\n1. Il punto cieco: Quale rischio determinante è stato sottovalutato dal mercato e da me stesso?\n2. Competizione: Quale operatore o tecnologia alternativa ha eroso la quota di mercato e i prezzi?\n3. Errore finanziario: Quale operazione straordinaria onerosa, buyback imprudente o debito ha indebolito il bilancio?\n4. Compressione dei multipli: Perché il mercato ha dimezzato i multipli di borsa (es. da 30x a 15x) pur con utili stabili?\n5. Campanelli d'allarme precoci: 3 segnali concreti che avrebbero consentito di uscire tempestivamente nel corso del primo anno."
+        },
+        {
+          "title": "Investment memo sintetico ad alta convinzione in 1 pagina",
+          "text": "Stendi un memorandum di investimento sintetico e convincente in una sola pagina a supporto di questa tesi azionaria.\n\nAzienda: [Nome / Ticker]\nPrezzo attuale: $[Prezzo] | Capitalizzazione: $[Cap]\nOrizzonte temporale: [es. 1-3 anni]\n\nArticola il documento:\n1. Executive Summary: Di cosa si occupa l'azienda e perché il mercato ne travisa oggi la valutazione (3 frasi)\n2. Visione divergente (Variant Perception): Quale dinamica chiave cogli con chiarezza che sfugge al consenso di Wall Street?\n3. Motore economico: Driver di espansione del fatturato, unit economics e generazione di cassa libera\n4. Valutazione e target price: Stima del fair value nello scenario base con rendimento interno annuo atteso (IRR)\n5. Catalizzatori operativi: 2-3 tappe fondamentali nei prossimi 12-18 mesi capaci di sbloccare il valore inespresso\n6. Regole inderogabili di dismissione: A quali precise condizioni la tesi si intenderà invalidata imponendo la liquidazione della posizione."
+        },
+        {
+          "title": "Strategia di uscita e trigger di invalidazione della tesi",
+          "text": "Stabilisci un protocollo oggettivo di monetizzazione dei guadagni e di stop fondamentale prima di investire.\n\nAzienda: [Nome / Ticker]\nPrezzo di carico: $[Prezzo]\nTarget di valutazione obiettivo: $[Prezzo Obiettivo]\nPremesse originarie dell'acquisto: [elenca 2-3 presupposti]\n\nDefinisci il piano d'azione:\n1. Prese di beneficio progressive: A quali soglie di prezzo o di multipli alleggerire del 33%, del 50% o liquidare integralmente la quota?\n2. Trigger fondamentali di abbandono: 3 deterioramenti operativi misurabili (es. retention netta sotto il 110%, margini in flessione per 2 trimestri consecutivi, dimissioni del fondatore) che impongono la vendita immediata senza guardare al prezzo di mercato\n3. Soglia di costo opportunità: Quando la presenza di un'alternativa decisamente più vantaggiosa giustifica la rotazione del capitale?\n4. Regola psicologica di autotutela: Quale vincolo impedirà di mediare al ribasso su una realtà i cui fondamentali si stanno incrinando?"
+        }
+      ]
+    }
+  ],
+  "finance": [
+    {
+      "cat": "Budget & Flussi di Cassa",
+      "prompts": [
+        {
+          "title": "Pianificatore di budget 50/30/20 e a base zero",
+          "text": "Costruisci un quadro di bilancio mensile personalizzato combinando la regola 50/30/20 con l'approccio a base zero (Zero-Based Budgeting).\n\nEntrate nette mensili dopo le imposte: $[Importo]\nSpese fisse necessarie (Casa, Bollette, Rate prestiti, Assicurazioni): $[Importo]\nSpese variabili (Spesa alimentare, Ristoranti, Mobilità, Tempo libero): $[Importo]\nRisparmio e investimenti mensili attuali: $[Importo]\nTraguardi finanziari: [es. anticipo mutuo, estinzione debiti, fondo di riserva]\n\nCrea:\n1. Ripartizione 50/30/20: Spese essenziali ($), Desideri ($) e Risparmio/Debito ($) con evidenza degli scostamenti ideali\n2. Allocazione a base zero: Assegna a ciascun euro una funzione specifica fino ad azzerare il saldo contabile residuo\n3. 3 interventi prioritari: Voci di spesa su cui intervenire subito per liberare 200-500 $/mese\n4. Monitoraggio settimanale dei flussi per non arrivare in affanno a fine mese."
+        },
+        {
+          "title": "Revisione abbonamenti e riduzione dei costi fissi",
+          "text": "Aiutami a revisionare e tagliare in modo deciso gli abbonamenti periodici e le bollette domestiche ricorrenti.\n\nElenco delle mie uscite fisse periodiche (mensili e annuali):\n[servizi streaming, telefonia, internet casa, palestre, assicurazioni, app, utenze domestiche]\n\nFornisci:\n1. Classificazione analitica: Essenziale, Utile ma rinunciabile, e Superfluo o dimenticato\n2. Disdette immediate: Servizi da cancellare con indicazione del risparmio complessivo su base annua\n3. Copioni di rinegoziazione: Frasi pronte per rinegoziare condizioni con fornitori di luce, gas, telefonia e polizze\n4. Ottimizzazione della fatturazione: Servizi dove il saldo in unica soluzione annuale permette di risparmiare il 15-20%\n5. Metodo di verifica trimestrale di 10 minuti per prevenire la proliferazione di nuove uscite passive."
+        },
+        {
+          "title": "Calcolo del fondo di emergenza e piano di accumulo",
+          "text": "Calcola la consistenza ideale del mio fondo di sicurezza e struttura un piano rapido per costituirlo.\n\nSpese fisse e minime mensili per vivere: $[Importo]\nRisparmi attualmente accantonati per emergenze: $[Importo]\nStabilità lavorativa: [Elevata / Media / Variabile / Libero professionista]\nCarichi familiari: [Figli o persone a carico]\nSpese straordinarie prevedibili (franchigie, manutenzioni, spese mediche): $[Importo]\n\nCalcola e articola:\n1. Dimensione ideale: Stima di 3, 6, 9 o 12 mesi di spese minime parametrata sul mio profilo di rischio lavorativo\n2. Struttura su più livelli: Distribuzione tra conto corrente ordinario (liquidità immediata), conto deposito remunerato e strumenti monetari\n3. Piano di versamento: Quota mensile raccomandata per centrare il traguardo in 6, 12 o 18 mesi\n4. Regole d'ingaggio: Definizione rigorosa di cosa sia una vera emergenza vs una spesa programmabile."
+        },
+        {
+          "title": "Taglio delle spese superflue e monitoraggio uscite",
+          "text": "Aiutami a individuare le perdite silenziose di denaro e a ridurre le uscite quotidiane senza deprimere la qualità della vita.\n\nSpese variabili mensili medie:\n- Supermercato e alimentari a casa: $[Importo]\n- Ristoranti, bar e cene ordinate a domicilio: $[Importo]\n- Shopping, abbigliamento e svago: $[Importo]\n- Mezzi di trasporto, carburante e viaggi brevi: $[Importo]\n- Varie e acquisti di impulso: $[Importo]\n\nRestituisci:\n1. Tagli a maggior resa: 3 cambi di abitudini capaci di produrre oltre 300 $ di risparmio mensile fin da subito\n2. Strategia di sostituzione: Alternative conviviali a basso costo per socialità e pasti fuori casa\n3. Regola di contenimento: Un sistema snello di micro-budget (es. carta prepagata dedicata con plafond fisso per le uscite di piacere)\n4. Sfida di 30 giorni per disinnescare la propensione agli acquisti impulsivi."
+        }
+      ]
+    },
+    {
+      "cat": "Estinzione Debiti & Piani di Rientro",
+      "prompts": [
+        {
+          "title": "Piano di rientro debiti: Palla di neve vs Valanga",
+          "text": "Elabora un piano metodico di azzeramento dei debiti confrontando il metodo Palla di Neve e il metodo Valanga.\n\nDebiti correnti:\n[Elenca ogni debito: Descrizione, Debito residuo ($), Tasso di interesse annuo (TAN/TAEG %), Rata mensile minima ($)]\nLiquidità extra mensile destinabile all'estinzione: $[Importo]\n\nFornisci:\n1. Metodo Valanga: Priorità al debito con tasso di interesse più alto (calcolo degli interessi risparmiati e data di estinzione finale)\n2. Metodo Palla di Neve: Priorità al debito con capitale residuo più contenuto (vantaggio psicologico e scadenziario)\n3. Prospetto comparativo: Interessi totali sborsati, mesi necessari e raccomandazione basata sulla mia propensione emotiva\n4. Dettaglio dei versamenti mensili verso ciascun creditore dal Mese 1 al Mese 6."
+        },
+        {
+          "title": "Consolidamento carte e trasferimento saldo a tasso 0",
+          "text": "Valuta la convenienza di richiedere una carta con trasferimento saldo al tasso promozionale dello 0% o un prestito di consolidamento.\n\nDebiti residui su carte di credito / fidi bancari:\n[Carta 1: Saldo, Tasso %]\n[Carta 2: Saldo, Tasso %]\nAffidabilità creditizia stimata: [Buona / Media]\nCommissione di trasferimento saldo allo 0%: [in genere 3% - 5%]\nProposta di prestito personale alternativa: [Tasso d'interesse %, durata in mesi, spese accessorie]\n\nAnalizza:\n1. Verifica di convenienza: Costo della commissione d'ingresso a confronto con gli interessi risparmiati al tasso ordinario\n2. Piano di rimborso: Quota mensile richiesta per estinguere il debito prima del termine della promozione a tasso agevolato (es. 12-18 mesi)\n3. Fattori di pericolo: Interessi moratori in caso di ritardi, rialzo dei tassi a scadenza e rischio di riaccumulare debito\n4. Verdetto: Trasferimento saldo vs prestito personale di consolidamento vs accelerazione autonoma dei pagamenti."
+        },
+        {
+          "title": "Gestione e riscatto dei prestiti studenteschi",
+          "text": "Esamina la mia posizione sui prestiti per studio e individua il percorso più conveniente tra estinzione e rifinanziamento.\n\nPrestiti per studio in corso:\n[Elenco debiti: Pubblico o Bancario, Debito residuo, Tasso %, Rata mensile]\nReddito annuo lordo: $[Importo]\nSettore di impiego: [Pubblica amministrazione / Settore privato / No-profit]\nNucleo familiare: [Numero di componenti]\n\nValuta:\n1. Piani basati sul reddito vs Ammortamento ordinario: Entità della rata e onere complessivo stimato\n2. Requisiti per programmi di cancellazione o agevolazioni statali: Presupposti e piano di pagamento idoneo\n3. Opportunità di rinegoziazione privata: La riduzione del tasso compensa la rinuncia a tutele pubbliche?\n4. Estinguere prima vs Investire: Conviene azzerare il finanziamento o convogliare le eccedenze verso ETF indicizzati?"
+        },
+        {
+          "title": "Rimborsi anticipati del mutuo e risparmio interessi",
+          "text": "Calcola il beneficio economico derivante dall'effettuare versamenti straordinari per abbattere il capitale residuo del mutuo.\n\nImporto originario del finanziamento: $[Importo]\nCapitale residuo da restituire: $[Importo]\nTasso di interesse: [%]\nDurata residua: [es. 20 anni / 240 mesi]\nRata mensile attuale (quota capitale + interessi): $[Importo]\nVersamento straordinario pianificato: $[es. 200 $/mese o 5.000 $ una tantum all'anno]\n\nCalcola:\n1. Riduzione della durata: Di quanti anni e mesi si anticipa la completa estinzione del mutuo?\n2. Risparmio sugli interessi: Somma complessiva non versata alla banca in termini di interessi netti\n3. Rendimento certo vs Costo opportunità: Raffronto tra il risparmio garantito (il tasso del mutuo) e la resa storica dei mercati azionari (7-8% netto)\n4. Modello equilibrato: Come bilanciare rimborsi parziali anticipati e accumulo previdenziale."
+        }
+      ]
+    },
+    {
+      "cat": "Risparmio & Obiettivi Finanziari",
+      "prompts": [
+        {
+          "title": "Piano di risparmio per un grande obiettivo di vita",
+          "text": "Predisponi un piano di accumulo per centrare un traguardo finanziario primario (acquisto casa, auto, matrimonio o anno sabbatico).\n\nObiettivo: [es. Anticipo prima casa e spese accessorie]\nCapitale necessario: $[Importo]\nOrizzonte temporale desiderato: [es. 24 mesi / 2 anni]\nSomma già disponibile per questo scopo: $[Importo]\nQuota mensile di risparmio destinabile: $[Importo]\n\nFornisci:\n1. Quota mensile richiesta: Calcolo puntuale tenendo conto dei rendimenti maturati su conti o strumenti di parcheggio\n2. Strumento ideale di custodia: Soluzione a basso rischio idonea (Conti deposito non vincolati o svincolabili, BOT, Fondi monetari)\n3. Soluzioni di accelerazione: 3 iniziative pratiche per ridurre la tempistica con entrate straordinarie o tagli temporanei\n4. Verifiche di avanzamento: Valore di capitale da raggiungere al 6°, 12°, 18° e 24° mese."
+        },
+        {
+          "title": "Sistema Sinking Funds per spese irregolari",
+          "text": "Imposta un'architettura di fondi salvadanaio (Sinking Funds) per gestire con serenità le spese annuali o periodiche che sbilanciano il budget.\n\nSpese ricorrenti previste nell'anno:\n- Bollo, revisione e assicurazione auto: $[Totale annuo]\n- Tasse sulla casa / Manutenzioni ordinarie: $[Totale annuo]\n- Feste natalizie, cerimonie e regali: $[Totale annuo]\n- Spese sanitarie e visite specialistiche: $[Totale annuo]\n- Vacanze e viaggi: $[Totale annuo]\n- Spese veterinarie: $[Totale annuo]\n\nArticola:\n1. Accantonamento mensile complessivo: La cifra esatta da versare in automatico ogni mese in questa riserva\n2. Gestione pratica: Modalità di organizzazione con sottoconti o salvadanai virtuali senza disperdere la liquidità su troppe banche\n3. Gestione dei pagamenti ravvicinati: Come far fronte a un'uscita che capita nei primi mesi prima di aver accumulato la dote necessaria\n4. Automazione: Disposizione di bonifici ricorrenti il giorno stesso dell'accredito dello stipendio."
+        },
+        {
+          "title": "Ottimizzatore di rendimento per la liquidità",
+          "text": "Migliora la redditività e la sicurezza del mio capitale liquido attraverso strumenti a basso profilo di rischio.\n\nLiquidità totale a disposizione: $[Importo]\nFabbisogno temporale:\n- Necessario entro 30 giorni: $[Importo]\n- Necessario tra 3 e 12 mesi: $[Importo]\n- Necessario tra 1 e 3 anni: $[Importo]\nRegime fiscale di riferimento: [Aliquota o regime amministrato]\n\nAnalizza e confronta:\n1. Conti deposito remunerati: Limiti coperti dal Fondo Interbancario di Tutela dei Depositi (100.000 € / 250.000 $) e tasso effettivo netto\n2. Fondi comuni monetari (es. OICR monetari indicizzati a €STR): Grado di liquidabilità giornaliera e natura dell'attivo sottostante\n3. Titoli governativi a breve scadenza (BOT / BTP a breve): Tassazione agevolata (12,5%) e rendimenti correnti\n4. Conti vincolati a scadenza scaglionata (laddering)\n5. Allocazione percentuale raccomandata per massimizzare il rendimento netto al riparo dall'inflazione."
+        },
+        {
+          "title": "Freno all'inflazione dello stile di vita sui rincari",
+          "text": "Aiutami a pianificare la gestione di un aumento salariale recente o imminente per evitare la trappola dell'inflazione del tenore di vita.\n\nEntrata mensile netta precedente: $[Importo]\nNuova entrata mensile netta: $[Importo] (Aumento: +$[Differenza]/mese)\nTasso di risparmio mantenuto finora: [%]\nAree tipiche di cedimento: [voci dove tendo a spendere senza pensarci]\n\nElabora una strategia di destinazione del surplus:\n1. Regola del 50/50: Destina il 50% dell'aumento al patrimonio (investimenti o estinzione debiti) e il 50% a un incremento consapevole del benessere quotidiano senza sensi di colpa\n2. Automazione alla fonte: Impostare l'adeguamento dei bonifici di investimento automatici nella data di arrivo del nuovo stipendio\n3. Lista di gratificazioni consapevoli: Individuare 2 o 3 acquisti mirati in grado di portare soddisfazione reale invece di acquisti frammentati e passivi\n4. Nuovo tasso di risparmio target dopo l'assimilazione della promozione."
+        }
+      ]
+    },
+    {
+      "cat": "Investimenti & Gestione Patrimoniale",
+      "prompts": [
+        {
+          "title": "Asset Allocation e portafoglio indicizzato Bogle",
+          "text": "Crea una strategia di asset allocation ben diversificata, efficiente e a costi contenuti secondo i principi della scuola Bogleheads.\n\nEtà: [Età]\nAnni mancanti alla pensione / orizzonte di ritiro: [es. 20-30 anni]\nProfilo di rischio: [Aggressivo / Moderato / Conservativo]\nPatrimonio attualmente investito: $[Importo]\nComposizione attuale: [azioni singole, ETF, criptovalute, liquidità]\n\nRestituisci:\n1. Asset Allocation consigliata: Ripartizione Azionaria Globale (Paesi Sviluppati ed Emergenti) vs Quota Obbligazionaria/Prudenziale\n2. Portafoglio a 2 o 3 ETF mondiali: Prodotti o ticker di riferimento a bassissimo costo di gestione annuo (TER < 0,22%)\n3. Quadro di volatilità storica attesa: Rendiconto delle perdite massime storiche nei crolli di borsa (-20% a -40%) per forgiare la disciplina emotiva\n4. Piano di riorganizzazione graduale per convertire le posizioni attuali senza sobbarcarsi imposte inutili sul capital gain."
+        },
+        {
+          "title": "Priorità delle scelte di risparmio e investimento",
+          "text": "Aiutami a stabilire il corretto ordine di priorità dei versamenti tra fondi pensione agevolati, piani fiscali e conti di investimento.\n\nReddito annuo lordo: $[Importo]\nContributo datoriale / matching: [es. contributo dell'azienda a fronte del versamento TFR/individuale]\nStrumenti previdenziali e fiscali accessibili:\n- Fondo Pensione Complementare / PIP (deducibilità fino a 5.164 € o 401k/IRA): [Dettagli]\n- Piani a fiscalità agevolata (PIR / polizze): [Dettagli]\n- Conto titoli a regime amministrato standard: [disponibile]\nCapitale annuo totale destinabile agli investimenti: $[Importo]\n\nDefinisci la cascata delle priorità operative:\n1. Livello 1: Versamento necessario per agganciare il contributo datoriale gratuito (rendimento immediato garantito)\n2. Livello 2: Ottimizzazione della deducibilità fiscale IRPEF o esenzione da tassazione sulle plusvalenze\n3. Livello 3: Investimento in ETF azionari globali a basso costo tramite conto titoli per mantenere liquidabilità\n\nSpecifica gli importi da assegnare a ciascun pilastro e i precisi risparmi tributari conseguiti."
+        },
+        {
+          "title": "Piano di accumulo (PAC/DCA) vs Investimento in unica soluzione",
+          "text": "Definisci un percorso razionale per impiegare sui mercati finanziari una somma rilevante di liquidità disponibile.\n\nCapitale disponibile da investire: $[es. 40.000 o 120.000]\nProvenienza della provvista: [Eredità, bonus professionale, vendita immobiliare, liquidità accantonata]\nContesto di mercato attuale: [Massimi storici / Fase correttiva / Alta volatilità]\nFreno psicologico: [Timore di entrare sui massimi prima di un crollo]\n\nFornisci:\n1. Evidenze probabilistiche: Confronto di performance tra ingresso in unica tranche (Lump Sum) e piano rateale (Dollar-Cost Averaging / DCA) secondo le ricerche Vanguard\n2. Calendario strutturato per il DCA: Ripartizione in 3, 6 o 12 rate periodiche con acquisti a data fissa\n3. Meccanismo acceleratore sui ribassi: Criteri per raddoppiare la quota mensile in caso di ribassi dell'indice pari al 5% o al 10%\n4. Resa della liquidità residua: Gestione del capitale in attesa di essere impiegato attraverso strumenti monetari a breve termine\n5. Regola ferrea di condotta per non congelare gli acquisti calendarizzati in presenza di turbolenze di borsa."
+        },
+        {
+          "title": "Ribilanciamento del portafoglio e correzione derive",
+          "text": "Guidami attraverso un ribilanciamento metodico del portafoglio per mantenere inalterato il profilo di rischio stabilito originariamente.\n\nAsset allocation target: [es. 70% Azionario Mondiale, 20% Mercati Emergenti, 10% Obbligazionario]\nValore e peso attuale dei singoli asset:\n[Asset 1: Valore / % reale sul totale]\n[Asset 2: Valore / % reale sul totale]\n[Asset 3: Valore / % reale sul totale]\nNuovi versamenti di risparmio disponibili questo mese: $[Importo]\n\nFornisci:\n1. Calcolo degli scostamenti: Quali classi di investimento risultano sovrappesate e quali sottopagate rispetto al target\n2. Ribilanciamento efficiente tramite nuova liquidità: Modalità per indirizzare i nuovi flussi senza procedere a vendite né originare plusvalenze imponibili\n3. Dismissioni selettive: Se occorre vendere, come minimizzare il capital gain privilegiando strumenti a compensazione\n4. Regola delle bande di tolleranza (5/25): Criterio operativo per effettuare ribilanciamenti solo in presenza di deviazioni superiori al 5% assoluto o 25% relativo."
+        }
+      ]
+    },
+    {
+      "cat": "Fiscalità & Protezione Patrimoniale",
+      "prompts": [
+        {
+          "title": "Checklist fiscale di fine anno e minusvalenze",
+          "text": "Predisponi un piano di ottimizzazione tributaria da compiere prima della fine dell'anno fiscale.\n\nInquadramento fiscale: [Lavoratore dipendente / P.IVA / Regime forfettario]\nReddito complessivo stimato dell'anno: $[Importo]\nMinusvalenze fiscali latenti in portafoglio (zainetto fiscale): $[Importo]\nPlusvalenze realizzate nell'anno in corso: $[Importo]\nSpese e contributi deducibili già sostenuti: [Fondo pensione, donazioni, spese mediche]\n\nDelinea gli interventi prioritari di chiusura d'anno:\n1. Recupero minusvalenze: Strategia di cessione di titoli in perdita per compensare plusvalenze già maturate o in scadenza quadriennale\n2. Attenzione ai vincoli anti-elusione: Gestione delle tempistiche di riacquisto e uso di ETF/certificati compatibili con la normativa fiscale locale\n3. Saturazione dei massimali per oneri deducibili prima del 31 dicembre\n4. Verifica delle ritenute per evitare conguagli pesanti in sede di dichiarazione dei redditi."
+        },
+        {
+          "title": "Valutazione delle coperture assicurative familiari",
+          "text": "Esamina il mio ventaglio assicurativo per schermare il patrimonio e i familiari contro eventi catastrofici.\n\nEtà e contesto familiare: [Età, stato civile, figli a carico]\nReddito annuo: $[Importo]\nPolizze attualmente attive:\n- Polizza Temporanea Caso Morte (TCM): [Capitale assicurato]\n- Invalidità permanente da infortunio o malattia: [Massimale coperto]\n- Responsabilità Civile Capofamiglia e Casa: [Massimali]\n- Sanitaria integrativa: [Livello di copertura]\n\nVerifica:\n1. Fabbisogno effettivo caso morte: Calcolo del capitale congruo per sostenere la crescita dei figli ed estinguere finanziamenti residui\n2. Garanzia invalidità e perdita di autosufficienza: La copertura riguarda l'attività professionale specifica o la generica incapacità al lavoro?\n3. Limiti di responsabilità civile: La capienza dei massimali è all'altezza del patrimonio da difendere?\n4. Polizze superflue: Individuazione di micropolizze dai costi sproporzionati e dalle tutele trascurabili da disdire."
+        },
+        {
+          "title": "Successione e inventario delle designazioni",
+          "text": "Aiutami a mettere ordine nelle disposizioni successorie, nella tutela della famiglia e nella nomina dei beneficiari.\n\nNucleo familiare: [Figli minori, coniuge, genitori anziani]\nPatrimonio principale: [Immobili, partecipazioni societarie, conti bancari, investimenti]\nResidenza fiscale ed ereditaria: [Italia / Svizzera / Altro]\n\nElabora una checklist completa:\n1. Audit delle designazioni beneficiarie: Perché la clausola 'eredi legittimi' nelle polizze vita è spesso inefficiente e come ottimizzarla\n2. Strumenti giuridici chiave: Testamento olografo o pubblico, disposizioni anticipate di trattamento (DAT) e procure speciali\n3. Tutela dei figli minori: Nomina formale di tutori e curatori dei beni\n4. Fascicolo di emergenza digitale: Mappatura sicura di password, accessi bancari e chiavi di recupero per gli eredi\n5. Vademecum pratico per i familiari con i passaggi amministrativi urgenti da compiere nelle prime 72 ore."
+        },
+        {
+          "title": "Miglioramento del profilo creditizio e merito bancario",
+          "text": "Crea una strategia pratica per consolidare la mia affidabilità bancaria e migliorare il punteggio creditizio.\n\nStato attuale:\n- Numero di carte di credito, fidi e finanziamenti in corso: [Numero]\n- Rapporto tra fido concesso e utilizzato: [% di utilizzo]\n- Storico ritardi o insoluti: [Nessun disguido / Precedenti ritardi]\n- Anzianità del rapporto di conto corrente più longevo: [Anni]\n\nFornisci:\n1. Riduzione dell'indice di utilizzo del credito: Piano per riportare l'esposizione al di sotto del 15-20% dei fidi concessi\n2. Gestione strategica delle date contabili: Come regolare i pagamenti prima della chiusura dell'estratto conto mensile\n3. Verifica banche dati creditizie (tipo CRIF / Centrale Rischi): Modalità per richiedere la visura e far cancellare registrazioni errate\n4. Richiesta controllata di incremento massimali: Quando conviene chiedere aumenti di fido per abbassare l'incidenza di utilizzo\n5. Prospettiva temporale realistica per ottenere un sensibile miglioramento del merito creditizio (90-180 giorni)."
+        }
+      ]
+    },
+    {
+      "cat": "Carriera & Indipendenza Finanziaria (FI/RE)",
+      "prompts": [
+        {
+          "title": "Strategia di negoziazione salariale e pacchetto premi",
+          "text": "Prepara una strategia di negoziazione e copioni precisi parola per parola per una rinegoziazione retributiva o una proposta contrattuale.\n\nRuolo e livello di inquadramento: [Ruolo, anzianità aziendale]\nRetribuzione Annua Lorda (RAL) attuale o prima offerta: $[RAL]\nValori medi di mercato conosciuti: [Forchetta salariale del comparto: es. 50k-65k]\nRisultati misurabili conseguiti: [Incrementi di fatturato, processi efficientati, responsabilità assunte]\nComponenti accessorie: [Premio variabile, welfare aziendale, flessibilità/smart working, stock options]\n\nElabora:\n1. Formulazione della controproposta: Cifra di ancoraggio e argomentazione quantitativa a supporto\n2. Tracce di dialogo parola per parola: Espressioni professionali, risolute e collaborative\n3. Leve non monetarie da trattare: Giornate supplementari di ferie, bonus all'ingresso o revisione contrattuale concordata dopo 6 mesi\n4. Repliche a obiezioni standard: Come replicare costruttivamente a 'Il budget per gli aumenti è già esaurito'."
+        },
+        {
+          "title": "Redditività e sostenibilità di un'attività secondaria",
+          "text": "Valuta la sostenibilità economica, il compenso orario netto reale e gli obblighi fiscali di un'attività secondaria o freelance.\n\nIdea di attività parallela: [consulenza freelance, infoprodotto, prestazione occasionale, e-commerce]\nTempo settimanale a disposizione: [es. 8-10 ore/settimana]\nTariffa o prezzo di vendita target: $[Prezzo unitario o tariffa oraria]\nSpese vive iniziali e canoni mensili: $[Piattaforme, hosting, consulente fiscale, attrezzature]\n\nAnalizza:\n1. Compenso orario netto effettivo: Ricavi lordi al netto di costi e imposizione fiscale/contributiva diviso per le ore realmente spese\n2. Punto di pareggio (Break-Even Point): Quanti clienti o vendite mensili occorrono per coprire i costi fissi\n3. Requisiti di legge e fiscalità (Regime forfettario, gestione separata INPS, obbligo di comunicazione al datore di lavoro principale)\n4. Trade-off di carriera: Questa seconda attività accelera il cammino verso la libertà finanziaria o drena energie preziose per la crescita primaria?"
+        },
+        {
+          "title": "Massimizzazione del piano welfare aziendale e azionariato",
+          "text": "Aiutami a individuare le opzioni a maggior valore economico all'interno del piano welfare e dei piani di azionariato per dipendenti.\n\nVoci accessibili nel paniere aziendale:\n[Piano acquisto azioni scontate (ESPP), cassa sanitaria, buoni pasto, rimborsi trasporti/asilo, versamento al fondo pensione]\nQuadro personale e familiare: [Carichi familiari, distanza casa-lavoro]\n\nFornisci:\n1. Analisi ESPP: Se è offerto uno sconto sull'azione (es. 15%), calcolo della convenienza e tempistica opportuna per liquidare i titoli\n2. Vantaggio fiscale del welfare: Risparmio netto derivante dall'azzeramento di IRPEF e contributi rispetto all'erogazione in busta paga\n3. Selezione delle voci poco convenienti: Riconoscere opzioni di scarsa utilità o dai costi impliciti elevati\n4. Configurazione ottimale per massimizzare il valore netto disponibile a consuntivo annuo."
+        },
+        {
+          "title": "Calcolo della cifra FI/RE e traguardo Coast FI",
+          "text": "Calcola il capitale necessario per raggiungere l'Indipendenza Finanziaria e Ritirarsi Anticipatamente (FI/RE) e il traguardo di Coast FI.\n\nEtà attuale: [Età]\nPatrimonio attualmente investito: $[Importo]\nSpesa annua stimata durante la fase di ritiro: $[Spesa annua]\nCapacità annua di risparmio e investimento: $[Importo/anno]\nTasso di prelievo prudente (Safe Withdrawal Rate): [3.5% o 4.0%]\nRendimento reale annuo atteso al netto dell'inflazione: [es. 5% - 6%]\n\nCalcola e traccia:\n1. Capitale target FI/RE: (Spesa annua × 25 o 28.5)\n2. Anni stimati all'indipendenza finanziaria al ritmo di contribuzione corrente\n3. Traguardo Coast FI: Il patrimonio attuale è già sufficiente a raggiungere per sola capitalizzazione composta il target all'età di 65 anni senza versare più nulla?\n4. Sensibilità all'incremento del risparmio: Di quanti anni si accorcia l'attesa alzando la quota di risparmio del 5% o del 10%."
+        }
+      ]
+    }
   ]
 };

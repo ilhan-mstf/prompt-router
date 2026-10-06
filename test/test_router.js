@@ -92,8 +92,8 @@ it('Supported languages count is exactly 7', () => {
   assert.deepStrictEqual(SUPPORTED_LANGS, ['en', 'es', 'tr', 'fr', 'de', 'it', 'pt']);
 });
 
-it('All 11 libraries exist in LIB_LOCALES', () => {
-  assert.strictEqual(VALID_LIBS.length, 11);
+it('All 13 libraries exist in LIB_LOCALES', () => {
+  assert.strictEqual(VALID_LIBS.length, 13);
   VALID_LIBS.forEach(lib => {
     assert.strictEqual(Boolean(LIB_LOCALES[lib]), true, `Missing lib in LIB_LOCALES: ${lib}`);
   });
@@ -148,7 +148,7 @@ it('Sitemap includes all 7 homepage routes', () => {
   });
 });
 
-it('Sitemap includes all 77 library URLs (11 libraries × 7 languages)', () => {
+it('Sitemap includes all 91 library URLs (13 libraries × 7 languages)', () => {
   VALID_LIBS.forEach(lib => {
     // English canonical
     assert.strictEqual(locMatches.includes(`https://prompt-router.pages.dev/${lib}`), true, `Missing English lib in sitemap: /${lib}`);
@@ -174,9 +174,9 @@ it('Sitemap includes blog index and all 19 blog posts', () => {
   });
 });
 
-it('Sitemap has proper UTF-8 XML declaration, exactly 105 URLs, and no stale dates', () => {
+it('Sitemap has proper UTF-8 XML declaration, exactly 119 URLs, and no stale dates', () => {
   assert.strictEqual(sitemapContent.startsWith('<?xml version="1.0" encoding="UTF-8"?>'), true, 'Missing UTF-8 XML declaration');
-  assert.strictEqual(locMatches.length, 105, `Expected 105 URLs, found ${locMatches.length}`);
+  assert.strictEqual(locMatches.length, 119, `Expected 119 URLs, found ${locMatches.length}`);
   assert.strictEqual(sitemapContent.includes('2026-04-11'), false, 'Found stale 2026-04-11 lastmod dates in sitemap');
 });
 
@@ -211,14 +211,14 @@ it('llms.txt references the new redesign blog post', () => {
   assert.strictEqual(llmsTxt.includes('/blog-new-look'), true, 'llms.txt missing /blog-new-look');
 });
 
-it('llms.txt documents blog index and all 11 prompt libraries', () => {
+it('llms.txt documents blog index and all 13 prompt libraries', () => {
   assert.strictEqual(llmsTxt.includes('/blog'), true, 'llms.txt missing /blog');
   VALID_LIBS.forEach(lib => {
     assert.strictEqual(llmsTxt.includes(`https://prompt-router.pages.dev/${lib}`), true, `llms.txt missing library link: /${lib}`);
   });
 });
 
-it('llms-full.txt has zero mojibake, contains 10 core quick templates, and all 11 prompt libraries', () => {
+it('llms-full.txt has zero mojibake, contains 10 core quick templates, and all 13 prompt libraries', () => {
   assert.strictEqual(/â€|â\x80|\ufffd/.test(llmsFullTxt), false, 'Found mojibake in llms-full.txt');
   VALID_LIBS.forEach(lib => {
     assert.strictEqual(llmsFullTxt.includes(`https://prompt-router.pages.dev/${lib}`), true, `llms-full.txt missing library link: /${lib}`);
@@ -232,7 +232,7 @@ it('llms-full.txt has zero mojibake, contains 10 core quick templates, and all 1
   });
 });
 
-it('All 33 HTML application and blog pages contain <link rel="alternate" href="/llms.txt">', () => {
+it('All 35 HTML application and blog pages contain <link rel="alternate" href="/llms.txt">', () => {
   const allPages = [
     'index.html',
     'blog.html',
@@ -240,7 +240,7 @@ it('All 33 HTML application and blog pages contain <link rel="alternate" href="/
     ...VALID_LIBS.map(l => `${l}.html`),
     ...fs.readdirSync(ROOT).filter(f => f.startsWith('blog-') && f.endsWith('.html'))
   ];
-  assert.strictEqual(allPages.length, 33);
+  assert.strictEqual(allPages.length, 35);
   allPages.forEach(p => {
     const html = fs.readFileSync(path.join(ROOT, p), 'utf-8');
     assert.strictEqual(html.includes('href="/llms.txt"'), true, `Missing llms.txt alternate link in ${p}`);
@@ -265,7 +265,7 @@ it('Zero files contain mojibake or corrupt encoding sequences across repository'
   });
 });
 
-it('Prompt parity: llms-full.txt contains exactly 268 prompts matching all 11 library HTML files', () => {
+it('Prompt parity: llms-full.txt contains exactly 316 prompts matching all 13 library HTML files', () => {
   let expectedTotal = 0;
   for (const lib of VALID_LIBS) {
     const html = fs.readFileSync(path.join(ROOT, `${lib}.html`), 'utf-8');
@@ -278,7 +278,7 @@ it('Prompt parity: llms-full.txt contains exactly 268 prompts matching all 11 li
   }
   const fullPromptsCount = (llmsFullTxt.match(/##### /g) || []).length;
   assert.strictEqual(fullPromptsCount, expectedTotal, `Mismatch: llms-full.txt has ${fullPromptsCount} prompts, HTML files have ${expectedTotal}`);
-  assert.strictEqual(fullPromptsCount, 268, `Expected exactly 268 prompts, got ${fullPromptsCount}`);
+  assert.strictEqual(fullPromptsCount, 316, `Expected exactly 316 prompts, got ${fullPromptsCount}`);
 });
 
 it('Sitemap 1:1 parity: every non-exempt HTML file corresponds to an indexed sitemap URL', () => {
@@ -662,7 +662,7 @@ it('prompt.css defines .item-main-btn styling for unnested button item structure
 // ─────────────────────────────────────────────────────────────
 console.log('\n📚 10. Library Page Health & Accordions:');
 
-it('All 11 library pages contain early language detector script in <head>', () => {
+it('All 13 library pages contain early language detector script in <head>', () => {
   VALID_LIBS.forEach(lib => {
     const html = fs.readFileSync(path.join(ROOT, `${lib}.html`), 'utf-8');
     assert.strictEqual(html.includes("window.__LANG__"), true, `Missing language detector script in ${lib}.html`);
@@ -670,7 +670,7 @@ it('All 11 library pages contain early language detector script in <head>', () =
   });
 });
 
-it('All 11 library pages have initial accordion state matching open list (aria-expanded="true")', () => {
+it('All 13 library pages have initial accordion state matching open list (aria-expanded="true")', () => {
   VALID_LIBS.forEach(lib => {
     const html = fs.readFileSync(path.join(ROOT, `${lib}.html`), 'utf-8');
     assert.strictEqual(html.includes('id="btnLibrariesSection" onclick="toggleSection(\'librariesSection\')" aria-expanded="true"'), true, `btnLibrariesSection not aria-expanded="true" in ${lib}.html`);
@@ -678,7 +678,7 @@ it('All 11 library pages have initial accordion state matching open list (aria-e
   });
 });
 
-it('All 11 library pages and index.html have populated static English #footer-desc', () => {
+it('All 13 library pages and index.html have populated static English #footer-desc', () => {
   const pages = ['index.html', ...VALID_LIBS.map(l => `${l}.html`)];
   pages.forEach(p => {
     const html = fs.readFileSync(path.join(ROOT, p), 'utf-8');
@@ -687,14 +687,14 @@ it('All 11 library pages and index.html have populated static English #footer-de
   });
 });
 
-it('All 11 library pages wire window.__onPromptCleared to deselect cards', () => {
+it('All 13 library pages wire window.__onPromptCleared to deselect cards', () => {
   VALID_LIBS.forEach(lib => {
     const html = fs.readFileSync(path.join(ROOT, `${lib}.html`), 'utf-8');
     assert.strictEqual(html.includes('window.__onPromptCleared = function()'), true, `Missing window.__onPromptCleared in ${lib}.html`);
   });
 });
 
-it('All 11 library pages support localized "All" category button', () => {
+it('All 13 library pages support localized "All" category button', () => {
   VALID_LIBS.forEach(lib => {
     const html = fs.readFileSync(path.join(ROOT, `${lib}.html`), 'utf-8');
     assert.strictEqual(html.includes("cat === 'All' ? allLabel : cat"), true, `Missing allLabel check in ${lib}.html`);
@@ -709,7 +709,7 @@ it('prompt.css configures prompt-cards with 2-column grid, hidden preview, and m
   assert.strictEqual(promptCSS.includes('.prompt-card-preview {\n  display: none;\n}'), true, 'prompt-card-preview must be hidden via display: none in prompt.css');
 });
 
-it('All 11 library pages have removed lbl-cats and lbl-prompts headings', () => {
+it('All 13 library pages have removed lbl-cats and lbl-prompts headings', () => {
   VALID_LIBS.forEach(lib => {
     const html = fs.readFileSync(path.join(ROOT, `${lib}.html`), 'utf-8');
     assert.strictEqual(html.includes('id="lbl-cats"'), false, `Found removed id="lbl-cats" in ${lib}.html`);
@@ -755,7 +755,7 @@ it('locales.js provides libNames across all supported languages for seamless cli
   });
 });
 
-it('LIB_LOCALES and PROMPTS_I18N maintain 100% translation coverage across all 11 libraries', async () => {
+it('LIB_LOCALES and PROMPTS_I18N maintain 100% translation coverage across all 13 libraries', async () => {
   const { default: PROMPTS_I18N } = await import('../data/prompts/index.js');
   const NON_EN = ['es', 'de', 'fr', 'tr', 'it', 'pt'];
   
@@ -904,14 +904,14 @@ it('Master favicon.svg exists and defines the canonical vector icon', () => {
   assert.strictEqual(content.includes('#d4a847'), true, 'favicon.svg text color must be #d4a847');
 });
 
-it('All 34 HTML pages use an inline SVG favicon that matches master favicon.svg', () => {
+it('All 36 HTML pages use an inline SVG favicon that matches master favicon.svg', () => {
   const svgContent = fs.readFileSync(path.join(ROOT, 'favicon.svg'), 'utf-8');
   const compact = svgContent.replace(/>\s+</g, '><').replace(/\s+/g, ' ').trim();
   const encoded = compact.replace(/"/g, "'").replace(/#/g, '%23');
   const expectedDataUri = `data:image/svg+xml,${encoded}`;
 
   const htmlFiles = fs.readdirSync(ROOT).filter(f => f.endsWith('.html') && !f.startsWith('google'));
-  assert.strictEqual(htmlFiles.length, 34, 'Expected exactly 34 application and blog HTML files');
+  assert.strictEqual(htmlFiles.length, 36, 'Expected exactly 36 application and blog HTML files');
 
   for (const file of htmlFiles) {
     const html = fs.readFileSync(path.join(ROOT, file), 'utf-8');

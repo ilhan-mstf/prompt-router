@@ -1427,5 +1427,261 @@ export default {
         }
       ]
     }
+  ],
+  "stocks": [
+    {
+      "cat": "Fundamentalanalyse",
+      "prompts": [
+        {
+          "title": "10-K / 10-Q Geschäftsbericht-Tiefenanalyse",
+          "text": "Führe eine detaillierte Fundamentalanalyse des aktuellen 10-K- oder 10-Q-Berichts dieses Unternehmens durch.\n\nUnternehmen: [Ticker / Name]\nBerichtszeitraum: [z. B. 10-K GJ 2025 oder 10-Q Q2 2026]\nWichtige Finanzdaten: [Umsatz, Bruttomarge, Nettogewinn, Free Cashflow]\n\nAnalysiere und strukturiere:\n1. Umsatztreiber: Organisches Wachstum vs. Akquisitionen, Aufschlüsselung nach Segmenten und Geografien\n2. Margenentwicklung: Entwicklung von Brutto-, Betriebs- und Nettomarge über 3–5 Jahre\n3. Bilanzqualität: Barmittel vs. Gesamtverschuldung, Fälligkeitsprofil und Netto-Working-Capital\n4. Cashflow-Plausibilität: FCF im Vergleich zum Nettogewinn (Bereinigung um aktienbasierte Vergütung / SBC)\n5. Risikofaktoren: Die 3 kritischsten operativen oder regulatorischen Risiken aus Item 1A\n\nSchließe mit 3 gezielten Fragen ab, die das Management im nächsten Earnings Call beantworten sollte."
+        },
+        {
+          "title": "Wirtschaftlicher Burggraben & Wettbewerbsanalyse",
+          "text": "Bewerte den wirtschaftlichen Burggraben (Economic Moat) und die Wettbewerbsvorteile dieses Unternehmens nach dem Morningstar- und Porter-Framework.\n\nUnternehmen: [Name / Ticker]\nBranche: [z. B. Cloud-Infrastruktur, Halbleiter, B2B-SaaS]\nHauptwettbewerber: [2–4 Wettbewerber nennen]\n\nUntersuche jede Burggraben-Quelle:\n1. Netzwerkeffekte: Steigt der Plattformwert mit jedem zusätzlichen Nutzer?\n2. Wechselkosten: Wie komplex und teuer ist eine Migration zu einem Konkurrenzprodukt?\n3. Kostenvorteile: Skaleneffekte, proprietäre Prozesse oder exklusive Bezugsquellen\n4. Immaterielle Vermögenswerte: Patente, regulatorische Lizenzen oder Marken-Preissetzungsmacht\n5. Effiziente Skalierung: Ist der Nischenmarkt vor neuen Konkurrenten geschützt?\n\nBurggraben-Rating: Keiner / Schmal / Breit mit Begründung und der größten Bedrohung in den nächsten 10 Jahren."
+        },
+        {
+          "title": "Kapitalallokation & ROIC-Historie",
+          "text": "Analysiere die Kapitalallokation des Managements und die Rendite auf das investierte Kapital (ROIC).\n\nUnternehmen: [Name / Ticker]\nDaten der letzten 3–5 Jahre:\n- ROIC / ROCE: [Werte oder Schätzung]\n- WACC: [geschätzte Kapitalkosten]\n- CapEx: [Wachstums- vs. Erhaltungsaufwand]\n- M&A-Historie: [wichtige Übernahmen]\n- Aktienrückkäufe & Dividenden: [Beträge]\n\nBewerte:\n1. Wertschöpfung: Liegt der ROIC nachhaltig über den WACC? Was treibt den Spread?\n2. Organische Reinvestition: Werden einbehaltene Gewinne zu attraktiven Grenzerträgen reinvestiert?\n3. M&A-Disziplin: Haben Akquisitionen echten Mehrwert geschaffen oder zu Goodwill-Abschreibungen geführt?\n4. Aktionärsrendite: Erfolgen Rückkäufe unter dem fairen Wert oder dienen sie nur dem Verwässerungsausgleich?\n5. Gesamtnote für Kapitalallokation (A bis F) mit prägnanten Argumenten."
+        },
+        {
+          "title": "Working-Capital-Effizienz & Cash Conversion Cycle",
+          "text": "Überprüfe das Working Capital und den Cash Conversion Cycle (Geldumschlagsdauer) dieses Unternehmens.\n\nUnternehmen: [Name / Ticker]\nKennzahlen:\n- Forderungslaufzeit (DSO): [Tage]\n- Lagerdauer (DIO): [Tage]\n- Verbindlichkeitenlaufzeit (DPO): [Tage]\n- FCF-Konversionsrate (% von EBITDA oder Nettogewinn): [%]\n\nAnalysiere:\n1. Cash Conversion Cycle (CCC = DSO + DIO - DPO): Trendentwicklung der letzten 3 Jahre berechnen\n2. Qualität des Betriebskapitals: Wachsen Forderungen schneller als die Erlöse? Steigen Lagerbestände ungesund an?\n3. Verhandlungsmacht bei Lieferanten: Basiert die DPO auf echter Marktmacht oder überdehnter Zahlungsfähigkeit?\n4. Cash-Drain vs. Cash-Generierung: Bindet oder setzt das Unternehmenswachstum zusätzliche Liquidität frei?\n5. Branchenvergleich: Setze die Dynamik in Relation zu 2 direkten Konkurrenten."
+        }
+      ]
+    },
+    {
+      "cat": "Bewertung & Finanzmodellierung",
+      "prompts": [
+        {
+          "title": "DCF-Modell: Annahmen & Sensitivitätsanalyse",
+          "text": "Hilf mir, realistische und fundierte Annahmen für ein 5-Jahres-Discounted-Cashflow-Modell (DCF) zu definieren.\n\nUnternehmen: [Name / Ticker]\nAktueller Aktienkurs: $[Kurs]\nAktueller Umsatz: $[Umsatz]\nFree Cashflow (FCF): $[FCF]\nBranche: [Branche]\n\nErstelle eine 3-Szenarien-Matrix (Bear / Base / Bull):\n1. Umsatz-CAGR (Jahr 1–5): Begründe Wachstumsraten anhand von TAM-Expansion und Marktanteilen\n2. Margenentwicklung & Terminal FCF Margin: Skaleneffekte und langfristiger CapEx-Bedarf\n3. Diskontierungssatz (WACC): Beta, Eigenkapitalkosten und Fremdkapitalkosten nach Steuern\n4. Ewige Wachstumsrate (g): Konservative Inflations-/BIP-Rate (2–3 %)\n5. Überleitung Enterprise Value zu Equity Value: Abzug von Nettofinanzschulden und Verwässerungseffekten\n\nBerechne den impliziten fairen Wert je Aktie pro Szenario und identifiziere den sensitivsten Hebel."
+        },
+        {
+          "title": "Peer-Group-Bewertung & Multiples-Vergleich",
+          "text": "Erstelle eine relative Bewertung auf Basis von Multiples im Vergleich zur direkten Vergleichsgruppe (Peer Group).\n\nZielunternehmen: [Ticker]\nPeers: [Peer 1, Peer 2, Peer 3, Peer 4]\nKennzahlen:\n- EV / NTM Sales: [Ziel vs. Peers]\n- EV / NTM EBITDA: [Ziel vs. Peers]\n- Forward KGV (P/E): [Ziel vs. Peers]\n- PEG-Ratio: [Ziel vs. Peers]\n- Rule of 40 / Wachstumsrate: [Wachstum + FCF-Marge]\n\nLiefere:\n1. Bewertungsmatrix: Übersichtliche Vergleichstabelle über alle Multiples hinweg\n2. Auf- oder Abschlag: Notiert die Aktie mit Prämie oder Discount? Ist dies durch Wachstum oder ROIC gerechtfertigt?\n3. Normalisiertes Multiple: Welches Multiple ist bei reifem, stabilem Zustand angemessen?\n4. Kurszielspanne basierend auf dem Median der Vergleichsgruppe."
+        },
+        {
+          "title": "Reverse DCF: Markterwartungen im Kurs prüfen",
+          "text": "Führe eine Reverse-DCF-Analyse durch, um zu prüfen, welches Wachstum aktuell im Börsenkurs eingepreist ist.\n\nUnternehmen: [Ticker]\nAktuelle Marktkapitalisierung / Enterprise Value: $[Wert]\nAktueller Aktienkurs: $[Kurs]\nAktueller Free Cashflow: $[FCF]\nAngenommener WACC: [z. B. 9 % oder 10 %]\nAngenommene Terminal Growth Rate: [z. B. 2,5 %]\n\nErmittle:\n1. Implizite FCF-Wachstumsrate: Welche jährliche FCF-Wachstumsrate über 5 bis 10 Jahre spiegelt der Kurs wider?\n2. Operative Übersetzung: Welche Umsatzentwicklung und Margenausweitung sind erforderlich, um diesen FCF zu erzielen?\n3. Realitäts-Check am Marktvolumen (TAM): Ist der erforderliche Marktanteil realistisch erreichbar?\n4. Asymmetrisches Chance-Risiko-Verhältnis: Bietet der Kurs eine Sicherheitsmarge (Margin of Safety) oder ist Perfektion eingepreist?"
+        },
+        {
+          "title": "Dividendensicherheit & FCF-Deckungsgrad",
+          "text": "Bewerte die Nachhaltigkeit, Sicherheit und das Steigerungspotenzial der Dividende dieses Unternehmens.\n\nUnternehmen: [Name / Ticker]\nAktuelle Dividendenrendite: [%]\nJährliche Ausschüttung je Aktie: $[Betrag]\nFree Cashflow je Aktie: $[Betrag]\nGewinn je Aktie (EPS): $[Betrag]\nNettoverschuldung / EBITDA: [Ratio]\n\nPrüfe:\n1. FCF-Ausschüttungsquote: Dividende in % des Free Cashflows (liegt sie unter dem Schwellenwert von 60–70 %?)\n2. Bilanzieller Gewinn vs. echter Cashflow: Wird die Dividende durch operative Liquidität oder Schuldenaufnahme finanziert?\n3. Verschuldungsgrad & Zinsdeckung: Gefährden Schuldenfälligkeiten bei einem Abschwung die Ausschüttung?\n4. Historische Dividendensteigerung: 3-, 5- und 10-Jahres-CAGR der Dividendenerhöhungen\n5. Stresstest: Bleibt die Dividende sicher, wenn der Umsatz um 15 % einbricht und Margen um 300 Basispunkte schrumpfen?\n\nGesamteinstufung: Sicher / Gefährdet / Kürzungsrisiko mit Warnsignalen."
+        }
+      ]
+    },
+    {
+      "cat": "Quartalszahlen & Earnings-Calls",
+      "prompts": [
+        {
+          "title": "Earnings-Call-Analyse & Q&A-Tear-Sheet",
+          "text": "Analysiere das Transkript oder die Kernaussagen der aktuellen Analystenkonferenz (Earnings Call).\n\nUnternehmen: [Name / Ticker]\nQuartal: [z. B. Q4 2025 / Q1 2026]\nWichtige Zitate oder Call-Notizen:\n[Aussagen von CEO/CFO und Analystenfragen einfügen]\n\nStrukturiere:\n1. Zentrale Botschaften des Managements: Welche Initiativen wurden in den Mittelpunkt gestellt?\n2. Schmerzpunkte in der Fragerunde: Bei welchen Themen hakten Analysten besonders kritisch nach?\n3. Ausweichende oder defensive Antworten: Welche konkreten Zahlen oder Zusagen wurden umschifft?\n4. Versteckte Prognose-Hinweise: Signale für Lieferengpässe, verlängerte Verkaufszyklen oder Margendruck?\n5. Kernaussage in 3 Sätzen für fundamentale Investoren."
+        },
+        {
+          "title": "Guidance-Revision vs. Analystenkonsens",
+          "text": "Analysiere den neuen Unternehmensausblick (Guidance) im Vergleich zu den Markterwartungen der Wall Street.\n\nUnternehmen: [Ticker]\nPrognosezeitraum: [z. B. Q2 2026 / Gesamtjahr 2026]\nNeu gemeldete Guidance des Vorstands:\n- Umsatz: [Spanne]\n- Operatives Ergebnis / EBITDA: [Spanne]\n- Bereinigtes EPS: [Spanne]\nVorheriger Konsens:\n- Erwarteter Umsatz: [Konsens]\n- Erwartetes EPS: [Konsens]\n\nLiefere:\n1. Beat / Meet / Miss Zusammenfassung: Abweichung im abgelaufenen Quartal und beim Ausblick in Prozent\n2. Qualität der Prognose: Basiert das Jahresziel auf einer realistischen Dynamik oder einer fragwürdigen Beschleunigung zum Jahresende (Hockey-Stick)?\n3. Operativer Hebel: Steigt der Umsatz, während der Gewinn stagniert (Margenkompression)?\n4. Revisionserwartung: In welche Richtung werden Analysten ihre Kursziele anpassen?"
+        },
+        {
+          "title": "Historische Earnings-Überraschungen & Kursreaktion",
+          "text": "Untersuche die Ergebnis-Historie und die typische Kursvolatilität rund um Quartalsberichte.\n\nUnternehmen: [Ticker]\nHistorie der letzten 4–8 Quartale:\n- EPS-Überraschungen (% Beat/Miss): [Quartale auflisten]\n- Umsatz-Überraschungen (% Beat/Miss): [Quartale auflisten]\n- Durchschnittliche Kursbewegung am Folgetag (%): [z. B. +/- 6 %]\n- Implizite Volatilität der Optionen für nächste Zahlen: [falls bekannt]\n\nAnalysiere:\n1. Verlässlichkeit des Managements: Gibt das Management systematisch konservative Prognosen ab (Under-promise & Over-deliver)?\n2. Asymmetrie der Kursreaktion: Fällt die Aktie bei kleinen Verfehlungen unverhältnismäßig stark?\n3. Qualität der Überraschungen: Wurden Schätzungen durch operatives Wachstum oder Einmaleffekte/Steuern übertroffen?\n4. Risikomanagement: Welche Positionsgröße oder Absicherung ist vor dem nächsten Berichtstermin ratsam?"
+        },
+        {
+          "title": "Erkennung von Sentiment- & Tonalitätswechseln",
+          "text": "Vergleiche die Sprache und Tonalität des Managements zwischen den letzten beiden aufeinanderfolgenden Quartalen.\n\nUnternehmen: [Ticker]\nAussagen Vorquartal (Q1):\n[Zitate einfügen]\nAussagen Aktuelles Quartal (Q2):\n[Zitate einfügen]\n\nIdentifiziere:\n1. Tonalitätswandel: Wirkt das Management vorsichtiger, defensiver oder spürbar optimistischer?\n2. Wortwahl-Veränderungen: Häufung von Begriffen wie 'Gegenwind', 'Zurückhaltung' vs. 'Beschleunigung', 'Rekordnachfrage'\n3. Weggelassene Kennzahlen: Wurden zuvor betonte KPIs (z. B. Net Retention Rate, Backlog) plötzlich verschwiegen?\n4. Aussagen zur Kapitalverwendung: Gibt es Änderungen bei Aktienrückkäufen, Schuldenabbau oder Investitionsbudgets?\n5. Netto-Sentiment-Score: Zusammenfassende Einstufung (Bullish, Neutral, Bearish)."
+        }
+      ]
+    },
+    {
+      "cat": "Technische Analyse & Risikomanagement",
+      "prompts": [
+        {
+          "title": "Multi-Timeframe-Trend & Wichtige Kursmarken",
+          "text": "Analysiere Trendstruktur, Zeitebenen und wichtige Unterstützungs- sowie Widerstandszonen.\n\nTicker: [Ticker]\nAktueller Kurs: $[Kurs]\nWochen-Chart-Kontext: [52-Wochen-Hoch/Tief, 200-Wochen-Linie, übergeordneter Trend]\nTages-Chart-Kontext: [SMA 50 und 200, Chartmuster wie Flagge, Cup & Handle, Konsolidierungsrange]\nIndikatoren: [RSI, MACD, Volumenentwicklung]\n\nErstelle:\n1. Primärtrend: Bullisch, bärisch oder seitwärts auf Wochen- und Tagesbasis\n2. Widerstandszonen: Die 3 wichtigsten Hürden mit erhöhtem Verkaufsdruck\n3. Unterstützungsniveaus: Die 3 wichtigsten Auffangzonen (ehemalige Ausbruchslevel, gleitende Durchschnitte)\n4. Moving-Average-Check: Lage zu 20/50/200 SMA (Golden Cross, Death Cross, Überdehnung)\n5. Trade-Setup: Optimaler Einstiegsbereich, präziser Stop-Loss und erstes Kursziel."
+        },
+        {
+          "title": "Chance-Risiko-Verhältnis & Positionsgrößenrechner",
+          "text": "Berechne ein asymmetrisches Chance-Risiko-Verhältnis (CRV) und die ideale Positionsgröße für dieses Aktieninvestment.\n\nGesamtes Portfoliokapital: $[z. B. 50.000]\nMaximal tolerierter Verlust pro Trade: [z. B. 1 % des Portfolios = $500]\nGeplanter Kaufkurs (Einstieg): $[Kurs]\nTechnischer oder fundamentaler Stop-Loss: $[Stop-Kurs]\nKursziel 1 (Konservativ): $[Ziel 1]\nKursziel 2 (Erweitertes Potenzial): $[Ziel 2]\n\nBerechne und definiere:\n1. Risiko je Aktie: Einstiegskurs minus Stop-Loss ($ und %)\n2. Positionsgröße: Genaue Stückzahl an Aktien, damit beim Erreichen des Stops der maximale Verlust nicht überschritten wird\n3. Kapitalallokation: Gesamter Kaufwert und prozentualer Anteil am Gesamtportfolio\n4. Chance-Risiko-Verhältnis (CRV): Berechne das CRV für Ziel 1 und Ziel 2 (Warnung, falls unter 3:1)\n5. Ausstiegsplan: Teilgewinnmitnahmen und Nachziehen des Stops auf Einstandsniveau (Breakeven)."
+        },
+        {
+          "title": "Short-Interest & Squeeze-Potenzial-Audit",
+          "text": "Überprüfe Leerverkaufsquoten, Leihekosten und die Wahrscheinlichkeit eines Short-Squeezes für diese Aktie.\n\nUnternehmen: [Ticker]\nShort Interest (% des Free Floats): [%]\nDays to Cover (Tage bis Eindeckung): [Tage]\nLeihgebühr (Borrow Fee Rate): [%]\nInstitutioneller Anteil (%): [%]\nRetail-Sentiment / Social Media: [Hoch / Mittel / Gering]\n\nBewerte:\n1. Squeeze-Vulnerabilität (Skala 1 bis 10): Basierend auf Float-Größe, Leihekosten und Handelsvolumen\n2. Leerverkäufer-These: Warum wetten institutionelle Fonds gegen das Unternehmen? Was ist ihr Kernargument?\n3. Katalysator für Eindeckungen: Welches Ereignis (Zahlen, Zulassung, Aktivist) könnte Short-Seller zum Kaufen zwingen?\n4. Aktienverfügbarkeit: Verknappen sich die leihbaren Aktien am Markt?\n5. Risikowarnung: Asymmetrische Risiken sowohl auf der Long- als auch auf der Short-Seite."
+        },
+        {
+          "title": "Volumenprofil & Institutionelle Akkumulation",
+          "text": "Analysiere das Handelsvolumen, um festzustellen, ob institutionelles 'Smart Money' die Aktie akkumuliert oder ablädt.\n\nAktie: [Ticker]\nJüngste Kursbewegung: [z. B. Konsolidierung nach Earnings-Gap zwischen $140 und $150]\nVolumensignale:\n- Volumen an Aufwärtstagen vs. Abwärtstagen: [z. B. hohes Grünvolumen, niedriges Rotvolumen]\n- Block-Trades / Dark-Pool-Aktivität: [falls bekannt]\n- On-Balance Volume (OBV) Trend: [steigend, flach, fallend]\n\nPrüfe:\n1. Akkumulation vs. Distribution: Absorbieren Großanleger Verkaufsaufträge an Schlüsselzonen?\n2. Volumenrückgang bei Rücksetzern: Trocknet das Volumen bei Kurskorrekturen spürbar aus?\n3. Point of Control (POC): Das Preisniveau mit dem höchsten gehandelten Volumen im Zeitraum\n4. Erschöpfungssignale: Gibt es Hinweise auf Verkaufs- oder Kaufpanik (Climax Volume)?\n5. Fazit: Bestätigt das Volumen einen Ausbruch oder deutet es auf institutionellen Ausstieg hin?"
+        }
+      ]
+    },
+    {
+      "cat": "Makroökonomie & Branchentrends",
+      "prompts": [
+        {
+          "title": "Branchenzyklizität & Makro-Sensitivitätstest",
+          "text": "Untersuche das Verhalten dieses Unternehmens in verschiedenen Phasen des Konjunktur- und Zinszyklus.\n\nUnternehmen / Sektor: [z. B. Industrieautomation, Luxusgüter, Regionalbanken]\nAktuelles makroökonomisches Umfeld:\n- Zinsniveau: [steigend / pausiert / sinkend]\n- Inflation & Lohnentwicklung: [hoch / rückläufig]\n- Konsumklima & Kreditausfälle: [robust / schwächelnd]\n- Einkaufsmanagerindex (PMI): [Expansion >50 / Kontraktion <50]\n\nAnalysiere:\n1. Zyklisches vs. strukturelles Wachstum: Wie viel des bisherigen Wachstums war Rückenwind vs. technologischer Megatrend?\n2. Zinsreagibilität: Auswirkungen höherer Zinsen auf Fremdkapitalkosten und Investitionsbereitschaft der Kunden\n3. Preissetzungsmacht: Können steigende Inputkosten vollständig an Endkunden weitergegeben werden?\n4. Rezessionshistorie: Wie entwickelten sich Umsatz und Margen in den Krisenjahren 2008 und 2020?\n5. Zyklusposition: Befindet sich die Branche näher am zyklischen Hoch oder am Tiefpunkt?"
+        },
+        {
+          "title": "Kundenkonzentration & Lieferketten-Engpässe",
+          "text": "Überprüfe Klumpenrisiken bei Großkunden und geopolitische Risiken in der Lieferkette.\n\nUnternehmen: [Name / Ticker]\nKundenstruktur:\n- Umsatzanteil des größten Einzelkunden: [z. B. Kunde A macht 18 % aus]\n- Anteil der Top 5 bzw. Top 10 Kunden: [laut 10-K Bericht]\nLieferkette & Produktion:\n- Kritische Zulieferer / Foundries: [z. B. TSMC, Foxconn, Single-Source-Lieferanten]\n- Geografische Produktionskonzentration: [z. B. 70 % Fertigung in Taiwan/Asien]\n\nLiefere:\n1. Klumpenrisiko-Score: Hoch / Mittel / Gering und Ergebnisauswirkung bei Vertragsverlust eines Großkunden\n2. Single Points of Failure: Gibt es unersetzbare Schlüsselkomponenten ohne Zweitlieferanten?\n3. Exponierung gegenüber Zöllen, Handelsbeschränkungen oder regionalen Konflikten\n4. Risikominimierung: Welche Maßnahmen ergreift das Management zur Diversifizierung und wie hoch sind die Umstellungskosten?"
+        },
+        {
+          "title": "Regulatorische Risiken & Kartellverfahren",
+          "text": "Bewerte laufende behördliche Untersuchungen, Kartellverfahren und Gesetzesänderungen für diese Aktie.\n\nUnternehmen: [Ticker / Sektor]\nBeteiligte Aufsichtsbehörden: [z. B. EU-Kommission, FTC, DOJ, SEC, nationale Kartellämter]\nLaufende Verfahren: [Klagen, Gesetzesvorhaben oder Marktuntersuchungen beschreiben]\n\nBeurteile:\n1. Worst-Case-Szenario: Mögliche Strafzahlungen, Entflechtungen, Zwangslizenzen oder Geschäftsmodell-Auflagen\n2. Betroffener Umsatz: Welcher Prozentsatz des Umsatzes oder der margenstarken Erlöse hängt an der beanstandeten Praxis?\n3. Historische Präzedenzfälle: Wie endeten vergleichbare Auseinandersetzungen in der Branche?\n4. Burggraben-Effekt: Könnten strengere Regulierungen neue Wettbewerber abhalten und das Unternehmen sogar schützen?\n5. Wahrscheinlichkeitsgewichtete finanzielle Auswirkung auf das EPS der nächsten 1–3 Jahre."
+        },
+        {
+          "title": "Direkter Wettbewerbsvergleich: Benchmarking-Matrix",
+          "text": "Erstelle eine strukturierte Head-to-Head-Vergleichsmatrix zwischen diesem Unternehmen und seinen zwei stärksten Rivalen.\n\nAnalysiertes Unternehmen: [Unternehmen A]\nDirekter Konkurrent 1: [Unternehmen B]\nDirekter Konkurrent 2: [Unternehmen C]\n\nVergleiche entlang 6 Dimensionen:\n1. Skalierung & Umsatzwachstum: Vorjahresvergleich (YoY) und absolute Umsatzgröße\n2. Margenstruktur: Bruttomarge, operative Marge und FCF-Marge\n3. Unit Economics & Monetarisierung: ARPU, Net Retention Rate (NRR) oder Deckungsbeitrag\n4. Innovationskraft & R&D: F&E-Ausgaben in % des Umsatzes und Produkteinführungs-Kadenz\n5. Bilanzstärke: Netto-Cash-Position, Verschuldungsgrad und Kreditwürdigkeit\n6. Bewertungs-Multiples: KGV, EV/Sales, EV/EBITDA\n\nFazit: Welches der 3 Unternehmen bietet das beste Chance-Risiko-Verhältnis und warum?"
+        }
+      ]
+    },
+    {
+      "cat": "Investment-These & Bear-Case",
+      "prompts": [
+        {
+          "title": "Institutionelle Bull- vs. Bear-Debatte",
+          "text": "Erstelle eine fundierte, institutionelle Debatte zwischen der optimistischen Bull-These und der pessimistischen Bear-These.\n\nUnternehmen: [Name / Ticker]\nAktueller Kurs / Bewertungs-Multiples: $[Kurs, Multiples]\nGeschäftsmodell in Kurzform: [1–2 Sätze zu Produkt und Zielkunden]\n\nEntwickle:\n\nBull-These (Die 3 stärksten Säulen):\n1. Der wichtigste Wachstumskatalysator und Marktpotenzial\n2. Operativer Hebel und Potenzial zur Margenexpansion\n3. Warum der Markt die zukünftige Ertragskraft heute unterschätzt\n\nBear-These (Die 3 größten Risikofaktoren):\n1. Das zentrale Wettbewerbs-, Technologie- oder Makrorisiko\n2. Gefahr von Preisdruck und Margenverfall\n3. Warum die aktuellen Konsensprognosen zu optimistisch sind\n\nEntscheidungskriterium: Welcher KPI oder Meilenstein in den nächsten 12 Monaten entscheidet, welches Lager recht behält?"
+        },
+        {
+          "title": "Investment-Pre-Mortem: Warum diese Aktie scheitert",
+          "text": "Führe ein Pre-Mortem durch: Stelle dir vor, es sind 3 Jahre vergangen und diese Aktie hat 50 % ihres Werts verloren. Schildere die Ursachen.\n\nUnternehmen: [Name / Ticker]\nMeine aktuelle Investment-These: [warum ich kaufen oder halten möchte]\nOptimistische Grundannahmen: [Wachstumstempo, Burggraben, Managementqualität]\n\nKonstruiere die detaillierte Kausalkette des Scheiterns:\n1. Der blinde Fleck: Welches fundamentale Risiko wurde von mir und dem Konsens völlig übersehen oder kleingeredet?\n2. Wettbewerbsdruck: Welcher Konkurrent oder Technologiewechsel hat die Preissetzungsmacht zerstört?\n3. Fehlerhafte Kapitalallokation: Welche teure Übernahme, Fehlinvestition oder Schuldenlast hat die Bilanz ruiniert?\n4. Multiple-Kompression: Warum stufte der Markt das Bewertungsmultiple trotz moderatem Gewinnwachstum von 30x auf 15x herab?\n5. Frühwarnzeichen: 3 konkrete Signale, an denen man das Scheitern bereits im ersten Jahr hätte erkennen können."
+        },
+        {
+          "title": "High-Conviction Investment-Memo auf 1 Seite",
+          "text": "Verfasse ein prägnantes, überzeugendes Investment-Memo auf einer Seite für diese Aktienidee.\n\nUnternehmen: [Name / Ticker]\nAktueller Kurs: $[Kurs] | Marktkapitalisierung: $[Cap]\nAnlagehorizont: [z. B. 1–3 Jahre]\n\nGliedere das Memo:\n1. Executive Summary: Was macht das Unternehmen und welche Marktfehlbewertung liegt heute vor? (3 Sätze)\n2. Variant Perception: Welche fundamentale Einsicht hast du, die der breite Marktkonsens noch nicht erkannt hat?\n3. Finanzielle Kernmechanik: Umsatzwachstumstreiber, Unit Economics und Cashflow-Generierung\n4. Bewertung & Kursziel: Fairer Wert im Basisszenario mit erwarteter jährlicher Rendite (IRR) und Upside in %\n5. Katalysatoren: 2–3 konkrete Meilensteine in den nächsten 12–18 Monaten, die den fairen Wert freisetzen\n6. Harte Verkaufskriterien: Unter welchen exakten Bedingungen wird die Position liquidiert?"
+        },
+        {
+          "title": "Ausstiegsstrategie & Kriterien zur Thesen-Invalidierung",
+          "text": "Definiere vor Eröffnung der Position verbindliche Gewinnmitnahme-Regeln und Kriterien für die sofortige Thesen-Invalidierung.\n\nUnternehmen: [Name / Ticker]\nKaufkurs: $[Kaufkurs]\nZielbewertung / Kursziel: $[Zielkurs]\nFundamente der Ursprungsthese: [2–3 Kaufargumente nennen]\n\nErstelle ein objektives Ausstiegsprotokoll:\n1. Gewinnmitnahme-Stufen: Bei welchen Kursmarken oder Multiples werden 33 %, 50 % oder 100 % der Position verkauft?\n2. Fundamentale Invalidierungs-Trigger: 3 messbare operative Verschlechterungen (z. B. Net Retention unter 110 %, Margenrückgang über 2 Quartale, Abgang des Gründers), die zum sofortigen Ausstieg zwingen – unabhängig vom Kursverlust\n3. Opportunitätskosten-Schwelle: Wann rechtfertigt eine deutlich attraktivere Alternative die Kapitalumschichtung?\n4. Psychologische Notbremse: Welche Regel verhindert das irrationale Verbilligen (Nachkaufen) bei intaktem Abwärtstrend?"
+        }
+      ]
+    }
+  ],
+  "finance": [
+    {
+      "cat": "Budgetierung & Cashflow",
+      "prompts": [
+        {
+          "title": "50/30/20- & Zero-Based-Budget Planer",
+          "text": "Erstelle ein individuelles monatliches Budget, das die 50/30/20-Regel mit den Prinzipien des Zero-Based-Budgetings kombiniert.\n\nMonatliches Nettoeinkommen: $[Betrag]\nFixkosten (Miete, Nebenkosten, Kredite, Versicherungen): $[Betrag]\nVariable Ausgaben (Lebensmittel, Freizeit, Transport, Restaurant): $[Betrag]\nAktuelle monatliche Spar- und Investitionsrate: $[Betrag]\nFinanzielle Ziele: [z. B. Immobilien-Eigenkapital, Schuldenfreiheit, Notgroschen]\n\nErstelle:\n1. 50/30/20-Aufteilung: Grundbedürfnisse ($), Wünsche ($) und Vermögensaufbau ($) mit Abweichungsanalyse\n2. Null-basiertes Budget (Zero-Based): Weise jedem Euro/Dollar eine feste Aufgabe zu, bis das Restguthaben null ist\n3. 3 sofortige Hebel: Konkrete Einsparpotenziale zur Freisetzung von 200–500 $/Monat\n4. Wöchentlicher Cashflow-Plan zur Vermeidung von Liquiditätsengpässen am Monatsende."
+        },
+        {
+          "title": "Abo-Audit & Fixkosten-Optimierung",
+          "text": "Hilf mir, meine wiederkehrenden Fixkosten, Verträge und Abonnements gründlich zu prüfen und zu senken.\n\nListe meiner monatlichen und jährlichen Fixkosten:\n[Dienste, Apps, Mobilfunk, Internet, Versicherungen, Fitnessstudio, Streaming auflisten]\n\nLiefere:\n1. Kategorisierung: Unverzichtbar, Bequem aber optional, und Überflüssig / ungenutzt\n2. Sofortige Kündigungsempfehlungen mit berechneter Jahresersparnis\n3. Verhandlungsvorlagen: Wort-für-Wort-Skripte für Verhandlungen mit Telekommunikations- und Versicherungsanbietern\n4. Optimierung durch Jahreszahlung: Verträge, bei denen eine jährliche Abrechnung 15–20 % spart\n5. Ein 10-Minuten-Prüfsystem für jedes Quartal, um schleichende Neuabos zu verhindern."
+        },
+        {
+          "title": "Notgroschen-Rechner & Finanzierungsfahrplan",
+          "text": "Ermittle die ideale Höhe für meinen Notgroschen und erstelle einen beschleunigten Ansparplan.\n\nMonatliche existenzielle Grundausgaben: $[Betrag]\nAktuell vorhandene Rücklagen: $[Betrag]\nBerufliche Sicherheit: [Hoch / Mittel / Schwankend / Selbstständig]\nUnterhaltspflichten: [Kinder oder Angehörige]\nAbsehbare Risiken (Eigenanteile, Auto, Zahnarzt, Immobilie): $[Betrag]\n\nBerechne und erstelle:\n1. Zielbetrag: Empfehlung von 3, 6, 9 oder 12 Monatsausgaben basierend auf meinem Risikoprofil\n2. Mehrstufige Aufteilung: Verteilung auf Girokonto (Sofortzugriff), Tagesgeldkonto und kurzfristige Geldmarktinstrumente\n3. Monatlicher Sparplan: Empfohlene Sparrate zum Erreichen des Ziels in 6, 12 oder 18 Monaten\n4. Nutzungsregeln: Klare Definition, was ein echter Notfall ist vs. planbare Sonderausgaben."
+        },
+        {
+          "title": "Variable Ausgaben senken & Lecks schließen",
+          "text": "Hilf mir, unbewusste Geldfresser bei den täglichen variablen Ausgaben aufzuspüren, ohne Lebensqualität einzubüßen.\n\nTypische monatliche variable Ausgaben:\n- Supermarkt & Ernährung zu Hause: $[Betrag]\n- Gastronomie, Bars & Lieferdienste: $[Betrag]\n- Shopping, Kleidung & Hobbys: $[Betrag]\n- Mobilität / Benzin / Kurzstrecken: $[Betrag]\n- Sonstiges & Spontanausgaben: $[Betrag]\n\nLiefere:\n1. High-Impact-Maßnahmen: 3 Verhaltensänderungen für sofort über 300 $ Ersparnis im Monat\n2. Substitutionsstrategie: Hochwertige, kostengünstige Alternativen für Restaurantbesuche und Freizeitgestaltung\n3. Ausgabenbremse: Ein einfaches System (z. B. separates Freizeitkonto oder Umschlagmethode)\n4. 30-Tage-Challenge zur Reduzierung impulsiver Spontankäufe."
+        }
+      ]
+    },
+    {
+      "cat": "Schuldenabbau & Tilgungsstrategien",
+      "prompts": [
+        {
+          "title": "Schuldentilgungsplan: Schneeball vs. Lawine",
+          "text": "Erstelle einen fundierten Entschuldungsplan und vergleiche die Schneeball- mit der Lawinen-Methode.\n\nAktuelle Verbindlichkeiten:\n[Jede Schuld auflisten: Name, Restsaldo ($), Zinssatz (effektiver Jahreszins %), monatliche Mindestrate ($)]\nZusätzlich verfügbare monatliche Tilgungssumme: $[Betrag]\n\nErstelle:\n1. Lawinen-Methode: Tilgung nach höchstem Zinssatz (Berechnung der Zinsersparnis und Datum der Schuldenfreiheit)\n2. Schneeball-Methode: Tilgung nach kleinstem Saldo zuerst (Berechnung der psychologischen Motivation und Meilensteine)\n3. Vergleichstabelle: Gezahlte Gesamtzinsen, Dauer in Monaten und Empfehlung abgestimmt auf mein Profil\n4. Konkreter Zahlungsplan für jeden Gläubiger von Monat 1 bis Monat 6."
+        },
+        {
+          "title": "Kreditkarten-Umschuldung & 0%-Balance-Transfer",
+          "text": "Prüfe, ob sich eine Umschuldung über eine 0%-Zins-Transferkarte oder ein Konsolidierungsdarlehen lohnt.\n\nBestehende Kreditkartenschulden:\n[Karte 1: Saldo, Zinssatz %]\n[Karte 2: Saldo, Zinssatz %]\nGeschätzte Bonität / Schufa-Score: [z. B. Gut / Mittel]\nGebühr für Balance Transfer: [meist 3 % bis 5 %]\nVerfügbares Ratenkreditangebot (falls vorhanden): [Zinssatz %, Laufzeit, Gebühren]\n\nAnalysiere:\n1. Wirtschaftlichkeitsrechnung: Einmalgebühr gegenüber der Zinsersparnis bei aktuellem Zinsniveau\n2. Tilgungsplan: Exakte Monatsrate, um den Saldo vor Ende der zinsfreien Phase (z. B. 12–18 Monate) vollständig auf 0 zu stellen\n3. Gefahren & Fallstricke: Strafzinsen bei Zahlungsverzug, Zinsanstieg nach Ablauf der Promo und Rückfallgefahr\n4. Klares Fazit: Transferkarte vs. Ratenkredit mit fester Laufzeit vs. aggressives Abzahlen im Bestand."
+        },
+        {
+          "title": "Studienkredit & Bildungsdarlehen Optimierung",
+          "text": "Analysiere meine Bildungskredite und bestimme die optimale Strategie zwischen Tilgung und Refinanzierung.\n\nDarlehen:\n[Liste: Staatlich (z. B. BAföG/KfW) oder Privat, Restsaldo, Zinssatz %, aktuelle Monatsrate]\nAktuelles Bruttojahreseinkommen: $[Betrag]\nBerufsfeld: [Öffentlicher Dienst / Freie Wirtschaft / Gemeinnützig]\nFamiliensituation: [Alleinstehend / Kinder]\n\nPrüfe:\n1. Einkommensabhängige Rückzahlung vs. Standardtilgung: Monatliche Belastung und Gesamtkosten\n2. Staatliche Teilerlasse und Förderungen: Voraussetzungen, Fristen und optimale Rückzahlungsstaffel\n3. Umschuldungschancen: Lohnt sich ein privater Ratenkredit bei Verlust staatlicher Schutzrechte?\n4. Sondertilgung vs. ETF-Sparplan: Sollte freies Kapital vorrangig in die Kredittilgung oder den Vermögensaufbau fließen?"
+        },
+        {
+          "title": "Hypotheken-Sondertilgung & Zinsersparnis",
+          "text": "Berechne den finanziellen Effekt von Sondertilgungen auf meine Baufinanzierung oder meinen Immobilienkredit.\n\nUrsprüngliche Darlehenssumme: $[Betrag]\nAktueller Restsaldo: $[Betrag]\nSollzins p. a.: [%]\nRestliche Zinsbindung / Laufzeit: [z. B. 15 Jahre / 180 Monate]\nAktuelle Monatsrate (Zins + Tilgung): $[Betrag]\nGeplante zusätzliche Sondertilgung: $[z. B. 300 $/Monat oder 5.000 $/Jahr]\n\nBerechne:\n1. Laufzeitverkürzung: Um wie viele Jahre und Monate verkürzt sich die Rückzahlung bis zur Vollentschuldung?\n2. Zinsersparnis: Kumulierte Zinsersparnis in barer Münze über die gesamte Laufzeit\n3. Garantierte Rendite vs. Opportunitätskosten: Vergleich der sicheren Zinsersparnis mit der erwarteten Rendite am Aktienmarkt (7–8 % p. a.)\n4. Hybrid-Strategie: Wie lässt sich Tilgung optimal mit Altersvorsorgeinvestitionen kombinieren?"
+        }
+      ]
+    },
+    {
+      "cat": "Sparziele & Vermögensaufbau",
+      "prompts": [
+        {
+          "title": "Sparziel-Fahrplan für Großanschaffungen",
+          "text": "Erstelle einen konkreten Sparplan für ein bedeutendes finanzielles Ziel (Eigenheim-Eigenkapital, Auto, Hochzeit oder Sabbatical).\n\nZiel: [z. B. Eigenkapital für Wohnungskauf]\nBenötigter Gesamtbetrag: $[Betrag]\nGeplanter Zeithorizont: [z. B. 24 Monate / 2 Jahre]\nBereits angespartes Startkapital: $[Betrag]\nVerfügbare monatliche Sparrate: $[Betrag]\n\nLiefere:\n1. Erforderliche Monatsrate: Exakte Berechnung unter Berücksichtigung von Zinserträgen\n2. Optimale Anlageform: Passendes, risikoarmes Anlageinstrument (Tagesgeld, Geldmarktfonds oder kurzlaufende Staatsanleihen)\n3. Beschleunigungs-Hebel: 3 konkrete Maßnahmen zur Verkürzung der Sparzeit durch Sonderzahlungen oder temporäre Einsparungen\n4. Meilenstein-Checkpoints: Soll-Vermögensstand in Monat 6, 12, 18 und 24."
+        },
+        {
+          "title": "Sinking-Funds-System für unregelmäßige Ausgaben",
+          "text": "Entwickle ein Sinking-Funds-System (Rücklagen-Töpfe), um jährliche oder unregelmäßige Rechnungen planbar abzufedern.\n\nErwartete unregelmäßige Jahresausgaben:\n- Kfz-Steuer & Versicherung: $[Jahresbetrag]\n- Instandhaltungsrücklage Wohnung: $[Jahresbetrag]\n- Weihnachtsgeschenke & Feiertage: $[Jahresbetrag]\n- Urlaub & Reisen: $[Jahresbetrag]\n- Tierarzt & Tierhaltung: $[Jahresbetrag]\n- Gesundheitskosten / Selbstbehalte: $[Jahresbetrag]\n\nErstelle:\n1. Monatliche Gesamtrücklage: Welcher Betrag muss monatlich auf das Rücklagenkonto überwiesen werden?\n2. Kontenstruktur: Praktische Organisation über Unterkonten (Spaces/Pockets) ohne Konten-Chaos\n3. Anlauf-Regel: Wie mit Rechnungen umzugehen ist, die bereits in den ersten 3 Monaten fällig werden\n4. Automatisierungsplan: Daueraufträge direkt am Tag des Gehaltseingangs."
+        },
+        {
+          "title": "Liquiditäts- & Zinsoptimierer für Barvermögen",
+          "text": "Optimiere die Rendite und Sicherheit meiner Barreserven über verschiedene risikoarme Zinsbausteine.\n\nGesamtes Barvermögen: $[Betrag]\nLiquiditätsbedarf:\n- Benötigt innerhalb von 30 Tagen: $[Betrag]\n- Benötigt in 3 bis 12 Monaten: $[Betrag]\n- Benötigt in 1 bis 3 Jahren: $[Betrag]\nSteuersatz / Freistellungsauftrag: [ausgeschöpft / offen]\n\nBewerte und strukturiere:\n1. Tagesgeldkonten: Zinskonditionen und Absicherung über gesetzliche Einlagensicherung (100.000 € / $250.000)\n2. Geldmarktfonds (z. B. Euro Short-Term Rate / €STR): Rendite, Sondervermögens-Schutz und tägliche Verfügbarkeit\n3. Kurzläufer-Staatsanleihen / Bundesanleihen: Laufzeiten und steuerliche Aspekte\n4. Festgeldtreppe: Gestaffelte Laufzeiten für verlässliche Zinserträge\n5. Konkrete Verteilungsempfehlung zur Maximierung des Zinsertrags nach Steuern."
+        },
+        {
+          "title": "Lifestyle-Inflation stoppen bei Gehaltserhöhungen",
+          "text": "Hilf mir, nach einer kürzlichen oder anstehenden Gehaltserhöhung die schleichende Lebensstil-Inflation (Lifestyle Creep) zu verhindern.\n\nBisheriges monatliches Nettoeinkommen: $[Betrag]\nNeues monatliches Nettoeinkommen: $[Betrag] (Plus: +$[Differenz]/Monat)\nBisherige Sparquote: [%]\nTypische Konsumschwächen: [wo ich dazu neige, mehr Geld auszugeben]\n\nErstelle eine feste Aufteilungsstrategie:\n1. Die 50/50-Regel: Leite 50 % des Nettomehrbetrags direkt in den Vermögensaufbau/Schuldenabbau und 50 % in bewusste Lebensqualitätssteigerung\n2. Reverse-Budgeting-Automatisierung: Dauerauftrag zum Sparplan am Tag des neuen Gehaltseingangs anpassen\n3. Bewusste Belohnungsliste: 2–3 gezielte Anschaffungen oder Erlebnisse mit hohem Glücksfaktor definieren statt unbewusster Dauerausgaben\n4. Neue Ziel-Sparquote nach Umsetzung der Gehaltserhöhung."
+        }
+      ]
+    },
+    {
+      "cat": "Geldanlage & Portfoliostrategie",
+      "prompts": [
+        {
+          "title": "Bogleheads-Weltportfolio & Asset Allocation",
+          "text": "Erstelle ein breit diversifiziertes, kostengünstiges Boglehead-Weltportfolio abgestimmt auf mein Alter und Risikoprofil.\n\nAlter: [Alter]\nJahre bis zum Ruhestand / Entnahmephase: [z. B. 20–30 Jahre]\nRisikobereitschaft: [Wachstumsorientiert / Ausgewogen / Defensiv]\nBereits investiertes Vermögen: $[Betrag]\nAktuelle Zusammensetzung: [Einzelaktien, ETFs, Krypto, Barmittel]\n\nLiefere:\n1. Empfohlene Asset Allocation: Aktienquote (Welt-ETFs nach Marktkapitalisierung) vs. Anleihequote/Sicherheitsbaustein\n2. 2- bis 3-ETF-Portfolio: Konkrete kostengünstige Welt-ETFs (TER < 0,22 %) als Kernbausteine\n3. Historischer Stresstest: Zu erwartende Drawdowns in Krisenphasen (-20 % bis -40 %) zur Vorbereitung auf emotionale Disziplin\n4. Sanfter Umschichtungsplan zur Bereinigung des Altportfolios ohne unnötige Steuerverluste."
+        },
+        {
+          "title": "Spar- & Anlage-Kaskade nach Priorität",
+          "text": "Hilf mir, die optimale Reihenfolge für meine Spar- und Investitionsbeiträge über verschiedene Konten und Förderungen festzulegen.\n\nJährliches Bruttoeinkommen: $[Betrag]\nArbeitgeberangebote: [z. B. Betriebliche Altersvorsorge / Zuschuss / Matching]\nVerfügbare Anlagekonten:\n- Steuerlich geförderte Altersvorsorge (bAV, Riester/Rürup, 401k/IRA): [Details]\n- Freies Wertpapierdepot (ETF-Sparpläne): [vorhanden]\nJährlich verfügbares Investitionsbudget: $[Betrag]\n\nStrukturiere die Prioritäten-Kaskade:\n1. Stufe 1: Arbeitgeberzuschuss / Matching voll mitnehmen (sofortige garantierte Rendite)\n2. Stufe 2: Ausnutzung von Steuerfreibeträgen und steuerlich geförderten Vehikeln\n3. Stufe 3: Langfristiger Vermögensaufbau über weltweite ETFs im kostengünstigen Privatdepot\n\nDefiniere genaue Euro-Beträge pro Stufe und begründe die steuerlichen Vorteile."
+        },
+        {
+          "title": "DCA-Sparplan vs. Einmalanlage (Lump Sum)",
+          "text": "Erstelle eine fundierte Strategie für das Investieren einer größeren verfügbaren Barsumme.\n\nEinmalig zu investierender Geldbetrag: $[z. B. 25.000 oder 100.000]\nHerkunft des Kapitals: [Erbschaft, Bonus, Unternehmens-/Immobilienverkauf oder Sparrücklage]\nAktuelle Marktsituation: [Allzeithoch / Korrektur / Hohe Volatilität]\nPsychologische Hürde: [Angst vor Einstieg am Markthöchststand]\n\nLiefere:\n1. Empirische Faktenlage: Renditevergleich zwischen Einmalanlage (Lump Sum) und schrittweisem Einstieg (Dollar-Cost-Averaging / DCA) nach Vanguard-Studien\n2. Strukturierter DCA-Zeitplan: Aufteilung in 3, 6 oder 12 monatliche Tranchen mit festen Kauftagen\n3. Beschleunigungsklausel: Tranchen bei Marktkorrekturen von 5 % oder 10 % vorziehen\n4. Zinsmitnahme: Parken der noch nicht investierten Resttranchen auf dem Tagesgeld- oder Geldmarktkonto\n5. Verbindliche Verhaltensregel gegen das Hinauszögern bei schwankenden Kursen."
+        },
+        {
+          "title": "Portfolio-Rebalancing & Drift-Kontrolle",
+          "text": "Führe mich durch ein systematisches Portfolio-Rebalancing, um meine festgelegte Risikostruktur beizubehalten.\n\nZiel-Allokation: [z. B. 70 % Welt-Aktien, 20 % Schwellenländer, 10 % Anleihen/Geldmarkt]\nAktuelle Depotaufteilung und Depotwerte:\n[Baustein 1: Aktueller Wert / Ist-%]\n[Baustein 2: Aktueller Wert / Ist-%]\n[Baustein 3: Aktueller Wert / Ist-%]\nNeu verfügbare monatliche Sparrate: $[Betrag]\n\nLiefere:\n1. Abweichungsanalyse: Welche Anlageklassen sind übergewichtet, welche untergewichtet?\n2. Steuer- und kostenschonendes Rebalancing: Wie die nächsten Sparraten so gelenkt werden, dass Abweichungen ohne Verkäufe ausgeglichen werden\n3. Selektiver Verkauf: Falls Umschichtungen nötig sind, wie Gewinne steueroptimiert realisiert oder Freibeträge genutzt werden\n4. Rebalancing-Toleranzbänder: Klare Regel (z. B. 5/25-Regel), ab welcher prozentualen Drift ein Eingriff sinnvoll ist."
+        }
+      ]
+    },
+    {
+      "cat": "Steuern & Absicherung",
+      "prompts": [
+        {
+          "title": "Jahresend-Steueroptimierung & Verlustverrechnung",
+          "text": "Erstelle eine Checkliste steuerlicher Optimierungsmaßnahmen vor dem Ende des Kalenderjahres.\n\nSteuerliche Situation: [Ledig / Zusammenveranlagung]\nGeschätztes Jahreseinkommen: $[Betrag]\nBuchverluste im Depot (nicht realisiert): $[Betrag]\nRealisierte Kapitalerträge im laufenden Jahr: $[Betrag]\nAusnutzung des Sparer-Pauschbetrags: [voll / teilweise / ungenutzt]\n\nErstelle die Jahresend-To-Dos:\n1. Verlustverrechnungstopf: Gezielter Verkauf und Wiedereinstieg bei Verlustpositionen (Tax-Loss-Harvesting) zur Verrechnung mit realisierten Gewinnen\n2. Vermeidung von Wash-Sales: Beachtung gesetzlicher Fristen und Ausweichmöglichkeiten über ähnliche ETFs\n3. Ausschöpfung von Freibeträgen und Werbungskostenpauschalen vor dem 31. Dezember\n4. Steuerliche Absetzbarkeit von Vorsorgeaufwendungen und Sonderausgaben\n5. Vorbereitung auf die Steuererklärung des Folgejahres."
+        },
+        {
+          "title": "Versicherungs-Check & Vermögensschutz-Audit",
+          "text": "Überprüfe mein Versicherungsportfolio, um existenzbedrohende Risiken wasserdicht abzusichern und Überflüssiges zu kündigen.\n\nAlter & Familiensituation: [Alter, Familienstand, unterhaltspflichtige Kinder]\nBeruf & Jahresbrutto: $[Beruf, Betrag]\nBestehende Policen:\n- Private Haftpflicht: [Deckungssumme]\n- Berufsunfähigkeit (BU): [Monatsrente, Endalter]\n- Risikolebensversicherung: [Todesfallsumme]\n- Hausrat & Rechtsschutz: [vorhanden / Details]\n\nPrüfe:\n1. Deckungslücken bei existenzbedrohenden Risiken: Haftpflicht-Deckung (mind. 20–50 Mio. €) und BU-Höhe (mind. 60–80 % des Nettoeinkommens)\n2. Notwendigkeit einer Risikolebensversicherung zur Absicherung von Familie und Immobilienkrediten\n3. Klausel-Check: Verzicht auf abstrakte Verweisung in der Berufsunfähigkeitsversicherung\n4. Unnötige Policen: Identifizierung von Kleinstversicherungen mit schlechtem Preis-Leistungs-Verhältnis."
+        },
+        {
+          "title": "Nachlassplanung & Vorsorgedokumente-Checkliste",
+          "text": "Hilf mir, die grundlegenden Dokumente für Nachlass, Notfallvorsorge und Begünstigten-Bestimmungen zu ordnen.\n\nFamiliensituation: [Minderjährige Kinder, Ehepartner, Alleinstehend]\nWichtigste Vermögenswerte: [Immobilien, Wertpapierdepots, Konten, Unternehmensanteile]\nWohnsitz / anwendbares Erbrecht: [Deutschland / Österreich / Schweiz]\n\nErstelle eine Notfall- und Nachlass-Checkliste:\n1. Gesetzliche Erbfolge vs. Testament: Wann ein handschriftliches oder notarielles Testament zwingend erforderlich ist\n2. Die 3 unverzichtbaren Vorsorgedokumente: Vorsorgevollmacht, Patientenverfügung und Betreuungsverfügung\n3. Begünstigte bei Lebensversicherungen und Verträgen zugunsten Dritter\n4. Digitaler Notfallkoffer: Strukturierte Übersicht für Passwörter, Bankzugänge und 2-Faktor-Wiederherstellungsschlüssel\n5. Leitfaden für Angehörige für die ersten 72 Stunden im Ernstfall."
+        },
+        {
+          "title": "Bonitätsverbesserung & Schufa-Score Optimierung",
+          "text": "Erstelle einen konkreten Aktionsplan zur Verbesserung meiner Bonität und meines Kredit-Scores.\n\nAktuelle Situation:\n- Anzahl der Kreditkarten und Girokonten: [Anzahl]\n- Bestehende Ratenkredite / Leasing: [Beträge]\n- Kreditauslastung (Verhältnis Saldo zu Verfügungsrahmen): [%]\n- Negative Einträge oder Mahnungen in der Vergangenheit: [Keine / Vorhanden]\n\nLiefere:\n1. Schufa-Selbstauskunft: Wie man eine kostenlose Datenkopie nach DSGVO anfordert und Falscheinträge sofort löschen lässt\n2. Kreditauslastungsquote senken: Strategie, den genutzten Verfügungsrahmen unter 10–20 % zu halten\n3. Bereinigung überflüssiger Konten: Kündigung ungenutzter Kreditkarten oder alter Ratenkredite ohne Score-Schaden\n4. Melde- und Zahlungsdisziplin: Optimierung von Rechnungszyklen und Lastschriften\n5. Realistischer Zeitrahmen für eine spürbare Score-Verbesserung (90 bis 180 Tage)."
+        }
+      ]
+    },
+    {
+      "cat": "Karriere & Finanzielle Freiheit (FI/RE)",
+      "prompts": [
+        {
+          "title": "Gehaltsverhandlung & Gesamtvergütungs-Strategie",
+          "text": "Entwickle eine Verhandlungsstrategie und Wort-für-Wort-Skripte für mein nächstes Jahresgespräch oder ein Stellenangebot.\n\nPosition & Erfahrungsstufe: [Position, Berufsjahre]\nAktuelles Gehalt bzw. Einstiegsangebot: $[Betrag]\nMarktübliche Gehaltsbänder der Branche: [z. B. 65k–80k]\nMessbare Erfolge und Mehrwert im letzten Jahr: [Projekte, Umsatzsteigerung, Prozessverbesserungen]\nWeitere Vergütungsbestandteile: [Bonus, Aktienoptionen, Homeoffice-Tage, Weiterbildungsbudget]\n\nErstelle:\n1. Argumentationslinie & Ankerzahl: Strategisch gewählte Forderung mit starker Leistungsbegründung\n2. Wort-für-Wort-Verhandlungsskripte: Professionelle, selbstbewusste Formulierungen ohne Konfrontation\n3. Verhandlung von Nebenleistungen: Mehr Urlaubstage, Mobilitätszuschuss oder vorzeitiges Review nach 6 Monaten\n4. Einwandbehandlung: Souveräne Antworten auf 'Aktuell gibt das Budget leider keine Erhöhung her'."
+        },
+        {
+          "title": "Nebengewerbe & Side-Business Wirtschaftlichkeit",
+          "text": "Bewerte die Wirtschaftlichkeit, den effektiven Stundensatz und den bürokratischen Aufwand einer Nebentätigkeit.\n\nGeschäftsidee für das Nebengewerbe: [Dienstleistung, Freelancing, digitales Produkt]\nVerfügbare wöchentliche Arbeitszeit: [z. B. 8–10 Stunden]\nGeplante Preise / Honorare: $[Preis pro Einheit oder Stundensatz]\nLaufende und initiale Kosten: $[Tools, Software, Webauftritt, Lizenzen]\n\nAnalysiere:\n1. Echter Netto-Stundensatz: Einnahmen abzüglich Betriebsausgaben und persönlicher Grenzsteuersatz geteilt durch die Arbeitsstunden\n2. Break-Even-Point: Wie viele Kunden oder Verkäufe pro Monat nötig sind, um Fixkosten zu decken\n3. Steuerliche und gewerberechtliche Grundlagen (Kleinunternehmerregelung, Gewerbeanmeldung, Arbeitgeber-Genehmigung)\n4. Opportunitätsanalyse: Beschleunigt das Nebengewerbe die finanzielle Freiheit oder behindert es den Aufstieg im Hauptberuf?"
+        },
+        {
+          "title": "Mitarbeiter-Benefits & Firmenaktien optimieren",
+          "text": "Hilf mir, die profitabelsten Zusatzleistungen und Mitarbeiterbeteiligungsprogramme meines Arbeitgebers auszuwählen.\n\nVerfügbare Benefits im Unternehmen:\n[Mitarbeiteraktienkaufplan (ESPP), Zuschuss Altersvorsorge, Jobrad, Essensgutscheine, Fahrtkostenzuschuss, Kranken-Zusatzversicherung]\nPersönliche Situation: [Steuerklasse, Pendelweg]\n\nLiefere:\n1. ESPP-Analyse: Lohnt sich das Mitarbeiteraktienprogramm bei angebotenem Discount (z. B. 15 %) und wann sollte verkauft werden?\n2. Nettolohnoptimierung: Welche Sachbezüge und Gehaltsextras steuer- und sozialabgabenfrei bleiben\n3. Schlechte Benefits aussortieren: Angebote mit hohem Verwaltungsaufwand oder zweifelhaftem Nutzen\n4. Optimale Benefit-Kombination zur Maximierung des verfügbaren Netto-Jahreseinkommens."
+        },
+        {
+          "title": "FI/RE-Zielzahl & Coast-FI Rechner",
+          "text": "Berechne meine persönliche Zielzahl für Finanzielle Freiheit / Vorzeitigen Ruhestand (FI/RE) und meinen Coast-FI-Meilenstein.\n\nAktuelles Alter: [Alter]\nBereits investiertes Vermögen: $[Betrag]\nErwartete jährliche Lebenshaltungskosten im Ruhestand: $[Jahresausgaben]\nJährliche Spar- und Investitionsleistung: $[Betrag/Jahr]\nAngenommene sichere Entnahmerate (Safe Withdrawal Rate): [3,5 % oder 4,0 %]\nErwartete reale Rendite nach Inflation: [z. B. 5 % bis 6 %]\n\nBerechne und projiziere:\n1. FI/RE-Zielvermögen: (Jahresausgaben × 25 bzw. 28,5)\n2. Erwartete Jahre bis zur vollen finanziellen Unabhängigkeit bei aktuellem Spartempo\n3. Coast-FI-Status: Hat mein heutiges Portfolio bereits die Schwelle erreicht, um bis zum 65. Lebensjahr ohne weitere Einzahlungen zum Zielwert heranzuwachsen?\n4. Sparquoten-Hebel: Um wie viele Jahre verkürzt eine Erhöhung der Sparquote um 5 % oder 10 % die Arbeitsphase?"
+        }
+      ]
+    }
   ]
 };

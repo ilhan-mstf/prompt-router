@@ -9,6 +9,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { VALID_LIBS } from '../js/lib-locales.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -68,10 +69,8 @@ if (indexHtml.includes('<ul class="providers" id="providers" aria-labelledby="lb
 fs.writeFileSync(indexPath, indexHtml, 'utf8');
 console.log('✓ index.html pre-rendered');
 
-// 2. Update all 11 library files
-const libs = ['dev', 'writing', 'marketing', 'job', 'startup', 'data', 'design', 'student', 'productivity', 'legal', 'sales'];
-
-for (const lib of libs) {
+// 2. Update all library files
+for (const lib of VALID_LIBS) {
   const filePath = path.join(ROOT, `${lib}.html`);
   let html = fs.readFileSync(filePath, 'utf8');
 

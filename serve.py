@@ -6,7 +6,7 @@ import re
 
 PORT = int(os.environ.get('PORT', sys.argv[1] if len(sys.argv) > 1 else 8088))
 NON_EN_LANGS = {'es', 'it', 'pt', 'fr', 'de', 'tr'}
-VALID_LIBS = {'dev', 'writing', 'marketing', 'job', 'startup', 'data', 'design', 'student', 'productivity', 'legal', 'sales'}
+VALID_LIBS = {'dev', 'writing', 'marketing', 'job', 'startup', 'data', 'design', 'student', 'productivity', 'legal', 'sales', 'stocks', 'finance'}
 
 class CleanURLHandler(http.server.SimpleHTTPRequestHandler):
     def normalize_clean_path(self):

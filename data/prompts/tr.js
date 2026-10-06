@@ -1427,5 +1427,261 @@ export default {
         }
       ]
     }
+  ],
+  "stocks": [
+    {
+      "cat": "Temel Analiz",
+      "prompts": [
+        {
+          "title": "10-K / 10-Q Finansal Rapor Derinlemesine İnceleme",
+          "text": "Bu şirketin en son açıkladığı 10-K yıllık veya 10-Q çeyreklik finansal raporunun kapsamlı bir temel analizini yapın.\n\nŞirket: [Hisse Kodu (Ticker) / Şirket Adı]\nDönem: [örn. 2025 Yıllık 10-K veya 2026 2. Çeyrek 10-Q]\nTemel Finansallar: [Gelir, Brüt Kâr Marjı, Net Kâr, Serbest Nakit Akışı (FCF)]\n\nAnaliz edin ve yapılandırın:\n1. Gelir büyümesinin itici güçleri: Organik büyüme vs. satın almalar, ürün segmenti ve coğrafi dağılım\n2. Kâr marjı eğilimleri: Son 3–5 yılda brüt, faaliyet (faiz ve vergi öncesi) ve net kâr marjlarındaki değişim\n3. Bilanço sağlığı: Nakit rezervleri vs. toplam borç, borç vade dağılımı ve net işletme sermayesi\n4. Nakit akışı kalitesi: FCF ile Net Kâr karşılaştırması (hisse bazlı tazminat / SBC kaynaklı sapmalar)\n5. Temel risk faktörleri: Madde 1A'daki (Item 1A) en kritik 3 operasyonel veya regülasyon riski\n\nYönetimin bir sonraki bilanço telekonferansında yanıtlaması gereken 3 kritik soru ile sonlandırın."
+        },
+        {
+          "title": "Ekonomik Hendek (Moat) ve Rekabet Gücü Denetimi",
+          "text": "Morningstar ve Porter'ın 5 Güç modelini uygulayarak bu şirketin ekonomik hendeğini (Moat) ve sürdürülebilir rekabet avantajını değerlendirin.\n\nŞirket: [Ad / Ticker]\nSektör: [örn. Bulut Altyapısı, Yarı İletken, Kurumsal B2B SaaS]\nBaşlıca rakipler: [2–4 rakip belirtin]\n\nHer hendek kaynağını ayrıntılı inceleyin:\n1. Ağ etkileri (Network effects): Kullanıcı sayısı arttıkça platformun değeri katlanıyor mu?\n2. Değiştirme maliyetleri (Switching costs): Müşterilerin rakip bir çözüme geçmesi ne kadar maliyetli ve karmaşık?\n3. Maliyet avantajları: Ölçek ekonomisi, patentli süreçler veya ayrıcalıklı hammadde erişimi\n4. Maddi olmayan duran varlıklar: Patentler, regülasyon lisansları veya marka fiyatlama gücü\n5. Verimli ölçek: Niş pazar yeni rakiplerin girişini engelleyecek kadar korunaklı mı?\n\nHendek Değerlendirmesi: Yok / Dar / Geniş gerekçesiyle birlikte ve önümüzdeki 10 yılda bu hendeği aşındırabilecek 1 numaralı tehdit."
+        },
+        {
+          "title": "Sermaye Tahsisi Geçmişi ve ROIC Analizi",
+          "text": "Yönetimin sermaye tahsisi geçmişini ve Yatırılan Sermaye Getirisini (ROIC) analiz edin.\n\nŞirket: [Ad / Ticker]\nSon 3–5 yıllık veriler:\n- ROIC / ROCE: [rakamlar veya tahmin]\n- WACC (Ağırlıklı Ortalama Sermaye Maliyeti): [tahmini oran]\n- Sermaye Harcamaları (CapEx): [büyüme vs. bakım/idame harcaması]\n- Satın alma (M&A) geçmişi: [öne çıkan satın almalar]\n- Hisse geri alımları ve temettüler: [harcanan tutarlar]\n\nDeğerlendirin:\n1. Değer yaratımı: ROIC sürdürülebilir şekilde WACC'ın üzerinde mi? Aradaki farkı ne besliyor?\n2. Organik yeniden yatırım: Şirket bünyesinde tutulan kârlar yüksek marjinal getiri oranlarıyla bileşik getiri sağlıyor mu?\n3. Satın alma disiplini: Geçmiş satın almalar sinerji mi yarattı yoksa şerefiye (goodwill) değer düşüklüğüne mi yol açtı?\n4. Hissedar getirisi: Hisse geri alımları hisse intrinsic değerinin altındayken mi yapılıyor yoksa sadece hisse sulanmasını mı örtbas ediyor?\n5. Sermaye tahsisi notu (A'dan F'ye) ve gerekçeli argümanlar."
+        },
+        {
+          "title": "İşletme Sermayesi ve Nakit Dönüşüm Süresi",
+          "text": "Bu şirketin işletme sermayesi verimliliğini ve nakit dönüşüm süresini (Cash Conversion Cycle) denetleyin.\n\nŞirket: [Ad / Ticker]\nGöstergeler:\n- Alacak tahsilat süresi (DSO): [gün]\n- Stok tutma süresi (DIO): [gün]\n- Borç ödeme süresi (DPO): [gün]\n- Serbest Nakit Akışı dönüşüm oranı (EBITDA veya Net Kâr yüzdesi): [%]\n\nİnceleyin:\n1. Nakit Dönüşüm Süresi (CCC = DSO + DIO - DPO): Son 3 yıldaki eğilimi hesaplayın\n2. İşletme sermayesi kalitesi: Alacaklar satışlardan daha mı hızlı büyüyor? Stoklarda sağlıksız birikme var mı?\n3. Tedarikçi pazarlık gücü: DPO'nun uzaması gerçek bir güçten mi yoksa nakit sıkışıklığından mı kaynaklanıyor?\n4. Nakit yakımı vs. üretimi: Şirket büyüdükçe işletme sermayesi nakit yutuyor mu yoksa nakit mi açığa çıkarıyor?\n5. Sektör kıyası: Bu metrikleri 2 doğrudan rakibin verileriyle karşılaştırın."
+        }
+      ]
+    },
+    {
+      "cat": "Değerleme ve Finansal Modelleme",
+      "prompts": [
+        {
+          "title": "İNA (DCF) Değerleme Modeli Varsayım Oluşturucu",
+          "text": "Bu hisse için 5 yıllık İndirgenmiş Nakit Akımı (DCF / İNA) modeline yönelik savunulabilir ve gerçekçi varsayımlar oluşturmama yardım edin.\n\nŞirket: [Ad / Ticker]\nMevcut hisse fiyatı: $[Fiyat]\nMevcut yıllık gelir: $[Gelir]\nSerbest Nakit Akışı (FCF): $[FCF]\nSektör: [Sektör]\n\n3 senaryolu bir matris tasarlayın (Kötümser / Temel / İyimser):\n1. Gelir Bileşik Yıllık Büyüme Oranı (1–5. Yıllar): Toplam adreslenebilir pazar (TAM) ve pazar payına dayalı gerekçeler\n2. Uç dönem (Terminal) FCF Marjı: Faaliyet kaldıracı ve olgunluk dönemi CapEx gereksinimleri\n3. İndirgeme oranı (WACC): Beta, özkaynak maliyeti ve vergi sonrası borçlanma maliyeti\n4. Uç büyüme oranı (g): Uzun vadeli enflasyon/GSYİH büyüme oranıyla uyumlu (%2–3)\n5. Firma Değerinden (EV) Özkaynak Değerine köprü: Net borç, azınlık payları ve seyreltilmiş hisse adedi ayarlaması\n\nHer senaryo için hisse başına ima edilen hedef fiyatı hesaplayın ve modele en çok etki eden değişkeni belirleyin."
+        },
+        {
+          "title": "Çarpan Analizi ve Sektörel Emsal Değerleme",
+          "text": "Bu şirketi en yakın sektör emsalleriyle karşılaştırarak göreceli çarpan analizi gerçekleştirin.\n\nHedef Şirket: [Ticker]\nEmsal Rakipler: [Rakip 1, Rakip 2, Rakip 3, Rakip 4]\nMetrikler:\n- Firma Değeri / Gelecek 12 Aylık Satışlar (EV/NTM Sales): [Hedef vs. Emsaller]\n- EV / Gelecek 12 Aylık FAVÖK (EV/NTM EBITDA): [Hedef vs. Emsaller]\n- Fiyat/Kazanç (F/K - Forward P/E): [Hedef vs. Emsaller]\n- PEG Oranı: [Hedef vs. Emsaller]\n- Rule of 40 / Büyüme Skoru: [Gelir Büyümesi + FCF Marjı]\n\nSağlayın:\n1. Değerleme matrisi: Tüm çarpanların yer aldığı karşılaştırmalı tablo\n2. Prim veya İskonto: Hisse emsallerine kıyasla primli mi yoksa iskontolu mu işlem görüyor? Büyüme veya kârlılık bunu haklı çıkarıyor mu?\n3. Normalleşmiş çarpan: Şirket olgun bir büyüme profiline ulaştığında hangi çarpandan işlem görmelidir?\n4. Sektör medyanına dayalı hedef fiyat aralığı."
+        },
+        {
+          "title": "Ters İNA (Reverse DCF): Piyasa Beklenti Testi",
+          "text": "Mevcut hisse fiyatının hangi büyüme ve kârlılık oranlarını fiyatladığını görmek için Ters İNA (Reverse DCF) çalışması yapın.\n\nŞirket: [Ticker]\nMevcut Piyasa Değeri / Firma Değeri: $[Tutar]\nMevcut hisse fiyatı: $[Fiyat]\nYıllık Serbest Nakit Akışı: $[FCF]\nVarsayılan WACC: [örn. %9 veya %10]\nVarsayılan terminal büyüme: [örn. %2,5]\n\nBelirleyin:\n1. İma edilen FCF büyümesi: Bugünkü hisse fiyatını haklı çıkarmak için önümüzdeki 5–10 yılda yıllık bileşik yüzde kaç FCF büyümesi gerekiyor?\n2. Operasyonel karşılığı: Bu FCF seviyesi için gelir büyümesinde ve kâr marjlarında nasıl bir sıçrama şart?\n3. Pazar hacmi (TAM) ile gerçeklik kontrolü: Şirketin ulaşması gereken pazar payı sektör ölçeğinde mantıklı mı?\n4. Asimetrik risk/getiri kararı: Mevcut fiyat bir güvenlik marjı (Margin of Safety) sunuyor mu yoksa kusursuz bir başarıyı mı fiyatlıyor?"
+        },
+        {
+          "title": "Temettü Güvenliği ve Nakit Akışı Karşılama Oranı",
+          "text": "Bu şirketin temettü dağıtım güvenliğini, artış potansiyelini ve nakit akışı karşılama gücünü test edin.\n\nŞirket: [Ad / Ticker]\nMevcut temettü verimi: [%]\nHisse başına yıllık brüt temettü: $[Tutar]\nHisse başına Serbest Nakit Akışı: $[Tutar]\nHisse başına kâr (HBK / EPS): $[Tutar]\nNet Borç / FAVÖK oranı: [Oran]\n\nİnceleyin:\n1. FCF bazlı temettü dağıtım oranı: Dağıtılan temettünün Serbest Nakit Akışına oranı (%60–70 kritik eşiğinin altında mı?)\n2. Muhasebe kârı vs. Gerçek nakit: Temettü şirketin operasyonel nakit üretiminden mi yoksa yeni borçlanmayla mı ödeniyor?\n3. Borçluluk ve vade baskısı: Bir resesyon anında borç geri ödemeleri temettüyü tehlikeye atar mı?\n4. Temettü büyüme geçmişi: 3, 5 ve 10 yıllık bileşik temettü artış oranı (CAGR)\n5. Stres testi: Satışlar %15 düşer ve marjlar 300 baz puan daralırsa temettü korunabilir mi?\n\nDeğerlendirme: Güvenli / Kırılgan / Kesinti Riski Yüksek (dikkat edilecek erken uyarı sinyalleriyle)."
+        }
+      ]
+    },
+    {
+      "cat": "Bilanço ve Konferans Analizi",
+      "prompts": [
+        {
+          "title": "Bilanço Telekonferansı ve Soru-Cevap Özeti",
+          "text": "Şirketin en son bilanço telekonferansı (Earnings Call) transkriptini veya özetini analiz ederek asıl kritik detayları ayrıştırın.\n\nŞirket: [Ad / Ticker]\nÇeyrek: [örn. 2025 4. Çeyrek / 2026 1. Çeyrek]\nTranskript metni veya öne çıkan notlar:\n[CEO/CFO açıklamalarını ve analist soru-cevaplarını buraya yapıştırın]\n\nÇıkarın:\n1. Yönetimin ana mesajları: Sunumda hangi başlıklar ve başarılar ön plana çıkarıldı?\n2. Soru-cevap bölümündeki gerilim noktaları: Analistler özellikle hangi konularda ısrarcı ve sorgulayıcı oldu?\n3. Kaçamak veya savunmacı yanıtlar: Hangi konularda net rakam verilmekten kaçınıldı?\n4. Satır arası operasyonel ipuçları: Satış döngülerinde yavaşlama, tedarik sıkıntısı veya marj baskısına dair erken sinyaller var mı?\n5. Temel analiz odaklı yatırımcılar için 3 cümlelik net özet."
+        },
+        {
+          "title": "Şirket Beklentisi (Guidance) vs. Analist Konsensüsü",
+          "text": "Şirket yönetiminin açıkladığı yeni çeyreklik/yıllık beklentileri (guidance) Wall Street konsensüs tahminleriyle karşılaştırın.\n\nŞirket: [Ticker]\nTahmin dönemi: [örn. 2026 2. Çeyrek / 2026 Tüm Yıl]\nYönetimin açıkladığı yeni beklentiler:\n- Gelir: [Aralık]\n- Faaliyet Kârı / FAVÖK: [Aralık]\n- Hisse Başına Kâr (EPS): [Aralık]\nÖnceki piyasa konsensüsü:\n- Beklenen Gelir: [Konsensüs]\n- Beklenen EPS: [Konsensüs]\n\nSağlayın:\n1. Beklenti karşılama özeti (Beat / Meet / Miss): Hem açıklanan çeyrekte hem de gelecek beklentilerinde yüzdesel fark\n2. Projeksiyonun kalitesi: Yıl sonu hedefi dengeli bir çeyreklik seyre mi yoksa yılın sonuna ertelenmiş gerçek dışı bir sıçramaya mı (hokey sopası etkisi) dayanıyor?\n3. Operasyonel kaldıraç testi: Gelir beklentisi yükselirken kâr beklentisi düşüyor mu (marj daralması)?\n4. Aracı kurumların hedef fiyat revizyonlarının ne yönde olması bekleniyor?"
+        },
+        {
+          "title": "Tarihsel Bilanço Sürprizleri ve Fiyat Tepkisi",
+          "text": "Bu hissenin geçmiş bilanço dönemlerindeki kâr/gelir sürprizlerini ve bilanço sonrası hisse fiyatı oynaklığını inceleyin.\n\nŞirket: [Ticker]\nSon 4–8 çeyreklik veriler:\n- HBK (EPS) Sürprizleri (% fark): [çeyrekleri listeleyin]\n- Gelir Sürprizleri (% fark): [çeyrekleri listeleyin]\n- Bilanço ertesi ortalama hisse fiyatı hareketi (%): [örn. +/-%6]\n- Yaklaşan bilanço için opsiyon piyasasının ima ettiği hareket: [biliniyorsa]\n\nAnaliz edin:\n1. Yönetimin güvenilirlik profili: Yönetim piyasaya sistematik olarak temkinli tahminler verip beklentileri aşma eğiliminde mi?\n2. Fiyat tepkisindeki asimetri: Beklentilerin az da olsa altında kalındığında hissede aşırı sert düşüşler yaşanıyor mu?\n3. Sürprizin muhasebe niteliği: Beklenti üstü performans ana faaliyetlerden mi yoksa tek seferlik vergi/kur gelirlerinden mi geldi?\n4. Risk yönetimi: Yaklaşan bilanço öncesi pozisyon büyüklüğü veya korunma (hedge) stratejisi nasıl olmalı?"
+        },
+        {
+          "title": "Yönetim Dili ve Ton Değişimlerinin Tespiti",
+          "text": "Yönetimin birbirini izleyen son iki çeyrekteki iletişim dilini ve tonunu karşılaştırarak duygu değişimlerini yakalayın.\n\nŞirket: [Ticker]\nÖnceki Çeyrek (Q1) Açıklamaları:\n[alıntıları yapıştırın]\nGüncel Çeyrek (Q2) Açıklamaları:\n[alıntıları yapıştırın]\n\nTespit edin:\n1. Ton değişimi: Yönetim önceki döneme kıyasla daha mı temkinli, savunmacı yoksa belirgin şekilde daha mı özgüvenli?\n2. Kelime tercihleri: 'Zorluklar', 'belirsizlik', 'temkinli duruş' kelimelerinde artış var mı; yoksa 'hızlanma', 'güçlü talep' gibi ifadeler mi hakim?\n3. Bahsedilmeyen metrikler: Önceki çeyreklerde sürekli vurgulanan bir gösterge (net elde tutma oranı, sipariş defteri vb.) bu çeyrekte sessizce geçiştirildi mi?\n4. Sermaye politikası: Hisse geri alımı, borç azaltma veya yatırım bütçesi konusunda bir söylem değişikliği var mı?\n5. Net duygu skoru: Özet niteliğinde yükseliş (bullish), nötr veya düşüş (bearish) kanaati."
+        }
+      ]
+    },
+    {
+      "cat": "Teknik Analiz ve Risk Yönetimi",
+      "prompts": [
+        {
+          "title": "Çoklu Zaman Dilimi Trendi ve Kritik Fiyat Seviyeleri",
+          "text": "Hissenin grafik yapısını, trend hizalamasını, kritik destek ve direnç seviyelerini birden fazla zaman diliminde haritalandırın.\n\nTicker: [Ticker]\nGüncel Fiyat: $[Fiyat]\nHaftalık Grafik: [52 haftalık en yüksek/en düşük, 200 haftalık ortalama, ana makro trend]\nGünlük Grafik: [50 ve 200 günlük hareketli ortalamalar, güncel formasyon: flama, fincan kulp, yatay konsolidasyon]\nGöstergeler: [RSI, MACD, hacim eğilimi]\n\nÇıkarın:\n1. Ana trend: Haftalık ve günlük periyotta yükseliş, düşüş veya yatay konsolidasyon\n2. Direnç seviyeleri: Satış baskısının yoğunlaşması muhtemel 3 kritik seviye\n3. Destek seviyeleri: Güçlü alıcıların devreye girmesi beklenen 3 teknik destek noktası\n4. Hareketli ortalama analizi: SMA 20/50/200 durumu (Altın Kesişme / Golden Cross, Ölüm Kesişmesi / Death Cross, aşırı uzaklaşma)\n5. İşlem planı: Risk-getiri dengesi optimize edilmiş ideal giriş bölgesi, stop-loss seviyesi ve ilk hedef fiyat."
+        },
+        {
+          "title": "Risk-Getiri Oranı ve Pozisyon Büyüklüğü Hesaplayıcı",
+          "text": "Bu hisse senedi yatırımı için asimetrik risk-getiri oranını ve sermaye koruma odaklı ideal pozisyon büyüklüğünü hesaplayın.\n\nToplam Portföy Büyüklüğü: $[örn. 100.000]\nİşlem başına göze alınan azami risk tutarı: [örn. portföyün %1'i = 1.000 $]\nPlanlanan Alış (Giriş) Fiyatı: $[Giriş Fiyatı]\nTeknik veya Temel Stop-Loss Fiyatı: $[Stop Fiyatı]\n1. Hedef Fiyat (Temkinli): $[Hedef 1]\n2. Hedef Fiyat (Yüksek Potansiyel): $[Hedef 2]\n\nHesaplayın ve tanımlayın:\n1. Hisse başına birim risk: Giriş Fiyatı - Stop-Loss ($ ve %)\n2. Pozisyon büyüklüğü: Stop seviyesi vurulduğunda göze alınan azami risk tutarını aşmayacak net hisse adedi\n3. Toplam sermaye tahsisi: Alış için gereken toplam para ve portföydeki yüzdesel payı\n4. Risk/Getiri Oranı (R:R): 1. ve 2. Hedef için R:R oranları (3:1'in altındaysa risk uyarısı yapın)\n5. Çıkış disiplini: Kademeli kâr alma seviyeleri ve stopu başa baş noktasına (breakeven) çekme kuralı."
+        },
+        {
+          "title": "Açığa Satış Oranı ve Kısa Pozisyon Sıkışması (Short Squeeze)",
+          "text": "Bu hissedeki açığa satış (short) baskısını, hisse ödünç alma maliyetlerini ve olası bir 'short squeeze' ihtimalini denetleyin.\n\nŞirket: [Ticker]\nAçığa satış oranı (Halka açık kısmın yüzdesi - Short Interest %): [%]\nDays to Cover (Pozisyonların kapanması için gereken gün sayısı): [Gün]\nHisse ödünç alma faizi (Borrow Fee Rate): [%]\nKurumsal yatırımcı sahiplik oranı (%): [%]\nBireysel yatırımcı ilgisi ve sosyal medya algısı: [Yüksek / Orta / Düşük]\n\nDeğerlendirin:\n1. Squeeze kırılganlığı (1–10 arası puan): Halka açık lot sayısı, ödünç maliyeti ve günlük işlem hacmine göre\n2. Açığa satışçıların tezi: Kurumsal fonlar neden bu hissede düşüşe oynuyor? Temel iddiaları ne?\n3. Olası yukarı yönlü tetikleyici: Short pozisyon sahiplerini panikle alıma zorlayacak olay (bilanço, anlaşma, aktivist ortak vb.) ne olabilir?\n4. Ödünç hisse likiditesi: Piyasada açığa satılacak hisse rezervi tükeniyor mu?\n5. Risk uyarısı: Hem uzun (long) hem kısa (short) yönlü pozisyonlar için asimetrik riskler."
+        },
+        {
+          "title": "Hacim Profili ve Kurumsal Akümülasyon Analizi",
+          "text": "Kurumsal 'akıllı paranın' bu hissede toplama (akümülasyon) mı yoksa elden çıkarma (dağıtım) mı yaptığını anlamak için işlem hacmini analiz edin.\n\nHisse: [Ticker]\nSon dönem fiyat hareketi: [örn. bilanço boşluğu sonrası 140 $ ile 150 $ arasında yatay konsolidasyon]\nHacim dinamikleri:\n- Yükseliş günleri vs. Düşüş günleri hacmi: [örn. yeşil günlerde yüksek hacim, geri çekilmelerde hacim kuruması]\n- Blok işlemler / Karanlık havuz (Dark Pool) hareketleri: [biliniyorsa]\n- Denge İşlem Hacmi (On-Balance Volume - OBV) göstergesi: [yükselen, yatay, düşen]\n\nTest edin:\n1. Toplama vs. Dağıtım: Kurumsal alıcılar kritik destek seviyelerinde arzı emiyor mu?\n2. Geri çekilmelerde hacim kuruması: Desteklere doğru düzeltmelerde işlem hacmi belirgin şekilde daralıyor mu?\n3. Fiyat Kontrol Noktası (Point of Control - POC): İncelenen periyotta en yoğun hacmin gerçekleştiği fiyat seviyesi\n4. Hacim tükeniş sinyalleri: Alış veya satış çılgınlığına (climax) dair işaretler var mı?\n5. Sonuç: Hacim verisi sağlıklı bir yükseliş trendini teyit ediyor mu?"
+        }
+      ]
+    },
+    {
+      "cat": "Makroekonomi ve Sektörel Döngüler",
+      "prompts": [
+        {
+          "title": "Sektörel Döngüsellik ve Makro Hassasiyet Testi",
+          "text": "Bu şirketin ekonomik döngünün farklı aşamalarına ve makroekonomik faiz/enflasyon ortamına duyarlılığını test edin.\n\nŞirket / Sektör: [örn. Endüstriyel Otomasyon, Lüks Tüketim, Bölgesel Bankacılık]\nMevcut makroekonomik zemin:\n- Faiz oranları: [yükseliyor / sabit / düşüşte]\n- Enflasyon ve ücret artışları: [yüksek / yavaşlıyor]\n- Tüketici güveni ve kredi temerrütleri: [güçlü / zayıflıyor]\n- İmalat veya Hizmet PMI: [büyüme >50 / daralma <50]\n\nAnaliz edin:\n1. Döngüsel vs. Yapısal büyüme: Son dönemdeki büyümenin ne kadarı makro rüzgardan ne kadarı teknolojik trendden kaynaklandı?\n2. Faiz duyarlılığı: Artan finansman maliyetlerinin şirketin borçlarına ve müşterilerin satın alma kararlarına etkisi\n3. Fiyatlama gücü: Şirket maliyet artışlarını satış hacmini kaybetmeden nihai fiyatlara yansıtabiliyor mu?\n4. Resesyon direnci: Şirketin gelirleri ve marjları 2008 ve 2020 krizlerinde nasıl bir performans sergiledi?\n5. Döngü konumu: Sektör şu an döngü zirvesine mi yoksa döngü tabanına mı daha yakın?"
+        },
+        {
+          "title": "Müşteri Yoğunlaşması ve Tedarik Zinciri Darboğazı",
+          "text": "Bu şirketin büyük müşterilere olan bağımlılığını ve tedarik zincirindeki jeopolitik riskleri denetleyin.\n\nŞirket: [Ad / Ticker]\nMüşteri dağılımı:\n- En büyük tek müşterinin toplam gelire oranı: [örn. Müşteri A cironun %18'ini oluşturuyor]\n- İlk 5 veya 10 müşterinin kümülatif payı: [10-K raporuna göre]\nTedarik zinciri ve üretim:\n- Kritik tedarikçiler / dökümhaneler: [örn. TSMC, Foxconn, alternatifi olmayan tek kaynak tedarikçiler]\n- Üretimin coğrafi yoğunlaşması: [örn. üretimin %70'i Tayvan/Asya'da]\n\nSağlayın:\n1. Yoğunlaşma risk skoru: Yüksek / Orta / Düşük ve ana müşterinin siparişi kesmesi durumunda ciro kaybı boyutu\n2. Tek Başarısızlık Noktaları (Single Points of Failure): İkamesi olmayan hayati bileşen bağımlılığı\n3. Gümrük tarifeleri, ticaret savaşları ve bölgesel gerilimlere maruziyet\n4. Riski dağıtma adımları: Yönetim tedarikçilerini ve fabrika ağını çeşitlendirmek için ne yapıyor ve bunun yatırım maliyeti (CapEx) nedir?"
+        },
+        {
+          "title": "Regülasyon Riski ve Antitröst İncelemelerinin Etkisi",
+          "text": "Bu hisse senedi üzerinde baskı yaratan antitröst soruşturmalarını, rekabet davalarını ve yasal düzenleme değişikliklerini analiz edin.\n\nŞirket: [Ticker / Sektör]\nİlgili kamu kurumları: [örn. Avrupa Komisyonu, FTC, DOJ, SEC, Rekabet Kurumu]\nYürütülen süreçler: [açılan davalar, gümrük düzenlemeleri veya tekel soruşturmalarını açıklayın]\n\nDeğerlendirin:\n1. En kötü senaryo: Para cezaları, zorunlu şirket bölünmeleri, lisanslama zorunlulukları veya iş modelinin yasaklanması\n2. Doğrudan tehlikedeki gelir hacmi: Şirketin cirosunun veya yüksek kârlı gelirlerinin yüzde kaçı soruşturulan uygulamaya bağlı?\n3. Emsal davalar: Benzer sektör oyuncularına açılan davalar geçmişte nasıl sonuçlandı?\n4. Giriş bariyeri etkisi: Katılaşan regülasyonlar şirketi yeni rakiplere karşı koruyan bir bariyere dönüşebilir mi?\n5. Önümüzdeki 1–3 yıllık hisse başı kâr (HBK) üzerinde olasılık ağırlıklı finansal etki."
+        },
+        {
+          "title": "Rakiplerle Birebir Karşılaştırma: Kıyaslama Matrisi",
+          "text": "Bu şirket ile sektördeki en güçlü iki doğrudan rakibini kapsayan detaylı bir birebir karşılaştırma matrisi hazırlayın.\n\nİncelenen Şirket: [Şirket A]\nDoğrudan Rakip 1: [Şirket B]\nDoğrudan Rakip 2: [Şirket C]\n\n6 temel boyutta kıyaslayın:\n1. Ölçek ve Gelir Büyümesi: Yıllık gelir artış oranı ve mutlak ciro büyüklüğü\n2. Kâr marjı mimarisi: Brüt kâr marjı, faaliyet marjı ve FCF dönüşüm gücü\n3. Birim ekonomi ve ticarileşme: Kullanıcı başına gelir (ARPU), net elde tutma oranı (NRR) veya birim kâr\n4. Ar-Ge gücü: Ar-Ge harcamalarının gelire oranı ve yeni ürün çıkarma hızı\n5. Bilanço sağlamlığı: Net nakit durumu, borçluluk çarpanı ve kredi notu\n6. Değerleme çarpanları: F/K, EV/Sales, EV/EBITDA\n\nNihai Değerlendirme: Bu 3 şirket arasında hangisi en cazip risk/getiri profilini sunuyor ve neden?"
+        }
+      ]
+    },
+    {
+      "cat": "Yatırım Tezi ve Risk Senaryosu",
+      "prompts": [
+        {
+          "title": "Kurumsal Seviye Boğa vs. Ayı Yatırım Tartışması",
+          "text": "Bu hisse senedi için yükseliş (Boğa) ve düşüş (Ayı) tezlerini çarpıştıran kurumsal düzeyde bir karşıt analiz oluşturun.\n\nŞirket: [Ad / Ticker]\nMevcut Fiyat / Değerleme Çarpanları: $[Fiyat, Çarpanlar]\nİş modelinin özeti: [ürün ve hedef kitleyi özetleyen 1–2 cümle]\n\nGeliştirin:\n\nBoğa Tezi (En güçlü 3 dayanak):\n1. Temel büyüme katalizörü ve pazarı genişletme fırsatı\n2. Operasyonel kaldıraç gücü ve kâr marjı genişleme potansiyeli\n3. Piyasanın şirketin gelecekteki kâr üretme kapasitesini neden bugün hafife aldığı\n\nAyı Tezi (En kritik 3 risk faktörü):\n1. Ana rekabet, teknoloji veya makroekonomik tehdit\n2. Kâr marjlarının erozyona uğrama veya fiyatlama gücünü yitirme riski\n3. Piyasa konsensüs tahminlerinin neden aşırı iyimser olduğu\n\nKarar anı: Önümüzdeki 12 ayda hangi gösterge veya gelişme hangi tarafın haklı olduğunu kanıtlayacak?"
+        },
+        {
+          "title": "Yatırım Pre-Mortem: Bu Hisse Neden Çakılır?",
+          "text": "Bir pre-mortem çalışması yapın: Bugünün üzerinden 3 yıl geçtiğini ve bu hissenin değerinin %50'sini kaybettiğini varsayın. Çöküşün anatomisini yazın.\n\nŞirket: [Ad / Ticker]\nŞu anki yatırım tezim: [neden almak veya elde tutmak istiyorum]\nİyimser varsayımlarım: [büyüme hızı, hendek gücü, yönetim başarısı]\n\nBaşarısızlığın adım adım senaryosunu kurgulayın:\n1. Kritik kör nokta: Hem benim hem de piyasanın görmezden geldiği veya küçümsediği hangi büyük risk patlak verdi?\n2. Rekabet erozyonu: Hangi rakip veya alternatif teknoloji fiyatları kırarak şirketin kârını baltaladı?\n3. Sermaye tahsisi hatası: Hangi pahalı satın alma, plansız borçlanma veya kötü yatırım bilançoyu çökertti?\n4. Çarpan daralması: Şirket kârını az da olsa artırsa bile piyasa çarpanı neden 30x'ten 15x'e indirdi?\n5. Erken uyarı sinyalleri: Dikkatli bir yatırımcının ilk yılda bu çöküşü fark etmesini sağlayacak 3 somut sinyal."
+        },
+        {
+          "title": "Tek Sayfalık Yüksek İkna Güçlü Yatırım Notu",
+          "text": "Bu hisse senedi tezini savunmak için profesyonel, net ve tek sayfaya sığacak bir yatırım notu (Investment Memo) yazın.\n\nŞirket: [Ad / Ticker]\nGüncel Fiyat: $[Fiyat] | Piyasa Değeri: $[Piyasa Değeri]\nYatırım Vadesi: [örn. 1–3 yıl]\n\nNotu yapılandırın:\n1. Yönetici Özeti: Şirket ne iş yapar ve piyasa bugün neden hatalı bir fiyatlama yapıyor? (3 cümle)\n2. Farklılaşan Görüş (Variant Perception): Wall Street genelinin kaçırdığı, sizin net olarak gördüğünüz kilit dinamik nedir?\n3. Finansal Motor: Gelir büyümesinin itici güçleri, birim ekonomi ve nakit üretme kabiliyeti\n4. Değerleme ve Hedef Fiyat: Temel senaryoda beklenen adil değer, hedeflenen yıllık bileşik getiri (IRR) ve yukarı yönlü potansiyel (%)\n5. Ana Katalizörler: Önümüzdeki 12–18 ayda değeri açığa çıkaracak 2–3 somut gelişme\n6. Pozisyondan Çıkış Kriterleri: Tezin çöktüğünü kabul edip hisseleri satmayı gerektirecek net koşullar."
+        },
+        {
+          "title": "Çıkış Stratejisi ve Tezin İptal Edilme Kuralları",
+          "text": "Hisse alımından önce duygusal tuzaklara düşmemek için disiplinli kâr alma ve tezi iptal etme (satış) kurallarını belirleyin.\n\nŞirket: [Ad / Ticker]\nAlış Fiyatı: $[Fiyat]\nHedef Değerleme: $[Hedef Fiyat]\nİlk alış gerekçeleri: [2–3 madde]\n\nObjektif bir çıkış protokolü oluşturun:\n1. Kademeli kâr satışı: Hangi fiyat veya çarpan seviyelerinde pozisyonun %33'ü, %50'si satılacak veya tamamen kapatılacak?\n2. Temel iptal tetikleyicileri: Hisse fiyatından bağımsız olarak derhal satışı zorunlu kılan 3 operasyonel bozulma (örn. net elde tutma oranının %110'un altına inmesi, marjların art arda 2 çeyrek daralması, kurucunun ayrılması)\n3. Fırsat maliyeti eşiği: Başka bir yatırım fırsatı hangi şartlarda mevcut pozisyonu kapatıp sermayeyi kaydırmayı haklı kılar?\n4. Psikolojik emniyet sübabı: Temeli bozulan hisseye 'düştükçe maliyet düşürme' hatasına engel olacak kural nedir?"
+        }
+      ]
+    }
+  ],
+  "finance": [
+    {
+      "cat": "Bütçe ve Nakit Akışı Yönetimi",
+      "prompts": [
+        {
+          "title": "50/30/20 ve Sıfır Tabanlı Bütçe Tasarlayıcı",
+          "text": "50/30/20 kuralı ile sıfır tabanlı bütçe (Zero-Based Budget) ilkelerini birleştiren kişisel bir aylık bütçe planı oluşturun.\n\nAylık Net Gelir (Vergi Sonrası): $[Tutar]\nSabit Temel Giderler (Kira, Faturalar, Kredi Taksitleri, Sigortalar): $[Tutar]\nDeğişken Giderler (Market, Dışarıda Yemek, Ulaşım, Eğlence): $[Tutar]\nMevcut Aylık Birikim ve Yatırım Tutarı: $[Tutar]\nFinansal Hedefler: [örn. ev peşinatı, borç kapatma, acil durum fonu]\n\nOluşturun:\n1. 50/30/20 Dağılımı: Zorunlu İhtiyaçlar ($), İstekler ($) ve Tasarruf/Borç ($) bütçesi ve hedef sapma analizi\n2. Sıfır Tabanlı Bütçe: Kalan bakiye sıfır olana kadar her liranın/doların nereye gideceğini tek tek belirleyin\n3. 3 Acil Müdahale Noktası: Ayda 200–500 $ tasarruf sağlayacak somut harcama kalemleri\n4. Ay sonunda nakit sıkışıklığını önleyecek haftalık nakit akışı takvimi."
+        },
+        {
+          "title": "Abonelik Denetimi ve Sabit Fatura İndirimi",
+          "text": "Düzenli faturalarımı, dijital aboneliklerimi ve sabit hane halkı giderlerimi denetlememe ve düşürmeme yardım edin.\n\nAylık ve yıllık düzenli ödemelerimin listesi:\n[Dijital platformlar, telefon, internet, sigortalar, spor salonu ve uygulamaları buraya yazın]\n\nSağlayın:\n1. Sınıflandırma: Zorunlu, Faydalı ama İsteğe Bağlı, ve Unutulmuş / Gereksiz\n2. İptal Öncelikleri: Hemen iptal edilecek servisler ve yıllık toplam tasarruf tutarı\n3. Pazarlık Senaryoları: İnternet, GSM operatörü ve sigorta şirketleriyle indirim almak için kelimesi kelimesine konuşma metinleri\n4. Yıllık vs. Aylık Ödeme Avantajı: Yıllık ödemeye geçildiğinde %15–20 avantaj sağlayan hizmetler\n5. Her çeyrekte tekrarlanacak 10 dakikalık abonelik temizleme rutini."
+        },
+        {
+          "title": "Acil Durum Fonu Hesaplayıcı ve Biriktirme Planı",
+          "text": "Kişisel risk profilime uygun ideal acil durum fonu tutarımı hesaplayın ve hızlandırılmış bir biriktirme takvimi hazırlayın.\n\nAylık Zorunlu Temel Yaşam Masrafları: $[Tutar]\nMevcut Nakit Acil Durum Rezervi: $[Tutar]\nİş Güvencesi: [Yüksek / Orta / Dalgalı / Serbest Meslek]\nBakmakla Yükümlü Olunan Kişiler: [Çocuklar veya aile bireyleri]\nOlası Beklenmedik Giderler (sağlık, ev tamiratı vb.): $[Tutar]\n\nHesaplayın ve yapılandırın:\n1. Hedef Tutar: Risk profilime göre 3, 6, 9 veya 12 aylık harcama önerisi\n2. Kademeli Nakit Mimarisi: Vadesiz hesap (anında erişim), yüksek getirili mevduat ve para piyasası fonları arasında dağılım\n3. Aylık Tasarruf Hedefi: Bu tutara 6, 12 veya 18 ayda ulaşmak için gereken aylık birikim\n4. Kullanım Kuralları: Neyin gerçek bir acil durum olduğu ve neyin planlanabilir masraf sayıldığına dair net sınırlar."
+        },
+        {
+          "title": "Değişken Harcamaları Azaltma ve Kaçak Tespiti",
+          "text": "Yaşam kalitemden ödün vermeden günlük değişken harcamalardaki görünmez para kaçaklarını tespit etmeme yardım edin.\n\nOrtalama Aylık Değişken Harcamalar:\n- Market ve mutfak alışverişi: $[Tutar]\n- Dışarıda yeme-içme ve paket servis: $[Tutar]\n- Giyim, kişisel bakım ve alışveriş: $[Tutar]\n- Ulaşım, benzin ve taksi: $[Tutar]\n- Çeşitli plansız harcamalar: $[Tutar]\n\nSunun:\n1. Yüksek Etkili Tasarruflar: Ayda 300 $ üzeri anında tasarruf sağlayacak 3 alışkanlık değişikliği\n2. İkame Stratejisi: Dışarıda yemek ve sosyal aktiviteler için bütçe dostu ama keyifli alternatifler\n3. Harcama Freni Sistemi: Eğlence ve keyfi harcamalar için basit bir mikro bütçe yöntemi (örn. ayrı ön ödemeli kart kullanımı)\n4. Dürtüsel alışverişleri sıfırlayacak 30 günlük harcama diyeti kuralı."
+        }
+      ]
+    },
+    {
+      "cat": "Borç Kapatma ve İtfa Stratejileri",
+      "prompts": [
+        {
+          "title": "Borç Eritme Planı: Kartopu vs. Çığ Yöntemi",
+          "text": "Mevcut borçlarımı eritmek için Kartopu (Snowball) ve Çığ (Avalanche) yöntemlerini karşılaştıran detaylı bir ödeme planı hazırlayın.\n\nGüncel Borçlar:\n[Her borcu listeleyin: Borç Adı, Kalan Anapara ($), Yıllık Faiz Oranı %, Aylık Asgari Ödeme ($)]\nBorç kapatmak için kullanılabilecek ilave aylık bütçe: $[Tutar]\n\nSağlayın:\n1. Çığ Yöntemi Planı: En yüksek faizli borçtan başlayarak ödeme (toplam faiz tasarrufu ve borçsuzluk tarihi)\n2. Kartopu Yöntemi Planı: En küçük bakiyeli borcu ilk önce kapatarak ödeme (psikolojik ivme ve borçsuzluk tarihi)\n3. Karşılaştırma Tablosu: Toplam ödenen faiz, borçların biteceği ay sayısı ve kişisel disiplinime uygun yöntem tavsiyesi\n4. 1. Aydan 6. Aya kadar her alacaklı için net ödeme takvimi."
+        },
+        {
+          "title": "Kredi Kartı Borç Yapılandırması ve Konsolidasyon",
+          "text": "Yüksek faizli kredi kartı borçlarını düşük faizli bir ihtiyaç kredisiyle birleştirmenin veya borç transferi yapmanın mantıklı olup olmadığını değerlendirin.\n\nKredi Kartı Borçları:\n[Kart 1: Bakiye, Faiz %]\n[Kart 2: Bakiye, Faiz %]\nKredi Notu: [İyi / Orta / Düşük]\nDosya masrafı ve komisyonlar: [% veya Tutar]\nAlınabilecek Konsolidasyon Kredisi Teklifi: [Aylık faiz oranı %, vade, masraflar]\n\nAnaliz edin:\n1. Kârlılık hesabı: Kredi dosya masrafları ile mevcut akdi/gecikme faizlerinden tasarruf edilen tutarın net kıyası\n2. Ödeme planı: Promosyon veya kredi vadesi bitmeden borcu tamamen sıfırlamak için gereken net aylık taksit\n3. Tuzaklar: Kart borcu kapatıldıktan sonra limiti yeniden doldurma riski ve gizli maliyetler\n4. Nihai karar: İhtiyaç kredisiyle birleştirme vs. mevcut borçları agresif şekilde ödeme."
+        },
+        {
+          "title": "Eğitim Kredisi ve Öğrenim Borcu Stratejisi",
+          "text": "Öğrenim kredisi portföyümü analiz ederek en avantajlı geri ödeme veya yapılandırma planını belirleyin.\n\nÖğrenim Kredileri:\n[Kredi Listesi: Kamu (KYK vb.) veya Özel Banka, Kalan Bakiye, Faiz/TÜFE Oranı %, Mevcut Taksit]\nYıllık Brüt Gelir: $[Tutar]\nÇalışılan Sektör: [Kamu / Özel Sektör / STK]\nMedeni Durum: [Bekar / Aile]\n\nDeğerlendirin:\n1. Gelire endeksli ödeme vs. Standart taksit planı: Aylık yük ve toplam maliyet projeksiyonu\n2. Kamu affı, erteleme veya faiz silinmesi imkanları: Şartlar ve en uygun başvuru takvimi\n3. Özel bankadan yeniden finansman: Düşük faiz için kamu haklarından ve esnekliklerinden vazgeçmeye değer mi?\n4. Erken kapama vs. Yatırım ikilemi: Ekstra para eğitime mi yatırılmalı yoksa hisse/endeks fonlarına mı yönlendirilmeli?"
+        },
+        {
+          "title": "Konut Kredisi Erken Ödeme ve Faiz Tasarrufu",
+          "text": "Konut kredisi (mortgage) anaparasından ara ödeme veya erken kapama yapmanın finansal getirisini hesaplayın.\n\nİlk Kredi Tutarı: $[Tutar]\nKalan Anapara Borcu: $[Tutar]\nAylık/Yıllık Kredi Faizi: [%]\nKalan Vade: [örn. 15 yıl / 180 ay]\nMevcut Aylık Taksit (Anapara + Faiz): $[Tutar]\nPlanlanan İlave Ara Ödeme: $[örn. ayda 250 $ veya yılda bir defa 5.000 $]\n\nHesaplayın:\n1. Vade kısalması: Kredi borcu kaç yıl ve kaç ay daha erken tamamen biter?\n2. Faiz tasarrufu: Kredi ömrü boyunca cepten çıkmaktan kurtarılan net nakit faiz tutarı\n3. Garanti getiri vs. Fırsat maliyeti: Kredi faizinden edilen garanti tasarruf ile bu parayı borsada (%8 getiriyle) değerlendirmenin kıyası\n4. Dengeli karma model: Borç erken ödeme ile emeklilik yatırımlarını bir arada götürme formülü."
+        }
+      ]
+    },
+    {
+      "cat": "Tasarruf ve Finansal Hedefler",
+      "prompts": [
+        {
+          "title": "Büyük Hayat Hedefi İçin Tasarruf Yol Haritası",
+          "text": "Büyük bir finansal hedef (ev peşinatı, araba, düğün veya kariyer molası) için net bir birikim planı hazırlayın.\n\nHedef: [örn. Ev peşinatı ve tapu masrafları]\nGereken Toplam Para: $[Tutar]\nHedeflenen Süre: [örn. 24 ay / 2 yıl]\nMevcut Birikim: $[Tutar]\nAylık Ayrılabilen Tasarruf Kapasitesi: $[Tutar]\n\nSunun:\n1. Gereken Aylık Birikim: Faiz/getiri getirilerini de hesaba katan net aylık hedef\n2. Paranın Tutulacağı Doğru Araç: Riski sıfıra yakın uygun enstrümanlar (Para Piyasası Fonları, Kısa Vadeli Tahviller, Mevduat)\n3. Süreyi Kısaltma Yolları: İkramiye veya geçici gider kesintileriyle hedefe ulaşmayı hızlandıracak 3 somut önlem\n4. Kontrol Durakları: 6, 12, 18 ve 24. aylarda ulaşılması gereken ara birikim hedefleri."
+        },
+        {
+          "title": "Düzensiz Masraflar İçin Bütçe Havuzları (Sinking Funds)",
+          "text": "Yıllık veya düzensiz gelen masrafların aylık bütçemi sarsmasını önlemek için bir gider havuzu (Sinking Funds) sistemi tasarlayın.\n\nYıl İçindeki Düzensiz Giderler:\n- Araç kasko, sigorta ve MTV: $[Yıllık Toplam]\n- Ev emlak vergisi ve bakım onarım: $[Yıllık Toplam]\n- Yılbaşı, bayram ve hediye masrafları: $[Yıllık Toplam]\n- Sağlık ve diş masrafları: $[Yıllık Toplam]\n- Tatil ve seyahat bütçesi: $[Yıllık Toplam]\n- Evcil hayvan masrafları: $[Yıllık Toplam]\n\nOluşturun:\n1. Toplam Aylık Havuz Katkısı: Bu ortak kumbaraya her ay otomatik aktarılacak net tutar\n2. Hesap Mimarisi: Onlarca banka hesabı açmadan alt vadeli hesaplar veya kumbaralarla bunu yönetme yöntemi\n3. İlk Aylardaki Faturaların Yönetimi: Planın başında yeterli bakiye birikmeden gelen bir masrafın idaresi\n4. Maaş günü otomatik virman kuralları."
+        },
+        {
+          "title": "Nakit Getiri Optimize Edici ve Likidite Merdiveni",
+          "text": "Nakit rezervlerimin getirisini ve güvenliğini düşük riskli araçlar arasında paylaştırarak optimize edin.\n\nToplam Nakit Rezervi: $[Tutar]\nLikidite İhtiyacı Dağılımı:\n- 30 gün içinde gerekebilecek: $[Tutar]\n- 3 ila 12 ay içinde gerekebilecek: $[Tutar]\n- 1 ila 3 yıl içinde gerekebilecek: $[Tutar]\nVergi / Stopaj Durumu: [Bireysel vergi dilimi]\n\nDeğerlendirin ve kurgulayın:\n1. Yüksek getirili mevduat hesapları: Mevduat güvencesi sınırları ve net faiz getirileri\n2. Para piyasası fonları: Günlük likidite, bileşik getiri ve risksiz varlık güvencesi\n3. Kısa vadeli devlet tahvilleri / Hazine bonoları: Getiri ve stopaj avantajları\n4. Vadeli mevduat merdiveni: Kademeli vadelerle hem faiz kilitleme hem düzenli nakit dönüşü sağlama\n5. Net getiri maksimizasyonu için önerilen yüzdesel portföy dağılımı."
+        },
+        {
+          "title": "Maaş Zammında Yaşam Tarzı Enflasyonunu Frenleme",
+          "text": "Yeni aldığım veya alacağım maaş zammı sonrasında yaşam tarzı enflasyonuna (Lifestyle Creep) yakalanmamak için bilinçli bir plan yapın.\n\nÖnceki Aylık Net Maaş: $[Tutar]\nYeni Aylık Net Maaş: $[Tutar] (Artış: +$[Fark]/ay)\nÖnceki Tasarruf Oranı: [%]\nEn Zayıf Harcama Alışkanlıkları: [parayı en kolay saçtığım alanlar]\n\nZam paylaştırma stratejisi oluşturun:\n1. 50/50 Kuralı: Maaş artışının %50'sini anında yatırıma ve borç kapatmaya ayırın, kalan %50'si ile suçluluk duymadan yaşam kalitenizi artırın\n2. Tersine Bütçeleme Otomasyonu: Yeni maaş hesaba yattığı gün otomatik fon/hisse alım talimatlarını artırma\n3. Bilinçli Ödül Listesi: Sürekli küçük şeylere para saçmak yerine gerçekten mutluluk veren 2–3 hedef belirleme\n4. Maaş zammı sindirildikten sonraki yeni hedef tasarruf oranı."
+        }
+      ]
+    },
+    {
+      "cat": "Yatırım ve Varlık Yönetimi",
+      "prompts": [
+        {
+          "title": "Boglehead 3 Fonlu Portföy ve Varlık Dağılımı",
+          "text": "Yaşıma, yatırım ufkuma ve risk toleransıma uygun, düşük maliyetli ve geniş çeşitlendirilmiş bir Bogleheads endeks portföyü tasarlayın.\n\nYaş: [Yaş]\nEmekliliğe / Finansal Özgürlüğe Kalan Yıl: [örn. 20–30 yıl]\nRisk Toleransı: [Agresif / Dengeli / Muhafazakar]\nMevcut Yatırım Tutarı: $[Tutar]\nMevcut Dağılım: [Tekil hisseler, fonlar, kripto, nakit]\n\nSağlayın:\n1. Önerilen Varlık Dağılımı: Küresel Hisse Senetleri (% Gelişmiş Piyasalar vs. % Gelişen Piyasalar) ve Sabit Getirili Tahvil/Altın oranı\n2. 2 veya 3 Fonlu/ETF'li Uygulama: Çok düşük yönetim gider oranına sahip (TER < %0,20) küresel borsa yatırım fonu alternatifleri\n3. Beklenen Tarihsel Oynaklık: Olası krizlerdeki düşüşler (-%20 ile -%40) ve duygusal disiplini koruma rehberi\n4. Mevcut dağınık portföyden bu sade modele gereksiz vergi/komisyon ödemeden kademeli geçiş planı."
+        },
+        {
+          "title": "Yatırım Hesapları Öncelik Sıralaması (Şelale Modeli)",
+          "text": "Yatırımlarımı vergi avantajlı hesaplar ile standart yatırım hesapları arasında en doğru öncelik sırasına göre dizin.\n\nYıllık Brüt Gelir: $[Tutar]\nİşveren Katkısı / BES Devlet Katkısı: [örn. %30 devlet katkısı, kurumsal emeklilik eşleşmesi]\nKullanılabilen Yatırım Araçları:\n- Bireysel Emeklilik Sistemi (BES / 401k / IRA): [Detaylar]\n- Standart Hisse Senedi ve Yatırım Fonu Hesabı: [Mevcut]\nYıllık Toplam Yatırım Bütçesi: $[Tutar]\n\nÖncelik şelalesini adım adım kurun:\n1. 1. Adım: İşveren katkısı veya %30 BES devlet katkısının tavanını yakalayacak kadar yatırım (anında garanti getiri)\n2. 2. Adım: Vergi ertelemesi veya stopaj muafiyeti sağlayan hesapları doldurma\n3. 3. Adım: Kalan bütçeyi düşük maliyetli küresel endeks fonları ve hisse senetlerinde değerlendirme\n\nHer basamağa kaç para ayrılması gerektiğini ve sağlanan net vergi avantajını detaylandırın."
+        },
+        {
+          "title": "Kademeli Alım (DCA) vs. Toplu Para Yatırma (Lump Sum)",
+          "text": "Elimdeki yüklü bir nakit parayı piyasaya sokmak için metodik ve psikolojik olarak sürdürülebilir bir plan hazırlayın.\n\nYatırılacak Toplu Para Tutarı: $[örn. 50.000 veya 150.000]\nParanın Kaynağı: [Miras, prim, ev satışı, birikmiş nakit]\nMevcut Piyasa Şartları: [Tüm zamanların zirvesi / Düzeltme / Yüksek volatilite]\nPsikolojik Engel: [Tepe fiyattan girip düşüşe yakalanma korkusu]\n\nSunun:\n1. Tarihsel ve Olasılıksal Kanıtlar: Vanguard araştırmalarına göre Tek Seferde Yatırma (Lump Sum) ile Kademeli Alımın (DCA) getiri kıyası\n2. Yapılandırılmış DCA Takvimi: Parayı 3, 6 veya 12 eşit aylık dilime bölerek sabit günlerde alım takvimi\n3. Düşüş Hızlandırma Kuralı: Piyasada %5 veya %10 düzeltme olduğunda sonraki dilimleri öne çekme kuralı\n4. Bekleyen Nakdin Değerlendirilmesi: Sırasını bekleyen taksitlerin para piyasası fonunda nemalanması\n5. Piyasa düşse bile alımları durdurmamayı garanti edecek psikolojik taahhüt kuralı."
+        },
+        {
+          "title": "Portföy Dengeleme (Rebalancing) ve Sapma Kontrolü",
+          "text": "Belirlediğim risk profilini korumak için portföyümde sistematik bir yeniden dengeleme (rebalancing) sürecini yönetin.\n\nHedef Varlık Dağılımı: [örn. %70 Küresel Hisse, %20 Gelişen Piyasalar, %10 Tahvil/Altın]\nMevcut Varlık Değerleri ve Gerçekleşen Oranlar:\n[Varlık 1: Güncel Tutar / Portföydeki Payı %]\n[Varlık 2: Güncel Tutar / Portföydeki Payı %]\n[Varlık 3: Güncel Tutar / Portföydeki Payı %]\nBu ay yatırılacak yeni taze nakit: $[Tutar]\n\nSağlayın:\n1. Sapma Analizi: Hangi varlık sınıfı hedefin üzerine çıkmış, hangisi geride kalmış?\n2. Yeni Para ile Vergisiz Dengeleme: Satış yapıp vergi/komisyon ödemeden, yeni eklenecek parayı geride kalan varlığa yönlendirerek dengeleme\n3. Zorunlu Satış Disiplini: Eğer satış gerekiyorsa, en az vergi ve komisyon maliyetiyle elden çıkarma sırası\n4. Tolerans Bandı Kuralı (5/25 kuralı): Bir varlık mutlak %5 veya göreceli %25 sapmadıkça portföye dokunmama kuralı."
+        }
+      ]
+    },
+    {
+      "cat": "Vergi Planlaması ve Güvence",
+      "prompts": [
+        {
+          "title": "Yıl Sonu Vergi Zararı Hasadı ve Mahsuplaşma",
+          "text": "Yıl sonu yaklaşırken yatırım portföyümde vergi optimizasyonu sağlamak için bir eylem planı oluşturun.\n\nVergi Mükellefiyeti Durumu: [Bireysel / Şahıs Şirketi]\nTahmini Yıllık Gelir: $[Tutar]\nPortföydeki Gerçekleşmemiş (Zararda Olan) Hisseler: $[Zarar Tutarı]\nBu yıl içinde realize edilmiş kârlar: $[Kâr Tutarı]\nİndirim ve Muafiyetler: [BES katkısı, eğitim/sağlık harcamaları, bağışlar]\n\nYıl sonu adımlarını belirleyin:\n1. Vergi Zararı Hasadı (Tax-Loss Harvesting): Kârlardan doğan stopaj/vergi yükünü düşürmek için zarardaki pozisyonları realize edip mahsuplaşma stratejisi\n2. Wash-Sale / Aynı Gün Alım Satım Kuralları: Vergi avantajını kaybetmeden benzer endeks veya fonlarla piyasada kalma yöntemi\n3. Yıl sonuna kadar doldurulması gereken vergi muafiyeti tavanları\n4. Gelecek yılın gelir vergisi beyannamesinde sürpriz yaşamamak için hazırlık kontrol listesi."
+        },
+        {
+          "title": "Aile Sigorta Güvencesi ve Varlık Koruma Denetimi",
+          "text": "Kişisel varlıklarımı ve ailemi büyük felaketlere karşı korumak için sigorta poliçelerimi denetleyin.\n\nYaş ve Aile Durumu: [Yaş, evlilik durumu, bakmakla yükümlü olunan çocuklar]\nYıllık Gelir: $[Tutar]\nMevcut Poliçeler:\n- Hayat Sigortası: [Teminat tutarı, birikimli mi süreli mi]\n- Tamamlayıcı / Özel Sağlık Sigortası: [Kapsam ve limitler]\n- Maluliyet / Mesleki İş Göremezlik: [Teminat var mı]\n- DASK ve Konut Sigortası: [Teminat limitleri]\n\nDenetleyin:\n1. Hayat sigortası teminat ihtiyacı: Borçları kapatmak ve çocukların eğitimini güvenceye almak için gereken net vefat teminatı tutarı\n2. İş göremezlik güvencesi: Kaza veya hastalık durumunda maaş kaybını karşılayacak poliçe yeterli mi?\n3. Sorumluluk ve konut teminat limitleri: Enflasyon karşısında teminatlar eksik sigorta riskine düşmüş mü?\n4. İptal edilecek gereksiz poliçeler: Yüksek primli ama teminatı anlamsız küçük sigortaları tespit edin."
+        },
+        {
+          "title": "Miras Planlaması ve Lehtar Belirleme Kontrol Listesi",
+          "text": "Miras planlaması, acil durum evrakları ve finansal lehtar (hak sahibi) bildirimlerini organize edin.\n\nAile Durumu: [Küçük çocuklar, eş, yaşlı ebeveynler]\nTemel Mal Varlığı: [Gayrimenkuller, hisse senetleri, banka mevduatları, şirket ortaklığı]\nİkamet / Hukuk Sistemi: [Türkiye / İlgili Ülke]\n\nKontrol listesi oluşturun:\n1. Lehtar Denetimi: Bireysel Emeklilik (BES) ve hayat sigortalarında lehtarın vasiyetnameden bağımsız doğrudan ödenme avantajı\n2. Temel Hukuki Belgeler: Vasiyetname, sağlık vekaleti ve yasal miras payları dengesi\n3. Küçük çocukların vasiliği ve velayet koruması\n4. Dijital Miras Dosyası: Şifre yöneticileri, kripto cüzdan kurtarma kelimeleri ve banka hesaplarının güvenli dökümü\n5. Vefat durumunda ailenin ilk 48 saatte atması gereken bürokratik adımlar kılavuzu."
+        },
+        {
+          "title": "Kredi Notu Yükseltme ve Risk Raporu İyileştirme",
+          "text": "Findeks / Kredi Kayıt Bürosu kredi notumu yükseltmek ve bankalar nezdindeki itibarımı iyileştirmek için bir eylem planı hazırlayın.\n\nMevcut Durum:\n- Kredi Kartı ve Kredi Sayısı: [Adet]\n- Toplam Tanımlı Limitler vs. Kullanılan Borç: $[Limit / Borç] (Kredi Kullanım Oranı %)\n- Geçmiş Gecikme veya İdari Takip: [Yok / Geçmişte gecikme var]\n- En eski kredi kartının kullanım süresi: [Yıl]\n\nSunun:\n1. Kredi Kullanım Oranını Düşürme: Kart borçlarını toplam limitin %20'sinin altına indirme taktiği\n2. Hesap Kesim Tarihi Oyunu: Borcu ekstre kesilmeden önce ödeyerek risk raporunda borçsuz görünme yöntemi\n3. Hatalı Kayıt Düzeltme: KKB/Findeks raporundaki hatalı gecikme kayıtlarına itiraz süreci\n4. Limit Artış Stratejisi: Borçlanmadan limit artırarak kullanım oranını düşürme zamanlaması\n5. Kredi notunun 90–180 gün içinde somut şekilde yükselmesi için takvim."
+        }
+      ]
+    },
+    {
+      "cat": "Kariyer ve Finansal Özgürlük (FI/RE)",
+      "prompts": [
+        {
+          "title": "Maaş Pazarlığı ve Toplam Haklar Müzakere Metni",
+          "text": "Yıllık performans görüşmem veya yeni bir iş teklifi için kelimesi kelimesine konuşma metinleri içeren bir maaş pazarlığı stratejisi hazırlayın.\n\nPozisyon ve Kıdem: [Unvan, sorumluluk alanı]\nMevcut Maaş veya Alınan İlk Teklif: $[Maaş]\nSektörün Bilinen Piyasa Maaş Skalası: [örn. 70k–90k]\nSon 1 Yılda Şirkete Sağlanan Ölçülebilir Katkılar: [Gelir artışı, maliyet tasarrufu, teslim edilen projeler]\nDiğer Yan Haklar: [Prim, hisse senedi opsiyonu, uzaktan çalışma, primler]\n\nOluşturun:\n1. Karşı Teklif Rakamı: Masaya konulacak stratejik çıpa rakam ve verilere dayalı savunması\n2. Kelimesi Kelimesine Görüşme Metinleri: Saygılı, profesyonel ama hakkını savunan net cümleler\n3. Maaş Dışı Müzakere Maddeleri: Ekstra izin günleri, imza primi (signing bonus) veya 6. ayda erken zam taahhüdü\n4. İtirazları karşılama: 'Şu an bütçemiz buna elvermiyor' denildiğinde verilecek zekice yanıt."
+        },
+        {
+          "title": "Ek Gelir ve Yan İş (Side Hustle) Kârlılık Analizi",
+          "text": "Aklımdaki yan iş veya serbest çalışma (freelance) fikrinin finansal uygulanabilirliğini ve net saatlik getirisini analiz edin.\n\nYan İş Fikri: [Danışmanlık, dijital ürün, e-ticaret, içerik üretimi]\nHaftalık ayrılabilecek zaman: [örn. 10 saat/hafta]\nPlanlanan Ücret / Satış Fiyatı: $[Birim fiyat veya saatlik ücret]\nBaşlangıç ve Aylık Sabit Masraflar: $[Yazılımlar, sunucu, reklam, muhasebe]\n\nAnaliz edin:\n1. Gerçek Net Saatlik Ücret: Cirodan masraflar ve vergiler düşüldükten sonra fiilen harcanan saate bölünen tutar\n2. Başa Baş Noktası (Break-Even): Sabit giderleri karşılamak için ayda kaç satış veya danışan gerektiği\n3. Vergi ve şahıs şirketi kurma maliyetleri (Genç girişimci istisnası, faturalandırma şartları)\n4. Fırsat Maliyeti: Bu yan iş beni finansal özgürlüğe mi yaklaştırıyor yoksa ana kariyerimdeki yükselişimi mi baltalıyor?"
+        },
+        {
+          "title": "Çalışan Yan Hakları ve Şirket Hisselerini Optimize Etme",
+          "text": "İş yerimin sunduğu yan haklar, esnek paketler ve çalışan hisse senedi alım planlarını (ESPP) en kârlı şekilde seçmeme yardım edin.\n\nŞirkette Sunulan Yan Haklar:\n[Hisse Alım Planı (ESPP), tamamlayıcı sağlık sigortası, yemek kartı, yol yardımı, bireysel emeklilik katkısı]\nKişisel Durum: [Bekar / Evli, işe gidiş mesafesi]\n\nSağlayın:\n1. ESPP Analizi: Şirket hissesi alımında indirim (%15 gibi) varsa katılım kârlılığı ve hisseyi hemen satma stratejisi\n2. Vergi Avantajlı Yan Haklar: Brüt maaştan kesilmeyip net ele geçen geliri artıran ayni yardımlar\n3. İşe Yaramayan Hakları Eleme: Katkı payı yüksek ama getirisi düşük haklardan vazgeçme\n4. Yıl sonunda cebe giren net geliri maksimize edecek en ideal yan hak konfigürasyonu."
+        },
+        {
+          "title": "FI/RE Finansal Özgürlük Hedefi ve Coast FI Hesaplayıcı",
+          "text": "Kişisel Finansal Bağımsızlık / Erken Emeklilik (FI/RE) hedef rakamımı ve Coast FI eşiğimi hesaplayın.\n\nMevcut Yaş: [Yaş]\nYatırımdaki Mevcut Toplam Varlık: $[Tutar]\nEmeklilikte Yıllık Beklenen Yaşam Gideri: $[Yıllık Gider]\nYıllık Tasarruf ve Yatırım Kapasitesi: $[Tutar/yıl]\nGüvenli Çekim Oranı (Safe Withdrawal Rate): [%3,5 veya %4,0]\nEnflasyondan Arındırılmış Yıllık Reel Getiri Beklentisi: [örn. %5 ila %6]\n\nHesaplayın ve projelendirin:\n1. FI/RE Hedef Varlık Tutarı: (Yıllık Gider × 25 veya 28,5)\n2. Mevcut birikim hızıyla finansal özgürlüğe ulaşmak için gereken tahmini yıl sayısı\n3. Coast FI Durumu: Bugünkü portföyüm, bundan sonra 1 kuruş bile eklemesem 65 yaşına kadar bileşik getiriyle hedef değere ulaşacak büyüklüğe geldi mi?\n4. Tasarruf Oranı Kaldıracı: Tasarruf oranını %5 veya %10 artırmak çalışma süresini kaç yıl kısaltır?"
+        }
+      ]
+    }
   ]
 };

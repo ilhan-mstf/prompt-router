@@ -22,7 +22,7 @@ Use these URL patterns to send pre-filled prompts to AI providers:
 - **Meta AI**: `https://www.meta.ai/?q={encoded_prompt}`
 
 ## Multi-Language Subdirectories
-Prompt Router supports server-side edge rendering (SSR) for 7 languages across the homepage and all 11 prompt libraries:
+Prompt Router supports server-side edge rendering (SSR) for 7 languages across the homepage and all 13 prompt libraries:
 - English (Default): `https://prompt-router.pages.dev/` and `https://prompt-router.pages.dev/{library}`
 - Spanish: `https://prompt-router.pages.dev/es` and `https://prompt-router.pages.dev/es/{library}`
 - Turkish: `https://prompt-router.pages.dev/tr` and `https://prompt-router.pages.dev/tr/{library}`
@@ -3390,6 +3390,896 @@ Write a 200-word narrative that:
 4. Ends with one clear ask or action needed from leadership (if any)
 
 Tone: confident and data-grounded, not defensive.
+```
+
+### Stock Analysis Prompts
+URL: https://prompt-router.pages.dev/stocks
+
+#### Category: Fundamental Analysis
+##### 10-K / 10-Q filing teardown
+```
+Conduct a deep-dive analysis of this company's latest 10-K or 10-Q filing.
+
+Company: [Ticker / Company Name]
+Filing Period: [e.g. FY 2025 10-K or Q2 2026 10-Q]
+Key financial metrics: [Revenue, Gross Margin, Net Income, Free Cash Flow if known]
+
+Analyze and summarize:
+1. Revenue Growth Drivers: Organic vs. acquisition-driven, product line breakdown, and geographic exposure
+2. Margin Trajectory: Gross, operating, and net margin trends over the past 3-5 years
+3. Balance Sheet Quality: Cash vs. total debt, debt maturity profile, and net working capital trends
+4. Cash Flow Realism: Free Cash Flow vs. Net Income (flag high SBC or working capital distortions)
+5. Risk Factors: Top 3 operational or regulatory risks disclosed in Item 1A
+
+Conclude with 3 critical questions management needs to answer on the next call.
+```
+
+##### Economic moat & competitive audit
+```
+Evaluate the competitive advantage and economic moat of this company using Morningstar's moat framework and Porter's Five Forces.
+
+Company: [Company / Ticker]
+Industry: [e.g. Cloud Infrastructure, Semiconductor Equipment, Enterprise SaaS]
+Main Competitors: [list 2-4 competitors]
+
+Assess each potential moat source:
+1. Network Effects: Does the platform become more valuable with scale?
+2. Switching Costs: How painful and expensive is it for enterprise customers to migrate away?
+3. Cost Advantage: Proprietary processes, scale efficiencies, or unique supply assets?
+4. Intangible Assets: Patents, regulatory licenses, or pricing power brand equity?
+5. Efficient Scale: Is the market niche protected from rational new entrants?
+
+Rate the moat: None / Narrow / Wide with a 2-3 sentence justification and identify the #1 threat that could erode this moat over the next decade.
+```
+
+##### Capital allocation & ROIC assessment
+```
+Analyze management's capital allocation track record and Return on Invested Capital (ROIC).
+
+Company: [Company / Ticker]
+Past 3-5 Years Data:
+- ROIC / ROCE: [numbers or approximate]
+- WACC: [if estimated]
+- CapEx: [growth vs. maintenance if known]
+- M&A history: [key acquisitions]
+- Share repurchases & dividends: [amounts]
+
+Evaluate:
+1. Value Creation Spread: Is ROIC sustainably above WACC? What drives the spread?
+2. Organic Reinvestment: Are reinvested dollars compounding at high marginal rates of return?
+3. M&A Discipline: Have past acquisitions created shareholder value or resulted in goodwill impairments?
+4. Shareholder Returns: Are buybacks executed opportunistically below intrinsic value, or merely offsetting dilution from stock-based compensation?
+5. Final Score: Grade capital allocation (A to F) with key supporting evidence.
+```
+
+##### Working capital & cash conversion
+```
+Evaluate the working capital efficiency and cash conversion cycle of this company.
+
+Company: [Company / Ticker]
+Metrics (if available):
+- Days Sales Outstanding (DSO): [days]
+- Days Inventory Outstanding (DIO): [days]
+- Days Payables Outstanding (DPO): [days]
+- Free Cash Flow Conversion (% of EBITDA or Net Income): [%]
+
+Analyze:
+1. Cash Conversion Cycle (CCC = DSO + DIO - DPO): Calculate or interpret trend over the last 3 years
+2. Working Capital Quality: Are receivables growing faster than revenue (channel stuffing warning)? Is inventory piling up?
+3. Supplier Leverage: Is DPO extending at the expense of vendor relationships, or reflecting genuine bargaining power?
+4. Cash Drag / Generation: Is working capital a source of cash or a perpetual drain as the business scales?
+5. Benchmark: Compare these working capital dynamics to 2 direct competitors.
+```
+
+#### Category: Valuation & Modeling
+##### Build DCF valuation model assumptions
+```
+Help me build realistic, defendable assumptions for a 5-year Discounted Cash Flow (DCF) model.
+
+Company: [Company Name / Ticker]
+Current Stock Price: $[Price]
+Current Revenue: $[Revenue]
+Trailing Free Cash Flow: $[FCF]
+Industry: [Industry]
+
+Draft a 3-scenario assumption matrix (Bear / Base / Bull):
+1. Revenue CAGR (Years 1-5): Justify rates based on TAM expansion and market share
+2. Terminal FCF Margin: Expected operating leverage and steady-state CapEx needs
+3. WACC / Discount Rate: Beta, cost of equity, and after-tax cost of debt
+4. Terminal Growth Rate: Long-term GDP / inflation proxy (typically 2-3%)
+5. Enterprise Value to Equity Value Bridge: Net debt adjustment, minority interest, and diluted shares
+
+Calculate implied share price for each scenario and show which variable is most sensitive to changes.
+```
+
+##### Relative valuation & peer multiples
+```
+Conduct a relative valuation multiples analysis comparing this target company against its closest peer group.
+
+Target Company: [Ticker]
+Peers: [Peer 1, Peer 2, Peer 3, Peer 4]
+Metrics:
+- EV / NTM Revenue: [Target vs Peers]
+- EV / NTM EBITDA: [Target vs Peers]
+- P / E (Forward): [Target vs Peers]
+- PEG Ratio: [Target vs Peers]
+- Rule of 40 / Growth Rate: [Growth + FCF Margin]
+
+Deliver:
+1. Valuation Matrix: Table ranking target vs peers across each multiple
+2. Premium / Discount Justification: Is the target trading at a premium or discount? Is it justified by growth, margins, or ROIC?
+3. Normalized Multiple: What multiple should this business trade at under steady-state conditions?
+4. Target Price Range: Implied share price based on peer median multiples.
+```
+
+##### Reverse DCF expectations investing
+```
+Perform a reverse DCF to uncover what growth and profitability assumptions are currently priced into this stock.
+
+Company: [Ticker]
+Current Market Cap / Enterprise Value: $[Value]
+Current Share Price: $[Price]
+Current Free Cash Flow: $[FCF]
+Assumed Discount Rate (WACC): [e.g. 9% or 10%]
+Terminal Growth Rate: [e.g. 2.5%]
+
+Determine:
+1. Implied FCF Growth: What 5-year or 10-year FCF compound growth rate is required to justify today's price?
+2. Operational Translation: What does that FCF growth require in terms of revenue CAGR and operating margin expansion?
+3. Market Share Reality Check: Given total addressable market (TAM), is that implied revenue growth realistic, aggressive, or conservative?
+4. Asymmetric Verdict: Does the current market price offer a margin of safety, or is it priced for perfection?
+```
+
+##### Dividend safety & coverage analysis
+```
+Assess the safety, growth runway, and sustainability of this company's dividend payout.
+
+Company: [Company / Ticker]
+Current Dividend Yield: [%]
+Annual Payout per Share: $[Amount]
+Free Cash Flow per Share: $[Amount]
+EPS: $[Amount]
+Net Debt / EBITDA: [Ratio]
+
+Evaluate:
+1. FCF Payout Ratio: Dividends paid as a % of FCF (is it below 60-70% comfort threshold?)
+2. Accounting EPS vs. Cash Payout: Are dividends covered by true cash generation or debt?
+3. Balance Sheet Leverage: Will debt maturities or refinancing threaten the dividend in a downturn?
+4. Dividend Growth History: 3, 5, and 10-year dividend growth CAGR
+5. Stress Test: If revenue drops 15% and margins contract 300 bps, can management maintain the dividend?
+
+Rating: Safe / Vulnerable / At-Risk of Cut with specific triggers to monitor.
+```
+
+#### Category: Earnings & Transcripts
+##### Earnings call transcript & Q&A analysis
+```
+Analyze this earnings call transcript or summary to extract the signal from the noise.
+
+Company: [Company Name / Ticker]
+Quarter: [e.g. Q4 2025 / Q1 2026]
+Transcript text or key highlights:
+[paste key remarks from CEO/CFO and analyst Q&A]
+
+Provide:
+1. Management Key Messages: What did leadership emphasize in prepared remarks?
+2. Analyst Pressure Points: What specific questions did analysts push hardest on during Q&A?
+3. Evasive or Defensive Answers: Where did management give vague, non-committal, or deflecting responses?
+4. Hidden Guidance Clues: Did commentary hint at headwinds, supply bottlenecks, or decelerating enterprise sales cycles?
+5. Three-sentence takeaway for an investor.
+```
+
+##### Guidance vs. consensus variance analysis
+```
+Analyze this company's newly released quarterly guidance versus Wall Street consensus expectations.
+
+Company: [Ticker]
+Quarter / Year Being Guided: [e.g. Q2 2026 / FY 2026]
+Reported Guidance:
+- Revenue: [Range]
+- Gross Margin / Operating Margin: [Range]
+- EPS / Adjusted EBITDA: [Range]
+Wall Street Consensus:
+- Expected Revenue: [Consensus]
+- Expected EPS: [Consensus]
+
+Deliver:
+1. Beat / Meet / Miss Summary: Quantify percentage variance for both current quarter and forward outlook
+2. Guidance Quality: Is growth front-loaded or back-half weighted (the classic 'hockey-stick' risk)?
+3. Operating Leverage Check: Is revenue guiding higher while EPS guides lower (margin compression signal)?
+4. Implied Estimate Revisions: How will sell-side analysts likely adjust their price targets and models following this release?
+```
+
+##### Earnings beat history & stock reaction
+```
+Review the earnings surprise history and post-earnings stock price volatility for this company.
+
+Company: [Ticker]
+Past 4-8 Quarters Data:
+- EPS Beats / Misses: [list quarters]
+- Revenue Beats / Misses: [list quarters]
+- Average Next-Day Price Reaction (%): [e.g. +/- 6%]
+- Implied Options Move for Upcoming Earnings: [if known]
+
+Analyze:
+1. Consistency Pattern: Does management sandbag guidance and consistently beat by a predictable percentage?
+2. Reaction Asymmetry: Does the stock sell off sharply on modest beats (priced for perfection) or rally on relief?
+3. Earnings Quality: Are beats driven by revenue outperformance or below-the-line items (tax rate, share count, FX)?
+4. Risk Management: What position size or hedging strategy is prudent going into the upcoming print?
+```
+
+##### Management sentiment & tone shift
+```
+Compare management's language and tone across the last two consecutive quarters to spot shifts in sentiment.
+
+Company: [Ticker]
+Quarter A (Previous Quarter) notes:
+[paste quotes or key statements]
+Quarter B (Current Quarter) notes:
+[paste quotes or key statements]
+
+Identify:
+1. Tone Trajectory: Is management becoming more cautious, confident, defensive, or promotional?
+2. Vocabulary Shift: Track changes in words like 'headwind', 'uncertainty', 'elongated sales cycles', vs. 'tailwind', 'acceleration', 'robust pipeline'
+3. Metric Substitution: Did management stop mentioning a previously touted KPI (customer count, net retention rate, backlog)?
+4. Capital Allocation Tone: Any change in rhetoric regarding buybacks, debt repayment, or CapEx?
+5. Net Sentiment Score: Bullish / Neutral / Bearish shift summary.
+```
+
+#### Category: Technical & Risk
+##### Multi-timeframe trend & key price levels
+```
+Map out the technical structure, trend alignment, and key price levels for this stock across multiple timeframes.
+
+Stock Ticker: [Ticker]
+Current Price: $[Price]
+Weekly Chart Context: [e.g. 52-week high/low, 200-week SMA, macro trend]
+Daily Chart Context: [e.g. 50-day and 200-day SMA, current pattern like cup-and-handle, flag, or breakdown]
+Key indicators: [RSI, MACD, Volume Profile if observed]
+
+Provide:
+1. Primary Trend: Bullish, Bearish, or Consolidation on Weekly vs. Daily
+2. Key Resistance Levels: List 3 overhead price zones where sellers are likely clustered
+3. Key Support Levels: List 3 support floors (prior breakout pivots, moving average confluences)
+4. Moving Average Health: Position relative to 20/50/200 SMA (e.g. Golden Cross, Death Cross, extended above 20 SMA)
+5. Setup Summary: Best risk-defined entry price, invalidation stop-loss level, and initial target.
+```
+
+##### Calculate risk-reward & position sizing
+```
+Calculate the asymmetric risk-to-reward ratio and optimal position size for this stock trade/investment.
+
+Total Portfolio Value: $[Amount, e.g. 100,000]
+Max Risk Tolerance per Trade: [e.g. 1% or 2% of total portfolio = $1,000]
+Target Entry Price: $[Entry]
+Technical / Fundamental Stop Loss: $[Stop Price]
+Target Price 1 (Conservative): $[Target 1]
+Target Price 2 (Bull Case): $[Target 2]
+
+Calculate and outline:
+1. Per-Share Risk: Entry - Stop Loss ($ and %)
+2. Position Sizing: Number of shares to purchase so total dollar loss at stop equals maximum allowed risk
+3. Total Capital Allocation: Total dollar commitment and what % of total portfolio it represents
+4. Risk-to-Reward Ratio: Calculate R:R for Target 1 and Target 2 (flag if under 3:1)
+5. Profit Taking & Trimming Strategy: Scale-out plan (e.g. sell 1/3 at Target 1, trail stop to breakeven).
+```
+
+##### Short interest & squeeze dynamics audit
+```
+Audit the short interest dynamics, borrowing costs, and short squeeze potential for this stock.
+
+Company: [Ticker]
+Short Interest (% of Float): [%]
+Days to Cover (Short Interest Ratio): [Days]
+Borrow Fee / Cost to Borrow: [%]
+Institutional Ownership (%): [%]
+Retail / Social Sentiment: [High / Moderate / Low]
+
+Analyze:
+1. Squeeze Vulnerability Score (1-10): Based on float size, borrow fee spikes, and days to cover
+2. The Short Thesis: Why are institutional funds heavily shorting this company? What is their core bear argument?
+3. Catalyst Potential: What upcoming announcement (earnings, FDA approval, contract win, activist letter) could force shorts to cover?
+4. Borrow Availability: Is borrow tightening or becoming prohibitively expensive?
+5. Risk Warning: If initiating a short or long position, what asymmetric risks and borrow fee traps must be hedged?
+```
+
+##### Volume profile & institutional accumulation
+```
+Analyze volume behavior to detect whether institutional 'smart money' is accumulating or distributing shares.
+
+Stock: [Ticker]
+Recent Price Action: [e.g. consolidating between $140 and $150 after an earnings gap]
+Volume Characteristics:
+- Up-day volume vs. Down-day volume: [e.g. heavy volume on green days, dry volume on pullbacks]
+- Recent block trades / dark pool activity: [if observed]
+- On-Balance Volume (OBV) trend: [rising, flat, falling]
+
+Evaluate:
+1. Accumulation vs. Distribution: Are institutions quietly absorbing shares at key price floors?
+2. Volume Dry-Up: Is volume contracting significantly during pullbacks into moving averages (bullish absorption sign)?
+3. Climax Volume Signals: Any evidence of selling exhaustion or buying capitulation?
+4. Point of Control (POC): Estimated highest volume node where most trading has occurred
+5. Actionable Takeaway: Does volume support initiating a position here, or does it signal institutional exit?
+```
+
+#### Category: Macro & Sector
+##### Sector cyclicality & macro sensitivity
+```
+Assess how this company performs across different macroeconomic regimes and business cycles.
+
+Company / Sector: [Company / Sector, e.g. Industrial Automation, Luxury Retail, Regional Banks]
+Current Macro Backdrop:
+- Interest Rate Trend: [rising / pausing / cutting]
+- Inflation & Wage Pressures: [elevated / cooling]
+- Consumer Sentiment & Credit Delinquencies: [strong / weakening]
+- GDP / Purchasing Managers Index (PMI): [expansion >50 / contraction <50]
+
+Analyze:
+1. Cyclical vs. Secular Growth: How much of recent growth was cyclical macro tailwinds vs. secular structural adoption?
+2. Interest Rate Sensitivity: Impact of higher-for-longer rates on debt refinancing and customer purchasing decisions
+3. Pricing Power in Inflation: Can the company pass on rising input costs without destroying unit volumes?
+4. Recession Playbook: How did revenue and operating margins fare during 2008 and 2020?
+5. Cyclical Peak / Trough Verdict: Is this sector closer to peak cycle or trough cycle valuation?
+```
+
+##### Supply chain & customer concentration
+```
+Audit customer concentration and geopolitical supply chain dependencies for this business.
+
+Company: [Company / Ticker]
+Customer Exposure:
+- Top Customer Revenue %: [e.g. Customer A accounts for 18% of revenue]
+- Top 5/10 Customers %: [if disclosed in 10-K]
+Supply Chain Notes:
+- Key suppliers / foundries / manufacturing partners: [e.g. TSMC, Foxconn, single-source vendors]
+- Geographic manufacturing distribution: [e.g. 70% manufactured in Taiwan/China]
+
+Deliver:
+1. Concentration Risk Score: High / Medium / Low with revenue loss impact if top customer defects
+2. Single-Point-of-Failure Audit: Are critical components or manufacturing steps tied to a single supplier or geographic choke point?
+3. Geopolitical Exposure: Tariffs, export controls, and foreign exchange exposure vulnerabilities
+4. Mitigation Trajectory: Is management actively diversifying suppliers and customers, and what will it cost in CapEx/margins?
+```
+
+##### Regulatory & antitrust impact analysis
+```
+Analyze pending regulatory scrutiny, antitrust litigation, and public policy changes affecting this stock.
+
+Company: [Ticker / Sector]
+Regulatory Bodies Involved: [e.g. FTC, DOJ, European Commission, SEC, FDA, EPA]
+Pending Inquiries / Legislation: [describe lawsuits, proposed tariffs, or antitrust investigations]
+
+Evaluate:
+1. Worst-Case Legal Outcome: Fines, forced breakups, structural business model remedies, or product bans
+2. Revenue at Risk: What percentage of total revenue or high-margin services is directly tied to the contested business practice?
+3. Precedent Cases: How have similar regulatory challenges been resolved for industry peers?
+4. Competitive Impact: Would aggressive regulation create higher compliance barriers to entry that inadvertently protect the incumbent?
+5. Probability-Weighted Financial Impact: Estimate potential penalty and EPS impact over the next 1-3 years.
+```
+
+##### Head-to-head competitor benchmark
+```
+Create a head-to-head benchmark matrix comparing this company with its two primary rivals.
+
+Target Company: [Company A]
+Rival 1: [Company B]
+Rival 2: [Company C]
+
+Compare across 6 dimensions:
+1. Revenue Growth & Scale: Trailing growth and absolute revenue base
+2. Margin Profile: Gross margin, operating margin, and FCF margin efficiency
+3. Unit Economics / Monetization: ARPU, Net Revenue Retention (NRR), or gross profit per unit
+4. R&D & Innovation: R&D spending as a % of revenue and patent/product velocity
+5. Balance Sheet Strength: Net cash position, debt-to-equity, and credit rating
+6. Valuation Multiples: P/E, EV/Sales, EV/EBITDA
+
+Conclude with: Which company possesses the highest quality-to-valuation score, and why?
+```
+
+#### Category: Thesis & Bear Case
+##### Bull vs. bear investment debate
+```
+Construct a rigorous institutional-grade Bull vs. Bear debate for this stock.
+
+Company: [Company / Ticker]
+Current Valuation / Price: $[Price, Multiples]
+Core Business Summary: [1-2 sentences on what they sell]
+
+Develop:
+
+The Bull Case (3 Core Pillars):
+1. Primary growth catalyst and TAM expansion opportunity
+2. Operating leverage and margin expansion path
+3. Why current valuation underappreciates future earnings power
+
+The Bear Case (3 Core Pillars):
+1. Primary competitive, macro, or structural risk
+2. Margin contraction or commoditization threat
+3. Why consensus estimates are overly optimistic
+
+Critical Swing Factor: What single metric or milestone over the next 12 months will prove which side is right?
+```
+
+##### Investment pre-mortem (why it fails)
+```
+Conduct an investment pre-mortem: Imagine it is 3 years from today, and this stock has lost 50% of its value. Tell the story of what went wrong.
+
+Company: [Company / Ticker]
+My Current Thesis: [why I want to buy / invest in it]
+Current Bullish Assumptions: [growth rate, competitive moat, management execution]
+
+Detail the exact failure narrative:
+1. The Blind Spot: What critical risk did the market and bull consensus completely overlook or dismiss?
+2. Competitive Erosion: Did a rival, open-source alternative, or hyperscaler disrupt their core pricing power?
+3. Capital Allocation Disaster: Did an overpriced acquisition, reckless share buybacks, or debt expansion destroy the balance sheet?
+4. Multiple Compression: Even if earnings grew modestly, why did the market re-rate the multiple from 30x to 15x?
+5. Key Warning Signs: 3 early warning indicators that would have alerted an observant investor in Year 1.
+```
+
+##### One-page investment memo (thesis)
+```
+Draft a concise, high-conviction one-page investment memo for this stock pitch.
+
+Company: [Company / Ticker]
+Current Price: $[Price] | Market Cap: $[Cap]
+Target Horizon: [e.g. 1-3 years]
+
+Structure the memo:
+1. Executive Summary: What does the company do and why is it mispriced by the market today? (3 sentences)
+2. The Variant Perception: What do you believe that the consensus Wall Street view is missing or getting wrong?
+3. Financial Engine: Revenue growth driver, unit economics, and FCF generation profile
+4. Valuation & Target Price: Base case price target with expected IRR / upside percentage
+5. Key Catalysts: 2-3 specific milestones over the next 12-18 months that will unlock value
+6. Kill Criteria: Under what specific conditions will you sell and admit the thesis is invalidated?
+```
+
+##### Exit strategy & thesis invalidation plan
+```
+Define an explicit exit strategy, profit-taking rules, and thesis invalidation triggers before entering this position.
+
+Company: [Company / Ticker]
+Entry Price: $[Price]
+Target Valuation: $[Target Price]
+Original Thesis Core Points: [list 2-3 reasons for buying]
+
+Create a disciplined exit ruleset:
+1. Profit-Taking Protocol: At what price or valuation multiple will you trim 33%, 50%, or exit completely?
+2. Fundamental Invalidation Triggers: List 3 specific operational breakdowns (e.g. NRR drops below 110%, operating margin drops 2 quarters in a row, founder leaves) that trigger an immediate sale regardless of stock price
+3. Opportunity Cost Threshold: When does another asset present a significantly better risk/reward justifying reallocating this capital?
+4. Emotional Guardrail: What rule will prevent you from averaging down on a broken fundamental story?
+```
+
+### Personal Finance Prompts
+URL: https://prompt-router.pages.dev/finance
+
+#### Category: Budgeting & Cash Flow
+##### 50/30/20 & zero-based budget builder
+```
+Build a personalized monthly budget framework combining the 50/30/20 rule with zero-based budgeting principles.
+
+Monthly After-Tax Income: $[Amount]
+Fixed Expenses (Rent/Mortgage, Utilities, Debt minimums, Insurance): $[Amount]
+Variable Expenses (Groceries, Dining, Transport, Entertainment): $[Amount]
+Current Monthly Savings / Investments: $[Amount]
+Financial Goals: [e.g. save for down payment, eliminate debt, build emergency fund]
+
+Create:
+1. 50/30/20 Breakdown: Needs ($), Wants ($), and Savings/Debt ($) with variance from target
+2. Zero-Based Allocation: Assign every single dollar to a specific job until balance equals zero
+3. Three Immediate Optimization Levers: Specific line-items to adjust to free up $200-$500/month
+4. Weekly Cash Flow Schedule: How to distribute spending across pay periods to avoid end-of-month cash pinches.
+```
+
+##### Audit subscriptions & recurring bills
+```
+Help me audit and aggressively reduce recurring subscriptions and household bills.
+
+Here is my list of monthly/annual recurring charges:
+[paste list of services, apps, utilities, memberships, insurance, and costs]
+
+Provide:
+1. Categorization: Essential, Nice-to-Have, and Forgotten/Redundant
+2. Cancellation Targets: Immediate cancellation recommendations with estimated annual savings
+3. Bill Negotiation Scripts: Word-for-word scripts to negotiate lower rates with internet, mobile carrier, and insurance providers
+4. Annual vs. Monthly Optimization: Identify where switching to annual billing saves 15-20%
+5. Maintenance System: A simple 10-minute quarterly review habit to prevent subscription creep.
+```
+
+##### Emergency fund target & ramp-up plan
+```
+Calculate my optimal emergency fund target and design an accelerated ramp-up timeline.
+
+Monthly Essential Expenses (Needs only): $[Amount]
+Current Emergency Savings: $[Amount]
+Job Stability: [High / Medium / Volatile / Freelance]
+Dependents: [Number of children/dependents]
+Health & Property Deductibles: [Total max out-of-pocket expenses]
+
+Calculate and outline:
+1. Target Fund Size: Recommend 3, 6, 9, or 12 months of expenses based on my risk profile
+2. Tiered Emergency Architecture: Split emergency cash between immediate checking buffer, High-Yield Savings Account (HYSA), and short-term liquid CDs/Treasury Bills
+3. Monthly Ramp-Up Roadmap: Specific monthly contribution schedule to hit the target within 6, 12, or 18 months
+4. Rules of Engagement: Define what strictly constitutes a true emergency vs. an expected irregular expense.
+```
+
+##### Variable spending cutback & optimization
+```
+Help me identify waste and optimize variable daily spending without destroying my quality of life.
+
+Typical Monthly Variable Spending:
+- Groceries & Food Prep: $[Amount]
+- Dining Out & Delivery: $[Amount]
+- Entertainment & Shopping: $[Amount]
+- Transportation / Rideshare / Gas: $[Amount]
+- Personal Care & Miscellaneous: $[Amount]
+
+Deliver:
+1. Highest-ROI Cutbacks: Top 3 behavioral changes that produce immediate $300+ monthly savings
+2. The 'Substitution' Strategy: High-satisfaction, lower-cost alternatives for dining and entertainment
+3. Guardrail Rule: A simple micro-budgeting system (e.g. cash envelopes, separate debit card for discretionary spending)
+4. 30-Day Spending Challenge: A 4-week structured challenge to reset impulse spending habits.
+```
+
+#### Category: Debt Elimination
+##### Debt snowball vs. avalanche planner
+```
+Create a customized debt payoff plan comparing the Debt Snowball and Debt Avalanche strategies.
+
+Current Debts:
+[List each debt: Name, Balance ($), Interest Rate (APR %), Minimum Monthly Payment ($)]
+Extra Monthly Cash Available for Debt: $[Amount]
+
+Deliver:
+1. Debt Avalanche Plan: Order of payoff targeting highest interest rate first (calculate total interest saved & debt-free date)
+2. Debt Snowball Plan: Order of payoff targeting smallest balance first (calculate psychological momentum & debt-free date)
+3. Comparison Matrix: Total interest paid, total months to debt freedom, and pros/cons of each method for my psychology
+4. Step-by-Step Payment Schedule: Exact dollar amounts to pay to each creditor for Month 1 through Month 6.
+```
+
+##### Credit card consolidation & balance transfer
+```
+Evaluate whether a 0% APR balance transfer card or personal consolidation loan makes financial sense.
+
+Credit Card Debts:
+[Card 1: Balance, APR%]
+[Card 2: Balance, APR%]
+Credit Score Range: [e.g. 680-720]
+Estimated 0% Balance Transfer Fee: [typically 3% - 5%]
+Loan Offer (if any): [Interest rate %, term in months, origination fee]
+
+Analyze:
+1. Break-Even Math: Calculate transfer fees vs. monthly interest saved at current APR
+2. Payoff Feasibility: Required monthly payment to clear balance to $0 before the 0% promotional period ends (e.g. 12-18 months)
+3. The Balance Transfer Trap: Risks of deferred interest, post-promotional rates, and behavioral relapse
+4. Recommendation: Balance transfer vs. fixed consolidation loan vs. aggressive self-payoff.
+```
+
+##### Student loan repayment strategy matrix
+```
+Analyze my student loan portfolio and determine the best repayment strategy.
+
+Student Loans:
+[List loans: Federal or Private, Balance, Interest Rate %, Current Monthly Payment]
+Gross Annual Income: $[Amount]
+Career Sector: [Public / Non-Profit / For-Profit Corporate]
+Family Size: [Number]
+
+Evaluate:
+1. Income-Driven Repayment (IDR) vs. Standard 10-Year: Monthly payment and lifetime forgiveness math
+2. Public Service Loan Forgiveness (PSLF) Eligibility: Feasibility, requirements, and optimal payment plan
+3. Private Refinancing Feasibility: When does refinancing private loans make sense, and what federal borrower protections are surrendered?
+4. Lump-Sum Prepayment vs. Investing: Should extra cash go toward loan principal or index fund investing?
+```
+
+##### Extra mortgage payment & interest savings
+```
+Calculate the impact of making extra principal payments on a mortgage or auto loan.
+
+Original Loan Amount: $[Amount]
+Current Remaining Balance: $[Amount]
+Interest Rate: [%]
+Remaining Term: [e.g. 25 years / 300 months]
+Current Monthly Principal & Interest Payment: $[Amount]
+Proposed Extra Monthly Payment: $[Amount, e.g. $200/mo or $5,000 lump sum/year]
+
+Calculate:
+1. Time Saved: How many years and months earlier will the loan be paid in full?
+2. Total Interest Saved: Lifetime interest savings in dollars
+3. Guaranteed Return vs. Opportunity Cost: Compare the guaranteed after-tax return (interest rate %) against expected broad market investing returns (7-8%)
+4. Hybrid Strategy: A balanced approach dividing extra cash between principal reduction and retirement investing.
+```
+
+#### Category: Saving & Goals
+##### Major purchase savings milestone plan
+```
+Build a dedicated savings plan for a major financial milestone (home down payment, car, wedding, or sabbatical).
+
+Goal: [e.g. Home Down Payment & Closing Costs]
+Target Dollar Amount: $[Amount]
+Target Timeline: [e.g. 24 months / 2 years]
+Current Saved for this Goal: $[Amount]
+Monthly Contribution Available: $[Amount]
+
+Deliver:
+1. Required Monthly Savings Rate: Math to hit the target on time, accounting for high-yield savings interest
+2. Account Placement: Where to park the cash (HYSA vs. Short-Term Treasury Bills vs. Money Market Fund) based on time horizon
+3. Gap-Closing Strategy: If there is a shortfall, outline 3 actionable ways to accelerate the timeline (windfalls, tax refunds, side income)
+4. Milestone Checkpoints: Target balance benchmarks for Month 6, 12, 18, and 24.
+```
+
+##### Sinking fund allocator for irregular bills
+```
+Design a sinking fund system to smooth out lumpy, irregular expenses that break my monthly budget.
+
+Annual & Semi-Annual Expenses:
+- Car Insurance & Registration: $[Annual Total]
+- Property Taxes / Home Maintenance: $[Annual Total]
+- Holiday & Birthday Gifts: $[Annual Total]
+- Medical & Dental Out-of-Pocket: $[Annual Total]
+- Vacations / Travel: $[Annual Total]
+- Pet Care & Vet Visits: $[Annual Total]
+
+Create:
+1. Monthly Sinking Fund Allocation: Total dollar amount required per month to fully pre-fund each bucket
+2. Bank Setup Structure: How to organize sub-savings accounts or virtual buckets without opening 10 bank accounts
+3. Cash Flow Buffer: How to handle an irregular expense that hits in Month 2 before the bucket is fully funded
+4. Automated Transfer Rules: When and how to automate transfers on payday.
+```
+
+##### Cash yield & liquidity optimizer
+```
+Optimize the yield and safety on my cash reserves across modern low-risk instruments.
+
+Total Cash to Allocate: $[Amount]
+Liquidity Needs:
+- Needed within 30 days: $[Amount]
+- Needed in 3-12 months: $[Amount]
+- Needed in 1-3 years: $[Amount]
+Tax Bracket: [Federal % and State %]
+
+Evaluate and compare:
+1. High-Yield Savings Accounts (HYSA): Liquidity, FDIC insurance limits ($250k), and current APY
+2. Money Market Funds (e.g. SPAXX, VMFXX): Yield spread and underlying collateral
+3. US Treasury Bills (4-week to 52-week): State tax exemption benefit and secondary market liquidity
+4. Certificates of Deposit (CDs): CD ladders vs. Treasury ladders
+5. Recommended Allocation Blueprint: Exact dollar breakdown across accounts maximizing after-tax yield.
+```
+
+##### Lifestyle creep guardrails & salary raise plan
+```
+Help me create an intentional plan for a recent or upcoming income increase to prevent lifestyle creep.
+
+Previous Net Monthly Income: $[Amount]
+New Net Monthly Income: $[Amount] (Increase: +$[Delta]/month)
+Current Savings Rate: [%]
+Key Financial Vulnerabilities: [where I tend to overspend]
+
+Create a 'Raise Allocation' blueprint:
+1. The 50/50 Rule: Allocate 50% of the raise to wealth-building (investments/debt) and 50% to lifestyle upgrades guilt-free
+2. Reverse-Budgeting Automation: How to automate increased contributions the exact day the new paycheck arrives
+3. Intentional Upgrade List: Identify 2-3 high-satisfaction lifestyle upgrades vs. mindless lifestyle inflation
+4. Annual Savings Rate Goal: What should my new total savings rate be after this promotion?
+```
+
+#### Category: Investing & Wealth
+##### Asset allocation & 3-fund portfolio blueprint
+```
+Design a diversified, low-cost asset allocation model tailored to my age, risk tolerance, and time horizon.
+
+Age: [Age]
+Years to Retirement: [e.g. 20-30 years]
+Risk Tolerance: [Aggressive / Moderate / Conservative]
+Current Portfolio Value: $[Amount]
+Current Holdings: [e.g. mix of individual stocks, crypto, cash, mutual funds]
+
+Provide:
+1. Target Asset Allocation: Equities (US Total Market %, International Total Market %) vs. Fixed Income (Total Bond Market %)
+2. Bogleheads 3-Fund Model Implementation: Specific ultra-low-cost index ETFs or mutual funds (e.g. VTI, VXUS, BND or equivalents)
+3. Expected Volatility & Drawdown Context: What kind of downturn (-20% to -40%) should I psychologically prepare for?
+4. Migration Plan: How to transition from current messy holdings to the target allocation without triggering massive taxable gains.
+```
+
+##### Tax-advantaged account priority waterfall
+```
+Help me prioritize where to deploy each dollar across retirement and tax-advantaged accounts.
+
+Annual Gross Income: $[Amount]
+Employer 401(k) Match: [e.g. 50% match up to 6% of salary]
+Account Access:
+- Traditional vs. Roth 401(k) / 403(b): [Yes / No]
+- Roth IRA vs. Traditional IRA: [eligible based on income?]
+- Health Savings Account (HSA): [High-Deductible Health Plan?]
+- Taxable Brokerage: [available]
+Total Annual Investment Budget: $[Amount]
+
+Build the step-by-step contribution waterfall:
+1. Step 1: Employer 401(k) match (free money)
+2. Step 2: HSA (triple-tax advantage)
+3. Step 3: Roth IRA / Backdoor Roth IRA
+4. Step 4: Max remaining 401(k) limit
+5. Step 5: Taxable brokerage account
+
+State clearly how much money to put in each bucket and whether Traditional or Roth makes more sense given my current tax bracket.
+```
+
+##### DCA vs. lump sum deployment strategy
+```
+Design an execution plan for deploying a large cash windfall into the market.
+
+Cash Windfall Amount: $[Amount, e.g. $50,000 or $200,000]
+Source: [Bonus, Inheritance, Asset Sale, Accumulated Cash]
+Market Condition: [All-time highs / Correction / High volatility]
+Psychological Hesitation: [Fear of buying the top, paralysis]
+
+Provide:
+1. Historical Probability Analysis: Lump Sum vs. DCA over 6-12 months (Vanguard / academic research findings)
+2. Structured DCA Schedule: Weekly or monthly tranches over 3, 6, or 12 months with exact execution dates
+3. The 'Accelerated Dip-Buying' Rule: How to deploy an extra tranche if the market drops 5% or 10% during the DCA window
+4. Cash Parking in the Interim: Where to hold remaining uninvested tranches to earn 4-5% risk-free yield
+5. Decision Commitment Contract: A written set of rules to prevent pausing DCA during market declines.
+```
+
+##### Portfolio rebalancing & drift checklist
+```
+Guide me through a systematic portfolio rebalancing check to maintain my target risk profile.
+
+Target Asset Allocation: [e.g. 60% US Equity, 20% International Equity, 20% Bonds]
+Current Portfolio Holdings & Values:
+[Holding 1: $ Value / % of total]
+[Holding 2: $ Value / % of total]
+[Holding 3: $ Value / % of total]
+Account Types: [Taxable, Roth IRA, Traditional 401k]
+New Capital Available: $[Amount to invest this month]
+
+Deliver:
+1. Asset Drift Calculation: Identify which asset classes are overweight and underweight relative to target
+2. Tax-Efficient Rebalancing via New Cash: Calculate how to direct upcoming contributions to underweight assets to rebalance without selling
+3. Tax-Sheltered Rebalancing: If selling is required, which trades should be executed inside IRAs/401ks to avoid capital gains taxes?
+4. Rebalancing Band Rule: Establish a 5/25 threshold rule (rebalance only when an asset class drifts by 5% absolute or 25% relative).
+```
+
+#### Category: Taxes & Protection
+##### Year-end tax planning & tax-loss harvesting
+```
+Create an end-of-year tax optimization checklist for my personal finances.
+
+Tax Profile: [Single / Married Filing Jointly]
+Estimated Annual Income: $[Amount]
+Unrealized Losses in Taxable Brokerage: $[Amount]
+Unrealized Capital Gains: $[Amount]
+Charitable Intentions: [if any]
+
+Outline key year-end actions:
+1. Tax-Loss Harvesting Strategy: How to harvest unrealized losses to offset capital gains plus up to $3,000 of ordinary income
+2. Wash-Sale Rule Guardrails: Avoid identical replacement assets for 30 days (recommend substitute ETFs)
+3. Account Contribution Deadlines: 401(k) deadline (Dec 31) vs. IRA/HSA deadlines (Tax Day)
+4. Charitable Gifting Tactics: Donating appreciated shares vs. cash to eliminate capital gains tax
+5. Flexible Spending Account (FSA) Check: 'Use-it-or-lose-it' balance cleanup.
+```
+
+##### Insurance coverage & gap assessment
+```
+Evaluate my personal insurance coverage to protect against catastrophic financial risks.
+
+Current Age & Dependents: [Age, marital status, children ages]
+Annual Income: $[Amount]
+Existing Coverage:
+- Life Insurance: [Work policy / Private term / Whole life, Coverage $]
+- Disability Insurance: [Short-term / Long-term, % of salary]
+- Homeowners / Renters: [Liability limit]
+- Auto Insurance: [Liability limits: e.g. 100k/300k/100k]
+- Umbrella Policy: [None / $1M / $2M]
+
+Audit:
+1. Life Insurance Gap: Calculate term life need using DIME framework (Debt, Income, Mortgage, Education) — why employer group life is rarely enough
+2. Disability Protection: Is long-term disability own-occupation? Are benefits taxable?
+3. Umbrella Liability Need: Do net worth and future earnings exceed current auto/home liability limits?
+4. Policies to Avoid: Unnecessary, high-commission products (whole life, accidental death, flight insurance).
+```
+
+##### Estate planning & beneficiary audit
+```
+Help me organize essential estate planning documents and beneficiary designations.
+
+Family Situation: [Marital status, minor children, aging parents]
+Primary Assets: [Real estate, retirement accounts, taxable brokerage, business, life insurance]
+State / Country of Residence: [Location]
+
+Generate an action checklist:
+1. Beneficiary Designation Audit: Why transfer-on-death (TOD) and 401k/IRA beneficiaries override a will
+2. Core Document Essentials: Will vs. Revocable Living Trust, Durable Financial Power of Attorney, Healthcare Proxy / Advance Directive
+3. Guardianship for Minors: Naming primary and contingent guardians
+4. Digital Asset Vault: Inventory of passwords, financial logins, and 2FA recovery keys for executor
+5. Emergency 'In Case of Death' Binder: 10 critical items a spouse or executor needs on Day 1.
+```
+
+##### Credit score improvement action plan
+```
+Create an actionable roadmap to raise my credit score from fair/good to excellent (760+).
+
+Current Credit Score: [e.g. 660 or 710]
+Credit Report Breakdown (if known):
+- Total Credit Card Balances: $[Amount]
+- Total Credit Limits: $[Amount] (Current Utilization %)
+- Derogatory Marks: [Late payments, collections, or none]
+- Average Age of Accounts: [Years]
+- Recent Inquiries: [Number in last 12 months]
+
+Provide:
+1. Utilization Optimization Strategy: Pay-down schedule to get overall utilization and per-card utilization below 10%
+2. Statement Date vs. Due Date Trick: When to pay balances so low utilization is reported to credit bureaus
+3. Disputing Inaccuracies: How to dispute errors on Equifax, Experian, and TransUnion reports
+4. Credit Limit Increase Request: How and when to request soft-pull limit increases to lower utilization ratio
+5. 90-Day Expected Score Impact: Realistic milestones over the next 3 to 6 months.
+```
+
+#### Category: Career & Freedom
+##### Salary & total compensation negotiation
+```
+Help me prepare a negotiation strategy and word-for-word scripts for a job offer or promotion.
+
+Role & Level: [Job Title, Seniority]
+Current Offer / Current Salary: $[Base Salary]
+Market Benchmark: [Target range from Glassdoor/Levels.fyi: e.g. $130k-$150k]
+Other Components: [Sign-on bonus, equity/RSUs, performance bonus, remote flexibility]
+My Unique Leverage: [Key achievements, competing offers, specialized skills]
+
+Deliver:
+1. Counter-Offer Strategy: Justified counter-proposal target and anchor numbers
+2. Word-for-Word Phone / Email Scripts: Professional, confident phrasing that doesn't sound aggressive
+3. Non-Salary Levers to Negotiate: Sign-on bonus, extra PTO, remote stipend, accelerated review cycle
+4. How to Handle Pushback: Responding to 'That is our final budget' or 'Company policy sets the band'.
+```
+
+##### Side hustle viability & profit calculator
+```
+Evaluate the financial viability, time commitment, and tax implications of a side business idea.
+
+Side Hustle Concept: [describe service, freelance skill, or product]
+Estimated Hours Available per Week: [e.g. 10 hours]
+Expected Price / Hourly Rate: $[Price]
+Estimated Startup & Ongoing Costs: $[Software, tools, inventory, marketing]
+
+Analyze:
+1. Effective Hourly Rate: Gross revenue minus direct expenses and self-employment taxes (15.3% FICA) divided by actual hours
+2. Break-Even Analysis: How many clients, projects, or units to cover monthly software and tools
+3. Tax Structure & Deductions: Sole proprietorship vs. LLC, business expense deductions (home office, equipment)
+4. Risk vs. Reward Check: Does this income accelerate financial goals, or is it distracting from high-ROI primary career advancement?
+```
+
+##### Employee benefits & perk optimization
+```
+Help me optimize elections across my employer's annual benefits package during open enrollment.
+
+Health Insurance Options: [HDHP with HSA vs. PPO/HMO with FSA, monthly premiums and deductibles]
+Retirement Match: [401k match details]
+Ancillary Perks Offered: [Life insurance, legal plan, commuter benefits, wellness stipend, tuition reimbursement, ESPP]
+My Health Situation: [Rarely see doctor vs. ongoing prescriptions/chronic condition]
+
+Provide:
+1. Health Plan Math: Total annual cost comparison (Annual Premium + Out-of-Pocket Maximum) between HDHP+HSA and PPO
+2. Employee Stock Purchase Plan (ESPP) Analysis: Lookback provision, discount % (typically 15%), and immediate sell vs. hold strategy
+3. High-Value vs. Low-Value Perks: Which voluntary benefits are genuine money-savers vs. unnecessary paycheck deductions
+4. Recommended Election Checklist for Open Enrollment.
+```
+
+##### FI/RE number & Coast FI milestone calculator
+```
+Calculate my Financial Independence / Retire Early (FI/RE) number, Coast FI milestone, and timeline.
+
+Current Age: [Age]
+Current Invested Net Worth: $[Amount]
+Annual Household Spending Today: $[Amount]
+Expected Annual Spending in Retirement: $[Amount]
+Annual Savings / Investment Rate: $[Amount/year]
+Assumed Safe Withdrawal Rate (SWR): [typically 3.5% - 4.0%]
+Assumed Real Investment Return (after inflation): [typically 5% - 7%]
+
+Calculate:
+1. Core FI/RE Target Number: (Annual Retirement Spending × 25 or 28.5)
+2. Estimated Years to Financial Independence at current savings pace
+3. Coast FI Benchmark: Has current invested portfolio already reached the point where it will grow to the target number by traditional retirement age (60-65) with ZERO additional contributions?
+4. Savings Rate Sensitivity: How saving an extra 5% or 10% accelerates the retirement horizon.
 ```
 
 ---
