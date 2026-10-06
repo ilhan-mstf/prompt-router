@@ -104,6 +104,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 button, input, select, textarea { font-family: inherit; font-size: inherit; color: inherit; }
+b, strong { font-weight: var(--fw-semibold); }
 body {
   background: var(--bg);
   color: var(--text);
@@ -172,7 +173,7 @@ body {
   gap: 10px;
   font-family: 'DM Mono', monospace;
   font-size: var(--text-sm);
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text);
   text-decoration: none;
   letter-spacing: -0.01em;
@@ -219,6 +220,7 @@ body {
 }
 .nav-links a {
   font-size: var(--text-sm); color: var(--text-2);
+  font-weight: 500;
   text-decoration: none; letter-spacing: 0;
   padding: 6px 12px; border-radius: 100px;
   transition: color .12s, background .12s;
@@ -433,7 +435,7 @@ main.page { padding-top: 40px; padding-bottom: 60px; display: flex; flex-directi
 .post-card-title {
   font-family: 'Fraunces', Georgia, serif;
   font-weight: 600;
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   color: var(--text);
   margin-bottom: 8px;
   line-height: 1.35;
@@ -540,6 +542,7 @@ article h3 {
 }
 
 article p {
+  font-size: var(--text-sm);
   color: var(--text-2);
   margin-bottom: 20px;
   line-height: var(--leading-relaxed);
@@ -555,12 +558,14 @@ article a {
 article a:hover { color: var(--text); }
 
 article ul, article ol {
+  font-size: var(--text-sm);
   color: var(--text-2);
   margin: 0 0 20px 20px;
   line-height: 2;
 }
 
 article blockquote {
+  font-size: var(--text-sm);
   border-left: 3px solid var(--gold-dim);
   padding: 12px 20px;
   margin: 24px 0;
@@ -806,8 +811,7 @@ tr:last-child td { border-bottom: none; }
     margin-left: 2px;
   }
   main.page, article.page { padding-top: 20px; padding-bottom: 40px; }
-  .hero-tagline, .page-title { font-size: var(--text-lg); line-height: 1.25; padding-top: 0; }
-  .article-title { font-size: var(--text-xl); }
+  .hero-tagline, .page-title, .article-title { font-size: var(--text-lg); line-height: 1.25; padding-top: 0; }
   .post-card { padding: 16px 18px; }
   .footer-inner { padding: 28px 16px 40px; }
   .footer-grid { grid-template-columns: repeat(2, 1fr); }

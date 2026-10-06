@@ -53,6 +53,9 @@
   outline-offset: 2px;
 }
 
+/* ── Base ────────────────────────────────────────────────────── */
+b, strong { font-weight: var(--fw-semibold); }
+
 /* ── App Layout Shell ────────────────────────────────────────── */
 body.has-sidebar {
   overflow: hidden;
@@ -111,11 +114,11 @@ body.has-sidebar {
   text-decoration: none;
   color: var(--text);
   font-size: var(--text-sm);
-  font-weight: 500;
+  font-weight: 600;
 }
 .topbar-left .brand-link {
   font-size: var(--text-sm);
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
   color: inherit;
 }
@@ -1348,7 +1351,7 @@ footer {
   .brand-link,
   .topbar-left .brand-link {
     font-size: var(--text-sm);
-    font-weight: 500;
+    font-weight: 600;
     white-space: nowrap;
   }
   .nav-links {
