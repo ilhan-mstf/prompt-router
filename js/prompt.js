@@ -211,15 +211,28 @@ function updateCharCount() {
 function updateActiveBadge(title) {
   const badge = document.getElementById('activeBadge');
   if (!badge) return;
+  const badgeText = document.getElementById('activeBadgeText');
   if (title) {
-    badge.textContent = title;
+    if (badgeText) {
+      badgeText.textContent = title;
+    } else {
+      badge.textContent = title;
+    }
     badge.title = title;
     badge.classList.add('show');
   } else {
-    badge.textContent = '';
+    if (badgeText) badgeText.textContent = '';
+    else badge.textContent = '';
     badge.removeAttribute('title');
     badge.classList.remove('show');
   }
+}
+
+function clearActiveTemplate(e) {
+  if (e) e.stopPropagation();
+  activeItemId = null;
+  updateActiveBadge(null);
+  renderSidebar();
 }
 
 /* ── Templates Helper (DRY) ─────────────────────────────────── */
@@ -300,7 +313,7 @@ function renderSidebar() {
     qList.innerHTML = filteredTpls.map(t => `
       <button type="button" class="item-btn ${activeItemId === t.id ? 'active' : ''}" onclick="loadPromptById('${t.id}')">
         <div class="item-label-wrap">
-          <span class="item-icon">&#9889;</span>
+          <span class="material-symbols-outlined item-icon">bolt</span>
           <span class="item-title">${escapeHTML(t.label)}</span>
         </div>
       </button>
@@ -321,12 +334,12 @@ function renderSidebar() {
       sList.innerHTML = filteredSaved.map(s => `
         <div class="item-btn ${activeItemId === s.id ? 'active' : ''}">
           <button type="button" class="item-main-btn" onclick="loadPromptById('${s.id}')" aria-label="${escapeHTML(s.title)}">
-            <span class="item-icon" aria-hidden="true">${s.pinned ? '★' : '☆'}</span>
+            <span class="material-symbols-outlined item-icon" style="${s.pinned ? 'color: var(--gold);' : ''}" aria-hidden="true">${s.pinned ? 'star' : 'star_outline'}</span>
             <span class="item-title">${escapeHTML(s.title)}</span>
           </button>
           <div class="item-actions">
-            <button type="button" class="action-sub-btn" title="${s.pinned ? 'Unpin prompt' : 'Pin prompt'}" aria-label="${s.pinned ? 'Unpin prompt' : 'Pin prompt'}" onclick="togglePin('${s.id}')"><span aria-hidden="true">${s.pinned ? '★' : '☆'}</span></button>
-            <button type="button" class="action-sub-btn delete" title="Delete prompt" aria-label="Delete prompt" onclick="deleteSaved('${s.id}')"><span aria-hidden="true">×</span></button>
+            <button type="button" class="action-sub-btn" title="${s.pinned ? 'Unpin prompt' : 'Pin prompt'}" aria-label="${s.pinned ? 'Unpin prompt' : 'Pin prompt'}" onclick="togglePin('${s.id}')"><span class="material-symbols-outlined" aria-hidden="true">${s.pinned ? 'star' : 'star_outline'}</span></button>
+            <button type="button" class="action-sub-btn delete" title="Delete prompt" aria-label="Delete prompt" onclick="deleteSaved('${s.id}')"><span class="material-symbols-outlined" aria-hidden="true">delete</span></button>
           </div>
         </div>
       `).join('');
@@ -352,7 +365,7 @@ function renderSidebar() {
         return `
           <button type="button" class="item-btn ${activeItemId === h.id ? 'active' : ''}" onclick="loadPromptById('${h.id}')" aria-label="${escapeHTML(h.title)}">
             <div class="item-label-wrap">
-              <span class="item-icon" aria-hidden="true">&#8635;</span>
+              <span class="material-symbols-outlined item-icon" aria-hidden="true">history</span>
               <span class="item-title">${escapeHTML(h.title)}</span>
             </div>
             <div aria-hidden="true">${provDots}</div>
@@ -364,7 +377,7 @@ function renderSidebar() {
       const clearBtnHtml = `
         <div class="history-footer">
           <button type="button" class="history-clear-btn" id="btnClearHistory" onclick="clearHistory()" aria-label="${escapeHTML(clearLabel)}">
-            <span class="clear-icon" aria-hidden="true">&#128465;</span>
+            <span class="material-symbols-outlined clear-icon" aria-hidden="true" style="font-size: 16px;">delete_sweep</span>
             <span id="lblClearHistory">${escapeHTML(clearLabel)}</span>
           </button>
         </div>

@@ -455,7 +455,7 @@ a:active > .m3-state-layer,
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: 'DM Mono', monospace;
+  font-family: inherit;
   font-size: var(--text-sm);
   font-weight: 600;
   color: var(--text);
@@ -473,18 +473,22 @@ a:active > .m3-state-layer,
   align-items: center;
   justify-content: center;
   color: var(--gold);
+  font-family: 'DM Mono', monospace, sans-serif;
   font-weight: 700;
   font-size: var(--text-sm);
   line-height: 1;
   flex-shrink: 0;
 }
+.brand-name,
 .brand-text {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   font-size: var(--text-sm);
   font-weight: 600;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.2px;
   color: var(--text);
 }
+.brand-name .gold,
+.brand-name strong,
 .brand-text span { color: var(--gold); }
 .logo-a {
   font-family: 'Fraunces', Georgia, serif;

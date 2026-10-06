@@ -677,7 +677,7 @@ it('All 13 library pages have initial accordion state matching open list (aria-e
   VALID_LIBS.forEach(lib => {
     const html = fs.readFileSync(path.join(ROOT, `${lib}.html`), 'utf-8');
     assert.strictEqual(html.includes('id="btnLibrariesSection" onclick="toggleSection(\'librariesSection\')" aria-expanded="true"'), true, `btnLibrariesSection not aria-expanded="true" in ${lib}.html`);
-    assert.strictEqual(html.includes('id="librariesChevron" aria-hidden="true">&#9662;</span>'), true, `librariesChevron rotated in ${lib}.html`);
+    assert.strictEqual(html.includes('id="librariesChevron" aria-hidden="true">&#9662;</span>') || html.includes('id="librariesChevron" aria-hidden="true">expand_more</span>'), true, `librariesChevron rotated in ${lib}.html`);
   });
 });
 
