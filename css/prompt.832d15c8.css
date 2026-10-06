@@ -632,14 +632,29 @@ button.section-title-wrap:focus-visible,
   color: var(--text-2);
   width: 40px;
   height: 40px;
+  min-width: 40px;
+  min-height: 40px;
   border-radius: var(--md-shape-corner-full, 9999px);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
   font-family: inherit;
   font-size: var(--text-sm);
   transition: background var(--dur-fast), color var(--dur-fast);
+}
+.toggle-sidebar-btn #lblToggleSidebar {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 .toggle-sidebar-btn:hover {
   background: var(--md-sys-color-surface-container-high, var(--surface-2));
@@ -1558,6 +1573,26 @@ footer {
     min-height: 32px;
     font-size: var(--text-sm);
     margin-left: 2px;
+  }
+  .main-topbar {
+    padding: 0 12px;
+  }
+  .topbar-left {
+    gap: 8px;
+  }
+  .topbar-left .brand-link {
+    gap: 8px;
+  }
+  .topbar-left .brand-name {
+    font-size: var(--text-sm);
+  }
+  .nav-links {
+    gap: 6px;
+  }
+  .nav-dropdown-btn {
+    padding: 6px 10px;
+    font-size: var(--text-xs);
+    gap: 4px;
   }
 }
 
