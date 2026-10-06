@@ -95,14 +95,12 @@ body.has-sidebar {
   flex-direction: column;
   height: 100%;
   transition: margin-left var(--md-motion-duration-medium, 250ms) var(--md-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1)),
-              transform var(--md-motion-duration-medium, 250ms) var(--md-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1)),
-              width var(--md-motion-duration-medium, 250ms) var(--md-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1));
+              transform var(--md-motion-duration-medium, 250ms) var(--md-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1));
   z-index: 100;
   position: relative;
 }
 
 .sidebar.collapsed {
-  width: 0;
   margin-left: calc(-1 * var(--sidebar-w));
   border-right: none;
   visibility: hidden;
