@@ -16,6 +16,7 @@
     "lint:js": "eslint _worker.js eslint.config.js",
     "test:routes": "node test/test_router.js",
     "test": "npm run build && npm run lint && npm run test:routes",
+    "publish:next": "node scripts/publish-next-post.js",
     "prepare": "git config core.hooksPath .githooks 2>/dev/null || true"
   },
   "repository": {
